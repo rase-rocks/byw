@@ -59,4 +59,5 @@ typings/
 
 # Distribution
 build
+s3-build
 
