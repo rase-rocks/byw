@@ -57,6 +57,8 @@ typings/
 # visual-studio-code 
 .vscode
 
+.DS_Store
+
 # Distribution
 build
 s3-build
