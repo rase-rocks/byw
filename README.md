@@ -1,5 +1,9 @@
 # byw - Breath your Welsh Project
 
+#### Status
+
+[![Build Status](https://travis-ci.org/rase-rocks/byw.svg?branch=master)](https://travis-ci.org/rase-rocks/byw)
+
 ### Summary
 
 The Breath your Welsh project is a community driven action to help increase the visibility of the Welsh language. The project is based around an original idea by Peter Allen on the SaySomethingIn.com Welsh forum.
