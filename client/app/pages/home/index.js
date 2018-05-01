@@ -1,9 +1,10 @@
 import React from "react";
+import PageContainer from "../../page-content";
 
 class Home extends React.Component {
     render() {
         return (
-            <div className="container">
+            <PageContainer>
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <p>
@@ -11,7 +12,7 @@ class Home extends React.Component {
                         </p>
                     </div>
                 </div>
-            </div>
+            </PageContainer>
         );
     }
 }

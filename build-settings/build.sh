@@ -16,7 +16,7 @@ node ./s3-build/static-index-build.js > ./s3-build/index.html
 
 echo "\n[3/4]-[${GREEN}Building client app${NC}]\n"
 gulp static
-gulp static-optimize-css
+# gulp static-optimize-css
 
 echo "\n[4/4]-[${GREEN}Cleaning up${NC}]\n"
 rm ./s3-build/static-index-build.js

@@ -39,7 +39,9 @@ Clone the project to your local file system and run:
 
 <pre>npm install</pre>
 
-The package has the <pre>http-serve</pre> as a dependency to allow for local development. This will serve the files out of the s3-build folder.
+The package has the http-serve as a dependency to allow for local development. This will serve the files out of the s3-build folder. To use run:
+
+<pre>npm run serve-build</pre>
 
 To get a build folder run:
 
