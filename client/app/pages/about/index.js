@@ -1,17 +1,17 @@
 import React from "react";
 import PageContainer from "../../page-content";
 
-class Home extends React.Component {
+class About extends React.Component {
     render() {
         return (
             <PageContainer>
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <h1>
-                            The home page
+                            About this project
                         </h1>
                         <p>
-                            Welcome to the home page
+                            This is the about page
                         </p>
                     </div>
                 </div>
@@ -20,4 +20,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default About;

@@ -1,8 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { BrowserRouter, Route } from "react-router-dom";
+import isBrowser from "./core/is-browser";
+
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducers from "./core/redux/reducers";
+
 import App from "./app";
+import Home from "./pages/home";
+import About from "./pages/about";
 
-const container = document.getElementById("root");
+if (isBrowser()) {
+    const container = document.getElementById("root");
 
-ReactDOM.render(<App/>, container);
+    if (container) {
+
+        const store = createStore(reducers);
+
+        ReactDOM.render(
+            <Provider store={store}>
+                <BrowserRouter>
+                    <App>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/about" component={About} />
+                    </App>
+                </BrowserRouter>
+            </Provider>
+            , container);
+    }
+}

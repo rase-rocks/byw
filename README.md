@@ -22,6 +22,15 @@ Root
 +---- client // Client source files that are built into the s3-build folder
 |    |
 |    +---- app // Client code that is browserified
+|    |    |
+|    |    + core // Project wide components and utils
+|    |    |    |
+|    |    |    + redux // Redux specific code
+|    |    |    |
+|    |    |    +---- actions
+|    |    |    +---- reducers
+|    |    |
+|    |    +---- pages // Page components
 |    |
 |    +---- assets // Static assets that are to be copied to S3
 |    |
@@ -39,17 +48,35 @@ Root
 
 Community contributions are welcome. In order to contribute check out the project structure above.
 
+#### Prerequisites
+
+A familiarity with following concepts would be useful:
+
++ Javascript
++ Git
++ Nodejs
++ npm
++ React / Redux
+
 Clone the project to your local file system and run:
 
 <pre>npm install</pre>
+
+To get a build folder run:
+
+<pre>npm run build</pre>
 
 The package has the http-serve as a dependency to allow for local development. This will serve the files out of the s3-build folder. To use run:
 
 <pre>npm run serve-build</pre>
 
-To get a build folder run:
+### Build Process
 
-<pre>npm run build</pre>
+The build script first of all runs browserify over the client app so that it can be rendered by a local node instance. This is to enable a rendered html page to be uploaded to S3. 
+
+The build script also browserifies the client app and bundles it as well as copying over all the static assets.
+
+
 
 There is an eslintrc file included to enforce style guidlines.
 
