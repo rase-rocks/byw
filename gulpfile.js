@@ -45,6 +45,13 @@ gulp.task("static-assets", function () {
         .pipe(gulp.dest(getPath("assets")));
 });
 
+// Copy static api files to build folder
+
+gulp.task("static-api", function () {
+    return gulp.src("./static-api/**/*")
+        .pipe(gulp.dest(getPath("static-api")));
+});
+
 // Concat all the css files into one ready to be uncss'd and inlined
 
 gulp.task("static-css", function () {
@@ -69,7 +76,8 @@ gulp.task("static-optimize-css", function () {
 const staticTasks = [
     "static-assets",
     "static-client-bundle",
-    "static-css"
+    "static-css",
+    "static-api"
 ];
 
 gulp.task("static", staticTasks);

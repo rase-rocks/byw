@@ -15,10 +15,9 @@ const wrapperStyle = {
 
 const listener = function () {
     if (isBrowser()) {
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 };
-
 
 class App extends React.Component {
 
