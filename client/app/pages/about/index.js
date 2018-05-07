@@ -1,19 +1,17 @@
 import React from "react";
 import PageContainer from "../../page-content";
 
+import PageHeader from "../../resusable-components/page-header";
+
 class About extends React.Component {
     render() {
         return (
             <PageContainer>
                 <div className="container">
 
-                    <div className="row">
-                        <div className="col-md-12">
-                            <h1>
-                                About this service
-                            </h1>
-                        </div>
-                    </div>
+                    <PageHeader>
+                        About this service
+                    </PageHeader>
 
                     <div className="row">
                         <div className="col-md-4">
@@ -35,12 +33,6 @@ class About extends React.Component {
                             <p>
                                 So, before you shop, go on a day out, or whatever you like to do,
                                 see if there will be a Welsh language welcome and, above all, use your Welsh yourself!
-                            </p>
-                        </div>
-                        <div className="col-md-4">
-                            <p>
-                                Oh, and if you find a place not listed here, let us know and we will
-                                sort it so that everyone can know about it and leave a review.
                             </p>
                         </div>
                         <div className="col-md-8">

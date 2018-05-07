@@ -1,0 +1,12 @@
+.quote {
+    background-color: #343a40;
+    color: whitesmoke;
+}
+
+.quote p {
+    font-style: italic;
+}
+
+.quote p:before {
+    content: "- "
+}

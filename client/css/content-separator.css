@@ -1,0 +1,7 @@
+.content-separator {  
+    min-height: 40vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
