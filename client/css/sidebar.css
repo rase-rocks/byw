@@ -1,0 +1,9 @@
+.sidebar {
+    background-color: #4c555e;
+    color: whitesmoke;
+}
+
+/* Used to color the spacing between columns */
+.sidebar-content {
+    background-color: #4c555e;
+}

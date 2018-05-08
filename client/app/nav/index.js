@@ -16,7 +16,7 @@ const routes = [
 class Nav extends React.Component {
     render() {
         return (
-            <nav id="mainNav" className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <nav id="mainNav" className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
                     <a className="navbar-brand" href="#">BYW</a>
                     <button className="navbar-toggler"

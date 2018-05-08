@@ -1,5 +1,4 @@
 import React from "react";
-import ContentSeparator from "../content-separator";
 
 import {random} from "./quotes";
 
@@ -18,10 +17,10 @@ class Quote extends React.Component {
 
         return (
             <div className="quote">
-                <ContentSeparator>
+                <div className="content-separator">
                     <h1>{quote.CY}</h1>
                     <p>{quote.EN}</p>
-                </ContentSeparator>
+                </div>
             </div>
         );
     }

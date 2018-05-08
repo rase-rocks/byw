@@ -60,6 +60,13 @@ gulp.task("static-css", function () {
         .pipe(gulp.dest(getPath("css")));
 });
 
+// Copy the css assets required / expected by Leaflet
+
+gulp.task("static-css-image-copy", function () {
+    return gulp.src("./client/css/images/*")
+        .pipe(gulp.dest(getPath("css/images")));
+});
+
 // Remove unused CSS classes using the index.html document for reference
 // This task should be run separately after the css task has finished
 
@@ -77,6 +84,7 @@ const staticTasks = [
     "static-assets",
     "static-client-bundle",
     "static-css",
+    "static-css-image-copy",
     "static-api"
 ];
 
