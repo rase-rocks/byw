@@ -1961,8 +1961,8 @@ pre code {
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
+  color: whitesmoke;
+  background-color: inherit;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -1975,9 +1975,6 @@ pre code {
 }
 
 .form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
@@ -2809,10 +2806,10 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-  color: #6c757d;
+  color: whitesmoke;
   background-color: transparent;
   background-image: none;
-  border-color: #6c757d;
+  border-color: whitesmoke;
 }
 
 .btn-outline-secondary:hover {
