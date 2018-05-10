@@ -1,26 +1,34 @@
 import React from "react";
-import FullPageMap from "./full-page-map";
-import Sidebar from "./sidebar";
 import Quote from "../../resusable-components/quote";
 
 class Home extends React.Component {
     render() {
         return (
-            <div>
-                <div className="row">
+            <div className="full-page-content">
 
-                    <Sidebar/>
+                <div className="hero">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
 
-                    <div className="col-md-9 sidebar-content">
-                        <FullPageMap />
+                                <h1>
+                                    Hero content
+                                </h1>
+
+                            </div>
+                        </div>
                     </div>
-                    
                 </div>
 
-                <div className="row">
-                    <Quote />
+                <div className="container half-page-content">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <h2>The containerised content</h2>
+                        </div>
+                    </div>
                 </div>
 
+                <Quote/>
             </div>
         );
     }

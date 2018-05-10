@@ -42,7 +42,6 @@
 }
 
 html {
-  background-color: #343a40;
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -3960,6 +3959,10 @@ tbody.collapse.show {
   padding: 5px;
   margin-left: 10px;
   margin-right: 10px
+}
+
+.navbar > .active > a {
+  color: red;
 }
 
 @media (max-width: 575.98px) {

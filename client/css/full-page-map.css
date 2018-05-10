@@ -1,6 +1,4 @@
 .full-page-map {
-    padding-top: 50px;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    background-color: darkslategray;
 }

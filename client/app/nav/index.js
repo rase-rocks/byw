@@ -10,6 +10,7 @@ const li = function (route) {
 
 const routes = [
     { url: "/", title: "Home" },
+    { url: "/map", title: "Map" },
     { url: "/about", title: "About" }
 ].map(li);
 

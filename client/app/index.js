@@ -10,6 +10,7 @@ import reducers from "./core/redux/reducers";
 
 import App from "./app";
 import Home from "./pages/home";
+import MapPage from "./pages/map";
 import About from "./pages/about";
 
 if (isBrowser()) {
@@ -24,6 +25,7 @@ if (isBrowser()) {
                 <BrowserRouter>
                     <App>
                         <Route path="/" exact component={Home} />
+                        <Route path="/map" component={MapPage}/>
                         <Route path="/about" component={About} />
                     </App>
                 </BrowserRouter>

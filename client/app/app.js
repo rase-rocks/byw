@@ -9,10 +9,6 @@ import children from "./core/props-children";
 
 import Footer from "./footer";
 
-const wrapperStyle = {
-    fontFamily: "Open Sans, sans-serif"
-};
-
 const listener = function () {
     if (isBrowser()) {
         window.scrollTo(0, 0);
@@ -32,10 +28,8 @@ class App extends React.Component {
 
             <div>
                 <Nav />
-                <div className="wrapper" style={wrapperStyle}>
-
+                <div>
                     {this.props.children}
-
                 </div>
                 <Footer />
             </div>
