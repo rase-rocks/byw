@@ -3,7 +3,6 @@ const gulp = require("gulp");
 const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
 const concat = require("gulp-concat");
-const uncss = require("gulp-uncss");
 
 const names = require("./build-settings/build-settings");
 
@@ -67,25 +66,12 @@ gulp.task("static-css-image-copy", function () {
         .pipe(gulp.dest(getPath("css/images")));
 });
 
-// Remove unused CSS classes using the index.html document for reference
-// This task should be run separately after the css task has finished
-
-gulp.task("static-optimize-css", function () {
-    return gulp.src(getPath("css/byw.style.min.css"))
-        .pipe(uncss({
-            html: [getPath("index.html")]
-        }))
-        .pipe(gulp.dest(getPath("css")));
-});
-
 // The tasks that create the client bundle
 
-const staticTasks = [
+gulp.task("static", gulp.series(gulp.parallel(
     "static-assets",
     "static-client-bundle",
     "static-css",
     "static-css-image-copy",
     "static-api"
-];
-
-gulp.task("static", staticTasks);
+)));
