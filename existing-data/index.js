@@ -17,7 +17,7 @@ console.log("** Starting Conversion - ", csvFilePath);
 
 csv()
     .fromFile(csvFilePath)
-    .on("json", (location )=> {
+    .on("json", (location) => {
         locations.push(location);
     })
     .on("done", (error) => {
