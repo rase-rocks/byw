@@ -39,9 +39,16 @@ Root
 |
 +---- s3-build // Files for sync to static S3 hosting. Do not update this folder manually
 |
++---- static-api // dev static file to mock api
+|     |
+|     +---- public
+|           |
+|           +---- data // mock data source of original website data
+|
 +---- build-settings // Build scripts
 |
-+---- 
++---- existing-data // dev means to use data from existing website datasource
+|
 </pre>
 
 ### Contributing
