@@ -6,6 +6,7 @@
   "scripts": {
     "serve-build": "node node_modules/http-serve/bin/http-serve --cors ./s3-build",
     "build": "sh ./build-settings/build.sh",
+    "convert-csv": "node ./existing-data/index.js",
     "test": "./node_modules/.bin/mocha --require babel-core/register"
   },
   "repository": {
@@ -37,6 +38,7 @@
     "babelify": "^8.0.0",
     "browserify": "^16.2.0",
     "chai": "^4.1.2",
+    "csvtojson": "^1.1.12",
     "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "http-serve": "^1.0.1",
