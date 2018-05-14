@@ -1,26 +1,33 @@
 import React from "react";
-import FullPageMap from "./full-page-map";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-class MapPage extends React.Component {
+import { requestLocationsAction } from "../../core/redux/actions";
+
+import MapPage from "./map-page";
+
+class MapPageController extends React.Component {
+
+    componentDidMount() {
+        this.props.dispatch(requestLocationsAction());
+    }
+
     render() {
         return (
-
-            <div>
-
-                <div style={{ width: "100%", height: "50vh" }}>
-                    <FullPageMap />
-                </div>
-
-                <div className="container full-page-content">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <p>Under map content</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <MapPage locations={this.props.locations}/>
         );
     }
 }
 
-export default MapPage;
+MapPageController.propTypes = {
+    locations: PropTypes.array,
+    dispatch: PropTypes.func.isRequired
+};
+
+const mapStateToProps = function (state) {
+    return {
+        locations: state.data.locations
+    };
+};
+
+export default connect(mapStateToProps)(MapPageController);

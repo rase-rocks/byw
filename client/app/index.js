@@ -5,8 +5,9 @@ import { BrowserRouter, Route } from "react-router-dom";
 import isBrowser from "./core/is-browser";
 
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import reducers from "./core/redux/reducers";
+import requestLocationsMiddleware from "./core/redux/middleware/request-locations-middleware";
 
 import App from "./app";
 import Home from "./pages/home";
@@ -18,7 +19,9 @@ if (isBrowser()) {
 
     if (container) {
 
-        const store = createStore(reducers);
+        const store = createStore(
+            reducers, 
+            applyMiddleware(requestLocationsMiddleware));
 
         ReactDOM.render(
             <Provider store={store}>
