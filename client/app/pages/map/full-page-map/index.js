@@ -1,5 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 import isBrowser from "../../../core/is-browser";
+
+import {
+    attribution,
+    tileLayerString,
+    initialCoords,
+    MAP_ID
+} from "./constants";
 
 /*
 * TODO: Find a fix for this
@@ -17,30 +25,49 @@ if (isBrowser()) {
     L = require("Leaflet");
 }
 
-const MAP_ID = "full-page-map";
+const popupString = function (location) {
+    return `<p>${location.name}</p><button>Click</button>`;
+};
+
+const setMarkers = function (map, locations) {
+    locations
+        .forEach((location) => {
+            L.marker(location.coordinates)
+                .addTo(map)
+                .bindPopup(popupString(location));
+        });
+};
 
 class FullPageMap extends React.Component {
 
-    componentDidMount() {
-        if (!isBrowser()) { return; }
-        var map = L.map(MAP_ID).setView([51.505, -0.09], 13);
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.locations === this.props.locations) { return; }
 
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
-        }).addTo(map);
+        setMarkers(this.state.map, nextProps.locations);
 
-        L.marker([51.5, -0.09]).addTo(map)
-            .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
-            .openPopup();
     }
 
+    componentDidMount() {
+        if (!isBrowser()) { return; }
 
+        const map = L.map(MAP_ID).setView(initialCoords, 7);
+        L.tileLayer(tileLayerString, attribution).addTo(map);
+        
+        this.setState({ map: map });
+
+        setMarkers(map, this.props.locations);
+
+    }
 
     render() {
         return (
-            <div id={MAP_ID} className="full-page-map"/>
+            <div id={MAP_ID} className="full-page-map" />
         );
     }
 }
+
+FullPageMap.propTypes = {
+    locations: PropTypes.array
+};
 
 export default FullPageMap;

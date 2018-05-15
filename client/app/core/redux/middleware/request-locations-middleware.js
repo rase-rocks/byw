@@ -1,5 +1,6 @@
 import { types, setLocationsAction } from "../actions";
 import makeApiClient from "../../api-client";
+//import toGeoJSON from "../../model/location-to-geojson";
 
 const api = makeApiClient(fetch);
 
@@ -13,6 +14,10 @@ const updateSentRequests = function (cache) {
         return locations;
     };
 };
+
+// const mapLocationsToGeoJSON = function (locations) {
+//     return locations.map(location => toGeoJSON(location));
+// };
 
 const dispatchLocationsTo = function (store) {
     return function (locations) {
@@ -33,6 +38,7 @@ export default store => next => action => {
         api
             .locations()
             .then(updateSentRequests(sentRequests))
+            //.then(mapLocationsToGeoJSON)
             .then(dispatchLocationsTo(store));
 
         break;
