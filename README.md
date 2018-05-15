@@ -25,10 +25,14 @@ Root
 |    |    |
 |    |    + core // Project wide components and utils
 |    |    |    |
-|    |    |    + redux // Redux specific code
+|    |    |    +---- model // Model methods
+|    |    |    |   
 |    |    |    |
-|    |    |    +---- actions
-|    |    |    +---- reducers
+|    |    |    +---- redux // Redux specific code
+|    |    |         |
+|    |    |         +---- actions
+|    |    |         +---- middleware
+|    |    |         +---- reducers
 |    |    |
 |    |    +---- pages // Page components
 |    |
