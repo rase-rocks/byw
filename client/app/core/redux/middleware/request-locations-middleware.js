@@ -15,10 +15,6 @@ const updateSentRequests = function (cache) {
     };
 };
 
-// const mapLocationsToGeoJSON = function (locations) {
-//     return locations.map(location => toGeoJSON(location));
-// };
-
 const dispatchLocationsTo = function (store) {
     return function (locations) {
         store.dispatch(setLocationsAction(locations));
@@ -38,7 +34,6 @@ export default store => next => action => {
         api
             .locations()
             .then(updateSentRequests(sentRequests))
-            //.then(mapLocationsToGeoJSON)
             .then(dispatchLocationsTo(store));
 
         break;

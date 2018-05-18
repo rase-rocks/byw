@@ -2,7 +2,8 @@ import { types } from "../actions";
 
 const defaultState = {
     needsUpdate: true,
-    locations: []
+    locations: [],
+    searchResults: []
 };
 
 const dataReducer = function (state = defaultState, action) {

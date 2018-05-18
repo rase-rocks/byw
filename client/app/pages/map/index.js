@@ -4,29 +4,53 @@ import { connect } from "react-redux";
 
 import { requestLocationsAction } from "../../core/redux/actions";
 
+import eventTargetValue from "../../core/event-target-value";
+const value = eventTargetValue((v) => v.toUpperCase());
+
+import bindMethods from "../../core/bind-methods";
+
 import MapPage from "./map-page";
 
 class MapPageController extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            searchText: ""
+        };
+
+        bindMethods(this, ["onTextChange"]);
+    }
 
     componentDidMount() {
         this.props.dispatch(requestLocationsAction());
     }
 
+    onTextChange() {
+        const self = this;
+        return function (e) {
+            self.setState({searchText : value(e)});
+        };
+    }
+
     render() {
         return (
-            <MapPage locations={this.props.locations}/>
+            <MapPage searchResults={this.props.searchResults}
+                searchText={this.state.searchText}
+                searchValueDidChange={this.onTextChange()} />
         );
     }
 }
 
 MapPageController.propTypes = {
-    locations: PropTypes.array,
+    searchResults: PropTypes.array,
     dispatch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
-        locations: state.data.locations
+        searchResults: state.data.searchResults
     };
 };
 

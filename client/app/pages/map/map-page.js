@@ -4,9 +4,16 @@ import hash from "../../core/hash";
 import FullPageMap from "./full-page-map";
 
 class MapPage extends React.Component {
+
     render() {
 
-        const locations = this.props.locations.map(location => (
+        const {
+            searchResults,
+            searchText,
+            searchValueDidChange
+        } = this.props;
+
+        const locations = searchResults.map(location => (
             <p key={hash(location.name)}>
                 {location.name}<br/>
                 {location.address}
@@ -18,10 +25,17 @@ class MapPage extends React.Component {
             <div>
 
                 <div style={{ width: "100%", height: "50vh" }}>
-                    <FullPageMap locations={this.props.locations}/>
+                    <FullPageMap searchResults={searchResults}/>
                 </div>
 
                 <div className="container full-page-content">
+                    <div className="row">
+                        <div className="col-md-12">
+                        
+                            <input type="text" onChange={searchValueDidChange} value={searchText}/>
+
+                        </div>
+                    </div>
                     <div className="row">
                         <div className="col-md-12">
                             {locations}
@@ -34,7 +48,9 @@ class MapPage extends React.Component {
 }
 
 MapPage.propTypes = {
-    locations: PropTypes.array
+    searchResults: PropTypes.array,
+    searchText: PropTypes.string,
+    searchValueDidChange: PropTypes.func.isRequired
 };
 
 export default MapPage;
