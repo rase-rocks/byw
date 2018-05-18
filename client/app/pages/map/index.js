@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { requestLocationsAction } from "../../core/redux/actions";
 
 import eventTargetValue from "../../core/event-target-value";
-const value = eventTargetValue((v) => v.toUpperCase());
+const value = eventTargetValue();
 
 import bindMethods from "../../core/bind-methods";
 

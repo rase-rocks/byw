@@ -15,7 +15,7 @@ class MapPage extends React.Component {
 
         const locations = searchResults.map(location => (
             <p key={hash(location.name)}>
-                {location.name}<br/>
+                {location.name}<br />
                 {location.address}
             </p>
         ));
@@ -25,14 +25,20 @@ class MapPage extends React.Component {
             <div>
 
                 <div style={{ width: "100%", height: "50vh" }}>
-                    <FullPageMap searchResults={searchResults}/>
+                    <FullPageMap searchResults={searchResults} />
                 </div>
 
                 <div className="container full-page-content">
-                    <div className="row">
+                    <div className="row" style={{paddingTop: "50px"}}>
                         <div className="col-md-12">
-                        
-                            <input type="text" onChange={searchValueDidChange} value={searchText}/>
+
+                            <p>
+                                <input type="text" onChange={searchValueDidChange} value={searchText} />
+                            </p>
+
+                            <p>
+                                Searching For: <span>{searchText}</span>
+                            </p>
 
                         </div>
                     </div>
