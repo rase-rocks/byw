@@ -70,8 +70,7 @@ describe("Haversine Forumlae", function () {
             return [location.longitude, location.latitude];
         };
 
-        const baseCoord = locationToCoord(base);
-        const haversineSort = makeArraySort(baseCoord, locationToCoord);
+        const haversineSort = makeArraySort(base, locationToCoord);
 
         const locs = [loc2, loc3, loc1];
 
