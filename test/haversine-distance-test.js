@@ -9,6 +9,10 @@ const makeArraySort = require("../client/app/core/model/haversine-distance").mak
 // The level of accuracy for the purpose of this data only ever has to be rough as it
 // purely for the sorting and finding of nearby points. The actual distances are not used.
 
+const toGeoJson = function (coordinate) {
+    return [coordinate.longitude, coordinate.latitude];
+};
+
 // Snowdom Summit
 const base = {
     latitude: 53.0685,
@@ -54,7 +58,7 @@ describe("Haversine Forumlae", function () {
                 expected: "136.0"
             }
         ].forEach((test) => {
-            const result = haversineDistance(test.coordinates[0], test.coordinates[1]);
+            const result = haversineDistance(toGeoJson(test.coordinates[0]), toGeoJson(test.coordinates[1]));
             expect(result.toFixed(1)).to.equal(test.expected);
         });
 
@@ -62,12 +66,29 @@ describe("Haversine Forumlae", function () {
 
     it("correctly sorts an array", function () {
 
-        const haversineSort = makeArraySort(base);
+        const locationToCoord = function (location) {
+            return [location.longitude, location.latitude];
+        };
 
-        const sortedPoints = [loc2, loc3, loc1].sort(haversineSort);
+        const baseCoord = locationToCoord(base);
+        const haversineSort = makeArraySort(baseCoord, locationToCoord);
+
+        const locs = [loc2, loc3, loc1];
+
+        const sortedPoints = locs
+            .sort(haversineSort);
+
+        const locWithOrder = function (idx) {
+            return locs.filter(loc => loc.order == idx)[0];
+        };
 
         sortedPoints.forEach((element, idx) => {
-            expect(element.order).to.equal(idx);
+
+            const expectedLoc = locWithOrder(idx);
+
+            expect(element.latitude).to.equal(expectedLoc.latitude);
+            expect(element.longitude).to.equal(expectedLoc.longitude);
+
         });
 
     });

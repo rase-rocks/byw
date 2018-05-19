@@ -12,22 +12,25 @@ function makeDegToRad() {
     };
 }
 
+const LAT = 1;
+const LNG = 0;
+
 /*
-* Takes an object of shape:
-* {
+* Takes an array of shape:
+* [
+*   longitude: <Number>,
 *   latitude: <Number>
-*   longitude: <Number>
-* }
+* ]
 * as the coordinate argument
 */
 function haversineDistance(coordinate1, coordinate2) {
 
     const R = 6371;
-    const dLat = radians(coordinate2.latitude - coordinate1.latitude);
-    const dLon = radians(coordinate2.longitude - coordinate1.longitude);
+    const dLat = radians(coordinate2[LAT] - coordinate1[LAT]);
+    const dLon = radians(coordinate2[LNG] - coordinate1[LNG]);
     const a =
         sin(dLat / 2) * sin(dLat / 2) +
-        cos(radians(coordinate1.latitude)) * cos(radians(coordinate2.latitude)) *
+        cos(radians(coordinate1[LAT])) * cos(radians(coordinate2[LAT])) *
         sin(dLon / 2) * sin(dLon / 2);
     const c = 2 * atan2(sqrt(a), sqrt(1 - a));
 
@@ -37,9 +40,13 @@ function haversineDistance(coordinate1, coordinate2) {
 // Simplified sorting function does not allow for equal distance but does
 // cut out another haversineDistance call to determine greater or equal to
 // should be good enough for our purposes
-function makeArraySort(basePoint) {
+function makeArraySort(basePoint, coordinateFn) {
     return function compare(a, b) {
-        if (haversineDistance(basePoint, a) < haversineDistance(basePoint, b)) {
+        
+        const coordinateA = coordinateFn(a);
+        const coordinateB = coordinateFn(b);
+
+        if (haversineDistance(basePoint, coordinateA) < haversineDistance(basePoint, coordinateB)) {
             return -1;
         }
         return 1;
