@@ -10,7 +10,7 @@ const longitude = "-4.06281809999996";
 const sample = {
     "name":"Aberystwyth Arts Centre",
     "address":"Aberystwyth University - Penglais Campus, Aberystwyth SY23 3DE, UK",
-    "coordinates":[latiude, longitude],
+    "coordinates":[longitude, latiude],
     "category":"75%+"
 };
 

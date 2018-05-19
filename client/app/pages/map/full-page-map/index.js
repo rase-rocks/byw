@@ -9,6 +9,8 @@ import {
     MAP_ID
 } from "./constants";
 
+import toMarkerCoords from "../../../core/model/geojson-coordinates-to-marker-coordinates";
+
 /*
 * TODO: Find a fix for this
 *
@@ -32,7 +34,7 @@ const popupString = function (location) {
 const setMarkers = function (map, locations) {
     locations
         .forEach((location) => {
-            L.marker(location.coordinates)
+            L.marker(toMarkerCoords(location.coordinates))
                 .addTo(map)
                 .bindPopup(popupString(location));
         });

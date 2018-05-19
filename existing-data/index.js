@@ -26,7 +26,7 @@ csv()
             return {
                 name: outlet.Name,
                 address: outlet.Address,
-                coordinates: [outlet.Latitude, outlet.Longitude],
+                coordinates: [outlet.Longitude, outlet.Latitude],
                 category: outlet.Category
             };
         });
