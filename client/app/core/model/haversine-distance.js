@@ -46,14 +46,14 @@ function haversineDistance(coordinate1, coordinate2) {
 // The coordinateFn should take an object of the intended sort type and return
 // a an array of numbers encoding the longitude and latitude in that order 
 // as per GeoJson
-function makeArraySort(basePoint, coordinateFn) {
+function makeArraySort(basePoint, getter) {
 
-    const center = coordinateFn(basePoint);
+    const center = getter(basePoint);
 
     return function compare(a, b) {
         
-        const coordinateA = coordinateFn(a);
-        const coordinateB = coordinateFn(b);
+        const coordinateA = getter(a);
+        const coordinateB = getter(b);
 
         if (haversineDistance(center, coordinateA) < haversineDistance(center, coordinateB)) {
             return -1;

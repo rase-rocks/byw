@@ -1,8 +1,9 @@
-const filterText = function (api, string, locations, distance) {
-    return new Promise(function (resolve) {
-        console.log("Searching text", distance);
-        resolve([locations[4], locations[6]]);
-    });
+import makeFilter from "./make-filter";
+
+const match = function (string) {
+    return function (location) {
+        return ~location.name.toLowerCase().indexOf(string) || ~location.address.toLowerCase().indexOf(string);
+    };
 };
 
-export default filterText;
+export default makeFilter(match);

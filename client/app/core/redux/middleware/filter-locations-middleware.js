@@ -15,7 +15,7 @@ export default function makeFilterLocationsMiddleware(api) {
         case types.filterLocations: {
 
             const filterString = action.payload;
-            if (!filterString || filterString.length < 4) { break; } // Only filter if there is 4 or more chars
+            if (!filterString || filterString.length < 3) { break; } // Only filter if there is 4 or more chars
 
             filterLocations(api, store.getState().data.locations, filterString)
                 .then(dispatchTo(store));
