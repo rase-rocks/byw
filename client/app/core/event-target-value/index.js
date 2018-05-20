@@ -4,7 +4,14 @@
 const eventTargetValue = function (preprocessor = (value) => { return value; }) {
     
     return function (event) {
-        return preprocessor(event.target.value);
+        const value = event.target.value || "";
+        const processed = preprocessor(value);
+        
+        if (typeof processed == "number") {
+            return (isNaN(processed)) ? 0 : processed;
+        }
+
+        return processed;
     };
 };
 

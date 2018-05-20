@@ -15,7 +15,7 @@ const filterCoordinates = function (api, string, locations, distance) {
         
         const filter = makeFilter(basePoint, distance, getter);
         const filteredLocations = locations.filter(filter);
-
+        
         resolve(filteredLocations);
     });
 };

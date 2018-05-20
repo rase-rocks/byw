@@ -87,8 +87,11 @@ The build script first of all runs browserify over the client app so that it can
 
 The build script also browserifies the client app and bundles it as well as copying over all the static assets.
 
-
-
 There is an eslintrc file included to enforce style guidlines.
+
+### Dependencies
+
+Geocoding: https://github.com/ideal-postcodes/postcodes.io/ <br/>
+Map tiling: https://github.com/Leaflet/Leaflet
 
 

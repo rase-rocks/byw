@@ -17,10 +17,11 @@ class MapPageController extends React.Component {
         super(props);
 
         this.state = {
-            searchText: ""
+            searchText: "",
+            searchDistance: 20
         };
 
-        bindMethods(this, ["onTextChange"]);
+        bindMethods(this, ["onTextChange", "onDistanceChange"]);
     }
 
     componentDidMount() {
@@ -32,7 +33,15 @@ class MapPageController extends React.Component {
         return function (e) {
             const searchFor = value(e);
             self.setState({searchText : searchFor});
-            self.props.dispatch(filterLocationsAction(searchFor));
+            self.props.dispatch(filterLocationsAction(searchFor, self.state.searchDistance));
+        };
+    }
+
+    onDistanceChange() {
+        const self = this;
+        return function (newDistance) {
+            self.setState({searchDistance: newDistance});
+            self.props.dispatch(filterLocationsAction(self.state.searchText, newDistance));
         };
     }
 
@@ -40,7 +49,9 @@ class MapPageController extends React.Component {
         return (
             <MapPage filteredResults={this.props.filteredResults}
                 searchText={this.state.searchText}
-                searchValueDidChange={this.onTextChange()} />
+                searchDistance={this.state.searchDistance}
+                searchValueDidChange={this.onTextChange()}
+                searchDistanceDidChange={this.onDistanceChange()} />
         );
     }
 }

@@ -18,12 +18,12 @@ const requestLocationsAction = function () {
     return { type: types.requestLocations, payload: {} };
 };
 
-const filterLocationsAction = function (string) {
-    return { type: types.filterLocations, payload: string };
+const filterLocationsAction = function (filterString, filterDistance) {
+    return { type: types.filterLocations, payload: {filterString, filterDistance} };
 };
 
-const setFilteredLocationsAction = function (data) {
-    return { type: types.setFilteredLocations, payload: data };
+const setFilteredLocationsAction = function (locations) {
+    return { type: types.setFilteredLocations, payload: locations};
 };
 
 export {
