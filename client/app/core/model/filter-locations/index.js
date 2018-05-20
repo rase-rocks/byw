@@ -28,7 +28,7 @@ const filterForSearch = function (filterString) {
     return (filterTypes.length > 0) ? filterTypes[0].filter : filterText;
 };
 
-const filterLocations = function (api, locations, filterString, distance = 15) {
+const filterLocations = function (api, locations, filterString, distance = 25) {
     return new Promise(function (resolve) {
 
         filterForSearch(filterString)(api, filterString, locations, distance)

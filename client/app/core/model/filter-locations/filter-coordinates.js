@@ -1,7 +1,22 @@
+import { makeFilter } from "../haversine-distance";
+import arrayReversed from "../array-reversed";
+import getter from "../coordinates-getter";
+
+const makeBasePoint = function (string) {
+    return {
+        coordinates: arrayReversed(string.split(",").map(str => str.trim()))
+    };
+};
+
 const filterCoordinates = function (api, string, locations, distance) {
     return new Promise(function (resolve) {
-        console.log("Searching coordinates", distance);
-        resolve([locations[7], locations[8]]);
+
+        const basePoint = makeBasePoint(string);
+        
+        const filter = makeFilter(basePoint, distance, getter);
+        const filteredLocations = locations.filter(filter);
+
+        resolve(filteredLocations);
     });
 };
 

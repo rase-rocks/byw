@@ -4,6 +4,7 @@ const expect = require("chai").expect;
 
 const haversineDistance = require("../client/app/core/model/haversine-distance").haversineDistance;
 const makeArraySort = require("../client/app/core/model/haversine-distance").makeArraySort;
+const makeFilter = require("../client/app/core/model/haversine-distance").makeFilter;
 
 // These coordinates come from Google maps and the test expectation is generated using Wolfram Alpha
 // The level of accuracy for the purpose of this data only ever has to be rough as it
@@ -12,7 +13,7 @@ const makeArraySort = require("../client/app/core/model/haversine-distance").mak
 const toGeoJson = function (coordinate) {
     return [coordinate.longitude, coordinate.latitude];
 };
-
+// 53.0685, -4.07625
 // Snowdom Summit
 const base = {
     latitude: 53.0685,
@@ -38,6 +39,17 @@ const loc3 = {
     order: 2,
     latitude: 51.85347222222222,
     longitude: -4.310138888888889
+};
+
+// Friendly names
+const snowdon = Object.assign({}, base);
+const caernarfon = Object.assign({}, loc1);
+const machynlleth = Object.assign({}, loc2);
+const carmarthen = Object.assign({}, loc3);
+
+// Getter for test data type
+const locationToCoord = function (location) {
+    return [location.longitude, location.latitude];
 };
 
 describe("Haversine Forumlae", function () {
@@ -66,10 +78,6 @@ describe("Haversine Forumlae", function () {
 
     it("correctly sorts an array", function () {
 
-        const locationToCoord = function (location) {
-            return [location.longitude, location.latitude];
-        };
-
         const haversineSort = makeArraySort(base, locationToCoord);
 
         const locs = [loc2, loc3, loc1];
@@ -89,6 +97,19 @@ describe("Haversine Forumlae", function () {
             expect(element.longitude).to.equal(expectedLoc.longitude);
 
         });
+
+    });
+
+    it("correctly filters array", function () {
+
+        const filter = makeFilter(snowdon, 20, locationToCoord);
+
+        const originalLocations = [caernarfon, machynlleth, carmarthen];
+
+        const filteredLocations = originalLocations.filter(filter);
+
+        expect(filteredLocations.length).to.equal(1);
+        expect(filteredLocations[0].latitude).to.equal(caernarfon.latitude);
 
     });
 

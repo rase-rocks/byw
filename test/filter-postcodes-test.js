@@ -4,6 +4,6 @@ const expect = require("chai").expect;
 
 describe("filter-postcodes", function () {
     it("fails", function() {
-        expect(true).to.equal(false);
+        expect(true).to.equal(false, "This test is not yet implemented");
     });
 });

@@ -62,4 +62,14 @@ function makeArraySort(basePoint, getter) {
     };
 }
 
-export { haversineDistance, makeArraySort };
+function makeFilter(basePoint, distance, getter) {
+
+    const center = getter(basePoint);
+
+    return function filter(element) {
+        return haversineDistance(center, getter(element)) <= distance;
+    };
+
+}
+
+export { haversineDistance, makeArraySort, makeFilter };
