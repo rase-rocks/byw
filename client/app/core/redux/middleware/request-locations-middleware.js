@@ -1,8 +1,4 @@
 import { types, setLocationsAction } from "../actions";
-import makeApiClient from "../../api-client";
-//import toGeoJSON from "../../model/location-to-geojson";
-
-const api = makeApiClient(fetch);
 
 const key = "LOCATIONS";
 
@@ -21,26 +17,28 @@ const dispatchLocationsTo = function (store) {
     };
 };
 
-export default store => next => action => {
+export default function makeRequestLocationsMiddleware(api) {
+    return store => next => action => {
 
-    switch (action.type) {
+        switch (action.type) {
 
-    case types.requestLocations: {
+        case types.requestLocations: {
 
-        if (sentRequests[key]) {
+            if (sentRequests[key]) {
+                break;
+            }
+
+            api
+                .locations()
+                .then(updateSentRequests(sentRequests))
+                .then(dispatchLocationsTo(store));
+
             break;
         }
 
-        api
-            .locations()
-            .then(updateSentRequests(sentRequests))
-            .then(dispatchLocationsTo(store));
-
-        break;
-    }
-
-    }
+        }
 
 
-    return next(action);
-};
+        return next(action);
+    };
+}

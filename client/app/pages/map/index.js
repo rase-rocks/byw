@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { requestLocationsAction } from "../../core/redux/actions";
+import { requestLocationsAction, filterLocationsAction } from "../../core/redux/actions";
 
 import eventTargetValue from "../../core/event-target-value";
 const value = eventTargetValue();
@@ -30,13 +30,15 @@ class MapPageController extends React.Component {
     onTextChange() {
         const self = this;
         return function (e) {
-            self.setState({searchText : value(e)});
+            const searchFor = value(e);
+            self.setState({searchText : searchFor});
+            self.props.dispatch(filterLocationsAction(searchFor));
         };
     }
 
     render() {
         return (
-            <MapPage searchResults={this.props.searchResults}
+            <MapPage filteredResults={this.props.filteredResults}
                 searchText={this.state.searchText}
                 searchValueDidChange={this.onTextChange()} />
         );
@@ -44,13 +46,13 @@ class MapPageController extends React.Component {
 }
 
 MapPageController.propTypes = {
-    searchResults: PropTypes.array,
+    filteredResults: PropTypes.array,
     dispatch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
-        searchResults: state.data.searchResults
+        filteredResults: state.data.filteredResults
     };
 };
 

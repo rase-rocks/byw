@@ -4,10 +4,13 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import isBrowser from "./core/is-browser";
 
+import makeApiClient from "./core/api-client";
+
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import reducers from "./core/redux/reducers";
-import requestLocationsMiddleware from "./core/redux/middleware/request-locations-middleware";
+import makeRequestLocationsMiddleware from "./core/redux/middleware/request-locations-middleware";
+import makeFilterLocationsMiddleware from "./core/redux/middleware/filter-locations-middleware";
 
 import App from "./app";
 import Home from "./pages/home";
@@ -19,9 +22,12 @@ if (isBrowser()) {
 
     if (container) {
 
+        const api = makeApiClient(fetch);
+
         const store = createStore(
             reducers, 
-            applyMiddleware(requestLocationsMiddleware));
+            applyMiddleware(makeRequestLocationsMiddleware(api), 
+                makeFilterLocationsMiddleware(api)));
 
         ReactDOM.render(
             <Provider store={store}>

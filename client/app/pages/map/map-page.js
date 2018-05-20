@@ -8,12 +8,12 @@ class MapPage extends React.Component {
     render() {
 
         const {
-            searchResults,
+            filteredResults,
             searchText,
             searchValueDidChange
         } = this.props;
 
-        const locations = searchResults.map(location => (
+        const locations = filteredResults.map(location => (
             <p key={hash(location.name)}>
                 {location.name}<br />
                 {location.address}
@@ -25,7 +25,7 @@ class MapPage extends React.Component {
             <div>
 
                 <div style={{ width: "100%", height: "50vh" }}>
-                    <FullPageMap searchResults={searchResults} />
+                    <FullPageMap filteredResults={filteredResults} />
                 </div>
 
                 <div className="container full-page-content">
@@ -54,7 +54,7 @@ class MapPage extends React.Component {
 }
 
 MapPage.propTypes = {
-    searchResults: PropTypes.array,
+    filteredResults: PropTypes.array,
     searchText: PropTypes.string,
     searchValueDidChange: PropTypes.func.isRequired
 };

@@ -43,9 +43,9 @@ const setMarkers = function (map, locations) {
 class FullPageMap extends React.Component {
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.searchResults === this.props.searchResults) { return; }
+        if (nextProps.filteredResults === this.props.filteredResults) { return; }
 
-        setMarkers(this.state.map, nextProps.searchResults);
+        setMarkers(this.state.map, nextProps.filteredResults);
 
     }
 
@@ -57,7 +57,7 @@ class FullPageMap extends React.Component {
         
         this.setState({ map: map });
 
-        setMarkers(map, this.props.searchResults);
+        setMarkers(map, this.props.filteredResults);
 
     }
 
@@ -69,7 +69,7 @@ class FullPageMap extends React.Component {
 }
 
 FullPageMap.propTypes = {
-    searchResults: PropTypes.array
+    filteredResults: PropTypes.array
 };
 
 export default FullPageMap;
