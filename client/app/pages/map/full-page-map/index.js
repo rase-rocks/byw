@@ -31,13 +31,20 @@ const popupString = function (location) {
     return `<p>${location.name}</p><button>Click</button>`;
 };
 
-const setMarkers = function (map, locations) {
+const setMarkers = function (map, locations, markerGroup) {
+
+    const group = markerGroup || L.layerGroup().addTo(map);
+
+    group.clearLayers();
+
     locations
         .forEach((location) => {
             L.marker(toMarkerCoords(location.coordinates))
-                .addTo(map)
+                .addTo(group)
                 .bindPopup(popupString(location));
         });
+    
+    return group;
 };
 
 class FullPageMap extends React.Component {
@@ -45,7 +52,7 @@ class FullPageMap extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.filteredResults === this.props.filteredResults) { return; }
 
-        setMarkers(this.state.map, nextProps.filteredResults);
+        setMarkers(this.state.map, nextProps.filteredResults, this.state.markerGroup);
 
     }
 
@@ -55,9 +62,9 @@ class FullPageMap extends React.Component {
         const map = L.map(MAP_ID).setView(initialCoords, 7);
         L.tileLayer(tileLayerString, attribution).addTo(map);
         
-        this.setState({ map: map });
+        const markerGroup = setMarkers(map, this.props.filteredResults);
 
-        setMarkers(map, this.props.filteredResults);
+        this.setState({ map: map, markerGroup: markerGroup });
 
     }
 
