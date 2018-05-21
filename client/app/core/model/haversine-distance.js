@@ -41,9 +41,9 @@ function haversineDistance(coordinate1, coordinate2) {
 // cut out another haversineDistance call to determine greater or equal to
 // should be good enough for our purposes
 //
-// The coordinateFn is passed to allow non GeoJson objects with coordinate
+// The getter is passed to allow non GeoJson objects with coordinate
 // arrays (like our data source) to use the same sorting function
-// The coordinateFn should take an object of the intended sort type and return
+// The getter should take an object of the intended sort type and return
 // a an array of numbers encoding the longitude and latitude in that order 
 // as per GeoJson
 function makeArraySort(basePoint, getter) {
