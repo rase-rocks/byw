@@ -1,17 +1,27 @@
 const urls = {
-    locations: "/static-api/public/data"
+    locations: "/static-api/public/data",
+    makePostcodeUrl: function (postcode) {
+        return `https://api.postcodes.io/postcodes/${postcode.replace(" ", "")}`;
+    }
 };
 
-const makePostcodeUrl = function (postcode) {
-    return `https://api.postcodes.io/postcodes/${postcode.replace(" ", "")}`;
-};
-
-const makeCoordinate = function (result) {
-    const { latitude, longitude } = result;
+const makeCoordinate = function (json) {
+    const { latitude, longitude } = json.result;
     return [longitude, latitude];
 };
 
 const cache = {};
+
+const cacheResult = function (postcode) {
+    return function (coordinate) {
+        cache[postcode] = coordinate;
+        return coordinate;
+    };
+};
+
+const getJson = function (response) {
+    return response.json();
+};
 
 const makeApiClient = function (fetchObject) {
     return {
@@ -23,23 +33,16 @@ const makeApiClient = function (fetchObject) {
         },
         geocodePostcode: function (postcode) {
 
-            const cachedResult = cache[postcode];
+            const cachedCoordinate = cache[postcode];
 
-            if (cachedResult) {
-                return Promise.resolve(cachedResult);
+            if (cachedCoordinate) {
+                return Promise.resolve(cachedCoordinate);
             }
 
-            return fetchObject(makePostcodeUrl(postcode))
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (json) {
-                    return makeCoordinate(json.result);
-                })
-                .then(function (coordinate) {
-                    cache[postcode] = coordinate;
-                    return coordinate;
-                })
+            return fetchObject(urls.makePostcodeUrl(postcode))
+                .then(getJson)
+                .then(makeCoordinate)
+                .then(cacheResult(postcode))
                 .catch(function (err) {
                     return Promise.reject(`Error in obtaining postcode: ${err}`);
                 });
