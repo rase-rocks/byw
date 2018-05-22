@@ -39,6 +39,17 @@ describe("location-to-geojson", function () {
 
     });
 
+    it("handles floating point coordinates", function () {
+
+        const floatingPointSample = Object.assign({}, sample, {"coordinates": sample.coordinates.map(parseFloat) });
+
+        const json = locationToGeoJSON(floatingPointSample);
+
+        expect(json.geometry.coordinates[0]).to.equal(parseFloat(longitude));
+        expect(json.geometry.coordinates[1]).to.equal(parseFloat(latiude));
+
+    });
+
 });
 
 
