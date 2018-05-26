@@ -1,5 +1,7 @@
 import { types, setFilteredLocationsAction } from "../actions";
 import filterLocations from "../../model/filter-locations";
+import filterPolygon from "../../model/filter-locations/filter-polygon";
+import coordinatesGetter from "../../model/coordinates-getter";
 
 const dispatchTo = function (store) {
     return function (locations) {
@@ -7,9 +9,13 @@ const dispatchTo = function (store) {
     };
 };
 
+const getLocations = function (state) {
+    return state.data.locations;
+};
+
 export default function makeFilterLocationsMiddleware(api) {
     return store => next => action => {
-        
+
         switch (action.type) {
 
         case types.filterLocations: {
@@ -17,10 +23,19 @@ export default function makeFilterLocationsMiddleware(api) {
             const { filterString, filterDistance } = action.payload;
             if (!filterString || filterString.length < 3) { break; } // Only filter if there is 3 or more chars
 
-            filterLocations(api, store.getState().data.locations, filterString, filterDistance)
+            filterLocations(api, getLocations(store.getState()), filterString, filterDistance)
                 .then(dispatchTo(store));
 
             break;
+        }
+
+        case types.filterLocationsByPolygon: {
+
+            filterPolygon(action.payload, getLocations(store.getState()), coordinatesGetter)
+                .then(dispatchTo(store));
+
+            break;
+
         }
 
         }

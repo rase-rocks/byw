@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import isBrowser from "../../../core/is-browser";
+
+import { filterLocationsByPolygon } from "../../../core/redux/actions";
 
 import {
     attribution,
@@ -10,6 +13,7 @@ import {
 } from "./constants";
 
 import toMarkerCoords from "../../../core/model/geojson-coordinates-to-marker-coordinates";
+import toPolygon from "../../../core/model/lat-lng-bounds-to-polygon";
 
 /*
 * TODO: Find a fix for this
@@ -43,11 +47,24 @@ const setMarkers = function (map, locations, markerGroup) {
                 .addTo(group)
                 .bindPopup(popupString(location));
         });
-    
+
     return group;
 };
 
-class FullPageMap extends React.Component {
+const addEventHandlers = function (map, handler) {
+    ["zoom", "move"].forEach(function (eventName) {
+        map.on(eventName, handler);
+    });
+};
+
+const makeHandler = function (dispatch) {
+    return function (event) {
+        const polygon = toPolygon(event.target.getBounds());
+        dispatch(filterLocationsByPolygon(polygon));
+    };
+};
+
+class MapController extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.filteredResults === this.props.filteredResults) { return; }
@@ -57,11 +74,15 @@ class FullPageMap extends React.Component {
     }
 
     componentDidMount() {
+
         if (!isBrowser()) { return; }
 
         const map = L.map(MAP_ID).setView(initialCoords, 7);
+
+        addEventHandlers(map, makeHandler(this.props.dispatch));
+
         L.tileLayer(tileLayerString, attribution).addTo(map);
-        
+
         const markerGroup = setMarkers(map, this.props.filteredResults);
 
         this.setState({ map: map, markerGroup: markerGroup });
@@ -75,8 +96,9 @@ class FullPageMap extends React.Component {
     }
 }
 
-FullPageMap.propTypes = {
-    filteredResults: PropTypes.array
+MapController.propTypes = {
+    filteredResults: PropTypes.array,
+    dispatch: PropTypes.func.isRequired
 };
 
-export default FullPageMap;
+export default connect()(MapController);

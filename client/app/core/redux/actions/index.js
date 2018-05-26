@@ -3,7 +3,8 @@ const types = {
     setLocations: "com.byw.set-locations",
     requestLocations: "com.byw.request-locations",
     filterLocations: "com.byw.filter-locations",
-    setFilteredLocations: "com.byw.set-filtered-locations"
+    setFilteredLocations: "com.byw.set-filtered-locations",
+    filterLocationsByPolygon: "com.byw.filter-locations-by-polygon"
 };
 
 const setLanguageAction = function (language) {
@@ -19,11 +20,15 @@ const requestLocationsAction = function () {
 };
 
 const filterLocationsAction = function (filterString, filterDistance) {
-    return { type: types.filterLocations, payload: {filterString, filterDistance} };
+    return { type: types.filterLocations, payload: { filterString, filterDistance } };
+};
+
+const filterLocationsByPolygon = function (polygon) {
+    return { type: types.filterLocationsByPolygon, payload: polygon };
 };
 
 const setFilteredLocationsAction = function (locations) {
-    return { type: types.setFilteredLocations, payload: locations};
+    return { type: types.setFilteredLocations, payload: locations };
 };
 
 export {
@@ -32,5 +37,6 @@ export {
     setLocationsAction,
     requestLocationsAction,
     filterLocationsAction,
+    filterLocationsByPolygon,
     setFilteredLocationsAction
 };

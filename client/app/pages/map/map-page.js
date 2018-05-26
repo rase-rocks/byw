@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import hash from "../../core/hash";
 import bindMethods from "../../core/bind-methods";
 
-import FullPageMap from "./full-page-map";
+import Map from "./map";
 
 const makeButton = function (clickHandler) {
     return function distButton(distance) {
@@ -53,7 +53,7 @@ class MapPage extends React.Component {
             <div>
 
                 <div style={{ width: "100%", height: "50vh" }}>
-                    <FullPageMap filteredResults={filteredResults} />
+                    <Map filteredResults={filteredResults} />
                 </div>
 
                 <div className="container full-page-content">
@@ -71,9 +71,18 @@ class MapPage extends React.Component {
                                     </p>
                                 </div>
                                 <div className="col-md-6">
-                                    <div className="btn-group" role="group" aria-label="Search Radius Selection">
-                                        {[20, 50, 100].map(makeButton(this.onClickDistanceChange()))}
+                                    <div className="row">
+
+
+                                        <div className="col-md-6">
+                                            <div className="btn-group" role="group" aria-label="Search Radius Selection">
+                                                {[20, 50, 100].map(makeButton(this.onClickDistanceChange()))}
+                                            </div>
+                                        </div>
+
+
                                     </div>
+
                                 </div>
                             </div>
 
