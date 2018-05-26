@@ -1,0 +1,12 @@
+.image-transition-background {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+}

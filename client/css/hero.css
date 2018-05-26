@@ -7,3 +7,16 @@
     padding-left: 10%;
     padding-right: 10%;
 }
+
+.hero-caption {
+	display: table;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+.hero-text {
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
+}

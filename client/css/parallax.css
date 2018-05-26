@@ -1,0 +1,58 @@
+/* Parallax base styles
+--------------------------------------------- */
+
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.parallax__group {
+    position: relative;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+
+.text-white {
+    color: white;
+}
+
+/* Larger screens */
+
+/* @media (min-width: 769px) {
+    .parallax__layer--back {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        -webkit-transform: translateZ(-1px) scale(2);
+        -ms-transform: translateZ(-1px) scale(2);
+        -moz-transform: translateZ(-1px) scale(2);
+        transform: translateZ(-1px) scale(2);
+    }
+    .parallax__layer--base {
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+        -moz-transform: translateZ(0);
+    }
+} */
+
+/* Small screens */
+
+/* @media (max-width: 768px) {
+    .parallax__layer--back {
+        position: absolute;
+        background-size: cover;
+    }
+} */

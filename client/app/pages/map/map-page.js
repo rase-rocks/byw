@@ -62,22 +62,31 @@ class MapPage extends React.Component {
 
                             <div className="row">
                                 <div className="col-md-6">
-                                    <p>
-                                        <input type="text" onChange={searchValueDidChange} value={searchText} />
-                                    </p>
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <p>
+                                                <input type="text" onChange={searchValueDidChange} value={searchText} />
+                                            </p>
 
-                                    <p>
-                                        Searching For: <span>{searchText}</span>
-                                    </p>
+                                            <p>
+                                                Searching For: <span>{searchText}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <div className="btn-group" role="group" aria-label="Search Radius Selection">
+                                                {[20, 50, 100].map(makeButton(this.onClickDistanceChange()))}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="row">
 
 
-                                        <div className="col-md-6">
-                                            <div className="btn-group" role="group" aria-label="Search Radius Selection">
-                                                {[20, 50, 100].map(makeButton(this.onClickDistanceChange()))}
-                                            </div>
+                                        <div className="col-md-12">
+                                            {locations}
                                         </div>
 
 
@@ -88,11 +97,7 @@ class MapPage extends React.Component {
 
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-12">
-                            {locations}
-                        </div>
-                    </div>
+
                 </div>
             </div>
         );

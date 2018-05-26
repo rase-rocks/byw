@@ -68,9 +68,7 @@ class MapController extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.filteredResults === this.props.filteredResults) { return; }
-
         setMarkers(this.state.map, nextProps.filteredResults, this.state.markerGroup);
-
     }
 
     componentDidMount() {

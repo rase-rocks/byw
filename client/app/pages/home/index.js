@@ -1,24 +1,31 @@
 import React from "react";
+import Hero from "../../resusable-components/hero";
 import Quote from "../../resusable-components/quote";
+import colors from "../../core/colors";
+
+const cssFilters = ["blur(5px)"];
+
+const color = colors.homeHeroBackgroundColor;
 
 class Home extends React.Component {
     render() {
         return (
             <div className="full-page-content">
 
-                <div className="hero">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-12">
+                <Hero backgroundUrl="/assets/images/mitchell-orr-204820-unsplash.jpg"
+                    initialBgColor={color}
+                    cssFilters={cssFilters}
+                    heightPercent={70}>
 
-                                <h1>
-                                    Hero content
-                                </h1>
+                    <div className="hero-caption">
+                        <div className="hero-text">
 
-                            </div>
+                            <h2>Breath Your Welsh</h2>
+
                         </div>
                     </div>
-                </div>
+
+                </Hero>
 
                 <div className="container half-page-content">
                     <div className="row">
