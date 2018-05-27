@@ -5,15 +5,6 @@ import bindMethods from "../../core/bind-methods";
 
 import Map from "./map";
 
-const makeButton = function (clickHandler) {
-    return function distButton(distance) {
-        return (<button key={`dist-select-${distance}`}
-            type="button"
-            onClick={clickHandler}
-            className="btn btn-secondary">{distance}</button>);
-    };
-};
-
 const floatValue = function (event) {
     return parseFloat(event.target.innerHTML);
 };
@@ -42,60 +33,39 @@ class MapPage extends React.Component {
         } = this.props;
 
         const locations = filteredResults.map(location => (
-            <p key={hash(location.name)}>
+            <div key={hash(location.name)} className="map-result">
                 {location.name}<br />
-                {location.address}
-            </p>
+                <small>{location.address}</small><br/>
+                <button>Go to</button>
+            </div>
         ));
 
         return (
 
-            <div>
+            <div className="map-grid-container">
 
-                <div style={{ width: "100%", height: "50vh" }}>
+                <div className="map-item">
                     <Map filteredResults={filteredResults} />
                 </div>
 
-                <div className="container full-page-content">
-                    <div className="row" style={{ paddingTop: "50px" }}>
-                        <div className="col-md-12">
+                <div className="map-item">
 
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            <p>
-                                                <input type="text" onChange={searchValueDidChange} value={searchText} />
-                                            </p>
+                    <div className="map-item-padding">
 
-                                            <p>
-                                                Searching For: <span>{searchText}</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            <div className="btn-group" role="group" aria-label="Search Radius Selection">
-                                                {[20, 50, 100].map(makeButton(this.onClickDistanceChange()))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="row">
-
-
-                                        <div className="col-md-12">
-                                            {locations}
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
+                        <div className="map-search-container">
+                            <div>
+                                <input type="text"
+                                    className="text-box"
+                                    onChange={searchValueDidChange}
+                                    value={searchText}
+                                    placeholder=":Search" />
                             </div>
-
                         </div>
+
+                        <div className="map-results-container">
+                            {locations}
+                        </div>
+
                     </div>
 
                 </div>
