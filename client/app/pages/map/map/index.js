@@ -75,7 +75,7 @@ class MapController extends React.Component {
 
         if (!isBrowser()) { return; }
 
-        const map = L.map(MAP_ID).setView(initialCoords, 7);
+        const map = L.map(MAP_ID).setView(initialCoords, 9);
 
         addEventHandlers(map, makeHandler(this.props.dispatch));
 

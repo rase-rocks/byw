@@ -36,7 +36,7 @@ class MapPage extends React.Component {
             <div key={hash(location.name)} className="map-result">
                 {location.name}<br />
                 <small>{location.address}</small><br/>
-                <button>Go to</button>
+                <button>Show me...</button>
             </div>
         ));
 
