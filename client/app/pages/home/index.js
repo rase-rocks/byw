@@ -1,44 +1,50 @@
 import React from "react";
-import Hero from "../../resusable-components/hero";
-import Quote from "../../resusable-components/quote";
-import colors from "../../core/colors";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-const cssFilters = ["blur(5px)"];
+import { requestLocationsAction } from "../../core/redux/actions";
 
-const color = colors.homeHeroBackgroundColor;
+import arraySample from "../../core/model/array-sample";
 
-class Home extends React.Component {
-    render() {
-        return (
-            <div className="full-page-content">
+import Home from "./home-page";
 
-                <Hero backgroundUrl="/assets/images/mitchell-orr-204820-unsplash.jpg"
-                    initialBgColor={color}
-                    cssFilters={cssFilters}
-                    heightPercent={70}>
+class HomeController extends React.Component {
 
-                    <div className="hero-caption">
-                        <div className="hero-text">
-
-                            <h2>Breath Your Welsh</h2>
-
-                        </div>
-                    </div>
-
-                </Hero>
-
-                <div className="container half-page-content">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <h2>The containerised content</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <Quote/>
-            </div>
-        );
+    constructor(props) {
+        super(props);
+        this.state = {
+            featuredLocation: undefined
+        };
     }
+
+    componentWillReceiveProps(newProps) {
+        const location = arraySample(newProps.locations);
+        this.setState({ featuredLocation: location });
+    }
+
+    componentDidMount() {
+        this.props.dispatch(requestLocationsAction());
+    }
+
+    render() {
+
+        return (
+            <Home featuredLocation={this.state.featuredLocation} />
+        );
+
+    }
+
 }
 
-export default Home;
+HomeController.propTypes = {
+    locations: PropTypes.array,
+    dispatch: PropTypes.func.isRequired
+};
+
+const mapStateToProps = function (state) {
+    return {
+        locations: state.data.locations
+    };
+};
+
+export default connect(mapStateToProps)(HomeController);
