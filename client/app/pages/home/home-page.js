@@ -1,11 +1,10 @@
-import React from "react";
 import PropTypes from "prop-types";
-
-import Hero from "../../resusable-components/hero";
-import Quote from "../../resusable-components/quote";
-import Featured from "./featured";
+import React from "react";
 
 import colors from "../../core/colors";
+import Featured from "./featured";
+import Hero from "../../resusable-components/hero";
+import Quote from "../../resusable-components/quote";
 
 const cssFilters = ["blur(5px)"];
 

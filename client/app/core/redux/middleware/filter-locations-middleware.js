@@ -1,7 +1,7 @@
 import { types, setFilteredLocationsAction } from "../actions";
+import coordinatesGetter from "../../model/coordinates-getter";
 import filterLocations from "../../model/filter-locations";
 import filterPolygon from "../../model/filter-locations/filter-polygon";
-import coordinatesGetter from "../../model/coordinates-getter";
 
 const dispatchTo = function (store) {
     return function (locations) {

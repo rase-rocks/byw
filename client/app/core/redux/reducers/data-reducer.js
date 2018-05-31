@@ -3,7 +3,8 @@ import { types } from "../actions";
 const defaultState = {
     needsUpdate: true,
     locations: [],
-    filteredResults: []
+    filteredResults: [],
+    selectedLocation: undefined
 };
 
 const dataReducer = function (state = defaultState, action) {
@@ -12,14 +13,26 @@ const dataReducer = function (state = defaultState, action) {
     switch (action.type) {
 
     case types.setLocations: {
+
         reducedState.needsUpdate = false;
         reducedState.locations = action.payload;
         break;
+
     }
 
     case types.setFilteredLocations: {
+
         reducedState.filteredResults = action.payload;
+        reducedState.selectedLocation = undefined;
         break;
+
+    }
+
+    case types.setViewLocation: {
+
+        reducedState.selectedLocation = action.payload;
+        break;
+
     }
 
     }

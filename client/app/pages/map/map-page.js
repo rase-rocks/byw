@@ -1,8 +1,8 @@
-import React from "react";
 import PropTypes from "prop-types";
-import hash from "../../core/hash";
-import bindMethods from "../../core/bind-methods";
+import React from "react";
 
+import bindMethods from "../../core/bind-methods";
+import hash from "../../core/hash";
 import Map from "./map";
 
 const floatValue = function (event) {
@@ -28,15 +28,17 @@ class MapPage extends React.Component {
 
         const {
             filteredResults,
+            selectedLocation,
             searchText,
-            searchValueDidChange
+            searchValueDidChange,
+            onShowLocation
         } = this.props;
-
+        
         const locations = filteredResults.map(location => (
             <div key={hash(location.name)} className="map-result">
                 {location.name}<br />
                 <small>{location.address}</small><br/>
-                <button>Show me...</button>
+                <button onClick={onShowLocation(location)}>Show me...</button>
             </div>
         ));
 
@@ -45,7 +47,7 @@ class MapPage extends React.Component {
             <div className="map-grid-container">
 
                 <div className="map-item">
-                    <Map filteredResults={filteredResults} />
+                    <Map filteredResults={filteredResults} selectedLocation={selectedLocation} />
                 </div>
 
                 <div className="map-item">
@@ -76,10 +78,12 @@ class MapPage extends React.Component {
 
 MapPage.propTypes = {
     filteredResults: PropTypes.array,
+    selectedLocation: PropTypes.object,
     searchText: PropTypes.string,
     searchDistance: PropTypes.number,
     searchValueDidChange: PropTypes.func.isRequired,
-    searchDistanceDidChange: PropTypes.func.isRequired
+    searchDistanceDidChange: PropTypes.func.isRequired,
+    onShowLocation: PropTypes.func.isRequired
 };
 
 export default MapPage;

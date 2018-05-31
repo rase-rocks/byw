@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import isBrowser from "../../../core/is-browser";
+import PropTypes from "prop-types";
+import React from "react";
 
 import { filterLocationsByPolygon } from "../../../core/redux/actions";
+import isBrowser from "../../../core/is-browser";
 
 import {
     attribution,
@@ -51,6 +51,10 @@ const setMarkers = function (map, locations, markerGroup) {
     return group;
 };
 
+const setPoint = function (map, location) {
+    map.setView(toMarkerCoords(location.coordinates), 14);
+};
+
 const addEventHandlers = function (map, handler) {
     ["zoom", "move"].forEach(function (eventName) {
         map.on(eventName, handler);
@@ -67,8 +71,14 @@ const makeHandler = function (dispatch) {
 class MapController extends React.Component {
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.filteredResults === this.props.filteredResults) { return; }
-        setMarkers(this.state.map, nextProps.filteredResults, this.state.markerGroup);
+        
+        if (nextProps.selectedLocation) {
+            setPoint(this.state.map, nextProps.selectedLocation, this.state.markerGroup);
+        } else {
+            if (nextProps.filteredResults === this.props.filteredResults) { return; }
+            setMarkers(this.state.map, nextProps.filteredResults, this.state.markerGroup);
+        }
+        
     }
 
     componentDidMount() {
@@ -96,6 +106,7 @@ class MapController extends React.Component {
 
 MapController.propTypes = {
     filteredResults: PropTypes.array,
+    selectedLocation: PropTypes.object,
     dispatch: PropTypes.func.isRequired
 };
 
