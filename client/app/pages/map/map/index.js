@@ -52,7 +52,7 @@ const setMarkers = function (map, locations, markerGroup) {
 };
 
 const setPoint = function (map, location) {
-    map.setView(toMarkerCoords(location.coordinates), 14);
+    map.setView(toMarkerCoords(location.coordinates), 18);
 };
 
 const addEventHandlers = function (map, handler) {
