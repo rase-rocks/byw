@@ -1,15 +1,16 @@
-import filterText from "./filter-text";
+import { postcodeRe, coordinateRe } from "../regular-expressions";
 import filterCoordinates from "./filter-coordinates";
 import filterPostcodes from "./filter-postcodes";
+import filterText from "./filter-text";
 
 export const tests = [
     {
-        re: /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/i,
+        re: postcodeRe,
         filter: filterPostcodes,
         name: "Postcodes"
     },
     {
-        re: /(-?\d+\.{1}\d+,{1})\s?(-?\d+\.{1}\d+)/,
+        re: coordinateRe,
         filter: filterCoordinates,
         name: "Coordinates"
     }
