@@ -32,7 +32,7 @@ if (isBrowser()) {
 }
 
 const popupString = function (location) {
-    return `<p>${location.name}</p><button>Click</button>`;
+    return `<p>${location.name}</p>`;
 };
 
 const setMarkers = function (map, locations, markerGroup) {

@@ -2,12 +2,19 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import bindMethods from "../../core/bind-methods";
-import hash from "../../core/hash";
+import LocationFolder from "./location-folder";
 import Map from "./map";
 
 const floatValue = function (event) {
     return parseFloat(event.target.innerHTML);
 };
+
+/*
+*
+* TODO: Styles and media quieries for mobile and small screens
+*
+*/
+
 
 class MapPage extends React.Component {
 
@@ -33,14 +40,6 @@ class MapPage extends React.Component {
             searchValueDidChange,
             onShowLocation
         } = this.props;
-        
-        const locations = filteredResults.map(location => (
-            <div key={hash(location.name)} className="map-result">
-                {location.name}<br />
-                <small>{location.address}</small><br/>
-                <button onClick={onShowLocation(location)}>Show me...</button>
-            </div>
-        ));
 
         return (
 
@@ -60,12 +59,12 @@ class MapPage extends React.Component {
                                     className="text-box"
                                     onChange={searchValueDidChange}
                                     value={searchText}
-                                    placeholder=":Search" />
+                                    placeholder="Search for places, coordinates and postcodes" />
                             </div>
                         </div>
 
                         <div className="map-results-container">
-                            {locations}
+                            <LocationFolder locations={filteredResults} onShowLocation={onShowLocation}/>
                         </div>
 
                     </div>
