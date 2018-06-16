@@ -4,17 +4,8 @@ import React from "react";
 import bindMethods from "../../core/bind-methods";
 import LocationFolder from "./location-folder";
 import Map from "./map";
-
-const floatValue = function (event) {
-    return parseFloat(event.target.innerHTML);
-};
-
-/*
-*
-* TODO: Styles and media quieries for mobile and small screens
-*
-*/
-
+import SearchResultPaginator from "./search-results-paginator";
+import floatValue from "../../core/model/float-value";
 
 class MapPage extends React.Component {
 
@@ -34,7 +25,10 @@ class MapPage extends React.Component {
     render() {
 
         const {
-            filteredResults,
+            totalCount,
+            pageResults,
+            pageCount,
+            currentPageNo,
             selectedLocation,
             searchText,
             searchValueDidChange,
@@ -46,7 +40,7 @@ class MapPage extends React.Component {
             <div className="map-grid-container">
 
                 <div className="map-item">
-                    <Map filteredResults={filteredResults} selectedLocation={selectedLocation} />
+                    <Map filteredResults={pageResults} selectedLocation={selectedLocation} />
                 </div>
 
                 <div className="map-item">
@@ -64,9 +58,14 @@ class MapPage extends React.Component {
                         </div>
 
                         <div className="map-results-container">
-                            <LocationFolder locations={filteredResults} onShowLocation={onShowLocation}/>
-                        </div>
+                            <LocationFolder locations={pageResults} onShowLocation={onShowLocation} />
 
+                        </div>
+                        <div style={{ marginTop: "10px", marginBottom: "10px", padding: "20px" }}>
+                            <SearchResultPaginator totalCount={totalCount}
+                                pageCount={pageCount}
+                                currentPageNo={currentPageNo} />
+                        </div>
                     </div>
 
                 </div>
@@ -76,13 +75,17 @@ class MapPage extends React.Component {
 }
 
 MapPage.propTypes = {
-    filteredResults: PropTypes.array,
+    totalCount: PropTypes.number.isRequired,
+    pageResults: PropTypes.array.isRequired,
+    pageCount: PropTypes.number.isRequired,
+    currentPageNo: PropTypes.number.isRequired,
     selectedLocation: PropTypes.object,
     searchText: PropTypes.string,
     searchDistance: PropTypes.number,
     searchValueDidChange: PropTypes.func.isRequired,
     searchDistanceDidChange: PropTypes.func.isRequired,
-    onShowLocation: PropTypes.func.isRequired
+    onShowLocation: PropTypes.func.isRequired,
+    onPageChange: PropTypes.func.isRequired
 };
 
 export default MapPage;
