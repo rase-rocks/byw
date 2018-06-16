@@ -8,11 +8,13 @@ const li = function (route) {
     return (<NavLink key={strHash(route.url)} to={route.url}>{route.title}</NavLink>);
 };
 
-const routes = [
+export const routes = [
     { url: "/", title: "Home" },
     { url: "/map", title: "Map" },
     { url: "/about", title: "About" }
-].map(li);
+];
+
+const links = routes.map(li);
 
 class Nav extends React.Component {
     render() {
@@ -31,7 +33,7 @@ class Nav extends React.Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="nav navbar-nav ml-auto">
-                            {routes}
+                            {links}
                         </ul>
                     </div>
                 </div>
