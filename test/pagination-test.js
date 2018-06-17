@@ -2,8 +2,11 @@
 
 const expect = require("chai").expect;
 
+const arrayCompare = require("../client/app/core/model/array-compare").default;
+
 const pageResults = require("../client/app/core/model/pagination").pageResults;
 const pageCount = require("../client/app/core/model/pagination").pageCount;
+const pageNumbersFromCount = require("../client/app/core/model/pagination").pageNumbersFromCount;
 
 const makePage = function (count, title) {
     return Array.apply(null, Array(count)).map(idx => {
@@ -152,9 +155,37 @@ describe("pagination-controller", function () {
 
             const page = pageResults(undefined, 1, 10);
             expect(page.length).to.equal(0);
-            
+
             const page2 = pageResults([], 1, 10);
             expect(page2.length).to.equal(0);
+
+        });
+
+    });
+
+    describe("pageNumbersFromCount", function () {
+
+        it("returns expected values", function () {
+
+            const tests = [
+                {
+                    count: 2,
+                    result: [1, 2]
+                },
+                {
+                    count: 1,
+                    result: [1]
+                },
+                {
+                    count: 5,
+                    result: [1, 2, 3, 4, 5]
+                }
+            ];
+
+            tests.forEach(test => {
+                const pageNumbers = pageNumbersFromCount(test.count);
+                expect(arrayCompare(pageNumbers, test.result)).to.equal(true);
+            });
 
         });
 

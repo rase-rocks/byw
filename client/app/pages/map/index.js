@@ -24,7 +24,7 @@ class MapPageController extends React.Component {
         this.state = {
             searchText: "",
             searchDistance: 20,
-            resultsPerPage: 10,
+            resultsPerPage: 5,
             pageResults: [],
             currentPageNo: 1
         };
@@ -34,13 +34,12 @@ class MapPageController extends React.Component {
 
     componentWillReceiveProps(newProps) {
 
-        if (arrayCompare(this.props.filteredResults, newProps.filteredResults)) {
-            return;
-        }
-
         const { resultsPerPage } = this.state;
         const { filteredResults } = this.props;
-        const pageNo = 1;
+        const pageNo = (arrayCompare(this.props.filteredResults,
+            newProps.filteredResults))
+            ? this.state.currentPageNo
+            : 1;
 
         this.setState({
             pageResults: pageResults(filteredResults, pageNo, resultsPerPage),
