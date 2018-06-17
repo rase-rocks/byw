@@ -8,7 +8,6 @@ import {
     setViewLocation
 } from "../../core/redux/actions";
 
-import arrayCompare from "../../core/model/array-compare";
 import bindMethods from "../../core/bind-methods";
 import eventTargetValue from "../../core/event-target-value";
 import MapPage from "./map-page";
@@ -25,30 +24,24 @@ class MapPageController extends React.Component {
             searchText: "",
             searchDistance: 20,
             resultsPerPage: 5,
-            pageResults: [],
             currentPageNo: 1
         };
 
         bindMethods(this, ["onTextChange", "onDistanceChange"]);
     }
 
-    componentWillReceiveProps(newProps) {
-
-        const { resultsPerPage } = this.state;
-        const { filteredResults } = this.props;
-        const pageNo = (arrayCompare(this.props.filteredResults,
-            newProps.filteredResults))
-            ? this.state.currentPageNo
-            : 1;
-
-        this.setState({
-            pageResults: pageResults(filteredResults, pageNo, resultsPerPage),
-            currentPageNo: pageNo
-        });
-    }
-
     componentDidMount() {
         this.props.dispatch(requestLocationsAction());
+    }
+
+    componentWillReceiveProps(props) {
+
+        const { currentPageNo, resultsPerPage } = this.state;
+
+        const count = pageCount(props.filteredResults.length, resultsPerPage);
+        const adjustedPageNo = (currentPageNo > count) ? 1 : currentPageNo;
+
+        this.setState({ currentPageNo: adjustedPageNo });
     }
 
     onTextChange() {
@@ -81,7 +74,6 @@ class MapPageController extends React.Component {
         const self = this;
         return function (newPageNumber) {
             self.setState({
-                pageResults: pageResults(this.props.filteredResults, newPageNumber),
                 currentPageNo: newPageNumber
             });
         };
@@ -89,14 +81,20 @@ class MapPageController extends React.Component {
 
     render() {
 
-        const totalCount = this.props.filteredResults.length;
+        const { filteredResults } = this.props;
+        const { currentPageNo, resultsPerPage } = this.state;
+
+        const totalCount = filteredResults.length;
         const count = pageCount(totalCount, this.state.resultsPerPage);
+
+
+        const results = pageResults(filteredResults, currentPageNo, resultsPerPage);
 
         return (
             <MapPage totalCount={totalCount}
-                pageResults={this.state.pageResults}
+                pageResults={results}
                 pageCount={count}
-                currentPageNo={this.state.currentPageNo}
+                currentPageNo={currentPageNo}
                 selectedLocation={this.props.selectedLocation}
                 searchText={this.state.searchText}
                 searchDistance={this.state.searchDistance}

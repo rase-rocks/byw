@@ -4,7 +4,7 @@ import React from "react";
 import bindMethods from "../../core/bind-methods";
 import LocationFolder from "./location-folder";
 import Map from "./map";
-import SearchResultPaginator from "./search-results-paginator";
+import SearchResultPaginator from "./pagination/search-results-paginator";
 import floatValue from "../../core/model/float-value";
 
 class MapPage extends React.Component {
@@ -32,7 +32,8 @@ class MapPage extends React.Component {
             selectedLocation,
             searchText,
             searchValueDidChange,
-            onShowLocation
+            onShowLocation,
+            onPageChange
         } = this.props;
 
         return (
@@ -50,10 +51,13 @@ class MapPage extends React.Component {
                         <div className="map-search-container">
                             <div>
                                 <input type="text"
-                                    className="text-box"
+                                    className="text-box unbordered"
                                     onChange={searchValueDidChange}
                                     value={searchText}
                                     placeholder="Search for places, coordinates and postcodes" />
+                            </div>
+                            <div className="text-center" style={{ width: "100%" }}>
+                                {totalCount} results
                             </div>
                         </div>
 
@@ -62,7 +66,7 @@ class MapPage extends React.Component {
 
                         </div>
                         <div style={{ marginTop: "10px", marginBottom: "10px", padding: "20px" }}>
-                            <SearchResultPaginator totalCount={totalCount}
+                            <SearchResultPaginator onPageChange={onPageChange}
                                 pageCount={pageCount}
                                 currentPageNo={currentPageNo} />
                         </div>
