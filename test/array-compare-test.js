@@ -158,12 +158,17 @@ describe("array-compare", function () {
         const compareTime = time(function () {
             arrayCompare(first, second);
         }, iterations);
-
+        
         const stringifyTime = time(function () {
             baselineStringCompare(first, second);
         }, iterations);
+
+        const diff = stringifyTime - compareTime;
+        expect(diff > 0).to.equal(true);
         
-        expect(compareTime < stringifyTime);
+        const percentage = (diff / stringifyTime) * 100;
+
+        expect(percentage > 91).to.equal(true);
 
     });
 

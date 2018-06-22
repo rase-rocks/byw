@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import { pageNumbersFromCount } from "../../../core/model/pagination";
 import { makePageItem } from "./page-item";
+import { pageNumbersFromCount } from "../../../core/model/pagination";
 
 class SearchResultPaginator extends React.Component {
     render() {

@@ -85,9 +85,7 @@ class MapPageController extends React.Component {
         const { currentPageNo, resultsPerPage } = this.state;
 
         const totalCount = filteredResults.length;
-        const count = pageCount(totalCount, this.state.resultsPerPage);
-
-
+        const count = pageCount(totalCount, resultsPerPage);
         const results = pageResults(filteredResults, currentPageNo, resultsPerPage);
 
         return (
