@@ -59,6 +59,13 @@ Root
 
 Community contributions are welcome. In order to contribute check out the project structure above.
 
+#### Contributing most appreciated on:
+
+Currently we are actively seeking contributions from the community for the following areas:
+
++ CSS and styling
++ Informational content
+
 #### Contributing workflow
 
 A suggestion on how to go about proposing a change to this project:

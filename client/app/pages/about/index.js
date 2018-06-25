@@ -1,6 +1,6 @@
 import React from "react";
-import PageContainer from "../../page-content";
 
+import PageContainer from "../../page-content";
 import PageHeader from "../../resusable-components/page-header";
 
 class About extends React.Component {

@@ -5,7 +5,9 @@ const types = {
     filterLocations: "com.byw.filter-locations",
     setFilteredLocations: "com.byw.set-filtered-locations",
     filterLocationsByPolygon: "com.byw.filter-locations-by-polygon",
-    setViewLocation: "com.byw.set-view-location"
+    setViewLocation: "com.byw.set-view-location",
+    setFormData: "com.byw.set-form-data",
+    requestFormValidation: "com.byw-request-form-validation"
 };
 
 const setLanguageAction = function (language) {
@@ -36,6 +38,14 @@ const setViewLocation = function (location) {
     return { type: types.setViewLocation, payload: location };
 };
 
+const setFormDataAction = function (key, value) {
+    return { type: types.setFormData, payload: { key, value }};
+};
+
+const requestFormValidationAction = function () {
+    return { type: types.requestFormValidation, payload: {}};
+};
+
 export {
     types,
     setLanguageAction,
@@ -44,5 +54,7 @@ export {
     filterLocationsAction,
     filterLocationsByPolygon,
     setFilteredLocationsAction,
-    setViewLocation
+    setViewLocation,
+    setFormDataAction,
+    requestFormValidationAction
 };

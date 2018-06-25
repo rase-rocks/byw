@@ -1,8 +1,8 @@
-import React from "react";
 import PropTypes from "prop-types";
-import NavLink from "./nav-link";
+import React from "react";
 
 import { strHash } from "../core/hash";
+import NavLink from "./nav-link";
 
 const li = function (route) {
     return (<NavLink key={strHash(route.url)} to={route.url}>{route.title}</NavLink>);
@@ -11,7 +11,8 @@ const li = function (route) {
 export const routes = [
     { url: "/", title: "Home" },
     { url: "/map", title: "Map" },
-    { url: "/about", title: "About" }
+    { url: "/about", title: "About" },
+    { url: "/submit", title: "Submit" }
 ];
 
 const links = routes.map(li);

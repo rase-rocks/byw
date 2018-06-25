@@ -18,7 +18,7 @@ class Home extends React.Component {
                         <div className="hero-text">
 
                             <h2>Breath Your Welsh</h2>
-                            <h4>Crowdsourced Welsh Language Resource</h4>
+                            <h4>Crowd sourced Welsh Language Resource</h4>
 
                         </div>
                     </div>

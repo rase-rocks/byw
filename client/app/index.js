@@ -11,11 +11,13 @@ import { createStore, applyMiddleware } from "redux";
 import reducers from "./core/redux/reducers";
 import makeRequestLocationsMiddleware from "./core/redux/middleware/request-locations-middleware";
 import makeFilterLocationsMiddleware from "./core/redux/middleware/filter-locations-middleware";
+import makeFormValidationMiddleware from "./core/redux/middleware/form-validation-middleware";
 
 import App from "./app";
 import Home from "./pages/home";
 import MapPage from "./pages/map";
 import About from "./pages/about";
+import Submit from "./pages/submit";
 
 if (isBrowser()) {
     const container = document.getElementById("root");
@@ -25,17 +27,19 @@ if (isBrowser()) {
         const api = makeApiClient(fetch);
 
         const store = createStore(
-            reducers, 
-            applyMiddleware(makeRequestLocationsMiddleware(api), 
-                makeFilterLocationsMiddleware(api)));
+            reducers,
+            applyMiddleware(makeRequestLocationsMiddleware(api),
+                makeFilterLocationsMiddleware(api),
+                makeFormValidationMiddleware()));
 
         ReactDOM.render(
             <Provider store={store}>
                 <BrowserRouter>
                     <App>
                         <Route path="/" exact component={Home} />
-                        <Route path="/map" component={MapPage}/>
+                        <Route path="/map" component={MapPage} />
                         <Route path="/about" component={About} />
+                        <Route path="/submit" component={Submit} />
                     </App>
                 </BrowserRouter>
             </Provider>
