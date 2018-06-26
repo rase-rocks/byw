@@ -9,6 +9,7 @@ const exp = require("../client/app/core/model/form");
 
 const formUpdatingDataKey = exp.formUpdatingDataKey;
 const formUpdatingErrorKey = exp.formUpdatingErrorKey;
+const hasErrors = exp.hasErrors;
 const validatedForm = exp.validatedForm;
 const keys = exp.keys;
 const item = exp.item;
@@ -22,6 +23,13 @@ const validForm = function () {
         coordinates: item(keys.coordinates, ""),
         category: item(keys.category, "75%")
     };
+};
+
+const makeForm = function (key, value) {
+    return Object.assign(
+        {},
+        validForm(),
+        { [key]: item(key, value) });
 };
 
 describe("form", function () {
@@ -88,6 +96,46 @@ describe("form", function () {
 
             expect(newForm[alteredKey].error).to.equal(errorString);
 
+        });
+
+    });
+
+    describe("hasErrors", function () {
+
+        it("finds errors for each key", function () {
+
+            [
+                {
+                    testKey: keys.name,
+                    form: makeForm(keys.name, ""),
+                    error: errors.missingName
+                },
+                {
+                    testKey: keys.address,
+                    form: makeForm(keys.address, ""),
+                    error: errors.missingAddress
+                },
+                {
+                    testKey: keys.postcode,
+                    form: Object.assign(
+                        {}, 
+                        makeForm(keys.postcode, ""), 
+                        {[keys.coordinates]: item(keys.coordinates, "")}),
+                    error: errors.invalidPostcodeWithoutCoordinates
+                },
+                {
+                    testKey: keys.coordinates,
+                    form: makeForm(keys.coordinates, "34"),
+                    error: errors.invalidCoordinatesWithPostcode
+                }
+            ].map(test => Object.assign({}, test, {form: validatedForm(test.form)}))
+                .forEach(test => expect(hasErrors(test.form)).to.equal(true));
+
+        });
+
+        it("does not false positive", function () {
+            const frm = validForm();
+            expect(hasErrors(frm)).to.equal(false);
         });
 
     });
@@ -169,7 +217,7 @@ describe("form", function () {
             expect(vForm[keys.coordinates].error).to.equal(errors.invalidCoordinatesWithPostcode);
 
         });
-        
+
         it("handles invalid coordinates - without postcode", function () {
 
             const invalidCoordinates = validForm();

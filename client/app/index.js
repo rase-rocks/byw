@@ -11,7 +11,7 @@ import { createStore, applyMiddleware } from "redux";
 import reducers from "./core/redux/reducers";
 import makeRequestLocationsMiddleware from "./core/redux/middleware/request-locations-middleware";
 import makeFilterLocationsMiddleware from "./core/redux/middleware/filter-locations-middleware";
-import makeFormValidationMiddleware from "./core/redux/middleware/form-validation-middleware";
+import makeSubmitMiddleware from "./core/redux/middleware/submit-middleware";
 
 import App from "./app";
 import Home from "./pages/home";
@@ -30,7 +30,7 @@ if (isBrowser()) {
             reducers,
             applyMiddleware(makeRequestLocationsMiddleware(api),
                 makeFilterLocationsMiddleware(api),
-                makeFormValidationMiddleware()));
+                makeSubmitMiddleware(api)));
 
         ReactDOM.render(
             <Provider store={store}>

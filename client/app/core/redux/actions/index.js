@@ -7,7 +7,8 @@ const types = {
     filterLocationsByPolygon: "com.byw.filter-locations-by-polygon",
     setViewLocation: "com.byw.set-view-location",
     setFormData: "com.byw.set-form-data",
-    requestFormValidation: "com.byw-request-form-validation"
+    updateForm: "com.byw.update-form",
+    submitForm: "com.byw-submit-form"
 };
 
 const setLanguageAction = function (language) {
@@ -42,8 +43,12 @@ const setFormDataAction = function (key, value) {
     return { type: types.setFormData, payload: { key, value }};
 };
 
-const requestFormValidationAction = function () {
-    return { type: types.requestFormValidation, payload: {}};
+const updateFormAction = function (form) {
+    return { type: types.updateForm, payload: form };
+};
+
+const submitFormAction = function () {
+    return { type: types.submitForm, payload: {}};
 };
 
 export {
@@ -56,5 +61,6 @@ export {
     setFilteredLocationsAction,
     setViewLocation,
     setFormDataAction,
-    requestFormValidationAction
+    updateFormAction,
+    submitFormAction
 };

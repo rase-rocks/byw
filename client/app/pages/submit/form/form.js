@@ -61,6 +61,7 @@ const makeChangeHandler = function (handler, data) {
 
 const toInput = function (handler) {
     return function makeLabel(labelData) {
+        
         return (
             <span key={labelData.id}>
                 <Error text={labelData.meta.error} />

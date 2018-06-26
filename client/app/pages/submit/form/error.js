@@ -5,7 +5,7 @@ class Error extends React.Component {
     render() {
         return (
             <span style={{color: "red"}}>
-                <small>{this.props.text}</small>
+                <small>{this.props.text || (<span>&nbsp;</span>)}</small>
             </span>
         );
     }

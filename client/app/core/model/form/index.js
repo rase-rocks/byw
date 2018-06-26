@@ -1,4 +1,4 @@
-import {keys, keyOrder} from "./keys";
+import { keys, keyOrder } from "./keys";
 import formUpdatingErrorKey from "./form-updating-error-key";
 import item from "./item";
 import update from "./update";
@@ -14,16 +14,26 @@ const reducer = function (keys) {
 
 const form = reducer(keyOrder);
 
-const formUpdatingDataKey = function(frm, key, value) {
+const formUpdatingDataKey = function (frm, key, value) {
     return update(frm, key, value);
 };
 
+const hasErrors = function (form) {
+    return Object.keys(form)
+        .map(key => form[key])
+        .reduce(function (acc, current) {
+            return (acc) ? true : (current.error.length > 0);
+        }, false);
+};
+
 export default form;
-export { 
+export {
     formUpdatingDataKey,
-    formUpdatingErrorKey, 
+    formUpdatingErrorKey,
+    hasErrors,
     validatedForm,
-    keyOrder, 
-    keys, 
-    item, 
-    valueForKey };
+    keyOrder,
+    keys,
+    item,
+    valueForKey
+};

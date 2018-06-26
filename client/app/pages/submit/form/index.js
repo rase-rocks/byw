@@ -2,7 +2,10 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { setFormDataAction, requestFormValidationAction } from "../../../core/redux/actions";
+import { 
+    setFormDataAction, 
+    submitFormAction 
+} from "../../../core/redux/actions";
 import Form from "./form";
 import bindMethods from "../../../core/bind-methods";
 
@@ -24,7 +27,7 @@ class FormController extends React.Component {
         const self = this;
         return function (e) {
             e.preventDefault();
-            self.props.dispatch(requestFormValidationAction());
+            self.props.dispatch(submitFormAction());
         };
     }
 
