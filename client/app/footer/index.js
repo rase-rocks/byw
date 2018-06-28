@@ -5,7 +5,9 @@ import React from "react";
 import { routes } from "../nav";
 import hash from "../core/hash";
 
-const links = routes.map(route => (<li key={hash(route)}>{route.title}</li>));
+import FooterLink from "./footer-link";
+
+const links = routes.map(route => (<FooterLink key={hash(route)} to={route.url} title={route.title}/>));
 
 class Footer extends React.Component {
     render() {
@@ -32,7 +34,7 @@ class Footer extends React.Component {
                             <h4>
                                 Some links
                             </h4>
-                            <ul>
+                            <ul className="footer-nav">
                                 {links}
                             </ul>
                         </div>

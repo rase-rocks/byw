@@ -4,3 +4,7 @@ footer {
     align-items: center;
     background-color: whitesmoke;
 }
+
+.footer-nav {
+    list-style: none;
+}
