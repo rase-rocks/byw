@@ -18,6 +18,8 @@ import Home from "./pages/home";
 import MapPage from "./pages/map";
 import About from "./pages/about";
 import Submit from "./pages/submit";
+import Privacy from "./pages/privacy";
+import { privacyRoute } from "./pages/privacy";
 
 if (isBrowser()) {
     const container = document.getElementById("root");
@@ -40,6 +42,7 @@ if (isBrowser()) {
                         <Route path="/map" component={MapPage} />
                         <Route path="/about" component={About} />
                         <Route path="/submit" component={Submit} />
+                        <Route path={privacyRoute.url} component={Privacy} />
                     </App>
                 </BrowserRouter>
             </Provider>

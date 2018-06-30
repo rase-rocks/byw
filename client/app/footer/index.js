@@ -2,12 +2,14 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { privacyRoute } from "../pages/privacy";
 import { routes } from "../nav";
+import FooterLink from "./footer-link";
 import hash from "../core/hash";
 
-import FooterLink from "./footer-link";
+const footerRoutes = [...routes, privacyRoute];
 
-const links = routes.map(route => (<FooterLink key={hash(route)} to={route.url} title={route.title}/>));
+const links = footerRoutes.map(route => (<FooterLink key={hash(route)} to={route.url} title={route.title}/>));
 
 class Footer extends React.Component {
     render() {
@@ -20,9 +22,6 @@ class Footer extends React.Component {
                             <h4>
                                 Breath your Welsh
                             </h4>
-                            <p>
-                                Privacy Policy
-                            </p>
                         </div>
                         <div className="col-md-3">
                             <p>
