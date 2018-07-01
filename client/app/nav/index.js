@@ -1,3 +1,4 @@
+import { withRouter } from "react-router";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -17,8 +18,41 @@ export const routes = [
 
 const links = routes.map(li);
 
+const responsiveBaseClass = "navbar-collapse";
+
+const pathnameIsEqual = function (newProps, oldProps) {
+    return newProps.location.pathname === oldProps.location.pathname;
+};
+
 class Nav extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showMenu: false
+        };
+    }
+
+    makeToggler() {
+        const self = this;
+        return function () {
+            self.setState({ showMenu: !self.state.showMenu });
+        };
+    }
+
+    componentWillReceiveProps(newProps) {
+        if (!pathnameIsEqual(newProps, this.props)) {
+            this.setState({ showMenu: false });
+        }
+    }
+
     render() {
+
+        const collapseClass = (this.state.showMenu)
+            ? responsiveBaseClass
+            : responsiveBaseClass + " collapse";
+
         return (
             <nav id="mainNav" className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
@@ -29,10 +63,11 @@ class Nav extends React.Component {
                         data-target="#navbarResponsive"
                         aria-controls="navbarResponsive"
                         aria-expanded="false"
-                        aria-label="Toggle navigation">
+                        aria-label="Toggle navigation"
+                        onClick={this.makeToggler()}>
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarResponsive">
+                    <div className={collapseClass} id="navbarResponsive">
                         <ul className="nav navbar-nav ml-auto">
                             {links}
                         </ul>
@@ -48,4 +83,10 @@ Nav.contextTypes = {
     router: PropTypes.object
 };
 
-export default Nav;
+Nav.propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+};
+
+export default withRouter(Nav);
