@@ -39,8 +39,8 @@ const parseCategory = function (categoryStr) {
         return 0;
     }
     return (values.length === 1)
-        ? values[0]
-        : mean(values);
+        ? values[0] / 100
+        : mean(values) / 100;
 };
 
 module.exports = parseCategory;

@@ -1,13 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import { formattedDescription }from "../../../core/model/form/category";
 import hash from "../../../core/hash";
-
-/*
-*
-* TODO: Pagination for results
-*
-*/
 
 class LocationFolder extends React.Component {
     render() {
@@ -17,7 +12,12 @@ class LocationFolder extends React.Component {
         const rows = locations.map(location => {
             return (
                 <tr key={hash(location.name)}>
-                    <td>{location.name}</td>
+                    <td>
+                        {location.name}<br/>
+                        <small>
+                            {formattedDescription(location.category)}
+                        </small>
+                    </td>
                     <td><small>{location.address}</small></td>
                     <td>
                         <button className="btn" onClick={onShowLocation(location)}>Show</button>
