@@ -4,6 +4,7 @@ import React from "react";
 import Error from "./error";
 import { keys, valueForKey } from "../../../core/model/form";
 import eventTargetValue from "../../../core/event-target-value";
+import CategorySlider from "./category-slider";
 
 const target = eventTargetValue();
 
@@ -31,7 +32,7 @@ const labels = {
     [keys.category]: {
         id: "byw-form-label-category",
         type: "text",
-        placeholder: "Category"
+        placeholder: "Cat"
     }
 };
 
@@ -47,6 +48,7 @@ const inputMetaDataForLabel = function (key, formData) {
 
 const labelsArray = function (data) {
     return Object.keys(data)
+        .filter(key => key !== keys.category) // remove the category field as this is going to be a slider
         .reduce(function (inputMetaDatas, key) {
             inputMetaDatas.push(inputMetaDataForLabel(key, data));
             return inputMetaDatas;
@@ -81,7 +83,6 @@ class Form extends React.Component {
     render() {
         
         const { data, onChange, onSubmit } = this.props;
-
         const elements = labelsArray(data).map(toInput(onChange));
 
         return (
@@ -89,6 +90,7 @@ class Form extends React.Component {
 
                 {elements}
 
+                <CategorySlider onChange={onChange} form={data}/>
                 <button className="btn btn-primary mb-2">Submit</button>
             </form>
         );

@@ -55,7 +55,7 @@ const addressTest = function (address) {
 };
 
 const categoryTest = function (category) {
-    return category && category.length > 1;
+    return category && typeof category === "number";
 };
 
 const validators = [

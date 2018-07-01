@@ -21,7 +21,7 @@ const validForm = function () {
         address: item(keys.address, "The Place, The Street"),
         postcode: item(keys.postcode, "WA10 7BJ"),
         coordinates: item(keys.coordinates, ""),
-        category: item(keys.category, "75%")
+        category: item(keys.category, 0.75)
     };
 };
 
@@ -51,7 +51,7 @@ describe("form", function () {
             const oldForm = Object.assign({}, form);
             oldForm.address = item(keys.address, "The address");
             oldForm.postcode = item(keys.postcode, "XX01 1XX");
-            oldForm.category = item(keys.category, "75%");
+            oldForm.category = item(keys.category, 0.75);
             oldForm.coordinates = item(keys.coordinates, "12.987, 23.578");
 
             const newForm = formUpdatingDataKey(oldForm, alteredKey, "Robert");
@@ -81,7 +81,7 @@ describe("form", function () {
             oldForm.name = item(keys.name, "Robert");
             oldForm.address = item(keys.address, "The address");
             oldForm.postcode = item(keys.postcode, "XX01 1XX");
-            oldForm.category = item(keys.category, "75%");
+            oldForm.category = item(keys.category, 0.75);
             oldForm.coordinates = item(keys.coordinates, "12.987, 23.578");
 
             const errorString = "The name has an error";

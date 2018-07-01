@@ -8,9 +8,10 @@
 */
 
 const fs = require("fs");
+
 const csvFilePath = "./existing-data/Outlet Data 110518.csv";
 const csv = require("csvtojson");
-
+const parseCategory = require("./parse-category");
 const locations = [];
 
 console.log("** Starting Conversion - ", csvFilePath);
@@ -27,7 +28,7 @@ csv()
                 name: outlet.Name,
                 address: outlet.Address,
                 coordinates: [outlet.Longitude, outlet.Latitude],
-                category: outlet.Category
+                category: parseCategory(outlet.Category)
             };
         });
         

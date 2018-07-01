@@ -5,9 +5,10 @@ import update from "./update";
 import validatedForm from "./validated-form";
 import valueForKey from "./value-for-key";
 
-const reducer = function (keys) {
-    return keys.reduce(function (acc, current) {
-        acc[current] = item(current, "", "");
+const reducer = function (orderedKeys) {
+    return orderedKeys.reduce(function (acc, current) {
+        const value = (current === keys.category) ? 0.5 : "";
+        acc[current] = item(current, value, "");
         return acc;
     }, {});
 };
