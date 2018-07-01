@@ -9,11 +9,11 @@ describe("parse-category", function () {
     it("handles all test types", function () {
 
         const tests = [
-            { value: "70%", output: 70 },
-            { value: "50-70%", output: 60 },
-            { value: "50 - 70%", output: 60 },
-            { value: "category 50", output: 50 },
-            { value: "category 50 - 70", output: 60 },
+            { value: "70%", output: 0.7 },
+            { value: "50-70%", output: 0.6 },
+            { value: "50 - 70%", output: 0.6 },
+            { value: "category 50", output: 0.5 },
+            { value: "category 50 - 70", output: 0.6 },
             { value: "", output: 0 },
             { value: undefined, output: 0 }
         ];
