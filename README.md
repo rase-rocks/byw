@@ -16,7 +16,7 @@ The development source code should be placed into the client folder. NPM scripts
 
 The s3-build folder should not be manually altered as it is cleared for every build and therefore any changes will not be persisted. This is an intentional design decision to enforce and check that the S3 upload has no missing dependencies.
 
-<pre>
+```
 Root
 |
 +---- client // Client source files that are built into the s3-build folder
@@ -53,7 +53,7 @@ Root
 |
 +---- existing-data // dev means to use data from existing website datasource
 |
-</pre>
+```
 
 ### Contributing
 
@@ -63,6 +63,7 @@ Community contributions are welcome. In order to contribute check out the projec
 
 Currently we are actively seeking contributions from the community for the following areas:
 
++ SVG Graphics for things such as icons and some page elements
 + CSS and styling
 + Informational content
 
@@ -87,15 +88,21 @@ A familiarity with following concepts would be useful:
 
 Clone the project to your local file system and run:
 
-<pre>npm install</pre>
+```
+npm install
+```
 
 To get a build folder run:
 
-<pre>npm run build</pre>
+```
+npm run build
+```
 
 The package has the http-serve as a dependency to allow for local development. This will serve the files out of the s3-build folder. To use run:
 
-<pre>npm run serve-build</pre>
+```
+npm run serve-build
+```
 
 ### Build Process
 
