@@ -10,11 +10,18 @@ const li = function (route) {
     return (<NavLink key={strHash(route.url)} to={route.url}>{route.title}</NavLink>);
 };
 
+export const route = {
+    home: "/",
+    map: "/map",
+    about: "/about",
+    submit: "/submit"
+};
+
 export const routes = [
-    { url: "/", title: "Home" },
-    { url: "/map", title: "Map" },
-    { url: "/about", title: "About" },
-    { url: "/submit", title: "Submit" }
+    { url: route.home, title: "Home" },
+    { url: route.map, title: "Map" },
+    { url: route.about, title: "About" },
+    { url: route.submit, title: "Submit" }
 ];
 
 const links = routes.map(li);
@@ -95,25 +102,3 @@ Nav.propTypes = {
 };
 
 export default withRouter(Nav);
-
-/*
-      <nav id="mainNav" className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="container">
-                    <a className="navbar-brand" href="#">BYW</a>
-                    <button className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                        onClick={this.makeToggler()}>
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className={collapseClass} id="navbarResponsive">
-                        <ul className="nav navbar-nav ml-auto">
-                            {links}
-                        </ul>
-                    </div>
-                </div>
-            </nav>*/

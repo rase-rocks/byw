@@ -1,6 +1,7 @@
 import React from "react";
 import FetchableSectionBackground from "../../resusable-components/FetchableSectionBackground";
 import colors from "../../core/colors";
+import HeroSearchBar from "./hero-search-bar";
 
 class HomeHero extends React.Component {
     render() {
@@ -24,23 +25,10 @@ class HomeHero extends React.Component {
                         </span>
                         somewhere
                     </h1>
+
                     <p className="text-hero">Find out where to use and hear the language</p>
-                    <div className="search-bar">
-                        <form action="#">
-                            <div className="row">
-                                <div className="form-group col-lg-4">
-                                    <input type="search" name="search" placeholder="What are you searching for?" />
-                                </div>
-                                <div className="form-group col-lg-5">
-                                    <input type="text" name="location" placeholder="Location" id="location" />
-                                    <label htmlFor="location" className="location"><i className="fa fa-dot-circle-o"></i></label>
-                                </div>
-                                <div className="form-group col-lg-2 text-center">
-                                    <input type="submit" value="Search" className="submit" />
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    
+                    <HeroSearchBar/>
                 </div>
             </FetchableSectionBackground>
         );

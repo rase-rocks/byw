@@ -13,6 +13,11 @@ const getLocations = function (state) {
     return state.data.locations;
 };
 
+const filter = function (api, store, filterString, filterDistance = 100) {
+    filterLocations(api, getLocations(store.getState()), filterString, filterDistance)
+        .then(dispatchTo(store));
+};
+
 export default function makeFilterLocationsMiddleware(api) {
     return store => next => action => {
 
@@ -23,9 +28,14 @@ export default function makeFilterLocationsMiddleware(api) {
             const { filterString, filterDistance } = action.payload;
             if (!filterString || filterString.length < 3) { break; } // Only filter if there is 3 or more chars
 
-            filterLocations(api, getLocations(store.getState()), filterString, filterDistance)
-                .then(dispatchTo(store));
+            filter(api, store, filterString, filterDistance);
 
+            break;
+        }
+
+        case types.setSearchText: {
+            if (action.payload.length < 3) { break; }
+            filter(api, store, action.payload);
             break;
         }
 

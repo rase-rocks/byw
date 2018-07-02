@@ -3,6 +3,7 @@ const types = {
     setLocations: "com.byw.set-locations",
     requestLocations: "com.byw.request-locations",
     filterLocations: "com.byw.filter-locations",
+    setSearchText: "com.byw.set-search-text",
     setFilteredLocations: "com.byw.set-filtered-locations",
     filterLocationsByPolygon: "com.byw.filter-locations-by-polygon",
     setViewLocation: "com.byw.set-view-location",
@@ -23,7 +24,11 @@ const requestLocationsAction = function () {
     return { type: types.requestLocations, payload: {} };
 };
 
-const filterLocationsAction = function (filterString, filterDistance) {
+const setSearchTextAction = function (text = "") {
+    return { type: types.setSearchText, payload: text };
+};
+
+const filterLocationsAction = function (filterString, filterDistance = 20) {
     return { type: types.filterLocations, payload: { filterString, filterDistance } };
 };
 
@@ -40,7 +45,7 @@ const setViewLocation = function (location) {
 };
 
 const setFormDataAction = function (key, value) {
-    return { type: types.setFormData, payload: { key, value }};
+    return { type: types.setFormData, payload: { key, value } };
 };
 
 const updateFormAction = function (form) {
@@ -48,7 +53,7 @@ const updateFormAction = function (form) {
 };
 
 const submitFormAction = function () {
-    return { type: types.submitForm, payload: {}};
+    return { type: types.submitForm, payload: {} };
 };
 
 export {
@@ -58,6 +63,7 @@ export {
     requestLocationsAction,
     filterLocationsAction,
     filterLocationsByPolygon,
+    setSearchTextAction,
     setFilteredLocationsAction,
     setViewLocation,
     setFormDataAction,

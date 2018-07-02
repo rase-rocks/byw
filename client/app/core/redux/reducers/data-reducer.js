@@ -4,7 +4,8 @@ const defaultState = {
     needsUpdate: true,
     locations: [],
     filteredResults: [],
-    selectedLocation: undefined
+    selectedLocation: undefined,
+    searchText: ""
 };
 
 const dataReducer = function (state = defaultState, action) {
@@ -18,6 +19,13 @@ const dataReducer = function (state = defaultState, action) {
         reducedState.locations = action.payload;
         break;
 
+    }
+
+    case types.setSearchText: {
+
+        reducedState.searchText = action.payload;
+        break;
+        
     }
 
     case types.setFilteredLocations: {

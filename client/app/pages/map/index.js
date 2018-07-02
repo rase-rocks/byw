@@ -5,6 +5,7 @@ import React from "react";
 import {
     requestLocationsAction,
     filterLocationsAction,
+    setSearchTextAction,
     setViewLocation
 } from "../../core/redux/actions";
 
@@ -21,7 +22,6 @@ class MapPageController extends React.Component {
         super(props);
 
         this.state = {
-            searchText: "",
             searchDistance: 20,
             resultsPerPage: 5,
             currentPageNo: 1
@@ -48,8 +48,8 @@ class MapPageController extends React.Component {
         const self = this;
         return function (e) {
             const searchFor = value(e);
-            self.setState({ searchText: searchFor });
-            self.props.dispatch(filterLocationsAction(searchFor, self.state.searchDistance));
+            self.props.dispatch(setSearchTextAction(searchFor));
+            //self.props.dispatch(filterLocationsAction(searchFor, self.state.searchDistance));
         };
     }
 
@@ -81,7 +81,7 @@ class MapPageController extends React.Component {
 
     render() {
 
-        const { filteredResults } = this.props;
+        const { filteredResults, searchText, selectedLocation } = this.props;
         const { currentPageNo, resultsPerPage } = this.state;
 
         const totalCount = filteredResults.length;
@@ -93,8 +93,8 @@ class MapPageController extends React.Component {
                 pageResults={results}
                 pageCount={count}
                 currentPageNo={currentPageNo}
-                selectedLocation={this.props.selectedLocation}
-                searchText={this.state.searchText}
+                selectedLocation={selectedLocation}
+                searchText={searchText}
                 searchDistance={this.state.searchDistance}
                 searchValueDidChange={this.onTextChange()}
                 searchDistanceDidChange={this.onDistanceChange()}
@@ -107,13 +107,16 @@ class MapPageController extends React.Component {
 MapPageController.propTypes = {
     filteredResults: PropTypes.array,
     selectedLocation: PropTypes.object,
-    dispatch: PropTypes.func.isRequired
+    searchText: PropTypes.string,
+    dispatch: PropTypes.func.isRequired,
+    match: PropTypes.object.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
         filteredResults: state.data.filteredResults,
-        selectedLocation: state.data.selectedLocation
+        selectedLocation: state.data.selectedLocation,
+        searchText: state.data.searchText
     };
 };
 
