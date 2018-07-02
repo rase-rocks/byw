@@ -31,7 +31,7 @@ class MapPageController extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(requestLocationsAction());
+        this.props.dispatch(requestLocationsAction());        
     }
 
     componentWillReceiveProps(props) {
@@ -49,7 +49,6 @@ class MapPageController extends React.Component {
         return function (e) {
             const searchFor = value(e);
             self.props.dispatch(setSearchTextAction(searchFor));
-            //self.props.dispatch(filterLocationsAction(searchFor, self.state.searchDistance));
         };
     }
 

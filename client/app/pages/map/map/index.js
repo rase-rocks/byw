@@ -37,7 +37,7 @@ const popupString = function (location) {
 
 const setMarkers = function (map, locations, markerGroup) {
 
-    const group = markerGroup || L.layerGroup().addTo(map);
+    const group = markerGroup || L.featureGroup().addTo(map);
 
     group.clearLayers();
 
@@ -85,8 +85,8 @@ class MapController extends React.Component {
 
         if (!isBrowser()) { return; }
 
-        const map = L.map(MAP_ID).setView(initialCoords, 9);
-
+        const map = L.map(MAP_ID);
+        
         addEventHandlers(map, makeHandler(this.props.dispatch));
 
         L.tileLayer(tileLayerString, attribution).addTo(map);
@@ -94,7 +94,13 @@ class MapController extends React.Component {
         const markerGroup = setMarkers(map, this.props.filteredResults);
 
         this.setState({ map: map, markerGroup: markerGroup });
-
+        
+        if (this.props.filteredResults.length > 0) {
+            map.fitBounds(markerGroup.getBounds());
+        } else {
+            map.setView(initialCoords, 9);
+        }
+        
     }
 
     render() {

@@ -4,9 +4,9 @@
 
 #### Logic
 
-+ Implement search from the home page, probably by using route url escaped route params for the map route
++ ~~Implement search from the home page~~
 + Implement rating system so that the category can update as more users chime in
-
++ Consider having map page locate map onto search result bounding box when viewed
 
 #### Styling / content
 
