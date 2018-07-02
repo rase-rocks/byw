@@ -16,16 +16,14 @@ class Quote extends React.Component {
         const quote = this.state.quote;
 
         return (
-            <div>
-                <hr/>
-                <div className="quote">
-                    <div className="content-separator">
+            <section className="quote">
+                <div className="container text-center">
+                    <div className="row d-flex align-items-center">
                         <h1>{quote.CY}</h1>
-                        <p>{quote.EN}</p>
+                        <h4>{quote.EN}</h4>
                     </div>
                 </div>
-                <hr/>
-            </div>
+            </section>
         );
     }
 }

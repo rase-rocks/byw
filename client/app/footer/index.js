@@ -6,19 +6,20 @@ import { privacyRoute } from "../pages/privacy";
 import { routes } from "../nav";
 import FooterLink from "./footer-link";
 import hash from "../core/hash";
+import GitHubIcon from "../resusable-components/github-icon";
 
 const footerRoutes = [...routes, privacyRoute];
 
-const links = footerRoutes.map(route => (<FooterLink key={hash(route)} to={route.url} title={route.title}/>));
+const links = footerRoutes.map(route => (<FooterLink key={hash(route)} to={route.url} title={route.title} />));
 
 class Footer extends React.Component {
     render() {
 
         return (
-            <footer>
+            <footer className="main-footer">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="about col-md-3">
                             <h4>
                                 Breath your Welsh
                             </h4>
@@ -29,15 +30,29 @@ class Footer extends React.Component {
                             </p>
                         </div>
                         <div className="col-md-3"></div>
-                        <div className="col-md-3">
-                            <h4>
-                                Some links
-                            </h4>
-                            <ul className="footer-nav">
-                                {links}
-                            </ul>
+                        <div className="site-links col-md-3">
+                            <h3>Useful links</h3>
+                            <div className="menus d-flex">
+                                <ul className="list-unstyled">
+                                    {links}
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
+                </div>
+                <div className="copyrights text-center">
+                    <p>
+                        Visit us on
+                        &nbsp;
+                        <GitHubIcon size="16"/>
+                        &nbsp;
+                        <a href="https://github.com/rase-rocks/byw"
+                            target="_blank"
+                            rel="noreferrer noopener">
+                            GitHub
+                        </a>
+                    </p>
                 </div>
             </footer >
         );

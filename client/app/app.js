@@ -1,13 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { withRouter } from "react-router";
+import PropTypes from "prop-types";
+import React from "react";
 
-import isBrowser from "./core/is-browser";
-
-import Nav from "./nav";
 import children from "./core/props-children";
-
 import Footer from "./footer";
+import isBrowser from "./core/is-browser";
+import Nav from "./nav";
 
 const listener = function () {
     if (isBrowser()) {
@@ -25,7 +23,6 @@ class App extends React.Component {
     render() {
 
         return (
-
             <div>
                 <Nav />
                 <div>
@@ -33,7 +30,6 @@ class App extends React.Component {
                 </div>
                 <Footer />
             </div>
-
         );
     }
 

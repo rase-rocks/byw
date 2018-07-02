@@ -64,7 +64,6 @@ Community contributions are welcome. In order to contribute check out the projec
 Currently we are actively seeking contributions from the community for the following areas:
 
 + SVG Graphics for things such as icons and some page elements
-+ CSS and styling
 + Informational content
 
 #### Contributing workflow
@@ -92,7 +91,7 @@ Clone the project to your local file system and run:
 npm install
 ```
 
-To get a build folder run:
+To get a build folder run. Once this has been created it can be served up during development:
 
 ```
 npm run build
@@ -113,6 +112,8 @@ The build script also browserifies the client app and bundles it as well as copy
 There is an eslintrc file included to enforce style guidlines.
 
 ### Dependencies
+
+External services that the app fetches out to
 
 Geocoding: https://github.com/ideal-postcodes/postcodes.io/ <br/>
 Map tiling: https://github.com/Leaflet/Leaflet

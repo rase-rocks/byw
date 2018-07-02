@@ -6,7 +6,7 @@ import children from "../core/props-children";
 
 const className = function (pathname, currentUrl) {
     const c = (pathname === currentUrl) ? "active" : "";
-    return `nav-item nav-link ${c}`;
+    return `nav-item ${c}`;
 };
 
 const pathname = function (context) {
@@ -17,7 +17,7 @@ class NavLink extends React.Component {
     render() {
         return (
             <li className={className(pathname(this.context), this.props.to)}>
-                <Link {...this.props}>
+                <Link className="nav-link" {...this.props}>
                     {this.props.children}
                 </Link>
             </li>

@@ -26,7 +26,7 @@ class MapSearchBox extends React.Component {
             <div className="map-search-box">
 
                 <div>
-                    <div>
+                    <div className="text-center">
                         <input type="text"
                             className="text-box unbordered"
                             onChange={searchValueDidChange}

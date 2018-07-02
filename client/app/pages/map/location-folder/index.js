@@ -1,26 +1,27 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import { formattedDescription }from "../../../core/model/form/category";
+import { formattedDescription } from "../../../core/model/form/category";
 import hash from "../../../core/hash";
 
 class LocationFolder extends React.Component {
     render() {
 
-        const {locations, onShowLocation} = this.props;
+        const { locations, onShowLocation } = this.props;
 
         const rows = locations.map(location => {
             return (
                 <tr key={hash(location.name)}>
                     <td>
-                        {location.name}<br/>
+                        {location.name}<br />
                         <small>
                             {formattedDescription(location.category)}
                         </small>
                     </td>
                     <td><small>{location.address}</small></td>
                     <td>
-                        <button className="btn" onClick={onShowLocation(location)}>Show</button>
+                        <button className="btn btn-primary has-shadow"
+                            onClick={onShowLocation(location)}>Show</button>
                     </td>
                 </tr>
             );

@@ -11,7 +11,7 @@ import "whatwg-fetch";
 //     return typeof InstallTrigger !== "undefined";
 // };
 
-const handler = function (comp) {
+export const handler = function (comp) {
     return function (dataUrl) {
         setTimeout(function () {
             comp.setState({ url: dataUrl });
@@ -19,7 +19,7 @@ const handler = function (comp) {
     };
 };
 
-const backStyle = function (urlString = "",
+export const backStyle = function (urlString = "",
     backgroundColor = colors.darkBackgroundColor,
     cssFilters = []) {
     return {

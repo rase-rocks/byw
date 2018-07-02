@@ -1,18 +1,32 @@
 import React from "react";
-
+import THead from "./thead";
+import Tr from "./tr";
 import PageContainer from "../../page-content";
-import PageHeader from "../../resusable-components/page-header";
+
+const files = [
+    {
+        fileType: "PDF",
+        url: "/assets/downloads/Privacy.pdf",
+        filename: "Privacy.pdf",
+        hash: "e4601e98a76a93980fba7d94bb49554799df487066641fa98bcb1f7c1120a05f"
+    },
+    {
+        fileType: "Markdown",
+        url: "/assets/downloads/Privacy.md",
+        filename: "Privacy.md",
+        hash: "7d02ef99fc379acfbb2b1849b6378f44509069eb34acc9e1616cca6b2463965f"
+    }
+];
+
+const fileComponents = files.map(meta => {
+    return (<Tr key={meta.hash} {...meta} />);
+});
 
 class Privacy extends React.Component {
     render() {
         return (
             <PageContainer>
                 <div className="container">
-
-                    <PageHeader>
-                        Privacy Policy
-                    </PageHeader>
-
                     <section id="privacy-policy-details">
                         <div className="row">
                             <div className="col-md-12">
@@ -32,63 +46,18 @@ class Privacy extends React.Component {
                                 <p>There are no plans to increase the scope of what we do but, whenever we do, this policy will be reviewed. This version was written on the 30th June, 2018.</p>
 
                             </div>
-
                         </div>
-                        
+
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="table-responsive">
                                     <table className="table">
-
-                                        <thead>
-                                            <tr>
-                                                <td>
-                                                    Type
-                                                </td>
-                                                <td>
-                                                    Download link
-                                                </td>
-                                                <td>
-                                                    SHA256 Hash
-                                                </td>
-                                            </tr>
-                                        </thead>
-
+                                        <THead />
                                         <tbody>
-                                            <tr>
-                                                <td>PDF</td>
-                                                <td>
-                                                    <a href="/assets/downloads/Privacy.pdf"
-                                                        target="_blank"
-                                                        rel="noreferrer noopener">
-                                                        Privacy.pdf
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <small>
-                                                        e4601e98a76a93980fba7d94bb49554799df487066641fa98bcb1f7c1120a05f
-                                                    </small>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Markdown</td>
-                                                <td>
-                                                    <a href="/assets/downloads/Privacy.md"
-                                                        target="_blank"
-                                                        rel="noreferrer noopener">
-                                                        Privacy.md
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <small>
-                                                        7d02ef99fc379acfbb2b1849b6378f44509069eb34acc9e1616cca6b2463965f
-                                                    </small>
-                                                </td>
-                                            </tr>
+                                            {fileComponents}
                                         </tbody>
                                     </table>
                                 </div>
-
                             </div>
                         </div>
                     </section>

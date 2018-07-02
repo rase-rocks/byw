@@ -54,7 +54,7 @@ gulp.task("static-api", function () {
 // Concat all the css files into one ready to be uncss'd and inlined
 
 gulp.task("static-css", function () {
-    return gulp.src("./client/css/**/*")
+    return gulp.src("./client/css/**/*.css")
         .pipe(concat(names.cssFilename))
         .pipe(gulp.dest(getPath("css")));
 });

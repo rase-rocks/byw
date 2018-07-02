@@ -1,7 +1,171 @@
-.nav-link > a {
-    color: darkgray;
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 2px;
+    width: 35px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
 }
 
-.nav-link.active > a {
-    color: whitesmoke;
+#nav-toggle span:before {
+    top: -10px;
+}
+
+#nav-toggle span:after {
+    bottom: -10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    transition: all 500ms ease-in-out;
+}
+
+#nav-toggle.active span {
+    background-color: transparent;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+}
+
+#nav-toggle.active span:before {
+    transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+    transform: rotate(-45deg);
+}
+
+.overlay-menu {
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	   -moz-transition: all 0.4s ease-in-out 0s;
+	    -ms-transition: all 0.4s ease-in-out 0s;
+	     -o-transition: all 0.4s ease-in-out 0s;
+	        transition: all 0.4s ease-in-out 0s;
+}
+
+.overlay-menu {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    display: table;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+}
+
+.overlay-menu {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    display: table;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    z-index: 9999;
+    opacity: 0;
+}
+
+.overlay-menu.active {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+}
+
+.overlay-menu-inner {
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay-menu-nav {
+    max-width: 300px;
+    margin: 0 auto 60px;
+}
+
+.overlay-navigation-footer {
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+    width: 100%;
+    color: #666;
+}
+
+.overlay-menu {
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    -ms-transition: all 0.4s ease-in-out 0s;
+    -o-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+
+#nav,
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav > li > a {
+    font-family: "Dosis", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 24px;
+    color: #FDFDFD;
+}
+
+#nav li a:hover, #nav li a.active {
+    color: #fff;
+}
+
+#nav li ul {
+    display: none;
+    padding: 5px 0;
+    margin: 5px 0 10px;
+}
+
+#nav li ul li a {
+    display: inline-block;
+    padding: 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    color: #666;
+}
+
+.navigation-hide {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    background-color: transparent;
+    border:none;
+}
+
+.navigation-hide:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media only screen and (max-width: 960px) {
+
+	.overlay-menu.active {
+		position: absolute;
+	}
+	.aux-navigation-active .wrapper{
+		position: fixed;
+	}
+	.aux-navigation-active .side-navigation-wrapper,
+	.aux-navigation-active .overlay-menu {
+		position: absolute;
+	}
+
 }

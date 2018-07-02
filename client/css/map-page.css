@@ -2,6 +2,10 @@
     position: relative;
     width: 100%;
     min-height: 90vh;
+    background-color: rgb(54, 54, 54);
+    color: darkgrey;
+    margin-bottom: -10px;
+    padding-bottom: 10px;
 }
 
 .full-page-map {
@@ -9,18 +13,17 @@
     width: 100%;
 }
 
-.map-search-box {
-    background-color: white;
-}
-
 .text-box {
     width: 95%;
     margin: 10px;
     padding: 20px;
     text-align: center;
+    color: darkgrey;
+    background-color: rgb(66, 66, 66);
 }
 
 .unbordered {
     border: none;
 }
+
 
