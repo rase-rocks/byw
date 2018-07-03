@@ -6,13 +6,13 @@ import PageContainer from "../../page-content";
 const files = [
     {
         fileType: "PDF",
-        url: "/assets/downloads/Privacy.pdf",
+        url: "assets/downloads/Privacy.pdf",
         filename: "Privacy.pdf",
         hash: "e4601e98a76a93980fba7d94bb49554799df487066641fa98bcb1f7c1120a05f"
     },
     {
         fileType: "Markdown",
-        url: "/assets/downloads/Privacy.md",
+        url: "assets/downloads/Privacy.md",
         filename: "Privacy.md",
         hash: "7d02ef99fc379acfbb2b1849b6378f44509069eb34acc9e1616cca6b2463965f"
     }

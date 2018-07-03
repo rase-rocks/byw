@@ -31,7 +31,7 @@ function html(string) {
     </head>
     <body>
     ${string}
-    <script src="/bundle.js"></script>
+    <script src="bundle.js"></script>
     </body>
     </html>`;
 }

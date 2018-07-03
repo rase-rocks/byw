@@ -20,7 +20,7 @@ class PromotionDivider extends React.Component {
         return (
             <FetchableSectionBackground
                 backgroundColor={colors.seaBlue}
-                url="/assets/images/ali-al-mufti-365944-unsplash.jpg"
+                url="assets/images/ali-al-mufti-365944-unsplash.jpg"
                 classes="divider">
                 <div className="container">
                     <h2 className="has-lines">

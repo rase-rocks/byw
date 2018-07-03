@@ -7,7 +7,7 @@ class HomeHero extends React.Component {
     render() {
         return (
             <FetchableSectionBackground backgroundColor={colors.mountainGreen}
-                url="/assets/images/leo-sammarco-37818-unsplash.jpg"
+                url="assets/images/leo-sammarco-37818-unsplash.jpg"
                 classes="hero d-flex align-items-center">
                 <div className="container">
 
