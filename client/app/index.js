@@ -47,6 +47,8 @@ if (isBrowser()) {
                 (<Route key="5" path={privacyRoute.url} component={Privacy} />)
             ];
 
+        console.log(routes, Redirect);
+
         ReactDOM.render(
             <Provider store={store}>
                 <BrowserRouter>
