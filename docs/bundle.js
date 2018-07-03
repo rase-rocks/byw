@@ -94,7 +94,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var urls = {
-    locations: "byw/static-api/public/data",
+    locations: "static-api/public/data",
     makePostcodeUrl: function makePostcodeUrl(postcode) {
         return "https://api.postcodes.io/postcodes/" + postcode.replace(" ", "");
     }
@@ -2367,7 +2367,7 @@ var About = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-md-8" },
-                            _react2.default.createElement("img", { src: "byw/assets/images/d4d78a_6f1e45c5b4b34df8a4d0299050cf3937_mv2.webp",
+                            _react2.default.createElement("img", { src: "assets/images/d4d78a_6f1e45c5b4b34df8a4d0299050cf3937_mv2.webp",
                                 style: { width: "100%" },
                                 alt: "A map of welsh language usage decline" })
                         )
@@ -2740,7 +2740,7 @@ var HomeHero = function (_React$Component) {
             return _react2.default.createElement(
                 _FetchableSectionBackground2.default,
                 { backgroundColor: _colors2.default.mountainGreen,
-                    url: "byw/assets/images/leo-sammarco-37818-unsplash.jpg",
+                    url: "assets/images/leo-sammarco-37818-unsplash.jpg",
                     classes: "hero d-flex align-items-center" },
                 _react2.default.createElement(
                     "div",
@@ -2999,7 +2999,7 @@ var PromotionDivider = function (_React$Component) {
                 _FetchableSectionBackground2.default,
                 {
                     backgroundColor: _colors2.default.seaBlue,
-                    url: "byw/assets/images/ali-al-mufti-365944-unsplash.jpg",
+                    url: "assets/images/ali-al-mufti-365944-unsplash.jpg",
                     classes: "divider" },
                 _react2.default.createElement(
                     "div",
@@ -3995,12 +3995,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var files = [{
     fileType: "PDF",
-    url: "byw/assets/downloads/Privacy.pdf",
+    url: "assets/downloads/Privacy.pdf",
     filename: "Privacy.pdf",
     hash: "e4601e98a76a93980fba7d94bb49554799df487066641fa98bcb1f7c1120a05f"
 }, {
     fileType: "Markdown",
-    url: "byw/assets/downloads/Privacy.md",
+    url: "assets/downloads/Privacy.md",
     filename: "Privacy.md",
     hash: "7d02ef99fc379acfbb2b1849b6378f44509069eb34acc9e1616cca6b2463965f"
 }];
