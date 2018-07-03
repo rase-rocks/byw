@@ -1822,7 +1822,9 @@ if ((0, _isBrowser2.default)()) {
                     _react2.default.createElement(_reactRouterDom.Route, { path: _nav.route.map, component: _map2.default }),
                     _react2.default.createElement(_reactRouterDom.Route, { path: _nav.route.about, component: _about2.default }),
                     _react2.default.createElement(_reactRouterDom.Route, { path: _nav.route.submit, component: _submit2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: _privacy.privacyRoute.url, component: _privacy2.default })
+                    _react2.default.createElement(_reactRouterDom.Route, { path: _privacy.privacyRoute.url, component: _privacy2.default }),
+                    _react2.default.createElement(_reactRouterDom.Route, { component: _home2.default }),
+                    " "
                 )
             )
         ), container);

@@ -41,6 +41,7 @@ if (isBrowser()) {
                         <Route path={route.about} component={About} />
                         <Route path={route.submit} component={Submit} />
                         <Route path={privacyRoute.url} component={Privacy} />
+                        <Route component={Home} /> {/* Temporary fix for gh-pages */}
                     </App>
                 </BrowserRouter>
             </Provider>
