@@ -1,9 +1,8 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom";
-import Redirect from "react-router-dom";
 
 import { privacyRoute } from "./pages/privacy";
 import { route } from "./nav";
