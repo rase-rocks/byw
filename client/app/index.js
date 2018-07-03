@@ -6,7 +6,6 @@ import ReactDOM from "react-dom";
 
 import { privacyRoute } from "./pages/privacy";
 import { route } from "./nav";
-import { stageRoute, isStagingEntryPoint} from "./gh-pages";
 import About from "./pages/about";
 import App from "./app";
 import Home from "./pages/home";
@@ -28,15 +27,6 @@ const routes = [
     { url: privacyRoute.url, component: Privacy }
 ];
 
-const makeRouteWrangler = function (needsStagingRoute) {
-    return function (route) {
-        return {
-            url: (needsStagingRoute) ? stageRoute(route.url) : route.url,
-            component: route.component
-        };
-    };
-};
-
 if (isBrowser()) {
     const container = document.getElementById("root");
 
@@ -51,10 +41,9 @@ if (isBrowser()) {
                 makeSubmitMiddleware(api)));
 
 
-        const components = routes.map(makeRouteWrangler(isStagingEntryPoint()))
-            .map(function (route, i) {
-                return (<Route key={`route-${i}`} exact path={route.url} component={route.component} />);
-            });
+        const components = routes.map(function (route, i) {
+            return (<Route key={`route-${i}`} exact path={route.url} component={route.component} />);
+        });
 
         ReactDOM.render(
             <Provider store={store}>

@@ -24,6 +24,6 @@ echo "\n[5/6]-[${GREEN}Copying build to /docs for GitHub pages${NC}]\n"
 rm -r ./docs
 mkdir ./docs
 cp -r ./s3-build/* ./docs
-# sed -i '' "s/assets/byw\/assets/g; s/static-api/byw\/static-api/g;" ./docs/bundle.js
+sed -i '' "s/assets/byw\/assets/g; s/static-api/byw\/static-api/g;" ./docs/bundle.js
 
 echo "\n[6/6]-[Build complete at ${GREEN}s3-build/${NC}]\n"

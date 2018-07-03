@@ -1,6 +1,5 @@
 import React from "react";
 
-import { stageRoute, isStagingEntryPoint } from "../../gh-pages";
 import PageContainer from "../../page-content";
 import THead from "./thead";
 import Tr from "./tr";
@@ -69,10 +68,8 @@ class Privacy extends React.Component {
     }
 }
 
-const ROUTE = "/privacy";
-
 const privacyRoute = {
-    url: (isStagingEntryPoint()) ? stageRoute(ROUTE) : ROUTE,
+    url: "/privacy",
     title: "Privacy"
 };
 
