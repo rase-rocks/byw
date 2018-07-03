@@ -1757,7 +1757,7 @@ var isStagingEntryPoint = exports.isStagingEntryPoint = function isStagingEntryP
 };
 
 var stageRoute = exports.stageRoute = function stageRoute(url) {
-    return "/byw/" + url;
+    return "/byw" + url;
 };
 
 },{"../core/is-browser":7}],49:[function(require,module,exports){

@@ -10,5 +10,5 @@ export const isStagingEntryPoint = function () {
 };
 
 export const stageRoute = function (url) {
-    return `/byw/${url}`;
+    return `/byw${url}`;
 };
