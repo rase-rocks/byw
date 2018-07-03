@@ -3,6 +3,7 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom";
+import Redirect from "react-router-dom";
 
 import { privacyRoute } from "./pages/privacy";
 import { route } from "./nav";
@@ -19,6 +20,11 @@ import Privacy from "./pages/privacy";
 import reducers from "./core/redux/reducers";
 import Submit from "./pages/submit";
 
+const isStaging = function () {
+    if (!isBrowser()) { return false; }
+    return window.location.hostname.includes("github"); // Temp fix for gh-pages staging environment
+};
+
 if (isBrowser()) {
     const container = document.getElementById("root");
 
@@ -32,16 +38,21 @@ if (isBrowser()) {
                 makeFilterLocationsMiddleware(api),
                 makeSubmitMiddleware(api)));
 
+        const routes = (isStaging())
+            ? [(<Redirect key="0" to="/"/>)]
+            : [
+                (<Route key="1" path={route.home} exact component={Home} />),
+                (<Route key="2" path={route.map} component={MapPage} />),
+                (<Route key="3" path={route.about} component={About} />),
+                (<Route key="4" path={route.submit} component={Submit} />),
+                (<Route key="5" path={privacyRoute.url} component={Privacy} />)
+            ];
+
         ReactDOM.render(
             <Provider store={store}>
                 <BrowserRouter>
                     <App>
-                        <Route path={route.home} exact component={Home} />
-                        <Route path={route.map} component={MapPage} />
-                        <Route path={route.about} component={About} />
-                        <Route path={route.submit} component={Submit} />
-                        <Route path={privacyRoute.url} component={Privacy} />
-                        <Route component={Home} /> {/* Temporary fix for gh-pages */}
+                        {routes}
                     </App>
                 </BrowserRouter>
             </Provider>

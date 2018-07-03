@@ -1736,6 +1736,8 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(Footer);
 
 var _reactRouterDom = require("react-router-dom");
 
+var _reactRouterDom2 = _interopRequireDefault(_reactRouterDom);
+
 var _redux = require("redux");
 
 var _reactRedux = require("react-redux");
@@ -1800,6 +1802,13 @@ var _submit2 = _interopRequireDefault(_submit);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var isStaging = function isStaging() {
+    if (!(0, _isBrowser2.default)()) {
+        return false;
+    }
+    return window.location.hostname.includes("github");
+};
+
 if ((0, _isBrowser2.default)()) {
     var container = document.getElementById("root");
 
@@ -1808,6 +1817,8 @@ if ((0, _isBrowser2.default)()) {
         var api = (0, _apiClient2.default)(fetch);
 
         var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)((0, _requestLocationsMiddleware2.default)(api), (0, _filterLocationsMiddleware2.default)(api), (0, _submitMiddleware2.default)(api)));
+
+        var routes = isStaging() ? [_react2.default.createElement(_reactRouterDom2.default, { key: "0", to: "/" })] : [_react2.default.createElement(_reactRouterDom.Route, { key: "1", path: _nav.route.home, exact: true, component: _home2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "2", path: _nav.route.map, component: _map2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "3", path: _nav.route.about, component: _about2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "4", path: _nav.route.submit, component: _submit2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "5", path: _privacy.privacyRoute.url, component: _privacy2.default })];
 
         _reactDom2.default.render(_react2.default.createElement(
             _reactRedux.Provider,
@@ -1818,13 +1829,7 @@ if ((0, _isBrowser2.default)()) {
                 _react2.default.createElement(
                     _app2.default,
                     null,
-                    _react2.default.createElement(_reactRouterDom.Route, { path: _nav.route.home, exact: true, component: _home2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: _nav.route.map, component: _map2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: _nav.route.about, component: _about2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: _nav.route.submit, component: _submit2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: _privacy.privacyRoute.url, component: _privacy2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { component: _home2.default }),
-                    " "
+                    routes
                 )
             )
         ), container);

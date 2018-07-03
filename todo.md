@@ -15,6 +15,7 @@
 + Change the about page into a 'for business owners page'
 + Footer content
 + Implement 404 and replace current route which just sends to the home route
++ Consider swapping the gh-pages staging environment for a 'website about the website'
 
 ### Back end
 
