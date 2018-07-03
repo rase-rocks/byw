@@ -1,7 +1,9 @@
 import React from "react";
+
+import { stageRoute, isStagingEntryPoint } from "../../gh-pages";
+import PageContainer from "../../page-content";
 import THead from "./thead";
 import Tr from "./tr";
-import PageContainer from "../../page-content";
 
 const files = [
     {
@@ -67,8 +69,11 @@ class Privacy extends React.Component {
     }
 }
 
+const ROUTE = "/privacy";
+
 const privacyRoute = {
-    url: "/privacy", title: "Privacy"
+    url: (isStagingEntryPoint()) ? stageRoute(ROUTE) : ROUTE,
+    title: "Privacy"
 };
 
 export default Privacy;

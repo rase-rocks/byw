@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import React from "react";
@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 
 import { privacyRoute } from "./pages/privacy";
 import { route } from "./nav";
+import { stageRoute, isStagingEntryPoint} from "./gh-pages";
 import About from "./pages/about";
 import App from "./app";
 import Home from "./pages/home";
@@ -18,19 +19,6 @@ import MapPage from "./pages/map";
 import Privacy from "./pages/privacy";
 import reducers from "./core/redux/reducers";
 import Submit from "./pages/submit";
-
-const hostname = function (window) {
-    return window.location.hostname;
-};
-
-const isStagingEntryPoint = function () {
-    if (!isBrowser()) { return false; }
-    return hostname(window).includes("github"); // Temp fix for gh-pages staging environment
-};
-
-const stageRoute = function (url) {
-    return `/byw/${url}`;
-};
 
 const routes = [
     { url: route.home, component: Home },

@@ -5,16 +5,28 @@ import React from "react";
 import { strHash } from "../core/hash";
 import NavLink from "./nav-link";
 import OverlayMenu from "./overlay-menu";
+import { stageRoute, isStagingEntryPoint } from "../gh-pages";
 
 const li = function (route) {
     return (<NavLink key={strHash(route.url)} to={route.url}>{route.title}</NavLink>);
 };
 
-export const route = {
+const routeConst = {
     home: "/",
     map: "/map",
     about: "/about",
     submit: "/submit"
+};
+
+const makeRoute = function (url) {
+    return (isStagingEntryPoint()) ? stageRoute(url) : url;
+};
+
+export const route = {
+    home: makeRoute(routeConst.home),
+    map: makeRoute(routeConst.map),
+    about: makeRoute(routeConst.about),
+    submit: makeRoute(routeConst.submit), 
 };
 
 export const routes = [
