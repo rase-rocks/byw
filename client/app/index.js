@@ -37,27 +37,25 @@ if (isBrowser()) {
                 makeFilterLocationsMiddleware(api),
                 makeSubmitMiddleware(api)));
 
-
-        if (isStaging()) {
-            ReactDOM.render(<Redirect to="/" />, container);
-        } else {
-            const routes = [
+        const routes = (isStaging())
+            ? [(<Redirect key="0" to="/" />)]
+            : [
                 (<Route key="1" path={route.home} exact component={Home} />),
                 (<Route key="2" path={route.map} component={MapPage} />),
                 (<Route key="3" path={route.about} component={About} />),
                 (<Route key="4" path={route.submit} component={Submit} />),
                 (<Route key="5" path={privacyRoute.url} component={Privacy} />)
             ];
-    
-            ReactDOM.render(
-                <Provider store={store}>
-                    <BrowserRouter>
-                        <App>
-                            {routes}
-                        </App>
-                    </BrowserRouter>
-                </Provider>
-                , container);
-        }
+
+        ReactDOM.render(
+            <Provider store={store}>
+                <BrowserRouter>
+                    <App>
+                        {routes}
+                    </App>
+                </BrowserRouter>
+            </Provider>
+            , container);
+
     }
 }
