@@ -49,7 +49,7 @@ if (isBrowser()) {
 
 
         const routes = (isStagingEntryPoint())
-            ? [(<Redirect key="0" to="/" />)]
+            ? [(<Redirect key="0" to={route.map} />)]
             : [
                 (<Route key="1" path={route.home} exact component={Home} />),
                 (<Route key="2" path={route.map} component={MapPage} />),
