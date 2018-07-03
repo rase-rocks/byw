@@ -94,7 +94,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var urls = {
-    locations: "/static-api/public/data",
+    locations: "static-api/public/data",
     makePostcodeUrl: function makePostcodeUrl(postcode) {
         return "https://api.postcodes.io/postcodes/" + postcode.replace(" ", "");
     }

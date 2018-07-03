@@ -1,5 +1,5 @@
 const urls = {
-    locations: "/static-api/public/data",
+    locations: "static-api/public/data",
     makePostcodeUrl: function (postcode) {
         return `https://api.postcodes.io/postcodes/${postcode.replace(" ", "")}`;
     }
