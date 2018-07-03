@@ -23,15 +23,30 @@ const hostname = function (window) {
     return window.location.hostname;
 };
 
-const pathname = function (window) {
-    return window.location.pathname;
-};
-
 const isStagingEntryPoint = function () {
     if (!isBrowser()) { return false; }
-    console.log(window.location);
-    return hostname(window).includes("github")
-        && pathname(window).includes("byw"); // Temp fix for gh-pages staging environment
+    return hostname(window).includes("github"); // Temp fix for gh-pages staging environment
+};
+
+const stageRoute = function (url) {
+    return `/byw/${url}`;
+};
+
+const routes = [
+    { url: route.home, component: Home },
+    { url: route.map, component: MapPage },
+    { url: route.about, component: About },
+    { url: route.submit, component: Submit },
+    { url: privacyRoute.url, component: Privacy }
+];
+
+const makeRouteWrangler = function (needsStagingRoute) {
+    return function (route) {
+        return {
+            url: (needsStagingRoute) ? stageRoute(route.url) : route.url,
+            component: route.component
+        };
+    };
 };
 
 if (isBrowser()) {
@@ -48,21 +63,16 @@ if (isBrowser()) {
                 makeSubmitMiddleware(api)));
 
 
-        const routes = (isStagingEntryPoint())
-            ? [(<Redirect key="0" to={route.map} />)]
-            : [
-                (<Route key="1" path={route.home} exact component={Home} />),
-                (<Route key="2" path={route.map} component={MapPage} />),
-                (<Route key="3" path={route.about} component={About} />),
-                (<Route key="4" path={route.submit} component={Submit} />),
-                (<Route key="5" path={privacyRoute.url} component={Privacy} />)
-            ];
+        const components = routes.map(makeRouteWrangler(isStagingEntryPoint()))
+            .map(function (route, i) {
+                return (<Route key={`route-${i}`} exact path={route.url} component={route.component} />);
+            });
 
         ReactDOM.render(
             <Provider store={store}>
                 <BrowserRouter>
                     <App>
-                        {routes}
+                        {components}
                     </App>
                 </BrowserRouter>
             </Provider>

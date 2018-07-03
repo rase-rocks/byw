@@ -1804,16 +1804,26 @@ var hostname = function hostname(window) {
     return window.location.hostname;
 };
 
-var pathname = function pathname(window) {
-    return window.location.pathname;
-};
-
 var isStagingEntryPoint = function isStagingEntryPoint() {
     if (!(0, _isBrowser2.default)()) {
         return false;
     }
-    console.log(window.location);
-    return hostname(window).includes("github") && pathname(window).includes("byw"); // Temp fix for gh-pages staging environment
+    return hostname(window).includes("github"); // Temp fix for gh-pages staging environment
+};
+
+var stageRoute = function stageRoute(url) {
+    return "/byw/" + url;
+};
+
+var routes = [{ url: _nav.route.home, component: _home2.default }, { url: _nav.route.map, component: _map2.default }, { url: _nav.route.about, component: _about2.default }, { url: _nav.route.submit, component: _submit2.default }, { url: _privacy.privacyRoute.url, component: _privacy2.default }];
+
+var makeRouteWrangler = function makeRouteWrangler(needsStagingRoute) {
+    return function (route) {
+        return {
+            url: needsStagingRoute ? stageRoute(route.url) : route.url,
+            component: route.component
+        };
+    };
 };
 
 if ((0, _isBrowser2.default)()) {
@@ -1825,7 +1835,9 @@ if ((0, _isBrowser2.default)()) {
 
         var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)((0, _requestLocationsMiddleware2.default)(api), (0, _filterLocationsMiddleware2.default)(api), (0, _submitMiddleware2.default)(api)));
 
-        var routes = isStagingEntryPoint() ? [_react2.default.createElement(_reactRouterDom.Redirect, { key: "0", to: "/" })] : [_react2.default.createElement(_reactRouterDom.Route, { key: "1", path: _nav.route.home, exact: true, component: _home2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "2", path: _nav.route.map, component: _map2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "3", path: _nav.route.about, component: _about2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "4", path: _nav.route.submit, component: _submit2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "5", path: _privacy.privacyRoute.url, component: _privacy2.default })];
+        var components = routes.map(makeRouteWrangler(isStagingEntryPoint())).map(function (route, i) {
+            return _react2.default.createElement(_reactRouterDom.Route, { key: "route-" + i, exact: true, path: route.url, component: route.component });
+        });
 
         _reactDom2.default.render(_react2.default.createElement(
             _reactRedux.Provider,
@@ -1836,7 +1848,7 @@ if ((0, _isBrowser2.default)()) {
                 _react2.default.createElement(
                     _app2.default,
                     null,
-                    routes
+                    components
                 )
             )
         ), container);
