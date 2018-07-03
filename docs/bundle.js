@@ -1816,7 +1816,9 @@ if ((0, _isBrowser2.default)()) {
 
         var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)((0, _requestLocationsMiddleware2.default)(api), (0, _filterLocationsMiddleware2.default)(api), (0, _submitMiddleware2.default)(api)));
 
-        var routes = isStaging() ? [_react2.default.createElement(_reactRouterDom.Redirect, { key: "0", to: "/" })] : [_react2.default.createElement(_reactRouterDom.Route, { key: "1", path: _nav.route.home, exact: true, component: _home2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "2", path: _nav.route.map, component: _map2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "3", path: _nav.route.about, component: _about2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "4", path: _nav.route.submit, component: _submit2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "5", path: _privacy.privacyRoute.url, component: _privacy2.default })];
+        isStaging();
+
+        var routes = [_react2.default.createElement(_reactRouterDom.Route, { key: "1", path: _nav.route.home, exact: true, component: _home2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "2", path: _nav.route.map, component: _map2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "3", path: _nav.route.about, component: _about2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "4", path: _nav.route.submit, component: _submit2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: "5", path: _privacy.privacyRoute.url, component: _privacy2.default })];
 
         _reactDom2.default.render(_react2.default.createElement(
             _reactRedux.Provider,
