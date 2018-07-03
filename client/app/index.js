@@ -39,7 +39,7 @@ if (isBrowser()) {
 
 
         if (isStaging()) {
-            ReactDOM.render(<Redirect to="/" />);
+            ReactDOM.render(<Redirect to="/" />, container);
         } else {
             const routes = [
                 (<Route key="1" path={route.home} exact component={Home} />),
