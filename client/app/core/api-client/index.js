@@ -29,6 +29,9 @@ const makeApiClient = function (fetchObject) {
             return fetchObject(urls.locations)
                 .then(function (result) {
                     return result.json();
+                })
+                .catch(function (error) {
+                    console.warn(error);
                 });
         },
         geocodePostcode: function (postcode) {
