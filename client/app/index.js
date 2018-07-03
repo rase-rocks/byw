@@ -21,6 +21,7 @@ import Submit from "./pages/submit";
 
 const isStaging = function () {
     if (!isBrowser()) { return false; }
+    console.log(window.location);
     return window.location.hostname.includes("github"); // Temp fix for gh-pages staging environment
 };
 
@@ -39,7 +40,7 @@ if (isBrowser()) {
 
 
         isStaging();
-        
+
         const routes = [
             (<Route key="1" path={route.home} exact component={Home} />),
             (<Route key="2" path={route.map} component={MapPage} />),
