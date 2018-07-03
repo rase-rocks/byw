@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import React from "react";
@@ -19,10 +19,19 @@ import Privacy from "./pages/privacy";
 import reducers from "./core/redux/reducers";
 import Submit from "./pages/submit";
 
-const isStaging = function () {
+const hostname = function (window) {
+    return window.location.hostname;
+};
+
+const pathname = function (window) {
+    return window.location.pathname;
+};
+
+const isStagingEntryPoint = function () {
     if (!isBrowser()) { return false; }
     console.log(window.location);
-    return window.location.hostname.includes("github"); // Temp fix for gh-pages staging environment
+    return hostname(window).includes("github")
+        && pathname(window).includes("byw"); // Temp fix for gh-pages staging environment
 };
 
 if (isBrowser()) {
@@ -39,15 +48,15 @@ if (isBrowser()) {
                 makeSubmitMiddleware(api)));
 
 
-        isStaging();
-
-        const routes = [
-            (<Route key="1" path={route.home} exact component={Home} />),
-            (<Route key="2" path={route.map} component={MapPage} />),
-            (<Route key="3" path={route.about} component={About} />),
-            (<Route key="4" path={route.submit} component={Submit} />),
-            (<Route key="5" path={privacyRoute.url} component={Privacy} />)
-        ];
+        const routes = (isStagingEntryPoint())
+            ? [(<Redirect key="0" to="/" />)]
+            : [
+                (<Route key="1" path={route.home} exact component={Home} />),
+                (<Route key="2" path={route.map} component={MapPage} />),
+                (<Route key="3" path={route.about} component={About} />),
+                (<Route key="4" path={route.submit} component={Submit} />),
+                (<Route key="5" path={privacyRoute.url} component={Privacy} />)
+            ];
 
         ReactDOM.render(
             <Provider store={store}>
