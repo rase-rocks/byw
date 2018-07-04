@@ -18,10 +18,10 @@ class HeroSearchBar extends React.Component {
             <div className="search-bar">
                 <form onSubmit={this.makeSubmitHandler(onSubmit)}>
                     <div className="row">
-                        <div className="form-group col-lg-10">
-                            <input 
-                                type="search" 
-                                name="search" 
+                        <div className="form-group col-lg-9">
+                            <input
+                                type="search"
+                                name="search"
                                 placeholder="What are you searching for?"
                                 value={searchText}
                                 onChange={onChange} />
@@ -38,7 +38,7 @@ class HeroSearchBar extends React.Component {
 
 HeroSearchBar.propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    onChange:PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     searchText: PropTypes.string.isRequired
 };
 

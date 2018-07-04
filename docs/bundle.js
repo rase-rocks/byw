@@ -2544,7 +2544,7 @@ var HeroSearchBar = function (_React$Component) {
                         { className: "row" },
                         _react2.default.createElement(
                             "div",
-                            { className: "form-group col-lg-10" },
+                            { className: "form-group col-lg-9" },
                             _react2.default.createElement("input", {
                                 type: "search",
                                 name: "search",

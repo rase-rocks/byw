@@ -8,10 +8,10 @@ const latiude = "52.4159479";
 const longitude = "-4.06281809999996";
 
 const sample = {
-    "name":"Aberystwyth Arts Centre",
-    "address":"Aberystwyth University - Penglais Campus, Aberystwyth SY23 3DE, UK",
-    "coordinates":[longitude, latiude],
-    "category":"75%+"
+    "name": "Aberystwyth Arts Centre",
+    "address": "Aberystwyth University - Penglais Campus, Aberystwyth SY23 3DE, UK",
+    "coordinates": [longitude, latiude],
+    "category": 0.75
 };
 
 describe("location-to-geojson", function () {
@@ -41,7 +41,7 @@ describe("location-to-geojson", function () {
 
     it("handles floating point coordinates", function () {
 
-        const floatingPointSample = Object.assign({}, sample, {"coordinates": sample.coordinates.map(parseFloat) });
+        const floatingPointSample = Object.assign({}, sample, { "coordinates": sample.coordinates.map(parseFloat) });
 
         const json = locationToGeoJSON(floatingPointSample);
 
