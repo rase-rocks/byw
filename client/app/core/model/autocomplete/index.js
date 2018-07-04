@@ -43,7 +43,8 @@ const toMeta = (acc, token) => {
     return acc;
 };
 
-const tokens = function (locations) {
+const tokens = function (locations = []) {
+    if (locations.length == 0) return Promise.resolve({});
     return tokeniseLocations(locations)
         .then(makeFlattener)
         .then(function (list) {
@@ -51,10 +52,14 @@ const tokens = function (locations) {
         });
 };
 
-const index = function (tokensWithCount) {
+const index = function (tokensWithCount = {}) {
+
+    const keys = Object.keys(tokensWithCount);
+    if (keys.length === 0) return Promise.resolve({words: [], tokens: {}});
+
     return new Promise(function (resolve) {
         const result = {
-            words: Object.keys(tokensWithCount),
+            words: keys,
             tokens: tokensWithCount
         };
         resolve(result);
@@ -66,7 +71,7 @@ const makeIndex = function (locations) {
         .then(index);
 };
 
-const expandSearchTerm = function (search, words) {
+const expandSearchTerm = function (search, words = []) {
     return new Promise(function (resolve) {
         const result = words.filter(word => word.includes(search));
         resolve(result);
@@ -98,7 +103,12 @@ const pickWord = function (sortedResults) {
     return (sortedResults.length > 0) ? sortedResults[0].token : "";
 };
 
-const getWord = function (search, index) {
+const getWord = function (search = "", index) {
+
+    if (!index || !index.words || search == "") { 
+        return Promise.resolve(""); 
+    }
+
     return expandSearchTerm(search, index.words)
         .then(reduceExpandedTerms(index))
         .then(sortIndexResults)

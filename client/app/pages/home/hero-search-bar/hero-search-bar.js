@@ -12,19 +12,27 @@ class HeroSearchBar extends React.Component {
 
     render() {
 
-        const { onSubmit, searchText, onChange } = this.props;
-
+        const { 
+            onSubmit, 
+            onChange, 
+            searchText, 
+            suggestion 
+        } = this.props;
+        
         return (
             <div className="search-bar">
                 <form onSubmit={this.makeSubmitHandler(onSubmit)}>
                     <div className="row">
-                        <div className="form-group col-lg-9">
+                        <div className="form-group col-lg-4">
                             <input
                                 type="search"
                                 name="search"
                                 placeholder="What are you searching for?"
                                 value={searchText}
                                 onChange={onChange} />
+                        </div>
+                        <div className="form-group col-lg-6">
+                            <span style={{color: "darkgrey"}}>{suggestion}</span>
                         </div>
                         <div className="form-group col-lg-2 text-center">
                             <input type="submit" value="Search" className="submit" />
@@ -39,7 +47,8 @@ class HeroSearchBar extends React.Component {
 HeroSearchBar.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
-    searchText: PropTypes.string.isRequired
+    searchText: PropTypes.string.isRequired,
+    suggestion: PropTypes.string.isRequired
 };
 
 export default HeroSearchBar;

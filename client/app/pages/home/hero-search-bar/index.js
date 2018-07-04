@@ -27,8 +27,12 @@ class HeroSearchBarController extends React.Component {
     }
 
     render() {
+
+        const { searchText, suggestion } = this.props;
+
         return (
-            <HeroSearchBar searchText={this.props.searchText}
+            <HeroSearchBar searchText={searchText}
+                suggestion={suggestion}
                 onSubmit={this.makeOnSubmit()}
                 onChange={this.makeOnChange()} />
         );
@@ -38,12 +42,14 @@ class HeroSearchBarController extends React.Component {
 HeroSearchBarController.propTypes = {
     history: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
-    searchText: PropTypes.string.isRequired
+    searchText: PropTypes.string.isRequired,
+    suggestion: PropTypes.string.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
-        searchText: state.data.searchText
+        searchText: state.data.searchText,
+        suggestion: state.autocomplete.suggestion
     };
 };
 

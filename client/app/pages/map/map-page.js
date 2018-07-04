@@ -11,16 +11,21 @@ class MapSearchBox extends React.Component {
 
     render() {
 
-        const { 
+        const {
             searchValueDidChange,
-            searchText, 
-            totalCount, 
-            pageCount, 
-            pageResults, 
-            onShowLocation, 
-            onPageChange, 
-            currentPageNo 
+            searchText,
+            totalCount,
+            pageCount,
+            pageResults,
+            onShowLocation,
+            onPageChange,
+            currentPageNo
         } = this.props;
+
+        const result = (totalCount == 1) ? "Result" : "Results";
+        const page = (pageCount > 1) 
+            ? "Pages"
+            : "";
 
         return (
             <div className="map-search-box">
@@ -34,13 +39,17 @@ class MapSearchBox extends React.Component {
                             placeholder="Search for places, coordinates and postcodes" />
                     </div>
                     <div className="text-center" style={{ width: "100%" }}>
-                        {totalCount} results
+                        {totalCount} {result}
                     </div>
                 </div>
 
                 <LocationFolder locations={pageResults} onShowLocation={onShowLocation} />
 
-                <div style={{ marginTop: "10px", marginBottom: "10px", padding: "20px" }}>
+                <div className="text-center"
+                    style={{ marginTop: "10px", marginBottom: "10px", padding: "20px" }}>
+                    <p>
+                        {page}
+                    </p>
                     <SearchResultPaginator onPageChange={onPageChange}
                         pageCount={pageCount}
                         currentPageNo={currentPageNo} />

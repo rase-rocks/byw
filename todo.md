@@ -2,6 +2,8 @@
 
 ### Front end
 
++ Remove unused CSS classes
+
 #### Logic
 
 + ~~Implement search from the home page~~

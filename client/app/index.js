@@ -13,6 +13,7 @@ import isBrowser from "./core/is-browser";
 import makeApiClient from "./core/api-client";
 import makeFilterLocationsMiddleware from "./core/redux/middleware/filter-locations-middleware";
 import makeRequestLocationsMiddleware from "./core/redux/middleware/request-locations-middleware";
+import makeBuildAutocompleteIndexMiddleware from "./core/redux/middleware/build-autocomplete-index-middleware";
 import makeSubmitMiddleware from "./core/redux/middleware/submit-middleware";
 import MapPage from "./pages/map";
 import Privacy from "./pages/privacy";
@@ -38,7 +39,9 @@ if (isBrowser()) {
             reducers,
             applyMiddleware(makeRequestLocationsMiddleware(api),
                 makeFilterLocationsMiddleware(api),
-                makeSubmitMiddleware(api)));
+                makeSubmitMiddleware(api),
+                makeBuildAutocompleteIndexMiddleware()
+            ));
 
 
         const components = routes.map(function (route, i) {

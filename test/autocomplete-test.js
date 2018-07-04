@@ -10,10 +10,25 @@ describe("autocomplete", function () {
 
     describe("makeIndex", function () {
 
+        it("handles empty sample data and returns an empty index", function (done) {
+
+            makeIndex()
+                .then(function (index) {
+                    let pass = true;
+
+                    if (!index) pass = false;
+                    if (!index.words) pass = false;
+                    if (!index.tokens || typeof index.tokens !== "object") pass = false;
+
+                    const error = (pass) ? undefined : new Error("Failed to return a valid index");
+                    done(error);
+                });
+        });
+
         it("returns an index of tokens for the locations passed in", function (done) {
             makeIndex(sampleData)
                 .then(function (index) {
-            
+
                     let pass = true;
 
                     index.words.forEach(element => {
@@ -32,6 +47,38 @@ describe("autocomplete", function () {
     });
 
     describe("getWord", function () {
+
+        it("handles an empty search", function (done) {
+
+            makeIndex(sampleData)
+                .then(function (index) {
+                    getWord(undefined, index)
+                        .then(function (word) {
+                            done((word === "") ? undefined : new Error("Did not handle empty input"));
+                        });
+                });
+
+        });
+
+        it("handles an empty index", function (done) {
+
+            getWord("aber", undefined)
+                .then(function (word) {
+                    done((word === "") ? undefined : new Error("Did not handle empty index"));
+                });
+
+        });
+
+        it("handles a malformed index", function (done) {
+
+            const index = {words: [], tokens: undefined};
+            
+            getWord("aber", index)
+                .then(function (word) {
+                    done((word === "") ? undefined : new Error("Did not handle empty index"));
+                });
+
+        });
 
         it("returns the complete word for the search", function (done) {
             const candidate = "aber";
