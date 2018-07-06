@@ -10,6 +10,15 @@ import HeroSearchBar from "./hero-search-bar";
 
 const evt = eventTargetValue();
 
+const defaultSuggestion = "";
+
+const selectResult = function (results) {
+    if (!results || results.length === 0) { return defaultSuggestion;}
+    return (results.length > 1)
+        ? `${results[0].name} (and ${results.length} more)`
+        : results[0].name;
+};
+
 class HeroSearchBarController extends React.Component {
 
     makeOnSubmit() {
@@ -21,14 +30,15 @@ class HeroSearchBarController extends React.Component {
 
     makeOnChange() {
         const self = this;
-        return function (e) {
-            self.props.dispatch(setSearchTextAction(evt(e)));
+        return function (value) {
+            self.props.dispatch(setSearchTextAction(evt(value)));
         };
     }
 
     render() {
 
-        const { searchText, suggestion } = this.props;
+        const { searchText, filteredResults } = this.props;
+        const suggestion = selectResult(filteredResults);
 
         return (
             <HeroSearchBar searchText={searchText}
@@ -43,13 +53,13 @@ HeroSearchBarController.propTypes = {
     history: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
     searchText: PropTypes.string.isRequired,
-    suggestion: PropTypes.string.isRequired
+    filteredResults: PropTypes.array.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
         searchText: state.data.searchText,
-        suggestion: state.autocomplete.suggestion
+        filteredResults: state.data.filteredResults
     };
 };
 

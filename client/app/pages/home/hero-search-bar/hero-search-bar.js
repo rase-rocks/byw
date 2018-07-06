@@ -12,28 +12,42 @@ class HeroSearchBar extends React.Component {
 
     render() {
 
-        const { 
-            onSubmit, 
-            onChange, 
-            searchText, 
-            suggestion 
+        const {
+            onSubmit,
+            onChange,
+            searchText,
+            suggestion
         } = this.props;
-        
+
+        const submit = this.makeSubmitHandler(onSubmit);
+
         return (
             <div className="search-bar">
-                <form onSubmit={this.makeSubmitHandler(onSubmit)}>
+                <form onSubmit={submit}>
                     <div className="row">
-                        <div className="form-group col-lg-4">
-                            <input
+                        <div className="form-group col-lg-5">
+
+                            <input value={searchText}
+                                onChange={onChange}
                                 type="search"
                                 name="search"
-                                placeholder="What are you searching for?"
-                                value={searchText}
-                                onChange={onChange} />
+                                autoComplete="off"
+                                placeholder="What are you searching for?" />
+
                         </div>
-                        <div className="form-group col-lg-6">
-                            <span style={{color: "darkgrey"}}>{suggestion}</span>
+
+                        <div className="form-group col-lg-5" onClick={submit}>
+
+                            <input className="search-bar-selector"
+                                type="text"
+                                name="location"
+                                placeholder="Location"
+                                id="location"
+                                readOnly
+                                value={suggestion} />
+
                         </div>
+
                         <div className="form-group col-lg-2 text-center">
                             <input type="submit" value="Search" className="submit" />
                         </div>

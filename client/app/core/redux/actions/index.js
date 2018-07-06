@@ -9,9 +9,7 @@ const types = {
     setViewLocation: "com.byw.set-view-location",
     setFormData: "com.byw.set-form-data",
     updateForm: "com.byw.update-form",
-    submitForm: "com.byw-submit-form",
-    setAutocompleteIndex: "com.byw-set-autocomplete-index",
-    setAutocompleteSuggestion: "com.byw-set-autocomplete-suggestion"
+    submitForm: "com.byw-submit-form"
 };
 
 const setLanguageAction = function (language) {
@@ -58,14 +56,6 @@ const submitFormAction = function () {
     return { type: types.submitForm, payload: {} };
 };
 
-const setAutocompleteIndexAction = function (index) {
-    return { type: types.setAutocompleteIndex, payload: index };
-};
-
-const setAutocompleteSuggestionAction = function (suggestion) {
-    return { type: types.setAutocompleteSuggestion, payload: suggestion };
-};
-
 export {
     types,
     setLanguageAction,
@@ -78,7 +68,5 @@ export {
     setViewLocation,
     setFormDataAction,
     updateFormAction,
-    submitFormAction,
-    setAutocompleteIndexAction,
-    setAutocompleteSuggestionAction
+    submitFormAction
 };

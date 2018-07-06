@@ -15307,6 +15307,11 @@ section.hero {
     width: 100%
 }
 
+.search-bar-selector {
+    color: darkgray;
+    cursor: pointer;
+}
+
 .search-bar input::-moz-placeholder,
 .search-bar .bootstrap-select::-moz-placeholder {
     color: #aaa;

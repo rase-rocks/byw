@@ -1,21 +1,9 @@
 /* global describe it */
 
 const expect = require("chai").expect;
-
+const time = require("./time").default;
 const arrayCompare = require("../client/app/core/model/array-compare").default;
 const arrayMake = require("../client/app/core/model/array-make").default;
-
-const time = function (fn, count) {
-
-    const start = new Date().getTime();
-
-    for (let i = 0; i < count; i++) {
-        fn();
-    }
-
-    const end = new Date().getTime();
-    return end - start;
-};
 
 const baselineStringCompare = function (array1, array2) {
     const str1 = JSON.stringify(array1);
