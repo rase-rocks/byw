@@ -895,7 +895,8 @@ section.features div[class*="col-"]:last-of-type {
 
 section.features .icon {
     color: #4dcb44;
-    font-size: 2em
+    font-size: 2em;
+    padding: 10px;
 }
 
 @media (max-width: 576px) {

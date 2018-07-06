@@ -5,17 +5,17 @@ import {strHash} from "../../core/hash";
 const features = [
     {
         title: "Search",
-        icon: "fa fa-search",
+        icon: "SearchIcon.svg",
         divSize: "col-sm-4"
     },
     {
         title: "Api",
-        icon: "fa fa-code",
+        icon: "CodeIcon.svg",
         divSize: "col-sm-4"
     },
     {
         title: "Map",
-        icon: "fa fa-map",
+        icon: "MapIcon.svg",
         divSize: "col-sm-4"
     }
 ];
@@ -25,9 +25,11 @@ class Feature extends React.Component {
 
         const { title, icon, divSize } = this.props;
 
+        const src = `assets/images/${icon}`;
+
         return (
             <div className={divSize}>
-                <div className="icon"><i className={icon}></i></div>
+                <div className="icon"><img src={src} width="50px"/></div>
                 <h4 className="h6" style={{color: "darkgrey"}}>{title}</h4>
             </div>
         );
