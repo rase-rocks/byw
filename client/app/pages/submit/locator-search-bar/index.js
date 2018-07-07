@@ -1,29 +1,23 @@
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
-import { connect } from "react-redux";
 
+import { setLocatorSearchTextAction } from "../../../core/redux/actions";
 import LocatorSearchBar from "./locator-search-bar";
 
 class LocatorSearchBarController extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchText: ""
-        };
-    }
-
     makeOnChange() {
         const self = this;
         return function (newValue) {
-            self.setState({ searchText: newValue });
+            self.props.dispatch(setLocatorSearchTextAction(newValue));
         };
     }
 
     render() {
 
         return (
-            <LocatorSearchBar searchText={this.state.searchText}
+            <LocatorSearchBar searchText={this.props.searchText}
                 onChange={this.makeOnChange()} />
         );
 
@@ -31,7 +25,14 @@ class LocatorSearchBarController extends React.Component {
 }
 
 LocatorSearchBarController.propTypes = {
+    searchText: PropTypes.string.isRequired,
     dispatch: PropTypes.func.isRequired
 };
 
-export default connect()(LocatorSearchBarController);
+const mapStateToProps = function (state) {
+    return {
+        searchText: state.locator.searchText
+    };
+};
+
+export default connect(mapStateToProps)(LocatorSearchBarController);

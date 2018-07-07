@@ -9,7 +9,8 @@ const types = {
     setViewLocation: "com.byw.set-view-location",
     setFormData: "com.byw.set-form-data",
     updateForm: "com.byw.update-form",
-    submitForm: "com.byw-submit-form"
+    submitForm: "com.byw-submit-form",
+    setLocatorSearchText: "com.byw-set-locactor-search-text"
 };
 
 const setLanguageAction = function (language) {
@@ -56,6 +57,10 @@ const submitFormAction = function () {
     return { type: types.submitForm, payload: {} };
 };
 
+const setLocatorSearchTextAction = function (text) {
+    return { type: types.setLocatorSearchText, payload: text };
+};
+
 export {
     types,
     setLanguageAction,
@@ -68,5 +73,6 @@ export {
     setViewLocation,
     setFormDataAction,
     updateFormAction,
-    submitFormAction
+    submitFormAction,
+    setLocatorSearchTextAction
 };

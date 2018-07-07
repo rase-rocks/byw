@@ -1,9 +1,10 @@
 import React from "react";
 
-import PageHeader from "../../resusable-components/page-header";
 import Form from "./form";
 import LocatorMap from "./locator-map";
 import LocatorSearchBar from "./locator-search-bar";
+import PageHeader from "../../resusable-components/page-header";
+import SubmitHeading from "./submit-heading";
 
 class Submit extends React.Component {
     render() {
@@ -16,25 +17,63 @@ class Submit extends React.Component {
                         Submit to our index
                     </PageHeader>
 
-                    <div className="row">
-                        <div className="col-md-4">
-                            Some simple information about submitting a location to the index
-                        </div>
-                    </div>
-
                     <div className="row submit-main-content">
 
                         <div className="col-md-6">
 
                             <LocatorMap />
                             <LocatorSearchBar />
-                            
+
                         </div>
 
                         <div className="col-md-6">
 
                             <Form />
 
+                        </div>
+                    </div>
+
+                    <SubmitHeading title="How to" />
+
+                    <div className="row">
+                        <div className="col-md-6">
+                            <p>
+                                Submitting to the index is easy and annonymous.
+                            </p>
+                            <p>
+                                You can search for a place in the box under the map and then use the
+                                map to precisely locate the place you are submitting. The address is
+                                automatically filled in for you but if you don&apos;t like
+                                the way its shown you can edit it.
+                            </p>
+                        </div>
+                        <div className="col-md-6">
+                            <p>
+                                The use the slider to indicate how likely it is, based on your experience and knowledge
+                                of the premises, that a person will hear and be able to use Welsh at the place.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <SubmitHeading title="If the index appears inaccurate" />
+
+                    <div className="row">
+                        <div className="col-md-6">
+                            <p>
+                                The category (how likely is is to use Welsh) of a premises is calculated by
+                                aggregating all the reviews received. So your submission will be taken into
+                                account straight away, but it may or may not affect the current rating.
+                            </p>
+                        </div>
+                        <div className="col-md-6">
+                            <p>
+                                If you feel the rating of a premises is way off and remains way off after you have
+                                submitted your rating, then please get in touch. If you are the business owner
+                                we can help by pointing you in the direction of resources to help increase the use
+                                of Welsh in your business. If the data in the index is just plain wrong then we can
+                                correct it.
+                            </p>
                         </div>
                     </div>
 

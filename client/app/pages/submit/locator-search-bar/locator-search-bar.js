@@ -21,7 +21,7 @@ class LocatorSearchBar extends React.Component {
 
                 <input type="text"
                     className="text-box unbordered"
-                    placeholder="Start typing a place name" 
+                    placeholder="Search the map..." 
                     value={searchText}
                     onChange={this.makeOnChange(onChange)}/>
 

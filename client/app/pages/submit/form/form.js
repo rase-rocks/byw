@@ -5,6 +5,7 @@ import Error from "./error";
 import { keys, valueForKey } from "../../../core/model/form";
 import eventTargetValue from "../../../core/event-target-value";
 import CategorySlider from "./category-slider";
+import geojsonCoordinatesToMarkerCoordinates from "../../../core/model/geojson-coordinates-to-marker-coordinates";
 
 const target = eventTargetValue();
 
@@ -12,27 +13,33 @@ const labels = {
     [keys.name]: {
         id: "byw-form-label-name",
         type: "text",
-        placeholder: "Name"
+        placeholder: "Name",
+        key: "name"
     },
     [keys.address]: {
         id: "byw-form-label-address",
         type: "text",
-        placeholder: "Address"
+        placeholder: "Address",
+        key: "address"
     },
     [keys.postcode]: {
         id: "byw-form-label-postcode",
         type: "text",
-        placeholder: "Postcode"
+        placeholder: "Postcode",
+        key: "postcode"
     },
     [keys.coordinates]: {
         id: "byw-form-label-coordinates",
         type: "text",
-        placeholder: "Coordinates"
+        placeholder: "Coordinates",
+        key: "coordinates",
+        disabled: true
     },
     [keys.category]: {
         id: "byw-form-label-category",
         type: "text",
-        placeholder: "Category"
+        placeholder: "Category",
+        key: "category"
     }
 };
 
@@ -61,7 +68,7 @@ const makeChangeHandler = function (handler, data) {
     };
 };
 
-const toInput = function (handler) {
+const toInput = function (handler, formatter) {
     return function makeLabel(labelData) {
         
         return (
@@ -72,19 +79,39 @@ const toInput = function (handler) {
                     type={labelData.type}
                     className="form-control mb-2 mr-sm-2"
                     placeholder={labelData.placeholder}
-                    value={labelData.value}
+                    value={formatter(labelData.value, labelData.key)}
                     autoComplete="off"
+                    disabled={labelData.disabled}
                     onChange={makeChangeHandler(handler, labelData)} />
             </span>
         );
     };
 };
 
+export const formatCoordinate = function (geoJsonCoordinate) {
+    if (!geoJsonCoordinate || geoJsonCoordinate === null) { return "--"; }
+    return [
+        geoJsonCoordinate[1],
+        geoJsonCoordinate[0]
+    ].join(", ");
+};
+
+const formatValue = function (value, key) {
+
+    let v = value;
+
+    if (key === keys.coordinates) {
+        v = formatCoordinate(value);
+    }
+
+    return v;
+};
+
 class Form extends React.Component {
     render() {
         
         const { data, onChange, onSubmit } = this.props;
-        const elements = labelsArray(data).map(toInput(onChange));
+        const elements = labelsArray(data).map(toInput(onChange, formatValue));
 
         return (
             <form className="form" onSubmit={onSubmit}>

@@ -7,16 +7,17 @@
 
 #### Logic
 
-+ ~~Implement search from the home page~~
-+ ~~Think about the most useful method of searching from the home search bar~~
++ ~~Implement search from the home page~~ &#10003;
++ ~~Think about the most useful method of searching from the home search bar~~ &#10003;
 + Implement rating system so that the category can update as more users chime in
-+ ~~Consider having map page locate map onto search result bounding box when viewed~~
++ ~~Consider having map page locate map onto search result bounding box when viewed~~ &#10003;
 + About page heat map data wrangling
 
 #### Styling / content
 
-+ ~~Draw SVGs for each icon~~
-+ Change the about page into a 'for business owners page'
++ ~~Draw SVGs for each icon~~ &#10003;
++ ~~Change the about page into a 'for business owners page'~~
++ Add a heatmap to the about page and use this page to describe the project
 + Footer content
 + Implement 404 and replace current route which just sends to the home route
 + Consider swapping the gh-pages staging environment for a 'website about the website'
