@@ -32,7 +32,7 @@ const labels = {
     [keys.category]: {
         id: "byw-form-label-category",
         type: "text",
-        placeholder: "Cat"
+        placeholder: "Category"
     }
 };
 
@@ -65,7 +65,7 @@ const toInput = function (handler) {
     return function makeLabel(labelData) {
         
         return (
-            <span key={labelData.id}>
+            <span key={labelData.id} className="field">
                 <Error text={labelData.meta.error} />
                 <input
                     id={labelData.id}
@@ -73,6 +73,7 @@ const toInput = function (handler) {
                     className="form-control mb-2 mr-sm-2"
                     placeholder={labelData.placeholder}
                     value={labelData.value}
+                    autoComplete="off"
                     onChange={makeChangeHandler(handler, labelData)} />
             </span>
         );
@@ -91,7 +92,11 @@ class Form extends React.Component {
                 {elements}
 
                 <CategorySlider onChange={onChange} form={data}/>
-                <button className="btn btn-primary mb-2">Submit</button>
+                
+                <div className="submit-button-wrapper">
+                    <button className="btn btn-primary mb-2">Submit</button>
+                </div>
+                
             </form>
         );
     }

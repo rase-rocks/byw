@@ -1,5 +1,6 @@
 body {
-    overflow-x: hidden
+    overflow-x: hidden;
+    background-color: rgb(54,54,54);
 }
 
 body.active {
@@ -405,7 +406,7 @@ i[class*="icon-"] {
 }
 
 .form-control {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(151, 151, 151);
     background: none;
     border-radius: 0
 }

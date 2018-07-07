@@ -1,16 +1,17 @@
 import React from "react";
 
-import PageContainer from "../../page-content";
 import PageHeader from "../../resusable-components/page-header";
 import Form from "./form";
+import LocatorMap from "./locator-map";
+import LocatorSearchBar from "./locator-search-bar";
 
 class Submit extends React.Component {
     render() {
         return (
 
-            <PageContainer>
-                <div className="container">
+            <div className="submit-container">
 
+                <div className="container">
                     <PageHeader>
                         Submit to our index
                     </PageHeader>
@@ -21,16 +22,26 @@ class Submit extends React.Component {
                         </div>
                     </div>
 
-                    <div className="row" style={{marginTop: "50px"}}>
-                        <div className="col-md-6 offset-md-3">
+                    <div className="row submit-main-content">
 
-                            <Form/>
+                        <div className="col-md-6">
+
+                            <LocatorMap />
+                            <LocatorSearchBar />
+                            
+                        </div>
+
+                        <div className="col-md-6">
+
+                            <Form />
 
                         </div>
                     </div>
 
                 </div>
-            </PageContainer>);
+            </div>
+
+        );
     }
 }
 

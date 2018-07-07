@@ -1,12 +1,11 @@
 import React from "react";
 
-import PageContainer from "../../page-content";
 import PageHeader from "../../resusable-components/page-header";
 
 class About extends React.Component {
     render() {
         return (
-            <PageContainer>
+            <div className="about-container">
                 <div className="container">
 
                     <PageHeader>
@@ -35,16 +34,10 @@ class About extends React.Component {
                                 see if there will be a Welsh language welcome and, above all, use your Welsh yourself!
                             </p>
                         </div>
-                        <div className="col-md-8">
-                            <img src="assets/images/d4d78a_6f1e45c5b4b34df8a4d0299050cf3937_mv2.webp" 
-                                style={{width: "100%"}}
-                                alt="A map of welsh language usage decline"/>
-                            {/* This image is going need to be an SVG */}
-                        </div>
                     </div>
 
                 </div>
-            </PageContainer>
+            </div>
         );
     }
 }

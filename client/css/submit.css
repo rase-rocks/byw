@@ -1,0 +1,36 @@
+.submit-container {
+    margin-top: -20px;
+    padding-bottom: 50px;
+    background-color: rgb(54,54,54);
+    color: darkgrey;
+}
+
+.submit-main-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.field {
+    width: 100%;
+}
+
+.field input {
+    color: white;
+}
+
+.submit-button-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.locator-map-container {
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(25,25,25);
+    padding: 10px;
+}
+
+.submit-locator-map {
+    width: 100%;
+    height: 100%;
+}
