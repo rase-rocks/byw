@@ -13,16 +13,34 @@ const locations = [
     }
 ];
 
-const apiResponse = {
+const POSTCODE = "LL20 8SW";
+const postcodeResponse = {
+    "status": 200,
+    "result": [
+        {
+            "postcode": POSTCODE
+        }
+    ]
+};
+
+const apiLocationsResponse = {
     json: function () {
         return locations;
     }
 };
 
-const mockFetch = function () {
-    return new Promise(function (resolve) {
-        resolve(apiResponse);
-    });
+const apiPostcodeResponse = {
+    json: function () {
+        return postcodeResponse;
+    }
+};
+
+const makeMockFetch = function (apiResponse) {
+    return function () {
+        return new Promise(function (resolve) {
+            resolve(apiResponse);
+        });
+    };
 };
 
 const postcodeMockFetch = function () {
@@ -60,7 +78,7 @@ describe("ApiClient", function () {
     describe("Constructor", function () {
 
         it("returns an object", function () {
-            const api = makeApiClient(mockFetch);
+            const api = makeApiClient(makeMockFetch(apiLocationsResponse));
             expect(api).to.exist;
         });
 
@@ -69,7 +87,7 @@ describe("ApiClient", function () {
     describe("locations", function () {
 
         it("returns locations", function (done) {
-            const api = makeApiClient(mockFetch);
+            const api = makeApiClient(makeMockFetch(apiLocationsResponse));
 
             api
                 .locations()
@@ -125,6 +143,27 @@ describe("ApiClient", function () {
                 .catch(function () {
                     done();
                 });
+        });
+
+    });
+
+    describe("reverseGeocode", function () {
+
+        it("returns postcode", function (done) {
+            //lon -3.172 lat 52.973
+
+            const api = makeApiClient(makeMockFetch(apiPostcodeResponse));
+
+            api.reverseGeocode([-3.172, 52.973])
+                .then(function (response) {
+                    console.log(response);
+                    const err = (response !== POSTCODE) ? new Error("Did not return a postcode") : undefined;
+                    done(err);
+                })
+                .catch(function (err) {
+                    done(err);
+                });
+
         });
 
     });

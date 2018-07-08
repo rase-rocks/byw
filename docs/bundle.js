@@ -97,6 +97,11 @@ var urls = {
     locations: "byw/static-api/public/data",
     makePostcodeUrl: function makePostcodeUrl(postcode) {
         return "https://api.postcodes.io/postcodes/" + postcode.replace(" ", "");
+    },
+    makeReverseGeocodeUrl: function makeReverseGeocodeUrl(geojsonCoordinate) {
+        var lon = geojsonCoordinate[0];
+        var lat = geojsonCoordinate[1];
+        return "https://api.postcodes.io/postcodes?lon=" + lon + "&lat=" + lat;
     }
 };
 
@@ -121,12 +126,14 @@ var getJson = function getJson(response) {
     return response.json();
 };
 
+var getPostcode = function getPostcode(json) {
+    return json.status === 200 ? json.result ? json.result[0] ? json.result[0].postcode : undefined : undefined : undefined;
+};
+
 var makeApiClient = function makeApiClient(fetchObject) {
     return {
         locations: function locations() {
-            return fetchObject(urls.locations).then(function (result) {
-                return result.json();
-            }).catch(function (error) {
+            return fetchObject(urls.locations).then(getJson).catch(function (error) {
                 console.warn(error);
             });
         },
@@ -141,6 +148,9 @@ var makeApiClient = function makeApiClient(fetchObject) {
             return fetchObject(urls.makePostcodeUrl(postcode)).then(getJson).then(makeCoordinate).then(cacheResult(postcode)).catch(function (err) {
                 return Promise.reject("Error in obtaining postcode: " + err);
             });
+        },
+        reverseGeocode: function reverseGeocode(geoJsonCoordinate) {
+            return fetchObject(urls.makeReverseGeocodeUrl(geoJsonCoordinate)).then(getJson).then(getPostcode);
         }
     };
 };
@@ -1362,6 +1372,15 @@ var handle = function handle(dispatch) {
     };
 };
 
+var handleReverseGeocode = function handleReverseGeocode(dispatch) {
+    return function (postcode) {
+        if (!postcode || postcode === null) {
+            return;
+        }
+        dispatch((0, _actions.setFormDataAction)(_form.keys.postcode, postcode));
+    };
+};
+
 function makeSubmitMiddleware(api) {
     return function (store) {
         return function (next) {
@@ -1373,6 +1392,13 @@ function makeSubmitMiddleware(api) {
                         validate(store).then(handle(store.dispatch, api));
                         break;
 
+                    case _actions.types.setFormData:
+                        if (action.payload.key !== _form.keys.coordinates) {
+                            break;
+                        }
+
+                        api.reverseGeocode(action.payload.value).then(handleReverseGeocode(store.dispatch));
+                        break;
                 }
 
                 return next(action);
@@ -5077,6 +5103,12 @@ var geoJsonFromMarker = exports.geoJsonFromMarker = function geoJsonFromMarker(m
     return [latLng.lng, latLng.lat];
 };
 
+var dispatchFormData = function dispatchFormData(dispatch) {
+    return function (event) {
+        dispatch((0, _actions.setFormDataAction)(_form.keys.coordinates, geoJsonFromMarker(event.target)));
+    };
+};
+
 var addMarker = function addMarker(map, coordinate, dispatch) {
 
     var group = L.featureGroup().addTo(map);
@@ -5084,9 +5116,7 @@ var addMarker = function addMarker(map, coordinate, dispatch) {
 
     var marker = L.marker(coordinate, { draggable: true, autoPan: true });
 
-    marker.on("dragend", function (event) {
-        dispatch((0, _actions.setFormDataAction)(_form.keys.coordinates, geoJsonFromMarker(event.target)));
-    });
+    marker.on("dragend", dispatchFormData(dispatch));
 
     marker.addTo(group);
 

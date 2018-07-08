@@ -2,6 +2,11 @@ const urls = {
     locations: "static-api/public/data",
     makePostcodeUrl: function (postcode) {
         return `https://api.postcodes.io/postcodes/${postcode.replace(" ", "")}`;
+    },
+    makeReverseGeocodeUrl: function (geojsonCoordinate) {
+        const lon = geojsonCoordinate[0];
+        const lat = geojsonCoordinate[1];
+        return `https://api.postcodes.io/postcodes?lon=${lon}&lat=${lat}`;
     }
 };
 
@@ -23,13 +28,21 @@ const getJson = function (response) {
     return response.json();
 };
 
+const getPostcode = function (json) {
+    return (json.status === 200) 
+        ? (json.result) 
+            ? (json.result[0])
+                ? json.result[0].postcode
+                : undefined
+            : undefined
+        : undefined;
+};
+
 const makeApiClient = function (fetchObject) {
     return {
         locations: function () {
             return fetchObject(urls.locations)
-                .then(function (result) {
-                    return result.json();
-                })
+                .then(getJson)
                 .catch(function (error) {
                     console.warn(error);
                 });
@@ -49,6 +62,11 @@ const makeApiClient = function (fetchObject) {
                 .catch(function (err) {
                     return Promise.reject(`Error in obtaining postcode: ${err}`);
                 });
+        },
+        reverseGeocode: function (geoJsonCoordinate) {
+            return fetchObject(urls.makeReverseGeocodeUrl(geoJsonCoordinate))
+                .then(getJson)
+                .then(getPostcode);
         }
     };
 };

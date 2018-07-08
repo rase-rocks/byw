@@ -40,6 +40,12 @@ export const geoJsonFromMarker = function (marker) {
     ];
 };
 
+const dispatchFormData = function (dispatch) {
+    return function (event) {
+        dispatch(setFormDataAction(keys.coordinates, geoJsonFromMarker(event.target)));
+    };
+};
+
 const addMarker = function (map, coordinate, dispatch) {
 
     const group = L.featureGroup().addTo(map);
@@ -47,9 +53,7 @@ const addMarker = function (map, coordinate, dispatch) {
 
     const marker = L.marker(coordinate, { draggable: true, autoPan: true });
 
-    marker.on("dragend", function (event) {
-        dispatch(setFormDataAction(keys.coordinates, geoJsonFromMarker(event.target)));
-    });
+    marker.on("dragend", dispatchFormData(dispatch));
 
     marker.addTo(group);
 
