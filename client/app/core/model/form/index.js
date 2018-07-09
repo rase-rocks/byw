@@ -5,10 +5,27 @@ import update from "./update";
 import validatedForm from "./validated-form";
 import valueForKey from "./value-for-key";
 
+const typedValue = function (key) {
+    let value = "";
+
+    switch (key) {
+
+    case keys.category:
+        value = 0.75;
+        break;
+    
+    case keys.coordinates:
+        value = [];
+        break;
+
+    }
+
+    return value;
+};
+
 const reducer = function (orderedKeys) {
     return orderedKeys.reduce(function (acc, current) {
-        const value = (current === keys.category) ? 0.5 : "";
-        acc[current] = item(current, value, "");
+        acc[current] = item(current, typedValue(current), "");
         return acc;
     }, {});
 };

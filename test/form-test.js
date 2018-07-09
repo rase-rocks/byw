@@ -20,7 +20,7 @@ const validForm = function () {
         name: item(keys.name, "The premises name"),
         address: item(keys.address, "The Place, The Street"),
         postcode: item(keys.postcode, "WA10 7BJ"),
-        coordinates: item(keys.coordinates, ""),
+        coordinates: item(keys.coordinates, [-3.9, 53.9]),
         category: item(keys.category, 0.75)
     };
 };
@@ -52,7 +52,7 @@ describe("form", function () {
             oldForm.address = item(keys.address, "The address");
             oldForm.postcode = item(keys.postcode, "XX01 1XX");
             oldForm.category = item(keys.category, 0.75);
-            oldForm.coordinates = item(keys.coordinates, "12.987, 23.578");
+            oldForm.coordinates = item(keys.coordinates, [-3.7, 53.1]);
 
             const newForm = formUpdatingDataKey(oldForm, alteredKey, "Robert");
 
@@ -82,7 +82,7 @@ describe("form", function () {
             oldForm.address = item(keys.address, "The address");
             oldForm.postcode = item(keys.postcode, "XX01 1XX");
             oldForm.category = item(keys.category, 0.75);
-            oldForm.coordinates = item(keys.coordinates, "12.987, 23.578");
+            oldForm.coordinates = item(keys.coordinates, [-3.7, 53.1]);
 
             const errorString = "The name has an error";
 
@@ -119,14 +119,13 @@ describe("form", function () {
                     testKey: keys.postcode,
                     form: Object.assign(
                         {}, 
-                        makeForm(keys.postcode, ""), 
-                        {[keys.coordinates]: item(keys.coordinates, "")}),
-                    error: errors.invalidPostcodeWithoutCoordinates
+                        makeForm(keys.postcode, "")),
+                    error: errors.invalidPostcode
                 },
                 {
                     testKey: keys.coordinates,
-                    form: makeForm(keys.coordinates, "34"),
-                    error: errors.invalidCoordinatesWithPostcode
+                    form: makeForm(keys.coordinates, []),
+                    error: errors.invalidCoordinates
                 }
             ].map(test => Object.assign({}, test, {form: validatedForm(test.form)}))
                 .forEach(test => expect(hasErrors(test.form)).to.equal(true));
@@ -153,7 +152,7 @@ describe("form", function () {
 
             const valid = validForm();
             valid.postcode = item(keys.postcode, "WA10 7BJ");
-            valid.coordinates = item(keys.coordinates, "");
+            valid.coordinates = item(keys.coordinates, [-3.9, 53.9]);
 
             const vForm = validatedForm(valid);
 
@@ -168,8 +167,7 @@ describe("form", function () {
 
         it("gives no errors for valid result - coordinates", function () {
             const valid = validForm();
-            valid.postcode = item(keys.postcode, "");
-            valid.coordinates = item(keys.coordinates, "52.98, -3.92");
+            valid.coordinates = item(keys.coordinates, [-3.9, 53.9]);
 
             const vForm = validatedForm(valid);
 
@@ -182,27 +180,16 @@ describe("form", function () {
             });
         });
 
-        it("handles invalid postcode - without coordinates", function () {
-
-            const invalidPostcode = validForm();
-            invalidPostcode.postcode = item(keys.postcode, "invalid_postcode_coords");
-            invalidPostcode.coordinates = item(keys.coordinates, "");
-
-            const vForm = validatedForm(invalidPostcode);
-
-            expect(vForm[keys.postcode].error).to.equal(errors.invalidPostcodeWithoutCoordinates);
-
-        });
 
         it("handles invalid postcode - with coordinates", function () {
 
             const invalidPostcode = validForm();
             invalidPostcode.postcode = item(keys.postcode, "invalid_postcode");
-            invalidPostcode.coordinates = item(keys.coordinates, "52.9, -3.9");
+            invalidPostcode.coordinates = item(keys.coordinates, [-3.9, 53.9]);
 
             const vForm = validatedForm(invalidPostcode);
 
-            expect(vForm[keys.postcode].error).to.equal(errors.invalidPostcodeWithCoordinates);
+            expect(vForm[keys.postcode].error).to.equal(errors.invalidPostcode);
 
         });
 
@@ -210,23 +197,11 @@ describe("form", function () {
 
             const invalidCoordinates = validForm();
             invalidCoordinates.postcode = item(keys.postcode, "WA10 7BJ");
-            invalidCoordinates.coordinates = item(keys.coordinates, "52");
+            invalidCoordinates.coordinates = item(keys.coordinates, []);
 
             const vForm = validatedForm(invalidCoordinates);
 
-            expect(vForm[keys.coordinates].error).to.equal(errors.invalidCoordinatesWithPostcode);
-
-        });
-
-        it("handles invalid coordinates - without postcode", function () {
-
-            const invalidCoordinates = validForm();
-            invalidCoordinates.postcode = item(keys.postcode, "");
-            invalidCoordinates.coordinates = item(keys.coordinates, "52");
-
-            const vForm = validatedForm(invalidCoordinates);
-
-            expect(vForm[keys.coordinates].error).to.equal(errors.invalidCoordinatesWithoutPostcode);
+            expect(vForm[keys.coordinates].error).to.equal(errors.invalidCoordinates);
 
         });
 

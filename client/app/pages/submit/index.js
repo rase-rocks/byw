@@ -2,7 +2,7 @@ import React from "react";
 
 import Form from "./form";
 import LocatorMap from "./locator-map";
-import LocatorSearchBar from "./locator-search-bar";
+//import LocatorSearchBar from "./locator-search-bar";
 import PageHeader from "../../resusable-components/page-header";
 import SubmitHeading from "./submit-heading";
 
@@ -22,7 +22,7 @@ class Submit extends React.Component {
                         <div className="col-md-6">
 
                             <LocatorMap />
-                            <LocatorSearchBar />
+                            {/* <LocatorSearchBar /> */}
 
                         </div>
 
@@ -38,21 +38,25 @@ class Submit extends React.Component {
                     <div className="row">
                         <div className="col-md-6">
                             <p>
-                                Submitting to the index is easy and annonymous.
+                                Submitting to the index is easy and anonymous.
                             </p>
                             <p>
                                 You can search for a place in the box under the map and then use the
-                                map to precisely locate the place you are submitting. The address is
-                                automatically filled in for you but if you don&apos;t like
-                                the way its shown you can edit it.
+                                map to precisely locate the place you are submitting. Just drag the
+                                pin onto the premises. The postcode is automatically filled in for
+                                you, if there is one, so you can just add the name and street.
                             </p>
                         </div>
                         <div className="col-md-6">
                             <p>
+                                Add the name and street information as you would like them to appear in
+                                the index. If the location is already in the index then your
+                                categorisation will be taken into account.
+                            </p>
+                            <p>
                                 The use the slider to indicate how likely it is, based on your experience and knowledge
                                 of the premises, that a person will hear and be able to use Welsh at the place.
                             </p>
-
                         </div>
                     </div>
 
@@ -61,7 +65,7 @@ class Submit extends React.Component {
                     <div className="row">
                         <div className="col-md-6">
                             <p>
-                                The category (how likely is is to use Welsh) of a premises is calculated by
+                                The category (how likely it is to use Welsh) of a premises is calculated by
                                 aggregating all the reviews received. So your submission will be taken into
                                 account straight away, but it may or may not affect the current rating.
                             </p>

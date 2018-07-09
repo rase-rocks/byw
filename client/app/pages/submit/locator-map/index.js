@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { keys } from "../../../core/model/form";
 import { setFormDataAction } from "../../../core/redux/actions";
 import isBrowser from "../../../core/is-browser";
-import { keys } from "../../../core/model/form";
 
 import {
     attribution,

@@ -1,42 +1,27 @@
 import { keys } from "../keys";
-import { postcodeRe, coordinateRe } from "../../regular-expressions";
+import { postcodeRe } from "../../regular-expressions";
 import errors from "../error-messages";
 import formUpdatingErrorKey from "../form-updating-error-key";
 import valueForKey from "../value-for-key";
-
-const hasPostcode = function (form) {
-    return (valueForKey(form, keys.postcode).length > 1);
-};
-
-const hasCoordinates = function (form) {
-    return (valueForKey(form, keys.coordinates).length > 1);
-};
 
 const postcodeValidator = function (form) {
 
     const postcode = valueForKey(form, keys.postcode);
 
-    return (postcode.match(postcodeRe))
+    return (postcode === "") 
         ? form
-        : (hasCoordinates(form))
-            ? (postcode.length == 0)
-                ? form
-                : formUpdatingErrorKey(form, keys.postcode, errors.invalidPostcodeWithCoordinates)
-            : formUpdatingErrorKey(form, keys.postcode, errors.invalidPostcodeWithoutCoordinates);
+        : (postcode.match(postcodeRe))
+            ? form
+            : formUpdatingErrorKey(form, keys.postcode, errors.invalidPostcode);
 };
 
 const coordinateValidator = function (form) {
 
     const coordinates = valueForKey(form, keys.coordinates);
-
-    return (coordinates.match(coordinateRe))
-        ? form
-        : (hasPostcode(form))
-            ? (coordinates.length == 0) 
-                ? form
-                : formUpdatingErrorKey(form, keys.coordinates, errors.invalidCoordinatesWithPostcode)
-            : formUpdatingErrorKey(form, keys.coordinates, errors.invalidCoordinatesWithoutPostcode);
     
+    return (coordinates && coordinates.length === 2)
+        ? form
+        : formUpdatingErrorKey(form, keys.coordinates, errors.invalidCoordinates);
 };
 
 const makeValidator = function (test, key, errorMessage) {

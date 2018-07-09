@@ -156,7 +156,6 @@ describe("ApiClient", function () {
 
             api.reverseGeocode([-3.172, 52.973])
                 .then(function (response) {
-                    console.log(response);
                     const err = (response !== POSTCODE) ? new Error("Did not return a postcode") : undefined;
                     done(err);
                 })

@@ -1,7 +1,7 @@
 {
   "name": "byw",
   "version": "0.0.1",
-  "description": "Breath Your Welsh Website",
+  "description": "Breathe Your Welsh Website",
   "main": "index.js",
   "scripts": {
     "serve-build": "node node_modules/http-serve/bin/http-serve --cors ./s3-build",

@@ -5,7 +5,6 @@ import Error from "./error";
 import { keys, valueForKey } from "../../../core/model/form";
 import eventTargetValue from "../../../core/event-target-value";
 import CategorySlider from "./category-slider";
-import geojsonCoordinatesToMarkerCoordinates from "../../../core/model/geojson-coordinates-to-marker-coordinates";
 
 const target = eventTargetValue();
 
@@ -45,8 +44,8 @@ const labels = {
 
 const inputMetaDataForLabel = function (key, formData) {
     return Object.assign(
-        {}, 
-        labels[key], 
+        {},
+        labels[key],
         {
             value: valueForKey(formData, key),
             meta: formData[key]
@@ -70,7 +69,7 @@ const makeChangeHandler = function (handler, data) {
 
 const toInput = function (handler, formatter) {
     return function makeLabel(labelData) {
-        
+
         return (
             <span key={labelData.id} className="field">
                 <Error text={labelData.meta.error} />
@@ -89,7 +88,10 @@ const toInput = function (handler, formatter) {
 };
 
 export const formatCoordinate = function (geoJsonCoordinate) {
-    if (!geoJsonCoordinate || geoJsonCoordinate === null) { return "--"; }
+    if (!geoJsonCoordinate
+        || geoJsonCoordinate === null
+        || geoJsonCoordinate.length === 0) { return "Drag the pin..."; }
+        
     return [
         geoJsonCoordinate[1],
         geoJsonCoordinate[0]
@@ -109,7 +111,7 @@ const formatValue = function (value, key) {
 
 class Form extends React.Component {
     render() {
-        
+
         const { data, onChange, onSubmit } = this.props;
         const elements = labelsArray(data).map(toInput(onChange, formatValue));
 
@@ -118,12 +120,12 @@ class Form extends React.Component {
 
                 {elements}
 
-                <CategorySlider onChange={onChange} form={data}/>
-                
+                <CategorySlider onChange={onChange} form={data} />
+
                 <div className="submit-button-wrapper">
                     <button className="btn btn-primary mb-2">Submit</button>
                 </div>
-                
+
             </form>
         );
     }

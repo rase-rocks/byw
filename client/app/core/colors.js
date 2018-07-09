@@ -1,7 +1,7 @@
 export default {
     initialBackgroundColor: "#333333",
     darkBackgroundColor: "#333333",
-    homeHeroBackgroundColor: "#d0cabc",
+    homeHeroBackgroundColor: "#523022",
     lightTextColor: "whitesmoke",
     darkTextColor: "#111",
     seaBlue: "#215d9a",

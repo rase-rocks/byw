@@ -21,12 +21,12 @@ class Footer extends React.Component {
                     <div className="row">
                         <div className="about col-md-3">
                             <h4>
-                                Breath your Welsh
+                                Breathe your Welsh
                             </h4>
                         </div>
                         <div className="col-md-3">
                             <p>
-                                Some useful footer type information in here
+                                This project is Open Source and we welcome your contributions!
                             </p>
                         </div>
                         <div className="col-md-3"></div>

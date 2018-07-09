@@ -1,4 +1,4 @@
-# byw - Breath your Welsh Project
+# byw - Breathe your Welsh Project
 
 #### Status
 
@@ -6,7 +6,7 @@
 
 ### Summary
 
-The Breath your Welsh project is a community driven action to help increase the visibility of the Welsh language. The project is based around an original idea by Peter Allen on the SaySomethingIn.com Welsh forum.
+The Breathe your Welsh project is a community driven action to help increase the visibility of the Welsh language. The project is based around an original idea by Peter Allen on the SaySomethingIn.com Welsh forum.
 
 ### Project Structure
 

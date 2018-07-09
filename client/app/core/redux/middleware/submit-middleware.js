@@ -27,8 +27,8 @@ const handle = function (dispatch) {
 
 const handleReverseGeocode = function (dispatch) {
     return function (postcode) {
-        if (!postcode || postcode === null) { return; }
-        dispatch(setFormDataAction(keys.postcode, postcode));
+        const value = (postcode && postcode !== null) ? postcode : "";
+        dispatch(setFormDataAction(keys.postcode, value));
     };
 };
 

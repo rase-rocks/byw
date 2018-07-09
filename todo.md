@@ -28,3 +28,7 @@
 + Implement checking when submitting a new location to the index, and if the location is already in the index
 just add to it
 + Implement staging environment
++ Implement a reverse geocoding system (*what?* Yes, this will likely have to be a separate project), to 
+    give us an open source system to allow the map on the submit page to be searched via place name. Current
+    thoughts are to put an api gateway in front of a rate limiting and caching system that calls out to Nominatim.
+    Check the usage term at https://operations.osmfoundation.org/policies/nominatim/
