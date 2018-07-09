@@ -2,8 +2,7 @@
 
 const expect = require("chai").expect;
 const formatCoordinate  = require("../client/app/pages/submit/form/form").formatCoordinate;
-
-const PLACEHOLDER = "Drag the pin...";
+const PLACEHOLDER = require("../client/app/pages/submit/form/form").coordinateInputPlaceholder;
 
 describe("form-ui", function () {
 

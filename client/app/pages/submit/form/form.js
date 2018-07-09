@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import Error from "./error";
 import { keys, valueForKey } from "../../../core/model/form";
-import eventTargetValue from "../../../core/event-target-value";
 import CategorySlider from "./category-slider";
+import Error from "./error";
+import eventTargetValue from "../../../core/event-target-value";
 
 const target = eventTargetValue();
 
@@ -87,10 +87,12 @@ const toInput = function (handler, formatter) {
     };
 };
 
+export const coordinateInputPlaceholder = "Drag the pin...";
+
 export const formatCoordinate = function (geoJsonCoordinate) {
     if (!geoJsonCoordinate
         || geoJsonCoordinate === null
-        || geoJsonCoordinate.length === 0) { return "Drag the pin..."; }
+        || geoJsonCoordinate.length === 0) { return coordinateInputPlaceholder; }
         
     return [
         geoJsonCoordinate[1],
