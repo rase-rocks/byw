@@ -116,13 +116,6 @@ describe("form", function () {
                     error: errors.missingAddress
                 },
                 {
-                    testKey: keys.postcode,
-                    form: Object.assign(
-                        {}, 
-                        makeForm(keys.postcode, "")),
-                    error: errors.invalidPostcode
-                },
-                {
                     testKey: keys.coordinates,
                     form: makeForm(keys.coordinates, []),
                     error: errors.invalidCoordinates

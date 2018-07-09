@@ -3,6 +3,8 @@
 const expect = require("chai").expect;
 const formatCoordinate  = require("../client/app/pages/submit/form/form").formatCoordinate;
 
+const PLACEHOLDER = "Drag the pin...";
+
 describe("form-ui", function () {
 
     describe("formatCoordinate", function () {
@@ -15,12 +17,12 @@ describe("form-ui", function () {
 
         it("handles an empty coordinate", function () {
             const result = formatCoordinate();
-            expect(result).to.equal("--");
+            expect(result).to.equal(PLACEHOLDER);
         });
 
         it("handles a null coordinate", function () {
             const result = formatCoordinate(null);
-            expect(result).to.equal("--");
+            expect(result).to.equal(PLACEHOLDER);
         });
 
     });
