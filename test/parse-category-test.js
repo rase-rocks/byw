@@ -2,7 +2,7 @@
 
 const expect = require("chai").expect;
 
-const parseCategory = require("../existing-data/parse-category");
+const parseCategory = require("../existing-data/parse-category").default;
 
 describe("parse-category", function () {
 

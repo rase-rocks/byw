@@ -10,9 +10,15 @@ const locatorReducer = function (state = defaultLocatorState, action) {
 
     switch (action.type) {
 
-    case types.setLocatorSearchText: {
+    case types.setLocatorSearchText:
+
         reducedState.searchText = action.payload;
-    }
+        break;
+
+    case types.setSearchText:
+
+        reducedState.searchText = action.payload;
+        break;
 
     }
 

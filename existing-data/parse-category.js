@@ -1,5 +1,4 @@
-const spaceRe = / /g;
-const numbersRe = /[^0-9]+/g;
+import { numbersRe, spaceRe } from "../client/app/core/model/regular-expressions";
 
 const removeWhitespace = function (str) {
     return str.replace(spaceRe, "");
@@ -43,4 +42,4 @@ const parseCategory = function (categoryStr) {
         : mean(values) / 100;
 };
 
-module.exports = parseCategory;
+export default parseCategory;

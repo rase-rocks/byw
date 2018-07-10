@@ -11,7 +11,8 @@ const fs = require("fs");
 
 const csvFilePath = "./existing-data/Outlet Data 110518.csv";
 const csv = require("csvtojson");
-const parseCategory = require("./parse-category");
+const parseCategory = require("./parse-category").default;
+const parsePostcode = require("./parse-postcode").default;
 const locations = [];
 
 console.log("** Starting Conversion - ", csvFilePath);
@@ -27,6 +28,7 @@ csv()
             return {
                 name: outlet.Name,
                 address: outlet.Address,
+                postcode: parsePostcode(outlet.Address),
                 coordinates: [outlet.Longitude, outlet.Latitude],
                 category: parseCategory(outlet.Category)
             };

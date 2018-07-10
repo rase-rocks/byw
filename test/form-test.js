@@ -9,6 +9,7 @@ const exp = require("../client/app/core/model/form");
 
 const formUpdatingDataKey = exp.formUpdatingDataKey;
 const formUpdatingErrorKey = exp.formUpdatingErrorKey;
+const formFromLocation = exp.formFromLocation;
 const hasErrors = exp.hasErrors;
 const validatedForm = exp.validatedForm;
 const keys = exp.keys;
@@ -96,6 +97,29 @@ describe("form", function () {
 
             expect(newForm[alteredKey].error).to.equal(errorString);
 
+        });
+
+    });
+
+    describe("formUpdatingFromLocation", function () {
+
+        it("returns a new form with the correct values", function () {
+
+            const location = {
+                name: "The new name",
+                address: "The new street address",
+                postcode: "LL30 7HJ",
+                coordinates: [-3.8, 53.1],
+                category: 0.5
+            };
+
+            const newForm = formFromLocation(location);
+
+            Object.keys(newForm).forEach(function (key) {
+                expect(valueForKey(newForm, key)).to.equal(location[key]);
+            });
+
+            
         });
 
     });

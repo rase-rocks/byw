@@ -44,10 +44,17 @@ const hasErrors = function (form) {
         }, false);
 };
 
+const formFromLocation = function (location) {
+    return Object.keys(location).reduce(function (acc, current) {
+        return formUpdatingDataKey(acc, current, location[current]);
+    }, reducer(keyOrder));
+};
+
 export default form;
 export {
     formUpdatingDataKey,
     formUpdatingErrorKey,
+    formFromLocation,
     hasErrors,
     validatedForm,
     keyOrder,

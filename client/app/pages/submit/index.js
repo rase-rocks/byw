@@ -2,7 +2,7 @@ import React from "react";
 
 import Form from "./form";
 import LocatorMap from "./locator-map";
-//import LocatorSearchBar from "./locator-search-bar";
+import LocatorSearchBar from "./locator-search-bar";
 import PageHeader from "../../resusable-components/page-header";
 import SubmitHeading from "./submit-heading";
 
@@ -14,7 +14,7 @@ class Submit extends React.Component {
 
                 <div className="container">
                     <PageHeader>
-                        Submit to our index
+                        Submit to or update our index
                     </PageHeader>
 
                     <div className="row submit-main-content">
@@ -22,7 +22,7 @@ class Submit extends React.Component {
                         <div className="col-md-6">
 
                             <LocatorMap />
-                            {/* <LocatorSearchBar /> */}
+                            <LocatorSearchBar />
 
                         </div>
 
@@ -41,17 +41,17 @@ class Submit extends React.Component {
                                 Submitting to the index is easy and anonymous.
                             </p>
                             <p>
-                                You can search for a place in the box under the map and then use the
-                                map to precisely locate the place you are submitting. Just drag the
-                                pin onto the premises. The postcode is automatically filled in for
+                                You can search for a place already in the index in the box under the map.
+                                If you are submitting a new location then you can position the pin on the
+                                map to precisely locate it. The postcode is automatically filled in for
                                 you, if there is one, so you can just add the name and street.
                             </p>
                         </div>
                         <div className="col-md-6">
                             <p>
-                                Add the name and street information as you would like them to appear in
-                                the index. If the location is already in the index then your
-                                categorisation will be taken into account.
+                                If your adding a new location then add the name and street information 
+                                as you would like them to appear in the index. If the location is already
+                                in the index then your categorisation will be taken into account.
                             </p>
                             <p>
                                 The use the slider to indicate how likely it is, based on your experience and knowledge

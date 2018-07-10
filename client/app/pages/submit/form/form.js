@@ -12,19 +12,19 @@ const labels = {
     [keys.name]: {
         id: "byw-form-label-name",
         type: "text",
-        placeholder: "Name",
+        placeholder: "Name of premises",
         key: "name"
     },
     [keys.address]: {
         id: "byw-form-label-address",
         type: "text",
-        placeholder: "Address",
+        placeholder: "Address of premises",
         key: "address"
     },
     [keys.postcode]: {
         id: "byw-form-label-postcode",
         type: "text",
-        placeholder: "Postcode",
+        placeholder: "Postcode of premises",
         key: "postcode"
     },
     [keys.coordinates]: {
