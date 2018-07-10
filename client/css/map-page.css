@@ -26,4 +26,24 @@
     border: none;
 }
 
+.show-button {
+    padding: 10px;
+    background-color: #4dcb44;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
 
+.search-result-submit-btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: rgb(54,54,54);
+    color: #4dcb44;
+    border: 1px solid #4dcb44;
+    border-radius: 5px;
+    font-size: 0.7rem;
+}

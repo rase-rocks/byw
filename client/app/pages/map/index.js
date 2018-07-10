@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -8,7 +9,7 @@ import {
     setSearchTextAction,
     setViewLocation
 } from "../../core/redux/actions";
-
+import { route } from "../../nav";
 import bindMethods from "../../core/bind-methods";
 import eventTargetValue from "../../core/event-target-value";
 import MapPage from "./map-page";
@@ -69,6 +70,14 @@ class MapPageController extends React.Component {
         };
     }
 
+    onReview() {
+        const self = this;
+        return function (location) {
+            self.props.history.push(route.submit);
+            self.props.dispatch(setViewLocation(location));
+        };
+    }
+
     onPageChange() {
         const self = this;
         return function (newPageNumber) {
@@ -98,6 +107,7 @@ class MapPageController extends React.Component {
                 searchValueDidChange={this.onTextChange()}
                 searchDistanceDidChange={this.onDistanceChange()}
                 onShowLocation={this.onShowLocation()}
+                onReview={this.onReview()}
                 onPageChange={this.onPageChange()} />
         );
     }
@@ -108,6 +118,7 @@ MapPageController.propTypes = {
     selectedLocation: PropTypes.object,
     searchText: PropTypes.string,
     dispatch: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired
 };
 
@@ -119,4 +130,4 @@ const mapStateToProps = function (state) {
     };
 };
 
-export default connect(mapStateToProps)(MapPageController);
+export default connect(mapStateToProps)(withRouter(MapPageController));

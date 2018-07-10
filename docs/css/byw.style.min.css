@@ -9462,8 +9462,8 @@ a.text-dark:hover, a.text-dark:focus {
 	}
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-	background: white;
-	color: #333;
+	background: rgb(54,54,54);
+	color: darkgrey;
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 	}
 .leaflet-container a.leaflet-popup-close-button {
@@ -9625,8 +9625,27 @@ a.text-dark:hover, a.text-dark:focus {
     border: none;
 }
 
+.show-button {
+    padding: 10px;
+    background-color: #4dcb44;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
 
-
+.search-result-submit-btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: rgb(54,54,54);
+    color: #4dcb44;
+    border: 1px solid #4dcb44;
+    border-radius: 5px;
+    font-size: 0.7rem;
+}
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
     cursor: pointer;
     border-radius: 1px;

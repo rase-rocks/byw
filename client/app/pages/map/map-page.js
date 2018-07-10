@@ -18,12 +18,13 @@ class MapSearchBox extends React.Component {
             pageCount,
             pageResults,
             onShowLocation,
+            onReview,
             onPageChange,
             currentPageNo
         } = this.props;
 
         const result = (totalCount == 1) ? "Result" : "Results";
-        const page = (pageCount > 1) 
+        const page = (pageCount > 1)
             ? "Pages"
             : "";
 
@@ -43,7 +44,9 @@ class MapSearchBox extends React.Component {
                     </div>
                 </div>
 
-                <LocationFolder locations={pageResults} onShowLocation={onShowLocation} />
+                <LocationFolder locations={pageResults}
+                    onShowLocation={onShowLocation}
+                    onReview={onReview} />
 
                 <div className="text-center"
                     style={{ marginTop: "10px", marginBottom: "10px", padding: "20px" }}>
@@ -70,6 +73,7 @@ MapSearchBox.propTypes = {
     searchValueDidChange: PropTypes.func.isRequired,
     searchDistanceDidChange: PropTypes.func.isRequired,
     onShowLocation: PropTypes.func.isRequired,
+    onReview: PropTypes.func.isRequired,
     onPageChange: PropTypes.func.isRequired
 };
 
@@ -93,11 +97,14 @@ class MapPage extends React.Component {
         const {
             pageResults,
             selectedLocation,
+            onShowLocation
         } = this.props;
 
         return (
             <div className="map-container">
-                <Map filteredResults={pageResults} selectedLocation={selectedLocation} />
+                <Map filteredResults={pageResults}
+                    selectedLocation={selectedLocation}
+                    onShowLocation={onShowLocation} />
                 <MapSearchBox {...this.props} />
             </div>
         );
@@ -115,6 +122,7 @@ MapPage.propTypes = {
     searchValueDidChange: PropTypes.func.isRequired,
     searchDistanceDidChange: PropTypes.func.isRequired,
     onShowLocation: PropTypes.func.isRequired,
+    onReview: PropTypes.func.isRequired,
     onPageChange: PropTypes.func.isRequired
 };
 

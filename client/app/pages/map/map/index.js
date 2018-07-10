@@ -4,7 +4,7 @@ import React from "react";
 
 import { filterLocationsByPolygon } from "../../../core/redux/actions";
 import isBrowser from "../../../core/is-browser";
-
+import popup from "./popup";
 import {
     attribution,
     tileLayerString,
@@ -31,11 +31,7 @@ if (isBrowser()) {
     L = require("Leaflet");
 }
 
-const popupString = function (location) {
-    return `<p>${location.name}</p>`;
-};
-
-const setMarkers = function (map, locations, markerGroup) {
+const setMarkers = function (map, locations, markerGroup, onShowLocation) {
 
     const group = markerGroup || L.featureGroup().addTo(map);
 
@@ -45,7 +41,7 @@ const setMarkers = function (map, locations, markerGroup) {
         .forEach((location) => {
             L.marker(toMarkerCoords(location.coordinates))
                 .addTo(group)
-                .bindPopup(popupString(location));
+                .bindPopup(popup(location, onShowLocation));
         });
 
     return group;
@@ -76,7 +72,10 @@ class MapController extends React.Component {
             setPoint(this.state.map, nextProps.selectedLocation, this.state.markerGroup);
         } else {
             if (nextProps.filteredResults === this.props.filteredResults) { return; }
-            setMarkers(this.state.map, nextProps.filteredResults, this.state.markerGroup);
+            setMarkers(this.state.map, 
+                nextProps.filteredResults, 
+                this.state.markerGroup, 
+                nextProps.onShowLocation);
         }
         
     }
@@ -103,6 +102,13 @@ class MapController extends React.Component {
         
     }
 
+    componentWillUnmount() {
+        if (isBrowser()) {
+            const map = document.getElementById(MAP_ID);
+            map.remove();
+        }
+    }
+
     render() {
         return (
             <div id={MAP_ID} className="full-page-map" />
@@ -113,6 +119,7 @@ class MapController extends React.Component {
 MapController.propTypes = {
     filteredResults: PropTypes.array,
     selectedLocation: PropTypes.object,
+    onShowLocation: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired
 };
 

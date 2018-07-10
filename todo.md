@@ -7,6 +7,7 @@
 + Remove unused CSS classes
 + Minify js in build process
 + About page heat map / or other as decided
++ Clustering for map pins
 
 #### Logic
 
