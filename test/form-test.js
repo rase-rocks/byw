@@ -18,6 +18,7 @@ const valueForKey = exp.valueForKey;
 
 const validForm = function () {
     return {
+        uuid: item(keys.uuid, "1234-123-123-1223"),
         name: item(keys.name, "The premises name"),
         address: item(keys.address, "The Place, The Street"),
         postcode: item(keys.postcode, "WA10 7BJ"),
@@ -79,6 +80,7 @@ describe("form", function () {
             const alteredKey = keys.name;
 
             const oldForm = {};
+            oldForm.uuid = item(keys.uuid, "2345-2345-2345");
             oldForm.name = item(keys.name, "Robert");
             oldForm.address = item(keys.address, "The address");
             oldForm.postcode = item(keys.postcode, "XX01 1XX");
@@ -116,10 +118,12 @@ describe("form", function () {
             const newForm = formFromLocation(location);
 
             Object.keys(newForm).forEach(function (key) {
-                expect(valueForKey(newForm, key)).to.equal(location[key]);
+                if (!key === keys.uuid) {
+                    expect(valueForKey(newForm, key)).to.equal(location[key]);
+                }
             });
 
-            
+
         });
 
     });
@@ -144,7 +148,7 @@ describe("form", function () {
                     form: makeForm(keys.coordinates, []),
                     error: errors.invalidCoordinates
                 }
-            ].map(test => Object.assign({}, test, {form: validatedForm(test.form)}))
+            ].map(test => Object.assign({}, test, { form: validatedForm(test.form) }))
                 .forEach(test => expect(hasErrors(test.form)).to.equal(true));
 
         });

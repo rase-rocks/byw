@@ -698,12 +698,20 @@ var _valueForKey = require("./value-for-key");
 
 var _valueForKey2 = _interopRequireDefault(_valueForKey);
 
+var _v = require("uuid/v4");
+
+var _v2 = _interopRequireDefault(_v);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var typedValue = function typedValue(key) {
     var value = "";
 
     switch (key) {
+
+        case _keys.keys.uuid:
+            value = (0, _v2.default)();
+            break;
 
         case _keys.keys.category:
             value = 0.75;
@@ -756,7 +764,7 @@ exports.keys = _keys.keys;
 exports.item = _item2.default;
 exports.valueForKey = _valueForKey2.default;
 
-},{"./form-updating-error-key":23,"./item":25,"./keys":26,"./update":27,"./validated-form":28,"./value-for-key":29}],25:[function(require,module,exports){
+},{"./form-updating-error-key":23,"./item":25,"./keys":26,"./update":27,"./validated-form":28,"./value-for-key":29,"uuid/v4":220}],25:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -780,6 +788,7 @@ exports.default = function (key) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var uuid = "uuid";
 var name = "name";
 var address = "address";
 var postcode = "postcode";
@@ -787,6 +796,7 @@ var coordinates = "coordinates";
 var category = "category";
 
 var keys = {
+    uuid: uuid,
     name: name,
     address: address,
     postcode: postcode,
@@ -794,7 +804,7 @@ var keys = {
     category: category
 };
 
-var keyOrder = [name, address, postcode, coordinates, category];
+var keyOrder = [uuid, name, address, postcode, coordinates, category];
 
 exports.keys = keys;
 exports.keyOrder = keyOrder;
@@ -4935,9 +4945,8 @@ var inputMetaDataForLabel = function inputMetaDataForLabel(key, formData) {
 
 var labelsArray = function labelsArray(data) {
     return Object.keys(data).filter(function (key) {
-        return key !== _form.keys.category;
-    }) // remove the category field as this is going to be a slider
-    .reduce(function (inputMetaDatas, key) {
+        return key !== _form.keys.category && key !== _form.keys.uuid;
+    }).reduce(function (inputMetaDatas, key) {
         inputMetaDatas.push(inputMetaDataForLabel(key, data));
         return inputMetaDatas;
     }, []);
@@ -5682,7 +5691,7 @@ FetchableImage.propTypes = {
 
 exports.default = FetchableImage;
 
-},{"../../core/colors":4,"../../core/is-browser":7,"./to-url":85,"prop-types":157,"react":213,"whatwg-fetch":220}],85:[function(require,module,exports){
+},{"../../core/colors":4,"../../core/is-browser":7,"./to-url":85,"prop-types":157,"react":213,"whatwg-fetch":223}],85:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5876,7 +5885,7 @@ FetchableSectionBackground.propTypes = {
 
 exports.default = FetchableSectionBackground;
 
-},{"../../core/colors":4,"../../core/is-browser":7,"../../core/props-children":38,"../FetchableImage":84,"../FetchableImage/to-url":85,"prop-types":157,"react":213,"whatwg-fetch":220}],87:[function(require,module,exports){
+},{"../../core/colors":4,"../../core/is-browser":7,"../../core/props-children":38,"../FetchableImage":84,"../FetchableImage/to-url":85,"prop-types":157,"react":213,"whatwg-fetch":223}],87:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20513,7 +20522,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"./PathUtils":107,"resolve-pathname":215,"value-equal":218}],107:[function(require,module,exports){
+},{"./PathUtils":107,"resolve-pathname":215,"value-equal":221}],107:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -20883,7 +20892,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./DOMUtils":105,"./LocationUtils":106,"./PathUtils":107,"./createTransitionManager":111,"invariant":114,"warning":219}],109:[function(require,module,exports){
+},{"./DOMUtils":105,"./LocationUtils":106,"./PathUtils":107,"./createTransitionManager":111,"invariant":114,"warning":222}],109:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -21208,7 +21217,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":105,"./LocationUtils":106,"./PathUtils":107,"./createTransitionManager":111,"invariant":114,"warning":219}],110:[function(require,module,exports){
+},{"./DOMUtils":105,"./LocationUtils":106,"./PathUtils":107,"./createTransitionManager":111,"invariant":114,"warning":222}],110:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -21379,7 +21388,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./LocationUtils":106,"./PathUtils":107,"./createTransitionManager":111,"warning":219}],111:[function(require,module,exports){
+},{"./LocationUtils":106,"./PathUtils":107,"./createTransitionManager":111,"warning":222}],111:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -21465,7 +21474,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":219}],112:[function(require,module,exports){
+},{"warning":222}],112:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42230,7 +42239,7 @@ BrowserRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = BrowserRouter;
-},{"./Router":195,"history/createBrowserHistory":108,"prop-types":157,"react":213,"warning":219}],188:[function(require,module,exports){
+},{"./Router":195,"history/createBrowserHistory":108,"prop-types":157,"react":213,"warning":222}],188:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42299,7 +42308,7 @@ HashRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = HashRouter;
-},{"./Router":195,"history/createHashHistory":109,"prop-types":157,"react":213,"warning":219}],189:[function(require,module,exports){
+},{"./Router":195,"history/createHashHistory":109,"prop-types":157,"react":213,"warning":222}],189:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42748,7 +42757,7 @@ MemoryRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = MemoryRouter;
-},{"./Router":205,"history/createMemoryHistory":110,"prop-types":157,"react":213,"warning":219}],202:[function(require,module,exports){
+},{"./Router":205,"history/createMemoryHistory":110,"prop-types":157,"react":213,"warning":222}],202:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42948,7 +42957,7 @@ Redirect.contextTypes = {
   }).isRequired
 };
 exports.default = Redirect;
-},{"history":112,"invariant":114,"prop-types":157,"react":213,"warning":219}],204:[function(require,module,exports){
+},{"history":112,"invariant":114,"prop-types":157,"react":213,"warning":222}],204:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43101,7 +43110,7 @@ Route.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Route;
-},{"./matchPath":209,"invariant":114,"prop-types":157,"react":213,"warning":219}],205:[function(require,module,exports){
+},{"./matchPath":209,"invariant":114,"prop-types":157,"react":213,"warning":222}],205:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43221,7 +43230,7 @@ Router.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Router;
-},{"invariant":114,"prop-types":157,"react":213,"warning":219}],206:[function(require,module,exports){
+},{"invariant":114,"prop-types":157,"react":213,"warning":222}],206:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43407,7 +43416,7 @@ StaticRouter.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = StaticRouter;
-},{"./Router":205,"history/PathUtils":107,"invariant":114,"prop-types":157,"react":213,"warning":219}],207:[function(require,module,exports){
+},{"./Router":205,"history/PathUtils":107,"invariant":114,"prop-types":157,"react":213,"warning":222}],207:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43504,7 +43513,7 @@ Switch.propTypes = {
   location: _propTypes2.default.object
 };
 exports.default = Switch;
-},{"./matchPath":209,"invariant":114,"prop-types":157,"react":213,"warning":219}],208:[function(require,module,exports){
+},{"./matchPath":209,"invariant":114,"prop-types":157,"react":213,"warning":222}],208:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -45873,6 +45882,99 @@ function symbolObservablePonyfill(root) {
 	return result;
 };
 },{}],218:[function(require,module,exports){
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
+  return ([bth[buf[i++]], bth[buf[i++]], 
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]]]).join('');
+}
+
+module.exports = bytesToUuid;
+
+},{}],219:[function(require,module,exports){
+// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+
+// getRandomValues needs to be invoked in a context where "this" is a Crypto
+// implementation. Also, find the complete implementation of crypto on IE11.
+var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
+
+if (getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+
+  module.exports = function whatwgRNG() {
+    getRandomValues(rnds8);
+    return rnds8;
+  };
+} else {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+
+  module.exports = function mathRNG() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+},{}],220:[function(require,module,exports){
+var rng = require('./lib/rng');
+var bytesToUuid = require('./lib/bytesToUuid');
+
+function v4(options, buf, offset) {
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options === 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}
+
+module.exports = v4;
+
+},{"./lib/bytesToUuid":218,"./lib/rng":219}],221:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -45916,7 +46018,7 @@ function valueEqual(a, b) {
 
 exports.default = valueEqual;
 module.exports = exports['default'];
-},{}],219:[function(require,module,exports){
+},{}],222:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -45980,7 +46082,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":153}],220:[function(require,module,exports){
+},{"_process":153}],223:[function(require,module,exports){
 (function(self) {
   'use strict';
 

@@ -54,7 +54,7 @@ const inputMetaDataForLabel = function (key, formData) {
 
 const labelsArray = function (data) {
     return Object.keys(data)
-        .filter(key => key !== keys.category) // remove the category field as this is going to be a slider
+        .filter(key => (key !== keys.category && key !== keys.uuid) )
         .reduce(function (inputMetaDatas, key) {
             inputMetaDatas.push(inputMetaDataForLabel(key, data));
             return inputMetaDatas;

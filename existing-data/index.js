@@ -8,7 +8,7 @@
 */
 
 const fs = require("fs");
-
+const uuid = require("uuid/v4");
 const csvFilePath = "./existing-data/Outlet Data 110518.csv";
 const csv = require("csvtojson");
 const parseCategory = require("./parse-category").default;
@@ -26,6 +26,7 @@ csv()
 
         const output = locations.map(outlet => {
             return {
+                uuid: uuid(),
                 name: outlet.Name,
                 address: outlet.Address,
                 postcode: parsePostcode(outlet.Address),
