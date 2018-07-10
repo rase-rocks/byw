@@ -17,6 +17,11 @@ const formReducer = function (state = form, action) {
 
         reducedState = action.payload;
         break;
+
+    case types.clearForm:
+
+        reducedState = Object.assign({}, form);
+        break;
     
     case types.setViewLocation:
 

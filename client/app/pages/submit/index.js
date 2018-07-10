@@ -2,7 +2,7 @@ import React from "react";
 
 import Form from "./form";
 import LocatorMap from "./locator-map";
-import LocatorSearchBar from "./locator-search-bar";
+// import LocatorSearchBar from "./locator-search-bar";
 import PageHeader from "../../resusable-components/page-header";
 import SubmitHeading from "./submit-heading";
 
@@ -14,7 +14,7 @@ class Submit extends React.Component {
 
                 <div className="container">
                     <PageHeader>
-                        Submit to or update our index
+                        Submit a review
                     </PageHeader>
 
                     <div className="row submit-main-content">
@@ -22,7 +22,7 @@ class Submit extends React.Component {
                         <div className="col-md-6">
 
                             <LocatorMap />
-                            <LocatorSearchBar />
+                            {/* <LocatorSearchBar /> */}
 
                         </div>
 
@@ -33,30 +33,46 @@ class Submit extends React.Component {
                         </div>
                     </div>
 
-                    <SubmitHeading title="How to" />
+                    <SubmitHeading title="How to..." />
 
                     <div className="row">
                         <div className="col-md-6">
                             <p>
-                                Submitting to the index is easy and anonymous.
+                                ...find somewhere already listed:
                             </p>
-                            <p>
-                                You can search for a place already in the index in the box under the map.
-                                If you are submitting a new location then you can position the pin on the
-                                map to precisely locate it. The postcode is automatically filled in for
-                                you, if there is one, so you can just add the name and street.
-                            </p>
+                            <ol>
+                                <li>
+                                    The premises you selected in the map page will appear
+                                    in the submit box ready for your review of Welsh speaking
+                                    likelyhood.
+                                </li>
+                                <li>
+                                    Choose what you feel is best and hit submit.
+                                </li>
+                                <li>
+                                    If the premises you selected is not where you want to submit a review
+                                    for then just drag the map pin, the form will be cleared, and you can 
+                                    locate the premises you want to submit.
+                                </li>
+                            </ol>
                         </div>
                         <div className="col-md-6">
-                            <p>
-                                If your adding a new location then add the name and street information 
-                                as you would like them to appear in the index. If the location is already
-                                in the index then your categorisation will be taken into account.
-                            </p>
-                            <p>
-                                The use the slider to indicate how likely it is, based on your experience and knowledge
-                                of the premises, that a person will hear and be able to use Welsh at the place.
-                            </p>
+                            <p>...submit a new premises:</p>
+                            <ol>
+                                <li>
+                                    Drag the map pin to locate the place
+                                </li>
+                                <li>
+                                    The coordinates and postcode will be filled out. Just add the name of 
+                                    the premises and the address as you would like it to appear in the 
+                                    index.
+                                </li>
+                                <li>
+                                    Select how likely you feel a person is to hear and be able to use Welsh
+                                    in the premises. This isn&apos;t scientific, just what you think is
+                                    likely.
+                                </li>
+                            </ol>
                         </div>
                     </div>
 

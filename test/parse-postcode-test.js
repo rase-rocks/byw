@@ -36,7 +36,7 @@ describe("parse-postcode", function () {
 
         tests.forEach(test => {
             const result = parsePostcode(test.address);
-            console.log(result);
+            
             expect(result).to.equal(test.expectedPostcode);
         });
 

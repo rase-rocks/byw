@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { keys } from "../../../core/model/form";
-import { setFormDataAction } from "../../../core/redux/actions";
+import { clearFormAction, setFormDataAction } from "../../../core/redux/actions";
 import isBrowser from "../../../core/is-browser";
 
 import {
@@ -42,6 +42,7 @@ export const geoJsonFromMarker = function (marker) {
 
 const dispatchFormData = function (dispatch) {
     return function (event) {
+        dispatch(clearFormAction());
         dispatch(setFormDataAction(keys.coordinates, geoJsonFromMarker(event.target)));
     };
 };
@@ -86,6 +87,7 @@ class LocatorMap extends React.Component {
 
         if (!isBrowser()) { return; }
         const { coordinate, dispatch } = this.props;
+    
         this.setState(initMap(coordinate, dispatch));
 
     }

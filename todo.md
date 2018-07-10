@@ -3,7 +3,7 @@
 ### Front end
 
 + ~~Wrangle existing data to get postcode into separate property~~ ✓
-+ Set submit map pin to location of selected location if there is one
++ ~~Set submit map pin to location of selected location if there is one and clear form~~ ✓
 + Remove unused CSS classes
 + Minify js in build process
 + About page heat map / or other as decided

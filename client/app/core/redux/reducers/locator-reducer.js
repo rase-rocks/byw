@@ -20,6 +20,10 @@ const locatorReducer = function (state = defaultLocatorState, action) {
         reducedState.searchText = action.payload;
         break;
 
+    case types.setViewLocation:
+
+        reducedState.coordinate = action.payload.coordinates;
+        break;
     }
 
     return reducedState;

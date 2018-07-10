@@ -9,6 +9,7 @@ const types = {
     setViewLocation: "com.byw.set-view-location",
     setFormData: "com.byw.set-form-data",
     updateForm: "com.byw.update-form",
+    clearForm: "com.byw.clear-form",
     submitForm: "com.byw-submit-form",
     setLocatorSearchText: "com.byw-set-locactor-search-text"
 };
@@ -53,6 +54,10 @@ const updateFormAction = function (form) {
     return { type: types.updateForm, payload: form };
 };
 
+const clearFormAction = function () {
+    return { type: types.clearForm, payload: {}};
+};
+
 const submitFormAction = function () {
     return { type: types.submitForm, payload: {} };
 };
@@ -73,6 +78,7 @@ export {
     setViewLocation,
     setFormDataAction,
     updateFormAction,
+    clearFormAction,
     submitFormAction,
     setLocatorSearchTextAction
 };
