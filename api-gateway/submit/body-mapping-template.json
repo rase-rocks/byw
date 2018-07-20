@@ -1,0 +1,26 @@
+{
+    "TableName": "byw-submissions-v1",
+    "Item": {
+        "id": {
+            "S": "$context.requestId"
+        },
+        "timestamp": {
+            "S": "$input.path('$.timestamp')"
+        },
+        "coordinateHash": {
+            "S": "$input.path('$.coordinateHash')"
+        },
+        "name": {
+            "S": "$input.path('$.name')"
+        },
+        "address": {
+            "S": "$input.path('$.address')"
+        },
+        "postcode": {
+            "S": "$input.path('$.postcode')"
+        },
+        "category": {
+            "N": "$input.path('$.category')"
+        }
+    }
+}

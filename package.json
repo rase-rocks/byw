@@ -4,6 +4,7 @@
   "description": "Breathe Your Welsh Website",
   "main": "index.js",
   "scripts": {
+    "deploy": "~/Library/Python/2.7/bin/aws s3 sync ./s3-build/ s3://byw --delete --exclude '.DS_Store' --cache-control max-age=604800",
     "serve-build": "node node_modules/http-serve/bin/http-serve --cors ./s3-build",
     "build": "sh ./build-settings/build.sh",
     "convert-csv": "babel-node --presets es2015 ./existing-data/index.js",
@@ -47,6 +48,7 @@
     "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "http-serve": "^1.0.1",
+    "https": "^1.0.0",
     "mocha": "^5.1.1",
     "safe-regex": "^1.1.0",
     "vinyl-buffer": "^1.0.1",

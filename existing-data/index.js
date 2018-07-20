@@ -8,11 +8,11 @@
 */
 
 const fs = require("fs");
-const uuid = require("uuid/v4");
 const csvFilePath = "./existing-data/Outlet Data 110518.csv";
 const csv = require("csvtojson");
 const parseCategory = require("./parse-category").default;
 const parsePostcode = require("./parse-postcode").default;
+const parseCoordinateHash = require("./parse-coordinate-hash").default;
 const locations = [];
 
 console.log("** Starting Conversion - ", csvFilePath);
@@ -25,12 +25,14 @@ csv()
     .on("done", (error) => {
 
         const output = locations.map(outlet => {
+            const coordinates = [outlet.Longitude, outlet.Latitude];
             return {
-                uuid: uuid(),
+                coordinateHash: parseCoordinateHash(coordinates),
+                timestamp: new Date().toISOString(),
                 name: outlet.Name,
                 address: outlet.Address,
                 postcode: parsePostcode(outlet.Address),
-                coordinates: [outlet.Longitude, outlet.Latitude],
+                coordinates: coordinates,
                 category: parseCategory(outlet.Category)
             };
         });

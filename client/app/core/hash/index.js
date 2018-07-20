@@ -17,7 +17,7 @@ export default function hash(str = "") {
         hash = (hash * 33) ^ string.charCodeAt(--i);
     }
 
-    return `(${hash >>> 0})`;
+    return `${hash >>> 0}`;
 }
 
 const strHash = function (str) {
