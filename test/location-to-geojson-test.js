@@ -16,7 +16,7 @@ const sample = {
 
 describe("location-to-geojson", function () {
 
-    it("correctly orders coordiates for GeoJSON", function () {
+    it("correctly orders coordinates for GeoJSON", function () {
 
         const json = locationToGeoJSON(sample);
 

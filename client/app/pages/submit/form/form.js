@@ -54,7 +54,7 @@ const inputMetaDataForLabel = function (key, formData) {
 
 const labelsArray = function (data) {
     return Object.keys(data)
-        .filter(key => (key !== keys.category && key !== keys.uuid) )
+        .filter(key => (key !== keys.category && key !== keys.coordinateHash && key !== keys.timestamp) )
         .reduce(function (inputMetaDatas, key) {
             inputMetaDatas.push(inputMetaDataForLabel(key, data));
             return inputMetaDatas;

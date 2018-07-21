@@ -4,16 +4,11 @@ import item from "./item";
 import update from "./update";
 import validatedForm from "./validated-form";
 import valueForKey from "./value-for-key";
-import uuid from "uuid/v4";
 
 const typedValue = function (key) {
     let value = "";
 
     switch (key) {
-
-    case keys.uuid:
-        value = uuid();
-        break;
 
     case keys.category:
         value = 0.75;
@@ -50,9 +45,11 @@ const hasErrors = function (form) {
 };
 
 const formFromLocation = function (location) {
+
     return Object.keys(location).reduce(function (acc, current) {
         return formUpdatingDataKey(acc, current, location[current]);
     }, reducer(keyOrder));
+    
 };
 
 export default form;

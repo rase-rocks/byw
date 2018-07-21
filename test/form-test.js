@@ -18,7 +18,8 @@ const valueForKey = exp.valueForKey;
 
 const validForm = function () {
     return {
-        uuid: item(keys.uuid, "1234-123-123-1223"),
+        coordinateHash: item(keys.coordinateHash, "gcm45w1912zk"),
+        timestamp: item(keys.timestamp, new Date().toISOString()),
         name: item(keys.name, "The premises name"),
         address: item(keys.address, "The Place, The Street"),
         postcode: item(keys.postcode, "WA10 7BJ"),
@@ -80,7 +81,8 @@ describe("form", function () {
             const alteredKey = keys.name;
 
             const oldForm = {};
-            oldForm.uuid = item(keys.uuid, "2345-2345-2345");
+            oldForm.coordinateHash = item(keys.coordinateHash, "2345-2345-2345");
+            oldForm.timestamp = item(keys.timestamp, new Date().toISOString());
             oldForm.name = item(keys.name, "Robert");
             oldForm.address = item(keys.address, "The address");
             oldForm.postcode = item(keys.postcode, "XX01 1XX");
@@ -108,6 +110,8 @@ describe("form", function () {
         it("returns a new form with the correct values", function () {
 
             const location = {
+                coordinateHash: "coordinateHash", 
+                timestamp: new Date().toISOString(),
                 name: "The new name",
                 address: "The new street address",
                 postcode: "LL30 7HJ",
@@ -118,9 +122,9 @@ describe("form", function () {
             const newForm = formFromLocation(location);
 
             Object.keys(newForm).forEach(function (key) {
-                if (!key === keys.uuid) {
-                    expect(valueForKey(newForm, key)).to.equal(location[key]);
-                }
+                
+                expect(valueForKey(newForm, key)).to.equal(location[key]);
+               
             });
 
 

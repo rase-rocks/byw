@@ -32,7 +32,6 @@ csv()
                 name: outlet.Name,
                 address: outlet.Address,
                 postcode: parsePostcode(outlet.Address),
-                coordinates: coordinates,
                 category: parseCategory(outlet.Category)
             };
         });
