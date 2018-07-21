@@ -62,7 +62,7 @@ const start = function (locations, interval = sendInterval) {
 
 };
 
-fs.readFile("../../static-api/public/data", "utf-8", function (err, data) {
+fs.readFile("./data", "utf-8", function (err, data) {
     if (err) {
         console.log("FATAL An error occurred trying to read in the file: " + err);
         process.exit(-2);

@@ -36,7 +36,7 @@ csv()
             };
         });
         
-        fs.writeFileSync("./static-api/public/data", JSON.stringify(output));
+        fs.writeFileSync("./api-gateway/upload-existing-data/data", JSON.stringify(output));
 
         console.log("** Completed with error: ", (error) ? error : "None");
 
