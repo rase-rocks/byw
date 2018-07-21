@@ -1,5 +1,5 @@
 const urls = {
-    locations: "static-api/public/data",
+    locations: "https://q64w5l7tw9.execute-api.eu-west-1.amazonaws.com/v1/locations",
     makePostcodeUrl: function (postcode) {
         return `https://api.postcodes.io/postcodes/${postcode.replace(" ", "")}`;
     },

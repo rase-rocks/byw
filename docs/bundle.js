@@ -94,7 +94,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var urls = {
-    locations: "byw/static-api/public/data",
+    locations: "https://q64w5l7tw9.execute-api.eu-west-1.amazonaws.com/v1/locations",
     makePostcodeUrl: function makePostcodeUrl(postcode) {
         return "https://api.postcodes.io/postcodes/" + postcode.replace(" ", "");
     },
