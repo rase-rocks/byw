@@ -10,20 +10,26 @@ const exp = require("../client/app/core/model/form");
 const formUpdatingDataKey = exp.formUpdatingDataKey;
 const formUpdatingErrorKey = exp.formUpdatingErrorKey;
 const formFromLocation = exp.formFromLocation;
+const formTimestamped = exp.formTimestamped;
 const hasErrors = exp.hasErrors;
 const validatedForm = exp.validatedForm;
 const keys = exp.keys;
 const item = exp.item;
 const valueForKey = exp.valueForKey;
 
+const sampleLatitude = 52.4159479;
+const sampleLongitude = -4.062818;
+const sampleGeohash = "gcm45w1912zk";
+const sampleCoords = [sampleLongitude, sampleLatitude];
+
 const validForm = function () {
     return {
-        coordinateHash: item(keys.coordinateHash, "gcm45w1912zk"),
+        coordinateHash: item(keys.coordinateHash, sampleGeohash),
         timestamp: item(keys.timestamp, new Date().toISOString()),
         name: item(keys.name, "The premises name"),
         address: item(keys.address, "The Place, The Street"),
         postcode: item(keys.postcode, "WA10 7BJ"),
-        coordinates: item(keys.coordinates, [-3.9, 53.9]),
+        coordinates: item(keys.coordinates, [sampleLongitude, sampleLatitude]),
         category: item(keys.category, 0.75)
     };
 };
@@ -55,7 +61,8 @@ describe("form", function () {
             oldForm.address = item(keys.address, "The address");
             oldForm.postcode = item(keys.postcode, "XX01 1XX");
             oldForm.category = item(keys.category, 0.75);
-            oldForm.coordinates = item(keys.coordinates, [-3.7, 53.1]);
+            oldForm.coordinates = item(keys.coordinates, sampleCoords);
+            oldForm.coordinateHash = item(keys.coordinateHash, sampleGeohash);
 
             const newForm = formUpdatingDataKey(oldForm, alteredKey, "Robert");
 
@@ -81,13 +88,13 @@ describe("form", function () {
             const alteredKey = keys.name;
 
             const oldForm = {};
-            oldForm.coordinateHash = item(keys.coordinateHash, "2345-2345-2345");
+            oldForm.coordinateHash = item(keys.coordinateHash, sampleGeohash);
             oldForm.timestamp = item(keys.timestamp, new Date().toISOString());
             oldForm.name = item(keys.name, "Robert");
             oldForm.address = item(keys.address, "The address");
             oldForm.postcode = item(keys.postcode, "XX01 1XX");
             oldForm.category = item(keys.category, 0.75);
-            oldForm.coordinates = item(keys.coordinates, [-3.7, 53.1]);
+            oldForm.coordinates = item(keys.coordinates, sampleCoords);
 
             const errorString = "The name has an error";
 
@@ -110,12 +117,12 @@ describe("form", function () {
         it("returns a new form with the correct values", function () {
 
             const location = {
-                coordinateHash: "coordinateHash", 
+                coordinateHash: sampleGeohash, 
                 timestamp: new Date().toISOString(),
                 name: "The new name",
                 address: "The new street address",
                 postcode: "LL30 7HJ",
-                coordinates: [-3.8, 53.1],
+                coordinates: sampleCoords,
                 category: 0.5
             };
 
@@ -130,6 +137,22 @@ describe("form", function () {
 
         });
 
+    });
+
+    describe("formTimestamped", function () {
+
+        it("returns a form with the timestamp applied", function () {
+
+            const valid = validForm();
+            const timestamp = new Date().toISOString();
+            const stamped = formTimestamped(valid, timestamp);
+            
+            Object.keys(valid).forEach(function (key) {
+                expect(valueForKey(valid, key)).to.equal(valueForKey(stamped, key));
+            });
+            expect(valueForKey(stamped, keys.timestamp)).to.equal(timestamp);
+
+        });
     });
 
     describe("hasErrors", function () {
@@ -150,6 +173,16 @@ describe("form", function () {
                 {
                     testKey: keys.coordinates,
                     form: makeForm(keys.coordinates, []),
+                    error: errors.invalidCoordinates
+                },
+                {
+                    testKey: keys.coordinateHash,
+                    form: makeForm(keys.coordinateHash, ""),
+                    error: errors.invalidCoordinates
+                },
+                {
+                    testKey: keys.coordinateHash,
+                    form: makeForm(keys.coordinateHash, "gcm3"),
                     error: errors.invalidCoordinates
                 }
             ].map(test => Object.assign({}, test, { form: validatedForm(test.form) }))
@@ -173,12 +206,9 @@ describe("form", function () {
             expect(validated).to.not.equal(valid);
         });
 
-        it("gives no errors for valid result - postcode", function () {
+        it("gives no errors for valid input", function () {
 
             const valid = validForm();
-            valid.postcode = item(keys.postcode, "WA10 7BJ");
-            valid.coordinates = item(keys.coordinates, [-3.9, 53.9]);
-
             const vForm = validatedForm(valid);
 
             Object.keys(keys).forEach(key => {
@@ -189,28 +219,13 @@ describe("form", function () {
                 expect(valueForKey(vForm, key)).to.equal(valueForKey(valid, key));
             });
         });
-
-        it("gives no errors for valid result - coordinates", function () {
-            const valid = validForm();
-            valid.coordinates = item(keys.coordinates, [-3.9, 53.9]);
-
-            const vForm = validatedForm(valid);
-
-            Object.keys(keys).forEach(key => {
-                expect(vForm[key].error).to.equal("");
-            });
-
-            Object.keys(keys).forEach(key => {
-                expect(valueForKey(vForm, key)).to.equal(valueForKey(valid, key));
-            });
-        });
-
 
         it("handles invalid postcode - with coordinates", function () {
 
             const invalidPostcode = validForm();
             invalidPostcode.postcode = item(keys.postcode, "invalid_postcode");
-            invalidPostcode.coordinates = item(keys.coordinates, [-3.9, 53.9]);
+            invalidPostcode.coordinates = item(keys.coordinates, sampleCoords);
+            invalidPostcode.coordinateHash = item(keys.coordinateHash, sampleGeohash);
 
             const vForm = validatedForm(invalidPostcode);
 
@@ -278,6 +293,19 @@ describe("form", function () {
             });
         });
 
+        it("handles coordinate mismatch", function () {
+
+            const mismatch = validForm();
+            mismatch.coordinateHash = "gcbms2";
+
+            const validated = validatedForm(mismatch);
+            
+            expect(validated.coordinates.error).to.equal(errors.coordinatesMismatch);
+
+        });
+
     });
+
+
 
 });

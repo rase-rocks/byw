@@ -13,4 +13,7 @@ const encodeGeoJsonCoordinates = function (coordinates) {
     return encodeGeoHash(coordinates[1], coordinates[0]);
 };
 
-export { addCoordinates, encodeGeoJsonCoordinates };
+export { 
+    addCoordinates, 
+    encodeGeoJsonCoordinates 
+};

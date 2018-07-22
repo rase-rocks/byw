@@ -4,6 +4,7 @@ import item from "./item";
 import update from "./update";
 import validatedForm from "./validated-form";
 import valueForKey from "./value-for-key";
+import time from "../../../../../test/time";
 
 const typedValue = function (key) {
     let value = "";
@@ -52,11 +53,16 @@ const formFromLocation = function (location) {
     
 };
 
+const formTimestamped = function (form, timestamp) {
+    return update(form, keys.timestamp, timestamp);
+};
+
 export default form;
 export {
     formUpdatingDataKey,
     formUpdatingErrorKey,
     formFromLocation,
+    formTimestamped,
     hasErrors,
     validatedForm,
     keyOrder,
