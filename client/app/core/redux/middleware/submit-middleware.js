@@ -1,6 +1,6 @@
 import { types, updateFormAction, setFormDataAction } from "../actions";
 
-import { validatedForm, hasErrors, keys, formTimestamped } from "../../model/form";
+import { validatedForm, hasErrors, keys, postDataFromForm } from "../../model/form";
 
 const validate = function (store) {
     return new Promise(function (resolve) {
@@ -15,14 +15,14 @@ const validate = function (store) {
 
 const handle = function (dispatch) {
     return function (candidateForm) {
-        
+
         if (hasErrors(candidateForm)) {
             dispatch(updateFormAction(candidateForm));
             return;
         }
 
-        const processedForm = formTimestamped(candidateForm, new Date().toISOString());
-        console.log("Submit:", processedForm);
+        const postData = postDataFromForm(candidateForm);
+        console.log("Submit:", postData);
 
     };
 };

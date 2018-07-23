@@ -7,15 +7,20 @@ const errors = require("../client/app/core/model/form/error-messages").default;
 const form = require("../client/app/core/model/form").default;
 const exp = require("../client/app/core/model/form");
 
-const formUpdatingDataKey = exp.formUpdatingDataKey;
-const formUpdatingErrorKey = exp.formUpdatingErrorKey;
-const formFromLocation = exp.formFromLocation;
-const formTimestamped = exp.formTimestamped;
-const hasErrors = exp.hasErrors;
-const validatedForm = exp.validatedForm;
-const keys = exp.keys;
-const item = exp.item;
-const valueForKey = exp.valueForKey;
+const {
+    formUpdatingDataKey,
+    formUpdatingErrorKey,
+    formFromLocation,
+    formTimestamped,
+    postDataFromForm,
+    hasErrors,
+    validatedForm,
+    keys,
+    postKeys,
+    item,
+    valueForKey,
+    timestampString
+} = exp;
 
 const sampleLatitude = 52.4159479;
 const sampleLongitude = -4.062818;
@@ -117,7 +122,7 @@ describe("form", function () {
         it("returns a new form with the correct values", function () {
 
             const location = {
-                coordinateHash: sampleGeohash, 
+                coordinateHash: sampleGeohash,
                 timestamp: new Date().toISOString(),
                 name: "The new name",
                 address: "The new street address",
@@ -129,9 +134,9 @@ describe("form", function () {
             const newForm = formFromLocation(location);
 
             Object.keys(newForm).forEach(function (key) {
-                
+
                 expect(valueForKey(newForm, key)).to.equal(location[key]);
-               
+
             });
 
 
@@ -146,13 +151,34 @@ describe("form", function () {
             const valid = validForm();
             const timestamp = new Date().toISOString();
             const stamped = formTimestamped(valid, timestamp);
-            
+
             Object.keys(valid).forEach(function (key) {
                 expect(valueForKey(valid, key)).to.equal(valueForKey(stamped, key));
             });
             expect(valueForKey(stamped, keys.timestamp)).to.equal(timestamp);
 
         });
+    });
+
+    describe("postDataFromForm", function () {
+
+        it("returns all fields correctly", function () {
+            const valid = validForm();
+            const timestamp = timestampString();
+            const postData = postDataFromForm(valid, timestamp);
+
+            const allPostKeys = Object.keys(postKeys);
+
+            expect(Object.keys(postData).length).to.equal(allPostKeys.length);
+            expect(postData.timestamp).to.equal(timestamp);
+
+            allPostKeys.filter(key => key !== keys.timestamp)
+                .forEach((key) => {
+                    expect(postData[key]).to.equal(valueForKey(valid, key));
+                });
+
+        });
+
     });
 
     describe("hasErrors", function () {
@@ -299,7 +325,7 @@ describe("form", function () {
             mismatch.coordinateHash = "gcbms2";
 
             const validated = validatedForm(mismatch);
-            
+
             expect(validated.coordinates.error).to.equal(errors.coordinatesMismatch);
 
         });

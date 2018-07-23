@@ -16,6 +16,15 @@ const keys = {
     category
 };
 
+const postKeys = {
+    coordinateHash,
+    name,
+    address,
+    postcode,
+    timestamp,
+    category
+};
+
 const keyOrder = [coordinateHash, timestamp, name, address, postcode, coordinates, category];
 
-export { keys, keyOrder };
+export { keys, keyOrder, postKeys };
