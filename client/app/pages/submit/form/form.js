@@ -52,11 +52,15 @@ const inputMetaDataForLabel = function (key, formData) {
         });
 };
 
-const labelsArray = function (data) {
+const labelsArray = function (data, isDisabled) {
     return Object.keys(data)
-        .filter(key => (key !== keys.category && key !== keys.coordinateHash && key !== keys.timestamp) )
+        .filter(key => (key !== keys.category && key !== keys.coordinateHash && key !== keys.timestamp))
         .reduce(function (inputMetaDatas, key) {
-            inputMetaDatas.push(inputMetaDataForLabel(key, data));
+
+            const metaData = inputMetaDataForLabel(key, data);
+            if (isDisabled) metaData.disabled = true;
+
+            inputMetaDatas.push(metaData);
             return inputMetaDatas;
         }, []);
 };
@@ -93,7 +97,7 @@ export const formatCoordinate = function (geoJsonCoordinate) {
     if (!geoJsonCoordinate
         || geoJsonCoordinate === null
         || geoJsonCoordinate.length === 0) { return coordinateInputPlaceholder; }
-        
+
     return [
         geoJsonCoordinate[1],
         geoJsonCoordinate[0]
@@ -114,18 +118,22 @@ const formatValue = function (value, key) {
 class Form extends React.Component {
     render() {
 
-        const { data, onChange, onSubmit } = this.props;
-        const elements = labelsArray(data).map(toInput(onChange, formatValue));
+        const { data, onChange, onSubmit, isDisabled } = this.props;
+        
+        const elements = labelsArray(data, isDisabled)
+            .map(toInput(onChange, formatValue));
 
         return (
             <form className="form" onSubmit={onSubmit}>
 
                 {elements}
 
-                <CategorySlider onChange={onChange} form={data} />
+                <CategorySlider onChange={onChange} form={data} isDisabled={isDisabled} />
 
                 <div className="submit-button-wrapper">
-                    <button className="btn btn-primary mb-2">Submit</button>
+                    <button className="btn btn-primary mb-2" disabled={isDisabled}>
+                        {(isDisabled) ? "Submitted" : "Submit"}
+                    </button>
                 </div>
 
             </form>
@@ -134,6 +142,7 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
+    isDisabled: PropTypes.bool,
     data: PropTypes.object,
     onChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired

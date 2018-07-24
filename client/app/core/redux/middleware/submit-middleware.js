@@ -1,6 +1,16 @@
-import { types, updateFormAction, setFormDataAction } from "../actions";
-
-import { validatedForm, hasErrors, keys, postDataFromForm } from "../../model/form";
+import {
+    types,
+    updateFormAction,
+    setFormDataAction,
+    addSubmissionAction,
+    updateSubmissionStatusAction
+} from "../actions";
+import { validatedForm, 
+    hasErrors, 
+    keys, 
+    postDataFromForm 
+} from "../../model/form";
+import { submissionStates } from "../reducers/submission-reducer";
 
 const validate = function (store) {
     return new Promise(function (resolve) {
@@ -13,7 +23,19 @@ const validate = function (store) {
     });
 };
 
-const handle = function (dispatch) {
+const submitSuccess = function (dispatch, postData) {
+    return function () {
+        dispatch(updateSubmissionStatusAction(postData, submissionStates.success));
+    };
+};
+
+const submitFail = function (dispatch, postData) {
+    return function () {
+        dispatch(updateSubmissionStatusAction(postData, submissionStates.failure));
+    };
+};
+
+const handle = function (dispatch, api) {
     return function (candidateForm) {
 
         if (hasErrors(candidateForm)) {
@@ -22,7 +44,14 @@ const handle = function (dispatch) {
         }
 
         const postData = postDataFromForm(candidateForm);
-        console.log("Submit:", postData);
+
+        setTimeout(function () {
+            dispatch(addSubmissionAction(postData));
+        }, 0);
+
+        api.submit(postData)
+            .then(submitSuccess(dispatch, postData))
+            .catch(submitFail(dispatch, postData));
 
     };
 };
@@ -39,17 +68,18 @@ export default function makeSubmitMiddleware(api) {
 
         switch (action.type) {
 
-        case types.submitForm:
-            validate(store)
-                .then(handle(store.dispatch, api));
-            break;
+            case types.submitForm:
+                validate(store)
+                    .then(handle(store.dispatch, api));
+                break;
 
-        case types.setFormData:
-            if (action.payload.key !== keys.coordinates) { break; }
+            case types.setFormData:
 
-            api.reverseGeocode(action.payload.value)
-                .then(handleReverseGeocode(store.dispatch));
-            break;
+                if (action.payload.key !== keys.coordinates) { break; }
+
+                api.reverseGeocode(action.payload.value)
+                    .then(handleReverseGeocode(store.dispatch));
+                break;
         }
 
         return next(action);

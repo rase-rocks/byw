@@ -52,7 +52,7 @@ const formFromLocation = function (location) {
 
 };
 
-const formTimestamped = function (form, timestamp = timestampString()) {
+const formTimestamped = function (form, timestamp) {
     return update(form, keys.timestamp, timestamp);
 };
 

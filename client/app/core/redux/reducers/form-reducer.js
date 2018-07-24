@@ -18,29 +18,34 @@ const formReducer = function (state = form, action) {
 
     switch (action.type) {
 
-    case types.setFormData:
+        case types.setFormData:
 
-        reducedState = updater(reducedState, action.payload.key, action.payload.value);
-        break;
+            reducedState = updater(reducedState, action.payload.key, action.payload.value);
+            break;
 
 
-    case types.updateForm:
+        case types.updateForm:
 
-        reducedState = action.payload;
-        break;
+            reducedState = action.payload;
+            break;
 
-    case types.clearForm:
+        case types.clearForm:
 
-        reducedState = Object.assign({}, form);
-        break;
+            reducedState = Object.assign({}, form);
+            break;
 
-    case types.setViewLocation:
+        case types.setViewLocation:
 
-        reducedState = formFromLocation(action.payload);
-        break;
+            reducedState = formFromLocation(action.payload);
+            break;
+
+        case types.addSubmission:
+
+            reducedState = Object.assign({}, form);
+            break;
 
     }
-    
+
     return reducedState;
 };
 

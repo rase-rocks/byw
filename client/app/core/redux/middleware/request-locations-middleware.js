@@ -1,5 +1,4 @@
 import { types, setLocationsAction } from "../actions";
-import { addCoordinates } from "../../model/geo-hash";
 
 const key = "LOCATIONS";
 
@@ -13,8 +12,7 @@ const updateSentRequests = function (cache) {
 };
 
 const dispatchLocationsTo = function (store) {
-    return function (rawLocations) {
-        const locations = rawLocations.map(addCoordinates);
+    return function (locations) {
         store.dispatch(setLocationsAction(locations));
     };
 };

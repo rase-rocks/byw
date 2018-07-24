@@ -9,6 +9,7 @@
 + About page heat map / or other as decided
 + Clustering for map pins
 + Photo upload with submission
++ Locate the submission map based on a search - See back end tasks
 
 #### Logic
 
@@ -28,12 +29,12 @@
 
 ### Back end
 
-+ ~~Make a back end!~~
++ ~~Make a back end!~~ ✓
 + ~~Implement checking when submitting a new location to the index, and if the location is already in the index
-just add to it~~
-+ ~~Implement rating system so that the category can update as more users chime in~~
+just add to it~~ ✓
++ ~~Implement rating system so that the category can update as more users chime in~~ ✓
 + Photo uploads, filtering and storage
-+ Monthly data snapshots (also a useful as a backup)
++ ~~Monthly data snapshots (also a useful as a backup)~~ New workflow renders this unneccessary
 + Implement staging environment
 + Implement a reverse geocoding system (*what?* Yes, this will likely have to be a separate project), to 
     give us an open source system to allow the map on the submit page to be searched via place name. Current

@@ -11,7 +11,9 @@ const types = {
     updateForm: "com.byw.update-form",
     clearForm: "com.byw.clear-form",
     submitForm: "com.byw-submit-form",
-    setLocatorSearchText: "com.byw-set-locactor-search-text"
+    setLocatorSearchText: "com.byw-set-locactor-search-text",
+    addSubmission: "com.byw-add-submission",
+    updateSubmissionStatus: "com.byw-update-submission-status"
 };
 
 const setLanguageAction = function (language) {
@@ -55,7 +57,7 @@ const updateFormAction = function (form) {
 };
 
 const clearFormAction = function () {
-    return { type: types.clearForm, payload: {}};
+    return { type: types.clearForm, payload: {} };
 };
 
 const submitFormAction = function () {
@@ -64,6 +66,14 @@ const submitFormAction = function () {
 
 const setLocatorSearchTextAction = function (text) {
     return { type: types.setLocatorSearchText, payload: text };
+};
+
+const addSubmissionAction = function (submission) {
+    return { type: types.addSubmission, payload: submission };
+};
+
+const updateSubmissionStatusAction = function (submission, status) {
+    return { type: types.updateSubmissionStatus, payload: { submission, status } };
 };
 
 export {
@@ -80,5 +90,7 @@ export {
     updateFormAction,
     clearFormAction,
     submitFormAction,
-    setLocatorSearchTextAction
+    setLocatorSearchTextAction,
+    addSubmissionAction,
+    updateSubmissionStatusAction
 };

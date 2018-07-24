@@ -1,4 +1,7 @@
+import { addCoordinates } from "../model/geo-hash";
+
 const urls = {
+    submit: "https://q64w5l7tw9.execute-api.eu-west-1.amazonaws.com/v1/submit",
     locations: "https://q64w5l7tw9.execute-api.eu-west-1.amazonaws.com/v1/locations",
     makePostcodeUrl: function (postcode) {
         return `https://api.postcodes.io/postcodes/${postcode.replace(" ", "")}`;
@@ -29,8 +32,8 @@ const getJson = function (response) {
 };
 
 const getPostcode = function (json) {
-    return (json.status === 200) 
-        ? (json.result) 
+    return (json.status === 200)
+        ? (json.result)
             ? (json.result[0])
                 ? json.result[0].postcode
                 : undefined
@@ -38,11 +41,48 @@ const getPostcode = function (json) {
         : undefined;
 };
 
+const makePostData = function (data) {
+    return {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, cors, *same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, same-origin, *omit
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            // "Content-Type": "application/x-www-form-urlencoded",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrer: "no-referrer", // no-referrer, *client
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+    };
+};
+
+const makeSubmitResponseHandler = function (resolve, reject) {
+    return function (jsonResult) {
+
+        if (!jsonResult) { reject(); return; }
+        
+        if (Object.keys(jsonResult).length === 0) {
+            resolve();
+        } else {
+            reject();
+        }
+    };
+};
+
 const makeApiClient = function (fetchObject) {
     return {
+        submit: function (data) {
+            return new Promise(function (resolve, reject) {
+                fetchObject(urls.submit, makePostData(data))
+                    .then(getJson)
+                    .then(makeSubmitResponseHandler(resolve, reject));
+            });
+        },
         locations: function () {
             return fetchObject(urls.locations)
                 .then(getJson)
+                .then(rawLocations => rawLocations.map(addCoordinates))
                 .catch(function (error) {
                     console.warn(error);
                 });

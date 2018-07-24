@@ -4,13 +4,19 @@ const expect = require("chai").expect;
 
 const makeApiClient = require("../client/app/core/api-client").default;
 
+const geohash = "gcm45w1912zk";
+
+const sample = {
+    "coordinateHash": geohash,
+    "name": "Aberystwyth Arts Centre",
+    "address": "Aberystwyth University - Penglais Campus, Aberystwyth SY23 3DE, UK",
+    "postcode": "SY23 3DE",
+    "category": 0.75
+};
+
 const locations = [
-    {
-        name: "the first place"
-    },
-    {
-        name: "The second place"
-    }
+    Object.assign({}, sample, { name: "The first place"} ),
+    Object.assign({}, sample, { name: "The second place"} )
 ];
 
 const POSTCODE = "LL20 8SW";
@@ -32,6 +38,21 @@ const apiLocationsResponse = {
 const apiPostcodeResponse = {
     json: function () {
         return postcodeResponse;
+    }
+};
+
+const apiSubmitResponse = {
+    json: function () {
+        return {};
+    }
+};
+
+const apiSubmitErrorResponse = {
+    json: function () {
+        return {
+            type: "aws error message",
+            message: "descriptive error from aws"
+        };
     }
 };
 
@@ -84,6 +105,38 @@ describe("ApiClient", function () {
 
     });
 
+    describe("submit", function () {
+
+        it("handles success", function (done) {
+
+            const api = makeApiClient(makeMockFetch(apiSubmitResponse));
+
+            api.submit({})
+                .then(function () {
+                    done();
+                })
+                .catch(function () {
+                    done(new Error("Returned an unexpected error"));
+                });
+
+        });
+
+        it("handles error", function (done) {
+
+            const api = makeApiClient(makeMockFetch(apiSubmitErrorResponse));
+
+            api.submit({})
+                .then(function () {
+                    done(new Error("Did not error"));
+                })
+                .catch(function () {
+                    done();
+                });
+
+        });
+
+    });
+
     describe("locations", function () {
 
         it("returns locations", function (done) {
@@ -92,6 +145,9 @@ describe("ApiClient", function () {
             api
                 .locations()
                 .then(function (result) {
+                    
+                    if (!result) { done(new Error("Did not return locations")); return; }
+
                     if (result.length > 0) {
                         done();
                     } else {

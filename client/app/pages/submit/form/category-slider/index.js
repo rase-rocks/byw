@@ -9,7 +9,8 @@ import { formattedPercentage, formattedDescription } from "../../../../core/mode
 
 const eventTargetValue = makeEventTargetValue();
 
-const makeChangeHandler = function (propsOnChange) {
+const makeChangeHandler = function (propsOnChange, isDisabled) {
+    if (isDisabled) { return function () {}; }
     return function (e) {
         const value = eventTargetValue(e);
         const category = (value === 0) ? 0 : value / 100;
@@ -21,7 +22,7 @@ const makeChangeHandler = function (propsOnChange) {
 class CategorySlider extends React.Component {
     render() {
 
-        const { onChange, form } = this.props;
+        const { onChange, form, isDisabled } = this.props;
         const value = safeParseFloat(form.category.value);
         const inputValue = value * 100;
 
@@ -33,7 +34,7 @@ class CategorySlider extends React.Component {
                 </div>
                 <div>
                     <input type="range"
-                        onChange={makeChangeHandler(onChange)}
+                        onChange={makeChangeHandler(onChange, isDisabled)}
                         min="0"
                         max="100"
                         value={inputValue}
@@ -46,6 +47,7 @@ class CategorySlider extends React.Component {
 }
 
 CategorySlider.propTypes = {
+    isDisabled: PropTypes.bool,
     form: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired
 };

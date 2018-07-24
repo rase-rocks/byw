@@ -7,9 +7,9 @@ class PageHeader extends React.Component {
 
             <div className="row page-header">
                 <div className="col-md-12">
-                    <h1>
+                    <h2>
                         {this.props.children}
-                    </h1>
+                    </h2>
                 </div>
             </div>
 

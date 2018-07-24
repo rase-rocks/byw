@@ -2,10 +2,12 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { 
-    setFormDataAction, 
-    submitFormAction 
+import {
+    setFormDataAction,
+    submitFormAction
 } from "../../../core/redux/actions";
+import { matchesPreviousSubmission } from "../../../core/model/submission";
+import { valueForKey, keys } from "../../../core/model/form";
 import Form from "./form";
 import bindMethods from "../../../core/bind-methods";
 
@@ -32,9 +34,14 @@ class FormController extends React.Component {
     }
 
     render() {
+        
+        const { data, submissions } = this.props;
+        const coordinateHash = valueForKey(data, keys.coordinateHash);
+        const isDisabled = matchesPreviousSubmission(coordinateHash, submissions);
 
         return (
-            <Form data={this.props.data}
+            <Form isDisabled={isDisabled}
+                data={data}
                 onChange={this.handler()}
                 onSubmit={this.submit()} />
         );
@@ -42,12 +49,14 @@ class FormController extends React.Component {
 }
 
 FormController.propTypes = {
-    data: PropTypes.object
+    data: PropTypes.object.isRequired,
+    submissions: PropTypes.object.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
-        data: state.form
+        data: state.form,
+        submissions: state.submissions
     };
 };
 

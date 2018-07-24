@@ -15,7 +15,7 @@ const defaultSuggestion = "";
 const selectResult = function (results) {
     if (!results || results.length === 0) { return defaultSuggestion;}
     return (results.length > 1)
-        ? `${results[0].name} (and ${results.length} more)`
+        ? `${results[0].name} (and ${results.length - 1} more)`
         : results[0].name;
 };
 
