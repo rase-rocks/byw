@@ -5,7 +5,7 @@
 + ~~Wrangle existing data to get postcode into separate property~~ ✓
 + ~~Set submit map pin to location of selected location if there is one and clear form~~ ✓
 + Remove unused CSS classes
-+ Minify js in build process
++ ~~Minify js in build process~~
 + About page heat map / or other as decided
 + Clustering for map pins
 + Photo upload with submission
@@ -36,6 +36,7 @@ just add to it~~ ✓
 + Photo uploads, filtering and storage
 + ~~Monthly data snapshots (also a useful as a backup)~~ New workflow renders this unneccessary
 + Implement staging environment
++ Implement exporting both tables to S3 for backup
 + Implement a reverse geocoding system (*what?* Yes, this will likely have to be a separate project), to 
     give us an open source system to allow the map on the submit page to be searched via place name. Current
     thoughts are to put an api gateway in front of a rate limiting and caching system that calls out to Nominatim.

@@ -1,43 +1,90 @@
 import React from "react";
 
-import PageHeader from "../../resusable-components/page-header";
-
 class About extends React.Component {
     render() {
         return (
-            <div className="about-container">
+            <section className="about">
                 <div className="container">
+                    <header>
+                        <h2>
+                            <small>About</small>
+                            What can <span className="text-primary">BreatheYourWelsh</span> do?
+                        </h2>
+                    </header>
+                    <div style={{height: "40px"}}></div>
+                    <div className="row">
 
-                    <PageHeader>
-                        About this service
-                    </PageHeader>
+                        <div className="col-md-6">
+                            <p>
+                                BreatheYourWelsh is a community driven, crowd sourced, Welsh language resource.
+                                Its primary aim is to help learners and others who are interested in the language
+                                find places where they can hear and use the language.
+                            </p>
+                            <p>
+                                The whole project is<a href="https://en.wikipedia.org/wiki/Open-source_model"
+                                    target="_blank"
+                                    rel="noopener noreferrer">&nbsp;open source&nbsp;
+                                </a>and all decisions are made in the open on the projects repo, hosted on&nbsp;
+                                <a href="https://github.com/rase-rocks/byw"
+                                    target="_blank"
+                                    rel="noopener noreferrer">&nbsp;GitHub&nbsp;
+                                </a>
+                            </p>
+                        </div>
+
+                        <div className="col-md-6">
+                            <p>
+                                The aim of the project is to make finding out this information as easy as
+                                possible, with the maximum of community involvement. Therefore the design
+                                of the website is to be as easy and quick to use as possible. It is focussed
+                                around the map page which is the primary resource for searching the index.
+                            </p>
+                            <p>
+                                All the code that makes up the website is available in the projects repo
+                                and is viewable by anybody. The website and data is hosted using community
+                                donated resources. The Api provides access to the data to anybody who wants
+                                it. Over time it is expected that the number of Api endpoints will be increased
+                                to make it more useful to developers and researchers.
+                            </p>
+                        </div>
+
+                    </div>
 
                     <div className="row">
-                        <div className="col-md-4">
-                            <p>
-                                This site is simply about getting people to use their Welsh.
-                                It is all in English because it has been learners who have
-                                raised the issue about where can they comfortably try out their Welsh when out and about.
-                            </p>
-                        </div>
-                        <div className="col-md-4">
-                            <p>
-                                However, this is not just about learners.
-                                Those fluent need to also use their Welsh whenever they can.
-                                Welsh needs to be heard on the street, in the shops and wherever we get together.
-                                The map opposite illustrates why.
-                            </p>
-                        </div>
-                        <div className="col-md-4">
-                            <p>
-                                So, before you shop, go on a day out, or whatever you like to do,
-                                see if there will be a Welsh language welcome and, above all, use your Welsh yourself!
-                            </p>
+                        <div className="col-md-12">
+                            <h2>
+                                Contributing
+                            </h2>
                         </div>
                     </div>
 
+                    <div className="row">
+                        <div className="col-md-6">
+                            <p>
+                                The quickest and easiest way to contribute to the project is to submit a review.
+                                This just means adding a new place to the index or updating an existing
+                                one if necessary.
+                            </p>
+                            <p>
+                                Anybody can do this and no login or account is necessary.
+                            </p>
+                        </div>
+                        <div className="col-md-6">
+                            <p>
+                                Those who wish to be more involved should check out the project repo,
+                                which is hosted on<a href="https://github.com/rase-rocks/byw"
+                                    target="_blank"
+                                    rel="noopener noreferrer">&nbsp;GitHub.&nbsp;
+                                </a>
+                            </p>
+                            <p>
+                                There is plenty of work to do to make this project a useful tool for Welsh
+                                learners.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         );
     }
 }

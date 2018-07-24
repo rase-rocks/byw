@@ -1,9 +1,10 @@
 const browserify = require("browserify");
+const buffer = require("vinyl-buffer");
+const cleanCSS = require("gulp-clean-css");
+const concat = require("gulp-concat");
 const gulp = require("gulp");
 const source = require("vinyl-source-stream");
-const buffer = require("vinyl-buffer");
-const concat = require("gulp-concat");
-
+const uglify = require("gulp-uglify");
 const names = require("./build-settings/build-settings");
 
 const buildPath = "./s3-build";
@@ -33,7 +34,7 @@ gulp.task("static-client-bundle", function () {
         .bundle()
         .pipe(source("bundle.js"))
         .pipe(buffer())
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(buildPath));
 });
 
@@ -46,16 +47,17 @@ gulp.task("static-assets", function () {
 
 // Copy static api files to build folder
 
-gulp.task("static-api", function () {
-    return gulp.src("./static-api/**/*")
-        .pipe(gulp.dest(getPath("static-api")));
-});
+// gulp.task("static-api", function () {
+//     return gulp.src("./static-api/**/*")
+//         .pipe(gulp.dest(getPath("static-api")));
+// });
 
 // Concat all the css files into one ready to be uncss'd and inlined
 
 gulp.task("static-css", function () {
     return gulp.src("./client/css/**/*.css")
         .pipe(concat(names.cssFilename))
+        .pipe(cleanCSS())
         .pipe(gulp.dest(getPath("css")));
 });
 
@@ -72,6 +74,6 @@ gulp.task("static", gulp.series(gulp.parallel(
     "static-assets",
     "static-client-bundle",
     "static-css",
-    "static-css-image-copy",
-    "static-api"
+    "static-css-image-copy"
+    //"static-api"
 )));

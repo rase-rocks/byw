@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 
 import { privacyRoute } from "./pages/privacy";
 import { route } from "./nav";
-import About from "./pages/about";
+// import About from "./pages/about";
 import App from "./app";
 import Home from "./pages/home";
 import isBrowser from "./core/is-browser";
@@ -22,7 +22,7 @@ import Submit from "./pages/submit";
 const routes = [
     { url: route.home, component: Home },
     { url: route.map, component: MapPage },
-    { url: route.about, component: About },
+    //{ url: route.about, component: About },
     { url: route.submit, component: Submit },
     { url: privacyRoute.url, component: Privacy }
 ];

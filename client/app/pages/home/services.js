@@ -1,5 +1,5 @@
 import React from "react";
-import Col from "./services-col";
+import Col from "../../resusable-components/services-col";
 import { strHash } from "../../core/hash";
 
 const data = [
@@ -28,7 +28,7 @@ const data = [
     }
 ];
 
-const services = data.map(service => (<Col key={strHash(service.title)} {...service}/>));
+const services = data.map(service => (<Col key={strHash(service.title)} {...service} />));
 
 class ServicesSection extends React.Component {
     render() {

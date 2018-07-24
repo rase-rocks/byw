@@ -1,16 +1,26 @@
 import React from "react";
 import SubmitHeading from "./submit-heading";
 
+class Space extends React.Component {
+    render() {
+        return (<div style={{height: "20px"}}></div>);
+    }
+}
+
 class HowTo extends React.Component {
     render() {
         return (
             <div>
-                <SubmitHeading title="How to..." />
+                <Space/>
+                <hr/>
+                <Space/>
+
+                <SubmitHeading title="How to" />
 
                 <div className="row">
                     <div className="col-md-6">
                         <p>
-                            ...find somewhere already listed:
+                            find somewhere already listed:
                         </p>
                         <ol>
                             <li>
@@ -29,7 +39,7 @@ class HowTo extends React.Component {
                         </ol>
                     </div>
                     <div className="col-md-6">
-                        <p>...submit a new premises:</p>
+                        <p>submit a new premises:</p>
                         <ol>
                             <li>
                                 Drag the map pin to locate the place

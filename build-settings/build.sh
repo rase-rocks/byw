@@ -11,11 +11,11 @@ echo "\n[1/6]-[${RED}Removing Build folder${NC}]\n"
 rm -r ./s3-build
 
 echo "\n[2/6]-[${GREEN}Rendering index.html${NC}]\n"
-gulp static-build
-node ./s3-build/static-index-build.js > ./s3-build/index.html
+NODE_ENV='production' gulp static-build
+NODE_ENV='production' node ./s3-build/static-index-build.js > ./s3-build/index.html
 
 echo "\n[3/6]-[${GREEN}Building client app${NC}]\n"
-gulp static
+NODE_ENV='production' gulp static
 
 echo "\n[4/6]-[${GREEN}Cleaning up${NC}]\n"
 rm ./s3-build/static-index-build.js

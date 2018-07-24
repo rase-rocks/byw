@@ -13,14 +13,14 @@ const li = function (route) {
 export const route = {
     home: "/",
     map: "/map",
-    about: "/about",
+    //about: "/about",
     submit: "/submit"
 };
 
 export const routes = [
     { url: route.home, title: "Home" },
     { url: route.map, title: "Map" },
-    { url: route.about, title: "About" },
+    //{ url: route.about, title: "About" },
     { url: route.submit, title: "Submit" }
 ];
 

@@ -24,14 +24,23 @@ class Footer extends React.Component {
                                 Breathe your Welsh
                             </h4>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-md-6">
+                            <h4>
+                                Contributing
+                            </h4>
                             <p>
-                                This project is Open Source and we welcome your contributions!
+                                Everyone can help learners find places to go and use their Welsh.
+                                Your submissions also help us to monitor how much the langauge is used,
+                                not just in Wales, but across the world.
+                            </p>
+                            <p>
+                                Submitting a review is quick and no account or login is required. If you
+                                are aware of a place that Welsh can be heard and used, but is not already
+                                in our index, submitting it to the index will let others know.
                             </p>
                         </div>
-                        <div className="col-md-3"></div>
                         <div className="site-links col-md-3">
-                            <h3>Useful links</h3>
+                            <h4>Useful links</h4>
                             <div className="menus d-flex">
                                 <ul className="list-unstyled">
                                     {links}
