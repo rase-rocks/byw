@@ -1,4 +1,8 @@
-const arrayCompare = function (array1, array2) {
+const elementNotEqual = function (elem1, elem2) {
+    return elem1 !== elem2;
+};
+
+const arrayCompare = function (array1, array2, neComparator = elementNotEqual) {
 
     if (!array1 || !array2) { return false; }
     if (array1.length != array2.length) { return false; }
@@ -11,7 +15,7 @@ const arrayCompare = function (array1, array2) {
             let subResult = arrayCompare(array1[i],array2[i]);
             if (!subResult) { result = false; break; }
         }           
-        else if (array1[i] !== array2[i]) { 
+        else if (neComparator(array1[i], array2[i])) { 
             result = false; 
             break;  
         }           

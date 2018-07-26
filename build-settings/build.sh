@@ -28,3 +28,8 @@ echo "[${RED}Skipped...${NC}]"
 # sed -i '' "s/assets/byw\/assets/g; s/static-api/byw\/static-api/g;" ./docs/bundle.js
 
 echo "\n[6/6]-[Build complete at ${GREEN}s3-build/${NC}]\n"
+
+echo "\n${RED}*********************************************"
+echo "* Development build - Do not deploy                 *"
+echo "* No uglify and mock urls                           *"
+echo "\n${RED}*********************************************"

@@ -14,6 +14,8 @@ import {
     MAP_ID
 } from "./constants";
 
+import arrayCompare from "../../../core/model/array-compare";
+import locationNotEqual from "../../../core/model/location-not-equal";
 import toMarkerCoords from "../../../core/model/geojson-coordinates-to-marker-coordinates";
 import toPolygon from "../../../core/model/lat-lng-bounds-to-polygon";
 
@@ -34,8 +36,8 @@ if (isBrowser()) {
 }
 
 const locationMarker = function (location, filteredLocations) {
-    const opts = (isUsed(location, filteredLocations)) 
-        ? locationMarkerOpts 
+    const opts = (isUsed(location, filteredLocations))
+        ? locationMarkerOpts
         : unusedLocationMarkerOpts;
 
     return { icon: L.icon(opts) };
@@ -63,7 +65,7 @@ const setMarkers = function (map,
     group.clearLayers();
 
     const filtered = filteredLocationsObj(filteredLocations);
-    
+
     locations
         .forEach((loc) => {
             L.marker(toMarkerCoords(loc.coordinates), locationMarker(loc, filtered))
@@ -96,19 +98,24 @@ class MapController extends React.Component {
     componentWillReceiveProps(nextProps) {
 
         if (nextProps.selectedLocation) {
+
             setPoint(this.state.map, nextProps.selectedLocation, this.state.markerGroup);
+
         } else {
 
-            //if (nextProps.filteredResults !== this.props.filteredResults) {
-            setMarkers(this.state.map,
-                nextProps.locations,
-                nextProps.filteredResults,
-                this.state.markerGroup,
-                nextProps.onShowLocation);
-            //}
+            const shouldSet = arrayCompare(nextProps.filteredResults,
+                this.props.filteredResults,
+                locationNotEqual);
+
+            if (shouldSet) {
+                setMarkers(this.state.map,
+                    nextProps.locations,
+                    nextProps.filteredResults,
+                    this.state.markerGroup,
+                    nextProps.onShowLocation);
+            }
 
         }
-
 
     }
 
