@@ -2,9 +2,15 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { keys } from "../../../core/model/form";
 import { clearFormAction, setFormDataAction } from "../../../core/redux/actions";
+import { keys } from "../../../core/model/form";
 import isBrowser from "../../../core/is-browser";
+
+import {
+    unusedLocationMarkerOpts,
+    locationMarkerOpts,
+    selectedLocationMarkerOpts
+} from "../../../resusable-components/marker-opts";
 
 import {
     attribution,
@@ -47,12 +53,17 @@ const dispatchFormData = function (dispatch) {
     };
 };
 
+const icon = function () {
+    return { icon: L.icon(selectedLocationMarkerOpts) };
+};
+
 const addMarker = function (map, coordinate, dispatch) {
 
     const group = L.featureGroup().addTo(map);
     group.clearLayers();
 
-    const marker = L.marker(coordinate, { draggable: true, autoPan: true });
+    const opts = Object.assign({ draggable: true, autoPan: true, icon }, icon());
+    const marker = L.marker(coordinate, opts);
 
     marker.on("dragend", dispatchFormData(dispatch));
 
@@ -87,7 +98,7 @@ class LocatorMap extends React.Component {
 
         if (!isBrowser()) { return; }
         const { coordinate, dispatch } = this.props;
-    
+
         this.setState(initMap(coordinate, dispatch));
 
     }

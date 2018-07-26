@@ -73,10 +73,14 @@ const makeSubmitResponseHandler = function (resolve, reject) {
 const makeApiClient = function (fetchObject) {
     return {
         submit: function (data) {
+            // return new Promise(function (resolve, reject) {
+            //     fetchObject(urls.submit, makePostData(data))
+            //         .then(getJson)
+            //         .then(makeSubmitResponseHandler(resolve, reject));
+            // });
             return new Promise(function (resolve, reject) {
-                fetchObject(urls.submit, makePostData(data))
-                    .then(getJson)
-                    .then(makeSubmitResponseHandler(resolve, reject));
+                const handler = makeSubmitResponseHandler(resolve, reject);
+                handler();
             });
         },
         locations: function () {

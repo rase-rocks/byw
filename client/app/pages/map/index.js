@@ -32,7 +32,7 @@ class MapPageController extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(requestLocationsAction());        
+        this.props.dispatch(requestLocationsAction());
     }
 
     componentWillReceiveProps(props) {
@@ -89,7 +89,7 @@ class MapPageController extends React.Component {
 
     render() {
 
-        const { filteredResults, searchText, selectedLocation } = this.props;
+        const { filteredResults, searchText, selectedLocation, locations } = this.props;
         const { currentPageNo, resultsPerPage } = this.state;
 
         const totalCount = filteredResults.length;
@@ -97,7 +97,8 @@ class MapPageController extends React.Component {
         const results = pageResults(filteredResults, currentPageNo, resultsPerPage);
 
         return (
-            <MapPage totalCount={totalCount}
+            <MapPage locations={locations}
+                totalCount={totalCount}
                 pageResults={results}
                 pageCount={count}
                 currentPageNo={currentPageNo}
@@ -114,6 +115,7 @@ class MapPageController extends React.Component {
 }
 
 MapPageController.propTypes = {
+    locations: PropTypes.array,
     filteredResults: PropTypes.array,
     selectedLocation: PropTypes.object,
     searchText: PropTypes.string,
@@ -124,6 +126,7 @@ MapPageController.propTypes = {
 
 const mapStateToProps = function (state) {
     return {
+        locations: state.data.locations,
         filteredResults: state.data.filteredResults,
         selectedLocation: state.data.selectedLocation,
         searchText: state.data.searchText

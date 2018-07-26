@@ -13,35 +13,35 @@ const dataReducer = function (state = defaultState, action) {
 
     switch (action.type) {
 
-    case types.setLocations: {
+        case types.setLocations: {
 
-        reducedState.needsUpdate = false;
-        reducedState.locations = action.payload;
-        break;
+            reducedState.needsUpdate = false;
+            reducedState.locations = action.payload;
+            break;
 
-    }
+        }
 
-    case types.setSearchText: {
+        case types.setSearchText: {
 
-        reducedState.searchText = action.payload;
-        break;
-        
-    }
+            reducedState.searchText = action.payload;
+            break;
 
-    case types.setFilteredLocations: {
+        }
 
-        reducedState.filteredResults = action.payload;
-        reducedState.selectedLocation = undefined;
-        break;
+        case types.setFilteredLocations: {
 
-    }
+            reducedState.filteredResults = action.payload;
+            reducedState.selectedLocation = undefined;
+            break;
 
-    case types.setViewLocation: {
+        }
 
-        reducedState.selectedLocation = action.payload;
-        break;
+        case types.setViewLocation: {
 
-    }
+            reducedState.selectedLocation = action.payload;
+            break;
+
+        }
 
     }
 

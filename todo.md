@@ -10,6 +10,7 @@
 + Clustering for map pins
 + Photo upload with submission
 + Locate the submission map based on a search - See back end tasks
++ Add currently indexed locations to submit map with discrete icon
 
 #### Logic
 

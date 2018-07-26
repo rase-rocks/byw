@@ -11,7 +11,6 @@ class HowTo extends React.Component {
     render() {
         return (
             <div>
-                <Space/>
                 <hr/>
                 <Space/>
 

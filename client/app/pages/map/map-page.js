@@ -95,6 +95,7 @@ class MapPage extends React.Component {
     render() {
 
         const {
+            locations,
             pageResults,
             selectedLocation,
             onShowLocation
@@ -102,7 +103,8 @@ class MapPage extends React.Component {
 
         return (
             <div className="map-container">
-                <Map filteredResults={pageResults}
+                <Map locations={locations}
+                    filteredResults={pageResults}
                     selectedLocation={selectedLocation}
                     onShowLocation={onShowLocation} />
                 <MapSearchBox {...this.props} />
@@ -112,6 +114,7 @@ class MapPage extends React.Component {
 }
 
 MapPage.propTypes = {
+    locations: PropTypes.array.isRequired,
     totalCount: PropTypes.number.isRequired,
     pageResults: PropTypes.array.isRequired,
     pageCount: PropTypes.number.isRequired,

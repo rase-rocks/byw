@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { filterLocationsByPolygon } from "../../../core/redux/actions";
+import { locationMarkerOpts, unusedLocationMarkerOpts } from "../../../resusable-components/marker-opts";
 import isBrowser from "../../../core/is-browser";
 import popup from "./popup";
+
 import {
     attribution,
     tileLayerString,
@@ -31,17 +33,42 @@ if (isBrowser()) {
     L = require("Leaflet");
 }
 
-const setMarkers = function (map, locations, markerGroup, onShowLocation) {
+const locationMarker = function (location, filteredLocations) {
+    const opts = (isUsed(location, filteredLocations)) 
+        ? locationMarkerOpts 
+        : unusedLocationMarkerOpts;
+
+    return { icon: L.icon(opts) };
+};
+
+const isUsed = function (location, locationDictionary) {
+    return locationDictionary[location.coordinateHash] !== undefined;
+};
+
+const filteredLocationsObj = function (filteredResults) {
+    return filteredResults.reduce((acc, loc) => {
+        acc[loc.coordinateHash] = loc;
+        return acc;
+    }, {});
+};
+
+const setMarkers = function (map,
+    locations = [],
+    filteredLocations = [],
+    markerGroup,
+    onShowLocation) {
 
     const group = markerGroup || L.featureGroup().addTo(map);
 
     group.clearLayers();
 
+    const filtered = filteredLocationsObj(filteredLocations);
+    
     locations
-        .forEach((location) => {
-            L.marker(toMarkerCoords(location.coordinates))
+        .forEach((loc) => {
+            L.marker(toMarkerCoords(loc.coordinates), locationMarker(loc, filtered))
                 .addTo(group)
-                .bindPopup(popup(location, onShowLocation));
+                .bindPopup(popup(loc, onShowLocation));
         });
 
     return group;
@@ -67,17 +94,22 @@ const makeHandler = function (dispatch) {
 class MapController extends React.Component {
 
     componentWillReceiveProps(nextProps) {
-        
+
         if (nextProps.selectedLocation) {
             setPoint(this.state.map, nextProps.selectedLocation, this.state.markerGroup);
         } else {
-            if (nextProps.filteredResults === this.props.filteredResults) { return; }
-            setMarkers(this.state.map, 
-                nextProps.filteredResults, 
-                this.state.markerGroup, 
+
+            //if (nextProps.filteredResults !== this.props.filteredResults) {
+            setMarkers(this.state.map,
+                nextProps.locations,
+                nextProps.filteredResults,
+                this.state.markerGroup,
                 nextProps.onShowLocation);
+            //}
+
         }
-        
+
+
     }
 
     componentDidMount() {
@@ -85,21 +117,23 @@ class MapController extends React.Component {
         if (!isBrowser()) { return; }
 
         const map = L.map(MAP_ID);
-        
-        addEventHandlers(map, makeHandler(this.props.dispatch));
+
+        const { dispatch, locations, filteredResults } = this.props;
+
+        addEventHandlers(map, makeHandler(dispatch));
 
         L.tileLayer(tileLayerString, attribution).addTo(map);
 
-        const markerGroup = setMarkers(map, this.props.filteredResults);
+        const markerGroup = setMarkers(map, locations, filteredResults);
 
         this.setState({ map: map, markerGroup: markerGroup });
-        
-        if (this.props.filteredResults.length > 0) {
+
+        if (filteredResults.length > 0) {
             map.fitBounds(markerGroup.getBounds());
         } else {
             map.setView(initialCoords, 9);
         }
-        
+
     }
 
     componentWillUnmount() {
@@ -118,6 +152,7 @@ class MapController extends React.Component {
 
 MapController.propTypes = {
     filteredResults: PropTypes.array,
+    locations: PropTypes.array,
     selectedLocation: PropTypes.object,
     onShowLocation: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired
