@@ -3,6 +3,13 @@ import toMarkerCoords from "../../../../core/model/geojson-coordinates-to-marker
 import { hash } from "../../../../core/model/marker-opts";
 import popup from "../popup";
 
+const makeIcon = function (leaflet, optsForMarker, isSelected, isHighlighted, category) {
+    const opts = optsForMarker(isSelected,
+        isHighlighted,
+        category);
+    return { icon: leaflet.divIcon(opts) };
+};
+
 const locationMarker = function (leaflet,
     location,
     selectedLocation,
@@ -16,15 +23,9 @@ const locationMarker = function (leaflet,
     const markerIconHash = hash(_isSelected, _isHighlighted, location.category);
     const cachedDivIcon = divIconCache[markerIconHash];
 
-    if (cachedDivIcon) {
-        return cachedDivIcon;
-    }
+    if (cachedDivIcon) { return cachedDivIcon; }
 
-    const opts = optsForMarker(_isSelected,
-        _isHighlighted,
-        location.category);
-
-    const divIcon = { icon: leaflet.divIcon(opts) };
+    const divIcon = makeIcon(leaflet, optsForMarker, _isSelected, _isHighlighted, location.category);
     divIconCache[markerIconHash] = divIcon;
 
     return divIcon;

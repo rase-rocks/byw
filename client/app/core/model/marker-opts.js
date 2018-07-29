@@ -50,8 +50,6 @@ const standards = {
     iconAnchor: [12.5, 33.5]
 };
 
-const _cache = {};
-
 const hash = function (isSelected, isHighlighted, normalizedValue) {
     return `${isSelected}${isHighlighted}${normalizedValue}`;
 };
@@ -60,8 +58,9 @@ const makeOptsForMarker = function (cache) {
     return function (isSelected, isHighlighted, normalizedValue = 1) {
 
         const instanceHash = hash(isSelected, isHighlighted, normalizedValue);
+
         const cachedOpts = cache[instanceHash];
-    
+
         if (cachedOpts) {
             return cachedOpts;
         } else {
@@ -75,10 +74,7 @@ const makeOptsForMarker = function (cache) {
     };
 };
 
-const optsForMarker = makeOptsForMarker(_cache);
-
 export {
     hash,
-    makeOptsForMarker,
-    optsForMarker
+    makeOptsForMarker
 };

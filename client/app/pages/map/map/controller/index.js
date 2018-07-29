@@ -50,12 +50,6 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
         onShowLocation);
 
     return {
-        markerGroup: function () {
-            return _markerGroup;
-        },
-        markerCache: function () {
-            return _markerCache;
-        },
         props: function (props) {
             if (props) {
                 updateMap(props.locations,

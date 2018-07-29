@@ -4,7 +4,6 @@ const expect = require("chai").expect;
 
 const hash = require("../client/app/core/model/marker-opts").hash;
 const makeOptsForMarker = require("../client/app/core/model/marker-opts").makeOptsForMarker;
-const optsForMarker = require("../client/app/core/model/marker-opts").optsForMarker;
 
 const requiredKeys = [
     "className",
@@ -19,6 +18,7 @@ describe("opts-for-marker", function () {
 
         it("returns the required keys", function () {
 
+            const optsForMarker = makeOptsForMarker({});
             const opts = optsForMarker(true, true, 0.5);
             const keys = Object.keys(opts);
 

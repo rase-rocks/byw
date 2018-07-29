@@ -22,22 +22,22 @@ if (isBrowser()) {
     L = require("Leaflet");
 }
 
+const fitController = function (props, controller) {
+    if (props.filteredResults.length > 0) {
+        controller.fitTo(props.filteredResults); 
+    }
+};
+
 class MapController extends React.Component {
 
     componentDidMount() {
 
         if (!isBrowser()) { return; }
 
-        const controller =  makeController(document, L, MAP_ID, this.props);
+        const controller = makeController(document, L, MAP_ID, this.props);
+        fitController(this.props, controller);
 
-        const { filteredResults } = this.props;
-        if (filteredResults.length > 0) {
-            controller.fitTo(filteredResults);
-        }
-
-        this.setState({
-            controller
-        });
+        this.setState({ controller });
 
     }
 
@@ -48,9 +48,7 @@ class MapController extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-
         this.state.controller.props(nextProps);
-
     }
 
     render() {
