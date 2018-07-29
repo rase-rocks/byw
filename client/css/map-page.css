@@ -12,6 +12,11 @@
     width: 100%;
 }
 
+.map-marker-icon {
+    background: rgba(0,0,0,0);
+    border: none;
+}
+
 .text-box {
     width: 95%;
     margin: 10px;

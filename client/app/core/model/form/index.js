@@ -10,13 +10,13 @@ const typedValue = function (key) {
 
     switch (key) {
 
-    case keys.category:
-        value = 0.75;
-        break;
+        case keys.category:
+            value = 0.75;
+            break;
 
-    case keys.coordinates:
-        value = [];
-        break;
+        case keys.coordinates:
+            value = [];
+            break;
 
     }
 
@@ -64,7 +64,7 @@ const makeMapToKeyValues = function (stampedForm) {
 
 const keyValuesToArray = function (acc, current) {
     acc[current.key] = current.value;
-    return acc;  
+    return acc;
 };
 
 const postDataFromForm = function (form, timestamp = timestampString()) {

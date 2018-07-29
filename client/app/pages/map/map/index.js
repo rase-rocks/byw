@@ -2,22 +2,9 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { filterLocationsByPolygon } from "../../../core/redux/actions";
-import { locationMarkerOpts, unusedLocationMarkerOpts } from "../../../resusable-components/marker-opts";
+import { MAP_ID } from "./constants";
 import isBrowser from "../../../core/is-browser";
-import popup from "./popup";
-
-import {
-    attribution,
-    tileLayerString,
-    initialCoords,
-    MAP_ID
-} from "./constants";
-
-import arrayCompare from "../../../core/model/array-compare";
-import locationNotEqual from "../../../core/model/location-not-equal";
-import toMarkerCoords from "../../../core/model/geojson-coordinates-to-marker-coordinates";
-import toPolygon from "../../../core/model/lat-lng-bounds-to-polygon";
+import makeController from "./controller";
 
 /*
 * TODO: Find a fix for this
@@ -35,119 +22,35 @@ if (isBrowser()) {
     L = require("Leaflet");
 }
 
-const locationMarker = function (location, filteredLocations) {
-    const opts = (isUsed(location, filteredLocations))
-        ? locationMarkerOpts
-        : unusedLocationMarkerOpts;
-
-    return { icon: L.icon(opts) };
-};
-
-const isUsed = function (location, locationDictionary) {
-    return locationDictionary[location.coordinateHash] !== undefined;
-};
-
-const filteredLocationsObj = function (filteredResults) {
-    return filteredResults.reduce((acc, loc) => {
-        acc[loc.coordinateHash] = loc;
-        return acc;
-    }, {});
-};
-
-const setMarkers = function (map,
-    locations = [],
-    filteredLocations = [],
-    markerGroup,
-    onShowLocation) {
-
-    const group = markerGroup || L.featureGroup().addTo(map);
-
-    group.clearLayers();
-
-    const filtered = filteredLocationsObj(filteredLocations);
-
-    locations
-        .forEach((loc) => {
-            L.marker(toMarkerCoords(loc.coordinates), locationMarker(loc, filtered))
-                .addTo(group)
-                .bindPopup(popup(loc, onShowLocation));
-        });
-
-    return group;
-};
-
-const setPoint = function (map, location) {
-    map.setView(toMarkerCoords(location.coordinates), 18);
-};
-
-const addEventHandlers = function (map, handler) {
-    ["zoom", "move"].forEach(function (eventName) {
-        map.on(eventName, handler);
-    });
-};
-
-const makeHandler = function (dispatch) {
-    return function (event) {
-        const polygon = toPolygon(event.target.getBounds());
-        dispatch(filterLocationsByPolygon(polygon));
-    };
-};
-
 class MapController extends React.Component {
-
-    componentWillReceiveProps(nextProps) {
-
-        if (nextProps.selectedLocation) {
-
-            setPoint(this.state.map, nextProps.selectedLocation, this.state.markerGroup);
-
-        } else {
-
-            const shouldSet = arrayCompare(nextProps.filteredResults,
-                this.props.filteredResults,
-                locationNotEqual);
-
-            if (shouldSet) {
-                setMarkers(this.state.map,
-                    nextProps.locations,
-                    nextProps.filteredResults,
-                    this.state.markerGroup,
-                    nextProps.onShowLocation);
-            }
-
-        }
-
-    }
 
     componentDidMount() {
 
         if (!isBrowser()) { return; }
 
-        const map = L.map(MAP_ID);
+        const controller =  makeController(document, L, MAP_ID, this.props);
 
-        const { dispatch, locations, filteredResults } = this.props;
-
-        addEventHandlers(map, makeHandler(dispatch));
-
-        L.tileLayer(tileLayerString, attribution).addTo(map);
-
-        const markerGroup = setMarkers(map, locations, filteredResults);
-
-        this.setState({ map: map, markerGroup: markerGroup });
-
+        const { filteredResults } = this.props;
         if (filteredResults.length > 0) {
-            map.fitBounds(markerGroup.getBounds());
-        } else {
-            map.setView(initialCoords, 9);
+            controller.fitTo(filteredResults);
         }
+
+        this.setState({
+            controller
+        });
 
     }
 
     componentWillUnmount() {
         if (isBrowser()) {
-            const map = document.getElementById(MAP_ID);
-            map.remove();
+            this.state.controller.removeMap();
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        this.state.controller.props(nextProps);
+
     }
 
     render() {

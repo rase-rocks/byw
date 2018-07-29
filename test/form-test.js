@@ -149,12 +149,14 @@ describe("form", function () {
         it("returns a form with the timestamp applied", function () {
 
             const valid = validForm();
-            const timestamp = new Date().toISOString();
+            const timestamp = "2018-07-27T16:37:52.154Z";
             const stamped = formTimestamped(valid, timestamp);
 
-            Object.keys(valid).forEach(function (key) {
-                expect(valueForKey(valid, key)).to.equal(valueForKey(stamped, key));
-            });
+            Object.keys(valid)
+                .filter(key => key !== keys.timestamp)
+                .forEach(function (key) {
+                    expect(valueForKey(valid, key)).to.equal(valueForKey(stamped, key));
+                });
             expect(valueForKey(stamped, keys.timestamp)).to.equal(timestamp);
 
         });

@@ -8,9 +8,8 @@ import isBrowser from "../../../core/is-browser";
 
 import {
     unusedLocationMarkerOpts,
-    locationMarkerOpts,
     selectedLocationMarkerOpts
-} from "../../../resusable-components/marker-opts";
+} from "../../../core/model/marker-opts";
 
 import {
     attribution,
@@ -53,8 +52,9 @@ const dispatchFormData = function (dispatch) {
     };
 };
 
-const icon = function () {
-    return { icon: L.icon(selectedLocationMarkerOpts) };
+const icon = function (isSelectionMarker = true) {
+    const opts = (isSelectionMarker) ? selectedLocationMarkerOpts : unusedLocationMarkerOpts;
+    return { icon: L.divIcon(opts) };
 };
 
 const addMarker = function (map, coordinate, dispatch) {
@@ -62,7 +62,7 @@ const addMarker = function (map, coordinate, dispatch) {
     const group = L.featureGroup().addTo(map);
     group.clearLayers();
 
-    const opts = Object.assign({ draggable: true, autoPan: true, icon }, icon());
+    const opts = Object.assign({ draggable: true, autoPan: true }, icon());
     const marker = L.marker(coordinate, opts);
 
     marker.on("dragend", dispatchFormData(dispatch));
@@ -72,7 +72,23 @@ const addMarker = function (map, coordinate, dispatch) {
     return group;
 };
 
-const initMap = function (coordinate, dispatch) {
+const addExisting = function (map, locations, group) {
+    const existingGroup = group || L.featureGroup().addTo(map);
+    existingGroup.clearLayers();
+
+    const opts = Object.assign({draggable: false}, icon(false));
+
+    locations.forEach((location) => {
+        const coord = location.coordinate || location.coordinates;
+        const marker = L.marker(toMarker(coord), opts);
+        marker.addTo(existingGroup);
+    });
+
+    return existingGroup;
+
+};
+
+const initMap = function (coordinate, locations, dispatch) {
     const map = L.map(MAP_ID);
     L.tileLayer(tileLayerString, attribution).addTo(map);
 
@@ -81,15 +97,17 @@ const initMap = function (coordinate, dispatch) {
     map.setView(markerCoordinate, ZOOM);
 
     const group = addMarker(map, markerCoordinate, dispatch);
+    const existingGroup = addExisting(map, locations);
 
     return {
         map,
-        group
+        group,
+        existingGroup
     };
 };
 
-const setMapCenterPosition = function (map, coordinate) {
-    map.setView(toMarker(coordinate), ZOOM);
+const setMapCenterPosition = function (map, coordinate, zoomLevel = ZOOM) {
+    map.setView(toMarker(coordinate), zoomLevel);
 };
 
 class LocatorMap extends React.Component {
@@ -97,9 +115,9 @@ class LocatorMap extends React.Component {
     componentDidMount() {
 
         if (!isBrowser()) { return; }
-        const { coordinate, dispatch } = this.props;
+        const { locations, coordinate, dispatch } = this.props;
 
-        this.setState(initMap(coordinate, dispatch));
+        this.setState(initMap(coordinate, locations, dispatch));
 
     }
 
@@ -119,6 +137,7 @@ class LocatorMap extends React.Component {
 }
 
 LocatorMap.propTypes = {
+    locations: PropTypes.array.isRequired,
     searchText: PropTypes.string.isRequired,
     coordinate: PropTypes.array.isRequired,
     dispatch: PropTypes.func.isRequired
@@ -126,6 +145,7 @@ LocatorMap.propTypes = {
 
 const mapStateToProps = function (state) {
     return {
+        locations: state.data.locations,
         searchText: state.locator.searchText,
         coordinate: state.locator.coordinate
     };
