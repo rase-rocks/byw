@@ -98,7 +98,8 @@ class MapPage extends React.Component {
             locations,
             pageResults,
             selectedLocation,
-            onShowLocation
+            onShowLocation,
+            onReview
         } = this.props;
 
         return (
@@ -106,7 +107,8 @@ class MapPage extends React.Component {
                 <Map locations={locations}
                     filteredResults={pageResults}
                     selectedLocation={selectedLocation}
-                    onShowLocation={onShowLocation} />
+                    onShowLocation={onShowLocation}
+                    onReview={onReview} />
                 <MapSearchBox {...this.props} />
             </div>
         );

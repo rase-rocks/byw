@@ -43,7 +43,10 @@ class MapController extends React.Component {
 
     componentWillUnmount() {
         if (isBrowser()) {
-            this.state.controller.removeMap();
+            const { controller } = this.state;
+            if (controller) {
+                controller.removeMap();
+            }
         }
     }
 
@@ -63,6 +66,7 @@ MapController.propTypes = {
     locations: PropTypes.array,
     selectedLocation: PropTypes.object,
     onShowLocation: PropTypes.func.isRequired,
+    onReview: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired
 };
 

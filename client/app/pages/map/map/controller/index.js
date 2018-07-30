@@ -23,6 +23,7 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
         filteredResults,
         selectedLocation,
         onShowLocation,
+        onReview,
         dispatch
     } = initialProps;
 
@@ -37,17 +38,18 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
     const _optsCache = {};
     const _divIconCache = {};
 
-    const updateMap = makeUpdateMap(leaflet, 
-        map, 
-        _markerGroup, 
-        _markerCache, 
-        _optsCache, 
+    const updateMap = makeUpdateMap(leaflet,
+        map,
+        _markerGroup,
+        _markerCache,
+        _optsCache,
         _divIconCache);
-    
-    updateMap(locations, 
-        filteredResults, 
-        selectedLocation, 
-        onShowLocation);
+
+    updateMap(locations,
+        filteredResults,
+        selectedLocation,
+        onShowLocation,
+        onReview);
 
     return {
         props: function (props) {
@@ -55,7 +57,8 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
                 updateMap(props.locations,
                     props.filteredResults,
                     props.selectedLocation,
-                    props.onShowLocation);
+                    props.onShowLocation,
+                    props.onReview);
                 if (props.selectedLocation) {
                     setPoint(map, props.selectedLocation);
                 }

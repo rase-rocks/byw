@@ -69,7 +69,8 @@ export const makeUpdateMap = function (leaflet,
     return function (locations,
         filteredLocations,
         selectedLocation,
-        onShowLocation) {
+        onShowLocation,
+        onReview) {
 
         markerGroup.clearLayers();
 
@@ -98,7 +99,7 @@ export const makeUpdateMap = function (leaflet,
 
                 const marker = leaflet.marker(toMarkerCoords(loc.coordinates), m)
                     .addTo(map)
-                    .bindPopup(popup(loc, onShowLocation));
+                    .bindPopup(popup(loc, onShowLocation, onReview));
 
                 markerCache[loc.coordinateHash] = marker;
             }
