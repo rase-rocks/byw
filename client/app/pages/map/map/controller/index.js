@@ -2,17 +2,37 @@ import { addEventHandlers, addTileLayer } from "./add-layers";
 import { filterLocationsByPolygon } from "../../../../core/redux/actions";
 import { initialCoords } from "../constants";
 import { makeUpdateMap } from "./update";
+import events from "./leaflet-events";
 import toMarkerCoords from "../../../../core/model/geojson-coordinates-to-marker-coordinates";
 import toPolygon from "../../../../core/model/lat-lng-bounds-to-polygon";
 
+const SHOW_ZOOM = 18;
+
 const setPoint = function (map, location) {
-    map.setView(toMarkerCoords(location.coordinates), 18);
+    map.setView(toMarkerCoords(location.coordinates), SHOW_ZOOM);
 };
 
 const makeHandler = function (dispatch) {
     return function (event) {
         const polygon = toPolygon(event.target.getBounds());
         dispatch(filterLocationsByPolygon(polygon));
+    };
+};
+
+const makeLocatorMarker = function (leaflet, group, onLocatorDragend, coordinate = initialCoords) {
+    return leaflet.marker(toMarkerCoords(coordinate), { draggable: true })
+        .on(events.dragend, onLocatorDragend)
+        .addTo(group);
+};
+
+const makeUpdateLocatorMarker = function (marker, group) {
+    return function (showMarker, coordinate = initialCoords) {
+
+        group.bringToFront();
+        marker.setOpacity((showMarker) ? 1 : 0);
+
+        if (coordinate) marker.setLatLng(toMarkerCoords(coordinate));
+
     };
 };
 
@@ -24,6 +44,9 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
         selectedLocation,
         onShowLocation,
         onReview,
+        onLocatorDragend,
+        showsLocatorMarker,
+        coordinate,
         dispatch
     } = initialProps;
 
@@ -34,9 +57,12 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
     addTileLayer(leaflet, map);
 
     const _markerGroup = leaflet.featureGroup().addTo(map);
+    const _locatorGroup = leaflet.featureGroup().addTo(map);
     const _markerCache = {};
     const _optsCache = {};
     const _divIconCache = {};
+
+    const _locatorMarker = makeLocatorMarker(leaflet, _locatorGroup, onLocatorDragend, coordinate);
 
     const updateMap = makeUpdateMap(leaflet,
         map,
@@ -45,11 +71,15 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
         _optsCache,
         _divIconCache);
 
+    const updateLocatorMarker = makeUpdateLocatorMarker(_locatorMarker, _locatorGroup);
+
     updateMap(locations,
         filteredResults,
         selectedLocation,
         onShowLocation,
         onReview);
+
+    updateLocatorMarker(showsLocatorMarker, coordinate);
 
     return {
         props: function (props) {
@@ -62,6 +92,7 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
                 if (props.selectedLocation) {
                     setPoint(map, props.selectedLocation);
                 }
+                updateLocatorMarker(props.showsLocatorMarker, props.coordinate);
                 return;
             }
         },
@@ -69,6 +100,11 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
             const coordinates = locations.map(loc => toMarkerCoords(loc.coordinates));
             const bounds = leaflet.latLngBounds(coordinates);
             map.fitBounds(bounds);
+        },
+        show: function (coordinate, zoom) {
+            if (!coordinate) { return; }
+            map.setView(toMarkerCoords(coordinate), zoom);
+
         },
         removeMap: function () {
             const mapElement = doc.getElementById(mapId);

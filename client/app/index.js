@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 
 import { privacyRoute } from "./pages/privacy";
 import { route } from "./nav";
+
 // import About from "./pages/about";
 import App from "./app";
 import Home from "./pages/home";
@@ -14,6 +15,7 @@ import makeApiClient from "./core/api-client";
 import makeFilterLocationsMiddleware from "./core/redux/middleware/filter-locations-middleware";
 import makeRequestLocationsMiddleware from "./core/redux/middleware/request-locations-middleware";
 import makeSubmitMiddleware from "./core/redux/middleware/submit-middleware";
+import makeLocatorMiddleware from "./core/redux/middleware/locator-middleware";
 import MapPage from "./pages/map";
 import Privacy from "./pages/privacy";
 import reducers from "./core/redux/reducers";
@@ -38,7 +40,8 @@ if (isBrowser()) {
             reducers,
             applyMiddleware(makeRequestLocationsMiddleware(api),
                 makeFilterLocationsMiddleware(api),
-                makeSubmitMiddleware(api)
+                makeSubmitMiddleware(api),
+                makeLocatorMiddleware(api)
             ));
 
 

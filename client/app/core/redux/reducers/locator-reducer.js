@@ -2,7 +2,9 @@ import { types } from "../actions";
 
 const defaultLocatorState = {
     searchText: "",
-    coordinate: [-3.418375, 52.453650]
+    coordinate: [-3.706885, 52.94863303],
+    zoom: 10,
+    showsLocatorMarker: true
 };
 
 const locatorReducer = function (state = defaultLocatorState, action) {
@@ -10,20 +12,32 @@ const locatorReducer = function (state = defaultLocatorState, action) {
 
     switch (action.type) {
 
-    case types.setLocatorSearchText:
+        case types.setLocatorSearchText:
 
-        reducedState.searchText = action.payload;
-        break;
+            reducedState.searchText = action.payload;
+            break;
 
-    case types.setSearchText:
+        case types.setLocatorCoordinate:
 
-        reducedState.searchText = action.payload;
-        break;
+            reducedState.coordinate = action.payload;
+            break;
 
-    case types.setViewLocation:
+        case types.setSearchText:
 
-        reducedState.coordinate = action.payload.coordinates;
-        break;
+            reducedState.searchText = action.payload;
+            break;
+
+        case types.setViewLocation:
+
+            reducedState.coordinate = action.payload.coordinates;
+            reducedState.zoom = 18;
+            reducedState.showsLocatorMarker = false;
+            break;
+
+        case types.clearForm:
+        
+            reducedState.showsLocatorMarker = true;
+            break;
     }
 
     return reducedState;

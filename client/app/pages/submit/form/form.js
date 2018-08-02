@@ -6,6 +6,8 @@ import CategorySlider from "./category-slider";
 import Error from "./error";
 import eventTargetValue from "../../../core/event-target-value";
 
+const BUTTON_CLASSNAME = "btn btn-primary mb-2 submit-form-button";
+
 const target = eventTargetValue();
 
 const labels = {
@@ -118,8 +120,8 @@ const formatValue = function (value, key) {
 class Form extends React.Component {
     render() {
 
-        const { data, onChange, onSubmit, isDisabled } = this.props;
-        
+        const { data, onChange, onSubmit, onClear, isDisabled } = this.props;
+
         const elements = labelsArray(data, isDisabled)
             .map(toInput(onChange, formatValue));
 
@@ -131,7 +133,10 @@ class Form extends React.Component {
                 <CategorySlider onChange={onChange} form={data} isDisabled={isDisabled} />
 
                 <div className="submit-button-wrapper">
-                    <button className="btn btn-primary mb-2" disabled={isDisabled}>
+                    <button className={BUTTON_CLASSNAME} onClick={onClear}>
+                        Clear
+                    </button>
+                    <button className={BUTTON_CLASSNAME} disabled={isDisabled}>
                         {(isDisabled) ? "Submitted" : "Submit"}
                     </button>
                 </div>
@@ -145,7 +150,8 @@ Form.propTypes = {
     isDisabled: PropTypes.bool,
     data: PropTypes.object,
     onChange: PropTypes.func.isRequired,
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
+    onClear: PropTypes.func.isRequired
 };
 
 export default Form;

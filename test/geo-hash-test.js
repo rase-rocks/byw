@@ -8,10 +8,11 @@ const decodeGeoHashToPoint = require("../client/app/core/model/geo-hash/geo-hash
 
 const addCoordinates = require("../client/app/core/model/geo-hash").addCoordinates;
 const encodeGeoJsonCoordinates = require("../client/app/core/model/geo-hash").encodeGeoJsonCoordinates;
+const match = require("../client/app/core/model/geo-hash").match;
 
 const sampleLatitude = 52.4159479;
 const sampleLongitude = -4.062818;
-const geohash = "gcm45w1912zk";
+const geohash = "gcm45w1912zk"; 
 
 const sample = {
     "coordinateHash": geohash,
@@ -104,6 +105,40 @@ describe("geo-hash", function () {
 
             expect(coordinateHash).to.equal(geohash);
 
+        });
+
+    });
+
+    describe("match", function () {
+
+        it("correctly identifies match - matching lengths", function () {
+            const hash1 = "gcm45w1912zk";
+            const hash2 = "gcm45w1912zk";
+
+            expect(match(hash1, hash2)).to.equal(true);
+
+        });
+
+        it("correctly identifies match - matching lengths to precision", function () {
+            const hash1 = "gcm45w1912zk";
+            const hash2 = "gcm45w1922zk";
+            
+            expect(match(hash1, hash2, 8)).to.equal(true);
+        });
+
+        it("correctly identifies mismatch - to precision", function () {
+            const hash1 = "gcm45w1912zk";
+            const hash2 = "gcs45w1912zk";
+
+            expect(match(hash1, hash2, 8)).to.equal(false);
+        });
+
+        it("correctly identifies match - mismatch lengths", function () {
+
+            const hash1 = "gcm45w1912zk";
+            const hash2 = "gcm45w";
+
+            expect(match(hash1, hash2, hash2.length)).to.equal(true);
         });
 
     });

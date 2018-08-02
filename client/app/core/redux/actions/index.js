@@ -10,8 +10,10 @@ const types = {
     setFormData: "com.byw.set-form-data",
     updateForm: "com.byw.update-form",
     clearForm: "com.byw.clear-form",
+    moveMarkerToFreeSpace: "com.byw.move-marker-to-free-space",
     submitForm: "com.byw-submit-form",
     setLocatorSearchText: "com.byw-set-locactor-search-text",
+    setLocatorCoordinate: "com.byw-set-locator-coordinate",
     addSubmission: "com.byw-add-submission",
     updateSubmissionStatus: "com.byw-update-submission-status"
 };
@@ -44,7 +46,7 @@ const setFilteredLocationsAction = function (locations) {
     return { type: types.setFilteredLocations, payload: locations };
 };
 
-const setViewLocation = function (location) {
+const setViewLocationAction = function (location) {
     return { type: types.setViewLocation, payload: location };
 };
 
@@ -60,12 +62,20 @@ const clearFormAction = function () {
     return { type: types.clearForm, payload: {} };
 };
 
+const moveMarkerToFreeSpaceAction = function () {
+    return { type: types.moveMarkerToFreeSpace, payload: {} };
+};
+
 const submitFormAction = function () {
     return { type: types.submitForm, payload: {} };
 };
 
 const setLocatorSearchTextAction = function (text) {
     return { type: types.setLocatorSearchText, payload: text };
+};
+
+const setLocatorCoordinateAction = function (coordinate) {
+    return { type: types.setLocatorCoordinate, payload: coordinate };
 };
 
 const addSubmissionAction = function (submission) {
@@ -85,12 +95,14 @@ export {
     filterLocationsByPolygon,
     setSearchTextAction,
     setFilteredLocationsAction,
-    setViewLocation,
+    setViewLocationAction,
     setFormDataAction,
     updateFormAction,
     clearFormAction,
+    moveMarkerToFreeSpaceAction,
     submitFormAction,
     setLocatorSearchTextAction,
+    setLocatorCoordinateAction,
     addSubmissionAction,
     updateSubmissionStatusAction
 };

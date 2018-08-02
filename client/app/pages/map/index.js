@@ -7,7 +7,7 @@ import {
     requestLocationsAction,
     filterLocationsAction,
     setSearchTextAction,
-    setViewLocation
+    setViewLocationAction
 } from "../../core/redux/actions";
 import { route } from "../../nav";
 import bindMethods from "../../core/bind-methods";
@@ -65,7 +65,7 @@ class MapPageController extends React.Component {
         const self = this;
         return function (location) {
             return function () {
-                self.props.dispatch(setViewLocation(location));
+                self.props.dispatch(setViewLocationAction(location));
             };
         };
     }
@@ -74,7 +74,7 @@ class MapPageController extends React.Component {
         const self = this;
         return function (location) {
             self.props.history.push(route.submit);
-            self.props.dispatch(setViewLocation(location));
+            self.props.dispatch(setViewLocationAction(location));
         };
     }
 

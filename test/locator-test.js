@@ -1,7 +1,7 @@
 /* global describe it */
 const expect = require("chai").expect;
 
-const geoJsonFromMarker = require("../client/app/pages/submit/locator-map").geoJsonFromMarker;
+const geoJsonFromMarker = require("../client/app/core/model/geojson-from-marker").default;
 
 const MOCK_LAT = 53.9;
 const MOCK_LNG = -3.9;

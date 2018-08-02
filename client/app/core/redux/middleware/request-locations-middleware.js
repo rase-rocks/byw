@@ -22,19 +22,19 @@ export default function makeRequestLocationsMiddleware(api) {
 
         switch (action.type) {
 
-        case types.requestLocations: {
+            case types.requestLocations: {
 
-            if (sentRequests[key]) {
+                if (sentRequests[key]) {
+                    break;
+                }
+
+                api
+                    .locations()
+                    .then(updateSentRequests(sentRequests))
+                    .then(dispatchLocationsTo(store));
+
                 break;
             }
-
-            api
-                .locations()
-                .then(updateSentRequests(sentRequests))
-                .then(dispatchLocationsTo(store));
-
-            break;
-        }
 
         }
 

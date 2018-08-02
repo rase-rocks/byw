@@ -4,7 +4,9 @@ import React from "react";
 
 import {
     setFormDataAction,
-    submitFormAction
+    clearFormAction,
+    submitFormAction,
+    moveMarkerToFreeSpaceAction
 } from "../../../core/redux/actions";
 import { matchesPreviousSubmission } from "../../../core/model/submission";
 import { valueForKey, keys } from "../../../core/model/form";
@@ -15,17 +17,30 @@ class FormController extends React.Component {
 
     constructor(props) {
         super(props);
-        bindMethods(this, ["handler", "submit"]);
+        bindMethods(this, [
+            "makeChangeHandler",
+            "makeSubmitHandler",
+            "makeClearHandler"
+        ]);
     }
 
-    handler() {
+    makeChangeHandler() {
         const self = this;
         return function (key, value) {
             self.props.dispatch(setFormDataAction(key, value));
         };
     }
 
-    submit() {
+    makeClearHandler() {
+        const self = this;
+        return function (e) {
+            e.preventDefault();
+            self.props.dispatch(clearFormAction());
+            self.props.dispatch(moveMarkerToFreeSpaceAction());
+        };
+    }
+
+    makeSubmitHandler() {
         const self = this;
         return function (e) {
             e.preventDefault();
@@ -34,7 +49,7 @@ class FormController extends React.Component {
     }
 
     render() {
-        
+
         const { data, submissions } = this.props;
         const coordinateHash = valueForKey(data, keys.coordinateHash);
         const isDisabled = matchesPreviousSubmission(coordinateHash, submissions);
@@ -42,8 +57,9 @@ class FormController extends React.Component {
         return (
             <Form isDisabled={isDisabled}
                 data={data}
-                onChange={this.handler()}
-                onSubmit={this.submit()} />
+                onChange={this.makeChangeHandler()}
+                onSubmit={this.makeSubmitHandler()}
+                onClear={this.makeClearHandler()} />
         );
     }
 }
