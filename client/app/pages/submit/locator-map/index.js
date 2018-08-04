@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { clearFormAction, setLocatorCoordinateAction } from "../../../core/redux/actions";
-// import { keys } from "../../../core/model/form";
+import { setViewLocationAction } from "../../../core/redux/actions";
+import { SHOW_ZOOM, NORMAL_ZOOM } from "../../map/map/constants";
 import geoJsonFromMarker from "../../../core/model/geojson-from-marker";
 import isBrowser from "../../../core/is-browser";
 import makeController from "../../map/map/controller";
-import { setViewLocationAction } from "../../../core/redux/actions";
 
 let L;
 if (isBrowser()) {
@@ -16,53 +16,6 @@ if (isBrowser()) {
 }
 
 const MAP_ID = "com.byw.submit-locator";
-
-// const dispatchFormData = function (dispatch) {
-//     return function (event) {
-//         dispatch(clearFormAction());
-//         dispatch(setFormDataAction(keys.coordinates, geoJsonFromMarker(event.target)));
-//     };
-// };
-
-// const icon = function (isSelectionMarker = true) {
-//     const opts = (isSelectionMarker) ? selectedLocationMarkerOpts : unusedLocationMarkerOpts;
-//     return { icon: L.divIcon(opts) };
-// };
-
-// const addMarker = function (map, coordinate, dispatch) {
-
-//     const group = L.featureGroup().addTo(map);
-//     group.clearLayers();
-
-//     const opts = Object.assign({ draggable: true, autoPan: true }, icon());
-//     const marker = L.marker(coordinate, opts);
-
-//     marker.on("dragend", dispatchFormData(dispatch));
-
-//     marker.addTo(group);
-
-//     return group;
-// };
-
-// const addExisting = function (map, locations, group) {
-//     const existingGroup = group || L.featureGroup().addTo(map);
-//     existingGroup.clearLayers();
-
-//     const opts = Object.assign({draggable: false}, icon(false));
-
-//     locations.forEach((location) => {
-//         const coord = location.coordinate || location.coordinates;
-//         const marker = L.marker(toMarker(coord), opts);
-//         marker.addTo(existingGroup);
-//     });
-
-//     return existingGroup;
-
-// };
-
-// const setMapCenterPosition = function (map, coordinate, zoomLevel = ZOOM) {
-//     map.setView(toMarker(coordinate), zoomLevel);
-// };
 
 const makeReviewHandler = function (props) {
     return function (location) {
@@ -90,7 +43,14 @@ class LocatorMap extends React.Component {
         if (!isBrowser()) { return; }
 
         const controller = makeController(document, L, MAP_ID, augmentedProps(this.props));
-        controller.show(this.props.coordinate);
+
+        const coordinate = (this.props.selectedLocation)
+            ? this.props.selectedLocation.coordinates
+            : this.props.coordinate;
+
+        const zoom = (this.props.selectedLocation) ? SHOW_ZOOM : NORMAL_ZOOM;
+
+        controller.show(coordinate, zoom);
 
         this.setState({ controller });
 
@@ -108,9 +68,10 @@ class LocatorMap extends React.Component {
     componentWillReceiveProps(nextProps) {
         const props = augmentedProps(nextProps);
         const { controller } = this.state;
-        
+
         controller.props(props);
-        controller.show(props.coordinate, props.zoom);
+
+        if (props.selectedLocation) controller.show(props.coordinate, SHOW_ZOOM);
 
     }
 
@@ -127,7 +88,7 @@ LocatorMap.propTypes = {
     locations: PropTypes.array.isRequired,
     searchText: PropTypes.string.isRequired,
     coordinate: PropTypes.array.isRequired,
-    zoom: PropTypes.number.isRequired,
+    selectedLocation: PropTypes.object,
     showsLocatorMarker: PropTypes.bool.isRequired,
     dispatch: PropTypes.func.isRequired
 };
@@ -137,7 +98,7 @@ const mapStateToProps = function (state) {
         locations: state.data.locations,
         searchText: state.locator.searchText,
         coordinate: state.locator.coordinate,
-        zoom: state.locator.zoom,
+        selectedLocation: state.data.selectedLocation,
         showsLocatorMarker: state.locator.showsLocatorMarker
     };
 };

@@ -19,7 +19,8 @@ const {
     postKeys,
     item,
     valueForKey,
-    timestampString
+    timestampString,
+    coordinateHashFromForm
 } = exp;
 
 const sampleLatitude = 52.4159479;
@@ -160,6 +161,16 @@ describe("form", function () {
             expect(valueForKey(stamped, keys.timestamp)).to.equal(timestamp);
 
         });
+    });
+
+    describe("coordinateFromForm", function () {
+
+        it("returns correct hash", function () {
+            const valid = validForm();
+
+            expect(coordinateHashFromForm(valid)).to.equal(sampleGeohash);
+        });
+
     });
 
     describe("postDataFromForm", function () {

@@ -48,11 +48,6 @@ export default function makeLocatorMiddleware() {
                 break;
             }
 
-            // case types.moveMarkerToFreeSpace: {
-            //     moveToFirstAvailableHash(store);
-            //     break;
-            // }
-
         }
 
         return next(action);

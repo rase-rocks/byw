@@ -10,7 +10,6 @@ const types = {
     setFormData: "com.byw.set-form-data",
     updateForm: "com.byw.update-form",
     clearForm: "com.byw.clear-form",
-    moveMarkerToFreeSpace: "com.byw.move-marker-to-free-space",
     submitForm: "com.byw-submit-form",
     setLocatorSearchText: "com.byw-set-locactor-search-text",
     setLocatorCoordinate: "com.byw-set-locator-coordinate",
@@ -62,10 +61,6 @@ const clearFormAction = function () {
     return { type: types.clearForm, payload: {} };
 };
 
-const moveMarkerToFreeSpaceAction = function () {
-    return { type: types.moveMarkerToFreeSpace, payload: {} };
-};
-
 const submitFormAction = function () {
     return { type: types.submitForm, payload: {} };
 };
@@ -99,7 +94,6 @@ export {
     setFormDataAction,
     updateFormAction,
     clearFormAction,
-    moveMarkerToFreeSpaceAction,
     submitFormAction,
     setLocatorSearchTextAction,
     setLocatorCoordinateAction,

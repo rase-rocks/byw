@@ -5,8 +5,7 @@ import React from "react";
 import {
     setFormDataAction,
     clearFormAction,
-    submitFormAction,
-    moveMarkerToFreeSpaceAction
+    submitFormAction
 } from "../../../core/redux/actions";
 import { matchesPreviousSubmission } from "../../../core/model/submission";
 import { valueForKey, keys } from "../../../core/model/form";
@@ -36,7 +35,6 @@ class FormController extends React.Component {
         return function (e) {
             e.preventDefault();
             self.props.dispatch(clearFormAction());
-            self.props.dispatch(moveMarkerToFreeSpaceAction());
         };
     }
 

@@ -6,7 +6,7 @@ const languages = {
 };
 
 const defaultState = {
-    language: languages.english
+    language: languages.english,
 };
 
 const settingsReducer = function (state = defaultState, action) {
@@ -14,10 +14,10 @@ const settingsReducer = function (state = defaultState, action) {
 
     switch (action.type) {
 
-    case types.setLanguage: {
-        reducedState.language = action.payload;
-        break;
-    }
+        case types.setLanguage: {
+            reducedState.language = action.payload;
+            break;
+        }
 
     }
 

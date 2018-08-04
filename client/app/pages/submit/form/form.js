@@ -139,7 +139,11 @@ class Form extends React.Component {
                     <button className={BUTTON_CLASSNAME} disabled={isDisabled}>
                         {(isDisabled) ? "Submitted" : "Submit"}
                     </button>
+                    <div>
+                        <small>Clear the form to drop a pin</small>
+                    </div>
                 </div>
+
 
             </form>
         );

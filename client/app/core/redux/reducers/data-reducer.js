@@ -39,6 +39,7 @@ const dataReducer = function (state = defaultState, action) {
         case types.setViewLocation: {
 
             reducedState.selectedLocation = action.payload;
+            reducedState.filteredResults = [action.payload];
             break;
 
         }

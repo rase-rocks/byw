@@ -22,12 +22,6 @@ if (isBrowser()) {
     L = require("Leaflet");
 }
 
-const fitController = function (props, controller) {
-    if (props.filteredResults.length > 0) {
-        controller.fitTo(props.filteredResults); 
-    }
-};
-
 class MapController extends React.Component {
 
     componentDidMount() {
@@ -35,7 +29,9 @@ class MapController extends React.Component {
         if (!isBrowser()) { return; }
 
         const controller = makeController(document, L, MAP_ID, this.props);
-        fitController(this.props, controller);
+        
+        const { selectedLocation } = this.props;
+        if (selectedLocation) controller.show(selectedLocation.coordinates);
 
         this.setState({ controller });
 
@@ -51,7 +47,11 @@ class MapController extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        this.state.controller.props(nextProps);
+        const controller = this.state.controller;
+        
+        controller.props(nextProps);
+        if (nextProps.filteredResults 
+            && nextProps.filteredResults.length > 0) controller.fitTo(nextProps.filteredResults);
     }
 
     render() {

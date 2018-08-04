@@ -10,22 +10,33 @@ const makeIcon = function (leaflet, optsForMarker, isSelected, isHighlighted, ca
     return { icon: leaflet.divIcon(opts) };
 };
 
+const markerHash = function (location, isSelected, isHighlighted) {
+    const optsHash = hash(isSelected, isHighlighted, location.category);
+    return `${location.coordinateHash}-${optsHash}`;
+};
+
 const locationMarker = function (leaflet,
     location,
     selectedLocation,
     filteredLocations = [],
     optsForMarker,
-    divIconCache) {
+    divIconCache,
+    markerIconOverride) {
 
     const _isSelected = isSelected(location, selectedLocation);
     const _isHighlighted = isUsed(location, filteredLocations);
 
-    const markerIconHash = hash(_isSelected, _isHighlighted, location.category);
+    const markerIconHash = markerHash(location, _isSelected, _isHighlighted);
     const cachedDivIcon = divIconCache[markerIconHash];
 
-    if (cachedDivIcon) { return cachedDivIcon; }
+    if (cachedDivIcon) return cachedDivIcon;
 
-    const divIcon = makeIcon(leaflet, optsForMarker, _isSelected, _isHighlighted, location.category);
+    let divIcon = makeIcon(leaflet, optsForMarker, _isSelected, _isHighlighted, location.category);
+        
+    if (markerIconOverride) {
+        divIcon = markerIconOverride(location, _isSelected, _isHighlighted, divIcon);
+    }
+
     divIconCache[markerIconHash] = divIcon;
 
     return divIcon;
@@ -57,11 +68,11 @@ const updateMarker = function (leaflet,
     marker.setIcon(icon);
 };
 
-export const makeUpdateMap = function (leaflet, 
-    map, 
-    markerGroup, 
-    markerCache, 
-    optsCache, 
+export const makeUpdateMap = function (leaflet,
+    map,
+    markerGroup,
+    markerCache,
+    optsCache,
     divIconCache) {
 
     const optsForMarker = makeOptsForMarker(optsCache);
@@ -70,7 +81,8 @@ export const makeUpdateMap = function (leaflet,
         filteredLocations,
         selectedLocation,
         onShowLocation,
-        onReview) {
+        onReview,
+        markerIconOverride) {
 
         markerGroup.clearLayers();
 
@@ -86,7 +98,8 @@ export const makeUpdateMap = function (leaflet,
                     filteredLocations,
                     selectedLocation,
                     optsForMarker,
-                    divIconCache);
+                    divIconCache,
+                    markerIconOverride);
 
             } else {
 
@@ -95,7 +108,8 @@ export const makeUpdateMap = function (leaflet,
                     selectedLocation,
                     filteredLocations,
                     optsForMarker,
-                    divIconCache);
+                    divIconCache,
+                    markerIconOverride);
 
                 const marker = leaflet.marker(toMarkerCoords(loc.coordinates), m)
                     .addTo(map)

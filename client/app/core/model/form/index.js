@@ -77,6 +77,10 @@ const timestampString = function () {
     return new Date().toISOString();
 };
 
+const coordinateHashFromForm = function (form) {
+    return valueForKey(form, keys.coordinateHash);
+};
+
 export default form;
 export {
     formUpdatingDataKey,
@@ -91,5 +95,6 @@ export {
     postKeys,
     item,
     valueForKey,
-    timestampString
+    timestampString,
+    coordinateHashFromForm
 };
