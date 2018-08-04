@@ -1,4 +1,6 @@
 import { types } from "../actions";
+import locationsContainsLocation from "../../model/locations-contains-location";
+import locationUpdateCategory from "../../model/location-update-category";
 
 const defaultState = {
     needsUpdate: true,
@@ -6,6 +8,24 @@ const defaultState = {
     filteredResults: [],
     selectedLocation: undefined,
     searchText: ""
+};
+
+const locationUpdate = function (submission) {
+    return function (location) {
+        if (submission.coordinateHash === location.coordinateHash) {
+            return locationUpdateCategory(location, submission.category);
+        } else {
+            return location;
+        }
+    };
+};
+
+const updateLocation = function (locations, location) {
+    const index = locationsContainsLocation(locations, location);
+
+    return (index !== undefined) 
+        ? locations.map(locationUpdate(location))
+        : [...locations, location];
 };
 
 const dataReducer = function (state = defaultState, action) {
@@ -42,6 +62,14 @@ const dataReducer = function (state = defaultState, action) {
             reducedState.filteredResults = [action.payload];
             break;
 
+        }
+
+        case types.addSubmission: {
+            
+            const submission = action.payload;
+            reducedState.locations = updateLocation(reducedState.locations, submission);
+            reducedState.filteredResults = updateLocation(reducedState.filteredResults, submission);
+            break;
         }
 
     }

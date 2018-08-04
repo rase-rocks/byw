@@ -18,6 +18,7 @@ const keys = {
 
 const postKeys = {
     coordinateHash,
+    coordinates,
     name,
     address,
     postcode,

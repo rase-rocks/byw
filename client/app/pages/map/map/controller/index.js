@@ -91,6 +91,7 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
         fitTo: function (locations) {
             const coordinates = locations.map(loc => toMarkerCoords(loc.coordinates));
             const bounds = leaflet.latLngBounds(coordinates);
+            if (!bounds.isValid()) { return; }
             map.fitBounds(bounds);
         },
         show: function (coordinate, zoom = SHOW_ZOOM) {

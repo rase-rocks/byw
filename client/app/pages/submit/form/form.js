@@ -6,7 +6,14 @@ import CategorySlider from "./category-slider";
 import Error from "./error";
 import eventTargetValue from "../../../core/event-target-value";
 
-const BUTTON_CLASSNAME = "btn btn-primary mb-2 submit-form-button";
+const SUBMIT_BUTTON_CLASSNAME = "btn btn-primary mb-2 submit-form-button";
+const CLEAR_BUTTON_CLASSNAME = "btn mb-2 submit-clear-button";
+
+const clearButtonStyle = {
+    border: "2px solid #4dcb44",
+    background: "none",
+    color: "white"
+};
 
 const target = eventTargetValue();
 
@@ -67,7 +74,7 @@ const labelsArray = function (data, isDisabled, isExistingLocation) {
             const metaData = inputMetaDataForLabel(key, data);
             metaData.disabled = (isDisabled || (metaData.disabledForExisting && isExistingLocation)) 
                 ? true 
-                : false;
+                : !!metaData.disabled;
 
             inputMetaDatas.push(metaData);
             return inputMetaDatas;
@@ -147,11 +154,13 @@ class Form extends React.Component {
                 <CategorySlider onChange={onChange} form={data} isDisabled={isDisabled} />
 
                 <div className="submit-button-wrapper">
-                    <button className={BUTTON_CLASSNAME} onClick={onClear}>
-                        Clear
-                    </button>
-                    <button className={BUTTON_CLASSNAME} disabled={isDisabled}>
+                    <button className={SUBMIT_BUTTON_CLASSNAME} disabled={isDisabled}>
                         {(isDisabled) ? "Submitted" : "Submit"}
+                    </button>
+                    <button className={CLEAR_BUTTON_CLASSNAME} 
+                        style={clearButtonStyle}
+                        onClick={onClear}>
+                        Clear
                     </button>
                     <div>
                         <small>Clear the form to drop a pin</small>

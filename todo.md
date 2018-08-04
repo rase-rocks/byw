@@ -12,7 +12,8 @@
 + Locate the submission map based on a search - See back end tasks
 + ~~Add all locations to map, but with different icon to distingush~~
 + Map page result sorting - if search text is entered, sort by distance
-+ Add currently indexed locations to submit map with discrete icon
++ ~~Add currently indexed locations to submit map with discrete icon~~
++ Add a submission to the local state
 
 #### Logic
 
