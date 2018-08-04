@@ -48,12 +48,14 @@ class FormController extends React.Component {
 
     render() {
 
-        const { data, submissions } = this.props;
+        const { data, submissions, showsLocatorMarker } = this.props;
         const coordinateHash = valueForKey(data, keys.coordinateHash);
         const isDisabled = matchesPreviousSubmission(coordinateHash, submissions);
+        const isExistingLocation = !showsLocatorMarker;
 
         return (
             <Form isDisabled={isDisabled}
+                isExistingLocation={isExistingLocation}
                 data={data}
                 onChange={this.makeChangeHandler()}
                 onSubmit={this.makeSubmitHandler()}
@@ -64,13 +66,15 @@ class FormController extends React.Component {
 
 FormController.propTypes = {
     data: PropTypes.object.isRequired,
-    submissions: PropTypes.object.isRequired
+    submissions: PropTypes.object.isRequired,
+    showsLocatorMarker: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
         data: state.form,
-        submissions: state.submissions
+        submissions: state.submissions,
+        showsLocatorMarker: state.locator.showsLocatorMarker
     };
 };
 

@@ -13,7 +13,7 @@ const getLocations = function (state) {
     return state.data.locations;
 };
 
-const filter = function (api, store, filterString, filterDistance = 100) {
+const filter = function (api, store, filterString, filterDistance = 10) {
     filterLocations(api, getLocations(store.getState()), filterString, filterDistance)
         .then(dispatchTo(store));
 };
@@ -23,30 +23,30 @@ export default function makeFilterLocationsMiddleware(api) {
 
         switch (action.type) {
 
-        case types.filterLocations: {
+            case types.filterLocations: {
 
-            const { filterString, filterDistance } = action.payload;
-            if (!filterString || filterString.length < 3) { break; } // Only filter if there is 3 or more chars
+                const { filterString, filterDistance } = action.payload;
+                if (!filterString || filterString.length < 3) { break; } // Only filter if there is 3 or more chars
 
-            filter(api, store, filterString, filterDistance);
+                filter(api, store, filterString, filterDistance);
 
-            break;
-        }
+                break;
+            }
 
-        case types.setSearchText: {
-            if (action.payload.length < 3) { break; }
-            filter(api, store, action.payload);
-            break;
-        }
+            case types.setSearchText: {
+                if (action.payload.length < 3) { break; }
+                filter(api, store, action.payload);
+                break;
+            }
 
-        case types.filterLocationsByPolygon: {
+            case types.filterLocationsByPolygon: {
 
-            filterPolygon(action.payload, getLocations(store.getState()), coordinatesGetter)
-                .then(dispatchTo(store));
+                filterPolygon(action.payload, getLocations(store.getState()), coordinatesGetter)
+                    .then(dispatchTo(store));
 
-            break;
+                break;
 
-        }
+            }
 
         }
 

@@ -2,13 +2,22 @@ const sin = Math.sin;
 const cos = Math.cos;
 const atan2 = Math.atan2;
 const sqrt = Math.sqrt;
+const asin = Math.asin;
 
 const radians = makeDegToRad();
+const degrees = makeRadToDeg();
 
 function makeDegToRad() {
     const multiplier = Math.PI / 180;
     return function (deg) {
         return deg * multiplier;
+    };
+}
+
+function makeRadToDeg() {
+    const multiplier = 180 / Math.PI;
+    return function (rad) {
+        return rad * multiplier;
     };
 }
 
@@ -72,4 +81,60 @@ function makeFilter(basePoint, distance, getter) {
 
 }
 
-export { haversineDistance, makeArraySort, makeFilter };
+const bearing = function (coordinate1, coordinate2) {
+
+    const q1 = radians(coordinate1[LAT]);
+    const q2 = radians(coordinate2[LAT]);
+
+    const diffLon = radians(coordinate2[LNG] - coordinate1[LNG]);
+
+    const y = sin(diffLon) * cos(q2);
+    const x = cos(q1) * sin(q2) - sin(q1) * cos(q2) * cos(diffLon);
+    const rads = atan2(y, x);
+
+    return (degrees(rads) + 360) % 360;
+};
+
+const toBackBearing = function (bearing) {
+    let result = 0;
+
+    if (bearing >= 180) {
+        result = bearing - 180;
+    } else {
+        result = bearing + 180;
+    }
+
+    return result;
+};
+
+const destination = function (coordinate, distance, bearing, radius = 6371e3) {
+    const angDist = distance / radius;
+    const angle = radians(bearing);
+
+    const q1 = radians(coordinate[LAT]);
+    const y1 = radians(coordinate[LNG]);
+
+    const sinQ1 = sin(q1);
+    const cosQ1 = cos(q1);
+    const sinAngDist = sin(angDist);
+    const cosAngDist = cos(angDist);
+    const sinAngle = sin(angle);
+    const cosAngle = cos(angle);
+
+    const sinQ2 = sinQ1 * cosAngDist + cosQ1 * sinAngDist * cosAngle;
+    const q2 = asin(sinQ2);
+    const y = sinAngle * sinAngDist * cosQ1;
+    const x = cosAngDist - sinQ1 * sinQ2;
+    const y2 = y1 + atan2(y, x);
+
+    return [degrees(q2), (degrees(y2) + 540) % 360 - 180];
+};
+
+export { 
+    haversineDistance, 
+    bearing, 
+    toBackBearing,
+    destination,
+    makeArraySort, 
+    makeFilter 
+};

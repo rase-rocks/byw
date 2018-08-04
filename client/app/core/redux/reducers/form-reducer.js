@@ -39,11 +39,6 @@ const formReducer = function (state = form, action) {
             reducedState = formFromLocation(action.payload);
             break;
 
-        case types.addSubmission:
-
-            reducedState = Object.assign({}, form);
-            break;
-
     }
 
     return reducedState;

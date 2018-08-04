@@ -1,4 +1,3 @@
-
 import { keys } from "../../model/form";
 import { types, setLocatorCoordinateAction, setFormDataAction } from "../actions";
 import locationsContainsCoordinate from "../../model/locations-contains-coordinate";
@@ -12,20 +11,20 @@ const shiftCoordinate = function (coordinate, by = 0.0001) {
 const validateCoordinate = function (store, coordinate) {
 
     const locations = store.getState().data.locations;
-    const precision = 7;
-    const radius = 0.01;
+    const precision = 8;
+    const radius = 0.05;
 
     if (!locationsContainsCoordinate(locations, coordinate, precision, radius)){
         store.dispatch(setFormDataAction(keys.coordinates, coordinate));
         return;
     }
-
+    
     let candidate = coordinate;
     setTimeout(function () {
         
-        while (locationsContainsCoordinate(locations, candidate, precision, radius)) {
-            candidate = shiftCoordinate(candidate, 0.0001);
-        }
+        do {
+            candidate = shiftCoordinate(candidate, 0.00005);
+        } while (locationsContainsCoordinate(locations, candidate, precision, radius));
 
         store.dispatch(setLocatorCoordinateAction(candidate));
 

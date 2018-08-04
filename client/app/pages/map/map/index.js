@@ -30,8 +30,12 @@ class MapController extends React.Component {
 
         const controller = makeController(document, L, MAP_ID, this.props);
         
-        const { selectedLocation } = this.props;
-        if (selectedLocation) controller.show(selectedLocation.coordinates);
+        const { selectedLocation, filteredResults } = this.props;
+        if (selectedLocation) {
+            controller.show(selectedLocation.coordinates);
+        } else if (filteredResults) {
+            controller.fitTo(filteredResults);
+        }
 
         this.setState({ controller });
 

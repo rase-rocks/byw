@@ -1,4 +1,4 @@
-import { makeFilter } from "../haversine-distance";
+import { makeFilter } from "../geodesic";
 import arrayReversed from "../array-reversed";
 import getter from "../coordinates-getter";
 

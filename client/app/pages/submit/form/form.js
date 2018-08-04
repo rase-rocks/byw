@@ -15,32 +15,37 @@ const labels = {
         id: "byw-form-label-name",
         type: "text",
         placeholder: "Name of premises",
-        key: "name"
+        key: "name",
+        disabledForExisting: true
     },
     [keys.address]: {
         id: "byw-form-label-address",
         type: "text",
         placeholder: "Address of premises",
-        key: "address"
+        key: "address",
+        disabledForExisting: true
     },
     [keys.postcode]: {
         id: "byw-form-label-postcode",
         type: "text",
         placeholder: "Postcode of premises",
-        key: "postcode"
+        key: "postcode",
+        disabledForExisting: true
     },
     [keys.coordinates]: {
         id: "byw-form-label-coordinates",
         type: "text",
         placeholder: "Coordinates",
         key: "coordinates",
+        disabledForExisting: true,
         disabled: true
     },
     [keys.category]: {
         id: "byw-form-label-category",
         type: "text",
         placeholder: "Category",
-        key: "category"
+        key: "category",
+        disabledForExisting: false
     }
 };
 
@@ -54,13 +59,15 @@ const inputMetaDataForLabel = function (key, formData) {
         });
 };
 
-const labelsArray = function (data, isDisabled) {
+const labelsArray = function (data, isDisabled, isExistingLocation) {
     return Object.keys(data)
         .filter(key => (key !== keys.category && key !== keys.coordinateHash && key !== keys.timestamp))
         .reduce(function (inputMetaDatas, key) {
 
             const metaData = inputMetaDataForLabel(key, data);
-            if (isDisabled) metaData.disabled = true;
+            metaData.disabled = (isDisabled || (metaData.disabledForExisting && isExistingLocation)) 
+                ? true 
+                : false;
 
             inputMetaDatas.push(metaData);
             return inputMetaDatas;
@@ -120,9 +127,16 @@ const formatValue = function (value, key) {
 class Form extends React.Component {
     render() {
 
-        const { data, onChange, onSubmit, onClear, isDisabled } = this.props;
+        const { 
+            data, 
+            onChange, 
+            onSubmit, 
+            onClear, 
+            isDisabled,
+            isExistingLocation
+        } = this.props;
 
-        const elements = labelsArray(data, isDisabled)
+        const elements = labelsArray(data, isDisabled, isExistingLocation)
             .map(toInput(onChange, formatValue));
 
         return (
@@ -152,6 +166,7 @@ class Form extends React.Component {
 
 Form.propTypes = {
     isDisabled: PropTypes.bool,
+    isExistingLocation: PropTypes.bool.isRequired,
     data: PropTypes.object,
     onChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
