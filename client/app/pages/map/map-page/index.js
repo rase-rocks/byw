@@ -5,6 +5,7 @@ import bindMethods from "../../../core/bind-methods";
 import floatValue from "../../../core/model/float-value";
 import Map from "../map";
 import MapSearchBox from "./map-search-box";
+import Legend from "./legend";
 
 class MapPage extends React.Component {
 
@@ -39,6 +40,7 @@ class MapPage extends React.Component {
                     onShowLocation={onShowLocation}
                     onReview={onReview} />
                 <MapSearchBox {...this.props} />
+                <Legend/>
             </div>
         );
     }

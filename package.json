@@ -4,7 +4,7 @@
   "description": "Breathe Your Welsh Website",
   "main": "index.js",
   "scripts": {
-    "deploy": "~/Library/Python/2.7/bin/aws s3 sync ./s3-build/ s3://byw --delete --exclude '.DS_Store' --cache-control max-age=604800",
+    "deploy": "sh ./build-settings/deploy.sh",
     "serve-build": "node node_modules/http-serve/bin/http-serve --cors ./s3-build",
     "build": "sh ./build-settings/build.sh",
     "convert-csv": "babel-node --presets es2015 ./existing-data/index.js",
