@@ -31,5 +31,5 @@ rm ./s3-build/static-index-build.js
 echo "\n[5/6]-[${GREEN}Running Tests...${NC}]\n"
 npm test
 
-echo "\n[6/6] - [${RED}Deploying to S3${NC}]\n"
-~/Library/Python/2.7/bin/aws s3 sync ./s3-build/ s3://byw --delete --exclude '.DS_Store' --cache-control max-age=604800
+echo "\n[6/6] - [${RED}Edit URL before Deploying to S3${NC}]\n"
+#~/Library/Python/2.7/bin/aws s3 sync ./s3-build/ s3://byw --delete --exclude '.DS_Store' --cache-control max-age=604800
