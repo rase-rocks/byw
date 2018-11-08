@@ -5,7 +5,7 @@ import isBrowser from "../../core/is-browser";
 import colors from "../../core/colors";
 import toURL from "./to-url";
 
-import "whatwg-fetch";
+//import "whatwg-fetch";
 
 // const isFirefox = function () {
 //     return typeof InstallTrigger !== "undefined";

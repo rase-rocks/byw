@@ -8,7 +8,7 @@ import colors from "../../core/colors";
 import children from "../../core/props-children";
 import { backStyle, handler } from "../FetchableImage";
 
-import "whatwg-fetch";
+//import "whatwg-fetch";
 
 const classNames = function (extraClasses) {
     return `image-transition-background ${extraClasses}`;
