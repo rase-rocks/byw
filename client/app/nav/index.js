@@ -13,6 +13,7 @@ const li = function (route) {
 export const route = {
     home: "/",
     map: "/map",
+    vocabulary: "/vocabulary",
     //about: "/about",
     submit: "/submit"
 };
@@ -20,6 +21,7 @@ export const route = {
 export const routes = [
     { url: route.home, title: "Home" },
     { url: route.map, title: "Map" },
+    { url: route.vocabulary, title: "Vocab" },
     //{ url: route.about, title: "About" },
     { url: route.submit, title: "Submit" }
 ];

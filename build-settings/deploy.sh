@@ -18,6 +18,9 @@ fi
 echo "\n[1/6]-[${RED}Removing Build folder${NC}]\n"
 rm -r ./s3-build
 
+echo "\nMaking Geirfa\n"
+sh ./build-settings/make-geirfa.sh
+
 echo "\n[2/6]-[${GREEN}Rendering index.html for server in production mode${NC}]\n"
 NODE_ENV='production' gulp static-build
 NODE_ENV='production' node ./s3-build/static-index-build.js > ./s3-build/index.html

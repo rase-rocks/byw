@@ -34,7 +34,7 @@ gulp.task("static-client-bundle", function () {
         .bundle()
         .pipe(source("bundle.js"))
         .pipe(buffer())
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(buildPath));
 });
 

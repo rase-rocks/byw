@@ -6,6 +6,7 @@
   "scripts": {
     "deploy": "sh ./build-settings/deploy.sh",
     "serve-build": "node node_modules/http-serve/bin/http-serve --cors ./s3-build",
+    "make-geirfa": "sh ./build-settings/make-geirfa.sh",
     "build": "sh ./build-settings/build.sh",
     "convert-csv": "babel-node --presets es2015 ./existing-data/index.js",
     "make-pdf": "node ./node_modules/chrome-headless-render-pdf/dist/cli/chrome-headless-render-pdf.js --include-background --landscape --url=http://localhost:8080 --pdf ~/Downloads/site.pdf",
