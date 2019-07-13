@@ -1,4 +1,4 @@
-import sample from "lodash/sample";
+import arraySample from "../../core/model/array-sample";
 
 const EN = "english";
 const CY = "cymraeg";
@@ -52,5 +52,5 @@ export const quotes = [
 ];
 
 export function random() {
-    return sample(quotes);
+    return arraySample(quotes);
 }

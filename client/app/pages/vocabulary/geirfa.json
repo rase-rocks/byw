@@ -1,17 +1,470 @@
 [
     {
+        "en": "dandruff",
+        "cy": "cen",
+        "tags": [
+            "head",
+            "body",
+            "hair"
+        ],
+        "notes": "(pl)"
+    },
+    {
+        "en": "ear",
+        "cy": "clust",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f/m) -iau"
+    },
+    {
+        "en": "crown of head",
+        "cy": "corun",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "headache",
+        "cy": "cur yn y pen",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "headache",
+        "cy": "pen tost",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "hair",
+        "cy": "gwallt",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "bald",
+        "cy": "moel",
+        "tags": [
+            "head",
+            "body",
+            "mountain"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "from head to toe",
+        "cy": "o'm corun i'm sawdl",
+        "tags": [
+            "phrase"
+        ],
+        "notes": ""
+    },
+    {
         "en": "head",
         "cy": "pen",
+        "tags": [
+            "head",
+            "body"
+        ],
         "notes": ""
     },
     {
         "en": "face",
-        "cy": "wneb",
+        "cy": "wyneb",
+        "tags": [
+            "head",
+            "body"
+        ],
         "notes": ""
     },
     {
-        "en": "hand",
-        "cy": "llaw",
+        "en": "skull",
+        "cy": "penglog",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "parting (hair)",
+        "cy": "rhesen",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) (NW)"
+    },
+    {
+        "en": "parting (hair)",
+        "cy": "rhaniad",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) (SW)"
+    },
+    {
+        "en": "brain",
+        "cy": "ymennydd",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(m) -iau"
+    },
+    {
+        "en": "eyebrow",
+        "cy": "ael",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) -iau"
+    },
+    {
+        "en": "eyelid",
+        "cy": "amrant",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au: amrannau"
+    },
+    {
+        "en": "beard",
+        "cy": "barf",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "to sob",
+        "cy": "beichio crio",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "cheek",
+        "cy": "boch",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "rosy-cheeked",
+        "cy": "bochgoch",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "freckels",
+        "cy": "brychni haul",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "pupil",
+        "cy": "cannwyll y llygad",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "pupils",
+        "cy": "canhwyllaw'r llygaid",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(pl)"
+    },
+    {
+        "en": "corner of the eye",
+        "cy": "cil y llygad",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "corner of the eye",
+        "cy": "ciliau/cilion y llygaid",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(pl)"
+    },
+    {
+        "en": "to cry",
+        "cy": "crio",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "tear",
+        "cy": "deigryn",
+        "tags": [
+            "emotion"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "tears",
+        "cy": "dagrau",
+        "tags": [
+            "emotion"
+        ],
+        "notes": "(pl)"
+    },
+    {
+        "en": "nostril",
+        "cy": "ffroen",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "jaw",
+        "cy": "gên",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "cheek",
+        "cy": "grudd",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) -iau"
+    },
+    {
+        "en": "pale",
+        "cy": "gwelw",
+        "tags": [
+            "medical"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "as white as a sheet",
+        "cy": "gwelw fel y galchen",
+        "tags": [
+            "medical",
+            "phrase"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "smile",
+        "cy": "gwên",
+        "tags": [
+            "emotion"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "to smile",
+        "cy": "gwenu",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to smile from ear to ear",
+        "cy": "gwenu o glust i glust",
+        "tags": [
+            "emotion",
+            "phrase"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to smile broadly",
+        "cy": "gwenu fel giât",
+        "tags": [
+            "emotion",
+            "phrase",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "beard",
+        "cy": "locsyn",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) (NW)"
+    },
+    {
+        "en": "to cry",
+        "cy": "llefain",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "eye",
+        "cy": "llygad",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "eyes",
+        "cy": "llygaid",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "moustache",
+        "cy": "mwstas",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "complexion",
+        "cy": "pryd",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "appearance",
+        "cy": "pryd a gwedd",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "forehead",
+        "cy": "talcen",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -nau"
+    },
+    {
+        "en": "to burst into tears",
+        "cy": "torri i feichio crio",
+        "tags": [
+            "emotion",
+            "phrase",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "nose",
+        "cy": "trwyn",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "to cry",
+        "cy": "wylo",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "face",
+        "cy": "wyneb",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "face to face",
+        "cy": "wyneb i wyneb",
+        "tags": [
+            "phrase"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to face",
+        "cy": "wynebu",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to yawn",
+        "cy": "agor ceg",
+        "tags": [
+            "verb"
+        ],
         "notes": ""
     }
 ]

@@ -8,7 +8,15 @@ import geirfa from "./geirfa.json";
 class Vocabulary extends React.Component {
     render() {
 
-        console.log(geirfa);
+        const lines = geirfa.map(function(unit) {
+            return (
+                <tr key={JSON.stringify(unit)}>
+                    <td>{unit.en}</td>
+                    <td>{unit.cy}</td>
+                    <td>{unit.notes}</td>
+                </tr>
+            );
+        });
 
         return (
             <PageContainer>
@@ -17,6 +25,26 @@ class Vocabulary extends React.Component {
                 <PageHeader>
                     Vocabulary
                 </PageHeader>
+
+                <p>{geirfa.length} phrases and words</p>
+
+                <table className="table">
+                    <tbody>
+                        <tr>
+                            <th>
+                                English
+                            </th>
+                            <th>
+                                Cymraeg
+                            </th>
+                            <th>
+                                Notes
+                            </th>
+                        </tr>
+                        {lines}
+                    </tbody>
+                    
+                </table>
 
 
             </PageContainer>

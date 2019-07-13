@@ -1,6 +1,10 @@
 const fs = require("fs");
 
-function csvJSON(csv) {
+function trim(str) {
+    return str.replace(/^\s\s*/, "").replace(/\s\s*$/, "");
+}
+
+function json(csv) {
 
     var lines = csv.split("\n");
 
@@ -11,10 +15,24 @@ function csvJSON(csv) {
     for (var i = 1; i < lines.length; i++) {
 
         var obj = {};
-        var currentline = lines[i].split(",");
+        var currentLine = lines[i].split(",");
 
         for (var j = 0; j < headers.length; j++) {
-            obj[headers[j]] = currentline[j];
+
+            const header = headers[j];
+            const line = currentLine[j];
+
+            if (line == "undefined") {
+                console.warn("Missing ${header}");
+            } else {
+
+                obj[header] = header != "tags" 
+                ? trim(line) 
+                : trim(line).split(" ");
+
+            }
+
+            
         }
 
         result.push(obj);
@@ -24,6 +42,6 @@ function csvJSON(csv) {
 }
 
 const csv = fs.readFileSync("./vocab-store/geirfa.csv").toString();
-const data = csvJSON(csv);
+const data = json(csv);
 
 console.log(data);

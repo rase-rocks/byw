@@ -1,4 +1,79 @@
-en,cy,notes
-head,pen,
-face,wneb,
-hand,llaw,
+en,cy,tags,notes
+dandruff, cen, head body hair, (pl)
+ear, clust, head body, (f/m) -iau
+crown of head, corun, head body, (m) -au
+headache, cur yn y pen, head body medical, (NW)
+headache, pen tost, head body medical, (SW)
+hair, gwallt, head body, (m) -au
+bald, moel, head body mountain,
+from head to toe, o'm corun i'm sawdl, phrase,
+head, pen, head body,
+face, wyneb, head body,
+skull, penglog, head body medical, (f) -au
+parting (hair), rhesen, head body, (f) (NW)
+parting (hair), rhaniad, head body, (f) (SW)
+brain, ymennydd, head body medical, (m) -iau
+eyebrow, ael, head body, (f) -iau
+eyelid, amrant, head body, (m) -au: amrannau
+beard, barf, head body, (f) -au
+to sob, beichio crio, emotion verb,
+cheek, boch, head body,
+rosy-cheeked, bochgoch, head body,
+freckels, brychni haul, head body,
+pupil, cannwyll y llygad, head body, (m)
+pupils, canhwyllaw'r llygaid, head body, (pl)
+corner of the eye, cil y llygad, head body, (m)
+corner of the eye, ciliau/cilion y llygaid, head body, (pl)
+to cry, crio, emotion verb,
+tear, deigryn, emotion, (m)
+tears, dagrau, emotion, (pl)
+nostril, ffroen, head body, (f) -au
+jaw, gên, head body, (f)
+cheek, grudd, head body, (f) -iau
+pale, gwelw, medical,
+as white as a sheet, gwelw fel y galchen, medical phrase,
+smile, gwên, emotion, (f) -au
+to smile, gwenu, emotion verb,
+to smile from ear to ear, gwenu o glust i glust, emotion phrase,
+to smile broadly, gwenu fel giât, emotion phrase verb,
+beard, locsyn, head body, (m) (NW)
+to cry, llefain, emotion verb, (SW)
+eye, llygad, head body, (m)
+eyes, llygaid, head body,
+moustache, mwstas, head body, (m)
+complexion, pryd, head body, (m)
+appearance, pryd a gwedd, head body,
+forehead, talcen, head body, (m) -nau
+to burst into tears, torri i feichio crio, emotion phrase verb,
+nose, trwyn, head body, (m) -au
+to cry, wylo, emotion verb,
+face, wyneb, head body, (m) -au
+face to face, wyneb i wyneb, phrase,
+to face, wynebu, verb,
+to yawn, agor ceg, verb,
+to clear my throat, carthu fy ngwddf, phrase verb,
+mouth, ceg, head body,
+windpipe, corn gwddf, head body, (m)
+hoarse, cryg, medical sore,
+kiss, cusan, head love, (f/m) -au
+to kiss, cusanu, verb head love,
+tooth, dant, head dental, (m)
+teeth, dannedd, head dental,
+false teeth, dannedd gorsod, head dental, (NW)
+false teeth, danedd dodi, head dental, (SW)
+toothache, dannoedd, head dental, (f)
+dentist, deintydd, dental occupation, (m) -ion
+sore throat, dolur gwddf, dental medical, (m)(NW)
+to dribble, driblo, head medical verb, (SW)
+to dribble, glafoerio, head medical verb, (NW)
+nape of the neck, gwar, body, (f/m) -rau
+neck / throat, gwddf, body, (m) gyddau
+sore throat, gwddf tost, body medical, (SW)
+lip, gweddus, body, (f) -au
+hiccup, (yr) ig, medical, (m) -ion
+to hiccup, igian, medical verb,
+filling, llenwad, dental medical, (m) -au
+throat, llwnc, body, (m) (SW)
+sore throat, llwnc tost, medical body, (SW)
+to lick, llyfu, verb, (NW)
+to swallow, llyncu, verb,
