@@ -466,5 +466,659 @@
             "verb"
         ],
         "notes": ""
+    },
+    {
+        "en": "to clear my throat",
+        "cy": "carthu fy ngwddf",
+        "tags": [
+            "phrase",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "mouth",
+        "cy": "ceg",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "windpipe",
+        "cy": "corn gwddf",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "hoarse",
+        "cy": "cryg",
+        "tags": [
+            "medical",
+            "sore"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "kiss",
+        "cy": "cusan",
+        "tags": [
+            "head",
+            "love"
+        ],
+        "notes": "(f/m) -au"
+    },
+    {
+        "en": "to kiss",
+        "cy": "cusanu",
+        "tags": [
+            "verb",
+            "head",
+            "love"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "tooth",
+        "cy": "dant",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "teeth",
+        "cy": "dannedd",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "false teeth",
+        "cy": "dannedd gorsod",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "false teeth",
+        "cy": "danedd dodi",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "toothache",
+        "cy": "dannoedd",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "dentist",
+        "cy": "deintydd",
+        "tags": [
+            "dental",
+            "occupation"
+        ],
+        "notes": "(m) -ion"
+    },
+    {
+        "en": "sore throat",
+        "cy": "dolur gwddf",
+        "tags": [
+            "dental",
+            "medical"
+        ],
+        "notes": "(m)(NW)"
+    },
+    {
+        "en": "to dribble",
+        "cy": "driblo",
+        "tags": [
+            "head",
+            "medical",
+            "verb"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to dribble",
+        "cy": "glafoerio",
+        "tags": [
+            "head",
+            "medical",
+            "verb"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "nape of the neck",
+        "cy": "gwar",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m) -rau"
+    },
+    {
+        "en": "neck / throat",
+        "cy": "gwddf",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) gyddau"
+    },
+    {
+        "en": "sore throat",
+        "cy": "gwddf tost",
+        "tags": [
+            "body",
+            "medical"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "lip",
+        "cy": "gweddus",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "hiccup",
+        "cy": "(yr) ig",
+        "tags": [
+            "medical"
+        ],
+        "notes": "(m) -ion"
+    },
+    {
+        "en": "to hiccup",
+        "cy": "igian",
+        "tags": [
+            "medical",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "filling",
+        "cy": "llenwad",
+        "tags": [
+            "dental",
+            "medical"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "throat",
+        "cy": "llwnc",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)"
+    },
+    {
+        "en": "sore throat",
+        "cy": "llwnc tost",
+        "tags": [
+            "medical",
+            "body"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to lick",
+        "cy": "llyfu",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "to swallow",
+        "cy": "llyncu",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "sigh",
+        "cy": "ochenaid",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) ochenneidiau"
+    },
+    {
+        "en": "to sigh",
+        "cy": "ocheneidio",
+        "tags": [
+            "verb",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "cough",
+        "cy": "peswch",
+        "tags": [
+            "body",
+            "head",
+            "medical"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "to cough",
+        "cy": "pesychu",
+        "tags": [
+            "verb",
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "saliva",
+        "cy": "poer",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(m) -ion"
+    },
+    {
+        "en": "to spit",
+        "cy": "poeri",
+        "tags": [
+            "head",
+            "body",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "fit of coughing",
+        "cy": "pwl o beswch",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "fits of coughing",
+        "cy": "pyliau o beswch",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "kiss",
+        "cy": "sws",
+        "tags": [
+            "head",
+            "body",
+            "emotion"
+        ],
+        "notes": "(f) -ys (dom)"
+    },
+    {
+        "en": "tongue",
+        "cy": "tafod",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "double chin",
+        "cy": "tagell",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) -au tegyll"
+    },
+    {
+        "en": "to choke",
+        "cy": "tagu",
+        "tags": [
+            "head",
+            "body",
+            "medical",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to sneeze",
+        "cy": "tisian",
+        "tags": [
+            "head",
+            "body",
+            "medical",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "echo",
+        "cy": "adlais",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m) adleisiau"
+    },
+    {
+        "en": "to echo",
+        "cy": "adleisio",
+        "tags": [
+            "sound",
+            "verb"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "in speech (orally)",
+        "cy": "ar lafar",
+        "tags": [
+            "sound",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to stutter",
+        "cy": "atal dweud",
+        "tags": [
+            "sound",
+            "speech",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to answer",
+        "cy": "ateb",
+        "tags": [
+            "sound",
+            "speech",
+            "verb"
+        ],
+        "notes": "(m) -ion"
+    },
+    {
+        "en": "echo",
+        "cy": "atsain",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) atseiniau"
+    },
+    {
+        "en": "to echo",
+        "cy": "atsainio",
+        "tags": [
+            "sound",
+            "verb"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "shout",
+        "cy": "bloedd",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) -iau -iadau"
+    },
+    {
+        "en": "to shout",
+        "cy": "bloeddio",
+        "tags": [
+            "sound",
+            "verb"
+        ],
+        "notes": "-ian"
+    },
+    {
+        "en": "lie",
+        "cy": "celwydd",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(m) -au clwyddau"
+    },
+    {
+        "en": "white lie",
+        "cy": "celwydd golau",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to chatter",
+        "cy": "celbran",
+        "tags": [
+            "speech",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to gossip",
+        "cy": "clecian",
+        "tags": [
+            "speech",
+            "verb"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to gossip",
+        "cy": "cloncian",
+        "tags": [
+            "speech",
+            "verb"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to argue or fall out",
+        "cy": "cwympo mas",
+        "tags": [
+            "speech",
+            "verb",
+            "emotion"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to meet",
+        "cy": "cyfarch",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to laugh",
+        "cy": "chwerthin",
+        "tags": [
+            "verb",
+            "emotion"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to laugh at someone",
+        "cy": "chwerthin am ben rhywun",
+        "tags": [
+            "sound",
+            "verb",
+            "emotion"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "without mincing words",
+        "cy": "diflewyn-ar-dafod",
+        "tags": [
+            "sound",
+            "emotion"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "no communication between them",
+        "cy": "dim Cymraeg rhyngddyn nhw",
+        "tags": [
+            "speech",
+            "sound",
+            "emotion"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "silent",
+        "cy": "distaw",
+        "tags": [
+            "sound",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "silence",
+        "cy": "distawrwydd",
+        "tags": [
+            "sound",
+            "speech"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "to silence",
+        "cy": "distewi",
+        "tags": [
+            "verb",
+            "sound",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to say",
+        "cy": "dweud",
+        "tags": [
+            "verb",
+            "sound",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to lie",
+        "cy": "dweud celwydd(iau)",
+        "tags": [
+            "verb",
+            "sound",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to tell",
+        "cy": "dweud wrth",
+        "tags": [
+            "verb",
+            "sound",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to be unable to speak",
+        "cy": "ffaelu siarad",
+        "tags": [
+            "verb",
+            "speech",
+            "sound"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to argue or fall out",
+        "cy": "ffraeo",
+        "tags": [
+            "verb",
+            "speech",
+            "sound",
+            "emotion"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "to roar with laughter",
+        "cy": "glannau chwerthin",
+        "tags": [
+            "verb",
+            "speech",
+            "sound",
+            "emotion"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "to ask someone",
+        "cy": "gofyn u rywun",
+        "tags": [
+            "verb",
+            "speech",
+            "sound"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "demand or requirement",
+        "cy": "gofyn",
+        "tags": [
+            "emotion"
+        ],
+        "notes": "(m) -ion"
+    },
+    {
+        "en": "to order",
+        "cy": "gorchymyn",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
     }
 ]

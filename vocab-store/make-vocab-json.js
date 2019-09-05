@@ -27,8 +27,8 @@ function json(csv) {
             } else {
 
                 obj[header] = header != "tags" 
-                ? trim(line) 
-                : trim(line).split(" ");
+                    ? trim(line) 
+                    : trim(line).split(" ");
 
             }
 
