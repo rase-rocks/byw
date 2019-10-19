@@ -7,7 +7,8 @@
             "body",
             "hair"
         ],
-        "notes": "(pl)"
+        "notes": "(pl)",
+        "id": "2637529837"
     },
     {
         "en": "ear",
@@ -16,7 +17,8 @@
             "head",
             "body"
         ],
-        "notes": "(f/m) -iau"
+        "notes": "(f/m) -iau",
+        "id": "4135152496"
     },
     {
         "en": "crown of head",
@@ -25,7 +27,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "4010384760"
     },
     {
         "en": "headache",
@@ -35,7 +38,8 @@
             "body",
             "medical"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "3494104967"
     },
     {
         "en": "headache",
@@ -45,7 +49,8 @@
             "body",
             "medical"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "1912835596"
     },
     {
         "en": "hair",
@@ -54,7 +59,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "4289530188"
     },
     {
         "en": "bald",
@@ -64,7 +70,8 @@
             "body",
             "mountain"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3390352073"
     },
     {
         "en": "from head to toe",
@@ -72,7 +79,8 @@
         "tags": [
             "phrase"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2094443698"
     },
     {
         "en": "head",
@@ -81,7 +89,8 @@
             "head",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1586877117"
     },
     {
         "en": "face",
@@ -90,7 +99,8 @@
             "head",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1385153992"
     },
     {
         "en": "skull",
@@ -100,7 +110,8 @@
             "body",
             "medical"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "1768151650"
     },
     {
         "en": "parting (hair)",
@@ -109,7 +120,8 @@
             "head",
             "body"
         ],
-        "notes": "(f) (NW)"
+        "notes": "(f) (NW)",
+        "id": "3397742418"
     },
     {
         "en": "parting (hair)",
@@ -118,7 +130,8 @@
             "head",
             "body"
         ],
-        "notes": "(f) (SW)"
+        "notes": "(f) (SW)",
+        "id": "3905809969"
     },
     {
         "en": "brain",
@@ -128,7 +141,8 @@
             "body",
             "medical"
         ],
-        "notes": "(m) -iau"
+        "notes": "(m) -iau",
+        "id": "2369440459"
     },
     {
         "en": "eyebrow",
@@ -137,7 +151,8 @@
             "head",
             "body"
         ],
-        "notes": "(f) -iau"
+        "notes": "(f) -iau",
+        "id": "1864915840"
     },
     {
         "en": "eyelid",
@@ -146,7 +161,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) -au: amrannau"
+        "notes": "(m) -au: amrannau",
+        "id": "3956666199"
     },
     {
         "en": "beard",
@@ -155,7 +171,8 @@
             "head",
             "body"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "4226244055"
     },
     {
         "en": "to sob",
@@ -164,7 +181,8 @@
             "emotion",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "496059455"
     },
     {
         "en": "cheek",
@@ -173,7 +191,8 @@
             "head",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "804462856"
     },
     {
         "en": "rosy-cheeked",
@@ -182,7 +201,8 @@
             "head",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "45181264"
     },
     {
         "en": "freckels",
@@ -191,7 +211,8 @@
             "head",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "154207896"
     },
     {
         "en": "pupil",
@@ -200,7 +221,8 @@
             "head",
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "3666736924"
     },
     {
         "en": "pupils",
@@ -209,7 +231,8 @@
             "head",
             "body"
         ],
-        "notes": "(pl)"
+        "notes": "(pl)",
+        "id": "660542571"
     },
     {
         "en": "corner of the eye",
@@ -218,7 +241,8 @@
             "head",
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "2748484008"
     },
     {
         "en": "corner of the eye",
@@ -227,7 +251,8 @@
             "head",
             "body"
         ],
-        "notes": "(pl)"
+        "notes": "(pl)",
+        "id": "1425347756"
     },
     {
         "en": "to cry",
@@ -236,7 +261,8 @@
             "emotion",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1624618954"
     },
     {
         "en": "tear",
@@ -244,7 +270,8 @@
         "tags": [
             "emotion"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "1179513797"
     },
     {
         "en": "tears",
@@ -252,7 +279,8 @@
         "tags": [
             "emotion"
         ],
-        "notes": "(pl)"
+        "notes": "(pl)",
+        "id": "3337580649"
     },
     {
         "en": "nostril",
@@ -261,7 +289,8 @@
             "head",
             "body"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "2085120599"
     },
     {
         "en": "jaw",
@@ -270,7 +299,8 @@
             "head",
             "body"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "1134622038"
     },
     {
         "en": "cheek",
@@ -279,7 +309,8 @@
             "head",
             "body"
         ],
-        "notes": "(f) -iau"
+        "notes": "(f) -iau",
+        "id": "3302474489"
     },
     {
         "en": "pale",
@@ -287,7 +318,8 @@
         "tags": [
             "medical"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1911691143"
     },
     {
         "en": "as white as a sheet",
@@ -296,7 +328,8 @@
             "medical",
             "phrase"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "173771547"
     },
     {
         "en": "smile",
@@ -304,7 +337,8 @@
         "tags": [
             "emotion"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "4145460053"
     },
     {
         "en": "to smile",
@@ -313,7 +347,8 @@
             "emotion",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1204123301"
     },
     {
         "en": "to smile from ear to ear",
@@ -322,7 +357,8 @@
             "emotion",
             "phrase"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3060458032"
     },
     {
         "en": "to smile broadly",
@@ -332,7 +368,8 @@
             "phrase",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1712271500"
     },
     {
         "en": "beard",
@@ -341,7 +378,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) (NW)"
+        "notes": "(m) (NW)",
+        "id": "3517150318"
     },
     {
         "en": "to cry",
@@ -350,7 +388,8 @@
             "emotion",
             "verb"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "2391671325"
     },
     {
         "en": "eye",
@@ -359,7 +398,8 @@
             "head",
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "1251162784"
     },
     {
         "en": "eyes",
@@ -368,7 +408,8 @@
             "head",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2307829526"
     },
     {
         "en": "moustache",
@@ -377,7 +418,8 @@
             "head",
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "521789202"
     },
     {
         "en": "complexion",
@@ -386,7 +428,8 @@
             "head",
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "118209781"
     },
     {
         "en": "appearance",
@@ -395,7 +438,8 @@
             "head",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3778309243"
     },
     {
         "en": "forehead",
@@ -404,7 +448,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) -nau"
+        "notes": "(m) -nau",
+        "id": "1719368594"
     },
     {
         "en": "to burst into tears",
@@ -414,7 +459,8 @@
             "phrase",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3351784576"
     },
     {
         "en": "nose",
@@ -423,7 +469,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "2238947050"
     },
     {
         "en": "to cry",
@@ -432,7 +479,8 @@
             "emotion",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "199980848"
     },
     {
         "en": "face",
@@ -441,7 +489,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "3984129021"
     },
     {
         "en": "face to face",
@@ -449,7 +498,8 @@
         "tags": [
             "phrase"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3858863605"
     },
     {
         "en": "to face",
@@ -457,7 +507,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2467776369"
     },
     {
         "en": "to yawn",
@@ -465,7 +516,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2929054681"
     },
     {
         "en": "to clear my throat",
@@ -474,7 +526,8 @@
             "phrase",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2783642516"
     },
     {
         "en": "mouth",
@@ -483,7 +536,8 @@
             "head",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1330522564"
     },
     {
         "en": "windpipe",
@@ -492,7 +546,8 @@
             "head",
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "3350031516"
     },
     {
         "en": "hoarse",
@@ -501,7 +556,8 @@
             "medical",
             "sore"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "240561051"
     },
     {
         "en": "kiss",
@@ -510,7 +566,8 @@
             "head",
             "love"
         ],
-        "notes": "(f/m) -au"
+        "notes": "(f/m) -au",
+        "id": "476224186"
     },
     {
         "en": "to kiss",
@@ -520,7 +577,8 @@
             "head",
             "love"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "749301959"
     },
     {
         "en": "tooth",
@@ -529,7 +587,8 @@
             "head",
             "dental"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "579998835"
     },
     {
         "en": "teeth",
@@ -538,7 +597,8 @@
             "head",
             "dental"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2741496320"
     },
     {
         "en": "false teeth",
@@ -547,7 +607,8 @@
             "head",
             "dental"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "3640342503"
     },
     {
         "en": "false teeth",
@@ -556,7 +617,8 @@
             "head",
             "dental"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "1513609520"
     },
     {
         "en": "toothache",
@@ -565,7 +627,8 @@
             "head",
             "dental"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "2431149287"
     },
     {
         "en": "dentist",
@@ -574,7 +637,8 @@
             "dental",
             "occupation"
         ],
-        "notes": "(m) -ion"
+        "notes": "(m) -ion",
+        "id": "849930272"
     },
     {
         "en": "sore throat",
@@ -583,7 +647,8 @@
             "dental",
             "medical"
         ],
-        "notes": "(m)(NW)"
+        "notes": "(m)(NW)",
+        "id": "143410646"
     },
     {
         "en": "to dribble",
@@ -593,7 +658,8 @@
             "medical",
             "verb"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "3086829548"
     },
     {
         "en": "to dribble",
@@ -603,7 +669,8 @@
             "medical",
             "verb"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "2482410173"
     },
     {
         "en": "nape of the neck",
@@ -611,7 +678,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f/m) -rau"
+        "notes": "(f/m) -rau",
+        "id": "3721581550"
     },
     {
         "en": "neck / throat",
@@ -619,7 +687,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) gyddau"
+        "notes": "(m) gyddau",
+        "id": "1230191010"
     },
     {
         "en": "sore throat",
@@ -628,7 +697,8 @@
             "body",
             "medical"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "2041602845"
     },
     {
         "en": "lip",
@@ -636,7 +706,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "295852786"
     },
     {
         "en": "hiccup",
@@ -644,7 +715,8 @@
         "tags": [
             "medical"
         ],
-        "notes": "(m) -ion"
+        "notes": "(m) -ion",
+        "id": "2406620696"
     },
     {
         "en": "to hiccup",
@@ -653,7 +725,8 @@
             "medical",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "435293673"
     },
     {
         "en": "filling",
@@ -662,7 +735,8 @@
             "dental",
             "medical"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "1982709320"
     },
     {
         "en": "throat",
@@ -670,7 +744,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) (SW)"
+        "notes": "(m) (SW)",
+        "id": "3886747053"
     },
     {
         "en": "sore throat",
@@ -679,7 +754,8 @@
             "medical",
             "body"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "4002395665"
     },
     {
         "en": "to lick",
@@ -687,7 +763,8 @@
         "tags": [
             "verb"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "1664063485"
     },
     {
         "en": "to swallow",
@@ -695,7 +772,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3886647710"
     },
     {
         "en": "sigh",
@@ -703,7 +781,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) ochenneidiau"
+        "notes": "(f) ochenneidiau",
+        "id": "2311525135"
     },
     {
         "en": "to sigh",
@@ -712,7 +791,8 @@
             "verb",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2125874122"
     },
     {
         "en": "cough",
@@ -722,7 +802,8 @@
             "head",
             "medical"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "2019085769"
     },
     {
         "en": "to cough",
@@ -733,7 +814,8 @@
             "body",
             "medical"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "564973354"
     },
     {
         "en": "saliva",
@@ -743,7 +825,8 @@
             "body",
             "medical"
         ],
-        "notes": "(m) -ion"
+        "notes": "(m) -ion",
+        "id": "3632576744"
     },
     {
         "en": "to spit",
@@ -753,7 +836,8 @@
             "body",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3966718661"
     },
     {
         "en": "fit of coughing",
@@ -763,7 +847,8 @@
             "body",
             "medical"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "2294101325"
     },
     {
         "en": "fits of coughing",
@@ -773,7 +858,8 @@
             "body",
             "medical"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "266808033"
     },
     {
         "en": "kiss",
@@ -783,7 +869,8 @@
             "body",
             "emotion"
         ],
-        "notes": "(f) -ys (dom)"
+        "notes": "(f) -ys (dom)",
+        "id": "1330600395"
     },
     {
         "en": "tongue",
@@ -792,7 +879,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "899337985"
     },
     {
         "en": "double chin",
@@ -801,7 +889,8 @@
             "head",
             "body"
         ],
-        "notes": "(f) -au tegyll"
+        "notes": "(f) -au tegyll",
+        "id": "1896702929"
     },
     {
         "en": "to choke",
@@ -812,7 +901,8 @@
             "medical",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3558089744"
     },
     {
         "en": "to sneeze",
@@ -823,7 +913,8 @@
             "medical",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1188154295"
     },
     {
         "en": "echo",
@@ -831,7 +922,8 @@
         "tags": [
             "sound"
         ],
-        "notes": "(m) adleisiau"
+        "notes": "(m) adleisiau",
+        "id": "1606839181"
     },
     {
         "en": "to echo",
@@ -840,7 +932,8 @@
             "sound",
             "verb"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "2226184432"
     },
     {
         "en": "in speech (orally)",
@@ -849,7 +942,8 @@
             "sound",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1190873661"
     },
     {
         "en": "to stutter",
@@ -859,7 +953,8 @@
             "speech",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3973314995"
     },
     {
         "en": "to answer",
@@ -869,7 +964,8 @@
             "speech",
             "verb"
         ],
-        "notes": "(m) -ion"
+        "notes": "(m) -ion",
+        "id": "2997135054"
     },
     {
         "en": "echo",
@@ -877,7 +973,8 @@
         "tags": [
             "sound"
         ],
-        "notes": "(f) atseiniau"
+        "notes": "(f) atseiniau",
+        "id": "3112317638"
     },
     {
         "en": "to echo",
@@ -886,7 +983,8 @@
             "sound",
             "verb"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "1504306317"
     },
     {
         "en": "shout",
@@ -894,7 +992,8 @@
         "tags": [
             "sound"
         ],
-        "notes": "(f) -iau -iadau"
+        "notes": "(f) -iau -iadau",
+        "id": "1762445578"
     },
     {
         "en": "to shout",
@@ -903,7 +1002,8 @@
             "sound",
             "verb"
         ],
-        "notes": "-ian"
+        "notes": "-ian",
+        "id": "2050660273"
     },
     {
         "en": "lie",
@@ -911,7 +1011,8 @@
         "tags": [
             "speech"
         ],
-        "notes": "(m) -au clwyddau"
+        "notes": "(m) -au clwyddau",
+        "id": "1779208374"
     },
     {
         "en": "white lie",
@@ -919,7 +1020,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1692112257"
     },
     {
         "en": "to chatter",
@@ -928,7 +1030,8 @@
             "speech",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3046410414"
     },
     {
         "en": "to gossip",
@@ -937,7 +1040,8 @@
             "speech",
             "verb"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "3854085341"
     },
     {
         "en": "to gossip",
@@ -946,7 +1050,8 @@
             "speech",
             "verb"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "3726883609"
     },
     {
         "en": "to argue or fall out",
@@ -956,7 +1061,8 @@
             "verb",
             "emotion"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "3235486116"
     },
     {
         "en": "to meet",
@@ -964,7 +1070,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "825336031"
     },
     {
         "en": "to laugh",
@@ -973,7 +1080,8 @@
             "verb",
             "emotion"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2466083666"
     },
     {
         "en": "to laugh at someone",
@@ -983,7 +1091,8 @@
             "verb",
             "emotion"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2126365938"
     },
     {
         "en": "without mincing words",
@@ -992,7 +1101,8 @@
             "sound",
             "emotion"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2354741711"
     },
     {
         "en": "no communication between them",
@@ -1002,7 +1112,8 @@
             "sound",
             "emotion"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "967925343"
     },
     {
         "en": "silent",
@@ -1011,7 +1122,8 @@
             "sound",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "440251400"
     },
     {
         "en": "silence",
@@ -1020,7 +1132,8 @@
             "sound",
             "speech"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "103857802"
     },
     {
         "en": "to silence",
@@ -1030,7 +1143,8 @@
             "sound",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2668205923"
     },
     {
         "en": "to say",
@@ -1040,7 +1154,8 @@
             "sound",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2885474085"
     },
     {
         "en": "to lie",
@@ -1050,7 +1165,8 @@
             "sound",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "73033622"
     },
     {
         "en": "to tell",
@@ -1060,7 +1176,8 @@
             "sound",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "4087626630"
     },
     {
         "en": "to be unable to speak",
@@ -1070,7 +1187,8 @@
             "speech",
             "sound"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "2914948508"
     },
     {
         "en": "to argue or fall out",
@@ -1081,7 +1199,8 @@
             "sound",
             "emotion"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "4183281583"
     },
     {
         "en": "to roar with laughter",
@@ -1092,7 +1211,8 @@
             "sound",
             "emotion"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "111198448"
     },
     {
         "en": "to ask someone",
@@ -1102,7 +1222,8 @@
             "speech",
             "sound"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "792715339"
     },
     {
         "en": "demand or requirement",
@@ -1110,7 +1231,8 @@
         "tags": [
             "emotion"
         ],
-        "notes": "(m) -ion"
+        "notes": "(m) -ion",
+        "id": "1884930708"
     },
     {
         "en": "to order",
@@ -1119,7 +1241,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "725271738"
     },
     {
         "en": "command",
@@ -1127,7 +1250,8 @@
         "tags": [
             "verb"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "3867782600"
     },
     {
         "en": "cry",
@@ -1135,7 +1259,8 @@
         "tags": [
             "verb"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "2874256027"
     },
     {
         "en": "shout",
@@ -1143,7 +1268,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2844121304"
     },
     {
         "en": "to shout",
@@ -1151,7 +1277,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3434219394"
     },
     {
         "en": "to shout as loud as possible",
@@ -1159,7 +1286,8 @@
         "tags": [
             "speech"
         ],
-        "notes": "(esgyrn)"
+        "notes": "(esgyrn)",
+        "id": "950562674"
     },
     {
         "en": "to shout loudly",
@@ -1167,7 +1295,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2288069294"
     },
     {
         "en": "without saying a word",
@@ -1175,7 +1304,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1117491235"
     },
     {
         "en": "without a murmur",
@@ -1183,7 +1313,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2390359118"
     },
     {
         "en": "to gossip",
@@ -1191,7 +1322,8 @@
         "tags": [
             "verb"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "622171277"
     },
     {
         "en": "to gossip",
@@ -1199,7 +1331,8 @@
         "tags": [
             "verb"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "1413799194"
     },
     {
         "en": "eloquent",
@@ -1207,7 +1340,8 @@
         "tags": [
             "adjective"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2996911779"
     },
     {
         "en": "articulate",
@@ -1215,7 +1349,8 @@
         "tags": [
             "adjective"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2620806426"
     },
     {
         "en": "to joke",
@@ -1223,7 +1358,8 @@
         "tags": [
             "verb"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "3989387205"
     },
     {
         "en": "to joke",
@@ -1231,7 +1367,8 @@
         "tags": [
             "verb"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "1514151345"
     },
     {
         "en": "voice",
@@ -1239,7 +1376,8 @@
         "tags": [
             "sound"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "1826737304"
     },
     {
         "en": "voices",
@@ -1247,7 +1385,8 @@
         "tags": [
             "sound"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "2160404498"
     },
     {
         "en": "voice",
@@ -1256,7 +1395,8 @@
             "sound",
             "cry"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "3486386294"
     },
     {
         "en": "to cry",
@@ -1264,7 +1404,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1457417615"
     },
     {
         "en": "to shout",
@@ -1272,7 +1413,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3052081202"
     },
     {
         "en": "to speak",
@@ -1280,7 +1422,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1042443083"
     },
     {
         "en": "to utter",
@@ -1288,7 +1431,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2207965573"
     },
     {
         "en": "speaker",
@@ -1296,7 +1440,8 @@
         "tags": [
             "noun"
         ],
-        "notes": "(m) -ion"
+        "notes": "(m) -ion",
+        "id": "2771521147"
     },
     {
         "en": "to voice",
@@ -1304,7 +1449,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3364762413"
     },
     {
         "en": "to voice an opinion",
@@ -1312,7 +1458,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1685951590"
     },
     {
         "en": "to congratulate",
@@ -1321,7 +1468,8 @@
             "verb",
             "emotion"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1014954424"
     },
     {
         "en": "small talk",
@@ -1329,7 +1477,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "567943058"
     },
     {
         "en": "to be unable to speak",
@@ -1337,7 +1486,8 @@
         "tags": [
             "speech"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "3787168445"
     },
     {
         "en": "to fail to speak",
@@ -1345,7 +1495,8 @@
         "tags": [
             "speech"
         ],
-        "notes": "(NW)"
+        "notes": "(NW)",
+        "id": "3987930825"
     },
     {
         "en": "to express",
@@ -1354,7 +1505,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "4254599981"
     },
     {
         "en": "to lie non-stop",
@@ -1363,7 +1515,8 @@
             "speech",
             "emotion"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2853637948"
     },
     {
         "en": "emphasis",
@@ -1371,7 +1524,8 @@
         "tags": [
             ""
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "687016276"
     },
     {
         "en": "emphasis",
@@ -1379,7 +1533,8 @@
         "tags": [
             ""
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "3306501421"
     },
     {
         "en": "to lie non-stop",
@@ -1387,7 +1542,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "29554021"
     },
     {
         "en": "to emphasise",
@@ -1396,7 +1552,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2850424899"
     },
     {
         "en": "swear-word",
@@ -1404,7 +1561,8 @@
         "tags": [
             ""
         ],
-        "notes": "(f) -au -feydd"
+        "notes": "(f) -au -feydd",
+        "id": "1968738554"
     },
     {
         "en": "to swear",
@@ -1413,7 +1571,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3052077317"
     },
     {
         "en": "sound",
@@ -1421,7 +1580,8 @@
         "tags": [
             ""
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "3118098539"
     },
     {
         "en": "sounds",
@@ -1429,7 +1589,8 @@
         "tags": [
             ""
         ],
-        "notes": "(f) plural"
+        "notes": "(f) plural",
+        "id": "3900874679"
     },
     {
         "en": "to sound",
@@ -1440,7 +1601,8 @@
             "noise",
             "music"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1368481613"
     },
     {
         "en": "to scream",
@@ -1449,7 +1611,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "98666179"
     },
     {
         "en": "to chat",
@@ -1458,7 +1621,8 @@
             "verb",
             "speech"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "3853353469"
     },
     {
         "en": "to chat",
@@ -1467,7 +1631,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1422672489"
     },
     {
         "en": "to chat to",
@@ -1475,7 +1640,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2128606978"
     },
     {
         "en": "to speak to",
@@ -1483,7 +1649,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3612331512"
     },
     {
         "en": "to speak non-stop",
@@ -1491,7 +1658,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "4071796767"
     },
     {
         "en": "to jabber on",
@@ -1499,7 +1667,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1960423169"
     },
     {
         "en": "to speak rudely",
@@ -1507,7 +1676,8 @@
         "tags": [
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "56474204"
     },
     {
         "en": "talkative",
@@ -1515,7 +1685,8 @@
         "tags": [
             "adjective"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "976477642"
     },
     {
         "en": "speaker",
@@ -1523,7 +1694,8 @@
         "tags": [
             "noun"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "631436990"
     },
     {
         "en": "speaker",
@@ -1531,7 +1703,8 @@
         "tags": [
             "noun"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "176082124"
     },
     {
         "en": "to whispher",
@@ -1540,7 +1713,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "957133973"
     },
     {
         "en": "to mention",
@@ -1549,7 +1723,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1050518581"
     },
     {
         "en": "noise",
@@ -1557,7 +1732,8 @@
         "tags": [
             "sound"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1618742759"
     },
     {
         "en": "noisy",
@@ -1565,7 +1741,8 @@
         "tags": [
             "sound"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1995903524"
     },
     {
         "en": "noise",
@@ -1573,7 +1750,8 @@
         "tags": [
             ""
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "3098418560"
     },
     {
         "en": "to murmur",
@@ -1582,7 +1760,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2181945674"
     },
     {
         "en": "to grumble",
@@ -1591,7 +1770,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2547145452"
     },
     {
         "en": "to nag",
@@ -1600,7 +1780,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3578911010"
     },
     {
         "en": "to sound like",
@@ -1608,7 +1789,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "466581930"
     },
     {
         "en": "noisy",
@@ -1616,7 +1798,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3861180847"
     },
     {
         "en": "quiet",
@@ -1624,7 +1807,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "4106949229"
     },
     {
         "en": "calm",
@@ -1632,7 +1816,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2500542350"
     },
     {
         "en": "to be silent",
@@ -1640,7 +1825,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "4030506368"
     },
     {
         "en": "to interupt",
@@ -1648,7 +1834,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3371236134"
     },
     {
         "en": "to utter a word",
@@ -1656,7 +1843,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3337456387"
     },
     {
         "en": "to talk",
@@ -1665,7 +1853,8 @@
             "verb",
             "speech"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "1571807331"
     },
     {
         "en": "to answer",
@@ -1674,7 +1863,8 @@
             "verb",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3116154140"
     },
     {
         "en": "out of breath",
@@ -1682,7 +1872,8 @@
         "tags": [
             "saying"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1734600648"
     },
     {
         "en": "liver",
@@ -1690,7 +1881,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f/m) (SW)"
+        "notes": "(f/m) (SW)",
+        "id": "847248220"
     },
     {
         "en": "breath",
@@ -1698,7 +1890,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f/m) -au -on"
+        "notes": "(f/m) -au -on",
+        "id": "3112287668"
     },
     {
         "en": "to breath",
@@ -1707,7 +1900,8 @@
             "body",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2094056069"
     },
     {
         "en": "kidney",
@@ -1715,7 +1909,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -nau"
+        "notes": "(f) -nau",
+        "id": "4128973462"
     },
     {
         "en": "rib",
@@ -1723,7 +1918,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -nau"
+        "notes": "(f) -nau",
+        "id": "1940169754"
     },
     {
         "en": "bone",
@@ -1731,7 +1927,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "1114106878"
     },
     {
         "en": "spine",
@@ -1739,7 +1936,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2619088251"
     },
     {
         "en": "body hair",
@@ -1747,7 +1945,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "26024835"
     },
     {
         "en": "belly button",
@@ -1755,7 +1954,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f/m)"
+        "notes": "(f/m)",
+        "id": "2740102633"
     },
     {
         "en": "navels",
@@ -1763,7 +1963,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f/m)"
+        "notes": "(f/m)",
+        "id": "903692475"
     },
     {
         "en": "stomach",
@@ -1771,7 +1972,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) -iau"
+        "notes": "(m) -iau",
+        "id": "4196222872"
     },
     {
         "en": "stomach",
@@ -1779,7 +1981,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) (SW)"
+        "notes": "(m) (SW)",
+        "id": "2978728492"
     },
     {
         "en": "chest",
@@ -1787,7 +1990,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -iau"
+        "notes": "(f) -iau",
+        "id": "3726365446"
     },
     {
         "en": "breast",
@@ -1795,7 +1999,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -nau"
+        "notes": "(f) -nau",
+        "id": "2492592760"
     },
     {
         "en": "to get my breath back",
@@ -1805,7 +2010,8 @@
             "saying",
             "speech"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "497707457"
     },
     {
         "en": "heart",
@@ -1813,7 +2019,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "1112556072"
     },
     {
         "en": "back",
@@ -1821,7 +2028,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "202195098"
     },
     {
         "en": "armpit",
@@ -1829,7 +2037,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "2808267919"
     },
     {
         "en": "armpits",
@@ -1837,7 +2046,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "2642587173"
     },
     {
         "en": "under his arm",
@@ -1847,7 +2057,8 @@
             "speech",
             "saying"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "177299167"
     },
     {
         "en": "flesh",
@@ -1855,7 +2066,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "1467502335"
     },
     {
         "en": "flesh and blood",
@@ -1864,7 +2076,8 @@
             "body",
             "saying"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1241186372"
     },
     {
         "en": "flesh",
@@ -1872,7 +2085,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "1543977389"
     },
     {
         "en": "body",
@@ -1880,7 +2094,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "3993941224"
     },
     {
         "en": "physical",
@@ -1888,7 +2103,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2633552335"
     },
     {
         "en": "skin",
@@ -1896,7 +2112,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "1092204108"
     },
     {
         "en": "strong",
@@ -1904,7 +2121,8 @@
         "tags": [
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "889843748"
     },
     {
         "en": "strength",
@@ -1912,7 +2130,8 @@
         "tags": [
             ""
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "3531247159"
     },
     {
         "en": "heartbeat",
@@ -1920,7 +2139,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2461916808"
     },
     {
         "en": "pulse",
@@ -1928,7 +2148,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2955702868"
     },
     {
         "en": "muscle",
@@ -1936,7 +2157,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "709187431"
     },
     {
         "en": "muscular",
@@ -1944,7 +2166,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1220132121"
     },
     {
         "en": "stomach",
@@ -1952,7 +2175,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) (SW)"
+        "notes": "(m) (SW)",
+        "id": "2501072279"
     },
     {
         "en": "sweat",
@@ -1960,7 +2184,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "871159684"
     },
     {
         "en": "dripping with sweat",
@@ -1969,7 +2194,8 @@
             "body",
             "saying"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1789388435"
     },
     {
         "en": "to sweat",
@@ -1978,7 +2204,8 @@
             "verb",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "4196235081"
     },
     {
         "en": "to sweat buckets",
@@ -1987,7 +2214,8 @@
             "body",
             "saying"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3519705722"
     },
     {
         "en": "feeble",
@@ -1996,7 +2224,8 @@
             "saying",
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1298651229"
     },
     {
         "en": "bony",
@@ -2004,7 +2233,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2584690636"
     },
     {
         "en": "tendon",
@@ -2012,7 +2242,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) -nau gïau"
+        "notes": "(m) -nau gïau",
+        "id": "2903499317"
     },
     {
         "en": "blood",
@@ -2020,7 +2251,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "145740956"
     },
     {
         "en": "bloody",
@@ -2028,7 +2260,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3222508456"
     },
     {
         "en": "to bleed",
@@ -2037,7 +2270,8 @@
             "body",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3018021297"
     },
     {
         "en": "waist",
@@ -2045,7 +2279,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) -au -oedd"
+        "notes": "(m) -au -oedd",
+        "id": "228239013"
     },
     {
         "en": "weakness",
@@ -2053,7 +2288,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) -au"
+        "notes": "(m) -au",
+        "id": "3215007614"
     },
     {
         "en": "breath",
@@ -2061,7 +2297,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "169874109"
     },
     {
         "en": "vein",
@@ -2069,7 +2306,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -nau"
+        "notes": "(f) -nau",
+        "id": "1362156447"
     },
     {
         "en": "liver",
@@ -2077,7 +2315,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) (NW)"
+        "notes": "(m) (NW)",
+        "id": "217691975"
     },
     {
         "en": "birth mark",
@@ -2085,7 +2324,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "2757121617"
     },
     {
         "en": "bosom",
@@ -2093,7 +2333,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "1848607603"
     },
     {
         "en": "nerve",
@@ -2101,7 +2342,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "3258252417"
     },
     {
         "en": "strength",
@@ -2109,7 +2351,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "2199069556"
     },
     {
         "en": "physical force",
@@ -2117,7 +2360,8 @@
         "tags": [
             ""
         ],
-        "notes": ""
+        "notes": "",
+        "id": "4093573468"
     },
     {
         "en": "bare",
@@ -2125,7 +2369,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3327741798"
     },
     {
         "en": "nude",
@@ -2133,7 +2378,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1897284683"
     },
     {
         "en": "intestine",
@@ -2141,7 +2387,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) -ion"
+        "notes": "(m) -ion",
+        "id": "2719035668"
     },
     {
         "en": "artery",
@@ -2149,7 +2396,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m) rhydwelïau"
+        "notes": "(m) rhydwelïau",
+        "id": "4248908253"
     },
     {
         "en": "digestion",
@@ -2157,7 +2405,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f)"
+        "notes": "(f)",
+        "id": "1015805843"
     },
     {
         "en": "i've got indigestion",
@@ -2166,7 +2415,8 @@
             "body",
             "saying"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "4261532636"
     },
     {
         "en": "i've got indigestion",
@@ -2175,7 +2425,8 @@
             "body",
             "saying"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "2215359764"
     },
     {
         "en": "i've got indigestion",
@@ -2184,7 +2435,8 @@
             "body",
             "saying"
         ],
-        "notes": "(SW)"
+        "notes": "(SW)",
+        "id": "307232369"
     },
     {
         "en": "to digest",
@@ -2193,7 +2445,8 @@
             "body",
             "verb"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "967090122"
     },
     {
         "en": "skeleton",
@@ -2201,7 +2454,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(m)"
+        "notes": "(m)",
+        "id": "2696691852"
     },
     {
         "en": "skeletons",
@@ -2210,7 +2464,8 @@
             "body",
             "plural"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3074301811"
     },
     {
         "en": "shoulder",
@@ -2218,7 +2473,8 @@
         "tags": [
             "body"
         ],
-        "notes": "(f) -au"
+        "notes": "(f) -au",
+        "id": "3588940681"
     },
     {
         "en": "lungs",
@@ -2226,7 +2482,8 @@
         "tags": [
             "body"
         ],
-        "notes": "plural"
+        "notes": "plural",
+        "id": "175995263"
     },
     {
         "en": "side",
@@ -2234,7 +2491,8 @@
         "tags": [
             "body"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "1941791497"
     },
     {
         "en": "i've got a stitch",
@@ -2243,6 +2501,7 @@
             "body",
             "saying"
         ],
-        "notes": ""
+        "notes": "",
+        "id": "3789290715"
     }
 ]

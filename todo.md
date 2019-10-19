@@ -15,6 +15,11 @@
 + ~~Add currently indexed locations to submit map with discrete icon~~
 + Add a submission to the local state
 
+### Vocabulary
+
++ Complete vocabulary translation and listing
++ ~~Pre compute hash for translation units to reduce unique key generation on each render~~
+
 #### Logic
 
 + ~~Implement search from the home page~~ ✓

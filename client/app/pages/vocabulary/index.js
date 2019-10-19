@@ -3,7 +3,7 @@ import React from "react";
 import PageContainer from "../../page-content";
 import PageHeader from "../../resusable-components/page-header";
 import VocabSearch from "./vocab-search";
-import hash from "../../core/hash";
+
 import geirfaData from "./geirfa.json";
 import makeGeirfa from "../../core/model/geirfa";
 import eventTargetValue from "../../core/event-target-value";
@@ -36,7 +36,7 @@ class Vocabulary extends React.Component {
 
         const lines = this.state.units.map(function (unit) {
             return (
-                <tr key={hash(unit)}>
+                <tr key={unit.id}>
                     <td>{unit.en}</td>
                     <td>{unit.cy}</td>
                     <td>{unit.notes}</td>

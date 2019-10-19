@@ -1,10 +1,26 @@
 /* global describe it */
 
 const expect = require("chai").expect;
+
+const geirfaJson = require("../client/app/pages/vocabulary/geirfa.json");
+
 const makeGeirfa = require("../client/app/core/model/geirfa").default;
 const unitsEqual = require("../client/app/core/model/geirfa").unitsEqual;
 const unitContainsText = require("../client/app/core/model/geirfa").unitContainsText;
 const trim = require("../client/app/core/model/geirfa").trim;
+
+const hash = function (obj) {
+    let string = JSON.stringify(obj);
+
+    var hash = 5381,
+        i = string.length;
+
+    while (i) {
+        hash = (hash * 33) ^ string.charCodeAt(--i);
+    }
+
+    return `${hash >>> 0}`;
+};
 
 const geirfaData = [
     {
@@ -35,9 +51,45 @@ const geirfaData = [
         ],
         "notes": "(m) -au"
     }
+].map(unit => Object.assign({}, unit, { id: hash(unit) }));
+
+const requiredKeys = [
+    "en", "cy", "tags", "notes", "id"
 ];
 
 describe("geirfa", function () {
+
+    describe("geirfa.json", function () {
+
+        it("has all objects with required keys", function () {
+
+            geirfaJson.forEach(unit => {
+                
+                requiredKeys.forEach(key => {
+                    expect(unit.hasOwnProperty(key)).to.be.true;
+                });
+
+            });
+
+        });
+
+    });
+
+    describe("test data", function() {
+
+        it("has all objects with required keys", function () {
+
+            geirfaData.forEach(unit => {
+                
+                requiredKeys.forEach(key => {
+                    expect(unit.hasOwnProperty(key)).to.be.true;
+                });
+
+            });
+
+        });
+
+    });
 
     describe("all", function () {
 
@@ -77,7 +129,7 @@ describe("geirfa", function () {
 
         });
 
-        it("matches removing whitespace", function() {
+        it("matches removing whitespace", function () {
 
             const geirfa = makeGeirfa(geirfaData);
 
@@ -222,9 +274,9 @@ describe("geirfa", function () {
 
     });
 
-    describe("remove-whitespace", function() {
+    describe("remove-whitespace", function () {
 
-        it("does not mangle text", function() {
+        it("does not mangle text", function () {
 
             const sample = "This is the sample";
             const trimmed = trim(sample);
@@ -233,7 +285,7 @@ describe("geirfa", function () {
 
         });
 
-        it("removes all whitespace", function() {
+        it("removes all whitespace", function () {
 
             const sample = " This is the sample ";
             const trimmed = trim(sample);
