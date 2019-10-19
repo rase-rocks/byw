@@ -6,6 +6,8 @@ const numbersRe = /[^0-9]+/g;
 const coordinateHashRe = /^[a-z|0-9]{5,15}$/;
 const coordinateDecimalPart = /\d+/g;
 const tidySVGRe = / {2,}|\n/g;
+const whitespaceStartRe = /^\s\s*/;
+const whitespaceEndRe = /\s\s*$/;
 
 export { 
     postcodeRe, 
@@ -15,5 +17,7 @@ export {
     numbersRe,
     coordinateHashRe,
     coordinateDecimalPart,
-    tidySVGRe
+    tidySVGRe,
+    whitespaceStartRe,
+    whitespaceEndRe
 };

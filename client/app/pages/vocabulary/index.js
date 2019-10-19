@@ -2,15 +2,41 @@ import React from "react";
 
 import PageContainer from "../../page-content";
 import PageHeader from "../../resusable-components/page-header";
+import VocabSearch from "./vocab-search";
+import hash from "../../core/hash";
+import geirfaData from "./geirfa.json";
+import makeGeirfa from "../../core/model/geirfa";
+import eventTargetValue from "../../core/event-target-value";
 
-import geirfa from "./geirfa.json";
+const evt = eventTargetValue();
+const geirfa = makeGeirfa(geirfaData);
 
 class Vocabulary extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            units: geirfa.all(),
+            searchText: ""
+        };
+    }
+
+    makeOnChange() {
+
+        const self = this;
+
+        return function (e) {
+            const searchText = evt(e);
+            const units = geirfa.findMatches(searchText);
+            self.setState({ units, searchText });
+        };
+    }
+
     render() {
 
-        const lines = geirfa.map(function(unit) {
+        const lines = this.state.units.map(function (unit) {
             return (
-                <tr key={JSON.stringify(unit)}>
+                <tr key={hash(unit)}>
                     <td>{unit.en}</td>
                     <td>{unit.cy}</td>
                     <td>{unit.notes}</td>
@@ -21,12 +47,13 @@ class Vocabulary extends React.Component {
         return (
             <PageContainer>
 
-
                 <PageHeader>
                     Vocabulary
                 </PageHeader>
 
-                <p>{geirfa.length} phrases and words</p>
+                <VocabSearch onChange={this.makeOnChange()} value={this.state.searchText} />
+
+                <p>{this.state.units.length} phrases and words found</p>
 
                 <table className="table">
                     <tbody>
@@ -43,7 +70,7 @@ class Vocabulary extends React.Component {
                         </tr>
                         {lines}
                     </tbody>
-                    
+
                 </table>
 
 

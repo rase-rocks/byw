@@ -15,7 +15,7 @@ class HomeController extends React.Component {
         };
     }
 
-    componentWillReceiveProps(newProps) {
+    UNSAFE_componentWillReceiveProps(newProps) {
         const location = arraySample(newProps.locations);
         this.setState({ featuredLocation: location });
     }
