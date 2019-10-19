@@ -1120,5 +1120,1129 @@
             "speech"
         ],
         "notes": ""
+    },
+    {
+        "en": "command",
+        "cy": "gorchymynion",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "cry",
+        "cy": "gwaedd",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "shout",
+        "cy": "gwaedd",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to shout",
+        "cy": "gweiddi",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to shout as loud as possible",
+        "cy": "gweiddi nerth (esgyrn) fy mhen",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(esgyrn)"
+    },
+    {
+        "en": "to shout loudly",
+        "cy": "gweiddi yn uchel",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "without saying a word",
+        "cy": "heb ddweud na bw na be'",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "without a murmur",
+        "cy": "heb na siw na miw",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to gossip",
+        "cy": "hel clecs",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to gossip",
+        "cy": "hel straeon",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "eloquent",
+        "cy": "huawdl",
+        "tags": [
+            "adjective"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "articulate",
+        "cy": "huawdl",
+        "tags": [
+            "adjective"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to joke",
+        "cy": "jocan",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to joke",
+        "cy": "jocio",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "voice",
+        "cy": "llais",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "voices",
+        "cy": "lleisiau",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "voice",
+        "cy": "llef",
+        "tags": [
+            "sound",
+            "cry"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "to cry",
+        "cy": "llefain",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to shout",
+        "cy": "llefain",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to speak",
+        "cy": "llefaru",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to utter",
+        "cy": "llefaru",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "speaker",
+        "cy": "llefarydd",
+        "tags": [
+            "noun"
+        ],
+        "notes": "(m) -ion"
+    },
+    {
+        "en": "to voice",
+        "cy": "lleisio",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to voice an opinion",
+        "cy": "lleisio barn",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to congratulate",
+        "cy": "llonggyfarch",
+        "tags": [
+            "verb",
+            "emotion"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "small talk",
+        "cy": "mân siarad",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to be unable to speak",
+        "cy": "methu siarad",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "to fail to speak",
+        "cy": "methu siarad",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(NW)"
+    },
+    {
+        "en": "to express",
+        "cy": "mynegi",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to lie non-stop",
+        "cy": "palu celwyddau",
+        "tags": [
+            "speech",
+            "emotion"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "emphasis",
+        "cy": "pwyslais",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "emphasis",
+        "cy": "pwysleisiau",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "to lie non-stop",
+        "cy": "rhaffu celwyddau",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to emphasise",
+        "cy": "pwysleisio",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "swear-word",
+        "cy": "rheg",
+        "tags": [
+            ""
+        ],
+        "notes": "(f) -au -feydd"
+    },
+    {
+        "en": "to swear",
+        "cy": "rhegi",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "sound",
+        "cy": "sain",
+        "tags": [
+            ""
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "sounds",
+        "cy": "seiniau",
+        "tags": [
+            ""
+        ],
+        "notes": "(f) plural"
+    },
+    {
+        "en": "to sound",
+        "cy": "seinio",
+        "tags": [
+            "verb",
+            "speech",
+            "noise",
+            "music"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to scream",
+        "cy": "sgrechain",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to chat",
+        "cy": "sgwrs",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "to chat",
+        "cy": "sgyrsiau",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to chat to",
+        "cy": "sgwrsio â",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to speak to",
+        "cy": "siarad â",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to speak non-stop",
+        "cy": "siarad fel melin",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to jabber on",
+        "cy": "pwll y môr",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to speak rudely",
+        "cy": "siarad yn hyll",
+        "tags": [
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "talkative",
+        "cy": "siaradus",
+        "tags": [
+            "adjective"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "speaker",
+        "cy": "siaradwr",
+        "tags": [
+            "noun"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "speaker",
+        "cy": "siaradwyr",
+        "tags": [
+            "noun"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "to whispher",
+        "cy": "sibrwd",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to mention",
+        "cy": "sôn",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "noise",
+        "cy": "stŵr",
+        "tags": [
+            "sound"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "noisy",
+        "cy": "stwrllyd",
+        "tags": [
+            "sound"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "noise",
+        "cy": "sŵn",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "to murmur",
+        "cy": "swnian",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to grumble",
+        "cy": "swnian",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to nag",
+        "cy": "swnian",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to sound like",
+        "cy": "swnio fel",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "noisy",
+        "cy": "swnllyd",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "quiet",
+        "cy": "tawel",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "calm",
+        "cy": "tawelwch",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to be silent",
+        "cy": "tewi",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to interupt",
+        "cy": "torri ar draws",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to utter a word",
+        "cy": "torri gair",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to talk",
+        "cy": "whilia",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to answer",
+        "cy": "ymateb",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "out of breath",
+        "cy": "â'm gwynt yn fy nwrn",
+        "tags": [
+            "saying"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "liver",
+        "cy": "afu",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m) (SW)"
+    },
+    {
+        "en": "breath",
+        "cy": "anadl",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m) -au -on"
+    },
+    {
+        "en": "to breath",
+        "cy": "anadlu",
+        "tags": [
+            "body",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "kidney",
+        "cy": "aren",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -nau"
+    },
+    {
+        "en": "rib",
+        "cy": "asen",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -nau"
+    },
+    {
+        "en": "bone",
+        "cy": "asgwrn",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "spine",
+        "cy": "asgwrn cefn",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "body hair",
+        "cy": "blewyn",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "belly button",
+        "cy": "bogail",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m)"
+    },
+    {
+        "en": "navels",
+        "cy": "bogeiliau",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m)"
+    },
+    {
+        "en": "stomach",
+        "cy": "bol",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -iau"
+    },
+    {
+        "en": "stomach",
+        "cy": "bola",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)"
+    },
+    {
+        "en": "chest",
+        "cy": "brest",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -iau"
+    },
+    {
+        "en": "breast",
+        "cy": "bron",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -nau"
+    },
+    {
+        "en": "to get my breath back",
+        "cy": "cael fy ngwynt ataf i",
+        "tags": [
+            "body",
+            "saying",
+            "speech"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "heart",
+        "cy": "calon",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "back",
+        "cy": "cefn",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "armpit",
+        "cy": "cesail",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "armpits",
+        "cy": "ceseiliau",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "under his arm",
+        "cy": "dan ei gesail",
+        "tags": [
+            "body",
+            "speech",
+            "saying"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "flesh",
+        "cy": "cig",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "flesh and blood",
+        "cy": "cig a gwaed",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "flesh",
+        "cy": "cnawd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "body",
+        "cy": "corff",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "physical",
+        "cy": "corfforol",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "skin",
+        "cy": "croen",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "strong",
+        "cy": "cryf",
+        "tags": [
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "strength",
+        "cy": "cryfder",
+        "tags": [
+            ""
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "heartbeat",
+        "cy": "curiad y galon",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "pulse",
+        "cy": "curiad y gwaed",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "muscle",
+        "cy": "cyhyr",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "muscular",
+        "cy": "cyhyrog",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "stomach",
+        "cy": "cylla",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)"
+    },
+    {
+        "en": "sweat",
+        "cy": "chwys",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "dripping with sweat",
+        "cy": "chwys diferyd",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to sweat",
+        "cy": "chwysu",
+        "tags": [
+            "verb",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to sweat buckets",
+        "cy": "chwysu chwartiau",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "feeble",
+        "cy": "di-asgwrn-cefn",
+        "tags": [
+            "saying",
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "bony",
+        "cy": "esgyrnog",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "tendon",
+        "cy": "gewyn",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -nau gïau"
+    },
+    {
+        "en": "blood",
+        "cy": "gwaed",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "bloody",
+        "cy": "gwaedlyd",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "to bleed",
+        "cy": "gwaedu",
+        "tags": [
+            "body",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "waist",
+        "cy": "gwasg",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -au -oedd"
+    },
+    {
+        "en": "weakness",
+        "cy": "gwendid",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -au"
+    },
+    {
+        "en": "breath",
+        "cy": "gwynt",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "vein",
+        "cy": "gwythïen",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -nau"
+    },
+    {
+        "en": "liver",
+        "cy": "iau",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (NW)"
+    },
+    {
+        "en": "birth mark",
+        "cy": "man geni",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "bosom",
+        "cy": "mynwes",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "nerve",
+        "cy": "nerf",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "strength",
+        "cy": "nerth",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "physical force",
+        "cy": "nerth bôn braich",
+        "tags": [
+            ""
+        ],
+        "notes": ""
+    },
+    {
+        "en": "bare",
+        "cy": "noeth",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "nude",
+        "cy": "noethlymun",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "intestine",
+        "cy": "perfedd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -ion"
+    },
+    {
+        "en": "artery",
+        "cy": "rhydweli",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) rhydwelïau"
+    },
+    {
+        "en": "digestion",
+        "cy": "traul",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)"
+    },
+    {
+        "en": "i've got indigestion",
+        "cy": "mae diffyg traul arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "i've got indigestion",
+        "cy": "mae dŵr poeth arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "i've got indigestion",
+        "cy": "mae llosg cylia arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "(SW)"
+    },
+    {
+        "en": "to digest",
+        "cy": "treulio",
+        "tags": [
+            "body",
+            "verb"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "skeleton",
+        "cy": "ysgerbwd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)"
+    },
+    {
+        "en": "skeletons",
+        "cy": "ysgerbydau",
+        "tags": [
+            "body",
+            "plural"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "shoulder",
+        "cy": "ysgwydd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au"
+    },
+    {
+        "en": "lungs",
+        "cy": "ysgyfaint",
+        "tags": [
+            "body"
+        ],
+        "notes": "plural"
+    },
+    {
+        "en": "side",
+        "cy": "ystlys",
+        "tags": [
+            "body"
+        ],
+        "notes": ""
+    },
+    {
+        "en": "i've got a stitch",
+        "cy": "mae gen i bigyn yn fy ystlys",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": ""
     }
 ]
