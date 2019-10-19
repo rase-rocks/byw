@@ -111,6 +111,25 @@ The build script also browserifies the client app and bundles it as well as copy
 
 There is an eslintrc file included to enforce style guidlines.
 
+### Vocabulary Page
+
+A current work in progress is the Vocab page. When complete it is will be a searchable vocabulary list of commonly used terms. The page is currently simply a list of all the vocab I have translated so far. The search functionality is relatively trivial and will be implemented when the translating is done.
+
+#### Adding to the vocab list
+
+To make the translation process easier, the working file for the vocab is 'geirfa.csv'. It is a csv file so it can be easily edited either in a text editor (the recommended way, but use something like Visual Studio Code / Atom / Vim / gEdit etc, Word or similar wont work), or even a spreadsheet if it gets too large to manipulate, by hand, in a text editor.
+
+There is an npm script to take the csv file, convert it to json and copy it over to the correct folder in the client app folder structure. When the client app is built the whole json object is imported, hence the search facility will be easy to implement. If later this approach proves too naive (probably due to file size), then another option can be looked at. Probably a script to upload the json to DynamoDB and an api call to download parts of the data as needed. It could then perhaps be serialized and cached away in web LocalStorage to cut down on download bandwidth / time.
+
+After making changes to geirfa.csv run
+
+```
+npm run make-geirfa
+```
+
+If there is a problem with the csv file the script will complain. Remember its comma separated, so no commas in notes and if there are no notes a trailing comma is still required. Again, VS Code is recommended with a syntax highlighting extension as it makes this really easy to spot.
+
+
 ### Dependencies
 
 External services that the app fetches out to
