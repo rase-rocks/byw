@@ -21,44 +21,69 @@ function trim(str) {
 
 function json(csv) {
 
-    var lines = csv.split("\n");
+    return new Promise(function (resolve) {
 
-    var result = [];
+        var lines = csv.split("\n");
 
-    var headers = lines[0].split(",");
+        var result = [];
 
-    for (var i = 1; i < lines.length; i++) {
+        var headers = lines[0].split(",");
 
-        var obj = {};
-        var currentLine = lines[i].split(",");
+        for (var i = 1; i < lines.length; i++) {
 
-        for (var j = 0; j < headers.length; j++) {
+            var obj = {};
+            var currentLine = lines[i].split(",");
 
-            const header = headers[j];
-            const line = currentLine[j];
+            for (var j = 0; j < headers.length; j++) {
 
-            if (line == "undefined") {
-                console.warn("Missing ${header}");
-            } else {
+                const header = headers[j];
+                const line = currentLine[j];
 
-                obj[header] = header != "tags" 
-                    ? trim(line) 
-                    : trim(line).split(" ");
+                if (line == "undefined") {
+
+                    console.warn(`Missing ${header}`);
+
+                } else {
+
+                    obj[header] = header != "tags"
+                        ? trim(line)
+                        : trim(line).split(" ");
+
+                }
 
             }
 
-            
+            obj.id = hash(obj);
+
+            result.push(obj);
+
         }
 
-        obj.id = hash(obj);
+        resolve(result);
 
-        result.push(obj);
+    });
 
-    }
-    return JSON.stringify(result, null, 4);
 }
 
-const csv = fs.readFileSync("./vocab-store/geirfa.csv").toString();
-const data = json(csv);
+function sortArray(array) {
+    return new Promise(function (resolve) {
+        const sorted = array.sort((el, el2) => { return el.en < el2.en ? -1 : 1; });
+        resolve(sorted);
+    });
+}
 
-console.log(data);
+function toString(jsonObj) {
+    return new Promise(function (resolve) {
+        resolve(JSON.stringify(jsonObj, null, 4));
+    });
+}
+
+// const thisFolder = "./geirfa.csv";
+const parentFolder = "./vocab-store/geirfa.csv";
+
+const csv = fs.readFileSync(parentFolder).toString();
+
+json(csv)
+    .then(sortArray)
+    .then(toString)
+    .then(console.log);

@@ -1,66 +1,68 @@
 [
     {
-        "en": "dandruff",
-        "cy": "cen",
-        "tags": [
-            "head",
-            "body",
-            "hair"
-        ],
-        "notes": "(pl)",
-        "id": "2637529837"
-    },
-    {
-        "en": "ear",
-        "cy": "clust",
+        "en": "appearance",
+        "cy": "pryd a gwedd",
         "tags": [
             "head",
             "body"
         ],
-        "notes": "(f/m) -iau",
-        "id": "4135152496"
+        "notes": "",
+        "id": "3778309243"
     },
     {
-        "en": "crown of head",
-        "cy": "corun",
+        "en": "armpit",
+        "cy": "cesail",
         "tags": [
-            "head",
+            "body"
+        ],
+        "notes": "(f)",
+        "id": "2808267919"
+    },
+    {
+        "en": "armpits",
+        "cy": "ceseiliau",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)",
+        "id": "2642587173"
+    },
+    {
+        "en": "artery",
+        "cy": "rhydweli",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) rhydwelïau",
+        "id": "4248908253"
+    },
+    {
+        "en": "articulate",
+        "cy": "huawdl",
+        "tags": [
+            "adjective"
+        ],
+        "notes": "",
+        "id": "2620806426"
+    },
+    {
+        "en": "as white as a sheet",
+        "cy": "gwelw fel y galchen",
+        "tags": [
+            "medical",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "173771547"
+    },
+    {
+        "en": "back",
+        "cy": "cefn",
+        "tags": [
             "body"
         ],
         "notes": "(m) -au",
-        "id": "4010384760"
-    },
-    {
-        "en": "headache",
-        "cy": "cur yn y pen",
-        "tags": [
-            "head",
-            "body",
-            "medical"
-        ],
-        "notes": "(NW)",
-        "id": "3494104967"
-    },
-    {
-        "en": "headache",
-        "cy": "pen tost",
-        "tags": [
-            "head",
-            "body",
-            "medical"
-        ],
-        "notes": "(SW)",
-        "id": "1912835596"
-    },
-    {
-        "en": "hair",
-        "cy": "gwallt",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m) -au",
-        "id": "4289530188"
+        "id": "202195098"
     },
     {
         "en": "bald",
@@ -74,64 +76,114 @@
         "id": "3390352073"
     },
     {
-        "en": "from head to toe",
-        "cy": "o'm corun i'm sawdl",
+        "en": "bare",
+        "cy": "noeth",
         "tags": [
-            "phrase"
+            "body"
         ],
         "notes": "",
-        "id": "2094443698"
+        "id": "3327741798"
     },
     {
-        "en": "head",
-        "cy": "pen",
+        "en": "beard",
+        "cy": "locsyn",
         "tags": [
             "head",
             "body"
         ],
-        "notes": "",
-        "id": "1586877117"
+        "notes": "(m) (NW)",
+        "id": "3517150318"
     },
     {
-        "en": "face",
-        "cy": "wyneb",
+        "en": "beard",
+        "cy": "barf",
         "tags": [
             "head",
             "body"
-        ],
-        "notes": "",
-        "id": "1385153992"
-    },
-    {
-        "en": "skull",
-        "cy": "penglog",
-        "tags": [
-            "head",
-            "body",
-            "medical"
         ],
         "notes": "(f) -au",
-        "id": "1768151650"
+        "id": "4226244055"
     },
     {
-        "en": "parting (hair)",
-        "cy": "rhesen",
+        "en": "belly button",
+        "cy": "bogail",
         "tags": [
-            "head",
             "body"
         ],
-        "notes": "(f) (NW)",
-        "id": "3397742418"
+        "notes": "(f/m)",
+        "id": "2740102633"
     },
     {
-        "en": "parting (hair)",
-        "cy": "rhaniad",
+        "en": "birth mark",
+        "cy": "man geni",
         "tags": [
-            "head",
             "body"
         ],
-        "notes": "(f) (SW)",
-        "id": "3905809969"
+        "notes": "(m)",
+        "id": "2757121617"
+    },
+    {
+        "en": "blood",
+        "cy": "gwaed",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "145740956"
+    },
+    {
+        "en": "bloody",
+        "cy": "gwaedlyd",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "3222508456"
+    },
+    {
+        "en": "body",
+        "cy": "corff",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "3993941224"
+    },
+    {
+        "en": "body hair",
+        "cy": "blewyn",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "26024835"
+    },
+    {
+        "en": "bone",
+        "cy": "asgwrn",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "1114106878"
+    },
+    {
+        "en": "bony",
+        "cy": "esgyrnog",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "2584690636"
+    },
+    {
+        "en": "bosom",
+        "cy": "mynwes",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au",
+        "id": "1848607603"
     },
     {
         "en": "brain",
@@ -145,44 +197,40 @@
         "id": "2369440459"
     },
     {
-        "en": "eyebrow",
-        "cy": "ael",
+        "en": "breast",
+        "cy": "bron",
         "tags": [
-            "head",
             "body"
         ],
-        "notes": "(f) -iau",
-        "id": "1864915840"
+        "notes": "(f) -nau",
+        "id": "2492592760"
     },
     {
-        "en": "eyelid",
-        "cy": "amrant",
+        "en": "breath",
+        "cy": "gwynt",
         "tags": [
-            "head",
             "body"
         ],
-        "notes": "(m) -au: amrannau",
-        "id": "3956666199"
+        "notes": "(m)",
+        "id": "169874109"
     },
     {
-        "en": "beard",
-        "cy": "barf",
+        "en": "breath",
+        "cy": "anadl",
         "tags": [
-            "head",
             "body"
         ],
-        "notes": "(f) -au",
-        "id": "4226244055"
+        "notes": "(f/m) -au -on",
+        "id": "3112287668"
     },
     {
-        "en": "to sob",
-        "cy": "beichio crio",
+        "en": "calm",
+        "cy": "tawelwch",
         "tags": [
-            "emotion",
-            "verb"
+            ""
         ],
         "notes": "",
-        "id": "496059455"
+        "id": "2500542350"
     },
     {
         "en": "cheek",
@@ -195,44 +243,42 @@
         "id": "804462856"
     },
     {
-        "en": "rosy-cheeked",
-        "cy": "bochgoch",
+        "en": "cheek",
+        "cy": "grudd",
         "tags": [
             "head",
             "body"
         ],
-        "notes": "",
-        "id": "45181264"
+        "notes": "(f) -iau",
+        "id": "3302474489"
     },
     {
-        "en": "freckels",
-        "cy": "brychni haul",
+        "en": "chest",
+        "cy": "brest",
         "tags": [
-            "head",
             "body"
         ],
-        "notes": "",
-        "id": "154207896"
+        "notes": "(f) -iau",
+        "id": "3726365446"
     },
     {
-        "en": "pupil",
-        "cy": "cannwyll y llygad",
+        "en": "command",
+        "cy": "gorchymynion",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(m)",
+        "id": "3867782600"
+    },
+    {
+        "en": "complexion",
+        "cy": "pryd",
         "tags": [
             "head",
             "body"
         ],
         "notes": "(m)",
-        "id": "3666736924"
-    },
-    {
-        "en": "pupils",
-        "cy": "canhwyllaw'r llygaid",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(pl)",
-        "id": "660542571"
+        "id": "118209781"
     },
     {
         "en": "corner of the eye",
@@ -255,380 +301,54 @@
         "id": "1425347756"
     },
     {
-        "en": "to cry",
-        "cy": "crio",
+        "en": "cough",
+        "cy": "peswch",
         "tags": [
-            "emotion",
-            "verb"
-        ],
-        "notes": "",
-        "id": "1624618954"
-    },
-    {
-        "en": "tear",
-        "cy": "deigryn",
-        "tags": [
-            "emotion"
-        ],
-        "notes": "(m)",
-        "id": "1179513797"
-    },
-    {
-        "en": "tears",
-        "cy": "dagrau",
-        "tags": [
-            "emotion"
-        ],
-        "notes": "(pl)",
-        "id": "3337580649"
-    },
-    {
-        "en": "nostril",
-        "cy": "ffroen",
-        "tags": [
+            "body",
             "head",
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "2085120599"
-    },
-    {
-        "en": "jaw",
-        "cy": "gên",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(f)",
-        "id": "1134622038"
-    },
-    {
-        "en": "cheek",
-        "cy": "grudd",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(f) -iau",
-        "id": "3302474489"
-    },
-    {
-        "en": "pale",
-        "cy": "gwelw",
-        "tags": [
             "medical"
         ],
-        "notes": "",
-        "id": "1911691143"
+        "notes": "(m)",
+        "id": "2019085769"
     },
     {
-        "en": "as white as a sheet",
-        "cy": "gwelw fel y galchen",
+        "en": "crown of head",
+        "cy": "corun",
         "tags": [
-            "medical",
-            "phrase"
+            "head",
+            "body"
         ],
-        "notes": "",
-        "id": "173771547"
+        "notes": "(m) -au",
+        "id": "4010384760"
     },
     {
-        "en": "smile",
-        "cy": "gwên",
+        "en": "cry",
+        "cy": "gwaedd",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(f) -au",
+        "id": "2874256027"
+    },
+    {
+        "en": "dandruff",
+        "cy": "cen",
+        "tags": [
+            "head",
+            "body",
+            "hair"
+        ],
+        "notes": "(pl)",
+        "id": "2637529837"
+    },
+    {
+        "en": "demand or requirement",
+        "cy": "gofyn",
         "tags": [
             "emotion"
         ],
-        "notes": "(f) -au",
-        "id": "4145460053"
-    },
-    {
-        "en": "to smile",
-        "cy": "gwenu",
-        "tags": [
-            "emotion",
-            "verb"
-        ],
-        "notes": "",
-        "id": "1204123301"
-    },
-    {
-        "en": "to smile from ear to ear",
-        "cy": "gwenu o glust i glust",
-        "tags": [
-            "emotion",
-            "phrase"
-        ],
-        "notes": "",
-        "id": "3060458032"
-    },
-    {
-        "en": "to smile broadly",
-        "cy": "gwenu fel giât",
-        "tags": [
-            "emotion",
-            "phrase",
-            "verb"
-        ],
-        "notes": "",
-        "id": "1712271500"
-    },
-    {
-        "en": "beard",
-        "cy": "locsyn",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m) (NW)",
-        "id": "3517150318"
-    },
-    {
-        "en": "to cry",
-        "cy": "llefain",
-        "tags": [
-            "emotion",
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "2391671325"
-    },
-    {
-        "en": "eye",
-        "cy": "llygad",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "1251162784"
-    },
-    {
-        "en": "eyes",
-        "cy": "llygaid",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "",
-        "id": "2307829526"
-    },
-    {
-        "en": "moustache",
-        "cy": "mwstas",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "521789202"
-    },
-    {
-        "en": "complexion",
-        "cy": "pryd",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "118209781"
-    },
-    {
-        "en": "appearance",
-        "cy": "pryd a gwedd",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "",
-        "id": "3778309243"
-    },
-    {
-        "en": "forehead",
-        "cy": "talcen",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m) -nau",
-        "id": "1719368594"
-    },
-    {
-        "en": "to burst into tears",
-        "cy": "torri i feichio crio",
-        "tags": [
-            "emotion",
-            "phrase",
-            "verb"
-        ],
-        "notes": "",
-        "id": "3351784576"
-    },
-    {
-        "en": "nose",
-        "cy": "trwyn",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m) -au",
-        "id": "2238947050"
-    },
-    {
-        "en": "to cry",
-        "cy": "wylo",
-        "tags": [
-            "emotion",
-            "verb"
-        ],
-        "notes": "",
-        "id": "199980848"
-    },
-    {
-        "en": "face",
-        "cy": "wyneb",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m) -au",
-        "id": "3984129021"
-    },
-    {
-        "en": "face to face",
-        "cy": "wyneb i wyneb",
-        "tags": [
-            "phrase"
-        ],
-        "notes": "",
-        "id": "3858863605"
-    },
-    {
-        "en": "to face",
-        "cy": "wynebu",
-        "tags": [
-            "verb"
-        ],
-        "notes": "",
-        "id": "2467776369"
-    },
-    {
-        "en": "to yawn",
-        "cy": "agor ceg",
-        "tags": [
-            "verb"
-        ],
-        "notes": "",
-        "id": "2929054681"
-    },
-    {
-        "en": "to clear my throat",
-        "cy": "carthu fy ngwddf",
-        "tags": [
-            "phrase",
-            "verb"
-        ],
-        "notes": "",
-        "id": "2783642516"
-    },
-    {
-        "en": "mouth",
-        "cy": "ceg",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "",
-        "id": "1330522564"
-    },
-    {
-        "en": "windpipe",
-        "cy": "corn gwddf",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "3350031516"
-    },
-    {
-        "en": "hoarse",
-        "cy": "cryg",
-        "tags": [
-            "medical",
-            "sore"
-        ],
-        "notes": "",
-        "id": "240561051"
-    },
-    {
-        "en": "kiss",
-        "cy": "cusan",
-        "tags": [
-            "head",
-            "love"
-        ],
-        "notes": "(f/m) -au",
-        "id": "476224186"
-    },
-    {
-        "en": "to kiss",
-        "cy": "cusanu",
-        "tags": [
-            "verb",
-            "head",
-            "love"
-        ],
-        "notes": "",
-        "id": "749301959"
-    },
-    {
-        "en": "tooth",
-        "cy": "dant",
-        "tags": [
-            "head",
-            "dental"
-        ],
-        "notes": "(m)",
-        "id": "579998835"
-    },
-    {
-        "en": "teeth",
-        "cy": "dannedd",
-        "tags": [
-            "head",
-            "dental"
-        ],
-        "notes": "",
-        "id": "2741496320"
-    },
-    {
-        "en": "false teeth",
-        "cy": "dannedd gorsod",
-        "tags": [
-            "head",
-            "dental"
-        ],
-        "notes": "(NW)",
-        "id": "3640342503"
-    },
-    {
-        "en": "false teeth",
-        "cy": "danedd dodi",
-        "tags": [
-            "head",
-            "dental"
-        ],
-        "notes": "(SW)",
-        "id": "1513609520"
-    },
-    {
-        "en": "toothache",
-        "cy": "dannoedd",
-        "tags": [
-            "head",
-            "dental"
-        ],
-        "notes": "(f)",
-        "id": "2431149287"
+        "notes": "(m) -ion",
+        "id": "1884930708"
     },
     {
         "en": "dentist",
@@ -641,92 +361,187 @@
         "id": "849930272"
     },
     {
-        "en": "sore throat",
-        "cy": "dolur gwddf",
-        "tags": [
-            "dental",
-            "medical"
-        ],
-        "notes": "(m)(NW)",
-        "id": "143410646"
-    },
-    {
-        "en": "to dribble",
-        "cy": "driblo",
-        "tags": [
-            "head",
-            "medical",
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "3086829548"
-    },
-    {
-        "en": "to dribble",
-        "cy": "glafoerio",
-        "tags": [
-            "head",
-            "medical",
-            "verb"
-        ],
-        "notes": "(NW)",
-        "id": "2482410173"
-    },
-    {
-        "en": "nape of the neck",
-        "cy": "gwar",
+        "en": "digestion",
+        "cy": "traul",
         "tags": [
             "body"
         ],
-        "notes": "(f/m) -rau",
-        "id": "3721581550"
+        "notes": "(f)",
+        "id": "1015805843"
     },
     {
-        "en": "neck / throat",
-        "cy": "gwddf",
+        "en": "double chin",
+        "cy": "tagell",
         "tags": [
+            "head",
             "body"
         ],
-        "notes": "(m) gyddau",
-        "id": "1230191010"
+        "notes": "(f) -au tegyll",
+        "id": "1896702929"
     },
     {
-        "en": "sore throat",
-        "cy": "gwddf tost",
+        "en": "dripping with sweat",
+        "cy": "chwys diferyd",
         "tags": [
             "body",
-            "medical"
-        ],
-        "notes": "(SW)",
-        "id": "2041602845"
-    },
-    {
-        "en": "lip",
-        "cy": "gweddus",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "295852786"
-    },
-    {
-        "en": "hiccup",
-        "cy": "(yr) ig",
-        "tags": [
-            "medical"
-        ],
-        "notes": "(m) -ion",
-        "id": "2406620696"
-    },
-    {
-        "en": "to hiccup",
-        "cy": "igian",
-        "tags": [
-            "medical",
-            "verb"
+            "saying"
         ],
         "notes": "",
-        "id": "435293673"
+        "id": "1789388435"
+    },
+    {
+        "en": "ear",
+        "cy": "clust",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f/m) -iau",
+        "id": "4135152496"
+    },
+    {
+        "en": "echo",
+        "cy": "adlais",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m) adleisiau",
+        "id": "1606839181"
+    },
+    {
+        "en": "echo",
+        "cy": "atsain",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) atseiniau",
+        "id": "3112317638"
+    },
+    {
+        "en": "eloquent",
+        "cy": "huawdl",
+        "tags": [
+            "adjective"
+        ],
+        "notes": "",
+        "id": "2996911779"
+    },
+    {
+        "en": "emphasis",
+        "cy": "pwysleisiau",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)",
+        "id": "3306501421"
+    },
+    {
+        "en": "emphasis",
+        "cy": "pwyslais",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)",
+        "id": "687016276"
+    },
+    {
+        "en": "eye",
+        "cy": "llygad",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "1251162784"
+    },
+    {
+        "en": "eyebrow",
+        "cy": "ael",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) -iau",
+        "id": "1864915840"
+    },
+    {
+        "en": "eyelid",
+        "cy": "amrant",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au: amrannau",
+        "id": "3956666199"
+    },
+    {
+        "en": "eyes",
+        "cy": "llygaid",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "",
+        "id": "2307829526"
+    },
+    {
+        "en": "face",
+        "cy": "wyneb",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au",
+        "id": "3984129021"
+    },
+    {
+        "en": "face",
+        "cy": "wyneb",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "",
+        "id": "1385153992"
+    },
+    {
+        "en": "face to face",
+        "cy": "wyneb i wyneb",
+        "tags": [
+            "phrase"
+        ],
+        "notes": "",
+        "id": "3858863605"
+    },
+    {
+        "en": "false teeth",
+        "cy": "danedd dodi",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(SW)",
+        "id": "1513609520"
+    },
+    {
+        "en": "false teeth",
+        "cy": "dannedd gorsod",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(NW)",
+        "id": "3640342503"
+    },
+    {
+        "en": "feeble",
+        "cy": "di-asgwrn-cefn",
+        "tags": [
+            "saying",
+            "body"
+        ],
+        "notes": "",
+        "id": "1298651229"
     },
     {
         "en": "filling",
@@ -737,107 +552,6 @@
         ],
         "notes": "(m) -au",
         "id": "1982709320"
-    },
-    {
-        "en": "throat",
-        "cy": "llwnc",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) (SW)",
-        "id": "3886747053"
-    },
-    {
-        "en": "sore throat",
-        "cy": "llwnc tost",
-        "tags": [
-            "medical",
-            "body"
-        ],
-        "notes": "(SW)",
-        "id": "4002395665"
-    },
-    {
-        "en": "to lick",
-        "cy": "llyfu",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(NW)",
-        "id": "1664063485"
-    },
-    {
-        "en": "to swallow",
-        "cy": "llyncu",
-        "tags": [
-            "verb"
-        ],
-        "notes": "",
-        "id": "3886647710"
-    },
-    {
-        "en": "sigh",
-        "cy": "ochenaid",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) ochenneidiau",
-        "id": "2311525135"
-    },
-    {
-        "en": "to sigh",
-        "cy": "ocheneidio",
-        "tags": [
-            "verb",
-            "body"
-        ],
-        "notes": "",
-        "id": "2125874122"
-    },
-    {
-        "en": "cough",
-        "cy": "peswch",
-        "tags": [
-            "body",
-            "head",
-            "medical"
-        ],
-        "notes": "(m)",
-        "id": "2019085769"
-    },
-    {
-        "en": "to cough",
-        "cy": "pesychu",
-        "tags": [
-            "verb",
-            "head",
-            "body",
-            "medical"
-        ],
-        "notes": "",
-        "id": "564973354"
-    },
-    {
-        "en": "saliva",
-        "cy": "poer",
-        "tags": [
-            "head",
-            "body",
-            "medical"
-        ],
-        "notes": "(m) -ion",
-        "id": "3632576744"
-    },
-    {
-        "en": "to spit",
-        "cy": "poeri",
-        "tags": [
-            "head",
-            "body",
-            "verb"
-        ],
-        "notes": "",
-        "id": "3966718661"
     },
     {
         "en": "fit of coughing",
@@ -862,6 +576,230 @@
         "id": "266808033"
     },
     {
+        "en": "flesh",
+        "cy": "cig",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "1467502335"
+    },
+    {
+        "en": "flesh",
+        "cy": "cnawd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "1543977389"
+    },
+    {
+        "en": "flesh and blood",
+        "cy": "cig a gwaed",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "",
+        "id": "1241186372"
+    },
+    {
+        "en": "forehead",
+        "cy": "talcen",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -nau",
+        "id": "1719368594"
+    },
+    {
+        "en": "freckels",
+        "cy": "brychni haul",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "",
+        "id": "154207896"
+    },
+    {
+        "en": "from head to toe",
+        "cy": "o'm corun i'm sawdl",
+        "tags": [
+            "phrase"
+        ],
+        "notes": "",
+        "id": "2094443698"
+    },
+    {
+        "en": "hair",
+        "cy": "gwallt",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au",
+        "id": "4289530188"
+    },
+    {
+        "en": "head",
+        "cy": "pen",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "",
+        "id": "1586877117"
+    },
+    {
+        "en": "headache",
+        "cy": "pen tost",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "1912835596"
+    },
+    {
+        "en": "headache",
+        "cy": "cur yn y pen",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(NW)",
+        "id": "3494104967"
+    },
+    {
+        "en": "heart",
+        "cy": "calon",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)",
+        "id": "1112556072"
+    },
+    {
+        "en": "heartbeat",
+        "cy": "curiad y galon",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "2461916808"
+    },
+    {
+        "en": "hiccup",
+        "cy": "(yr) ig",
+        "tags": [
+            "medical"
+        ],
+        "notes": "(m) -ion",
+        "id": "2406620696"
+    },
+    {
+        "en": "hoarse",
+        "cy": "cryg",
+        "tags": [
+            "medical",
+            "sore"
+        ],
+        "notes": "",
+        "id": "240561051"
+    },
+    {
+        "en": "i've got a stitch",
+        "cy": "mae gen i bigyn yn fy ystlys",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "",
+        "id": "3789290715"
+    },
+    {
+        "en": "i've got indigestion",
+        "cy": "mae llosg cylia arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "(SW)",
+        "id": "307232369"
+    },
+    {
+        "en": "i've got indigestion",
+        "cy": "mae dŵr poeth arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "",
+        "id": "2215359764"
+    },
+    {
+        "en": "i've got indigestion",
+        "cy": "mae diffyg traul arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "",
+        "id": "4261532636"
+    },
+    {
+        "en": "in speech (orally)",
+        "cy": "ar lafar",
+        "tags": [
+            "sound",
+            "speech"
+        ],
+        "notes": "",
+        "id": "1190873661"
+    },
+    {
+        "en": "intestine",
+        "cy": "perfedd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -ion",
+        "id": "2719035668"
+    },
+    {
+        "en": "jaw",
+        "cy": "gên",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f)",
+        "id": "1134622038"
+    },
+    {
+        "en": "kidney",
+        "cy": "aren",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -nau",
+        "id": "4128973462"
+    },
+    {
+        "en": "kiss",
+        "cy": "cusan",
+        "tags": [
+            "head",
+            "love"
+        ],
+        "notes": "(f/m) -au",
+        "id": "476224186"
+    },
+    {
         "en": "kiss",
         "cy": "sws",
         "tags": [
@@ -873,24 +811,810 @@
         "id": "1330600395"
     },
     {
-        "en": "tongue",
-        "cy": "tafod",
+        "en": "lie",
+        "cy": "celwydd",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(m) -au clwyddau",
+        "id": "1779208374"
+    },
+    {
+        "en": "lip",
+        "cy": "gweddus",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au",
+        "id": "295852786"
+    },
+    {
+        "en": "liver",
+        "cy": "afu",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m) (SW)",
+        "id": "847248220"
+    },
+    {
+        "en": "liver",
+        "cy": "iau",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (NW)",
+        "id": "217691975"
+    },
+    {
+        "en": "lungs",
+        "cy": "ysgyfaint",
+        "tags": [
+            "body"
+        ],
+        "notes": "plural",
+        "id": "175995263"
+    },
+    {
+        "en": "moustache",
+        "cy": "mwstas",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "521789202"
+    },
+    {
+        "en": "mouth",
+        "cy": "ceg",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "",
+        "id": "1330522564"
+    },
+    {
+        "en": "muscle",
+        "cy": "cyhyr",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -au",
+        "id": "709187431"
+    },
+    {
+        "en": "muscular",
+        "cy": "cyhyrog",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "1220132121"
+    },
+    {
+        "en": "nape of the neck",
+        "cy": "gwar",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m) -rau",
+        "id": "3721581550"
+    },
+    {
+        "en": "navels",
+        "cy": "bogeiliau",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m)",
+        "id": "903692475"
+    },
+    {
+        "en": "neck / throat",
+        "cy": "gwddf",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) gyddau",
+        "id": "1230191010"
+    },
+    {
+        "en": "nerve",
+        "cy": "nerf",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au",
+        "id": "3258252417"
+    },
+    {
+        "en": "no communication between them",
+        "cy": "dim Cymraeg rhyngddyn nhw",
+        "tags": [
+            "speech",
+            "sound",
+            "emotion"
+        ],
+        "notes": "",
+        "id": "967925343"
+    },
+    {
+        "en": "noise",
+        "cy": "sŵn",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)",
+        "id": "3098418560"
+    },
+    {
+        "en": "noise",
+        "cy": "stŵr",
+        "tags": [
+            "sound"
+        ],
+        "notes": "",
+        "id": "1618742759"
+    },
+    {
+        "en": "noisy",
+        "cy": "swnllyd",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "3861180847"
+    },
+    {
+        "en": "noisy",
+        "cy": "stwrllyd",
+        "tags": [
+            "sound"
+        ],
+        "notes": "",
+        "id": "1995903524"
+    },
+    {
+        "en": "nose",
+        "cy": "trwyn",
         "tags": [
             "head",
             "body"
         ],
         "notes": "(m) -au",
-        "id": "899337985"
+        "id": "2238947050"
     },
     {
-        "en": "double chin",
-        "cy": "tagell",
+        "en": "nostril",
+        "cy": "ffroen",
         "tags": [
             "head",
             "body"
         ],
-        "notes": "(f) -au tegyll",
-        "id": "1896702929"
+        "notes": "(f) -au",
+        "id": "2085120599"
+    },
+    {
+        "en": "nude",
+        "cy": "noethlymun",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "1897284683"
+    },
+    {
+        "en": "out of breath",
+        "cy": "â'm gwynt yn fy nwrn",
+        "tags": [
+            "saying"
+        ],
+        "notes": "",
+        "id": "1734600648"
+    },
+    {
+        "en": "pale",
+        "cy": "gwelw",
+        "tags": [
+            "medical"
+        ],
+        "notes": "",
+        "id": "1911691143"
+    },
+    {
+        "en": "parting (hair)",
+        "cy": "rhesen",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) (NW)",
+        "id": "3397742418"
+    },
+    {
+        "en": "parting (hair)",
+        "cy": "rhaniad",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) (SW)",
+        "id": "3905809969"
+    },
+    {
+        "en": "physical",
+        "cy": "corfforol",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "2633552335"
+    },
+    {
+        "en": "physical force",
+        "cy": "nerth bôn braich",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "4093573468"
+    },
+    {
+        "en": "pulse",
+        "cy": "curiad y gwaed",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "2955702868"
+    },
+    {
+        "en": "pupil",
+        "cy": "cannwyll y llygad",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "3666736924"
+    },
+    {
+        "en": "pupils",
+        "cy": "canhwyllaw'r llygaid",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(pl)",
+        "id": "660542571"
+    },
+    {
+        "en": "quiet",
+        "cy": "tawel",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "4106949229"
+    },
+    {
+        "en": "rib",
+        "cy": "asen",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -nau",
+        "id": "1940169754"
+    },
+    {
+        "en": "rosy-cheeked",
+        "cy": "bochgoch",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "",
+        "id": "45181264"
+    },
+    {
+        "en": "saliva",
+        "cy": "poer",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(m) -ion",
+        "id": "3632576744"
+    },
+    {
+        "en": "shoulder",
+        "cy": "ysgwydd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au",
+        "id": "3588940681"
+    },
+    {
+        "en": "shout",
+        "cy": "bloedd",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) -iau -iadau",
+        "id": "1762445578"
+    },
+    {
+        "en": "shout",
+        "cy": "gwaedd",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "2844121304"
+    },
+    {
+        "en": "side",
+        "cy": "ystlys",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "1941791497"
+    },
+    {
+        "en": "sigh",
+        "cy": "ochenaid",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) ochenneidiau",
+        "id": "2311525135"
+    },
+    {
+        "en": "silence",
+        "cy": "distawrwydd",
+        "tags": [
+            "sound",
+            "speech"
+        ],
+        "notes": "(m)",
+        "id": "103857802"
+    },
+    {
+        "en": "silent",
+        "cy": "distaw",
+        "tags": [
+            "sound",
+            "speech"
+        ],
+        "notes": "",
+        "id": "440251400"
+    },
+    {
+        "en": "skeleton",
+        "cy": "ysgerbwd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "2696691852"
+    },
+    {
+        "en": "skeletons",
+        "cy": "ysgerbydau",
+        "tags": [
+            "body",
+            "plural"
+        ],
+        "notes": "",
+        "id": "3074301811"
+    },
+    {
+        "en": "skin",
+        "cy": "croen",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "1092204108"
+    },
+    {
+        "en": "skull",
+        "cy": "penglog",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(f) -au",
+        "id": "1768151650"
+    },
+    {
+        "en": "small talk",
+        "cy": "mân siarad",
+        "tags": [
+            "speech"
+        ],
+        "notes": "",
+        "id": "567943058"
+    },
+    {
+        "en": "smile",
+        "cy": "gwên",
+        "tags": [
+            "emotion"
+        ],
+        "notes": "(f) -au",
+        "id": "4145460053"
+    },
+    {
+        "en": "sore throat",
+        "cy": "llwnc tost",
+        "tags": [
+            "medical",
+            "body"
+        ],
+        "notes": "(SW)",
+        "id": "4002395665"
+    },
+    {
+        "en": "sore throat",
+        "cy": "dolur gwddf",
+        "tags": [
+            "dental",
+            "medical"
+        ],
+        "notes": "(m)(NW)",
+        "id": "143410646"
+    },
+    {
+        "en": "sore throat",
+        "cy": "gwddf tost",
+        "tags": [
+            "body",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "2041602845"
+    },
+    {
+        "en": "sound",
+        "cy": "sain",
+        "tags": [
+            ""
+        ],
+        "notes": "(f)",
+        "id": "3118098539"
+    },
+    {
+        "en": "sounds",
+        "cy": "seiniau",
+        "tags": [
+            ""
+        ],
+        "notes": "(f) plural",
+        "id": "3900874679"
+    },
+    {
+        "en": "speaker",
+        "cy": "siaradwr",
+        "tags": [
+            "noun"
+        ],
+        "notes": "(m)",
+        "id": "631436990"
+    },
+    {
+        "en": "speaker",
+        "cy": "llefarydd",
+        "tags": [
+            "noun"
+        ],
+        "notes": "(m) -ion",
+        "id": "2771521147"
+    },
+    {
+        "en": "speaker",
+        "cy": "siaradwyr",
+        "tags": [
+            "noun"
+        ],
+        "notes": "(f)",
+        "id": "176082124"
+    },
+    {
+        "en": "spine",
+        "cy": "asgwrn cefn",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "2619088251"
+    },
+    {
+        "en": "stomach",
+        "cy": "cylla",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2501072279"
+    },
+    {
+        "en": "stomach",
+        "cy": "bol",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -iau",
+        "id": "4196222872"
+    },
+    {
+        "en": "stomach",
+        "cy": "bola",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2978728492"
+    },
+    {
+        "en": "strength",
+        "cy": "cryfder",
+        "tags": [
+            ""
+        ],
+        "notes": "(m) -au",
+        "id": "3531247159"
+    },
+    {
+        "en": "strength",
+        "cy": "nerth",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au",
+        "id": "2199069556"
+    },
+    {
+        "en": "strong",
+        "cy": "cryf",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "889843748"
+    },
+    {
+        "en": "swear-word",
+        "cy": "rheg",
+        "tags": [
+            ""
+        ],
+        "notes": "(f) -au -feydd",
+        "id": "1968738554"
+    },
+    {
+        "en": "sweat",
+        "cy": "chwys",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "871159684"
+    },
+    {
+        "en": "talkative",
+        "cy": "siaradus",
+        "tags": [
+            "adjective"
+        ],
+        "notes": "",
+        "id": "976477642"
+    },
+    {
+        "en": "tear",
+        "cy": "deigryn",
+        "tags": [
+            "emotion"
+        ],
+        "notes": "(m)",
+        "id": "1179513797"
+    },
+    {
+        "en": "tears",
+        "cy": "dagrau",
+        "tags": [
+            "emotion"
+        ],
+        "notes": "(pl)",
+        "id": "3337580649"
+    },
+    {
+        "en": "teeth",
+        "cy": "dannedd",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "",
+        "id": "2741496320"
+    },
+    {
+        "en": "tendon",
+        "cy": "gewyn",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -nau gïau",
+        "id": "2903499317"
+    },
+    {
+        "en": "throat",
+        "cy": "llwnc",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)",
+        "id": "3886747053"
+    },
+    {
+        "en": "to answer",
+        "cy": "ateb",
+        "tags": [
+            "sound",
+            "speech",
+            "verb"
+        ],
+        "notes": "(m) -ion",
+        "id": "2997135054"
+    },
+    {
+        "en": "to answer",
+        "cy": "ymateb",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "3116154140"
+    },
+    {
+        "en": "to argue or fall out",
+        "cy": "cwympo mas",
+        "tags": [
+            "speech",
+            "verb",
+            "emotion"
+        ],
+        "notes": "(SW)",
+        "id": "3235486116"
+    },
+    {
+        "en": "to argue or fall out",
+        "cy": "ffraeo",
+        "tags": [
+            "verb",
+            "speech",
+            "sound",
+            "emotion"
+        ],
+        "notes": "(NW)",
+        "id": "4183281583"
+    },
+    {
+        "en": "to ask someone",
+        "cy": "gofyn u rywun",
+        "tags": [
+            "verb",
+            "speech",
+            "sound"
+        ],
+        "notes": "",
+        "id": "792715339"
+    },
+    {
+        "en": "to be silent",
+        "cy": "tewi",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "4030506368"
+    },
+    {
+        "en": "to be unable to speak",
+        "cy": "methu siarad",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(NW)",
+        "id": "3787168445"
+    },
+    {
+        "en": "to be unable to speak",
+        "cy": "ffaelu siarad",
+        "tags": [
+            "verb",
+            "speech",
+            "sound"
+        ],
+        "notes": "(SW)",
+        "id": "2914948508"
+    },
+    {
+        "en": "to bleed",
+        "cy": "gwaedu",
+        "tags": [
+            "body",
+            "verb"
+        ],
+        "notes": "",
+        "id": "3018021297"
+    },
+    {
+        "en": "to breath",
+        "cy": "anadlu",
+        "tags": [
+            "body",
+            "verb"
+        ],
+        "notes": "",
+        "id": "2094056069"
+    },
+    {
+        "en": "to burst into tears",
+        "cy": "torri i feichio crio",
+        "tags": [
+            "emotion",
+            "phrase",
+            "verb"
+        ],
+        "notes": "",
+        "id": "3351784576"
+    },
+    {
+        "en": "to chat",
+        "cy": "sgyrsiau",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "1422672489"
+    },
+    {
+        "en": "to chat",
+        "cy": "sgwrs",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "(f)",
+        "id": "3853353469"
+    },
+    {
+        "en": "to chat to",
+        "cy": "sgwrsio â",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "2128606978"
+    },
+    {
+        "en": "to chatter",
+        "cy": "celbran",
+        "tags": [
+            "speech",
+            "verb"
+        ],
+        "notes": "",
+        "id": "3046410414"
     },
     {
         "en": "to choke",
@@ -905,76 +1629,107 @@
         "id": "3558089744"
     },
     {
-        "en": "to sneeze",
-        "cy": "tisian",
+        "en": "to clear my throat",
+        "cy": "carthu fy ngwddf",
         "tags": [
+            "phrase",
+            "verb"
+        ],
+        "notes": "",
+        "id": "2783642516"
+    },
+    {
+        "en": "to congratulate",
+        "cy": "llonggyfarch",
+        "tags": [
+            "verb",
+            "emotion"
+        ],
+        "notes": "",
+        "id": "1014954424"
+    },
+    {
+        "en": "to cough",
+        "cy": "pesychu",
+        "tags": [
+            "verb",
             "head",
             "body",
+            "medical"
+        ],
+        "notes": "",
+        "id": "564973354"
+    },
+    {
+        "en": "to cry",
+        "cy": "wylo",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": "",
+        "id": "199980848"
+    },
+    {
+        "en": "to cry",
+        "cy": "llefain",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "1457417615"
+    },
+    {
+        "en": "to cry",
+        "cy": "llefain",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "2391671325"
+    },
+    {
+        "en": "to cry",
+        "cy": "crio",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": "",
+        "id": "1624618954"
+    },
+    {
+        "en": "to digest",
+        "cy": "treulio",
+        "tags": [
+            "body",
+            "verb"
+        ],
+        "notes": "",
+        "id": "967090122"
+    },
+    {
+        "en": "to dribble",
+        "cy": "driblo",
+        "tags": [
+            "head",
             "medical",
             "verb"
         ],
-        "notes": "",
-        "id": "1188154295"
+        "notes": "(SW)",
+        "id": "3086829548"
     },
     {
-        "en": "echo",
-        "cy": "adlais",
+        "en": "to dribble",
+        "cy": "glafoerio",
         "tags": [
-            "sound"
-        ],
-        "notes": "(m) adleisiau",
-        "id": "1606839181"
-    },
-    {
-        "en": "to echo",
-        "cy": "adleisio",
-        "tags": [
-            "sound",
+            "head",
+            "medical",
             "verb"
         ],
-        "notes": "(m)",
-        "id": "2226184432"
-    },
-    {
-        "en": "in speech (orally)",
-        "cy": "ar lafar",
-        "tags": [
-            "sound",
-            "speech"
-        ],
-        "notes": "",
-        "id": "1190873661"
-    },
-    {
-        "en": "to stutter",
-        "cy": "atal dweud",
-        "tags": [
-            "sound",
-            "speech",
-            "verb"
-        ],
-        "notes": "",
-        "id": "3973314995"
-    },
-    {
-        "en": "to answer",
-        "cy": "ateb",
-        "tags": [
-            "sound",
-            "speech",
-            "verb"
-        ],
-        "notes": "(m) -ion",
-        "id": "2997135054"
-    },
-    {
-        "en": "echo",
-        "cy": "atsain",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(f) atseiniau",
-        "id": "3112317638"
+        "notes": "(NW)",
+        "id": "2482410173"
     },
     {
         "en": "to echo",
@@ -987,51 +1742,82 @@
         "id": "1504306317"
     },
     {
-        "en": "shout",
-        "cy": "bloedd",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(f) -iau -iadau",
-        "id": "1762445578"
-    },
-    {
-        "en": "to shout",
-        "cy": "bloeddio",
+        "en": "to echo",
+        "cy": "adleisio",
         "tags": [
             "sound",
             "verb"
         ],
-        "notes": "-ian",
-        "id": "2050660273"
+        "notes": "(m)",
+        "id": "2226184432"
     },
     {
-        "en": "lie",
-        "cy": "celwydd",
+        "en": "to emphasise",
+        "cy": "pwysleisio",
         "tags": [
-            "speech"
-        ],
-        "notes": "(m) -au clwyddau",
-        "id": "1779208374"
-    },
-    {
-        "en": "white lie",
-        "cy": "celwydd golau",
-        "tags": [
+            "verb",
             "speech"
         ],
         "notes": "",
-        "id": "1692112257"
+        "id": "2850424899"
     },
     {
-        "en": "to chatter",
-        "cy": "celbran",
+        "en": "to express",
+        "cy": "mynegi",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "4254599981"
+    },
+    {
+        "en": "to face",
+        "cy": "wynebu",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "2467776369"
+    },
+    {
+        "en": "to fail to speak",
+        "cy": "methu siarad",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(NW)",
+        "id": "3987930825"
+    },
+    {
+        "en": "to get my breath back",
+        "cy": "cael fy ngwynt ataf i",
+        "tags": [
+            "body",
+            "saying",
+            "speech"
+        ],
+        "notes": "",
+        "id": "497707457"
+    },
+    {
+        "en": "to gossip",
+        "cy": "hel clecs",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "622171277"
+    },
+    {
+        "en": "to gossip",
+        "cy": "cloncian",
         "tags": [
             "speech",
             "verb"
         ],
-        "notes": "",
-        "id": "3046410414"
+        "notes": "(SW)",
+        "id": "3726883609"
     },
     {
         "en": "to gossip",
@@ -1045,33 +1831,79 @@
     },
     {
         "en": "to gossip",
-        "cy": "cloncian",
+        "cy": "hel straeon",
         "tags": [
-            "speech",
             "verb"
         ],
-        "notes": "(SW)",
-        "id": "3726883609"
+        "notes": "(NW)",
+        "id": "1413799194"
     },
     {
-        "en": "to argue or fall out",
-        "cy": "cwympo mas",
+        "en": "to grumble",
+        "cy": "swnian",
         "tags": [
-            "speech",
             "verb",
-            "emotion"
+            "speech"
         ],
-        "notes": "(SW)",
-        "id": "3235486116"
+        "notes": "",
+        "id": "2547145452"
     },
     {
-        "en": "to meet",
-        "cy": "cyfarch",
+        "en": "to hiccup",
+        "cy": "igian",
         "tags": [
+            "medical",
             "verb"
         ],
         "notes": "",
-        "id": "825336031"
+        "id": "435293673"
+    },
+    {
+        "en": "to interupt",
+        "cy": "torri ar draws",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "3371236134"
+    },
+    {
+        "en": "to jabber on",
+        "cy": "pwll y môr",
+        "tags": [
+            "speech"
+        ],
+        "notes": "",
+        "id": "1960423169"
+    },
+    {
+        "en": "to joke",
+        "cy": "jocan",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "3989387205"
+    },
+    {
+        "en": "to joke",
+        "cy": "jocio",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(NW)",
+        "id": "1514151345"
+    },
+    {
+        "en": "to kiss",
+        "cy": "cusanu",
+        "tags": [
+            "verb",
+            "head",
+            "love"
+        ],
+        "notes": "",
+        "id": "749301959"
     },
     {
         "en": "to laugh",
@@ -1095,67 +1927,13 @@
         "id": "2126365938"
     },
     {
-        "en": "without mincing words",
-        "cy": "diflewyn-ar-dafod",
+        "en": "to lick",
+        "cy": "llyfu",
         "tags": [
-            "sound",
-            "emotion"
+            "verb"
         ],
-        "notes": "",
-        "id": "2354741711"
-    },
-    {
-        "en": "no communication between them",
-        "cy": "dim Cymraeg rhyngddyn nhw",
-        "tags": [
-            "speech",
-            "sound",
-            "emotion"
-        ],
-        "notes": "",
-        "id": "967925343"
-    },
-    {
-        "en": "silent",
-        "cy": "distaw",
-        "tags": [
-            "sound",
-            "speech"
-        ],
-        "notes": "",
-        "id": "440251400"
-    },
-    {
-        "en": "silence",
-        "cy": "distawrwydd",
-        "tags": [
-            "sound",
-            "speech"
-        ],
-        "notes": "(m)",
-        "id": "103857802"
-    },
-    {
-        "en": "to silence",
-        "cy": "distewi",
-        "tags": [
-            "verb",
-            "sound",
-            "speech"
-        ],
-        "notes": "",
-        "id": "2668205923"
-    },
-    {
-        "en": "to say",
-        "cy": "dweud",
-        "tags": [
-            "verb",
-            "sound",
-            "speech"
-        ],
-        "notes": "",
-        "id": "2885474085"
+        "notes": "(NW)",
+        "id": "1664063485"
     },
     {
         "en": "to lie",
@@ -1169,38 +1947,72 @@
         "id": "73033622"
     },
     {
-        "en": "to tell",
-        "cy": "dweud wrth",
+        "en": "to lie non-stop",
+        "cy": "palu celwyddau",
+        "tags": [
+            "speech",
+            "emotion"
+        ],
+        "notes": "",
+        "id": "2853637948"
+    },
+    {
+        "en": "to lie non-stop",
+        "cy": "rhaffu celwyddau",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "29554021"
+    },
+    {
+        "en": "to meet",
+        "cy": "cyfarch",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "825336031"
+    },
+    {
+        "en": "to mention",
+        "cy": "sôn",
         "tags": [
             "verb",
-            "sound",
             "speech"
         ],
         "notes": "",
-        "id": "4087626630"
+        "id": "1050518581"
     },
     {
-        "en": "to be unable to speak",
-        "cy": "ffaelu siarad",
+        "en": "to murmur",
+        "cy": "swnian",
         "tags": [
             "verb",
-            "speech",
-            "sound"
+            "speech"
         ],
-        "notes": "(SW)",
-        "id": "2914948508"
+        "notes": "",
+        "id": "2181945674"
     },
     {
-        "en": "to argue or fall out",
-        "cy": "ffraeo",
+        "en": "to nag",
+        "cy": "swnian",
         "tags": [
             "verb",
-            "speech",
-            "sound",
-            "emotion"
+            "speech"
         ],
-        "notes": "(NW)",
-        "id": "4183281583"
+        "notes": "",
+        "id": "3578911010"
+    },
+    {
+        "en": "to order",
+        "cy": "gorchymyn",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "725271738"
     },
     {
         "en": "to roar with laughter",
@@ -1215,61 +2027,25 @@
         "id": "111198448"
     },
     {
-        "en": "to ask someone",
-        "cy": "gofyn u rywun",
+        "en": "to say",
+        "cy": "dweud",
         "tags": [
             "verb",
-            "speech",
-            "sound"
+            "sound",
+            "speech"
         ],
         "notes": "",
-        "id": "792715339"
+        "id": "2885474085"
     },
     {
-        "en": "demand or requirement",
-        "cy": "gofyn",
-        "tags": [
-            "emotion"
-        ],
-        "notes": "(m) -ion",
-        "id": "1884930708"
-    },
-    {
-        "en": "to order",
-        "cy": "gorchymyn",
+        "en": "to scream",
+        "cy": "sgrechain",
         "tags": [
             "verb",
             "speech"
         ],
         "notes": "",
-        "id": "725271738"
-    },
-    {
-        "en": "command",
-        "cy": "gorchymynion",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(m)",
-        "id": "3867782600"
-    },
-    {
-        "en": "cry",
-        "cy": "gwaedd",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(f) -au",
-        "id": "2874256027"
-    },
-    {
-        "en": "shout",
-        "cy": "gwaedd",
-        "tags": [
-            "verb"
-        ],
-        "notes": "",
-        "id": "2844121304"
+        "id": "98666179"
     },
     {
         "en": "to shout",
@@ -1279,6 +2055,25 @@
         ],
         "notes": "",
         "id": "3434219394"
+    },
+    {
+        "en": "to shout",
+        "cy": "llefain",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "3052081202"
+    },
+    {
+        "en": "to shout",
+        "cy": "bloeddio",
+        "tags": [
+            "sound",
+            "verb"
+        ],
+        "notes": "-ian",
+        "id": "2050660273"
     },
     {
         "en": "to shout as loud as possible",
@@ -1299,298 +2094,78 @@
         "id": "2288069294"
     },
     {
-        "en": "without saying a word",
-        "cy": "heb ddweud na bw na be'",
+        "en": "to sigh",
+        "cy": "ocheneidio",
         "tags": [
-            "speech"
+            "verb",
+            "body"
         ],
         "notes": "",
-        "id": "1117491235"
+        "id": "2125874122"
     },
     {
-        "en": "without a murmur",
-        "cy": "heb na siw na miw",
+        "en": "to silence",
+        "cy": "distewi",
         "tags": [
-            "speech"
-        ],
-        "notes": "",
-        "id": "2390359118"
-    },
-    {
-        "en": "to gossip",
-        "cy": "hel clecs",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "622171277"
-    },
-    {
-        "en": "to gossip",
-        "cy": "hel straeon",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(NW)",
-        "id": "1413799194"
-    },
-    {
-        "en": "eloquent",
-        "cy": "huawdl",
-        "tags": [
-            "adjective"
-        ],
-        "notes": "",
-        "id": "2996911779"
-    },
-    {
-        "en": "articulate",
-        "cy": "huawdl",
-        "tags": [
-            "adjective"
-        ],
-        "notes": "",
-        "id": "2620806426"
-    },
-    {
-        "en": "to joke",
-        "cy": "jocan",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "3989387205"
-    },
-    {
-        "en": "to joke",
-        "cy": "jocio",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(NW)",
-        "id": "1514151345"
-    },
-    {
-        "en": "voice",
-        "cy": "llais",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(m)",
-        "id": "1826737304"
-    },
-    {
-        "en": "voices",
-        "cy": "lleisiau",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(m)",
-        "id": "2160404498"
-    },
-    {
-        "en": "voice",
-        "cy": "llef",
-        "tags": [
+            "verb",
             "sound",
-            "cry"
+            "speech"
         ],
-        "notes": "(f) -au",
-        "id": "3486386294"
+        "notes": "",
+        "id": "2668205923"
     },
     {
-        "en": "to cry",
-        "cy": "llefain",
+        "en": "to smile",
+        "cy": "gwenu",
         "tags": [
+            "emotion",
             "verb"
         ],
         "notes": "",
-        "id": "1457417615"
+        "id": "1204123301"
     },
     {
-        "en": "to shout",
-        "cy": "llefain",
+        "en": "to smile broadly",
+        "cy": "gwenu fel giât",
         "tags": [
+            "emotion",
+            "phrase",
             "verb"
         ],
         "notes": "",
-        "id": "3052081202"
+        "id": "1712271500"
     },
     {
-        "en": "to speak",
-        "cy": "llefaru",
+        "en": "to smile from ear to ear",
+        "cy": "gwenu o glust i glust",
         "tags": [
+            "emotion",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "3060458032"
+    },
+    {
+        "en": "to sneeze",
+        "cy": "tisian",
+        "tags": [
+            "head",
+            "body",
+            "medical",
             "verb"
         ],
         "notes": "",
-        "id": "1042443083"
+        "id": "1188154295"
     },
     {
-        "en": "to utter",
-        "cy": "llefaru",
+        "en": "to sob",
+        "cy": "beichio crio",
         "tags": [
+            "emotion",
             "verb"
         ],
         "notes": "",
-        "id": "2207965573"
-    },
-    {
-        "en": "speaker",
-        "cy": "llefarydd",
-        "tags": [
-            "noun"
-        ],
-        "notes": "(m) -ion",
-        "id": "2771521147"
-    },
-    {
-        "en": "to voice",
-        "cy": "lleisio",
-        "tags": [
-            "verb"
-        ],
-        "notes": "",
-        "id": "3364762413"
-    },
-    {
-        "en": "to voice an opinion",
-        "cy": "lleisio barn",
-        "tags": [
-            "speech"
-        ],
-        "notes": "",
-        "id": "1685951590"
-    },
-    {
-        "en": "to congratulate",
-        "cy": "llonggyfarch",
-        "tags": [
-            "verb",
-            "emotion"
-        ],
-        "notes": "",
-        "id": "1014954424"
-    },
-    {
-        "en": "small talk",
-        "cy": "mân siarad",
-        "tags": [
-            "speech"
-        ],
-        "notes": "",
-        "id": "567943058"
-    },
-    {
-        "en": "to be unable to speak",
-        "cy": "methu siarad",
-        "tags": [
-            "speech"
-        ],
-        "notes": "(NW)",
-        "id": "3787168445"
-    },
-    {
-        "en": "to fail to speak",
-        "cy": "methu siarad",
-        "tags": [
-            "speech"
-        ],
-        "notes": "(NW)",
-        "id": "3987930825"
-    },
-    {
-        "en": "to express",
-        "cy": "mynegi",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "4254599981"
-    },
-    {
-        "en": "to lie non-stop",
-        "cy": "palu celwyddau",
-        "tags": [
-            "speech",
-            "emotion"
-        ],
-        "notes": "",
-        "id": "2853637948"
-    },
-    {
-        "en": "emphasis",
-        "cy": "pwyslais",
-        "tags": [
-            ""
-        ],
-        "notes": "(m)",
-        "id": "687016276"
-    },
-    {
-        "en": "emphasis",
-        "cy": "pwysleisiau",
-        "tags": [
-            ""
-        ],
-        "notes": "(m)",
-        "id": "3306501421"
-    },
-    {
-        "en": "to lie non-stop",
-        "cy": "rhaffu celwyddau",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "29554021"
-    },
-    {
-        "en": "to emphasise",
-        "cy": "pwysleisio",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "2850424899"
-    },
-    {
-        "en": "swear-word",
-        "cy": "rheg",
-        "tags": [
-            ""
-        ],
-        "notes": "(f) -au -feydd",
-        "id": "1968738554"
-    },
-    {
-        "en": "to swear",
-        "cy": "rhegi",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "3052077317"
-    },
-    {
-        "en": "sound",
-        "cy": "sain",
-        "tags": [
-            ""
-        ],
-        "notes": "(f)",
-        "id": "3118098539"
-    },
-    {
-        "en": "sounds",
-        "cy": "seiniau",
-        "tags": [
-            ""
-        ],
-        "notes": "(f) plural",
-        "id": "3900874679"
+        "id": "496059455"
     },
     {
         "en": "to sound",
@@ -1605,52 +2180,22 @@
         "id": "1368481613"
     },
     {
-        "en": "to scream",
-        "cy": "sgrechain",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "98666179"
-    },
-    {
-        "en": "to chat",
-        "cy": "sgwrs",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "(f)",
-        "id": "3853353469"
-    },
-    {
-        "en": "to chat",
-        "cy": "sgyrsiau",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "1422672489"
-    },
-    {
-        "en": "to chat to",
-        "cy": "sgwrsio â",
+        "en": "to sound like",
+        "cy": "swnio fel",
         "tags": [
             ""
         ],
         "notes": "",
-        "id": "2128606978"
+        "id": "466581930"
     },
     {
-        "en": "to speak to",
-        "cy": "siarad â",
+        "en": "to speak",
+        "cy": "llefaru",
         "tags": [
-            ""
+            "verb"
         ],
         "notes": "",
-        "id": "3612331512"
+        "id": "1042443083"
     },
     {
         "en": "to speak non-stop",
@@ -1662,15 +2207,6 @@
         "id": "4071796767"
     },
     {
-        "en": "to jabber on",
-        "cy": "pwll y môr",
-        "tags": [
-            "speech"
-        ],
-        "notes": "",
-        "id": "1960423169"
-    },
-    {
         "en": "to speak rudely",
         "cy": "siarad yn hyll",
         "tags": [
@@ -1680,522 +2216,54 @@
         "id": "56474204"
     },
     {
-        "en": "talkative",
-        "cy": "siaradus",
-        "tags": [
-            "adjective"
-        ],
-        "notes": "",
-        "id": "976477642"
-    },
-    {
-        "en": "speaker",
-        "cy": "siaradwr",
-        "tags": [
-            "noun"
-        ],
-        "notes": "(m)",
-        "id": "631436990"
-    },
-    {
-        "en": "speaker",
-        "cy": "siaradwyr",
-        "tags": [
-            "noun"
-        ],
-        "notes": "(f)",
-        "id": "176082124"
-    },
-    {
-        "en": "to whispher",
-        "cy": "sibrwd",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "957133973"
-    },
-    {
-        "en": "to mention",
-        "cy": "sôn",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "1050518581"
-    },
-    {
-        "en": "noise",
-        "cy": "stŵr",
-        "tags": [
-            "sound"
-        ],
-        "notes": "",
-        "id": "1618742759"
-    },
-    {
-        "en": "noisy",
-        "cy": "stwrllyd",
-        "tags": [
-            "sound"
-        ],
-        "notes": "",
-        "id": "1995903524"
-    },
-    {
-        "en": "noise",
-        "cy": "sŵn",
-        "tags": [
-            ""
-        ],
-        "notes": "(m)",
-        "id": "3098418560"
-    },
-    {
-        "en": "to murmur",
-        "cy": "swnian",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "2181945674"
-    },
-    {
-        "en": "to grumble",
-        "cy": "swnian",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "2547145452"
-    },
-    {
-        "en": "to nag",
-        "cy": "swnian",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "3578911010"
-    },
-    {
-        "en": "to sound like",
-        "cy": "swnio fel",
+        "en": "to speak to",
+        "cy": "siarad â",
         "tags": [
             ""
         ],
         "notes": "",
-        "id": "466581930"
+        "id": "3612331512"
     },
     {
-        "en": "noisy",
-        "cy": "swnllyd",
+        "en": "to spit",
+        "cy": "poeri",
         "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "3861180847"
-    },
-    {
-        "en": "quiet",
-        "cy": "tawel",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "4106949229"
-    },
-    {
-        "en": "calm",
-        "cy": "tawelwch",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "2500542350"
-    },
-    {
-        "en": "to be silent",
-        "cy": "tewi",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "4030506368"
-    },
-    {
-        "en": "to interupt",
-        "cy": "torri ar draws",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "3371236134"
-    },
-    {
-        "en": "to utter a word",
-        "cy": "torri gair",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "3337456387"
-    },
-    {
-        "en": "to talk",
-        "cy": "whilia",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "(SW)",
-        "id": "1571807331"
-    },
-    {
-        "en": "to answer",
-        "cy": "ymateb",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "3116154140"
-    },
-    {
-        "en": "out of breath",
-        "cy": "â'm gwynt yn fy nwrn",
-        "tags": [
-            "saying"
-        ],
-        "notes": "",
-        "id": "1734600648"
-    },
-    {
-        "en": "liver",
-        "cy": "afu",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f/m) (SW)",
-        "id": "847248220"
-    },
-    {
-        "en": "breath",
-        "cy": "anadl",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f/m) -au -on",
-        "id": "3112287668"
-    },
-    {
-        "en": "to breath",
-        "cy": "anadlu",
-        "tags": [
+            "head",
             "body",
             "verb"
         ],
         "notes": "",
-        "id": "2094056069"
+        "id": "3966718661"
     },
     {
-        "en": "kidney",
-        "cy": "aren",
+        "en": "to stutter",
+        "cy": "atal dweud",
         "tags": [
-            "body"
-        ],
-        "notes": "(f) -nau",
-        "id": "4128973462"
-    },
-    {
-        "en": "rib",
-        "cy": "asen",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -nau",
-        "id": "1940169754"
-    },
-    {
-        "en": "bone",
-        "cy": "asgwrn",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "1114106878"
-    },
-    {
-        "en": "spine",
-        "cy": "asgwrn cefn",
-        "tags": [
-            "body"
-        ],
-        "notes": "",
-        "id": "2619088251"
-    },
-    {
-        "en": "body hair",
-        "cy": "blewyn",
-        "tags": [
-            "body"
-        ],
-        "notes": "",
-        "id": "26024835"
-    },
-    {
-        "en": "belly button",
-        "cy": "bogail",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f/m)",
-        "id": "2740102633"
-    },
-    {
-        "en": "navels",
-        "cy": "bogeiliau",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f/m)",
-        "id": "903692475"
-    },
-    {
-        "en": "stomach",
-        "cy": "bol",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) -iau",
-        "id": "4196222872"
-    },
-    {
-        "en": "stomach",
-        "cy": "bola",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) (SW)",
-        "id": "2978728492"
-    },
-    {
-        "en": "chest",
-        "cy": "brest",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -iau",
-        "id": "3726365446"
-    },
-    {
-        "en": "breast",
-        "cy": "bron",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -nau",
-        "id": "2492592760"
-    },
-    {
-        "en": "to get my breath back",
-        "cy": "cael fy ngwynt ataf i",
-        "tags": [
-            "body",
-            "saying",
-            "speech"
-        ],
-        "notes": "",
-        "id": "497707457"
-    },
-    {
-        "en": "heart",
-        "cy": "calon",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f)",
-        "id": "1112556072"
-    },
-    {
-        "en": "back",
-        "cy": "cefn",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) -au",
-        "id": "202195098"
-    },
-    {
-        "en": "armpit",
-        "cy": "cesail",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f)",
-        "id": "2808267919"
-    },
-    {
-        "en": "armpits",
-        "cy": "ceseiliau",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f)",
-        "id": "2642587173"
-    },
-    {
-        "en": "under his arm",
-        "cy": "dan ei gesail",
-        "tags": [
-            "body",
+            "sound",
             "speech",
-            "saying"
+            "verb"
         ],
         "notes": "",
-        "id": "177299167"
+        "id": "3973314995"
     },
     {
-        "en": "flesh",
-        "cy": "cig",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "1467502335"
-    },
-    {
-        "en": "flesh and blood",
-        "cy": "cig a gwaed",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "",
-        "id": "1241186372"
-    },
-    {
-        "en": "flesh",
-        "cy": "cnawd",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "1543977389"
-    },
-    {
-        "en": "body",
-        "cy": "corff",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "3993941224"
-    },
-    {
-        "en": "physical",
-        "cy": "corfforol",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "2633552335"
-    },
-    {
-        "en": "skin",
-        "cy": "croen",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "1092204108"
-    },
-    {
-        "en": "strong",
-        "cy": "cryf",
+        "en": "to swallow",
+        "cy": "llyncu",
         "tags": [
             "verb"
         ],
         "notes": "",
-        "id": "889843748"
+        "id": "3886647710"
     },
     {
-        "en": "strength",
-        "cy": "cryfder",
+        "en": "to swear",
+        "cy": "rhegi",
         "tags": [
-            ""
-        ],
-        "notes": "(m) -au",
-        "id": "3531247159"
-    },
-    {
-        "en": "heartbeat",
-        "cy": "curiad y galon",
-        "tags": [
-            "body"
+            "verb",
+            "speech"
         ],
         "notes": "",
-        "id": "2461916808"
-    },
-    {
-        "en": "pulse",
-        "cy": "curiad y gwaed",
-        "tags": [
-            "body"
-        ],
-        "notes": "",
-        "id": "2955702868"
-    },
-    {
-        "en": "muscle",
-        "cy": "cyhyr",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) -au",
-        "id": "709187431"
-    },
-    {
-        "en": "muscular",
-        "cy": "cyhyrog",
-        "tags": [
-            "body"
-        ],
-        "notes": "",
-        "id": "1220132121"
-    },
-    {
-        "en": "stomach",
-        "cy": "cylla",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) (SW)",
-        "id": "2501072279"
-    },
-    {
-        "en": "sweat",
-        "cy": "chwys",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "871159684"
-    },
-    {
-        "en": "dripping with sweat",
-        "cy": "chwys diferyd",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "",
-        "id": "1789388435"
+        "id": "3052077317"
     },
     {
         "en": "to sweat",
@@ -2218,60 +2286,158 @@
         "id": "3519705722"
     },
     {
-        "en": "feeble",
-        "cy": "di-asgwrn-cefn",
+        "en": "to talk",
+        "cy": "whilia",
         "tags": [
-            "saying",
-            "body"
+            "verb",
+            "speech"
+        ],
+        "notes": "(SW)",
+        "id": "1571807331"
+    },
+    {
+        "en": "to tell",
+        "cy": "dweud wrth",
+        "tags": [
+            "verb",
+            "sound",
+            "speech"
         ],
         "notes": "",
-        "id": "1298651229"
+        "id": "4087626630"
     },
     {
-        "en": "bony",
-        "cy": "esgyrnog",
+        "en": "to utter",
+        "cy": "llefaru",
         "tags": [
-            "body"
+            "verb"
         ],
         "notes": "",
-        "id": "2584690636"
+        "id": "2207965573"
     },
     {
-        "en": "tendon",
-        "cy": "gewyn",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) -nau gïau",
-        "id": "2903499317"
-    },
-    {
-        "en": "blood",
-        "cy": "gwaed",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "145740956"
-    },
-    {
-        "en": "bloody",
-        "cy": "gwaedlyd",
+        "en": "to utter a word",
+        "cy": "torri gair",
         "tags": [
             ""
         ],
         "notes": "",
-        "id": "3222508456"
+        "id": "3337456387"
     },
     {
-        "en": "to bleed",
-        "cy": "gwaedu",
+        "en": "to voice",
+        "cy": "lleisio",
         "tags": [
-            "body",
             "verb"
         ],
         "notes": "",
-        "id": "3018021297"
+        "id": "3364762413"
+    },
+    {
+        "en": "to voice an opinion",
+        "cy": "lleisio barn",
+        "tags": [
+            "speech"
+        ],
+        "notes": "",
+        "id": "1685951590"
+    },
+    {
+        "en": "to whispher",
+        "cy": "sibrwd",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "957133973"
+    },
+    {
+        "en": "to yawn",
+        "cy": "agor ceg",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "2929054681"
+    },
+    {
+        "en": "tongue",
+        "cy": "tafod",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) -au",
+        "id": "899337985"
+    },
+    {
+        "en": "tooth",
+        "cy": "dant",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(m)",
+        "id": "579998835"
+    },
+    {
+        "en": "toothache",
+        "cy": "dannoedd",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(f)",
+        "id": "2431149287"
+    },
+    {
+        "en": "under his arm",
+        "cy": "dan ei gesail",
+        "tags": [
+            "body",
+            "speech",
+            "saying"
+        ],
+        "notes": "",
+        "id": "177299167"
+    },
+    {
+        "en": "vein",
+        "cy": "gwythïen",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -nau",
+        "id": "1362156447"
+    },
+    {
+        "en": "voice",
+        "cy": "llef",
+        "tags": [
+            "sound",
+            "cry"
+        ],
+        "notes": "(f) -au",
+        "id": "3486386294"
+    },
+    {
+        "en": "voice",
+        "cy": "llais",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m)",
+        "id": "1826737304"
+    },
+    {
+        "en": "voices",
+        "cy": "lleisiau",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m)",
+        "id": "2160404498"
     },
     {
         "en": "waist",
@@ -2292,216 +2458,50 @@
         "id": "3215007614"
     },
     {
-        "en": "breath",
-        "cy": "gwynt",
+        "en": "white lie",
+        "cy": "celwydd golau",
         "tags": [
+            "speech"
+        ],
+        "notes": "",
+        "id": "1692112257"
+    },
+    {
+        "en": "windpipe",
+        "cy": "corn gwddf",
+        "tags": [
+            "head",
             "body"
         ],
         "notes": "(m)",
-        "id": "169874109"
+        "id": "3350031516"
     },
     {
-        "en": "vein",
-        "cy": "gwythïen",
+        "en": "without a murmur",
+        "cy": "heb na siw na miw",
         "tags": [
-            "body"
-        ],
-        "notes": "(f) -nau",
-        "id": "1362156447"
-    },
-    {
-        "en": "liver",
-        "cy": "iau",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) (NW)",
-        "id": "217691975"
-    },
-    {
-        "en": "birth mark",
-        "cy": "man geni",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "2757121617"
-    },
-    {
-        "en": "bosom",
-        "cy": "mynwes",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "1848607603"
-    },
-    {
-        "en": "nerve",
-        "cy": "nerf",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "3258252417"
-    },
-    {
-        "en": "strength",
-        "cy": "nerth",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "2199069556"
-    },
-    {
-        "en": "physical force",
-        "cy": "nerth bôn braich",
-        "tags": [
-            ""
+            "speech"
         ],
         "notes": "",
-        "id": "4093573468"
+        "id": "2390359118"
     },
     {
-        "en": "bare",
-        "cy": "noeth",
+        "en": "without mincing words",
+        "cy": "diflewyn-ar-dafod",
         "tags": [
-            "body"
+            "sound",
+            "emotion"
         ],
         "notes": "",
-        "id": "3327741798"
+        "id": "2354741711"
     },
     {
-        "en": "nude",
-        "cy": "noethlymun",
+        "en": "without saying a word",
+        "cy": "heb ddweud na bw na be'",
         "tags": [
-            "body"
+            "speech"
         ],
         "notes": "",
-        "id": "1897284683"
-    },
-    {
-        "en": "intestine",
-        "cy": "perfedd",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) -ion",
-        "id": "2719035668"
-    },
-    {
-        "en": "artery",
-        "cy": "rhydweli",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) rhydwelïau",
-        "id": "4248908253"
-    },
-    {
-        "en": "digestion",
-        "cy": "traul",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f)",
-        "id": "1015805843"
-    },
-    {
-        "en": "i've got indigestion",
-        "cy": "mae diffyg traul arnaf i",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "",
-        "id": "4261532636"
-    },
-    {
-        "en": "i've got indigestion",
-        "cy": "mae dŵr poeth arnaf i",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "",
-        "id": "2215359764"
-    },
-    {
-        "en": "i've got indigestion",
-        "cy": "mae llosg cylia arnaf i",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "(SW)",
-        "id": "307232369"
-    },
-    {
-        "en": "to digest",
-        "cy": "treulio",
-        "tags": [
-            "body",
-            "verb"
-        ],
-        "notes": "",
-        "id": "967090122"
-    },
-    {
-        "en": "skeleton",
-        "cy": "ysgerbwd",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "2696691852"
-    },
-    {
-        "en": "skeletons",
-        "cy": "ysgerbydau",
-        "tags": [
-            "body",
-            "plural"
-        ],
-        "notes": "",
-        "id": "3074301811"
-    },
-    {
-        "en": "shoulder",
-        "cy": "ysgwydd",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "3588940681"
-    },
-    {
-        "en": "lungs",
-        "cy": "ysgyfaint",
-        "tags": [
-            "body"
-        ],
-        "notes": "plural",
-        "id": "175995263"
-    },
-    {
-        "en": "side",
-        "cy": "ystlys",
-        "tags": [
-            "body"
-        ],
-        "notes": "",
-        "id": "1941791497"
-    },
-    {
-        "en": "i've got a stitch",
-        "cy": "mae gen i bigyn yn fy ystlys",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "",
-        "id": "3789290715"
+        "id": "1117491235"
     }
 ]
