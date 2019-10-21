@@ -11,6 +11,10 @@ import eventTargetValue from "../../core/event-target-value";
 const evt = eventTargetValue();
 const geirfa = makeGeirfa(geirfaData);
 
+const currentTranslationUnitsCount = geirfaData.length;
+const targetTranslationUnitsCount = 5000;
+
+
 class Vocabulary extends React.Component {
 
     constructor(props) {
@@ -48,8 +52,13 @@ class Vocabulary extends React.Component {
             <PageContainer>
 
                 <PageHeader>
-                    Vocabulary
+                    Vocabulary <small>Beta</small>
                 </PageHeader>
+
+                <p>
+                    This is a beta version of an attempt to provide a searchable resource for commonly heard sayings.
+                    Currently it has {currentTranslationUnitsCount} words and phrases out of a target of {targetTranslationUnitsCount}.
+                </p>
 
                 <VocabSearch onChange={this.makeOnChange()} value={this.state.searchText} />
 
