@@ -8,6 +8,8 @@ const makeGeirfa = require("../client/app/core/model/geirfa").default;
 const unitsEqual = require("../client/app/core/model/geirfa").unitsEqual;
 const unitContainsText = require("../client/app/core/model/geirfa").unitContainsText;
 const trim = require("../client/app/core/model/geirfa").trim;
+const tweetableUnit = require("../client/app/core/model/geirfa/tweetable-unit").default;
+const sample = require("../client/app/core/model/array-sample").default;
 
 const hash = function (obj) {
     let string = JSON.stringify(obj);
@@ -64,7 +66,7 @@ describe("geirfa", function () {
         it("has all objects with required keys", function () {
 
             geirfaJson.forEach(unit => {
-                
+
                 requiredKeys.forEach(key => {
                     expect(unit.hasOwnProperty(key)).to.be.true;
                 });
@@ -73,14 +75,30 @@ describe("geirfa", function () {
 
         });
 
+        it("has no duplicate id's", function () {
+
+            const tally = {};
+
+            geirfaJson.forEach(unit => {
+
+                if (tally[unit.id] === undefined) {
+                    tally[unit.id] = true;
+                } else {
+                    expect(true).to.be.false;
+                }
+
+            });
+
+        });
+
     });
 
-    describe("test data", function() {
+    describe("test data", function () {
 
         it("has all objects with required keys", function () {
 
             geirfaData.forEach(unit => {
-                
+
                 requiredKeys.forEach(key => {
                     expect(unit.hasOwnProperty(key)).to.be.true;
                 });
@@ -328,5 +346,46 @@ describe("geirfa", function () {
 
     });
 
+    describe("random-tweet", function() {
+
+        it("returns a string suitable to be tweeted", function () {
+
+            let geirfa = makeGeirfa(geirfaJson);
+
+            for (let i = 0; i < 100; i++) {
+
+                const tweet = geirfa.randomTweet();
+
+                expect(tweet).to.exist;
+                expect(typeof(tweet)).to.be.equal("string");
+                expect(tweet.length <= 280).to.be.true;
+                expect(tweet.length > 5).to.be.true;
+
+            }
+
+        });
+
+    });
+
+    describe("tweetable-unit", function () {
+
+        it("returns a string suitable to be tweeted", function () {
+
+            for (let i = 0; i < 100; i++) {
+
+                const unit = sample(geirfaJson);
+                
+                const tweet = tweetableUnit(unit);
+
+                expect(tweet).to.exist;
+                expect(typeof(tweet)).to.be.equal("string");
+                expect(tweet.length <= 280).to.be.true;
+                expect(tweet.length > 5).to.be.true;
+
+            }
+
+        });
+
+    });
 
 });

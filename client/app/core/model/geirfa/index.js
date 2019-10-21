@@ -1,25 +1,8 @@
-import { whitespaceStartRe, whitespaceEndRe } from "../regular-expressions";
-
-function trim(str) {
-    return str.replace(whitespaceStartRe, "").replace(whitespaceEndRe, "");
-}
-
-function unitsEqual(unit1, unit2) {
-    return unit1.en === unit2.en &&
-        unit2.cy === unit2.cy;
-}
-
-function unitContainsText(unit, text) {
-
-    const wordMatches = (~unit.en.toLowerCase().indexOf(text) || ~unit.cy.toLowerCase().indexOf(text)) 
-        ? true 
-        : false;
-
-    const tagMatches = unit.tags.filter((tag) => { return tag.indexOf(text) != -1; });
-
-    return wordMatches || tagMatches.length > 0;
-
-}
+import sample from "../array-sample";
+import trim from "./trim";
+import unitsEqual from "./units-equal";
+import unitContainsText from "./unit-contains-text";
+import tweetableUnit from "./tweetable-unit";
 
 function makeUnitContainsTextFilter(text) {
 
@@ -38,6 +21,9 @@ function makeGeirfa(data) {
         },
         findMatches: function (text) {
             return data.filter(makeUnitContainsTextFilter(text));
+        },
+        randomTweet: function () {
+            return tweetableUnit(sample(data));
         },
         unitsEqual: unitsEqual
     };
