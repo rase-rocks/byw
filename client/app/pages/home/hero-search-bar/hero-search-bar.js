@@ -29,6 +29,7 @@ class HeroSearchBar extends React.Component {
 
                             <input value={searchText}
                                 onChange={onChange}
+                                aria-label="Search"
                                 type="search"
                                 name="search"
                                 autoComplete="off"
@@ -41,6 +42,7 @@ class HeroSearchBar extends React.Component {
                             <input className="search-bar-selector"
                                 type="text"
                                 name="location"
+                                aria-label="Search Results"
                                 placeholder="Location"
                                 id="location"
                                 readOnly

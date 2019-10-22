@@ -16,7 +16,7 @@ class About extends React.Component {
 
                         <div className="col-md-6">
                             <p>
-                                byw.cymru is a community driven, crowd sourced, Welsh language resource.
+                                Byw.cymru is a community driven, crowd sourced, Welsh language resource.
                                 Its primary aim is to help learners and others who are interested in the language
                                 find places where they can hear and use the language.
                             </p>
@@ -67,6 +67,12 @@ class About extends React.Component {
                             </p>
                             <p>
                                 Anybody can do this and no login or account is necessary.
+                            </p>
+                            <p>
+                                If there are any issues discovered, bugs found or suggestions to be made then check out
+                                the <a href="https://github.com/rase-rocks/byw/issues"
+                                    target="_blank"
+                                    rel="noopener noreferrer">issues page</a> on GitHub.
                             </p>
                         </div>
                         <div className="col-md-6">

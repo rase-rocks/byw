@@ -71,15 +71,18 @@ class Nav extends React.Component {
 
                 <nav id="mainNav" className="nav navbar navbar-expand-lg">
                     <div className="container">
-                        <NavLink className="navbar-brand" to="/">BYW</NavLink>
+
+                        <ul>
+                            <NavLink className="navbar-brand" to="/">BYW</NavLink>
+                        </ul>
 
                         <button id="nav-toggle"
+                            aria-label="Navigation Menu"
                             onClick={this.makeToggler()}
                             className={buttonClass}
                             type="button">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-
 
                         <div className="navbar-collapse collapse" id="navbarcollapse">
                             <ul className="navbar-nav ml-auto">

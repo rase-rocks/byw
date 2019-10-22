@@ -9,7 +9,8 @@ const data = [
         It is all in English because it has been learners who have raised 
         the issue about where can they comfortably try out their Welsh 
         when out and about`,
-        url: "assets/images/LocateIcon.svg"
+        url: "assets/images/LocateIcon.svg",
+        alt: "Locate Places Icon"
     },
     {
         title: "Native Speakers",
@@ -17,14 +18,16 @@ const data = [
         Those fluent need to also use their Welsh whenever they can.
         Welsh needs to be heard on the street, in the shops and wherever
         we get together`,
-        url: "assets/images/CommentIcon.svg"
+        url: "assets/images/CommentIcon.svg",
+        alt: "Speaking Icon"
     },
     {
         title: "Days out",
         description: `So, before you shop, go on a day out, or whatever you like to do,
         see if there will be a Welsh language welcome and, above all,
         use your Welsh yourself!`,
-        url: "assets/images/SuitcaseIcon.svg"
+        url: "assets/images/SuitcaseIcon.svg",
+        alt: "Days out Icon"
     }
 ];
 

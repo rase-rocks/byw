@@ -8,7 +8,7 @@ class FooterLink extends React.Component {
         const { to, title } = this.props;
 
         return (
-            <li>
+            <li style={{minHeight: "48px"}}>
                 <Link to={to}><small>{title.toUpperCase()}</small></Link>
             </li>
         );

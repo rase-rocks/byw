@@ -7,12 +7,13 @@ class Col extends React.Component {
         const {
             title,
             description,
-            url
+            url,
+            alt
         } = this.props;
 
         return (
             <div className="item col-lg-4">
-                <div className="icon"><img src={url} width="70px"/></div>
+                <div className="icon"><img src={url} width="70px" alt={alt}/></div>
                 <div className="text">
                     <h3 className="h4">{title}</h3>
                     <p className="text-muted">
@@ -27,7 +28,8 @@ class Col extends React.Component {
 Col.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired
 };
 
 export default Col;
