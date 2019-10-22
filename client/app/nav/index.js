@@ -14,7 +14,7 @@ export const route = {
     home: "/",
     map: "/map",
     vocabulary: "/vocabulary",
-    //about: "/about",
+    about: "/about",
     submit: "/submit"
 };
 
@@ -22,7 +22,7 @@ export const routes = [
     { url: route.home, title: "Home" },
     { url: route.map, title: "Map" },
     { url: route.vocabulary, title: "Vocab" },
-    //{ url: route.about, title: "About" },
+    { url: route.about, title: "About" },
     { url: route.submit, title: "Submit" }
 ];
 
@@ -51,7 +51,7 @@ class Nav extends React.Component {
         };
     }
 
-    componentWillReceiveProps(newProps) {
+    UNSAFE_componentWillReceiveProps(newProps) {
         if (!pathnameIsEqual(newProps, this.props)) {
             this.setState({ showMenu: false });
         }

@@ -78,10 +78,6 @@ const makeApiClient = function (fetchObject) {
                     .then(getJson)
                     .then(makeSubmitResponseHandler(resolve, reject));
             });
-            // return new Promise(function (resolve, reject) {
-            //     const handler = makeSubmitResponseHandler(resolve, reject);
-            //     handler();
-            // });
         },
         locations: function () {
             return fetchObject(urls.locations)

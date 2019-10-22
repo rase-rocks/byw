@@ -4,7 +4,7 @@ AWS.config.update({ region: "eu-west-1" });
 const ddb = new AWS.DynamoDB({ apiVersion: "2012-10-08" });
 
 const makeStreamRecordToPut = function(db, tableName) {
-    const put = async(newImage) => {
+    const put = async (newImage) => {
 
         const params = {
             TableName: tableName,
@@ -22,7 +22,7 @@ const makeStreamRecordToPut = function(db, tableName) {
 
 const makeGetter = function(db, tableName) {
 
-    const getExisting = async(coordinateHash) => {
+    const getExisting = async (coordinateHash) => {
         const params = {
             TableName: tableName,
             Key: { "coordinateHash": coordinateHash },

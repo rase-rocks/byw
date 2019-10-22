@@ -21,11 +21,12 @@ import Privacy from "./pages/privacy";
 import reducers from "./core/redux/reducers";
 import Submit from "./pages/submit";
 import Vocabulary from "./pages/vocabulary";
+import About from "./pages/about";
 
 const routes = [
     { url: route.home, component: Home },
     { url: route.map, component: MapPage },
-    //{ url: route.about, component: About },
+    { url: route.about, component: About },
     { url: route.vocabulary, component: Vocabulary },
     { url: route.submit, component: Submit },
     { url: privacyRoute.url, component: Privacy }

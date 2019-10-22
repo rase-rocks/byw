@@ -8,7 +8,7 @@ class About extends React.Component {
                     <header>
                         <h2>
                             <small>About</small>
-                            What can <span className="text-primary">BreatheYourWelsh</span> do?
+                            What can <span className="text-primary">byw.cymru</span> do?
                         </h2>
                     </header>
                     <div style={{height: "40px"}}></div>
@@ -16,7 +16,7 @@ class About extends React.Component {
 
                         <div className="col-md-6">
                             <p>
-                                BreatheYourWelsh is a community driven, crowd sourced, Welsh language resource.
+                                byw.cymru is a community driven, crowd sourced, Welsh language resource.
                                 Its primary aim is to help learners and others who are interested in the language
                                 find places where they can hear and use the language.
                             </p>
@@ -36,7 +36,7 @@ class About extends React.Component {
                             <p>
                                 The aim of the project is to make finding out this information as easy as
                                 possible, with the maximum of community involvement. Therefore the design
-                                of the website is to be as easy and quick to use as possible. It is focussed
+                                of the website is to be as easy and quick to use as possible. It is focused
                                 around the map page which is the primary resource for searching the index.
                             </p>
                             <p>

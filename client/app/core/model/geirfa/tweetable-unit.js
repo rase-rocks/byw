@@ -15,5 +15,5 @@ function randomTitle() {
 }
 
 export default function (unit) {
-    return `${randomTitle()}: ${randomDirectionTranslation(unit)}`;
+    return `${randomTitle()}: ${randomDirectionTranslation(unit)} #bywcymru`;
 }
