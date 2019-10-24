@@ -83,7 +83,7 @@ cough, peswch, body head medical, (m)
 to cough, pesychu, verb head body medical,
 saliva, poer, head body medical, (m) -ion
 to spit, poeri, head body verb,
-fit of coughing, pwl o beswch, head body medical, (m)
+fit of coughing, pwl o beswch, head body medical phrase, (m)
 fits of coughing, pyliau o beswch, head body medical,
 kiss, sws, head body emotion, (f) -ys (dom)
 tongue, tafod, head body, (m) -au
@@ -108,8 +108,8 @@ to argue or fall out, cwympo mas, speech verb emotion, (SW)
 to meet, cyfarch, verb,
 to laugh, chwerthin, verb emotion,
 to laugh at someone, chwerthin am ben rhywun, sound verb emotion,
-without mincing words, diflewyn-ar-dafod, sound emotion,
-no communication between them, dim Cymraeg rhyngddyn nhw, speech sound emotion,
+without mincing words, diflewyn-ar-dafod, sound emotion phrase,
+no communication between them, dim Cymraeg rhyngddyn nhw, speech sound emotion phrase,
 silent, distaw, sound speech,
 silence, distawrwydd, sound speech, (m)
 to silence, distewi, verb sound speech,
@@ -126,10 +126,10 @@ command, gorchymynion, verb, (m)
 cry, gwaedd, verb, (f) -au
 shout, gwaedd, verb,
 to shout, gweiddi, verb,
-to shout as loud as possible, gweiddi nerth (esgyrn) fy mhen, speech, (esgyrn)
+to shout as loud as possible, gweiddi nerth (esgyrn) fy mhen, speech phrase, (esgyrn)
 to shout loudly, gweiddi yn uchel, speech,
-without saying a word, heb ddweud na bw na be', speech,
-without a murmur, heb na siw na miw, speech,
+without saying a word, heb ddweud na bw na be', speech phrase,
+without a murmur, heb na siw na miw, speech phrase,
 to gossip, hel clecs, verb, (SW)
 to gossip, hel straeon, verb, (NW)
 eloquent, huawdl, adjective,
@@ -189,7 +189,7 @@ to interupt, torri ar draws,,
 to utter a word, torri gair,,
 to talk, whilia, verb speech, (SW)
 to answer, ymateb, verb speech,
-out of breath, â'm gwynt yn fy nwrn, saying,
+out of breath, â'm gwynt yn fy nwrn, saying phrase,
 liver, afu, body, (f/m) (SW)
 breath, anadl, body, (f/m) -au -on
 to breath, anadlu, body verb,
@@ -204,7 +204,7 @@ stomach, bol, body, (m) -iau
 stomach, bola, body, (m) (SW)
 chest, brest, body, (f) -iau
 breast, bron, body, (f) -nau
-to get my breath back, cael fy ngwynt ataf i, body saying speech,
+to get my breath back, cael fy ngwynt ataf i, body saying speech phrase,
 heart, calon, body, (f)
 back, cefn, body, (m) -au
 armpit, cesail, body, (f)
@@ -224,9 +224,9 @@ muscle, cyhyr, body, (m) -au
 muscular, cyhyrog, body,
 stomach, cylla, body, (m) (SW)
 sweat, chwys, body, (m)
-dripping with sweat, chwys diferyd, body saying,
+dripping with sweat, chwys diferyd, body saying phrase,
 to sweat, chwysu, verb body,
-to sweat buckets, chwysu chwartiau, body saying,
+to sweat buckets, chwysu chwartiau, body saying phrase,
 feeble, di-asgwrn-cefn, saying body,
 bony, esgyrnog, body,
 tendon, gewyn, body, (m) -nau gïau
@@ -257,7 +257,7 @@ skeletons, ysgerbydau, body plural,
 shoulder, ysgwydd, body, (f) -au
 lungs, ysgyfaint, body, plural
 side, ystlys, body,
-i've got a stitch, mae gen i bigyn yn fy ystlys, body saying,
+i've got a stitch, mae gen i bigyn yn fy ystlys, body saying phrase,
 wrist, arddwrn, body, (m)
 wrists, arddyrnau, body, (m)
 thumb, bawd, body hand, (f)
@@ -277,7 +277,7 @@ fist, dwrn, body hand, (m)
 fists, dyrnau, body hand, (m)
 elbow, elin, body, (f) -au
 forearm, elinoedd, body, (f)
-to point a finger at somthing, estyn bys a rhywbeth, body saying,
+to point a finger at something, estyn bys a rhywbeth, body saying,
 nail, ewin, body hand, (f/m) -edd
 to grab, gafael, body verb, (yn)
 hand, llaw, body, (f)
@@ -288,7 +288,7 @@ left hand, llaw chwith, body,
 right hand, llaw dde, body,
 knuckle, migwrn, body hand, (m)
 knuckles, migyyrnau, body hand plural, (m)
-palm of the hand, pant y llaw, body hand saying, (m)
+palm of the hand, pant y llaw, body hand saying phrase, (m)
 elbow, penelin, body, (f/m)
 elbows, penelinoedd, body, (f/m)
 to point at, pwyntio at, body saying,
@@ -307,3 +307,46 @@ toe, bys troed, body leg foot, (m)
 toes, bysedd troed, body leg foot, (m)
 hip, clun, body leg, (f)
 thighs, cluniau, body leg, (f)
+leg, coes, body leg, (f) -au
+calf, croth, body leg, (f) -au
+to squat, cyrcydu, verb body leg,
+squatting, yn fy nghwrcwd, body leg exercise,
+ankle, ffêr, body leg, (f)
+ankles, fferau, body leg plural,
+lap, glin, body leg, (m) (NW) -iau
+sole, gwadn, body foot, (m) -au
+ankle, migwrn, body foot, (m)
+ankles, migyyrnau, body foot plural, (m)
+knee, pen-glin, body leg, (f)
+knees, penna gliniau, body leg plural, (f)
+to kneel, penlinio, verb body,
+backside, pen-ôl, body, (m)
+heel, sawdl, body, (f/m)
+heels, sodlau, body plural, (f/m)
+bottom, tin, body, (f)
+foot, troed, body,
+to twist my ankle, troi fy sawdl, body medical,
+about to, ar fin, doing,
+i'm about to go, dw i ar fin mynd, doing phrase,
+slow, araf,,
+to slow, arafu, verb,
+to wait, aros, verb,
+to stay, aros, verb,
+to trip up, baglu, verb phrase,
+to stride, brasgamu, verb,
+hurry, brys, verb doing, (m)
+in a hurry, ar frys, verb doing phrase,
+in a hurry, mewn brys, verb doing phrase,
+to hurry, brysio, verb doing,
+step, cam,, (m) -au
+to step, camu, verb doing,
+to follow, canlyn, verb doing,
+to carry, cario, verb doing,
+to walk, cerdded, verb doing,
+to walk barefoot, cerdded yn droednoeth, verb doing,
+to walk in my socks, cerdded yn nhraed fy sanau, verb doing,
+to limp, cloffi, verb doing,
+lameness, cloffni, doing, (m)
+fast, cloi,, (SW)
+to carry, cludo, verb doing,
+to get up, codi, doing,

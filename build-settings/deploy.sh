@@ -15,24 +15,27 @@ if [ $isUglifyEnabled != "y" ]; then
   exit 0;
 fi
 
-echo "\n[1/6]-[${RED}Removing Build folder${NC}]\n"
+echo "\n[1/7]-[${RED}Removing Build folder${NC}]\n"
 rm -r ./s3-build
 
 echo "\nMaking Geirfa\n"
 sh ./build-settings/make-geirfa.sh
 
-echo "\n[2/6]-[${GREEN}Rendering index.html for server in production mode${NC}]\n"
+echo "\n[2/7]-[${GREEN}Rendering index.html for server in production mode${NC}]\n"
 NODE_ENV='production' gulp static-build
 NODE_ENV='production' node ./s3-build/static-index-build.js > ./s3-build/index.html
 
-echo "\n[3/6]-[${GREEN}Building client app with production mode${NC}]\n"
+echo "\n[3/7]-[${GREEN}Building client app with production mode${NC}]\n"
 NODE_ENV='production' gulp static
 
-echo "\n[4/6]-[${GREEN}Cleaning up${NC}]\n"
+echo "\n[4/7]-[${GREEN}Cleaning up${NC}]\n"
 rm ./s3-build/static-index-build.js
 
-echo "\n[5/6]-[${GREEN}Running Tests...${NC}]\n"
+echo "\n[4/7]-[${GREEN}Copying www root files${NC}]\n"
+cp ./www/* ./s3-build
+
+echo "\n[6/7]-[${GREEN}Running Tests...${NC}]\n"
 npm test
 
-echo "\n[6/6] - [${RED}Edit URL before Deploying to S3${NC}]\n"
+echo "\n[7/7] - [${RED}Edit URL before Deploying to S3${NC}]\n"
 # ~/Library/Python/2.7/bin/aws s3 sync ./s3-build/ s3://byw.cymru --delete --exclude '.DS_Store' --cache-control max-age=604800

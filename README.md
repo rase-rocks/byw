@@ -23,6 +23,8 @@ The s3-build folder should not be manually altered as it is cleared for every bu
 ```
 Root
 |
++---- wwww // Things normally found in the www root, copied into s3-build by build scripts
+|
 +---- client // Client source files that are built into the s3-build folder
 |    |
 |    +---- app // Client code that is browserified
