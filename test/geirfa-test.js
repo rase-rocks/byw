@@ -3,6 +3,7 @@
 const expect = require("chai").expect;
 
 const geirfaJson = require("../client/app/pages/vocabulary/geirfa.json");
+const arrayCompare = require("../client/app/core/model/array-compare").default;
 
 const makeGeirfa = require("../client/app/core/model/geirfa").default;
 const unitsEqual = require("../client/app/core/model/geirfa").unitsEqual;
@@ -10,6 +11,7 @@ const unitContainsText = require("../client/app/core/model/geirfa").unitContains
 const trim = require("../client/app/core/model/geirfa").trim;
 const tweetableUnit = require("../client/app/core/model/geirfa/tweetable-unit").default;
 const sample = require("../client/app/core/model/array-sample").default;
+const tokens = require("../client/app/core/model/geirfa/tokens").default;
 
 const hash = function (obj) {
     let string = JSON.stringify(obj);
@@ -325,6 +327,14 @@ describe("geirfa", function () {
 
         });
 
+        it("returns true for phrases", function () {
+            
+            const crownOfHead = geirfaData[2];
+
+            expect(unitContainsText(crownOfHead, "crown head")).to.be.true;
+
+        });
+
         it("returns true for tag match", function () {
 
             const dandruff = geirfaData[0];
@@ -346,7 +356,7 @@ describe("geirfa", function () {
 
     });
 
-    describe("random-tweet", function() {
+    describe("random-tweet", function () {
 
         it("returns a string suitable to be tweeted", function () {
 
@@ -357,7 +367,7 @@ describe("geirfa", function () {
                 const tweet = geirfa.randomTweet();
 
                 expect(tweet).to.exist;
-                expect(typeof(tweet)).to.be.equal("string");
+                expect(typeof (tweet)).to.be.equal("string");
                 expect(tweet.length <= 280).to.be.true;
                 expect(tweet.length > 5).to.be.true;
 
@@ -374,15 +384,54 @@ describe("geirfa", function () {
             for (let i = 0; i < 100; i++) {
 
                 const unit = sample(geirfaJson);
-                
+
                 const tweet = tweetableUnit(unit);
 
                 expect(tweet).to.exist;
-                expect(typeof(tweet)).to.be.equal("string");
+                expect(typeof (tweet)).to.be.equal("string");
                 expect(tweet.length <= 280).to.be.true;
                 expect(tweet.length > 5).to.be.true;
 
             }
+
+        });
+
+    });
+
+    describe("tokens", function () {
+
+        it("does not modify phrase without spaces", function () {
+
+            const testPhrase = "ThisIsThePhrase";
+            const t = tokens(testPhrase);
+
+            expect(arrayCompare(t, [testPhrase])).to.be.true;
+
+        });
+
+        it("splits phrase in spaces", function () {
+
+            const words = ["This", "is", "the", "phrase"];
+            const testPhrase = words.join(" ");
+            const t = tokens(testPhrase);
+
+            expect(arrayCompare(t, words)).to.be.true;
+
+        });
+
+        it("handles empty string", function () {
+
+            const t = tokens("");
+
+            expect(arrayCompare(t, [""])).to.be.true;
+
+        });
+
+        it("handles undefined", function () {
+
+            const t = tokens(undefined);
+
+            expect(arrayCompare(t, [""])).to.be.true;
 
         });
 

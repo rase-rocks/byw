@@ -1,11 +1,32 @@
+import tokens from "./tokens";
+
+function matches(searchText, tokenizedWords) {
+
+    const searchTokens = tokens(searchText).map(t => t.toLowerCase());
+
+    if (searchTokens.length === 0) { return false; }
+
+    for (let i = 0; i < searchTokens.length; i++) {
+    
+        const searchToken = searchTokens[i].toLowerCase();
+
+        for (let j = 0; j < tokenizedWords.length; j++) {
+
+            if (tokenizedWords[j].indexOf(searchToken) != -1) { return true; }
+
+        }
+    }
+
+    return false;
+
+}
+
 export default function unitContainsText(unit, text) {
 
-    const wordMatches = (~unit.en.toLowerCase().indexOf(text) || ~unit.cy.toLowerCase().indexOf(text)) 
-        ? true 
-        : false;
+    const candidates = [].concat(
+        tokens(unit.en.toLowerCase()),
+        tokens(unit.cy.toLowerCase()),
+        unit.tags);
 
-    const tagMatches = unit.tags.filter((tag) => { return tag.indexOf(text) != -1; });
-
-    return wordMatches || tagMatches.length > 0;
-
+    return matches(text, candidates);
 }

@@ -67,7 +67,7 @@ class OverlayMenu extends React.Component {
                         <div className="row">
                             <div className="col-sm-12 text-center">
                                 <p className="copyright font-alt m-b-0">
-                                    www.breatheyourwelsh.cymru
+                                    www.byw.cymru
                                 </p>
                             </div>
                         </div>
