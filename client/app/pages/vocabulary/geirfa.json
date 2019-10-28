@@ -10,16 +10,6 @@
     },
     {
         "en": "ankle",
-        "cy": "ffêr",
-        "tags": [
-            "body",
-            "leg"
-        ],
-        "notes": "(f)",
-        "id": "2978949402"
-    },
-    {
-        "en": "ankle",
         "cy": "migwrn",
         "tags": [
             "body",
@@ -29,15 +19,14 @@
         "id": "3169134781"
     },
     {
-        "en": "ankles",
-        "cy": "fferau",
+        "en": "ankle",
+        "cy": "ffêr",
         "tags": [
             "body",
-            "leg",
-            "plural"
+            "leg"
         ],
-        "notes": "",
-        "id": "3367337295"
+        "notes": "(f)",
+        "id": "2978949402"
     },
     {
         "en": "ankles",
@@ -49,6 +38,17 @@
         ],
         "notes": "(m)",
         "id": "3964004951"
+    },
+    {
+        "en": "ankles",
+        "cy": "fferau",
+        "tags": [
+            "body",
+            "leg",
+            "plural"
+        ],
+        "notes": "",
+        "id": "3367337295"
     },
     {
         "en": "appearance",
@@ -324,15 +324,6 @@
     },
     {
         "en": "breath",
-        "cy": "gwynt",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "169874109"
-    },
-    {
-        "en": "breath",
         "cy": "anadl",
         "tags": [
             "body"
@@ -341,14 +332,13 @@
         "id": "3112287668"
     },
     {
-        "en": "calf",
-        "cy": "bola'r goes",
+        "en": "breath",
+        "cy": "gwynt",
         "tags": [
-            "body",
-            "leg"
+            "body"
         ],
-        "notes": "(m) (SW)",
-        "id": "2624827938"
+        "notes": "(m)",
+        "id": "169874109"
     },
     {
         "en": "calf",
@@ -369,6 +359,16 @@
         ],
         "notes": "(m) (NW)",
         "id": "1616732626"
+    },
+    {
+        "en": "calf",
+        "cy": "bola'r goes",
+        "tags": [
+            "body",
+            "leg"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2624827938"
     },
     {
         "en": "calm",
@@ -429,16 +429,6 @@
     },
     {
         "en": "corner of the eye",
-        "cy": "ciliau/cilion y llygaid",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(pl)",
-        "id": "1425347756"
-    },
-    {
-        "en": "corner of the eye",
         "cy": "cil y llygad",
         "tags": [
             "head",
@@ -446,6 +436,16 @@
         ],
         "notes": "(m)",
         "id": "2748484008"
+    },
+    {
+        "en": "corner of the eye",
+        "cy": "ciliau/cilion y llygaid",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(pl)",
+        "id": "1425347756"
     },
     {
         "en": "cough",
@@ -549,21 +549,21 @@
     },
     {
         "en": "echo",
-        "cy": "adlais",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(m) adleisiau",
-        "id": "1606839181"
-    },
-    {
-        "en": "echo",
         "cy": "atsain",
         "tags": [
             "sound"
         ],
         "notes": "(f) atseiniau",
         "id": "3112317638"
+    },
+    {
+        "en": "echo",
+        "cy": "adlais",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m) adleisiau",
+        "id": "1606839181"
     },
     {
         "en": "elbow",
@@ -603,21 +603,21 @@
     },
     {
         "en": "emphasis",
-        "cy": "pwyslais",
-        "tags": [
-            ""
-        ],
-        "notes": "(m)",
-        "id": "687016276"
-    },
-    {
-        "en": "emphasis",
         "cy": "pwysleisiau",
         "tags": [
             ""
         ],
         "notes": "(m)",
         "id": "3306501421"
+    },
+    {
+        "en": "emphasis",
+        "cy": "pwyslais",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)",
+        "id": "687016276"
     },
     {
         "en": "eye",
@@ -690,16 +690,6 @@
     },
     {
         "en": "false teeth",
-        "cy": "danedd dodi",
-        "tags": [
-            "head",
-            "dental"
-        ],
-        "notes": "(SW)",
-        "id": "1513609520"
-    },
-    {
-        "en": "false teeth",
         "cy": "dannedd gorsod",
         "tags": [
             "head",
@@ -709,6 +699,16 @@
         "id": "3640342503"
     },
     {
+        "en": "false teeth",
+        "cy": "danedd dodi",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(SW)",
+        "id": "1513609520"
+    },
+    {
         "en": "fast",
         "cy": "cloi",
         "tags": [
@@ -716,6 +716,15 @@
         ],
         "notes": "(SW)",
         "id": "4218457430"
+    },
+    {
+        "en": "fast",
+        "cy": "cyflym",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "3289871518"
     },
     {
         "en": "feeble",
@@ -935,17 +944,6 @@
     },
     {
         "en": "headache",
-        "cy": "pen tost",
-        "tags": [
-            "head",
-            "body",
-            "medical"
-        ],
-        "notes": "(SW)",
-        "id": "1912835596"
-    },
-    {
-        "en": "headache",
         "cy": "cur yn y pen",
         "tags": [
             "head",
@@ -954,6 +952,17 @@
         ],
         "notes": "(NW)",
         "id": "3494104967"
+    },
+    {
+        "en": "headache",
+        "cy": "pen tost",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "1912835596"
     },
     {
         "en": "heart",
@@ -1073,6 +1082,16 @@
     },
     {
         "en": "i've got indigestion",
+        "cy": "mae diffyg traul arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "",
+        "id": "4261532636"
+    },
+    {
+        "en": "i've got indigestion",
         "cy": "mae dŵr poeth arnaf i",
         "tags": [
             "body",
@@ -1082,14 +1101,14 @@
         "id": "2215359764"
     },
     {
-        "en": "i've got indigestion",
-        "cy": "mae diffyg traul arnaf i",
+        "en": "in a hurry",
+        "cy": "ar hast",
         "tags": [
-            "body",
+            "phrase",
             "saying"
         ],
-        "notes": "",
-        "id": "4261532636"
+        "notes": "(SW)",
+        "id": "372765306"
     },
     {
         "en": "in a hurry",
@@ -1141,6 +1160,15 @@
         ],
         "notes": "(f)",
         "id": "1134622038"
+    },
+    {
+        "en": "jump",
+        "cy": "llam",
+        "tags": [
+            ""
+        ],
+        "notes": "(m) -au",
+        "id": "1874956865"
     },
     {
         "en": "kidney",
@@ -1281,21 +1309,21 @@
     },
     {
         "en": "liver",
-        "cy": "afu",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f/m) (SW)",
-        "id": "847248220"
-    },
-    {
-        "en": "liver",
         "cy": "iau",
         "tags": [
             "body"
         ],
         "notes": "(m) (NW)",
         "id": "217691975"
+    },
+    {
+        "en": "liver",
+        "cy": "afu",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m) (SW)",
+        "id": "847248220"
     },
     {
         "en": "lungs",
@@ -1776,6 +1804,15 @@
         "id": "1768151650"
     },
     {
+        "en": "slippery",
+        "cy": "llithrig",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "82812203"
+    },
+    {
         "en": "slow",
         "cy": "araf",
         "tags": [
@@ -1814,13 +1851,13 @@
     },
     {
         "en": "sore throat",
-        "cy": "gwddf tost",
+        "cy": "dolur gwddf",
         "tags": [
-            "body",
+            "dental",
             "medical"
         ],
-        "notes": "(SW)",
-        "id": "2041602845"
+        "notes": "(m)(NW)",
+        "id": "143410646"
     },
     {
         "en": "sore throat",
@@ -1834,13 +1871,13 @@
     },
     {
         "en": "sore throat",
-        "cy": "dolur gwddf",
+        "cy": "gwddf tost",
         "tags": [
-            "dental",
+            "body",
             "medical"
         ],
-        "notes": "(m)(NW)",
-        "id": "143410646"
+        "notes": "(SW)",
+        "id": "2041602845"
     },
     {
         "en": "sound",
@@ -2074,6 +2111,16 @@
         "id": "2282942851"
     },
     {
+        "en": "to accompany",
+        "cy": "hebrwng",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1985123491"
+    },
+    {
         "en": "to answer",
         "cy": "ateb",
         "tags": [
@@ -2096,6 +2143,18 @@
     },
     {
         "en": "to argue or fall out",
+        "cy": "ffraeo",
+        "tags": [
+            "verb",
+            "speech",
+            "sound",
+            "emotion"
+        ],
+        "notes": "(NW)",
+        "id": "4183281583"
+    },
+    {
+        "en": "to argue or fall out",
         "cy": "cwympo mas",
         "tags": [
             "speech",
@@ -2106,16 +2165,24 @@
         "id": "3235486116"
     },
     {
-        "en": "to argue or fall out",
-        "cy": "ffraeo",
+        "en": "to arrive",
+        "cy": "cyrraedd",
         "tags": [
             "verb",
-            "speech",
-            "sound",
-            "emotion"
+            "doing"
         ],
-        "notes": "(NW)",
-        "id": "4183281583"
+        "notes": "",
+        "id": "3625746336"
+    },
+    {
+        "en": "to ascend",
+        "cy": "esgyn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1310693277"
     },
     {
         "en": "to ask someone",
@@ -2139,6 +2206,15 @@
     },
     {
         "en": "to be unable to speak",
+        "cy": "methu siarad",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(NW)",
+        "id": "3787168445"
+    },
+    {
+        "en": "to be unable to speak",
         "cy": "ffaelu siarad",
         "tags": [
             "verb",
@@ -2147,15 +2223,6 @@
         ],
         "notes": "(SW)",
         "id": "2914948508"
-    },
-    {
-        "en": "to be unable to speak",
-        "cy": "methu siarad",
-        "tags": [
-            "speech"
-        ],
-        "notes": "(NW)",
-        "id": "3787168445"
     },
     {
         "en": "to bleed",
@@ -2178,6 +2245,16 @@
         "id": "2094056069"
     },
     {
+        "en": "to bring",
+        "cy": "dod â",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1103554040"
+    },
+    {
         "en": "to burst into tears",
         "cy": "torri i feichio crio",
         "tags": [
@@ -2190,16 +2267,6 @@
     },
     {
         "en": "to carry",
-        "cy": "cludo",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "2010922607"
-    },
-    {
-        "en": "to carry",
         "cy": "cario",
         "tags": [
             "verb",
@@ -2207,6 +2274,16 @@
         ],
         "notes": "",
         "id": "16198088"
+    },
+    {
+        "en": "to carry",
+        "cy": "cludo",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2010922607"
     },
     {
         "en": "to chat",
@@ -2270,6 +2347,26 @@
         "id": "2783642516"
     },
     {
+        "en": "to climb",
+        "cy": "dringo",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2114813045"
+    },
+    {
+        "en": "to come",
+        "cy": "dod",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "880679278"
+    },
+    {
         "en": "to congratulate",
         "cy": "llonggyfarch",
         "tags": [
@@ -2290,6 +2387,26 @@
         ],
         "notes": "",
         "id": "564973354"
+    },
+    {
+        "en": "to crawl",
+        "cy": "cropian",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2796575462"
+    },
+    {
+        "en": "to cross",
+        "cy": "croesi",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1709794266"
     },
     {
         "en": "to cry",
@@ -2331,6 +2448,30 @@
         "id": "2391671325"
     },
     {
+        "en": "to dash off",
+        "cy": "ei goleuo hi",
+        "tags": [
+            "verb",
+            "doing",
+            "phrase",
+            "saying"
+        ],
+        "notes": "(NW)",
+        "id": "840067532"
+    },
+    {
+        "en": "to dash off",
+        "cy": "heglu",
+        "tags": [
+            "verb",
+            "doing",
+            "phrase",
+            "saying"
+        ],
+        "notes": "",
+        "id": "2055671665"
+    },
+    {
         "en": "to digest",
         "cy": "treulio",
         "tags": [
@@ -2341,15 +2482,13 @@
         "id": "967090122"
     },
     {
-        "en": "to dribble",
-        "cy": "glafoerio",
+        "en": "to drag",
+        "cy": "llusgo",
         "tags": [
-            "head",
-            "medical",
-            "verb"
+            ""
         ],
-        "notes": "(NW)",
-        "id": "2482410173"
+        "notes": "",
+        "id": "1131469119"
     },
     {
         "en": "to dribble",
@@ -2361,6 +2500,17 @@
         ],
         "notes": "(SW)",
         "id": "3086829548"
+    },
+    {
+        "en": "to dribble",
+        "cy": "glafoerio",
+        "tags": [
+            "head",
+            "medical",
+            "verb"
+        ],
+        "notes": "(NW)",
+        "id": "2482410173"
     },
     {
         "en": "to echo",
@@ -2431,6 +2581,46 @@
         "id": "3987930825"
     },
     {
+        "en": "to fall",
+        "cy": "disgyn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(NW)",
+        "id": "161283444"
+    },
+    {
+        "en": "to fall",
+        "cy": "cwympo",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(SW)",
+        "id": "2560424664"
+    },
+    {
+        "en": "to fetch",
+        "cy": "mynd nôl",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(NW)",
+        "id": "2702354889"
+    },
+    {
+        "en": "to follow",
+        "cy": "dilyn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1651772994"
+    },
+    {
         "en": "to follow",
         "cy": "canlyn",
         "tags": [
@@ -2462,14 +2652,14 @@
         "id": "728568088"
     },
     {
-        "en": "to gossip",
-        "cy": "cloncian",
+        "en": "to go",
+        "cy": "mynd",
         "tags": [
-            "speech",
-            "verb"
+            "verb",
+            "doing"
         ],
-        "notes": "(SW)",
-        "id": "3726883609"
+        "notes": "",
+        "id": "2819680115"
     },
     {
         "en": "to gossip",
@@ -2479,6 +2669,16 @@
         ],
         "notes": "(NW)",
         "id": "1413799194"
+    },
+    {
+        "en": "to gossip",
+        "cy": "cloncian",
+        "tags": [
+            "speech",
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "3726883609"
     },
     {
         "en": "to gossip",
@@ -2510,6 +2710,26 @@
         "id": "3704328278"
     },
     {
+        "en": "to grasp",
+        "cy": "cydio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2100147082"
+    },
+    {
+        "en": "to grasp",
+        "cy": "gafael yn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "3465098125"
+    },
+    {
         "en": "to grumble",
         "cy": "swnian",
         "tags": [
@@ -2530,6 +2750,16 @@
         "id": "435293673"
     },
     {
+        "en": "to hold",
+        "cy": "dal",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "3468959619"
+    },
+    {
         "en": "to hug",
         "cy": "cwtshio",
         "tags": [
@@ -2547,6 +2777,16 @@
         ],
         "notes": "",
         "id": "3489004477"
+    },
+    {
+        "en": "to hurry",
+        "cy": "hast",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(SW) (m)",
+        "id": "3118586470"
     },
     {
         "en": "to interupt",
@@ -2583,6 +2823,16 @@
         ],
         "notes": "(SW)",
         "id": "3989387205"
+    },
+    {
+        "en": "to jump",
+        "cy": "llamu",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2726153566"
     },
     {
         "en": "to kiss",
@@ -2627,6 +2877,16 @@
         "id": "2126365938"
     },
     {
+        "en": "to leave",
+        "cy": "gadael",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "3941444788"
+    },
+    {
         "en": "to lick",
         "cy": "llyfu",
         "tags": [
@@ -2645,6 +2905,18 @@
         ],
         "notes": "",
         "id": "73033622"
+    },
+    {
+        "en": "to lie down",
+        "cy": "gorwedd",
+        "tags": [
+            "verb",
+            "doing",
+            "phrase",
+            "saying"
+        ],
+        "notes": "",
+        "id": "1425808841"
     },
     {
         "en": "to lie non-stop",
@@ -2743,6 +3015,56 @@
         ],
         "notes": "",
         "id": "1503412984"
+    },
+    {
+        "en": "to push",
+        "cy": "gwthio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(NW)",
+        "id": "4038274857"
+    },
+    {
+        "en": "to push",
+        "cy": "hwpio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(SW)",
+        "id": "99527095"
+    },
+    {
+        "en": "to reach",
+        "cy": "estyn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "3350878477"
+    },
+    {
+        "en": "to rest",
+        "cy": "gorffwys",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1999939186"
+    },
+    {
+        "en": "to return",
+        "cy": "dychwelyd",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2242739962"
     },
     {
         "en": "to roar with laughter",
@@ -2864,6 +3186,38 @@
         "id": "2668205923"
     },
     {
+        "en": "to sit",
+        "cy": "eistedd",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2938798053"
+    },
+    {
+        "en": "to sit up",
+        "cy": "codi ar fy eistedd",
+        "tags": [
+            "verb",
+            "doing",
+            "phrase",
+            "saying"
+        ],
+        "notes": "",
+        "id": "3631031483"
+    },
+    {
+        "en": "to slip",
+        "cy": "llithro",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1455576779"
+    },
+    {
         "en": "to slow",
         "cy": "arafu",
         "tags": [
@@ -2983,6 +3337,16 @@
         "id": "3612331512"
     },
     {
+        "en": "to speed up",
+        "cy": "cyflymu",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2284896182"
+    },
+    {
         "en": "to spit",
         "cy": "poeri",
         "tags": [
@@ -3084,6 +3448,16 @@
         "id": "4048901451"
     },
     {
+        "en": "to take",
+        "cy": "mynd â",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2003219714"
+    },
+    {
         "en": "to talk",
         "cy": "whilia",
         "tags": [
@@ -3103,6 +3477,16 @@
         ],
         "notes": "",
         "id": "4087626630"
+    },
+    {
+        "en": "to trample",
+        "cy": "damsang",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(SW)",
+        "id": "4211243456"
     },
     {
         "en": "to trip up",
@@ -3198,6 +3582,16 @@
         ],
         "notes": "",
         "id": "3103390657"
+    },
+    {
+        "en": "to wander",
+        "cy": "crwydro",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "4256196488"
     },
     {
         "en": "to wave to someone",
