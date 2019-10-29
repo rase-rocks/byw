@@ -324,21 +324,21 @@
     },
     {
         "en": "breath",
-        "cy": "anadl",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f/m) -au -on",
-        "id": "3112287668"
-    },
-    {
-        "en": "breath",
         "cy": "gwynt",
         "tags": [
             "body"
         ],
         "notes": "(m)",
         "id": "169874109"
+    },
+    {
+        "en": "breath",
+        "cy": "anadl",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f/m) -au -on",
+        "id": "3112287668"
     },
     {
         "en": "calf",
@@ -536,6 +536,24 @@
         ],
         "notes": "",
         "id": "2237832610"
+    },
+    {
+        "en": "dwarf",
+        "cy": "corachod",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "203770173"
+    },
+    {
+        "en": "dwarf",
+        "cy": "corrach",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "(m)",
+        "id": "1951605512"
     },
     {
         "en": "ear",
@@ -886,6 +904,24 @@
         "id": "2094443698"
     },
     {
+        "en": "giant",
+        "cy": "cewri",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "571351067"
+    },
+    {
+        "en": "giant",
+        "cy": "cawr",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "(m)",
+        "id": "1460551290"
+    },
+    {
         "en": "hair",
         "cy": "gwallt",
         "tags": [
@@ -897,21 +933,21 @@
     },
     {
         "en": "hand",
-        "cy": "dwylo",
-        "tags": [
-            "body"
-        ],
-        "notes": "",
-        "id": "372622976"
-    },
-    {
-        "en": "hand",
         "cy": "llaw",
         "tags": [
             "body"
         ],
         "notes": "(f)",
         "id": "2728068280"
+    },
+    {
+        "en": "hand",
+        "cy": "dwylo",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "372622976"
     },
     {
         "en": "hand in hand",
@@ -931,6 +967,15 @@
         ],
         "notes": "",
         "id": "997881578"
+    },
+    {
+        "en": "hard",
+        "cy": "caled",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "105574580"
     },
     {
         "en": "head",
@@ -1072,13 +1117,13 @@
     },
     {
         "en": "i've got indigestion",
-        "cy": "mae llosg cylia arnaf i",
+        "cy": "mae dŵr poeth arnaf i",
         "tags": [
             "body",
             "saying"
         ],
-        "notes": "(SW)",
-        "id": "307232369"
+        "notes": "",
+        "id": "2215359764"
     },
     {
         "en": "i've got indigestion",
@@ -1092,13 +1137,13 @@
     },
     {
         "en": "i've got indigestion",
-        "cy": "mae dŵr poeth arnaf i",
+        "cy": "mae llosg cylia arnaf i",
         "tags": [
             "body",
             "saying"
         ],
-        "notes": "",
-        "id": "2215359764"
+        "notes": "(SW)",
+        "id": "307232369"
     },
     {
         "en": "in a hurry",
@@ -1181,16 +1226,6 @@
     },
     {
         "en": "kiss",
-        "cy": "cusan",
-        "tags": [
-            "head",
-            "love"
-        ],
-        "notes": "(f/m) -au",
-        "id": "476224186"
-    },
-    {
-        "en": "kiss",
         "cy": "sws",
         "tags": [
             "head",
@@ -1199,6 +1234,16 @@
         ],
         "notes": "(f) -ys (dom)",
         "id": "1330600395"
+    },
+    {
+        "en": "kiss",
+        "cy": "cusan",
+        "tags": [
+            "head",
+            "love"
+        ],
+        "notes": "(f/m) -au",
+        "id": "476224186"
     },
     {
         "en": "knee",
@@ -1308,13 +1353,13 @@
         "id": "295852786"
     },
     {
-        "en": "liver",
-        "cy": "iau",
+        "en": "little",
+        "cy": "bychan",
         "tags": [
-            "body"
+            "appearance"
         ],
-        "notes": "(m) (NW)",
-        "id": "217691975"
+        "notes": "",
+        "id": "2059991031"
     },
     {
         "en": "liver",
@@ -1324,6 +1369,15 @@
         ],
         "notes": "(f/m) (SW)",
         "id": "847248220"
+    },
+    {
+        "en": "liver",
+        "cy": "iau",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (NW)",
+        "id": "217691975"
     },
     {
         "en": "lungs",
@@ -1392,6 +1446,15 @@
         "id": "3721581550"
     },
     {
+        "en": "narrow",
+        "cy": "cul",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "2682938313"
+    },
+    {
         "en": "navels",
         "cy": "bogeiliau",
         "tags": [
@@ -1432,21 +1495,21 @@
     },
     {
         "en": "noise",
-        "cy": "stŵr",
-        "tags": [
-            "sound"
-        ],
-        "notes": "",
-        "id": "1618742759"
-    },
-    {
-        "en": "noise",
         "cy": "sŵn",
         "tags": [
             ""
         ],
         "notes": "(m)",
         "id": "3098418560"
+    },
+    {
+        "en": "noise",
+        "cy": "stŵr",
+        "tags": [
+            "sound"
+        ],
+        "notes": "",
+        "id": "1618742759"
     },
     {
         "en": "noisy",
@@ -1536,13 +1599,15 @@
     },
     {
         "en": "palm of the hand",
-        "cy": "celdr y llaw",
+        "cy": "pant y llaw",
         "tags": [
             "body",
-            "saying"
+            "hand",
+            "saying",
+            "phrase"
         ],
-        "notes": "",
-        "id": "823271261"
+        "notes": "(m)",
+        "id": "3604962008"
     },
     {
         "en": "palm of the hand",
@@ -1555,15 +1620,13 @@
     },
     {
         "en": "palm of the hand",
-        "cy": "pant y llaw",
+        "cy": "celdr y llaw",
         "tags": [
             "body",
-            "hand",
-            "saying",
-            "phrase"
+            "saying"
         ],
-        "notes": "(m)",
-        "id": "3604962008"
+        "notes": "",
+        "id": "823271261"
     },
     {
         "en": "palms of the hands",
@@ -1700,6 +1763,15 @@
         "id": "3632576744"
     },
     {
+        "en": "short",
+        "cy": "byr",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "3847567775"
+    },
+    {
         "en": "shoulder",
         "cy": "ysgwydd",
         "tags": [
@@ -1710,21 +1782,21 @@
     },
     {
         "en": "shout",
-        "cy": "gwaedd",
-        "tags": [
-            "verb"
-        ],
-        "notes": "",
-        "id": "2844121304"
-    },
-    {
-        "en": "shout",
         "cy": "bloedd",
         "tags": [
             "sound"
         ],
         "notes": "(f) -iau -iadau",
         "id": "1762445578"
+    },
+    {
+        "en": "shout",
+        "cy": "gwaedd",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "2844121304"
     },
     {
         "en": "side",
@@ -1822,6 +1894,15 @@
         "id": "2979480809"
     },
     {
+        "en": "small",
+        "cy": "bach",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "2177754483"
+    },
+    {
         "en": "small talk",
         "cy": "mân siarad",
         "tags": [
@@ -1851,16 +1932,6 @@
     },
     {
         "en": "sore throat",
-        "cy": "dolur gwddf",
-        "tags": [
-            "dental",
-            "medical"
-        ],
-        "notes": "(m)(NW)",
-        "id": "143410646"
-    },
-    {
-        "en": "sore throat",
         "cy": "llwnc tost",
         "tags": [
             "medical",
@@ -1878,6 +1949,16 @@
         ],
         "notes": "(SW)",
         "id": "2041602845"
+    },
+    {
+        "en": "sore throat",
+        "cy": "dolur gwddf",
+        "tags": [
+            "dental",
+            "medical"
+        ],
+        "notes": "(m)(NW)",
+        "id": "143410646"
     },
     {
         "en": "sound",
@@ -1899,12 +1980,12 @@
     },
     {
         "en": "speaker",
-        "cy": "llefarydd",
+        "cy": "siaradwyr",
         "tags": [
             "noun"
         ],
-        "notes": "(m) -ion",
-        "id": "2771521147"
+        "notes": "(f)",
+        "id": "176082124"
     },
     {
         "en": "speaker",
@@ -1917,12 +1998,12 @@
     },
     {
         "en": "speaker",
-        "cy": "siaradwyr",
+        "cy": "llefarydd",
         "tags": [
             "noun"
         ],
-        "notes": "(f)",
-        "id": "176082124"
+        "notes": "(m) -ion",
+        "id": "2771521147"
     },
     {
         "en": "spine",
@@ -1964,21 +2045,21 @@
     },
     {
         "en": "stomach",
-        "cy": "cylla",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) (SW)",
-        "id": "2501072279"
-    },
-    {
-        "en": "stomach",
         "cy": "bola",
         "tags": [
             "body"
         ],
         "notes": "(m) (SW)",
         "id": "2978728492"
+    },
+    {
+        "en": "stomach",
+        "cy": "cylla",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2501072279"
     },
     {
         "en": "strength",
@@ -1997,6 +2078,15 @@
         ],
         "notes": "(m) -au",
         "id": "3531247159"
+    },
+    {
+        "en": "strong",
+        "cy": "cryf",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "1124930457"
     },
     {
         "en": "strong",
@@ -2122,6 +2212,16 @@
     },
     {
         "en": "to answer",
+        "cy": "ymateb",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "3116154140"
+    },
+    {
+        "en": "to answer",
         "cy": "ateb",
         "tags": [
             "sound",
@@ -2132,14 +2232,15 @@
         "id": "2997135054"
     },
     {
-        "en": "to answer",
-        "cy": "ymateb",
+        "en": "to argue or fall out",
+        "cy": "cwympo mas",
         "tags": [
+            "speech",
             "verb",
-            "speech"
+            "emotion"
         ],
-        "notes": "",
-        "id": "3116154140"
+        "notes": "(SW)",
+        "id": "3235486116"
     },
     {
         "en": "to argue or fall out",
@@ -2152,17 +2253,6 @@
         ],
         "notes": "(NW)",
         "id": "4183281583"
-    },
-    {
-        "en": "to argue or fall out",
-        "cy": "cwympo mas",
-        "tags": [
-            "speech",
-            "verb",
-            "emotion"
-        ],
-        "notes": "(SW)",
-        "id": "3235486116"
     },
     {
         "en": "to arrive",
@@ -2206,15 +2296,6 @@
     },
     {
         "en": "to be unable to speak",
-        "cy": "methu siarad",
-        "tags": [
-            "speech"
-        ],
-        "notes": "(NW)",
-        "id": "3787168445"
-    },
-    {
-        "en": "to be unable to speak",
         "cy": "ffaelu siarad",
         "tags": [
             "verb",
@@ -2223,6 +2304,15 @@
         ],
         "notes": "(SW)",
         "id": "2914948508"
+    },
+    {
+        "en": "to be unable to speak",
+        "cy": "methu siarad",
+        "tags": [
+            "speech"
+        ],
+        "notes": "(NW)",
+        "id": "3787168445"
     },
     {
         "en": "to bleed",
@@ -2410,13 +2500,13 @@
     },
     {
         "en": "to cry",
-        "cy": "crio",
+        "cy": "llefain",
         "tags": [
             "emotion",
             "verb"
         ],
-        "notes": "",
-        "id": "1624618954"
+        "notes": "(SW)",
+        "id": "2391671325"
     },
     {
         "en": "to cry",
@@ -2439,13 +2529,13 @@
     },
     {
         "en": "to cry",
-        "cy": "llefain",
+        "cy": "crio",
         "tags": [
             "emotion",
             "verb"
         ],
-        "notes": "(SW)",
-        "id": "2391671325"
+        "notes": "",
+        "id": "1624618954"
     },
     {
         "en": "to dash off",
@@ -2612,16 +2702,6 @@
     },
     {
         "en": "to follow",
-        "cy": "dilyn",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "1651772994"
-    },
-    {
-        "en": "to follow",
         "cy": "canlyn",
         "tags": [
             "verb",
@@ -2629,6 +2709,16 @@
         ],
         "notes": "",
         "id": "574145347"
+    },
+    {
+        "en": "to follow",
+        "cy": "dilyn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1651772994"
     },
     {
         "en": "to get my breath back",
@@ -2663,6 +2753,15 @@
     },
     {
         "en": "to gossip",
+        "cy": "hel clecs",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "622171277"
+    },
+    {
+        "en": "to gossip",
         "cy": "hel straeon",
         "tags": [
             "verb"
@@ -2679,15 +2778,6 @@
         ],
         "notes": "(SW)",
         "id": "3726883609"
-    },
-    {
-        "en": "to gossip",
-        "cy": "hel clecs",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "622171277"
     },
     {
         "en": "to gossip",
@@ -2711,16 +2801,6 @@
     },
     {
         "en": "to grasp",
-        "cy": "cydio",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "2100147082"
-    },
-    {
-        "en": "to grasp",
         "cy": "gafael yn",
         "tags": [
             "verb",
@@ -2728,6 +2808,16 @@
         ],
         "notes": "",
         "id": "3465098125"
+    },
+    {
+        "en": "to grasp",
+        "cy": "cydio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2100147082"
     },
     {
         "en": "to grumble",
@@ -2770,16 +2860,6 @@
     },
     {
         "en": "to hurry",
-        "cy": "brysio",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "3489004477"
-    },
-    {
-        "en": "to hurry",
         "cy": "hast",
         "tags": [
             "verb",
@@ -2787,6 +2867,16 @@
         ],
         "notes": "(SW) (m)",
         "id": "3118586470"
+    },
+    {
+        "en": "to hurry",
+        "cy": "brysio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "3489004477"
     },
     {
         "en": "to interupt",
@@ -2808,21 +2898,21 @@
     },
     {
         "en": "to joke",
-        "cy": "jocio",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(NW)",
-        "id": "1514151345"
-    },
-    {
-        "en": "to joke",
         "cy": "jocan",
         "tags": [
             "verb"
         ],
         "notes": "(SW)",
         "id": "3989387205"
+    },
+    {
+        "en": "to joke",
+        "cy": "jocio",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(NW)",
+        "id": "1514151345"
     },
     {
         "en": "to jump",
@@ -2920,15 +3010,6 @@
     },
     {
         "en": "to lie non-stop",
-        "cy": "rhaffu celwyddau",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "29554021"
-    },
-    {
-        "en": "to lie non-stop",
         "cy": "palu celwyddau",
         "tags": [
             "speech",
@@ -2936,6 +3017,15 @@
         ],
         "notes": "",
         "id": "2853637948"
+    },
+    {
+        "en": "to lie non-stop",
+        "cy": "rhaffu celwyddau",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "29554021"
     },
     {
         "en": "to limp",
@@ -2946,6 +3036,17 @@
         ],
         "notes": "",
         "id": "2988428980"
+    },
+    {
+        "en": "to lose weight",
+        "cy": "colli pwysiau",
+        "tags": [
+            "appearance",
+            "saying",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "3237896169"
     },
     {
         "en": "to meet",
@@ -3018,16 +3119,6 @@
     },
     {
         "en": "to push",
-        "cy": "gwthio",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "(NW)",
-        "id": "4038274857"
-    },
-    {
-        "en": "to push",
         "cy": "hwpio",
         "tags": [
             "verb",
@@ -3035,6 +3126,16 @@
         ],
         "notes": "(SW)",
         "id": "99527095"
+    },
+    {
+        "en": "to push",
+        "cy": "gwthio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(NW)",
+        "id": "4038274857"
     },
     {
         "en": "to reach",
@@ -3119,13 +3220,12 @@
     },
     {
         "en": "to shout",
-        "cy": "bloeddio",
+        "cy": "gweiddi",
         "tags": [
-            "sound",
             "verb"
         ],
-        "notes": "-ian",
-        "id": "2050660273"
+        "notes": "",
+        "id": "3434219394"
     },
     {
         "en": "to shout",
@@ -3138,12 +3238,13 @@
     },
     {
         "en": "to shout",
-        "cy": "gweiddi",
+        "cy": "bloeddio",
         "tags": [
+            "sound",
             "verb"
         ],
-        "notes": "",
-        "id": "3434219394"
+        "notes": "-ian",
+        "id": "2050660273"
     },
     {
         "en": "to shout as loud as possible",
@@ -3386,6 +3487,16 @@
         ],
         "notes": "",
         "id": "3383925677"
+    },
+    {
+        "en": "to strengthen",
+        "cy": "cryfau",
+        "tags": [
+            "appearance",
+            "verb"
+        ],
+        "notes": "",
+        "id": "469158692"
     },
     {
         "en": "to stride",
@@ -3687,6 +3798,15 @@
         "id": "177299167"
     },
     {
+        "en": "uneven",
+        "cy": "anwastad",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "1248629148"
+    },
+    {
         "en": "vein",
         "cy": "gwythïen",
         "tags": [
@@ -3697,6 +3817,15 @@
     },
     {
         "en": "voice",
+        "cy": "llais",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m)",
+        "id": "1826737304"
+    },
+    {
+        "en": "voice",
         "cy": "llef",
         "tags": [
             "sound",
@@ -3704,15 +3833,6 @@
         ],
         "notes": "(f) -au",
         "id": "3486386294"
-    },
-    {
-        "en": "voice",
-        "cy": "llais",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(m)",
-        "id": "1826737304"
     },
     {
         "en": "voices",
