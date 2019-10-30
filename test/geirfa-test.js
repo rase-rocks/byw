@@ -12,6 +12,7 @@ const trim = require("../client/app/core/model/geirfa").trim;
 const tweetableUnit = require("../client/app/core/model/geirfa/tweetable-unit").default;
 const sample = require("../client/app/core/model/array-sample").default;
 const tokens = require("../client/app/core/model/geirfa/tokens").default;
+const tags = require("../client/app/core/model/geirfa/tags").default;
 
 const hash = function (obj) {
     let string = JSON.stringify(obj);
@@ -434,6 +435,23 @@ describe("geirfa", function () {
             expect(arrayCompare(t, [""])).to.be.true;
 
         });
+
+    });
+
+    describe("tags", function() {
+
+        it("returns expected tags from units", function() {
+
+            const result = tags(geirfaData);
+
+            expect(result.length).to.be.equal(3);
+
+            expect(result.indexOf("hair")).to.not.equal(-1);
+            expect(result.indexOf("body")).to.not.equal(-1);
+            expect(result.indexOf("head")).to.not.equal(-1);
+
+        });
+
 
     });
 
