@@ -10,6 +10,8 @@ function tags(units = []) {
             
             const tag = unit.tags[j];
 
+            if (tag === "" || tag === " ") { continue; }
+
             if (!dict[tag]) {
                 dict[tag] = 1;
             } else {
@@ -20,7 +22,7 @@ function tags(units = []) {
 
     }
 
-    return Object.keys(dict);
+    return Object.keys(dict).sort();
 
 }
 

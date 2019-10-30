@@ -9,3 +9,18 @@
     border-radius: 5px;
     padding: 10px;
 }
+
+.tag-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    font-size: 0.8em;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: lightgray;
+}

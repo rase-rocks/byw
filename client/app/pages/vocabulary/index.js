@@ -8,9 +8,17 @@ import VocabularyView from "./vocabulary-view";
 
 const evt = eventTargetValue();
 const geirfa = makeGeirfa(geirfaData);
+const tags = geirfa.tags;
 
 const currentTranslationUnitsCount = geirfaData.length;
 const targetTranslationUnitsCount = 5000;
+
+function makeChangeHandler(component, geirfaObj) {
+    return function (searchText) {
+        const units = geirfaObj.findMatches(searchText);
+        component.setState({ units, searchText });
+    };
+}
 
 class VocabularyController extends React.Component {
 
@@ -24,19 +32,25 @@ class VocabularyController extends React.Component {
 
     makeOnChange() {
 
-        const self = this;
+        const handler = makeChangeHandler(this, geirfa);
 
         return function (e) {
             const searchText = evt(e);
-            const units = geirfa.findMatches(searchText);
-            self.setState({ units, searchText });
+            handler(searchText);
         };
+
+    }
+
+    makeOnClickTag() {
+        return makeChangeHandler(this, geirfa);
     }
 
     render() {
         return (
             <VocabularyView onChange={this.makeOnChange()}
+                onClickTag={this.makeOnClickTag()}
                 units={this.state.units}
+                tags={tags}
                 searchText={this.state.searchText}
                 currentTranslationUnitsCount={currentTranslationUnitsCount}
                 targetTranslationUnitsCount={targetTranslationUnitsCount} />

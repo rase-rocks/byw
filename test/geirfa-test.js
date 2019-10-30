@@ -440,6 +440,26 @@ describe("geirfa", function () {
 
     describe("tags", function() {
 
+        it("returns as expected from geirfa", function() {
+
+            const geirfa = makeGeirfa(geirfaData);
+            const result = geirfa.tags;
+            const result2 = geirfa.tags; // Check init only runs once
+
+            expect(result.length).to.be.equal(3);
+
+            expect(result.indexOf("hair")).to.not.equal(-1);
+            expect(result.indexOf("body")).to.not.equal(-1);
+            expect(result.indexOf("head")).to.not.equal(-1);
+
+            expect(result2.length).to.be.equal(3);
+
+            expect(result2.indexOf("hair")).to.not.equal(-1);
+            expect(result2.indexOf("body")).to.not.equal(-1);
+            expect(result2.indexOf("head")).to.not.equal(-1);
+
+        });
+
         it("returns expected tags from units", function() {
 
             const result = tags(geirfaData);
@@ -452,6 +472,50 @@ describe("geirfa", function () {
 
         });
 
+        it("removes empty tags", function () {
+
+            const data = [
+                {
+                    "en": "dandruff",
+                    "cy": "cen",
+                    "tags": [
+                        "head",
+                        "body",
+                        "hair",
+                        " "
+                    ],
+                    "notes": "(pl)"
+                },
+                {
+                    "en": "ear",
+                    "cy": "clust",
+                    "tags": [
+                        "head",
+                        "body",
+                        ""
+                    ],
+                    "notes": "(f/m) -iau"
+                },
+                {
+                    "en": "crown of head",
+                    "cy": "corun",
+                    "tags": [
+                        "head",
+                        "body"
+                    ],
+                    "notes": "(m) -au"
+                }
+            ].map(unit => Object.assign({}, unit, { id: hash(unit) }));
+
+            const result = tags(data);
+
+            expect(result.length).to.be.equal(3);
+
+            expect(result.indexOf("hair")).to.not.equal(-1);
+            expect(result.indexOf("body")).to.not.equal(-1);
+            expect(result.indexOf("head")).to.not.equal(-1);
+
+        });
 
     });
 

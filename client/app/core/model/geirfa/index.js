@@ -3,6 +3,7 @@ import trim from "./trim";
 import unitsEqual from "./units-equal";
 import unitContainsText from "./unit-contains-text";
 import tweetableUnit from "./tweetable-unit";
+import tags from "./tags";
 
 function makeUnitContainsTextFilter(text) {
 
@@ -15,10 +16,12 @@ function makeUnitContainsTextFilter(text) {
 }
 
 function makeGeirfa(data) {
+
     return {
         all: function () {
             return data;
         },
+        tags: tags(data),
         findMatches: function (text) {
             return data.filter(makeUnitContainsTextFilter(text));
         },
@@ -27,6 +30,7 @@ function makeGeirfa(data) {
         },
         unitsEqual: unitsEqual
     };
+
 }
 
 export { trim, unitsEqual, unitContainsText };

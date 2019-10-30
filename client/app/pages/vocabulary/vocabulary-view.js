@@ -17,12 +17,31 @@ function lines(units) {
     });
 }
 
+function clickableTags(tags, onClickTag) {
+    return tags.map(function (tag) { 
+
+        const clickHandler = function() {
+            onClickTag(tag);
+        };
+
+        return (
+            <span className="tag"
+                key={`tag-${tag}`}
+                onClick={clickHandler}>
+                {tag}
+            </span>
+        );
+    });
+}
+
 class VocabularyView extends React.Component {
 
     render() {
 
         const { onChange,
+            onClickTag,
             units,
+            tags,
             searchText,
             currentTranslationUnitsCount,
             targetTranslationUnitsCount } = this.props;
@@ -42,6 +61,12 @@ class VocabularyView extends React.Component {
                 <VocabSearch onChange={onChange} value={searchText} />
 
                 <p>{units.length} phrases and words found</p>
+
+                <div className="row tag-list">
+                    <div className="col col-12">
+                        {clickableTags(tags, onClickTag)}
+                    </div>
+                </div>
 
                 <table className="table">
                     <tbody>
@@ -70,7 +95,9 @@ class VocabularyView extends React.Component {
 
 VocabularyView.propTypes = {
     onChange: PropTypes.func.isRequired,
+    onClickTag: PropTypes.func.isRequired,
     units: PropTypes.array.isRequired,
+    tags: PropTypes.array.isRequired,
     searchText: PropTypes.string.isRequired,
     currentTranslationUnitsCount: PropTypes.number.isRequired,
     targetTranslationUnitsCount: PropTypes.number.isRequired
