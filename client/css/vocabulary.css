@@ -22,5 +22,5 @@
     font-size: 0.8em;
     border-radius: 10px;
     cursor: pointer;
-    background-color: lightgray;
+    background-color: rgba(225,225, 225, 0.2);
 }
