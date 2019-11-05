@@ -548,3 +548,45 @@ condition, cyflwr, health medical, (m)
 vomit, chwyd, health medical, (m)
 to suffer, dioddef, health medical verb,
 suffering, dioddefaint, health medical,
+sufferer, dioddefwr, health medical, (m)
+sufferer, dioddefwyr, health medical, (m)
+grief, dolur, health medical emotion,
+to grieve, dolurio, health medical emotion verb, (SW)
+painful, dolurus, health medical,
+negligent, esgeulus, health medical,
+to neglect, esgeuluso, health medical,
+negligence, esgeulustod, health medical, (m)
+ill, gwael, health medical,
+illness, gwaeledd, health medical, (m)
+to worsen, gwaethygu, health medical verb,
+madman, gwallgofddyn, health medical saying, (m) -ion
+madness, gwallgofrwydd, health medical, (m)
+to get better, gwella, health medical verb,
+improvement, gwelliant, health medical, (m)
+improvements, gwelliannau, health medical, (m)
+poison, gwenwyn, health medical, (m) -au
+poisonous, gwenwynig, health medical,
+to poison, gwenwyno, health medical verb,
+to hurt, gwynegu, health medical verb, (SW)
+to infect, heinio, health medical verb,
+infectious, heintus, health medical,
+totally fit, holliach, health medical,
+healthy, iach, health medical,
+to cure, iacháu, health medical verb,
+cure, iachâd, health medical, (m)
+healthy, iachus, health medical,
+health, iechyd, health medical, (m)
+pain, loes, health medical, (SW)
+to hurt someone, gwneud loes i rywun, health medical saying phrase, (SW)
+to cause pain, peri loes, health medical saying phrase, (SW)
+to soothe, lleddfu, health medical verb,
+to reduce the pain, leddfu'r boen, health medical saying phrase,
+feeble, llesg, health medical,
+to faint, llewygu, health medical,
+to inflame, llido, health medical,
+inflamed, llidus, health medical,
+lunatic, lloerig, health medical,
+burn, llosgiad, health medical, (m) -au
+harm, niwed, health medical, (m)
+injuries, niwediau, health medical, (m) plural
+to injure, niweidio, health medical verb,
