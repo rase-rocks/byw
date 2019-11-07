@@ -12,18 +12,6 @@
     },
     {
         "en": "I don't feel like going",
-        "cy": "does dim awydd mynd arnaf i",
-        "tags": [
-            "emotion",
-            "sense",
-            "saying",
-            "phrase"
-        ],
-        "notes": "",
-        "id": "2785000764"
-    },
-    {
-        "en": "I don't feel like going",
         "cy": "does dim chwant mynd arnaf i",
         "tags": [
             "emotion",
@@ -33,6 +21,18 @@
         ],
         "notes": "",
         "id": "4089329684"
+    },
+    {
+        "en": "I don't feel like going",
+        "cy": "does dim awydd mynd arnaf i",
+        "tags": [
+            "emotion",
+            "sense",
+            "saying",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "2785000764"
     },
     {
         "en": "a good looking man",
@@ -75,6 +75,16 @@
         "id": "714725665"
     },
     {
+        "en": "aid",
+        "cy": "cymorth",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(m)",
+        "id": "2612213983"
+    },
+    {
         "en": "alive and well",
         "cy": "yn fyw ac yn iach",
         "tags": [
@@ -85,6 +95,16 @@
         ],
         "notes": "",
         "id": "1965975504"
+    },
+    {
+        "en": "ambulance",
+        "cy": "ambiwlans",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(m)",
+        "id": "1455180219"
     },
     {
         "en": "an ugly looking man",
@@ -98,14 +118,14 @@
         "id": "3119003493"
     },
     {
-        "en": "ankle",
-        "cy": "migwrn",
+        "en": "anaesthetic",
+        "cy": "anesthetig",
         "tags": [
-            "body",
-            "foot"
+            "medical",
+            "hospital"
         ],
-        "notes": "(m)",
-        "id": "3169134781"
+        "notes": "",
+        "id": "2453460332"
     },
     {
         "en": "ankle",
@@ -118,15 +138,14 @@
         "id": "2978949402"
     },
     {
-        "en": "ankles",
-        "cy": "fferau",
+        "en": "ankle",
+        "cy": "migwrn",
         "tags": [
             "body",
-            "leg",
-            "plural"
+            "foot"
         ],
-        "notes": "",
-        "id": "3367337295"
+        "notes": "(m)",
+        "id": "3169134781"
     },
     {
         "en": "ankles",
@@ -140,14 +159,15 @@
         "id": "3964004951"
     },
     {
-        "en": "appearance",
-        "cy": "pryd a gwedd",
+        "en": "ankles",
+        "cy": "fferau",
         "tags": [
-            "head",
-            "body"
+            "body",
+            "leg",
+            "plural"
         ],
         "notes": "",
-        "id": "3778309243"
+        "id": "3367337295"
     },
     {
         "en": "appearance",
@@ -157,6 +177,16 @@
         ],
         "notes": "(f)",
         "id": "1955156297"
+    },
+    {
+        "en": "appearance",
+        "cy": "pryd a gwedd",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "",
+        "id": "3778309243"
     },
     {
         "en": "arm",
@@ -301,13 +331,12 @@
     },
     {
         "en": "beautiful",
-        "cy": "prydferth",
+        "cy": "glân",
         "tags": [
-            "state",
             "appearance"
         ],
         "notes": "",
-        "id": "1420976060"
+        "id": "605830834"
     },
     {
         "en": "beautiful",
@@ -321,12 +350,13 @@
     },
     {
         "en": "beautiful",
-        "cy": "glân",
+        "cy": "prydferth",
         "tags": [
+            "state",
             "appearance"
         ],
         "notes": "",
-        "id": "605830834"
+        "id": "1420976060"
     },
     {
         "en": "beauty",
@@ -425,6 +455,26 @@
     },
     {
         "en": "blister",
+        "cy": "swigen",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(f)",
+        "id": "163485104"
+    },
+    {
+        "en": "blister",
+        "cy": "pothell",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(f) -au -i",
+        "id": "3549007242"
+    },
+    {
+        "en": "blister",
         "cy": "chwysigen",
         "tags": [
             "health",
@@ -498,6 +548,16 @@
         ],
         "notes": "(SW) (m) -ydd",
         "id": "1986699886"
+    },
+    {
+        "en": "boil",
+        "cy": "pendduyn",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) (NW) -nod",
+        "id": "3397492140"
     },
     {
         "en": "bone",
@@ -658,16 +718,6 @@
     },
     {
         "en": "calf",
-        "cy": "bol y goes",
-        "tags": [
-            "body",
-            "leg"
-        ],
-        "notes": "(m) (NW)",
-        "id": "1616732626"
-    },
-    {
-        "en": "calf",
         "cy": "croth",
         "tags": [
             "body",
@@ -675,6 +725,16 @@
         ],
         "notes": "(f) -au",
         "id": "3885739740"
+    },
+    {
+        "en": "calf",
+        "cy": "bol y goes",
+        "tags": [
+            "body",
+            "leg"
+        ],
+        "notes": "(m) (NW)",
+        "id": "1616732626"
     },
     {
         "en": "calm",
@@ -694,6 +754,26 @@
         ],
         "notes": "",
         "id": "356341510"
+    },
+    {
+        "en": "care",
+        "cy": "gofal",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(m)",
+        "id": "3775772339"
+    },
+    {
+        "en": "careful",
+        "cy": "gofalus",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "",
+        "id": "599728294"
     },
     {
         "en": "cheek",
@@ -794,16 +874,6 @@
     },
     {
         "en": "corner of the eye",
-        "cy": "ciliau/cilion y llygaid",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(pl)",
-        "id": "1425347756"
-    },
-    {
-        "en": "corner of the eye",
         "cy": "cil y llygad",
         "tags": [
             "head",
@@ -811,6 +881,16 @@
         ],
         "notes": "(m)",
         "id": "2748484008"
+    },
+    {
+        "en": "corner of the eye",
+        "cy": "ciliau/cilion y llygaid",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(pl)",
+        "id": "1425347756"
     },
     {
         "en": "cough",
@@ -932,16 +1012,6 @@
     },
     {
         "en": "diabetes",
-        "cy": "clefyd melys",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "986006359"
-    },
-    {
-        "en": "diabetes",
         "cy": "clefyd siwgwr",
         "tags": [
             "health",
@@ -949,6 +1019,16 @@
         ],
         "notes": "",
         "id": "2715296086"
+    },
+    {
+        "en": "diabetes",
+        "cy": "clefyd melys",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "986006359"
     },
     {
         "en": "digestion",
@@ -1031,13 +1111,14 @@
         "id": "2237832610"
     },
     {
-        "en": "dwarf",
-        "cy": "corrach",
+        "en": "drug",
+        "cy": "cyffur",
         "tags": [
-            "appearance"
+            "medical",
+            "hospital"
         ],
-        "notes": "(m)",
-        "id": "1951605512"
+        "notes": "(m) -iau",
+        "id": "615541164"
     },
     {
         "en": "dwarf",
@@ -1047,6 +1128,15 @@
         ],
         "notes": "",
         "id": "203770173"
+    },
+    {
+        "en": "dwarf",
+        "cy": "corrach",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "(m)",
+        "id": "1951605512"
     },
     {
         "en": "ear",
@@ -1060,21 +1150,21 @@
     },
     {
         "en": "echo",
-        "cy": "atsain",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(f) atseiniau",
-        "id": "3112317638"
-    },
-    {
-        "en": "echo",
         "cy": "adlais",
         "tags": [
             "sound"
         ],
         "notes": "(m) adleisiau",
         "id": "1606839181"
+    },
+    {
+        "en": "echo",
+        "cy": "atsain",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) atseiniau",
+        "id": "3112317638"
     },
     {
         "en": "elbow",
@@ -1114,21 +1204,21 @@
     },
     {
         "en": "emphasis",
-        "cy": "pwyslais",
-        "tags": [
-            ""
-        ],
-        "notes": "(m)",
-        "id": "687016276"
-    },
-    {
-        "en": "emphasis",
         "cy": "pwysleisiau",
         "tags": [
             ""
         ],
         "notes": "(m)",
         "id": "3306501421"
+    },
+    {
+        "en": "emphasis",
+        "cy": "pwyslais",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)",
+        "id": "687016276"
     },
     {
         "en": "energetic",
@@ -1216,8 +1306,8 @@
             "head",
             "body"
         ],
-        "notes": "(m) -au",
-        "id": "3984129021"
+        "notes": "",
+        "id": "1385153992"
     },
     {
         "en": "face",
@@ -1226,8 +1316,8 @@
             "head",
             "body"
         ],
-        "notes": "",
-        "id": "1385153992"
+        "notes": "(m) -au",
+        "id": "3984129021"
     },
     {
         "en": "face to face",
@@ -1249,16 +1339,6 @@
     },
     {
         "en": "false teeth",
-        "cy": "dannedd gorsod",
-        "tags": [
-            "head",
-            "dental"
-        ],
-        "notes": "(NW)",
-        "id": "3640342503"
-    },
-    {
-        "en": "false teeth",
         "cy": "danedd dodi",
         "tags": [
             "head",
@@ -1266,6 +1346,16 @@
         ],
         "notes": "(SW)",
         "id": "1513609520"
+    },
+    {
+        "en": "false teeth",
+        "cy": "dannedd gorsod",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(NW)",
+        "id": "3640342503"
     },
     {
         "en": "fast",
@@ -1306,16 +1396,6 @@
     },
     {
         "en": "feeble",
-        "cy": "llesg",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "1153141245"
-    },
-    {
-        "en": "feeble",
         "cy": "di-asgwrn-cefn",
         "tags": [
             "saying",
@@ -1323,6 +1403,16 @@
         ],
         "notes": "",
         "id": "1298651229"
+    },
+    {
+        "en": "feeble",
+        "cy": "llesg",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "1153141245"
     },
     {
         "en": "feeling",
@@ -1333,6 +1423,16 @@
         ],
         "notes": "(m) -au",
         "id": "818491712"
+    },
+    {
+        "en": "fever",
+        "cy": "twymyn",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(f) (SW)",
+        "id": "911722305"
     },
     {
         "en": "filling",
@@ -1364,6 +1464,16 @@
         ],
         "notes": "",
         "id": "1012897264"
+    },
+    {
+        "en": "first aid",
+        "cy": "cymorth cyntaf",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "",
+        "id": "363316782"
     },
     {
         "en": "fist",
@@ -1582,21 +1692,21 @@
     },
     {
         "en": "hand",
-        "cy": "llaw",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f)",
-        "id": "2728068280"
-    },
-    {
-        "en": "hand",
         "cy": "dwylo",
         "tags": [
             "body"
         ],
         "notes": "",
         "id": "372622976"
+    },
+    {
+        "en": "hand",
+        "cy": "llaw",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)",
+        "id": "2728068280"
     },
     {
         "en": "hand in hand",
@@ -1669,16 +1779,6 @@
     },
     {
         "en": "hayfever",
-        "cy": "clefyd y gwair",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "953998481"
-    },
-    {
-        "en": "hayfever",
         "cy": "brech y gwair",
         "tags": [
             "health",
@@ -1686,6 +1786,16 @@
         ],
         "notes": "",
         "id": "1356716862"
+    },
+    {
+        "en": "hayfever",
+        "cy": "clefyd y gwair",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "953998481"
     },
     {
         "en": "he looks well",
@@ -1710,17 +1820,6 @@
     },
     {
         "en": "headache",
-        "cy": "pen tost",
-        "tags": [
-            "head",
-            "body",
-            "medical"
-        ],
-        "notes": "(SW)",
-        "id": "1912835596"
-    },
-    {
-        "en": "headache",
         "cy": "cur yn y pen",
         "tags": [
             "head",
@@ -1729,6 +1828,17 @@
         ],
         "notes": "(NW)",
         "id": "3494104967"
+    },
+    {
+        "en": "headache",
+        "cy": "pen tost",
+        "tags": [
+            "head",
+            "body",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "1912835596"
     },
     {
         "en": "health",
@@ -1742,16 +1852,6 @@
     },
     {
         "en": "healthy",
-        "cy": "iach",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "3826473383"
-    },
-    {
-        "en": "healthy",
         "cy": "iachus",
         "tags": [
             "health",
@@ -1759,6 +1859,16 @@
         ],
         "notes": "",
         "id": "1113985793"
+    },
+    {
+        "en": "healthy",
+        "cy": "iach",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "3826473383"
     },
     {
         "en": "hearing",
@@ -1777,6 +1887,16 @@
         ],
         "notes": "(f)",
         "id": "1112556072"
+    },
+    {
+        "en": "heart attack",
+        "cy": "trawiad ar y galon",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "1911653918"
     },
     {
         "en": "heart disease",
@@ -1854,6 +1974,16 @@
         ],
         "notes": "",
         "id": "2643846438"
+    },
+    {
+        "en": "high blood pressure",
+        "cy": "pwysedd gwaed uchel",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "409312431"
     },
     {
         "en": "hip",
@@ -1938,16 +2068,6 @@
     },
     {
         "en": "i've got indigestion",
-        "cy": "mae llosg cylia arnaf i",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "(SW)",
-        "id": "307232369"
-    },
-    {
-        "en": "i've got indigestion",
         "cy": "mae dŵr poeth arnaf i",
         "tags": [
             "body",
@@ -1957,7 +2077,17 @@
         "id": "2215359764"
     },
     {
-        "en": "i've got the fluw",
+        "en": "i've got indigestion",
+        "cy": "mae llosg cylia arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "(SW)",
+        "id": "307232369"
+    },
+    {
+        "en": "i've got the flu",
         "cy": "mae arnaf i'r ffliw",
         "tags": [
             "health",
@@ -1966,17 +2096,7 @@
             "phrase"
         ],
         "notes": "",
-        "id": "1927920250"
-    },
-    {
-        "en": "ill",
-        "cy": "gwael",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "1233003184"
+        "id": "670043373"
     },
     {
         "en": "ill",
@@ -1989,14 +2109,14 @@
         "id": "1494527729"
     },
     {
-        "en": "illness",
-        "cy": "gwaeledd",
+        "en": "ill",
+        "cy": "gwael",
         "tags": [
             "health",
             "medical"
         ],
-        "notes": "(m)",
-        "id": "1961349010"
+        "notes": "",
+        "id": "1233003184"
     },
     {
         "en": "illness",
@@ -2017,6 +2137,16 @@
         ],
         "notes": "(m)",
         "id": "4161780269"
+    },
+    {
+        "en": "illness",
+        "cy": "gwaeledd",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "1961349010"
     },
     {
         "en": "improvement",
@@ -2050,17 +2180,6 @@
     },
     {
         "en": "in a hurry",
-        "cy": "mewn brys",
-        "tags": [
-            "verb",
-            "doing",
-            "phrase"
-        ],
-        "notes": "",
-        "id": "2333923238"
-    },
-    {
-        "en": "in a hurry",
         "cy": "ar frys",
         "tags": [
             "verb",
@@ -2069,6 +2188,17 @@
         ],
         "notes": "",
         "id": "3636776128"
+    },
+    {
+        "en": "in a hurry",
+        "cy": "mewn brys",
+        "tags": [
+            "verb",
+            "doing",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "2333923238"
     },
     {
         "en": "in sight",
@@ -2102,6 +2232,16 @@
         "id": "1042684490"
     },
     {
+        "en": "inflamation",
+        "cy": "llid",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "4041060060"
+    },
+    {
         "en": "inflamed",
         "cy": "llidus",
         "tags": [
@@ -2110,6 +2250,16 @@
         ],
         "notes": "",
         "id": "3384878250"
+    },
+    {
+        "en": "injection",
+        "cy": "chwistrelliad",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(m) -au",
+        "id": "4285799746"
     },
     {
         "en": "injuries",
@@ -2180,6 +2330,16 @@
     },
     {
         "en": "kiss",
+        "cy": "cusan",
+        "tags": [
+            "head",
+            "love"
+        ],
+        "notes": "(f/m) -au",
+        "id": "476224186"
+    },
+    {
+        "en": "kiss",
         "cy": "sws",
         "tags": [
             "head",
@@ -2188,16 +2348,6 @@
         ],
         "notes": "(f) -ys (dom)",
         "id": "1330600395"
-    },
-    {
-        "en": "kiss",
-        "cy": "cusan",
-        "tags": [
-            "head",
-            "love"
-        ],
-        "notes": "(f/m) -au",
-        "id": "476224186"
     },
     {
         "en": "knee",
@@ -2327,21 +2477,21 @@
     },
     {
         "en": "liver",
-        "cy": "iau",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) (NW)",
-        "id": "217691975"
-    },
-    {
-        "en": "liver",
         "cy": "afu",
         "tags": [
             "body"
         ],
         "notes": "(f/m) (SW)",
         "id": "847248220"
+    },
+    {
+        "en": "liver",
+        "cy": "iau",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (NW)",
+        "id": "217691975"
     },
     {
         "en": "long",
@@ -2411,6 +2561,16 @@
         "id": "1372325197"
     },
     {
+        "en": "malaria",
+        "cy": "malaria",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "664605997"
+    },
+    {
         "en": "measles",
         "cy": "brech goch",
         "tags": [
@@ -2419,6 +2579,26 @@
         ],
         "notes": "",
         "id": "1491708156"
+    },
+    {
+        "en": "medicine",
+        "cy": "ffisig",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(NW) (m)",
+        "id": "2834113005"
+    },
+    {
+        "en": "meningitis",
+        "cy": "llid yr ymennydd",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "1465054734"
     },
     {
         "en": "moustache",
@@ -2449,6 +2629,16 @@
         ],
         "notes": "(m) (NW)",
         "id": "2809995589"
+    },
+    {
+        "en": "mumps",
+        "cy": "twymyn doben",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "2045428624"
     },
     {
         "en": "muscle",
@@ -2574,13 +2764,14 @@
         "id": "3146928078"
     },
     {
-        "en": "noise",
-        "cy": "stŵr",
+        "en": "no smokeing",
+        "cy": "dim ysmygu",
         "tags": [
-            "sound"
+            "medical",
+            "hospital"
         ],
         "notes": "",
-        "id": "1618742759"
+        "id": "963251003"
     },
     {
         "en": "noise",
@@ -2590,6 +2781,15 @@
         ],
         "notes": "(m)",
         "id": "3098418560"
+    },
+    {
+        "en": "noise",
+        "cy": "stŵr",
+        "tags": [
+            "sound"
+        ],
+        "notes": "",
+        "id": "1618742759"
     },
     {
         "en": "noisy",
@@ -2646,6 +2846,26 @@
         ],
         "notes": "",
         "id": "2164561065"
+    },
+    {
+        "en": "ointment",
+        "cy": "eli",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(m)",
+        "id": "3117020651"
+    },
+    {
+        "en": "ointments",
+        "cy": "elïoedd",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(m)",
+        "id": "889588980"
     },
     {
         "en": "old",
@@ -2721,16 +2941,6 @@
     },
     {
         "en": "pain",
-        "cy": "poen",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(f/m) -au",
-        "id": "347589887"
-    },
-    {
-        "en": "pain",
         "cy": "loes",
         "tags": [
             "health",
@@ -2738,6 +2948,16 @@
         ],
         "notes": "(SW)",
         "id": "2945861191"
+    },
+    {
+        "en": "pain",
+        "cy": "poen",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(f/m) -au",
+        "id": "347589887"
     },
     {
         "en": "painful",
@@ -2770,6 +2990,15 @@
     },
     {
         "en": "palm of the hand",
+        "cy": "tor y llaw",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)",
+        "id": "1032817256"
+    },
+    {
+        "en": "palm of the hand",
         "cy": "celdr y llaw",
         "tags": [
             "body",
@@ -2791,13 +3020,14 @@
         "id": "3604962008"
     },
     {
-        "en": "palm of the hand",
-        "cy": "tor y llaw",
+        "en": "palms of the hands",
+        "cy": "celdrau'r dwylo",
         "tags": [
-            "body"
+            "body",
+            "saying"
         ],
-        "notes": "(f)",
-        "id": "1032817256"
+        "notes": "",
+        "id": "2987659322"
     },
     {
         "en": "palms of the hands",
@@ -2809,14 +3039,14 @@
         "id": "3686024285"
     },
     {
-        "en": "palms of the hands",
-        "cy": "celdrau'r dwylo",
+        "en": "parting (hair)",
+        "cy": "rhaniad",
         "tags": [
-            "body",
-            "saying"
+            "head",
+            "body"
         ],
-        "notes": "",
-        "id": "2987659322"
+        "notes": "(f) (SW)",
+        "id": "3905809969"
     },
     {
         "en": "parting (hair)",
@@ -2829,14 +3059,24 @@
         "id": "3397742418"
     },
     {
-        "en": "parting (hair)",
-        "cy": "rhaniad",
+        "en": "patient",
+        "cy": "claf",
         "tags": [
-            "head",
-            "body"
+            "medical",
+            "hospital"
         ],
-        "notes": "(f) (SW)",
-        "id": "3905809969"
+        "notes": "(m)",
+        "id": "1570446238"
+    },
+    {
+        "en": "patients",
+        "cy": "cleifion",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "",
+        "id": "3896215396"
     },
     {
         "en": "physical",
@@ -2855,6 +3095,56 @@
         ],
         "notes": "",
         "id": "4093573468"
+    },
+    {
+        "en": "pimple",
+        "cy": "tosyn",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2700920858"
+    },
+    {
+        "en": "pimple",
+        "cy": "ploryn",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) (NW) -nod",
+        "id": "1735097734"
+    },
+    {
+        "en": "pimples",
+        "cy": "tosau",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) (SW) plural",
+        "id": "1398256348"
+    },
+    {
+        "en": "pneumonia",
+        "cy": "niwmonia",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "2982870995"
+    },
+    {
+        "en": "pneumonia",
+        "cy": "llid yr ysgyfaint",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "1159041901"
     },
     {
         "en": "poison",
@@ -2888,26 +3178,6 @@
     },
     {
         "en": "pretty",
-        "cy": "pert",
-        "tags": [
-            "state",
-            "appearance"
-        ],
-        "notes": "(SW)",
-        "id": "1180637783"
-    },
-    {
-        "en": "pretty",
-        "cy": "tlws",
-        "tags": [
-            "state",
-            "appearance"
-        ],
-        "notes": "",
-        "id": "1672843837"
-    },
-    {
-        "en": "pretty",
         "cy": "del",
         "tags": [
             "appearance"
@@ -2924,6 +3194,26 @@
         ],
         "notes": "",
         "id": "3977697143"
+    },
+    {
+        "en": "pretty",
+        "cy": "tlws",
+        "tags": [
+            "state",
+            "appearance"
+        ],
+        "notes": "",
+        "id": "1672843837"
+    },
+    {
+        "en": "pretty",
+        "cy": "pert",
+        "tags": [
+            "state",
+            "appearance"
+        ],
+        "notes": "(SW)",
+        "id": "1180637783"
     },
     {
         "en": "pulse",
@@ -2974,6 +3264,16 @@
         "id": "3378876242"
     },
     {
+        "en": "rheumatism",
+        "cy": "gwynegon",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) (SW)",
+        "id": "3264129609"
+    },
+    {
         "en": "rib",
         "cy": "asen",
         "tags": [
@@ -3022,6 +3322,16 @@
         ],
         "notes": "(f)",
         "id": "1504332786"
+    },
+    {
+        "en": "scarlet fever",
+        "cy": "twymyn goch",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "286798619"
     },
     {
         "en": "scars",
@@ -3119,21 +3429,21 @@
     },
     {
         "en": "shout",
-        "cy": "bloedd",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(f) -iau -iadau",
-        "id": "1762445578"
-    },
-    {
-        "en": "shout",
         "cy": "gwaedd",
         "tags": [
             "verb"
         ],
         "notes": "",
         "id": "2844121304"
+    },
+    {
+        "en": "shout",
+        "cy": "bloedd",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) -iau -iadau",
+        "id": "1762445578"
     },
     {
         "en": "sick",
@@ -3349,16 +3659,6 @@
     },
     {
         "en": "sore throat",
-        "cy": "gwddf tost",
-        "tags": [
-            "body",
-            "medical"
-        ],
-        "notes": "(SW)",
-        "id": "2041602845"
-    },
-    {
-        "en": "sore throat",
         "cy": "llwnc tost",
         "tags": [
             "medical",
@@ -3366,6 +3666,16 @@
         ],
         "notes": "(SW)",
         "id": "4002395665"
+    },
+    {
+        "en": "sore throat",
+        "cy": "gwddf tost",
+        "tags": [
+            "body",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "2041602845"
     },
     {
         "en": "sore throat",
@@ -3397,12 +3707,12 @@
     },
     {
         "en": "speaker",
-        "cy": "siaradwyr",
+        "cy": "llefarydd",
         "tags": [
             "noun"
         ],
-        "notes": "(f)",
-        "id": "176082124"
+        "notes": "(m) -ion",
+        "id": "2771521147"
     },
     {
         "en": "speaker",
@@ -3415,12 +3725,22 @@
     },
     {
         "en": "speaker",
-        "cy": "llefarydd",
+        "cy": "siaradwyr",
         "tags": [
             "noun"
         ],
-        "notes": "(m) -ion",
-        "id": "2771521147"
+        "notes": "(f)",
+        "id": "176082124"
+    },
+    {
+        "en": "specialist",
+        "cy": "arbenigwr",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(m)",
+        "id": "3841925691"
     },
     {
         "en": "spine",
@@ -3472,6 +3792,15 @@
     },
     {
         "en": "stomach",
+        "cy": "bola",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2978728492"
+    },
+    {
+        "en": "stomach",
         "cy": "cylla",
         "tags": [
             "body"
@@ -3480,13 +3809,14 @@
         "id": "2501072279"
     },
     {
-        "en": "stomach",
-        "cy": "bola",
+        "en": "stomach ulcer",
+        "cy": "wlser stumog",
         "tags": [
-            "body"
+            "health",
+            "medical"
         ],
-        "notes": "(m) (SW)",
-        "id": "2978728492"
+        "notes": "",
+        "id": "4047597963"
     },
     {
         "en": "straight",
@@ -3740,16 +4070,6 @@
     },
     {
         "en": "to answer",
-        "cy": "ymateb",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "3116154140"
-    },
-    {
-        "en": "to answer",
         "cy": "ateb",
         "tags": [
             "sound",
@@ -3758,6 +4078,16 @@
         ],
         "notes": "(m) -ion",
         "id": "2997135054"
+    },
+    {
+        "en": "to answer",
+        "cy": "ymateb",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "3116154140"
     },
     {
         "en": "to argue or fall out",
@@ -3885,16 +4215,6 @@
     },
     {
         "en": "to carry",
-        "cy": "cario",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "16198088"
-    },
-    {
-        "en": "to carry",
         "cy": "cludo",
         "tags": [
             "verb",
@@ -3902,6 +4222,16 @@
         ],
         "notes": "",
         "id": "2010922607"
+    },
+    {
+        "en": "to carry",
+        "cy": "cario",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "16198088"
     },
     {
         "en": "to catch a cold",
@@ -3929,16 +4259,6 @@
     },
     {
         "en": "to chat",
-        "cy": "sgyrsiau",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "1422672489"
-    },
-    {
-        "en": "to chat",
         "cy": "sgwrs",
         "tags": [
             "verb",
@@ -3946,6 +4266,16 @@
         ],
         "notes": "(f)",
         "id": "3853353469"
+    },
+    {
+        "en": "to chat",
+        "cy": "sgyrsiau",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "1422672489"
     },
     {
         "en": "to chat to",
@@ -4062,16 +4392,6 @@
     },
     {
         "en": "to cry",
-        "cy": "llefain",
-        "tags": [
-            "emotion",
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "2391671325"
-    },
-    {
-        "en": "to cry",
         "cy": "wylo",
         "tags": [
             "emotion",
@@ -4079,6 +4399,16 @@
         ],
         "notes": "",
         "id": "199980848"
+    },
+    {
+        "en": "to cry",
+        "cy": "llefain",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "2391671325"
     },
     {
         "en": "to cry",
@@ -4156,17 +4486,6 @@
     },
     {
         "en": "to dribble",
-        "cy": "glafoerio",
-        "tags": [
-            "head",
-            "medical",
-            "verb"
-        ],
-        "notes": "(NW)",
-        "id": "2482410173"
-    },
-    {
-        "en": "to dribble",
         "cy": "driblo",
         "tags": [
             "head",
@@ -4177,14 +4496,15 @@
         "id": "3086829548"
     },
     {
-        "en": "to echo",
-        "cy": "adleisio",
+        "en": "to dribble",
+        "cy": "glafoerio",
         "tags": [
-            "sound",
+            "head",
+            "medical",
             "verb"
         ],
-        "notes": "(m)",
-        "id": "2226184432"
+        "notes": "(NW)",
+        "id": "2482410173"
     },
     {
         "en": "to echo",
@@ -4195,6 +4515,16 @@
         ],
         "notes": "(f)",
         "id": "1504306317"
+    },
+    {
+        "en": "to echo",
+        "cy": "adleisio",
+        "tags": [
+            "sound",
+            "verb"
+        ],
+        "notes": "(m)",
+        "id": "2226184432"
     },
     {
         "en": "to embrace",
@@ -4215,6 +4545,16 @@
         ],
         "notes": "",
         "id": "2850424899"
+    },
+    {
+        "en": "to examine",
+        "cy": "archwilio",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "",
+        "id": "1157601869"
     },
     {
         "en": "to express",
@@ -4256,16 +4596,6 @@
     },
     {
         "en": "to fall",
-        "cy": "disgyn",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "(NW)",
-        "id": "161283444"
-    },
-    {
-        "en": "to fall",
         "cy": "cwympo",
         "tags": [
             "verb",
@@ -4273,6 +4603,16 @@
         ],
         "notes": "(SW)",
         "id": "2560424664"
+    },
+    {
+        "en": "to fall",
+        "cy": "disgyn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(NW)",
+        "id": "161283444"
     },
     {
         "en": "to feel",
@@ -4379,12 +4719,12 @@
     },
     {
         "en": "to gossip",
-        "cy": "hel straeon",
+        "cy": "hel clecs",
         "tags": [
             "verb"
         ],
-        "notes": "(NW)",
-        "id": "1413799194"
+        "notes": "(SW)",
+        "id": "622171277"
     },
     {
         "en": "to gossip",
@@ -4398,12 +4738,12 @@
     },
     {
         "en": "to gossip",
-        "cy": "hel clecs",
+        "cy": "hel straeon",
         "tags": [
             "verb"
         ],
-        "notes": "(SW)",
-        "id": "622171277"
+        "notes": "(NW)",
+        "id": "1413799194"
     },
     {
         "en": "to gossip",
@@ -4427,16 +4767,6 @@
     },
     {
         "en": "to grasp",
-        "cy": "cydio",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "2100147082"
-    },
-    {
-        "en": "to grasp",
         "cy": "gafael yn",
         "tags": [
             "verb",
@@ -4444,6 +4774,16 @@
         ],
         "notes": "",
         "id": "3465098125"
+    },
+    {
+        "en": "to grasp",
+        "cy": "cydio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "2100147082"
     },
     {
         "en": "to grieve",
@@ -4528,17 +4868,6 @@
     },
     {
         "en": "to hurt",
-        "cy": "gwynegu",
-        "tags": [
-            "health",
-            "medical",
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "640729659"
-    },
-    {
-        "en": "to hurt",
         "cy": "brifo",
         "tags": [
             "health",
@@ -4547,6 +4876,17 @@
         ],
         "notes": "",
         "id": "4026640414"
+    },
+    {
+        "en": "to hurt",
+        "cy": "gwynegu",
+        "tags": [
+            "health",
+            "medical",
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "640729659"
     },
     {
         "en": "to hurt someone",
@@ -4786,6 +5126,16 @@
     },
     {
         "en": "to look",
+        "cy": "edrych",
+        "tags": [
+            "verb",
+            "sense"
+        ],
+        "notes": "",
+        "id": "2937669094"
+    },
+    {
+        "en": "to look",
         "cy": "disgwyl",
         "tags": [
             "verb",
@@ -4795,14 +5145,16 @@
         "id": "1059443513"
     },
     {
-        "en": "to look",
-        "cy": "edrych",
+        "en": "to look after",
+        "cy": "gofalu dros",
         "tags": [
-            "verb",
-            "sense"
+            "medical",
+            "hospital",
+            "saying",
+            "phrase"
         ],
         "notes": "",
-        "id": "2937669094"
+        "id": "16261403"
     },
     {
         "en": "to look at",
@@ -4956,18 +5308,6 @@
     },
     {
         "en": "to put on weight",
-        "cy": "ennill pwysau",
-        "tags": [
-            "appearance",
-            "saying",
-            "phrase",
-            "state"
-        ],
-        "notes": "",
-        "id": "1020974199"
-    },
-    {
-        "en": "to put on weight",
         "cy": "magu bol",
         "tags": [
             "state",
@@ -4977,6 +5317,18 @@
         ],
         "notes": "",
         "id": "2262564925"
+    },
+    {
+        "en": "to put on weight",
+        "cy": "ennill pwysau",
+        "tags": [
+            "appearance",
+            "saying",
+            "phrase",
+            "state"
+        ],
+        "notes": "",
+        "id": "1020974199"
     },
     {
         "en": "to reach",
@@ -5103,12 +5455,12 @@
     },
     {
         "en": "to shout",
-        "cy": "gweiddi",
+        "cy": "llefain",
         "tags": [
             "verb"
         ],
         "notes": "",
-        "id": "3434219394"
+        "id": "3052081202"
     },
     {
         "en": "to shout",
@@ -5122,12 +5474,12 @@
     },
     {
         "en": "to shout",
-        "cy": "llefain",
+        "cy": "gweiddi",
         "tags": [
             "verb"
         ],
         "notes": "",
-        "id": "3052081202"
+        "id": "3434219394"
     },
     {
         "en": "to shout as loud as possible",
@@ -5263,16 +5615,6 @@
     },
     {
         "en": "to smoke",
-        "cy": "smocio",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "3065131953"
-    },
-    {
-        "en": "to smoke",
         "cy": "ysmygu",
         "tags": [
             "health",
@@ -5281,6 +5623,16 @@
         ],
         "notes": "",
         "id": "3977076486"
+    },
+    {
+        "en": "to smoke",
+        "cy": "smocio",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "3065131953"
     },
     {
         "en": "to sneeze",
@@ -5406,6 +5758,15 @@
     },
     {
         "en": "to stare at",
+        "cy": "syllu ar",
+        "tags": [
+            "sense"
+        ],
+        "notes": "",
+        "id": "863782215"
+    },
+    {
+        "en": "to stare at",
         "cy": "craffu ar",
         "tags": [
             "verb",
@@ -5414,15 +5775,6 @@
         ],
         "notes": "",
         "id": "2752099078"
-    },
-    {
-        "en": "to stare at",
-        "cy": "syllu ar",
-        "tags": [
-            "sense"
-        ],
-        "notes": "",
-        "id": "863782215"
     },
     {
         "en": "to stay",
@@ -5645,6 +5997,17 @@
         "id": "3337456387"
     },
     {
+        "en": "to vaccinate",
+        "cy": "brechu",
+        "tags": [
+            "medical",
+            "hospital",
+            "verb"
+        ],
+        "notes": "",
+        "id": "3531176758"
+    },
+    {
         "en": "to voice",
         "cy": "lleisio",
         "tags": [
@@ -5726,11 +6089,10 @@
         "cy": "codi llaw ar rhywun",
         "tags": [
             "body",
-            "saying",
-            "action"
+            "saying"
         ],
         "notes": "",
-        "id": "987104033"
+        "id": "3592393363"
     },
     {
         "en": "to weaken",
@@ -5890,16 +6252,6 @@
     },
     {
         "en": "ugly",
-        "cy": "salw",
-        "tags": [
-            "state",
-            "appearance"
-        ],
-        "notes": "(SW)",
-        "id": "1661889396"
-    },
-    {
-        "en": "ugly",
         "cy": "hyll",
         "tags": [
             "state"
@@ -5916,6 +6268,26 @@
         ],
         "notes": "",
         "id": "3412188676"
+    },
+    {
+        "en": "ugly",
+        "cy": "salw",
+        "tags": [
+            "state",
+            "appearance"
+        ],
+        "notes": "(SW)",
+        "id": "1661889396"
+    },
+    {
+        "en": "ulcer",
+        "cy": "wlser",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "4142829439"
     },
     {
         "en": "under his arm",
@@ -5948,6 +6320,16 @@
         "id": "3349468187"
     },
     {
+        "en": "vaccination",
+        "cy": "brechaid",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(m) -au",
+        "id": "1700154403"
+    },
+    {
         "en": "vein",
         "cy": "gwythïen",
         "tags": [
@@ -5958,21 +6340,21 @@
     },
     {
         "en": "voice",
-        "cy": "llef",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(f) -au",
-        "id": "2258732530"
-    },
-    {
-        "en": "voice",
         "cy": "llais",
         "tags": [
             "sound"
         ],
         "notes": "(m)",
         "id": "1826737304"
+    },
+    {
+        "en": "voice",
+        "cy": "llef",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) -au",
+        "id": "2258732530"
     },
     {
         "en": "voices",
@@ -6109,6 +6491,15 @@
     },
     {
         "en": "wide",
+        "cy": "llydan",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "2265759520"
+    },
+    {
+        "en": "wide",
         "cy": "eang",
         "tags": [
             "appearance",
@@ -6116,15 +6507,6 @@
         ],
         "notes": "",
         "id": "1680498893"
-    },
-    {
-        "en": "wide",
-        "cy": "llydan",
-        "tags": [
-            "state"
-        ],
-        "notes": "",
-        "id": "2265759520"
     },
     {
         "en": "windpipe",
@@ -6187,16 +6569,6 @@
     },
     {
         "en": "wound",
-        "cy": "clwyf",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m) -au",
-        "id": "1516812820"
-    },
-    {
-        "en": "wound",
         "cy": "anaf",
         "tags": [
             "health",
@@ -6204,6 +6576,16 @@
         ],
         "notes": "(m) -au -iadau",
         "id": "1411951886"
+    },
+    {
+        "en": "wound",
+        "cy": "clwyf",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) -au",
+        "id": "1516812820"
     },
     {
         "en": "wrist",
@@ -6225,20 +6607,20 @@
     },
     {
         "en": "young",
-        "cy": "ifanc",
-        "tags": [
-            "state"
-        ],
-        "notes": "",
-        "id": "438986020"
-    },
-    {
-        "en": "young",
         "cy": "ieuanc",
         "tags": [
             "state"
         ],
         "notes": "",
         "id": "2695478610"
+    },
+    {
+        "en": "young",
+        "cy": "ifanc",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "438986020"
     }
 ]
