@@ -72,6 +72,24 @@ function sortArray(array) {
     });
 }
 
+function dedupe(array) {
+    return new Promise(function (resolve) {
+        const tally = {};
+
+        array.forEach(function (unit) {
+            tally[unit.id] = unit;
+        });
+
+        const result = [];
+        Object.keys(tally).forEach(function (key) {
+            result.push(tally[key]);
+        });
+
+        resolve(result);
+
+    });
+}
+
 function toString(jsonObj) {
     return new Promise(function (resolve) {
         resolve(JSON.stringify(jsonObj, null, 4));
@@ -80,10 +98,15 @@ function toString(jsonObj) {
 
 // const thisFolder = "./geirfa.csv";
 const parentFolder = "./vocab-store/geirfa.csv";
+const parentFolderCelf = "./vocab-store/celf.csv";
 
-const csv = fs.readFileSync(parentFolder).toString();
+const geifa = fs.readFileSync(parentFolder).toString();
+const celf = fs.readFileSync(parentFolderCelf).toString();
+
+const csv = geifa + celf;
 
 json(csv)
+    .then(dedupe)
     .then(sortArray)
     .then(toString)
     .then(console.log);

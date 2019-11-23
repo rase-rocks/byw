@@ -87,6 +87,7 @@ describe("geirfa", function () {
                 if (tally[unit.id] === undefined) {
                     tally[unit.id] = true;
                 } else {
+                    console.log(unit);
                     expect(true).to.be.false;
                 }
 
