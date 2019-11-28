@@ -139,6 +139,64 @@ describe("geirfa", function () {
 
     });
 
+    describe("select", function() {
+
+        it("returns num of random results", function () {
+
+            const geirfa = makeGeirfa(geirfaJson);
+            const num = 50;
+            const matches = geirfa.select(num);
+
+            expect(matches.length).to.be.equal(num);
+
+        });
+
+        it("returns object of correct shape", function () {
+
+            const geirfa = makeGeirfa(geirfaJson);
+            const num = 20;
+            const matches = geirfa.select(num);
+
+            expect(matches.length).to.be.equal(num);
+
+            matches.forEach(function(match) {
+
+                requiredKeys.forEach(key => {
+                    expect(match.hasOwnProperty(key)).to.be.true;
+                });
+
+            });
+
+        });
+
+        it("returns unique objects", function () {
+
+            const geirfa = makeGeirfa(geirfaJson);
+            const num = 100;
+            const matches = geirfa.select(num);
+
+            const set = {};
+
+            matches.forEach(function(unit) {
+
+                if (!set[unit.id]) {
+                    set[unit.id] = 0;
+                }
+
+                set[unit.id]++;
+
+            });
+
+            const counts = Object.values(set);
+
+            counts.forEach(function (count) {
+                expect(count).to.be.equal(1);
+            });
+
+        });
+
+    });
+
     describe("find-matches", function () {
 
         it("matches against known value", function () {

@@ -11,7 +11,7 @@ const geirfa = makeGeirfa(geirfaData);
 const tags = geirfa.tags;
 
 const currentTranslationUnitsCount = geirfaData.length;
-const targetTranslationUnitsCount = 5000;
+const targetTranslationUnitsCount = 7000;
 
 function makeChangeHandler(component, geirfaObj) {
     return function (searchText) {
@@ -25,7 +25,7 @@ class VocabularyController extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            units: geirfa.all(),
+            units: geirfa.select(50),
             searchText: ""
         };
     }

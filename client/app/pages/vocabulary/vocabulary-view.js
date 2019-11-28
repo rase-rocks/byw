@@ -58,15 +58,15 @@ class VocabularyView extends React.Component {
                     Currently it has {currentTranslationUnitsCount} words and phrases out of a target of {targetTranslationUnitsCount}.
                 </p>
 
-                <VocabSearch onChange={onChange} value={searchText} />
-
-                <p>{units.length} phrases and words found</p>
-
                 <div className="row tag-list">
                     <div className="col col-12">
                         {clickableTags(tags, onClickTag)}
                     </div>
                 </div>
+
+                <VocabSearch onChange={onChange} value={searchText} />
+
+                <p>{units.length} phrases and words found</p>
 
                 <table className="table">
                     <tbody>

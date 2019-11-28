@@ -4,6 +4,7 @@ import unitsEqual from "./units-equal";
 import unitContainsText from "./unit-contains-text";
 import tweetableUnit from "./tweetable-unit";
 import tags from "./tags";
+import select from "./select";
 
 function makeUnitContainsTextFilter(text) {
 
@@ -20,6 +21,9 @@ function makeGeirfa(data) {
     return {
         all: function () {
             return data;
+        },
+        select: function (num) {
+            return select(num, data);
         },
         tags: tags(data),
         findMatches: function (text) {
