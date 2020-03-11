@@ -7,32 +7,7 @@ GREEN='\033[1;32m'
 
 clear
 
-# read -p "Have you enabled uglify in gulpfile?" isUglifyEnabled
-# if [ $isUglifyEnabled != "y" ]; then
-#   echo "\n${RED}====================================================${NC}\n"
-#   echo "    Go and enable uglify for production builds"
-#   echo "\n${RED}====================================================${NC}\n"
-#   exit 0;
-# fi
-
-echo "\n[${RED}Removing Build folder${NC}]\n"
-rm -r ./s3-build
-
-echo "\n[${GREEN}Making Geirfa${NC}]\n"
-sh ./build-settings/make-geirfa.sh
-
-echo "\n[${GREEN}Rendering index.html for server in production mode${NC}]\n"
-NODE_ENV='production' gulp static-build
-NODE_ENV='production' node ./s3-build/static-index-build.js > ./s3-build/index.html
-
-echo "\n[${GREEN}Building client app with production mode${NC}]\n"
-NODE_ENV='production' gulp static
-
-echo "\n[${GREEN}Cleaning up${NC}]\n"
-rm ./s3-build/static-index-build.js
-
-echo "\n[${GREEN}Copying www root files${NC}]\n"
-cp ./www/* ./s3-build
+sh ./build-settings/build.sh
 
 echo "\n[${GREEN}Running Tests...${NC}]\n"
 npm test
