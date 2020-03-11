@@ -22,11 +22,13 @@ class Footer extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="about col-md-3">
+
                             <h4>
                                 Breathe your Welsh
                             </h4>
                             
                             <Link to="/no-page-here">Test the 404 page</Link>
+
                         </div>
                         <div className="col-md-6">
                             <h4>
@@ -44,6 +46,7 @@ class Footer extends React.Component {
                             </p>
                         </div>
                         <div className="site-links col-md-3">
+
                             <h4>Useful links</h4>
                             <div className="menus d-flex">
                                 <ul className="list-unstyled">
