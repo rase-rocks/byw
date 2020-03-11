@@ -272,24 +272,7 @@ h6 small {
     color: #999
 }
 
-.pagination-template li.page-item {
-    margin: 0 5px
-}
 
-.pagination-template a.page-link {
-    width: 40px;
-    height: 40px;
-    line-height: 27px;
-    border-radius: 50% !important;
-    border: none;
-    color: #555;
-    text-align: center;
-}
-
-.pagination-template a.page-link:hover,
-.pagination-template a.page-link.active {
-    background: #eee;
-}
 
 .nav-pills-template {
     -ms-flex-wrap: wrap;
@@ -2937,72 +2920,4 @@ a.text-primary:focus {
     color: #38ac30 !important
 }
 
-.page-item:first-child .page-link {
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem
-}
 
-.page-item:last-child .page-link {
-    border-top-right-radius: .25rem;
-    border-bottom-right-radius: .25rem
-}
-
-.page-item.active .page-link {
-    color: #fff;
-    background-color: #38a930;
-    border-color: #38a930
-}
-
-.page-item.disabled .page-link {
-    color: #868e96;
-    background-color: #fff;
-    border-color: #dee2e6
-}
-
-.page-link {
-    padding: .5rem .75rem;
-    line-height: 1.25;
-    color: #38a930;
-    background-color: rgb(70, 70, 70);
-    border: 1px solid #dee2e6
-}
-
-.page-link:hover,
-.page-link:focus {
-    color: #32982a;
-    text-decoration: none;
-    background-color: #e9ecef;
-    border-color: #dee2e6
-}
-
-.pagination-lg .page-link {
-    padding: .75rem 1.5rem;
-    font-size: 1.25rem;
-    line-height: 1.5
-}
-
-.pagination-lg .page-item:first-child .page-link {
-    border-top-left-radius: .3rem;
-    border-bottom-left-radius: .3rem
-}
-
-.pagination-lg .page-item:last-child .page-link {
-    border-top-right-radius: .3rem;
-    border-bottom-right-radius: .3rem
-}
-
-.pagination-sm .page-link {
-    padding: .25rem .5rem;
-    font-size: .875rem;
-    line-height: 1.5
-}
-
-.pagination-sm .page-item:first-child .page-link {
-    border-top-left-radius: .2rem;
-    border-bottom-left-radius: .2rem
-}
-
-.pagination-sm .page-item:last-child .page-link {
-    border-top-right-radius: .2rem;
-    border-bottom-right-radius: .2rem
-}

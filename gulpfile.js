@@ -2,6 +2,7 @@ const browserify = require("browserify");
 const buffer = require("vinyl-buffer");
 const cleanCSS = require("gulp-clean-css");
 const concat = require("gulp-concat");
+const uncss = require("gulp-uncss");
 const gulp = require("gulp");
 const source = require("vinyl-source-stream");
 const uglify = require("gulp-uglify");
@@ -56,6 +57,37 @@ gulp.task("static-assets", function () {
 
 gulp.task("static-css", function () {
     return gulp.src("./client/css/**/*.css")
+        .pipe(concat(names.cssFilename))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest(getPath("css")));
+});
+
+// Remove any unused CSS classes from the bundle
+
+gulp.task("static-optimize-css", function () {
+
+    const stdFiles = ["index.html", "404.html"].map(getPath);
+    const seoFiles = ["map", "vocabulary", "about", "submit", "privacy"].map(getPath);
+
+    const htmlFiles = [...stdFiles, ...seoFiles];
+
+    return gulp.src(getPath("css/byw.style.min.css"))
+        .pipe(uncss({
+            html: htmlFiles
+        }))
+        .pipe(gulp.dest(getPath("css")));
+});
+
+// Fix up any classes that need adding back in again
+
+const repairFiles = [
+    "leaflet",
+    "map-page",
+    "pagination"
+].map(name => `./client/css/${name}.css`);
+
+gulp.task("static-add-missing-classes", function () {
+    return gulp.src([getPath("css/byw.style.min.css"), ...repairFiles])
         .pipe(concat(names.cssFilename))
         .pipe(cleanCSS())
         .pipe(gulp.dest(getPath("css")));
