@@ -2,6 +2,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import { privacyRoute } from "../pages/privacy";
 import routes from "../nav/routes";
 import FooterLink from "./footer-link";
@@ -23,6 +25,8 @@ class Footer extends React.Component {
                             <h4>
                                 Breathe your Welsh
                             </h4>
+                            
+                            <Link to="/no-page-here">Test the 404 page</Link>
                         </div>
                         <div className="col-md-6">
                             <h4>

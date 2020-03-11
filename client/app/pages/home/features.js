@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {strHash} from "../../core/hash";
+import { strHash } from "../../core/hash";
 
 const features = [
     {
@@ -29,8 +29,8 @@ class Feature extends React.Component {
 
         return (
             <div className={divSize}>
-                <div className="icon"><img src={src} width="50px" alt={title}/></div>
-                <h4 className="h6" style={{color: "black"}}>{title}</h4>
+                <div className="icon"><img src={src} width="50px" alt={title} /></div>
+                <h4 className="h6" style={{ color: "black" }}>{title}</h4>
             </div>
         );
     }
@@ -43,7 +43,7 @@ Feature.propTypes = {
 };
 
 const staticFeatures = features.map(feature => {
-    return (<Feature key={strHash(feature.title)} {...feature}/>);
+    return (<Feature key={strHash(feature.title)} {...feature} />);
 });
 
 class FeaturesSection extends React.Component {

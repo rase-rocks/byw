@@ -1,35 +1,25 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { privacyRoute } from "./pages/privacy";
-import { route } from "./nav";
-
-import App from "./app";
-import Home from "./pages/home";
 import isBrowser from "./core/is-browser";
 import makeApiClient from "./core/api-client";
 import makeFilterLocationsMiddleware from "./core/redux/middleware/filter-locations-middleware";
 import makeRequestLocationsMiddleware from "./core/redux/middleware/request-locations-middleware";
 import makeSubmitMiddleware from "./core/redux/middleware/submit-middleware";
 import makeLocatorMiddleware from "./core/redux/middleware/locator-middleware";
-import MapPage from "./pages/map";
-import Privacy from "./pages/privacy";
 import reducers from "./core/redux/reducers";
-import Submit from "./pages/submit";
-import Vocabulary from "./pages/vocabulary";
-import About from "./pages/about";
 
-const routes = [
-    { url: route.home, component: Home },
-    { url: route.map, component: MapPage },
-    { url: route.about, component: About },
-    { url: route.vocabulary, component: Vocabulary },
-    { url: route.submit, component: Submit },
-    { url: privacyRoute.url, component: Privacy }
-];
+import App from "./app";
+import Home from "./pages/home";
+import Map from "./pages/map";
+import Vocab from "./pages/vocabulary";
+import About from "./pages/about";
+import Submit from "./pages/submit";
+import Privacy from "./pages/privacy";
+import NoMatch from "./pages/nomatch";
 
 if (isBrowser()) {
     const container = document.getElementById("root");
@@ -46,16 +36,19 @@ if (isBrowser()) {
                 makeLocatorMiddleware(api)
             ));
 
-
-        const components = routes.map(function (route, i) {
-            return (<Route key={`route-${i}`} exact path={route.url} component={route.component} />);
-        });
-
         ReactDOM.render(
             <Provider store={store}>
                 <BrowserRouter>
                     <App>
-                        {components}
+                        <Switch>
+                            <Route path="/" exact component={Home} />
+                            <Route path="/map" component={Map} />
+                            <Route path="/about" component={About} />
+                            <Route path="/vocabulary" component={Vocab} />
+                            <Route path="/submit" component={Submit} />
+                            <Route path="/privacy" component={Privacy} />
+                            <Route path="*" component={NoMatch} />
+                        </Switch>
                     </App>
                 </BrowserRouter>
             </Provider>

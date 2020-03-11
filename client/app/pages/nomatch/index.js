@@ -1,24 +1,33 @@
 import React from "react";
-import FetchableSectionBackground from "../../resusable-components/FetchableSectionBackground";
+import FetchableContainer from "../../resusable-components/FetchableContainer";
 import colors from "../../core/colors";
 
 class NoMatch extends React.Component {
     render() {
         return (
-            <div className="full-page-content">
-                <FetchableSectionBackground backgroundColor={colors.mountainGreen}
-                    url="assets/images/david-kovalenko-G85VuTpw6jg-unsplash-lossy.jpg"
-                    classes="hero d-flex align-items-center">
+            <div className="full-page-content hero d-flex align-items-center">
+                <div style={{ height: "100vh", width: "100%", backgroundColor: colors.mountainGreen }}>
 
-                    <div className="container">
+                    <FetchableContainer backgroundColor={colors.mountainGreen}
+                        url="assets/images/david-kovalenko-G85VuTpw6jg-unsplash-lossy.jpg"
+                        classes="d-flex align-items-center">
 
-                        <h1>
-                            404 - Not Found
-                        </h1>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-sm-12 text-center" style={{color: "white"}}>
+                                    
+                                    <h1 className="font-alt">
+                                        404 Not Found
+                                    </h1>
 
-                    </div>
+                                </div>
+                            </div>
 
-                </FetchableSectionBackground>
+                        </div>
+
+                    </FetchableContainer>
+
+                </div>
             </div>
         );
     }
