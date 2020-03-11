@@ -35,7 +35,7 @@ class MapPageController extends React.Component {
         this.props.dispatch(requestLocationsAction());
     }
 
-    componentWillReceiveProps(props) {
+    UNSAFE_componentWillReceiveProps(props) {
 
         const { currentPageNo, resultsPerPage } = this.state;
 
