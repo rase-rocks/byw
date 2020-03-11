@@ -133,7 +133,7 @@ aside {
 .badge-rounded {
     padding: 5px 20px;
     border-radius: 50px;
-    background: #4dcb44;
+    background: #29ab20;
     color: #fff
 }
 
@@ -171,7 +171,7 @@ aside {
 }
 
 .form-control:focus {
-    border-color: #4dcb44;
+    border-color: #29ab20;
     -webkit-box-shadow: none;
     box-shadow: none
 }
@@ -198,7 +198,7 @@ aside {
 }
 
 .text-primary {
-    color: #4dcb44 !important
+    color: #28a745 !important
 }
 
 p.text-hero {
@@ -224,7 +224,7 @@ p.small-text-hero {
     display: block;
     width: 2px;
     height: 100%;
-    background: #99e194;
+    background: #29ab20;
     position: absolute;
     top: 0;
     left: 0
@@ -235,7 +235,7 @@ p.small-text-hero {
     display: block;
     width: 3px;
     height: 100%;
-    background: #4dcb44;
+    background: #29ab20;
     position: absolute;
     top: 0;
     left: 3px
@@ -283,12 +283,12 @@ h6 small {
     border-radius: 50% !important;
     border: none;
     color: #555;
-    text-align: center
+    text-align: center;
 }
 
 .pagination-template a.page-link:hover,
 .pagination-template a.page-link.active {
-    background: #eee
+    background: #eee;
 }
 
 .nav-pills-template {
@@ -299,18 +299,18 @@ h6 small {
 .nav-pills-template a {
     border-radius: 50px;
     margin: 10px;
-    border: 1px solid #4dcb44
+    border: 1px solid #29ab20;
 }
 
 .nav-pills-template a.active,
 .nav-pills-template a:hover,
 .nav-pills-template a:focus {
-    background: #4dcb44;
+    background: #29ab20;
     color: #fff
 }
 
 .nav-pills-template a:first-of-type {
-    margin-left: 0
+    margin-left: 0;
 }
 
 @media (max-width: 992px) {
@@ -424,7 +424,7 @@ nav.navbar a.nav-link {
 }
 
 nav.navbar a.nav-link:hover {
-    color: #4dcb44
+    color: #29ab20;
 }
 
 nav.navbar a.nav-link.active {
@@ -531,27 +531,27 @@ section.hero {
 }
 
 .search-bar-selector {
-    color: darkgray;
+    color: rgb(99, 99, 99);
     cursor: pointer;
 }
 
 .search-bar input::-moz-placeholder,
 .search-bar .bootstrap-select::-moz-placeholder {
-    color: #aaa;
+    color: rgb(99, 99, 99);
     font-weight: 300;
     font-family: sans-serif
 }
 
 .search-bar input::-webkit-input-placeholder,
 .search-bar .bootstrap-select::-webkit-input-placeholder {
-    color: #aaa;
+    color: rgb(99, 99, 99);
     font-weight: 300;
     font-family: sans-serif
 }
 
 .search-bar input:-ms-input-placeholder,
 .search-bar .bootstrap-select:-ms-input-placeholder {
-    color: #aaa;
+    color: rgb(99, 99, 99);
     font-weight: 300;
     font-family: sans-serif
 }
@@ -567,7 +567,7 @@ section.hero {
     -webkit-box-shadow: none;
     box-shadow: none;
     padding: 20px 0 15px;
-    color: #aaa;
+    color: rgb(99, 99, 99);
     font-weight: 300;
     font-family: sans-serif
 }
@@ -581,7 +581,7 @@ section.hero {
 }
 
 .search-bar .submit {
-    background: #4dcb44;
+    background: #29ab20;
     color: #fff;
     font-family: sans-serif;
     border-radius: 100px;
@@ -605,7 +605,7 @@ section.hero {
         width: 30px;
         height: 30px;
         line-height: 30px;
-        background: #4dcb44;
+        background: #29ab20;
         text-align: center
     }
     .search-bar {
@@ -654,7 +654,7 @@ section.features div[class*="col-"]:last-of-type {
 }
 
 section.features .icon {
-    color: #4dcb44;
+    color: #29ab20;
     font-size: 2em;
     padding: 10px;
 }
@@ -732,7 +732,7 @@ section.top-listings .item .rate li {
 }
 
 section.top-listings .item .badge {
-    background: rgba(77, 203, 68, 0.8);
+    background: #29ab20;
     color: #fff;
     text-transform: uppercase;
     position: absolute;
@@ -837,7 +837,7 @@ section.latest-listings .owl-theme .owl-dots {
 }
 
 section.latest-listings .owl-theme .owl-dots .owl-dot.active span {
-    background: #4dcb44;
+    background: #29ab20;
     position: relative
 }
 
@@ -849,13 +849,13 @@ section.latest-listings .owl-theme .owl-dots .owl-dot.active span::before {
     position: absolute;
     top: 3px;
     right: 3px;
-    background: #4dcb44;
+    background: #29ab20;
     border: 2px solid #f5f5f5;
     border-radius: 50%
 }
 
 section.latest-listings .owl-theme .owl-dots .owl-dot.active span:hover {
-    background: #4dcb44
+    background: #29ab20
 }
 
 section.latest-listings .owl-theme .owl-dots .owl-dot span {
@@ -893,7 +893,7 @@ section.services .item:last-of-type::after {
 }
 
 section.services .icon {
-    color: #4dcb44;
+    color: #29ab20;
     font-size: 3.5em;
     position: relative;
     padding: 0 20px;
@@ -982,7 +982,7 @@ section.blog a:focus {
 
 section.blog a.read-more:hover,
 section.blog a.read-more:focus {
-    color: #4dcb44
+    color: #29ab20
 }
 
 section.blog a.read-more {
@@ -1058,7 +1058,7 @@ footer.main-footer .contact p {
 }
 
 footer.main-footer .contact a {
-    color: #4dcb44
+    color: #29ab20
 }
 
 footer.main-footer .social-menu {
@@ -1071,7 +1071,7 @@ footer.main-footer .social-menu a {
 }
 
 footer.main-footer .social-menu a:hover {
-    color: #4dcb44
+    color: #29ab20
 }
 
 footer.main-footer .social-menu i {
@@ -1089,7 +1089,7 @@ footer.main-footer .menus a {
 }
 
 footer.main-footer .menus a:hover {
-    color: #4dcb44
+    color: #29ab20
 }
 
 footer.main-footer .copyrights {
@@ -1224,7 +1224,7 @@ footer.main-footer .logo {
 .post-content a.read-more:hover,
 .post-content a.read-more:focus {
     text-decoration: none;
-    color: #4dcb44
+    color: #29ab20
 }
 
 .widget {
@@ -1275,7 +1275,7 @@ footer.main-footer .logo {
     width: 40px;
     height: 40px;
     line-height: 40px;
-    background: #4dcb44;
+    background: #29ab20;
     text-align: center;
     position: absolute;
     top: 5px;
@@ -1291,7 +1291,7 @@ footer.main-footer .logo {
 
 .widget.latest-posts a:hover,
 .widget.latest-posts a:focus {
-    color: #4dcb44
+    color: #29ab20
 }
 
 .widget.latest-posts .post {
@@ -1339,7 +1339,7 @@ footer.main-footer .logo {
 
 .widget.categories .category a:hover,
 .widget.categories .category a:focus {
-    color: #4dcb44
+    color: #29ab20
 }
 
 .widget.categories .category span {
@@ -1362,7 +1362,7 @@ footer.main-footer .logo {
 
 .widget.tags .tag:hover,
 .widget.tags .tag:focus {
-    background: #4dcb44;
+    background: #29ab20;
     color: #fff
 }
 
@@ -1402,7 +1402,7 @@ h4.comments-heading {
     width: 35px;
     height: 35px;
     line-height: 35px;
-    background: #4dcb44;
+    background: #29ab20;
     text-align: center;
     border-radius: 50%;
     font-size: 0.3em;
@@ -1456,7 +1456,7 @@ h4.comments-heading {
     width: 18px;
     height: 18px;
     line-height: 18px;
-    background: #4dcb44;
+    background: #29ab20;
     text-align: center;
     font-size: 0.6em;
     color: #fff;
@@ -1626,7 +1626,7 @@ h4.comments-heading {
 
 .contact a:hover,
 .contact a:focus {
-    color: #4dcb44;
+    color: #29ab20;
     text-decoration: none
 }
 
@@ -1702,7 +1702,7 @@ h4.comments-heading {
         width: 30px;
         height: 30px;
         line-height: 30px;
-        background: #4dcb44;
+        background: #29ab20;
         text-align: center
     }
     section.hero .calltoactions {
@@ -1792,7 +1792,7 @@ h4.comments-heading {
 }
 
 .listing-item h3 a:hover {
-    color: #4dcb44
+    color: #29ab20
 }
 
 .listing-item p {
@@ -1825,7 +1825,7 @@ h4.comments-heading {
 .listing-item .favorite:hover,
 .listing-item .favorite:focus,
 .listing-item .favorite.active {
-    background: #4dcb44
+    background: #29ab20
 }
 
 .listing-item .description {
@@ -1918,7 +1918,7 @@ h4.comments-heading {
 
 .infobox h3 a:hover,
 .infobox h3 a:focus {
-    color: #4dcb44
+    color: #29ab20
 }
 
 .infobox .image {
@@ -1944,7 +1944,7 @@ h4.comments-heading {
 .contact-icon {
     height: 5rem;
     font-size: 3rem;
-    color: #4dcb44
+    color: #29ab20
 }
 
 #style-switch-button {
@@ -2090,8 +2090,8 @@ h4.comments-heading {
 .btn:focus,
 .btn.focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 .2rem rgba(77, 203, 68, 0.25);
-    box-shadow: 0 0 0 .2rem rgba(77, 203, 68, 0.25)
+    -webkit-box-shadow: 0 0 0 .2rem #29ab20;
+    box-shadow: 0 0 0 .2rem #29ab20
 }
 
 .btn.disabled,
@@ -2106,8 +2106,8 @@ h4.comments-heading {
 
 .btn-primary {
     color: #fff;
-    background-color: #4dcb44;
-    border-color: #4dcb44
+    background-color: #29ab20;
+    border-color: #29ab20
 }
 
 .btn-primary:hover {
@@ -2125,8 +2125,8 @@ h4.comments-heading {
 .btn-primary.disabled,
 .btn-primary:disabled {
     color: #fff;
-    background-color: #4dcb44;
-    border-color: #4dcb44
+    background-color: #38a930;
+    border-color: #38a930
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -2425,16 +2425,16 @@ h4.comments-heading {
 }
 
 .btn-outline-primary {
-    color: #4dcb44;
+    color: #38a930;
     background-color: transparent;
     background-image: none;
-    border-color: #4dcb44
+    border-color: #38a930
 }
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #4dcb44;
-    border-color: #4dcb44
+    background-color: #38a930;
+    border-color: #38a930
 }
 
 .btn-outline-primary:focus,
@@ -2445,7 +2445,7 @@ h4.comments-heading {
 
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-    color: #4dcb44;
+    color: #38a930;
     background-color: transparent
 }
 
@@ -2453,8 +2453,8 @@ h4.comments-heading {
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show>.btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #4dcb44;
-    border-color: #4dcb44
+    background-color: #38a930;
+    border-color: #38a930
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
@@ -2808,7 +2808,7 @@ body {
 }
 
 a {
-    color: #4dcb44;
+    color: #38a930;
     text-decoration: none
 }
 
@@ -2916,7 +2916,7 @@ mark,
     padding: .5rem 1rem;
     margin-bottom: 2rem;
     font-size: 1.25rem;
-    border-left: 5px solid #4dcb44;
+    border-left: 5px solid #38a930;
     font-weight: 300
 }
 
@@ -2929,7 +2929,7 @@ mark,
 }
 
 .text-primary {
-    color: #4dcb44 !important
+    color: #38a930 !important
 }
 
 a.text-primary:hover,
@@ -2949,8 +2949,8 @@ a.text-primary:focus {
 
 .page-item.active .page-link {
     color: #fff;
-    background-color: #4dcb44;
-    border-color: #4dcb44
+    background-color: #38a930;
+    border-color: #38a930
 }
 
 .page-item.disabled .page-link {
@@ -2962,7 +2962,7 @@ a.text-primary:focus {
 .page-link {
     padding: .5rem .75rem;
     line-height: 1.25;
-    color: #4dcb44;
+    color: #38a930;
     background-color: rgb(70, 70, 70);
     border: 1px solid #dee2e6
 }

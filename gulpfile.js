@@ -34,7 +34,7 @@ gulp.task("static-client-bundle", function () {
         .bundle()
         .pipe(source("bundle.js"))
         .pipe(buffer())
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(buildPath));
 });
 
@@ -77,3 +77,12 @@ gulp.task("static", gulp.series(gulp.parallel(
     "static-css-image-copy"
     //"static-api"
 )));
+
+gulp.task("seo-hack-build-pages", function() {
+    return browserify("./build-settings/build-seo-pages.js")
+        .transform("babelify", { presets: ["es2015", "react"] })
+        .bundle()
+        .pipe(source("build-pages-node.js"))
+        .pipe(buffer())
+        .pipe(gulp.dest("./build-settings"));
+});
