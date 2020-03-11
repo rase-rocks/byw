@@ -7,7 +7,6 @@ import ReactDOM from "react-dom";
 import { privacyRoute } from "./pages/privacy";
 import { route } from "./nav";
 
-// import About from "./pages/about";
 import App from "./app";
 import Home from "./pages/home";
 import isBrowser from "./core/is-browser";

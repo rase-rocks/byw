@@ -6,25 +6,11 @@ import { strHash } from "../core/hash";
 import NavLink from "./nav-link";
 import OverlayMenu from "./overlay-menu";
 
+import routes, { route } from "./routes";
+
 const li = function (route) {
     return (<NavLink key={strHash(route.url)} to={route.url}>{route.title}</NavLink>);
 };
-
-export const route = {
-    home: "/",
-    map: "/map",
-    vocabulary: "/vocabulary",
-    about: "/about",
-    submit: "/submit"
-};
-
-export const routes = [
-    { url: route.home, title: "Home" },
-    { url: route.map, title: "Map" },
-    { url: route.vocabulary, title: "Vocab" },
-    { url: route.about, title: "About" },
-    { url: route.submit, title: "Submit" }
-];
 
 const links = routes.map(li);
 
@@ -106,4 +92,5 @@ Nav.propTypes = {
     history: PropTypes.object.isRequired
 };
 
+export { routes, route };
 export default withRouter(Nav);

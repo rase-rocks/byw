@@ -1,6 +1,6 @@
 const cssFilename = "byw.style.min.css";
 const cssLinkString = `<link href="css/${cssFilename}" type="text/css" rel="stylesheet">`;
-const keywords = "welsh,cymraeg,language,find,locate,speak,rate,review";
+const keywords = "wales,cymru,welsh,cymraeg,language,geirfa,find,locate,speak,rate,review";
 const description = "Find and visit Welsh speaking places";
 const title = "Breathe Your Welsh";
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { privacyRoute } from "../pages/privacy";
-import { routes } from "../nav";
+import routes from "../nav/routes";
 import FooterLink from "./footer-link";
 import hash from "../core/hash";
 import GitHubIcon from "../resusable-components/github-icon";
