@@ -103,6 +103,12 @@ To get a build folder run. Once this has been created it can be served up during
 npm run build
 ```
 
+To run a full build ready for deployment:
+```
+npm run deploy
+```
+The section of the script that syncs with AWS S3 is commented out so that full builds can be made during development. This is useful as a full build includes unused css class removal.
+
 The package has the http-serve as a dependency to allow for local development. This will serve the files out of the s3-build folder. To use run:
 
 ```
