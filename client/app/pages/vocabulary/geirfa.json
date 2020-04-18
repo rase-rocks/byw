@@ -12,18 +12,6 @@
     },
     {
         "en": "I don't feel like going",
-        "cy": "does dim chwant mynd arnaf i",
-        "tags": [
-            "emotion",
-            "sense",
-            "saying",
-            "phrase"
-        ],
-        "notes": "",
-        "id": "4089329684"
-    },
-    {
-        "en": "I don't feel like going",
         "cy": "does dim awydd mynd arnaf i",
         "tags": [
             "emotion",
@@ -33,6 +21,18 @@
         ],
         "notes": "",
         "id": "2785000764"
+    },
+    {
+        "en": "I don't feel like going",
+        "cy": "does dim chwant mynd arnaf i",
+        "tags": [
+            "emotion",
+            "sense",
+            "saying",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "4089329684"
     },
     {
         "en": "NHS",
@@ -101,6 +101,16 @@
         ],
         "notes": "",
         "id": "748127090"
+    },
+    {
+        "en": "abortion",
+        "cy": "aborsiwn",
+        "tags": [
+            "family",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "2358225400"
     },
     {
         "en": "about to",
@@ -176,21 +186,21 @@
     },
     {
         "en": "absorbent",
-        "cy": "amsugnol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "724006470"
-    },
-    {
-        "en": "absorbent",
         "cy": "amsugnydd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1718985724"
+    },
+    {
+        "en": "absorbent",
+        "cy": "amsugnol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "724006470"
     },
     {
         "en": "absorbent fabric",
@@ -446,21 +456,21 @@
     },
     {
         "en": "accurate",
-        "cy": "cywir",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "613089270"
-    },
-    {
-        "en": "accurate",
         "cy": "manwl gywir",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "23240843"
+    },
+    {
+        "en": "accurate",
+        "cy": "cywir",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "613089270"
     },
     {
         "en": "acetal",
@@ -671,21 +681,21 @@
     },
     {
         "en": "action painting",
-        "cy": "peintio gweithredol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3158749242"
-    },
-    {
-        "en": "action painting",
         "cy": "paentiad gweithredol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "247872664"
+    },
+    {
+        "en": "action painting",
+        "cy": "peintio gweithredol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3158749242"
     },
     {
         "en": "activator",
@@ -698,21 +708,21 @@
     },
     {
         "en": "active",
-        "cy": "bywiog",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "293166263"
-    },
-    {
-        "en": "active",
         "cy": "gweithredol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "23662410"
+    },
+    {
+        "en": "active",
+        "cy": "bywiog",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "293166263"
     },
     {
         "en": "activity",
@@ -1007,10 +1017,10 @@
         "en": "adopted",
         "cy": "mabwysiedig",
         "tags": [
-            "familyplywood"
+            "family"
         ],
-        "notes": "pren tair haen",
-        "id": "1395067621"
+        "notes": "",
+        "id": "2092990454"
     },
     {
         "en": "adornment",
@@ -1068,21 +1078,21 @@
     },
     {
         "en": "aerial",
-        "cy": "awyrol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3636748154"
-    },
-    {
-        "en": "aerial",
         "cy": "erial",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "990172855"
+    },
+    {
+        "en": "aerial",
+        "cy": "awyrol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3636748154"
     },
     {
         "en": "aerography",
@@ -1194,21 +1204,21 @@
     },
     {
         "en": "aggregate",
-        "cy": "agregu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3247358516"
-    },
-    {
-        "en": "aggregate",
         "cy": "agreg",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3839785441"
+    },
+    {
+        "en": "aggregate",
+        "cy": "agregu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3247358516"
     },
     {
         "en": "agile",
@@ -1233,20 +1243,20 @@
         "en": "aid",
         "cy": "cymorth",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3803616428"
-    },
-    {
-        "en": "aid",
-        "cy": "cymorth",
-        "tags": [
             "medical",
             "hospital"
         ],
         "notes": "(m)",
         "id": "2612213983"
+    },
+    {
+        "en": "aid",
+        "cy": "cymorth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3803616428"
     },
     {
         "en": "aid",
@@ -1448,6 +1458,15 @@
         ],
         "notes": "",
         "id": "826511828"
+    },
+    {
+        "en": "all on my own",
+        "cy": "ar fy mhen fy hunan bach",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "254037990"
     },
     {
         "en": "all-over pattern",
@@ -1905,21 +1924,21 @@
     },
     {
         "en": "animation",
-        "cy": "animeiddiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3424348395"
-    },
-    {
-        "en": "animation",
         "cy": "animeiddio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1640995585"
+    },
+    {
+        "en": "animation",
+        "cy": "animeiddiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3424348395"
     },
     {
         "en": "animator",
@@ -1941,16 +1960,6 @@
     },
     {
         "en": "ankle",
-        "cy": "migwrn",
-        "tags": [
-            "body",
-            "foot"
-        ],
-        "notes": "(m)",
-        "id": "3169134781"
-    },
-    {
-        "en": "ankle",
         "cy": "ffêr",
         "tags": [
             "body",
@@ -1960,15 +1969,14 @@
         "id": "2978949402"
     },
     {
-        "en": "ankles",
-        "cy": "fferau",
+        "en": "ankle",
+        "cy": "migwrn",
         "tags": [
             "body",
-            "leg",
-            "plural"
+            "foot"
         ],
-        "notes": "",
-        "id": "3367337295"
+        "notes": "(m)",
+        "id": "3169134781"
     },
     {
         "en": "ankles",
@@ -1980,6 +1988,17 @@
         ],
         "notes": "(m)",
         "id": "3964004951"
+    },
+    {
+        "en": "ankles",
+        "cy": "fferau",
+        "tags": [
+            "body",
+            "leg",
+            "plural"
+        ],
+        "notes": "",
+        "id": "3367337295"
     },
     {
         "en": "anneal",
@@ -2019,21 +2038,21 @@
     },
     {
         "en": "antique",
-        "cy": "hynafol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "305886942"
-    },
-    {
-        "en": "antique",
         "cy": "hynafolyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2281401961"
+    },
+    {
+        "en": "antique",
+        "cy": "hynafol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "305886942"
     },
     {
         "en": "antique paper",
@@ -2118,15 +2137,6 @@
     },
     {
         "en": "appearance",
-        "cy": "ymddangosiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1074399268"
-    },
-    {
-        "en": "appearance",
         "cy": "golwg",
         "tags": [
             "appearance"
@@ -2143,6 +2153,15 @@
         ],
         "notes": "",
         "id": "3778309243"
+    },
+    {
+        "en": "appearance",
+        "cy": "ymddangosiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1074399268"
     },
     {
         "en": "application",
@@ -2173,21 +2192,21 @@
     },
     {
         "en": "apply",
-        "cy": "rhoi",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1787363038"
-    },
-    {
-        "en": "apply",
         "cy": "cymhwyso (at)",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1890843835"
+    },
+    {
+        "en": "apply",
+        "cy": "rhoi",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1787363038"
     },
     {
         "en": "appreciate",
@@ -2209,21 +2228,21 @@
     },
     {
         "en": "approximate",
-        "cy": "bras",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3598953636"
-    },
-    {
-        "en": "approximate",
         "cy": "brasamcanu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "126367889"
+    },
+    {
+        "en": "approximate",
+        "cy": "bras",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3598953636"
     },
     {
         "en": "approximately",
@@ -2472,19 +2491,19 @@
         "en": "arm",
         "cy": "braich",
         "tags": [
-            "celf"
+            "body"
         ],
-        "notes": "",
-        "id": "2158854811"
+        "notes": "(f)",
+        "id": "3782567328"
     },
     {
         "en": "arm",
         "cy": "braich",
         "tags": [
-            "body"
+            "celf"
         ],
-        "notes": "(f)",
-        "id": "3782567328"
+        "notes": "",
+        "id": "2158854811"
     },
     {
         "en": "arm in arm",
@@ -2570,21 +2589,21 @@
     },
     {
         "en": "art",
-        "cy": "celfyddyd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "641565561"
-    },
-    {
-        "en": "art",
         "cy": "celf",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2652676733"
+    },
+    {
+        "en": "art",
+        "cy": "celfyddyd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "641565561"
     },
     {
         "en": "art board",
@@ -3057,21 +3076,21 @@
     },
     {
         "en": "attractive",
-        "cy": "deniadol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3094857097"
-    },
-    {
-        "en": "attractive",
         "cy": "atynnol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3360154598"
+    },
+    {
+        "en": "attractive",
+        "cy": "deniadol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3094857097"
     },
     {
         "en": "attractive force",
@@ -3108,6 +3127,15 @@
         ],
         "notes": "",
         "id": "646526946"
+    },
+    {
+        "en": "aunt",
+        "cy": "modryb",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) -edd",
+        "id": "698995906"
     },
     {
         "en": "aunty",
@@ -3454,12 +3482,12 @@
     },
     {
         "en": "balance",
-        "cy": "cydbwysedd",
+        "cy": "cadw cydbwysedd",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "2713983028"
+        "id": "382925445"
     },
     {
         "en": "balance",
@@ -3472,12 +3500,12 @@
     },
     {
         "en": "balance",
-        "cy": "cadw cydbwysedd",
+        "cy": "cydbwysedd",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "382925445"
+        "id": "2713983028"
     },
     {
         "en": "balanced shape",
@@ -3500,21 +3528,21 @@
     },
     {
         "en": "ball",
-        "cy": "pêl",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3941876579"
-    },
-    {
-        "en": "ball",
         "cy": "pellen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1419260139"
+    },
+    {
+        "en": "ball",
+        "cy": "pêl",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3941876579"
     },
     {
         "en": "ball clay",
@@ -3637,20 +3665,20 @@
         "en": "bandage",
         "cy": "rhwymyn",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3146648082"
-    },
-    {
-        "en": "bandage",
-        "cy": "rhwymyn",
-        "tags": [
             "medical",
             "hospital"
         ],
         "notes": "",
         "id": "3534029677"
+    },
+    {
+        "en": "bandage",
+        "cy": "rhwymyn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3146648082"
     },
     {
         "en": "banding",
@@ -4005,6 +4033,16 @@
     },
     {
         "en": "beard",
+        "cy": "locsyn",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(m) (NW)",
+        "id": "3517150318"
+    },
+    {
+        "en": "beard",
         "cy": "barf",
         "tags": [
             "head",
@@ -4023,16 +4061,6 @@
         "id": "856466097"
     },
     {
-        "en": "beard",
-        "cy": "locsyn",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(m) (NW)",
-        "id": "3517150318"
-    },
-    {
         "en": "beautiful",
         "cy": "hardd",
         "tags": [
@@ -4041,6 +4069,15 @@
         ],
         "notes": "",
         "id": "19538645"
+    },
+    {
+        "en": "beautiful",
+        "cy": "glân",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "605830834"
     },
     {
         "en": "beautiful",
@@ -4053,13 +4090,14 @@
         "id": "1420976060"
     },
     {
-        "en": "beautiful",
-        "cy": "glân",
+        "en": "beauty",
+        "cy": "prydferthwch",
         "tags": [
+            "state",
             "appearance"
         ],
-        "notes": "",
-        "id": "605830834"
+        "notes": "(m)",
+        "id": "2717375683"
     },
     {
         "en": "beauty",
@@ -4079,16 +4117,6 @@
         ],
         "notes": "(m)",
         "id": "54821258"
-    },
-    {
-        "en": "beauty",
-        "cy": "prydferthwch",
-        "tags": [
-            "state",
-            "appearance"
-        ],
-        "notes": "(m)",
-        "id": "2717375683"
     },
     {
         "en": "bedspread",
@@ -4182,21 +4210,21 @@
     },
     {
         "en": "bend",
-        "cy": "plygu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1099791660"
-    },
-    {
-        "en": "bend",
         "cy": "plyg",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2874233081"
+    },
+    {
+        "en": "bend",
+        "cy": "plygu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1099791660"
     },
     {
         "en": "bend backwards",
@@ -4365,21 +4393,21 @@
     },
     {
         "en": "binding",
-        "cy": "rhwymiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "528578978"
-    },
-    {
-        "en": "binding",
         "cy": "rhwymyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "339574169"
+    },
+    {
+        "en": "binding",
+        "cy": "rhwymiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "528578978"
     },
     {
         "en": "binding margin",
@@ -4617,15 +4645,6 @@
     },
     {
         "en": "blind",
-        "cy": "cysgodlen",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "623080089"
-    },
-    {
-        "en": "blind",
         "cy": "dall",
         "tags": [
             "sense"
@@ -4634,23 +4653,13 @@
         "id": "1187378108"
     },
     {
-        "en": "blister",
-        "cy": "swigen",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(f)",
-        "id": "163485104"
-    },
-    {
-        "en": "blister",
-        "cy": "pothell",
+        "en": "blind",
+        "cy": "cysgodlen",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3955996999"
+        "id": "623080089"
     },
     {
         "en": "blister",
@@ -4671,6 +4680,25 @@
         ],
         "notes": "(f)",
         "id": "3376350498"
+    },
+    {
+        "en": "blister",
+        "cy": "swigen",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(f)",
+        "id": "163485104"
+    },
+    {
+        "en": "blister",
+        "cy": "pothell",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3955996999"
     },
     {
         "en": "blistered",
@@ -4903,21 +4931,21 @@
     },
     {
         "en": "blur",
-        "cy": "pylu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3210013935"
-    },
-    {
-        "en": "blur",
         "cy": "brycheuyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "398116570"
+    },
+    {
+        "en": "blur",
+        "cy": "pylu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3210013935"
     },
     {
         "en": "board",
@@ -5365,21 +5393,21 @@
     },
     {
         "en": "boundary",
-        "cy": "ffin",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4143571017"
-    },
-    {
-        "en": "boundary",
         "cy": "terfyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1360492636"
+    },
+    {
+        "en": "boundary",
+        "cy": "ffin",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4143571017"
     },
     {
         "en": "bow knot pattern",
@@ -5428,21 +5456,21 @@
     },
     {
         "en": "brace",
-        "cy": "cleddu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1238860574"
-    },
-    {
-        "en": "brace",
         "cy": "cledd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "4240315019"
+    },
+    {
+        "en": "brace",
+        "cy": "cleddu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1238860574"
     },
     {
         "en": "bracket",
@@ -5639,21 +5667,21 @@
     },
     {
         "en": "brief",
-        "cy": "byr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2365239045"
-    },
-    {
-        "en": "brief",
         "cy": "cryno",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2123995173"
+    },
+    {
+        "en": "brief",
+        "cy": "byr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2365239045"
     },
     {
         "en": "brief outline",
@@ -5891,21 +5919,21 @@
     },
     {
         "en": "brother",
-        "cy": "brawd",
-        "tags": [
-            "family"
-        ],
-        "notes": "(m)",
-        "id": "3168520534"
-    },
-    {
-        "en": "brother",
         "cy": "brodyr",
         "tags": [
             "family"
         ],
         "notes": "",
         "id": "1568991880"
+    },
+    {
+        "en": "brother",
+        "cy": "brawd",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "3168520534"
     },
     {
         "en": "brother in law",
@@ -6159,21 +6187,21 @@
     },
     {
         "en": "burnish",
-        "cy": "bwrneisio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4062269215"
-    },
-    {
-        "en": "burnish",
         "cy": "bwrnais",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "325464701"
+    },
+    {
+        "en": "burnish",
+        "cy": "bwrneisio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4062269215"
     },
     {
         "en": "burnisher",
@@ -6240,21 +6268,21 @@
     },
     {
         "en": "button",
-        "cy": "botwm",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "158390051"
-    },
-    {
-        "en": "button",
         "cy": "botymu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2366055320"
+    },
+    {
+        "en": "button",
+        "cy": "botwm",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "158390051"
     },
     {
         "en": "buttonhole stitch",
@@ -7227,21 +7255,21 @@
     },
     {
         "en": "cement",
-        "cy": "smentio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "87912773"
-    },
-    {
-        "en": "cement",
         "cy": "sment",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "875702563"
+    },
+    {
+        "en": "cement",
+        "cy": "smentio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "87912773"
     },
     {
         "en": "central",
@@ -7443,21 +7471,21 @@
     },
     {
         "en": "characteristic",
-        "cy": "nodwedd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2076377980"
-    },
-    {
-        "en": "characteristic",
         "cy": "nodweddiadol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2512400915"
+    },
+    {
+        "en": "characteristic",
+        "cy": "nodwedd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2076377980"
     },
     {
         "en": "characterization",
@@ -7707,21 +7735,21 @@
     },
     {
         "en": "chisel",
-        "cy": "cŷn",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "961454324"
-    },
-    {
-        "en": "chisel",
         "cy": "naddu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "843461748"
+    },
+    {
+        "en": "chisel",
+        "cy": "cŷn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "961454324"
     },
     {
         "en": "chisel blade",
@@ -7968,21 +7996,21 @@
     },
     {
         "en": "cleaner",
-        "cy": "glanhawr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1825669964"
-    },
-    {
-        "en": "cleaner",
         "cy": "defnydd glanhau",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "945392844"
+    },
+    {
+        "en": "cleaner",
+        "cy": "glanhawr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1825669964"
     },
     {
         "en": "cleaning fluid",
@@ -8175,21 +8203,21 @@
     },
     {
         "en": "coarse",
-        "cy": "garw",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "335895836"
-    },
-    {
-        "en": "coarse",
         "cy": "bras",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "349915165"
+    },
+    {
+        "en": "coarse",
+        "cy": "garw",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "335895836"
     },
     {
         "en": "coarse grain",
@@ -9331,21 +9359,21 @@
     },
     {
         "en": "constructivist",
-        "cy": "adeileddwr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2645661143"
-    },
-    {
-        "en": "constructivist",
         "cy": "adeileddol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1862740945"
+    },
+    {
+        "en": "constructivist",
+        "cy": "adeileddwr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2645661143"
     },
     {
         "en": "contain",
@@ -9439,6 +9467,15 @@
     },
     {
         "en": "contour",
+        "cy": "amlinell",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1916357130"
+    },
+    {
+        "en": "contour",
         "cy": "cyfuchlinedd",
         "tags": [
             "celf"
@@ -9447,13 +9484,13 @@
         "id": "2168061348"
     },
     {
-        "en": "contour",
-        "cy": "amlinell",
+        "en": "contraception",
+        "cy": "atal cenhedlu",
         "tags": [
-            "celf"
+            "medical"
         ],
-        "notes": "",
-        "id": "1916357130"
+        "notes": "plywood",
+        "id": "4136752488"
     },
     {
         "en": "contraction",
@@ -9493,21 +9530,21 @@
     },
     {
         "en": "control",
-        "cy": "rheolaeth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2120822773"
-    },
-    {
-        "en": "control",
         "cy": "rheoli",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2446148548"
+    },
+    {
+        "en": "control",
+        "cy": "rheolaeth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2120822773"
     },
     {
         "en": "control rod",
@@ -9718,21 +9755,21 @@
     },
     {
         "en": "cork",
-        "cy": "corc",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3238252062"
-    },
-    {
-        "en": "cork",
         "cy": "corcyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1867988393"
+    },
+    {
+        "en": "cork",
+        "cy": "corc",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3238252062"
     },
     {
         "en": "cork block",
@@ -9864,21 +9901,21 @@
     },
     {
         "en": "costume",
-        "cy": "gwisgoedd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "416806887"
-    },
-    {
-        "en": "costume",
         "cy": "gwisg",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1904861069"
+    },
+    {
+        "en": "costume",
+        "cy": "gwisgoedd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "416806887"
     },
     {
         "en": "cottage loom",
@@ -10280,21 +10317,21 @@
     },
     {
         "en": "crease",
-        "cy": "crychu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "592544163"
-    },
-    {
-        "en": "crease",
         "cy": "crych",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1695950742"
+    },
+    {
+        "en": "crease",
+        "cy": "crychu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "592544163"
     },
     {
         "en": "crease-resistant",
@@ -10731,6 +10768,15 @@
     },
     {
         "en": "cure",
+        "cy": "caledu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3914492429"
+    },
+    {
+        "en": "cure",
         "cy": "iachâd",
         "tags": [
             "health",
@@ -10738,15 +10784,6 @@
         ],
         "notes": "(m)",
         "id": "1510010025"
-    },
-    {
-        "en": "cure",
-        "cy": "caledu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3914492429"
     },
     {
         "en": "curly",
@@ -11010,6 +11047,15 @@
         "id": "2917009712"
     },
     {
+        "en": "daddy",
+        "cy": "tada",
+        "tags": [
+            "family"
+        ],
+        "notes": "(NW)",
+        "id": "2201231992"
+    },
+    {
         "en": "dado",
         "cy": "dado",
         "tags": [
@@ -11017,15 +11063,6 @@
         ],
         "notes": "",
         "id": "215376854"
-    },
-    {
-        "en": "damage",
-        "cy": "difrodi",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "746053350"
     },
     {
         "en": "damage",
@@ -11037,13 +11074,13 @@
         "id": "2278224175"
     },
     {
-        "en": "damascene",
-        "cy": "damasgin",
+        "en": "damage",
+        "cy": "difrodi",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "1837734491"
+        "id": "746053350"
     },
     {
         "en": "damascene",
@@ -11053,6 +11090,15 @@
         ],
         "notes": "",
         "id": "2412099241"
+    },
+    {
+        "en": "damascene",
+        "cy": "damasgin",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1837734491"
     },
     {
         "en": "damp",
@@ -11154,6 +11200,24 @@
         ],
         "notes": "",
         "id": "3374191460"
+    },
+    {
+        "en": "daughter",
+        "cy": "merch",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) -ed",
+        "id": "1259055594"
+    },
+    {
+        "en": "daughter in law",
+        "cy": "merch yng nghfraith",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "3988715821"
     },
     {
         "en": "de-airing",
@@ -11491,21 +11555,21 @@
     },
     {
         "en": "dense",
-        "cy": "dwys",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2838817238"
-    },
-    {
-        "en": "dense",
         "cy": "trwchus",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2537784627"
+    },
+    {
+        "en": "dense",
+        "cy": "dwys",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2838817238"
     },
     {
         "en": "density",
@@ -11618,21 +11682,21 @@
     },
     {
         "en": "design",
-        "cy": "cynllun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3749409099"
-    },
-    {
-        "en": "design",
         "cy": "dylunio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1550041160"
+    },
+    {
+        "en": "design",
+        "cy": "cynllun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3749409099"
     },
     {
         "en": "design of a batik",
@@ -11728,21 +11792,21 @@
     },
     {
         "en": "detail",
-        "cy": "manylu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1175711621"
-    },
-    {
-        "en": "detail",
         "cy": "manylyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "429033895"
+    },
+    {
+        "en": "detail",
+        "cy": "manylu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1175711621"
     },
     {
         "en": "detail drawing",
@@ -11872,16 +11936,6 @@
     },
     {
         "en": "diabetes",
-        "cy": "clefyd siwgwr",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "2715296086"
-    },
-    {
-        "en": "diabetes",
         "cy": "clefyd melys",
         "tags": [
             "health",
@@ -11891,13 +11945,14 @@
         "id": "986006359"
     },
     {
-        "en": "diagonal",
-        "cy": "croeslin",
+        "en": "diabetes",
+        "cy": "clefyd siwgwr",
         "tags": [
-            "celf"
+            "health",
+            "medical"
         ],
         "notes": "",
-        "id": "1969537138"
+        "id": "2715296086"
     },
     {
         "en": "diagonal",
@@ -11907,6 +11962,15 @@
         ],
         "notes": "",
         "id": "179123089"
+    },
+    {
+        "en": "diagonal",
+        "cy": "croeslin",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1969537138"
     },
     {
         "en": "diagonal stroke",
@@ -12081,21 +12145,21 @@
     },
     {
         "en": "diminish",
-        "cy": "lleihau",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "424460851"
-    },
-    {
-        "en": "diminish",
         "cy": "cywasgu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3825374638"
+    },
+    {
+        "en": "diminish",
+        "cy": "lleihau",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "424460851"
     },
     {
         "en": "dimmer",
@@ -12273,16 +12337,6 @@
     },
     {
         "en": "disease",
-        "cy": "clefyd",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m) -au",
-        "id": "863300585"
-    },
-    {
-        "en": "disease",
         "cy": "afiechyd",
         "tags": [
             "health",
@@ -12290,6 +12344,16 @@
         ],
         "notes": "(m) -on",
         "id": "3651090800"
+    },
+    {
+        "en": "disease",
+        "cy": "clefyd",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) -au",
+        "id": "863300585"
     },
     {
         "en": "disequilibrium",
@@ -12365,21 +12429,21 @@
     },
     {
         "en": "dissolve",
-        "cy": "hydoddi",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "78250328"
-    },
-    {
-        "en": "dissolve",
         "cy": "toddi",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2751176345"
+    },
+    {
+        "en": "dissolve",
+        "cy": "hydoddi",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "78250328"
     },
     {
         "en": "distaff",
@@ -12437,21 +12501,21 @@
     },
     {
         "en": "distort",
-        "cy": "aflunio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2851306051"
-    },
-    {
-        "en": "distort",
         "cy": "ystumio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "142261493"
+    },
+    {
+        "en": "distort",
+        "cy": "aflunio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2851306051"
     },
     {
         "en": "distortion",
@@ -13070,21 +13134,21 @@
     },
     {
         "en": "drill",
-        "cy": "dril",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1583672602"
-    },
-    {
-        "en": "drill",
         "cy": "drilio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2561686332"
+    },
+    {
+        "en": "drill",
+        "cy": "dril",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1583672602"
     },
     {
         "en": "drilling machine",
@@ -13542,21 +13606,21 @@
     },
     {
         "en": "echo",
-        "cy": "adlais",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(m) adleisiau",
-        "id": "1606839181"
-    },
-    {
-        "en": "echo",
         "cy": "atsain",
         "tags": [
             "sound"
         ],
         "notes": "(f) atseiniau",
         "id": "3112317638"
+    },
+    {
+        "en": "echo",
+        "cy": "adlais",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(m) adleisiau",
+        "id": "1606839181"
     },
     {
         "en": "eddy",
@@ -13749,15 +13813,6 @@
     },
     {
         "en": "elaborate",
-        "cy": "coeth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "873692676"
-    },
-    {
-        "en": "elaborate",
         "cy": "coethi",
         "tags": [
             "celf"
@@ -13767,21 +13822,30 @@
     },
     {
         "en": "elaborate",
-        "cy": "manwl",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1235825896"
-    },
-    {
-        "en": "elaborate",
         "cy": "manylu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1908815987"
+    },
+    {
+        "en": "elaborate",
+        "cy": "coeth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "873692676"
+    },
+    {
+        "en": "elaborate",
+        "cy": "manwl",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1235825896"
     },
     {
         "en": "elastic",
@@ -13848,21 +13912,21 @@
     },
     {
         "en": "electric",
-        "cy": "trydanol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4105664898"
-    },
-    {
-        "en": "electric",
         "cy": "trydan",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1381244641"
+    },
+    {
+        "en": "electric",
+        "cy": "trydanol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4105664898"
     },
     {
         "en": "electric arc furnace",
@@ -14226,6 +14290,15 @@
     },
     {
         "en": "emphasis",
+        "cy": "pwysleisiau",
+        "tags": [
+            ""
+        ],
+        "notes": "(m)",
+        "id": "3306501421"
+    },
+    {
+        "en": "emphasis",
         "cy": "pwyslais",
         "tags": [
             "celf"
@@ -14241,15 +14314,6 @@
         ],
         "notes": "(m)",
         "id": "687016276"
-    },
-    {
-        "en": "emphasis",
-        "cy": "pwysleisiau",
-        "tags": [
-            ""
-        ],
-        "notes": "(m)",
-        "id": "3306501421"
     },
     {
         "en": "emphasise",
@@ -14589,15 +14653,6 @@
     },
     {
         "en": "equal",
-        "cy": "hafal",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2540034008"
-    },
-    {
-        "en": "equal",
         "cy": "cyfartal",
         "tags": [
             "celf"
@@ -14606,13 +14661,13 @@
         "id": "1515386412"
     },
     {
-        "en": "equality",
-        "cy": "cydraddoldeb",
+        "en": "equal",
+        "cy": "hafal",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "4008106419"
+        "id": "2540034008"
     },
     {
         "en": "equality",
@@ -14622,6 +14677,15 @@
         ],
         "notes": "",
         "id": "1973646617"
+    },
+    {
+        "en": "equality",
+        "cy": "cydraddoldeb",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4008106419"
     },
     {
         "en": "equidistant",
@@ -14847,6 +14911,15 @@
         ],
         "notes": "",
         "id": "3329370926"
+    },
+    {
+        "en": "exactly like",
+        "cy": "yr un ffunud â",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "4235907681"
     },
     {
         "en": "exactness",
@@ -15258,20 +15331,20 @@
         "en": "eyebrow",
         "cy": "ael",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3187330831"
-    },
-    {
-        "en": "eyebrow",
-        "cy": "ael",
-        "tags": [
             "head",
             "body"
         ],
         "notes": "(f) -iau",
         "id": "1864915840"
+    },
+    {
+        "en": "eyebrow",
+        "cy": "ael",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3187330831"
     },
     {
         "en": "eyelet",
@@ -15435,8 +15508,17 @@
             "head",
             "body"
         ],
-        "notes": "(m) -au",
-        "id": "3984129021"
+        "notes": "",
+        "id": "1385153992"
+    },
+    {
+        "en": "face",
+        "cy": "wynebu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1209361093"
     },
     {
         "en": "face",
@@ -15454,17 +15536,8 @@
             "head",
             "body"
         ],
-        "notes": "",
-        "id": "1385153992"
-    },
-    {
-        "en": "face",
-        "cy": "wynebu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1209361093"
+        "notes": "(m) -au",
+        "id": "3984129021"
     },
     {
         "en": "face to face",
@@ -15513,21 +15586,21 @@
     },
     {
         "en": "fade",
-        "cy": "pylu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2031961344"
-    },
-    {
-        "en": "fade",
         "cy": "colli lliw",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3304665771"
+    },
+    {
+        "en": "fade",
+        "cy": "pylu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2031961344"
     },
     {
         "en": "faggot stitch",
@@ -15567,21 +15640,21 @@
     },
     {
         "en": "fake",
-        "cy": "ffug",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "444447437"
-    },
-    {
-        "en": "fake",
         "cy": "ffugwaith",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1599470958"
+    },
+    {
+        "en": "fake",
+        "cy": "ffug",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "444447437"
     },
     {
         "en": "fake",
@@ -15611,6 +15684,33 @@
         ],
         "notes": "(SW)",
         "id": "1513609520"
+    },
+    {
+        "en": "families",
+        "cy": "teuloedd",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) plural",
+        "id": "358681060"
+    },
+    {
+        "en": "family",
+        "cy": "tylwyth",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) (SW) -au",
+        "id": "2085184921"
+    },
+    {
+        "en": "family",
+        "cy": "teulu",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "1493518731"
     },
     {
         "en": "fantasia",
@@ -15650,21 +15750,21 @@
     },
     {
         "en": "fast",
-        "cy": "anniflan",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "318410491"
-    },
-    {
-        "en": "fast",
         "cy": "cloi",
         "tags": [
             ""
         ],
         "notes": "(SW)",
         "id": "4218457430"
+    },
+    {
+        "en": "fast",
+        "cy": "anniflan",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "318410491"
     },
     {
         "en": "fast",
@@ -15695,21 +15795,21 @@
     },
     {
         "en": "fasten",
-        "cy": "clymu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1063433427"
-    },
-    {
-        "en": "fasten",
         "cy": "bachu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3538683360"
+    },
+    {
+        "en": "fasten",
+        "cy": "clymu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1063433427"
     },
     {
         "en": "fastener",
@@ -15747,6 +15847,15 @@
         ],
         "notes": "",
         "id": "1453906951"
+    },
+    {
+        "en": "father",
+        "cy": "tad",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) -au",
+        "id": "2599210564"
     },
     {
         "en": "fear",
@@ -15833,12 +15942,12 @@
     },
     {
         "en": "feel",
-        "cy": "naws",
+        "cy": "teimlad",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3025971479"
+        "id": "193506464"
     },
     {
         "en": "feel",
@@ -15851,12 +15960,21 @@
     },
     {
         "en": "feel",
+        "cy": "naws",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3025971479"
+    },
+    {
+        "en": "feeling",
         "cy": "teimlad",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "193506464"
+        "id": "1905837184"
     },
     {
         "en": "feeling",
@@ -15867,15 +15985,6 @@
         ],
         "notes": "(m) -au",
         "id": "818491712"
-    },
-    {
-        "en": "feeling",
-        "cy": "teimlad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1905837184"
     },
     {
         "en": "feldspar",
@@ -16261,20 +16370,20 @@
         "en": "finger",
         "cy": "bys",
         "tags": [
-            "body",
-            "hand"
+            "celf"
         ],
-        "notes": "(m)",
-        "id": "1532749776"
+        "notes": "",
+        "id": "3713026799"
     },
     {
         "en": "finger",
         "cy": "bys",
         "tags": [
-            "celf"
+            "body",
+            "hand"
         ],
-        "notes": "",
-        "id": "3713026799"
+        "notes": "(m)",
+        "id": "1532749776"
     },
     {
         "en": "finger paint",
@@ -16666,21 +16775,21 @@
     },
     {
         "en": "flat",
-        "cy": "fflat",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4043678992"
-    },
-    {
-        "en": "flat",
         "cy": "gwastad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3951671642"
+    },
+    {
+        "en": "flat",
+        "cy": "fflat",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4043678992"
     },
     {
         "en": "flaw",
@@ -16711,21 +16820,21 @@
     },
     {
         "en": "flesh",
-        "cy": "cig",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "1467502335"
-    },
-    {
-        "en": "flesh",
         "cy": "cnawd",
         "tags": [
             "body"
         ],
         "notes": "(m)",
         "id": "1543977389"
+    },
+    {
+        "en": "flesh",
+        "cy": "cig",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "1467502335"
     },
     {
         "en": "flesh and blood",
@@ -17046,6 +17155,24 @@
     },
     {
         "en": "focus",
+        "cy": "ffocysu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2555892169"
+    },
+    {
+        "en": "focus",
+        "cy": "canolbwynt",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1711895171"
+    },
+    {
+        "en": "focus",
         "cy": "canolbwyntio",
         "tags": [
             "celf"
@@ -17063,24 +17190,6 @@
         "id": "744848370"
     },
     {
-        "en": "focus",
-        "cy": "canolbwynt",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1711895171"
-    },
-    {
-        "en": "focus",
-        "cy": "ffocysu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2555892169"
-    },
-    {
         "en": "foil",
         "cy": "ffoil",
         "tags": [
@@ -17091,21 +17200,21 @@
     },
     {
         "en": "fold",
-        "cy": "plyg",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2654700981"
-    },
-    {
-        "en": "fold",
         "cy": "plygu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1323749344"
+    },
+    {
+        "en": "fold",
+        "cy": "plyg",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2654700981"
     },
     {
         "en": "fold line",
@@ -17308,15 +17417,6 @@
     },
     {
         "en": "fork",
-        "cy": "fforch",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1204677392"
-    },
-    {
-        "en": "fork",
         "cy": "fforc",
         "tags": [
             "celf"
@@ -17325,13 +17425,22 @@
         "id": "2538021496"
     },
     {
-        "en": "form",
-        "cy": "ffurfio",
+        "en": "fork",
+        "cy": "fforch",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "2411119847"
+        "id": "1204677392"
+    },
+    {
+        "en": "form",
+        "cy": "llun",
+        "tags": [
+            "state"
+        ],
+        "notes": "(m) -iau",
+        "id": "1376359644"
     },
     {
         "en": "form",
@@ -17353,12 +17462,12 @@
     },
     {
         "en": "form",
-        "cy": "llun",
+        "cy": "ffurfio",
         "tags": [
-            "state"
+            "celf"
         ],
-        "notes": "(m) -iau",
-        "id": "1376359644"
+        "notes": "",
+        "id": "2411119847"
     },
     {
         "en": "formal",
@@ -17507,21 +17616,21 @@
     },
     {
         "en": "frame",
-        "cy": "ffrâm",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4169803862"
-    },
-    {
-        "en": "frame",
         "cy": "fframio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1129230611"
+    },
+    {
+        "en": "frame",
+        "cy": "ffrâm",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4169803862"
     },
     {
         "en": "frame of reference",
@@ -17543,21 +17652,21 @@
     },
     {
         "en": "fray",
-        "cy": "rhaflad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1257669614"
-    },
-    {
-        "en": "fray",
         "cy": "rhaflo",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "411404676"
+    },
+    {
+        "en": "fray",
+        "cy": "rhaflad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1257669614"
     },
     {
         "en": "freckels",
@@ -17769,21 +17878,21 @@
     },
     {
         "en": "front",
-        "cy": "blaen",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1172608723"
-    },
-    {
-        "en": "front",
         "cy": "ffrynt",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1818290406"
+    },
+    {
+        "en": "front",
+        "cy": "blaen",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1172608723"
     },
     {
         "en": "front elevation",
@@ -17922,21 +18031,21 @@
     },
     {
         "en": "fume",
-        "cy": "mygdarth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2627432085"
-    },
-    {
-        "en": "fume",
         "cy": "mygdarthu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "4145369984"
+    },
+    {
+        "en": "fume",
+        "cy": "mygdarth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2627432085"
     },
     {
         "en": "fumigate",
@@ -18057,21 +18166,21 @@
     },
     {
         "en": "fuse",
-        "cy": "ymdoddi",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "588392645"
-    },
-    {
-        "en": "fuse",
         "cy": "ffiws",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3263646750"
+    },
+    {
+        "en": "fuse",
+        "cy": "ymdoddi",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "588392645"
     },
     {
         "en": "fusible",
@@ -18382,6 +18491,15 @@
     },
     {
         "en": "giant",
+        "cy": "cewri",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "571351067"
+    },
+    {
+        "en": "giant",
         "cy": "cawr",
         "tags": [
             "appearance"
@@ -18397,15 +18515,6 @@
         ],
         "notes": "",
         "id": "4001074564"
-    },
-    {
-        "en": "giant",
-        "cy": "cewri",
-        "tags": [
-            "appearance"
-        ],
-        "notes": "",
-        "id": "571351067"
     },
     {
         "en": "gigantic",
@@ -18526,21 +18635,21 @@
     },
     {
         "en": "glaze",
-        "cy": "gwydredd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "582854297"
-    },
-    {
-        "en": "glaze",
         "cy": "gwydro",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2689655507"
+    },
+    {
+        "en": "glaze",
+        "cy": "gwydredd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "582854297"
     },
     {
         "en": "glaze firing",
@@ -18661,21 +18770,21 @@
     },
     {
         "en": "glue",
-        "cy": "glud",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3200465367"
-    },
-    {
-        "en": "glue",
         "cy": "gludio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1629913457"
+    },
+    {
+        "en": "glue",
+        "cy": "glud",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3200465367"
     },
     {
         "en": "glue brush",
@@ -18739,6 +18848,24 @@
         ],
         "notes": "",
         "id": "2925729368"
+    },
+    {
+        "en": "god mother",
+        "cy": "mam fedydd",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "1105311926"
+    },
+    {
+        "en": "godfather",
+        "cy": "tad bedydd",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "2816958023"
     },
     {
         "en": "gold",
@@ -18860,21 +18987,21 @@
     },
     {
         "en": "gouge",
-        "cy": "cafnu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3016910422"
-    },
-    {
-        "en": "gouge",
         "cy": "gaing gau",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "323161660"
+    },
+    {
+        "en": "gouge",
+        "cy": "cafnu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3016910422"
     },
     {
         "en": "gradation",
@@ -18956,6 +19083,78 @@
         ],
         "notes": "",
         "id": "1593610890"
+    },
+    {
+        "en": "granddaughter",
+        "cy": "wyres",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) -au",
+        "id": "4073739098"
+    },
+    {
+        "en": "grandfather",
+        "cy": "taid",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) (NW)",
+        "id": "3716360562"
+    },
+    {
+        "en": "grandfathers",
+        "cy": "teidiau",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) (NW) plural",
+        "id": "3261351886"
+    },
+    {
+        "en": "grandmother",
+        "cy": "nain",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) (NW)",
+        "id": "1179886956"
+    },
+    {
+        "en": "grandmother",
+        "cy": "mam gu",
+        "tags": [
+            "family"
+        ],
+        "notes": "(SW)",
+        "id": "375605741"
+    },
+    {
+        "en": "grandmothers",
+        "cy": "neiniau",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f)",
+        "id": "3286641470"
+    },
+    {
+        "en": "grandson",
+        "cy": "wyrion",
+        "tags": [
+            "family"
+        ],
+        "notes": "plural",
+        "id": "2172957346"
+    },
+    {
+        "en": "grandson",
+        "cy": "ŵyr",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "3136534578"
     },
     {
         "en": "granite",
@@ -19103,21 +19302,21 @@
     },
     {
         "en": "great grandmother",
-        "cy": "hen nain",
-        "tags": [
-            "family"
-        ],
-        "notes": "(NW)",
-        "id": "3969481709"
-    },
-    {
-        "en": "great grandmother",
         "cy": "hen fam gu",
         "tags": [
             "family"
         ],
         "notes": "(SW)",
         "id": "3805494976"
+    },
+    {
+        "en": "great grandmother",
+        "cy": "hen nain",
+        "tags": [
+            "family"
+        ],
+        "notes": "(NW)",
+        "id": "3969481709"
     },
     {
         "en": "great grandson",
@@ -19601,15 +19800,6 @@
     },
     {
         "en": "hammer",
-        "cy": "morthwylio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2888710880"
-    },
-    {
-        "en": "hammer",
         "cy": "morthwyl",
         "tags": [
             "celf"
@@ -19618,13 +19808,13 @@
         "id": "1689518534"
     },
     {
-        "en": "hand",
-        "cy": "llaw",
+        "en": "hammer",
+        "cy": "morthwylio",
         "tags": [
-            "body"
+            "celf"
         ],
-        "notes": "(f)",
-        "id": "2728068280"
+        "notes": "",
+        "id": "2888710880"
     },
     {
         "en": "hand",
@@ -19634,6 +19824,15 @@
         ],
         "notes": "",
         "id": "2916409763"
+    },
+    {
+        "en": "hand",
+        "cy": "llaw",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f)",
+        "id": "2728068280"
     },
     {
         "en": "hand",
@@ -19994,21 +20193,21 @@
     },
     {
         "en": "harmony",
-        "cy": "harmoni",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3349181766"
-    },
-    {
-        "en": "harmony",
         "cy": "cytgord",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1735816328"
+    },
+    {
+        "en": "harmony",
+        "cy": "harmoni",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3349181766"
     },
     {
         "en": "hatch",
@@ -20021,16 +20220,6 @@
     },
     {
         "en": "hayfever",
-        "cy": "clefyd y gwair",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "953998481"
-    },
-    {
-        "en": "hayfever",
         "cy": "brech y gwair",
         "tags": [
             "health",
@@ -20038,6 +20227,16 @@
         ],
         "notes": "",
         "id": "1356716862"
+    },
+    {
+        "en": "hayfever",
+        "cy": "clefyd y gwair",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "953998481"
     },
     {
         "en": "he looks well",
@@ -20054,20 +20253,20 @@
         "en": "head",
         "cy": "pen",
         "tags": [
-            "head",
-            "body"
+            "celf"
         ],
         "notes": "",
-        "id": "1586877117"
+        "id": "1646420165"
     },
     {
         "en": "head",
         "cy": "pen",
         "tags": [
-            "celf"
+            "head",
+            "body"
         ],
         "notes": "",
-        "id": "1646420165"
+        "id": "1586877117"
     },
     {
         "en": "head movement",
@@ -20308,21 +20507,21 @@
     },
     {
         "en": "hem",
-        "cy": "hemio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2697066928"
-    },
-    {
-        "en": "hem",
         "cy": "hem",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3800513302"
+    },
+    {
+        "en": "hem",
+        "cy": "hemio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2697066928"
     },
     {
         "en": "hemp",
@@ -20454,20 +20653,20 @@
         "en": "high",
         "cy": "uchel",
         "tags": [
-            "state",
-            "appearance"
+            "celf"
         ],
         "notes": "",
-        "id": "2643846438"
+        "id": "1870031919"
     },
     {
         "en": "high",
         "cy": "uchel",
         "tags": [
-            "celf"
+            "state",
+            "appearance"
         ],
         "notes": "",
-        "id": "1870031919"
+        "id": "2643846438"
     },
     {
         "en": "high blood pressure",
@@ -20508,21 +20707,21 @@
     },
     {
         "en": "hinge",
-        "cy": "colfachu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2573027426"
-    },
-    {
-        "en": "hinge",
         "cy": "colfach",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1184013239"
+    },
+    {
+        "en": "hinge",
+        "cy": "colfachu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2573027426"
     },
     {
         "en": "hinged",
@@ -20581,12 +20780,12 @@
     },
     {
         "en": "hollow",
-        "cy": "pantio",
+        "cy": "gwag",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "1054232708"
+        "id": "3341311679"
     },
     {
         "en": "hollow",
@@ -20599,12 +20798,12 @@
     },
     {
         "en": "hollow",
-        "cy": "gwag",
+        "cy": "pantio",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3341311679"
+        "id": "1054232708"
     },
     {
         "en": "hollow head",
@@ -20689,21 +20888,21 @@
     },
     {
         "en": "hood",
-        "cy": "lwfer",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3113459024"
-    },
-    {
-        "en": "hood",
         "cy": "cwfl",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2580660740"
+    },
+    {
+        "en": "hood",
+        "cy": "lwfer",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3113459024"
     },
     {
         "en": "hook",
@@ -21003,16 +21202,6 @@
     },
     {
         "en": "i've got indigestion",
-        "cy": "mae dŵr poeth arnaf i",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "",
-        "id": "2215359764"
-    },
-    {
-        "en": "i've got indigestion",
         "cy": "mae llosg cylia arnaf i",
         "tags": [
             "body",
@@ -21030,6 +21219,16 @@
         ],
         "notes": "",
         "id": "4261532636"
+    },
+    {
+        "en": "i've got indigestion",
+        "cy": "mae dŵr poeth arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "",
+        "id": "2215359764"
     },
     {
         "en": "i've got the flu",
@@ -21162,21 +21361,21 @@
     },
     {
         "en": "identification",
-        "cy": "adnabyddiaeth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3034749020"
-    },
-    {
-        "en": "identification",
         "cy": "uniaethu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1618795363"
+    },
+    {
+        "en": "identification",
+        "cy": "adnabyddiaeth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3034749020"
     },
     {
         "en": "identify",
@@ -21218,6 +21417,16 @@
     },
     {
         "en": "illness",
+        "cy": "salwch",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "4161780269"
+    },
+    {
+        "en": "illness",
         "cy": "tostrwydd",
         "tags": [
             "health",
@@ -21235,16 +21444,6 @@
         ],
         "notes": "(m)",
         "id": "1961349010"
-    },
-    {
-        "en": "illness",
-        "cy": "salwch",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m)",
-        "id": "4161780269"
     },
     {
         "en": "illuminate",
@@ -21347,21 +21546,21 @@
     },
     {
         "en": "illustration",
-        "cy": "darlun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3189167170"
-    },
-    {
-        "en": "illustration",
         "cy": "darluniad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1996776526"
+    },
+    {
+        "en": "illustration",
+        "cy": "darlun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3189167170"
     },
     {
         "en": "illustration",
@@ -21374,15 +21573,6 @@
     },
     {
         "en": "illustrative",
-        "cy": "darluniadol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4123194687"
-    },
-    {
-        "en": "illustrative",
         "cy": "enghreifftiol",
         "tags": [
             "celf"
@@ -21391,13 +21581,13 @@
         "id": "4083253108"
     },
     {
-        "en": "image",
-        "cy": "delw",
+        "en": "illustrative",
+        "cy": "darluniadol",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "935205579"
+        "id": "4123194687"
     },
     {
         "en": "image",
@@ -21407,6 +21597,15 @@
         ],
         "notes": "",
         "id": "3029488622"
+    },
+    {
+        "en": "image",
+        "cy": "delw",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "935205579"
     },
     {
         "en": "imaginary background",
@@ -21452,6 +21651,15 @@
         ],
         "notes": "",
         "id": "3567234904"
+    },
+    {
+        "en": "immature",
+        "cy": "anaeddfed",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "2497920287"
     },
     {
         "en": "immediacy",
@@ -21673,16 +21881,6 @@
     },
     {
         "en": "in a hurry",
-        "cy": "ar hast",
-        "tags": [
-            "phrase",
-            "saying"
-        ],
-        "notes": "(SW)",
-        "id": "372765306"
-    },
-    {
-        "en": "in a hurry",
         "cy": "ar frys",
         "tags": [
             "verb",
@@ -21702,6 +21900,16 @@
         ],
         "notes": "",
         "id": "2333923238"
+    },
+    {
+        "en": "in a hurry",
+        "cy": "ar hast",
+        "tags": [
+            "phrase",
+            "saying"
+        ],
+        "notes": "(SW)",
+        "id": "372765306"
     },
     {
         "en": "in proportion",
@@ -22116,21 +22324,21 @@
     },
     {
         "en": "influence",
-        "cy": "dylanwadu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "456569626"
-    },
-    {
-        "en": "influence",
         "cy": "dylanwad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3933183919"
+    },
+    {
+        "en": "influence",
+        "cy": "dylanwadu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "456569626"
     },
     {
         "en": "infrared",
@@ -22254,21 +22462,21 @@
     },
     {
         "en": "inlay",
-        "cy": "mewnosod",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "568954659"
-    },
-    {
-        "en": "inlay",
         "cy": "mewnosodiad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "181609391"
+    },
+    {
+        "en": "inlay",
+        "cy": "mewnosod",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "568954659"
     },
     {
         "en": "innovation",
@@ -22443,21 +22651,21 @@
     },
     {
         "en": "intense",
-        "cy": "angerddol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3437307204"
-    },
-    {
-        "en": "intense",
         "cy": "dwys",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2112294561"
+    },
+    {
+        "en": "intense",
+        "cy": "angerddol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3437307204"
     },
     {
         "en": "intensity",
@@ -22506,21 +22714,21 @@
     },
     {
         "en": "interlace",
-        "cy": "rhynglesio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2511455311"
-    },
-    {
-        "en": "interlace",
         "cy": "rhyngles",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3093705129"
+    },
+    {
+        "en": "interlace",
+        "cy": "rhynglesio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2511455311"
     },
     {
         "en": "interlink",
@@ -22551,21 +22759,21 @@
     },
     {
         "en": "intermix",
-        "cy": "cydgymysgiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1265267746"
-    },
-    {
-        "en": "intermix",
         "cy": "cydgymysgu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1929504283"
+    },
+    {
+        "en": "intermix",
+        "cy": "cydgymysgiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1265267746"
     },
     {
         "en": "intermixable",
@@ -23067,15 +23275,6 @@
     },
     {
         "en": "joint",
-        "cy": "uniadu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "606268354"
-    },
-    {
-        "en": "joint",
         "cy": "cymalu",
         "tags": [
             "celf"
@@ -23100,6 +23299,15 @@
         ],
         "notes": "",
         "id": "3650401751"
+    },
+    {
+        "en": "joint",
+        "cy": "uniadu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "606268354"
     },
     {
         "en": "jointed",
@@ -23355,6 +23563,16 @@
     },
     {
         "en": "kiss",
+        "cy": "cusan",
+        "tags": [
+            "head",
+            "love"
+        ],
+        "notes": "(f/m) -au",
+        "id": "476224186"
+    },
+    {
+        "en": "kiss",
         "cy": "sws",
         "tags": [
             "head",
@@ -23363,16 +23581,6 @@
         ],
         "notes": "(f) -ys (dom)",
         "id": "1330600395"
-    },
-    {
-        "en": "kiss",
-        "cy": "cusan",
-        "tags": [
-            "head",
-            "love"
-        ],
-        "notes": "(f/m) -au",
-        "id": "476224186"
     },
     {
         "en": "kit",
@@ -23405,20 +23613,20 @@
         "en": "knee",
         "cy": "pen-glin",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1498477129"
-    },
-    {
-        "en": "knee",
-        "cy": "pen-glin",
-        "tags": [
             "body",
             "leg"
         ],
         "notes": "(f)",
         "id": "1292330096"
+    },
+    {
+        "en": "knee",
+        "cy": "pen-glin",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1498477129"
     },
     {
         "en": "kneel",
@@ -23598,21 +23806,21 @@
     },
     {
         "en": "lace",
-        "cy": "carrai",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2053602039"
-    },
-    {
-        "en": "lace",
         "cy": "les",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "205131687"
+    },
+    {
+        "en": "lace",
+        "cy": "carrai",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2053602039"
     },
     {
         "en": "lacemaking",
@@ -23724,21 +23932,21 @@
     },
     {
         "en": "landscape painting",
-        "cy": "peintio tirlun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "332350511"
-    },
-    {
-        "en": "landscape painting",
         "cy": "paentiad tirlun",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3170312973"
+    },
+    {
+        "en": "landscape painting",
+        "cy": "peintio tirlun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "332350511"
     },
     {
         "en": "language of art",
@@ -23760,15 +23968,6 @@
     },
     {
         "en": "lap",
-        "cy": "arffed",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "1676699419"
-    },
-    {
-        "en": "lap",
         "cy": "glin",
         "tags": [
             "body",
@@ -23776,6 +23975,15 @@
         ],
         "notes": "(m) (NW) -iau",
         "id": "3571360477"
+    },
+    {
+        "en": "lap",
+        "cy": "arffed",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au",
+        "id": "1676699419"
     },
     {
         "en": "lapel badge",
@@ -23950,21 +24158,21 @@
     },
     {
         "en": "layer",
-        "cy": "haenu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2591987330"
-    },
-    {
-        "en": "layer",
         "cy": "haen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3743229623"
+    },
+    {
+        "en": "layer",
+        "cy": "haenu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2591987330"
     },
     {
         "en": "laying-on",
@@ -24049,21 +24257,21 @@
     },
     {
         "en": "leaf",
-        "cy": "deilen",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3179628855"
-    },
-    {
-        "en": "leaf",
         "cy": "dalen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "56847322"
+    },
+    {
+        "en": "leaf",
+        "cy": "deilen",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3179628855"
     },
     {
         "en": "leaf green",
@@ -24248,21 +24456,21 @@
     },
     {
         "en": "length",
-        "cy": "hyd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3901030591"
-    },
-    {
-        "en": "length",
         "cy": "pwythyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "43357343"
+    },
+    {
+        "en": "length",
+        "cy": "hyd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3901030591"
     },
     {
         "en": "lengthen",
@@ -24293,21 +24501,21 @@
     },
     {
         "en": "lettering",
-        "cy": "llythrennu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1727424623"
-    },
-    {
-        "en": "lettering",
         "cy": "llythreniad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1022128408"
+    },
+    {
+        "en": "lettering",
+        "cy": "llythrennu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1727424623"
     },
     {
         "en": "lettering brush",
@@ -24392,21 +24600,21 @@
     },
     {
         "en": "leverage",
-        "cy": "trosoliad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3962001256"
-    },
-    {
-        "en": "leverage",
         "cy": "trosoledd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3911173921"
+    },
+    {
+        "en": "leverage",
+        "cy": "trosoliad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3962001256"
     },
     {
         "en": "lid",
@@ -24464,12 +24672,13 @@
     },
     {
         "en": "light",
-        "cy": "golau",
+        "cy": "ysgafn",
         "tags": [
-            "celf"
+            "state",
+            "appearance"
         ],
         "notes": "",
-        "id": "804251384"
+        "id": "3875779717"
     },
     {
         "en": "light",
@@ -24482,13 +24691,12 @@
     },
     {
         "en": "light",
-        "cy": "ysgafn",
+        "cy": "golau",
         "tags": [
-            "state",
-            "appearance"
+            "celf"
         ],
         "notes": "",
-        "id": "3875779717"
+        "id": "804251384"
     },
     {
         "en": "light and shade",
@@ -24924,21 +25132,21 @@
     },
     {
         "en": "load",
-        "cy": "llwyth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3973118338"
-    },
-    {
-        "en": "load",
         "cy": "llwytho",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "70523725"
+    },
+    {
+        "en": "load",
+        "cy": "llwyth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3973118338"
     },
     {
         "en": "loam",
@@ -25549,15 +25757,6 @@
     },
     {
         "en": "make-believe",
-        "cy": "dychymyg",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3599124497"
-    },
-    {
-        "en": "make-believe",
         "cy": "ffug",
         "tags": [
             "celf"
@@ -25573,6 +25772,15 @@
         ],
         "notes": "",
         "id": "117180504"
+    },
+    {
+        "en": "make-believe",
+        "cy": "dychymyg",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3599124497"
     },
     {
         "en": "make-up",
@@ -25766,21 +25974,21 @@
     },
     {
         "en": "mannerist",
-        "cy": "darddullwr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2875519940"
-    },
-    {
-        "en": "mannerist",
         "cy": "darddullaidd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2024704489"
+    },
+    {
+        "en": "mannerist",
+        "cy": "darddullwr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2875519940"
     },
     {
         "en": "mannerist style",
@@ -25811,21 +26019,21 @@
     },
     {
         "en": "mantle",
-        "cy": "mantell",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1266037466"
-    },
-    {
-        "en": "mantle",
         "cy": "mantellu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3232140271"
+    },
+    {
+        "en": "mantle",
+        "cy": "mantell",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1266037466"
     },
     {
         "en": "manuscript",
@@ -25964,21 +26172,21 @@
     },
     {
         "en": "marine painting",
-        "cy": "môr-baentiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3705913630"
-    },
-    {
-        "en": "marine painting",
         "cy": "môr-beintio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "665751100"
+    },
+    {
+        "en": "marine painting",
+        "cy": "môr-baentiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3705913630"
     },
     {
         "en": "marionette",
@@ -26081,21 +26289,21 @@
     },
     {
         "en": "mask",
-        "cy": "mwgwd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3236614444"
-    },
-    {
-        "en": "mask",
         "cy": "cuddio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3616226514"
+    },
+    {
+        "en": "mask",
+        "cy": "mwgwd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3236614444"
     },
     {
         "en": "mask",
@@ -26263,6 +26471,15 @@
         "en": "mature",
         "cy": "aeddfed",
         "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "757326292"
+    },
+    {
+        "en": "mature",
+        "cy": "aeddfed",
+        "tags": [
             "celf"
         ],
         "notes": "",
@@ -26399,6 +26616,16 @@
     },
     {
         "en": "medicine",
+        "cy": "meddygaeth",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(f) (subject)",
+        "id": "1742615289"
+    },
+    {
+        "en": "medicine",
         "cy": "ffisig",
         "tags": [
             "medical",
@@ -26416,16 +26643,6 @@
         ],
         "notes": "(SW)",
         "id": "1687020738"
-    },
-    {
-        "en": "medicine",
-        "cy": "meddygaeth",
-        "tags": [
-            "medical",
-            "hospital"
-        ],
-        "notes": "(f) (subject)",
-        "id": "1742615289"
     },
     {
         "en": "medieval",
@@ -26917,21 +27134,21 @@
     },
     {
         "en": "mill",
-        "cy": "melino",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "751983838"
-    },
-    {
-        "en": "mill",
         "cy": "melin",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "73318385"
+    },
+    {
+        "en": "mill",
+        "cy": "melino",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "751983838"
     },
     {
         "en": "millboard",
@@ -26962,21 +27179,21 @@
     },
     {
         "en": "miniature painting",
-        "cy": "mân-ddarlun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "38180424"
-    },
-    {
-        "en": "miniature painting",
         "cy": "mân-ddarlunio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "4252848878"
+    },
+    {
+        "en": "miniature painting",
+        "cy": "mân-ddarlun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "38180424"
     },
     {
         "en": "minimalism",
@@ -27124,15 +27341,6 @@
     },
     {
         "en": "mobile",
-        "cy": "symudol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3122676099"
-    },
-    {
-        "en": "mobile",
         "cy": "symudyn",
         "tags": [
             "celf"
@@ -27141,13 +27349,13 @@
         "id": "541175511"
     },
     {
-        "en": "model",
-        "cy": "modelu",
+        "en": "mobile",
+        "cy": "symudol",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "1776911203"
+        "id": "3122676099"
     },
     {
         "en": "model",
@@ -27157,6 +27365,15 @@
         ],
         "notes": "",
         "id": "2688992822"
+    },
+    {
+        "en": "model",
+        "cy": "modelu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1776911203"
     },
     {
         "en": "modelling",
@@ -27466,21 +27683,21 @@
     },
     {
         "en": "mood",
-        "cy": "hwyl",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3440983989"
-    },
-    {
-        "en": "mood",
         "cy": "awyrgylch",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "409040923"
+    },
+    {
+        "en": "mood",
+        "cy": "hwyl",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3440983989"
     },
     {
         "en": "mordant",
@@ -27526,6 +27743,24 @@
         ],
         "notes": "",
         "id": "2346904271"
+    },
+    {
+        "en": "mother",
+        "cy": "mam",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) -au",
+        "id": "446384570"
+    },
+    {
+        "en": "mother in law",
+        "cy": "mam yng nghyfraith",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "2592381713"
     },
     {
         "en": "motif",
@@ -27619,21 +27854,21 @@
     },
     {
         "en": "mount",
-        "cy": "mowntio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3632216402"
-    },
-    {
-        "en": "mount",
         "cy": "mownt",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1300598836"
+    },
+    {
+        "en": "mount",
+        "cy": "mowntio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3632216402"
     },
     {
         "en": "mounted",
@@ -27904,19 +28139,19 @@
         "en": "muscle",
         "cy": "cyhyr",
         "tags": [
-            "celf"
+            "body"
         ],
-        "notes": "",
-        "id": "3419228494"
+        "notes": "(m) -au",
+        "id": "709187431"
     },
     {
         "en": "muscle",
         "cy": "cyhyr",
         "tags": [
-            "body"
+            "celf"
         ],
-        "notes": "(m) -au",
-        "id": "709187431"
+        "notes": "",
+        "id": "3419228494"
     },
     {
         "en": "muscular",
@@ -28002,21 +28237,21 @@
     },
     {
         "en": "nail",
-        "cy": "hoelio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4203758836"
-    },
-    {
-        "en": "nail",
         "cy": "hoelen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3038070009"
+    },
+    {
+        "en": "nail",
+        "cy": "hoelio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4203758836"
     },
     {
         "en": "nail punch",
@@ -28399,6 +28634,24 @@
         "id": "3875252682"
     },
     {
+        "en": "nephew",
+        "cy": "nai",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "1543385575"
+    },
+    {
+        "en": "nephews",
+        "cy": "neiaint",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) plural",
+        "id": "2431919604"
+    },
+    {
         "en": "nerve",
         "cy": "nerf",
         "tags": [
@@ -28489,6 +28742,24 @@
         "id": "1728214815"
     },
     {
+        "en": "niece",
+        "cy": "nith",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f)",
+        "id": "773075092"
+    },
+    {
+        "en": "nieces",
+        "cy": "nithoedd",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) plural",
+        "id": "3572480699"
+    },
+    {
         "en": "nihilism",
         "cy": "nihiliaeth",
         "tags": [
@@ -28575,21 +28846,21 @@
     },
     {
         "en": "noise",
-        "cy": "stŵr",
-        "tags": [
-            "sound"
-        ],
-        "notes": "",
-        "id": "1618742759"
-    },
-    {
-        "en": "noise",
         "cy": "sŵn",
         "tags": [
             ""
         ],
         "notes": "(m)",
         "id": "3098418560"
+    },
+    {
+        "en": "noise",
+        "cy": "stŵr",
+        "tags": [
+            "sound"
+        ],
+        "notes": "",
+        "id": "1618742759"
     },
     {
         "en": "noisy",
@@ -28730,21 +29001,21 @@
     },
     {
         "en": "notice",
-        "cy": "hysbysiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2721394474"
-    },
-    {
-        "en": "notice",
         "cy": "rhybudd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3950548120"
+    },
+    {
+        "en": "notice",
+        "cy": "hysbysiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2721394474"
     },
     {
         "en": "notice-board",
@@ -28766,21 +29037,21 @@
     },
     {
         "en": "nude",
-        "cy": "noethlun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3657399171"
-    },
-    {
-        "en": "nude",
         "cy": "noethlymun",
         "tags": [
             "body"
         ],
         "notes": "",
         "id": "1897284683"
+    },
+    {
+        "en": "nude",
+        "cy": "noethlun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3657399171"
     },
     {
         "en": "numeral",
@@ -29372,6 +29643,15 @@
         "id": "4259911932"
     },
     {
+        "en": "on my own",
+        "cy": "ar fy mhen fy hun(an)",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "360748750"
+    },
+    {
         "en": "on tip toes",
         "cy": "ar flaenaw fy nhraed",
         "tags": [
@@ -29960,21 +30240,21 @@
     },
     {
         "en": "overlay",
-        "cy": "troshaen",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "189224148"
-    },
-    {
-        "en": "overlay",
         "cy": "troshaenu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1701444577"
+    },
+    {
+        "en": "overlay",
+        "cy": "troshaen",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "189224148"
     },
     {
         "en": "overpainting",
@@ -30104,21 +30384,21 @@
     },
     {
         "en": "pack",
-        "cy": "pac",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3401191869"
-    },
-    {
-        "en": "pack",
         "cy": "pacio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "4278498011"
+    },
+    {
+        "en": "pack",
+        "cy": "pac",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3401191869"
     },
     {
         "en": "packing waste",
@@ -30176,16 +30456,6 @@
     },
     {
         "en": "pain",
-        "cy": "loes",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(SW)",
-        "id": "2945861191"
-    },
-    {
-        "en": "pain",
         "cy": "poen",
         "tags": [
             "health",
@@ -30193,6 +30463,16 @@
         ],
         "notes": "(f/m) -au",
         "id": "347589887"
+    },
+    {
+        "en": "pain",
+        "cy": "loes",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "2945861191"
     },
     {
         "en": "painful",
@@ -30216,21 +30496,21 @@
     },
     {
         "en": "paint",
-        "cy": "paent",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3630992474"
-    },
-    {
-        "en": "paint",
         "cy": "peintio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1164168948"
+    },
+    {
+        "en": "paint",
+        "cy": "paent",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3630992474"
     },
     {
         "en": "paint brush",
@@ -30335,19 +30615,19 @@
         "en": "pale",
         "cy": "gwelw",
         "tags": [
-            "celf"
+            "medical"
         ],
         "notes": "",
-        "id": "1658374720"
+        "id": "1911691143"
     },
     {
         "en": "pale",
         "cy": "gwelw",
         "tags": [
-            "medical"
+            "celf"
         ],
         "notes": "",
-        "id": "1911691143"
+        "id": "1658374720"
     },
     {
         "en": "pale cadmium yellow",
@@ -30414,6 +30694,15 @@
     },
     {
         "en": "palm",
+        "cy": "palmwydden",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "239360787"
+    },
+    {
+        "en": "palm",
         "cy": "cledr",
         "tags": [
             "celf"
@@ -30422,13 +30711,13 @@
         "id": "1634427194"
     },
     {
-        "en": "palm",
-        "cy": "palmwydden",
+        "en": "palm of the hand",
+        "cy": "tor y llaw",
         "tags": [
-            "celf"
+            "body"
         ],
-        "notes": "",
-        "id": "239360787"
+        "notes": "(f)",
+        "id": "1032817256"
     },
     {
         "en": "palm of the hand",
@@ -30453,13 +30742,13 @@
         "id": "823271261"
     },
     {
-        "en": "palm of the hand",
-        "cy": "tor y llaw",
+        "en": "palms of the hands",
+        "cy": "torrau'r dwylo",
         "tags": [
             "body"
         ],
         "notes": "(f)",
-        "id": "1032817256"
+        "id": "3686024285"
     },
     {
         "en": "palms of the hands",
@@ -30470,15 +30759,6 @@
         ],
         "notes": "",
         "id": "2987659322"
-    },
-    {
-        "en": "palms of the hands",
-        "cy": "torrau'r dwylo",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f)",
-        "id": "3686024285"
     },
     {
         "en": "palpation",
@@ -30725,12 +31005,12 @@
     },
     {
         "en": "parallel",
-        "cy": "paralel",
+        "cy": "cyflin",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "2813441178"
+        "id": "3459344810"
     },
     {
         "en": "parallel",
@@ -30743,12 +31023,12 @@
     },
     {
         "en": "parallel",
-        "cy": "cyflin",
+        "cy": "paralel",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3459344810"
+        "id": "2813441178"
     },
     {
         "en": "parchment",
@@ -30758,6 +31038,15 @@
         ],
         "notes": "",
         "id": "2069078370"
+    },
+    {
+        "en": "parent",
+        "cy": "rhiant",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "3941551860"
     },
     {
         "en": "paring knife",
@@ -31086,6 +31375,15 @@
         ],
         "notes": "",
         "id": "1449905878"
+    },
+    {
+        "en": "pedigree",
+        "cy": "ach",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f)",
+        "id": "867331596"
     },
     {
         "en": "pediment",
@@ -31611,21 +31909,21 @@
     },
     {
         "en": "physical",
-        "cy": "ffisegol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3417571736"
-    },
-    {
-        "en": "physical",
         "cy": "corfforol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1554251107"
+    },
+    {
+        "en": "physical",
+        "cy": "ffisegol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3417571736"
     },
     {
         "en": "physical force",
@@ -31647,21 +31945,21 @@
     },
     {
         "en": "pickle",
-        "cy": "picl",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2021041048"
-    },
-    {
-        "en": "pickle",
         "cy": "piclo",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3808602199"
+    },
+    {
+        "en": "pickle",
+        "cy": "picl",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2021041048"
     },
     {
         "en": "pickle-bath tongs",
@@ -31819,16 +32117,6 @@
     },
     {
         "en": "pimple",
-        "cy": "tosyn",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m) (SW)",
-        "id": "2700920858"
-    },
-    {
-        "en": "pimple",
         "cy": "ploryn",
         "tags": [
             "health",
@@ -31836,6 +32124,16 @@
         ],
         "notes": "(m) (NW) -nod",
         "id": "1735097734"
+    },
+    {
+        "en": "pimple",
+        "cy": "tosyn",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2700920858"
     },
     {
         "en": "pimples",
@@ -32020,21 +32318,21 @@
     },
     {
         "en": "plan",
-        "cy": "cynllun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "920146346"
-    },
-    {
-        "en": "plan",
         "cy": "cynllunio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1545216716"
+    },
+    {
+        "en": "plan",
+        "cy": "cynllun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "920146346"
     },
     {
         "en": "planar engraving",
@@ -32076,20 +32374,20 @@
         "en": "plaster",
         "cy": "plastr",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1424792435"
-    },
-    {
-        "en": "plaster",
-        "cy": "plastr",
-        "tags": [
             "medical",
             "hospital"
         ],
         "notes": "(m) -au",
         "id": "2606409401"
+    },
+    {
+        "en": "plaster",
+        "cy": "plastr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1424792435"
     },
     {
         "en": "plaster",
@@ -32210,21 +32508,21 @@
     },
     {
         "en": "plastic carving",
-        "cy": "cerfiad plastig",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "776334442"
-    },
-    {
-        "en": "plastic carving",
         "cy": "cerfio plastig",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3216423808"
+    },
+    {
+        "en": "plastic carving",
+        "cy": "cerfiad plastig",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "776334442"
     },
     {
         "en": "plastic colour",
@@ -32507,16 +32805,6 @@
     },
     {
         "en": "pneumonia",
-        "cy": "niwmonia",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m)",
-        "id": "2982870995"
-    },
-    {
-        "en": "pneumonia",
         "cy": "llid yr ysgyfaint",
         "tags": [
             "health",
@@ -32526,13 +32814,14 @@
         "id": "1159041901"
     },
     {
-        "en": "pocket",
-        "cy": "poced",
+        "en": "pneumonia",
+        "cy": "niwmonia",
         "tags": [
-            "celf"
+            "health",
+            "medical"
         ],
-        "notes": "",
-        "id": "1418762573"
+        "notes": "(m)",
+        "id": "2982870995"
     },
     {
         "en": "pocket",
@@ -32544,13 +32833,13 @@
         "id": "1400697848"
     },
     {
-        "en": "point",
-        "cy": "pwyntio",
+        "en": "pocket",
+        "cy": "poced",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "781650232"
+        "id": "1418762573"
     },
     {
         "en": "point",
@@ -32560,6 +32849,15 @@
         ],
         "notes": "",
         "id": "2924617374"
+    },
+    {
+        "en": "point",
+        "cy": "pwyntio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "781650232"
     },
     {
         "en": "point of infinity",
@@ -32655,6 +32953,15 @@
     },
     {
         "en": "polish",
+        "cy": "llathrydd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2049335361"
+    },
+    {
+        "en": "polish",
         "cy": "caboli",
         "tags": [
             "celf"
@@ -32670,15 +32977,6 @@
         ],
         "notes": "",
         "id": "907260893"
-    },
-    {
-        "en": "polish",
-        "cy": "llathrydd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2049335361"
     },
     {
         "en": "polished",
@@ -33078,21 +33376,21 @@
     },
     {
         "en": "positive",
-        "cy": "positif",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3921620899"
-    },
-    {
-        "en": "positive",
         "cy": "cadarnhaol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3283775212"
+    },
+    {
+        "en": "positive",
+        "cy": "positif",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3921620899"
     },
     {
         "en": "positive image",
@@ -33267,21 +33565,21 @@
     },
     {
         "en": "pottery",
-        "cy": "crochenwaith",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2292330042"
-    },
-    {
-        "en": "pottery",
         "cy": "crochendy",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1498311620"
+    },
+    {
+        "en": "pottery",
+        "cy": "crochenwaith",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2292330042"
     },
     {
         "en": "pottery glaze",
@@ -33457,21 +33755,21 @@
     },
     {
         "en": "pre-raphaelite",
-        "cy": "cyn-raffaeliad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "736496297"
-    },
-    {
-        "en": "pre-raphaelite",
         "cy": "cyn-raffaelaidd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1230980621"
+    },
+    {
+        "en": "pre-raphaelite",
+        "cy": "cyn-raffaeliad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "736496297"
     },
     {
         "en": "pre-raphaelite brotherhood",
@@ -33502,21 +33800,21 @@
     },
     {
         "en": "precision",
-        "cy": "trachywiredd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "160266396"
-    },
-    {
-        "en": "precision",
         "cy": "manwl gywirdeb",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1796900232"
+    },
+    {
+        "en": "precision",
+        "cy": "trachywiredd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "160266396"
     },
     {
         "en": "precision trimmer",
@@ -33738,16 +34036,6 @@
     },
     {
         "en": "pretty",
-        "cy": "tlws",
-        "tags": [
-            "state",
-            "appearance"
-        ],
-        "notes": "",
-        "id": "1672843837"
-    },
-    {
-        "en": "pretty",
         "cy": "teg",
         "tags": [
             "state",
@@ -33755,6 +34043,15 @@
         ],
         "notes": "",
         "id": "3977697143"
+    },
+    {
+        "en": "pretty",
+        "cy": "del",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "(NW)",
+        "id": "1154928399"
     },
     {
         "en": "pretty",
@@ -33768,12 +34065,13 @@
     },
     {
         "en": "pretty",
-        "cy": "del",
+        "cy": "tlws",
         "tags": [
+            "state",
             "appearance"
         ],
-        "notes": "(NW)",
-        "id": "1154928399"
+        "notes": "",
+        "id": "1672843837"
     },
     {
         "en": "prevent",
@@ -33786,21 +34084,21 @@
     },
     {
         "en": "prevention",
-        "cy": "rhwystro",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2133305662"
-    },
-    {
-        "en": "prevention",
         "cy": "ataliad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1737446244"
+    },
+    {
+        "en": "prevention",
+        "cy": "rhwystro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2133305662"
     },
     {
         "en": "primary",
@@ -33894,21 +34192,21 @@
     },
     {
         "en": "print",
-        "cy": "printio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2683149456"
-    },
-    {
-        "en": "print",
         "cy": "argraffu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3432515445"
+    },
+    {
+        "en": "print",
+        "cy": "printio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2683149456"
     },
     {
         "en": "print",
@@ -34254,21 +34552,21 @@
     },
     {
         "en": "proportion",
-        "cy": "cyfran",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2932715179"
-    },
-    {
-        "en": "proportion",
         "cy": "cyfrannedd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "173216224"
+    },
+    {
+        "en": "proportion",
+        "cy": "cyfran",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2932715179"
     },
     {
         "en": "proportional",
@@ -34958,21 +35256,21 @@
     },
     {
         "en": "rap",
-        "cy": "cnocio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "802368242"
-    },
-    {
-        "en": "rap",
         "cy": "cnoc",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1747294420"
+    },
+    {
+        "en": "rap",
+        "cy": "cnocio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "802368242"
     },
     {
         "en": "rapping iron",
@@ -35480,15 +35778,6 @@
     },
     {
         "en": "refill",
-        "cy": "adlenwi",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "45962226"
-    },
-    {
-        "en": "refill",
         "cy": "adlenwad",
         "tags": [
             "celf"
@@ -35497,13 +35786,13 @@
         "id": "3045028510"
     },
     {
-        "en": "refine",
-        "cy": "puro",
+        "en": "refill",
+        "cy": "adlenwi",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3824541789"
+        "id": "45962226"
     },
     {
         "en": "refine",
@@ -35513,6 +35802,15 @@
         ],
         "notes": "",
         "id": "1809086745"
+    },
+    {
+        "en": "refine",
+        "cy": "puro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3824541789"
     },
     {
         "en": "refined",
@@ -35720,6 +36018,15 @@
         ],
         "notes": "",
         "id": "3473709142"
+    },
+    {
+        "en": "relative",
+        "cy": "perthynas",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f)",
+        "id": "2821537217"
     },
     {
         "en": "relax",
@@ -36002,21 +36309,21 @@
     },
     {
         "en": "representation",
-        "cy": "cynrychioliad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1335040325"
-    },
-    {
-        "en": "representation",
         "cy": "portread",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1730180188"
+    },
+    {
+        "en": "representation",
+        "cy": "cynrychioliad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1335040325"
     },
     {
         "en": "representational",
@@ -36344,21 +36651,21 @@
     },
     {
         "en": "reversible",
-        "cy": "dwyffordd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "60633254"
-    },
-    {
-        "en": "reversible",
         "cy": "cildroadwy",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2530864517"
+    },
+    {
+        "en": "reversible",
+        "cy": "dwyffordd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "60633254"
     },
     {
         "en": "revolution",
@@ -36472,21 +36779,21 @@
     },
     {
         "en": "ridge",
-        "cy": "crib",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1309866769"
-    },
-    {
-        "en": "ridge",
         "cy": "gwrym",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1977068797"
+    },
+    {
+        "en": "ridge",
+        "cy": "crib",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1309866769"
     },
     {
         "en": "riffler",
@@ -36580,21 +36887,21 @@
     },
     {
         "en": "ripple",
-        "cy": "crych",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3959526759"
-    },
-    {
-        "en": "ripple",
         "cy": "crychdonni",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2824900901"
+    },
+    {
+        "en": "ripple",
+        "cy": "crych",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3959526759"
     },
     {
         "en": "ripple",
@@ -37130,21 +37437,21 @@
     },
     {
         "en": "ruler",
-        "cy": "pren mesur",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2063997631"
-    },
-    {
-        "en": "ruler",
         "cy": "riwl",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2293525770"
+    },
+    {
+        "en": "ruler",
+        "cy": "pren mesur",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2063997631"
     },
     {
         "en": "ruling pen",
@@ -37193,21 +37500,21 @@
     },
     {
         "en": "rust",
-        "cy": "rhydu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4175140804"
-    },
-    {
-        "en": "rust",
         "cy": "rhwd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1472141471"
+    },
+    {
+        "en": "rust",
+        "cy": "rhydu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4175140804"
     },
     {
         "en": "rustification",
@@ -37519,21 +37826,21 @@
     },
     {
         "en": "saw",
-        "cy": "llif",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3341143612"
-    },
-    {
-        "en": "saw",
         "cy": "llifio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3029699418"
+    },
+    {
+        "en": "saw",
+        "cy": "llif",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3341143612"
     },
     {
         "en": "sawdust",
@@ -38155,21 +38462,21 @@
     },
     {
         "en": "scumble",
-        "cy": "sgwmblo",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4204492218"
-    },
-    {
-        "en": "scumble",
         "cy": "sgwmbl",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1471009429"
+    },
+    {
+        "en": "scumble",
+        "cy": "sgwmblo",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4204492218"
     },
     {
         "en": "sea green",
@@ -38218,21 +38525,21 @@
     },
     {
         "en": "seam",
-        "cy": "gwrym",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3426103226"
-    },
-    {
-        "en": "seam",
         "cy": "sêm",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "4157517048"
+    },
+    {
+        "en": "seam",
+        "cy": "gwrym",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3426103226"
     },
     {
         "en": "seamless ferrule",
@@ -38308,15 +38615,6 @@
     },
     {
         "en": "section",
-        "cy": "trychiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4178817415"
-    },
-    {
-        "en": "section",
         "cy": "toriad",
         "tags": [
             "celf"
@@ -38325,13 +38623,13 @@
         "id": "3612379098"
     },
     {
-        "en": "sectional",
-        "cy": "adrannol",
+        "en": "section",
+        "cy": "trychiad",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3848608807"
+        "id": "4178817415"
     },
     {
         "en": "sectional",
@@ -38341,6 +38639,15 @@
         ],
         "notes": "",
         "id": "2910155849"
+    },
+    {
+        "en": "sectional",
+        "cy": "adrannol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3848608807"
     },
     {
         "en": "sectional paper",
@@ -38425,21 +38732,21 @@
     },
     {
         "en": "select",
-        "cy": "dewis",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3601421682"
-    },
-    {
-        "en": "select",
         "cy": "dethol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3007986784"
+    },
+    {
+        "en": "select",
+        "cy": "dewis",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3601421682"
     },
     {
         "en": "selection",
@@ -38515,21 +38822,21 @@
     },
     {
         "en": "sense",
-        "cy": "synhwyrau",
-        "tags": [
-            "sense"
-        ],
-        "notes": "(m)",
-        "id": "2735159538"
-    },
-    {
-        "en": "sense",
         "cy": "synnwyr",
         "tags": [
             "sense"
         ],
         "notes": "(m)",
         "id": "1406300800"
+    },
+    {
+        "en": "sense",
+        "cy": "synhwyrau",
+        "tags": [
+            "sense"
+        ],
+        "notes": "(m)",
+        "id": "2735159538"
     },
     {
         "en": "sense",
@@ -38560,6 +38867,15 @@
     },
     {
         "en": "sensitive",
+        "cy": "sensitif",
+        "tags": [
+            "sense"
+        ],
+        "notes": "",
+        "id": "1160942049"
+    },
+    {
+        "en": "sensitive",
         "cy": "teimladwy",
         "tags": [
             "sense",
@@ -38567,15 +38883,6 @@
         ],
         "notes": "",
         "id": "2144487005"
-    },
-    {
-        "en": "sensitive",
-        "cy": "sensitif",
-        "tags": [
-            "sense"
-        ],
-        "notes": "",
-        "id": "1160942049"
     },
     {
         "en": "sensitivity",
@@ -38795,12 +39102,12 @@
     },
     {
         "en": "shade",
-        "cy": "cysgodlen",
+        "cy": "cysgod",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "110695567"
+        "id": "256677000"
     },
     {
         "en": "shade",
@@ -38813,12 +39120,12 @@
     },
     {
         "en": "shade",
-        "cy": "cysgod",
+        "cy": "cysgodlen",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "256677000"
+        "id": "110695567"
     },
     {
         "en": "shading",
@@ -38887,6 +39194,15 @@
         "en": "sharp",
         "cy": "llym",
         "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "598247521"
+    },
+    {
+        "en": "sharp",
+        "cy": "llym",
+        "tags": [
             "celf"
         ],
         "notes": "",
@@ -38900,15 +39216,6 @@
         ],
         "notes": "",
         "id": "862180606"
-    },
-    {
-        "en": "sharp",
-        "cy": "llym",
-        "tags": [
-            "state"
-        ],
-        "notes": "",
-        "id": "598247521"
     },
     {
         "en": "sharp blade",
@@ -39339,21 +39646,21 @@
     },
     {
         "en": "sign painting",
-        "cy": "paentiad arwydd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1522279736"
-    },
-    {
-        "en": "sign painting",
         "cy": "peintio arwydd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1839204090"
+    },
+    {
+        "en": "sign painting",
+        "cy": "paentiad arwydd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1522279736"
     },
     {
         "en": "significance",
@@ -39531,21 +39838,21 @@
     },
     {
         "en": "similarity",
-        "cy": "cyflunedd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1986774557"
-    },
-    {
-        "en": "similarity",
         "cy": "tebygrwydd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1482685186"
+    },
+    {
+        "en": "similarity",
+        "cy": "cyflunedd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1986774557"
     },
     {
         "en": "similarity of colour",
@@ -39573,6 +39880,15 @@
         ],
         "notes": "",
         "id": "4205718906"
+    },
+    {
+        "en": "single parent family",
+        "cy": "teulu un rhiant",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "736544498"
     },
     {
         "en": "single section book",
@@ -39603,21 +39919,21 @@
     },
     {
         "en": "sinter",
-        "cy": "sinter",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1161818902"
-    },
-    {
-        "en": "sinter",
         "cy": "sinteru",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2584167811"
+    },
+    {
+        "en": "sinter",
+        "cy": "sinter",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1161818902"
     },
     {
         "en": "sister",
@@ -39666,15 +39982,6 @@
     },
     {
         "en": "size",
-        "cy": "seis",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "571831359"
-    },
-    {
-        "en": "size",
         "cy": "maint",
         "tags": [
             "celf"
@@ -39690,6 +39997,15 @@
         ],
         "notes": "",
         "id": "1642980697"
+    },
+    {
+        "en": "size",
+        "cy": "seis",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "571831359"
     },
     {
         "en": "skating",
@@ -39711,21 +40027,21 @@
     },
     {
         "en": "skeleton",
-        "cy": "ysgerbwd",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "2696691852"
-    },
-    {
-        "en": "skeleton",
         "cy": "sgerbwd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "765740709"
+    },
+    {
+        "en": "skeleton",
+        "cy": "ysgerbwd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "2696691852"
     },
     {
         "en": "skeletons",
@@ -39736,15 +40052,6 @@
         ],
         "notes": "",
         "id": "3074301811"
-    },
-    {
-        "en": "sketch",
-        "cy": "darlun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2574155924"
     },
     {
         "en": "sketch",
@@ -39763,6 +40070,15 @@
         ],
         "notes": "",
         "id": "4001581089"
+    },
+    {
+        "en": "sketch",
+        "cy": "darlun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2574155924"
     },
     {
         "en": "sketch block",
@@ -39975,21 +40291,21 @@
     },
     {
         "en": "slide",
-        "cy": "llithr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1996463046"
-    },
-    {
-        "en": "slide",
         "cy": "llithro",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "553290985"
+    },
+    {
+        "en": "slide",
+        "cy": "llithr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1996463046"
     },
     {
         "en": "slide sequence",
@@ -40436,21 +40752,21 @@
     },
     {
         "en": "solder",
-        "cy": "sodro",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1591494064"
-    },
-    {
-        "en": "solder",
         "cy": "sodr",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1942032703"
+    },
+    {
+        "en": "solder",
+        "cy": "sodro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1591494064"
     },
     {
         "en": "soldered",
@@ -40765,21 +41081,21 @@
     },
     {
         "en": "speaker",
-        "cy": "llefarydd",
-        "tags": [
-            "noun"
-        ],
-        "notes": "(m) -ion",
-        "id": "2771521147"
-    },
-    {
-        "en": "speaker",
         "cy": "siaradwyr",
         "tags": [
             "noun"
         ],
         "notes": "(f)",
         "id": "176082124"
+    },
+    {
+        "en": "speaker",
+        "cy": "llefarydd",
+        "tags": [
+            "noun"
+        ],
+        "notes": "(m) -ion",
+        "id": "2771521147"
     },
     {
         "en": "specialist",
@@ -41000,21 +41316,21 @@
     },
     {
         "en": "sponge",
-        "cy": "sbwng",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "641143993"
-    },
-    {
-        "en": "sponge",
         "cy": "sbwngio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1431975007"
+    },
+    {
+        "en": "sponge",
+        "cy": "sbwng",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "641143993"
     },
     {
         "en": "sponge rubber",
@@ -41117,21 +41433,21 @@
     },
     {
         "en": "spray painting",
-        "cy": "paentiad chwistrell",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "348635418"
-    },
-    {
-        "en": "spray painting",
         "cy": "peintio chwistrell",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "764399064"
+    },
+    {
+        "en": "spray painting",
+        "cy": "paentiad chwistrell",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "348635418"
     },
     {
         "en": "sprayer",
@@ -41207,15 +41523,6 @@
     },
     {
         "en": "square",
-        "cy": "sgwario",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "140060033"
-    },
-    {
-        "en": "square",
         "cy": "sgwâr",
         "tags": [
             "state",
@@ -41232,6 +41539,15 @@
         ],
         "notes": "",
         "id": "411822756"
+    },
+    {
+        "en": "square",
+        "cy": "sgwario",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "140060033"
     },
     {
         "en": "squatting",
@@ -41282,21 +41598,21 @@
     },
     {
         "en": "stability",
-        "cy": "sadrwydd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "454130457"
-    },
-    {
-        "en": "stability",
         "cy": "sefydlogrwydd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2048295718"
+    },
+    {
+        "en": "stability",
+        "cy": "sadrwydd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "454130457"
     },
     {
         "en": "stabilizer",
@@ -41354,21 +41670,21 @@
     },
     {
         "en": "stain",
-        "cy": "staenio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3794058972"
-    },
-    {
-        "en": "stain",
         "cy": "staen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3996114362"
+    },
+    {
+        "en": "stain",
+        "cy": "staenio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3794058972"
     },
     {
         "en": "stained glass",
@@ -41390,21 +41706,21 @@
     },
     {
         "en": "stake",
-        "cy": "polyn",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3967672442"
-    },
-    {
-        "en": "stake",
         "cy": "bonyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2880483562"
+    },
+    {
+        "en": "stake",
+        "cy": "polyn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3967672442"
     },
     {
         "en": "staking cane",
@@ -41704,6 +42020,24 @@
         "id": "1659801052"
     },
     {
+        "en": "step father",
+        "cy": "tad gwyn",
+        "tags": [
+            "family"
+        ],
+        "notes": "(NW)",
+        "id": "2130480252"
+    },
+    {
+        "en": "step mother",
+        "cy": "mam wen",
+        "tags": [
+            "family"
+        ],
+        "notes": "(NW)",
+        "id": "938444306"
+    },
+    {
         "en": "step mother",
         "cy": "llysfam",
         "tags": [
@@ -41732,21 +42066,21 @@
     },
     {
         "en": "step son",
-        "cy": "llysfab",
-        "tags": [
-            "family"
-        ],
-        "notes": "(m) (SW)",
-        "id": "1322966442"
-    },
-    {
-        "en": "step son",
         "cy": "mab gwyn",
         "tags": [
             "family"
         ],
         "notes": "(m) (NW)",
         "id": "3067109201"
+    },
+    {
+        "en": "step son",
+        "cy": "llysfab",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) (SW)",
+        "id": "1322966442"
     },
     {
         "en": "step sons",
@@ -41759,21 +42093,21 @@
     },
     {
         "en": "stick",
-        "cy": "ffon",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1145521361"
-    },
-    {
-        "en": "stick",
         "cy": "glynu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1464242873"
+    },
+    {
+        "en": "stick",
+        "cy": "ffon",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1145521361"
     },
     {
         "en": "stick printing",
@@ -41903,21 +42237,21 @@
     },
     {
         "en": "stipple",
-        "cy": "dotwaith",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1996579437"
-    },
-    {
-        "en": "stipple",
         "cy": "dotweithio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "578772751"
+    },
+    {
+        "en": "stipple",
+        "cy": "dotwaith",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1996579437"
     },
     {
         "en": "stipple drawing",
@@ -42056,21 +42390,21 @@
     },
     {
         "en": "stomach",
-        "cy": "bola",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) (SW)",
-        "id": "2978728492"
-    },
-    {
-        "en": "stomach",
         "cy": "cylla",
         "tags": [
             "body"
         ],
         "notes": "(m) (SW)",
         "id": "2501072279"
+    },
+    {
+        "en": "stomach",
+        "cy": "bola",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2978728492"
     },
     {
         "en": "stomach",
@@ -42221,20 +42555,20 @@
         "en": "straight",
         "cy": "syth",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1423058662"
-    },
-    {
-        "en": "straight",
-        "cy": "syth",
-        "tags": [
             "state",
             "appearance"
         ],
         "notes": "",
         "id": "1608899343"
+    },
+    {
+        "en": "straight",
+        "cy": "syth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1423058662"
     },
     {
         "en": "straight bodkin",
@@ -42310,21 +42644,21 @@
     },
     {
         "en": "strand",
-        "cy": "cainc",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1772388270"
-    },
-    {
-        "en": "strand",
         "cy": "ceincio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2507043148"
+    },
+    {
+        "en": "strand",
+        "cy": "cainc",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1772388270"
     },
     {
         "en": "stranded",
@@ -42355,21 +42689,21 @@
     },
     {
         "en": "strength",
-        "cy": "cryfder",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2558135246"
-    },
-    {
-        "en": "strength",
         "cy": "nerth",
         "tags": [
             "body"
         ],
         "notes": "(f) -au",
         "id": "2199069556"
+    },
+    {
+        "en": "strength",
+        "cy": "cryfder",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2558135246"
     },
     {
         "en": "strength",
@@ -42501,6 +42835,15 @@
         "en": "strong",
         "cy": "cryf",
         "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2165576491"
+    },
+    {
+        "en": "strong",
+        "cy": "cryf",
+        "tags": [
             "verb"
         ],
         "notes": "",
@@ -42514,15 +42857,6 @@
         ],
         "notes": "",
         "id": "1124930457"
-    },
-    {
-        "en": "strong",
-        "cy": "cryf",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2165576491"
     },
     {
         "en": "structural",
@@ -42544,21 +42878,21 @@
     },
     {
         "en": "structure",
-        "cy": "fframwaith",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4121584222"
-    },
-    {
-        "en": "structure",
         "cy": "adeiladwaith",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "774389152"
+    },
+    {
+        "en": "structure",
+        "cy": "fframwaith",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4121584222"
     },
     {
         "en": "stud",
@@ -42679,21 +43013,21 @@
     },
     {
         "en": "subject",
-        "cy": "testun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2400892807"
-    },
-    {
-        "en": "subject",
         "cy": "pwnc",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2370008736"
+    },
+    {
+        "en": "subject",
+        "cy": "testun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2400892807"
     },
     {
         "en": "subjectivation",
@@ -42715,21 +43049,21 @@
     },
     {
         "en": "submission",
-        "cy": "ymostyngiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2020498782"
-    },
-    {
-        "en": "submission",
         "cy": "argymhelliad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2581857919"
+    },
+    {
+        "en": "submission",
+        "cy": "ymostyngiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2020498782"
     },
     {
         "en": "substance",
@@ -42934,21 +43268,21 @@
     },
     {
         "en": "support",
-        "cy": "cynnal",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "486218958"
-    },
-    {
-        "en": "support",
         "cy": "cynhaliad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2033641220"
+    },
+    {
+        "en": "support",
+        "cy": "cynnal",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "486218958"
     },
     {
         "en": "supremacist",
@@ -43153,21 +43487,21 @@
     },
     {
         "en": "swell",
-        "cy": "ymchwydd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "663763622"
-    },
-    {
-        "en": "swell",
         "cy": "chwyddo",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3477708733"
+    },
+    {
+        "en": "swell",
+        "cy": "ymchwydd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "663763622"
     },
     {
         "en": "swirl",
@@ -43417,21 +43751,21 @@
     },
     {
         "en": "system",
-        "cy": "system",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1804253206"
-    },
-    {
-        "en": "system",
         "cy": "cyfundrefn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "4267236111"
+    },
+    {
+        "en": "system",
+        "cy": "system",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1804253206"
     },
     {
         "en": "tabby loom",
@@ -43526,21 +43860,21 @@
     },
     {
         "en": "tack",
-        "cy": "tacio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2555965915"
-    },
-    {
-        "en": "tack",
         "cy": "tac",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "828756669"
+    },
+    {
+        "en": "tack",
+        "cy": "tacio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2555965915"
     },
     {
         "en": "tacker",
@@ -43689,21 +44023,21 @@
     },
     {
         "en": "taper",
-        "cy": "tapr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3390653843"
-    },
-    {
-        "en": "taper",
         "cy": "tapro",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1281476284"
+    },
+    {
+        "en": "taper",
+        "cy": "tapr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3390653843"
     },
     {
         "en": "tapestry",
@@ -43788,21 +44122,21 @@
     },
     {
         "en": "tear",
-        "cy": "rhwyg",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "220055815"
-    },
-    {
-        "en": "tear",
         "cy": "rhwygo",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "104322600"
+    },
+    {
+        "en": "tear",
+        "cy": "rhwyg",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "220055815"
     },
     {
         "en": "tear",
@@ -44177,21 +44511,21 @@
     },
     {
         "en": "theory",
-        "cy": "damcaniaeth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3073569118"
-    },
-    {
-        "en": "theory",
         "cy": "theori",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "608345222"
+    },
+    {
+        "en": "theory",
+        "cy": "damcaniaeth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3073569118"
     },
     {
         "en": "thermal",
@@ -44260,15 +44594,6 @@
         "en": "thick",
         "cy": "trwchus",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3469686807"
-    },
-    {
-        "en": "thick",
-        "cy": "trwchus",
-        "tags": [
             "state",
             "appearance"
         ],
@@ -44283,6 +44608,15 @@
         ],
         "notes": "",
         "id": "3926815917"
+    },
+    {
+        "en": "thick",
+        "cy": "trwchus",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3469686807"
     },
     {
         "en": "thick plate glass",
@@ -44334,20 +44668,20 @@
         "en": "thin",
         "cy": "tenau",
         "tags": [
-            "state",
-            "appearance"
+            "celf"
         ],
         "notes": "",
-        "id": "801478703"
+        "id": "338965798"
     },
     {
         "en": "thin",
         "cy": "tenau",
         "tags": [
-            "celf"
+            "state",
+            "appearance"
         ],
         "notes": "",
-        "id": "338965798"
+        "id": "801478703"
     },
     {
         "en": "thin",
@@ -44396,21 +44730,21 @@
     },
     {
         "en": "thread",
-        "cy": "edafu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1467401259"
-    },
-    {
-        "en": "thread",
         "cy": "edau",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3851160941"
+    },
+    {
+        "en": "thread",
+        "cy": "edafu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1467401259"
     },
     {
         "en": "threading hook",
@@ -44605,21 +44939,21 @@
     },
     {
         "en": "tile",
-        "cy": "teilsio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4180521539"
-    },
-    {
-        "en": "tile",
         "cy": "teilsen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "752803630"
+    },
+    {
+        "en": "tile",
+        "cy": "teilsio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4180521539"
     },
     {
         "en": "tile cement",
@@ -44695,21 +45029,21 @@
     },
     {
         "en": "tint",
-        "cy": "arlliwio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3683030010"
-    },
-    {
-        "en": "tint",
         "cy": "arlliw",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "487705180"
+    },
+    {
+        "en": "tint",
+        "cy": "arlliwio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3683030010"
     },
     {
         "en": "tinted",
@@ -44795,16 +45129,6 @@
     },
     {
         "en": "to answer",
-        "cy": "ymateb",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "3116154140"
-    },
-    {
-        "en": "to answer",
         "cy": "ateb",
         "tags": [
             "sound",
@@ -44815,15 +45139,14 @@
         "id": "2997135054"
     },
     {
-        "en": "to argue or fall out",
-        "cy": "cwympo mas",
+        "en": "to answer",
+        "cy": "ymateb",
         "tags": [
-            "speech",
             "verb",
-            "emotion"
+            "speech"
         ],
-        "notes": "(SW)",
-        "id": "3235486116"
+        "notes": "",
+        "id": "3116154140"
     },
     {
         "en": "to argue or fall out",
@@ -44836,6 +45159,17 @@
         ],
         "notes": "(NW)",
         "id": "4183281583"
+    },
+    {
+        "en": "to argue or fall out",
+        "cy": "cwympo mas",
+        "tags": [
+            "speech",
+            "verb",
+            "emotion"
+        ],
+        "notes": "(SW)",
+        "id": "3235486116"
     },
     {
         "en": "to arrive",
@@ -44867,6 +45201,16 @@
         ],
         "notes": "",
         "id": "3015694807"
+    },
+    {
+        "en": "to be related to",
+        "cy": "perthyn i",
+        "tags": [
+            "family",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "3729757200"
     },
     {
         "en": "to be silent",
@@ -44940,16 +45284,6 @@
     },
     {
         "en": "to carry",
-        "cy": "cario",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "16198088"
-    },
-    {
-        "en": "to carry",
         "cy": "cludo",
         "tags": [
             "verb",
@@ -44957,6 +45291,16 @@
         ],
         "notes": "",
         "id": "2010922607"
+    },
+    {
+        "en": "to carry",
+        "cy": "cario",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "16198088"
     },
     {
         "en": "to catch a cold",
@@ -44984,16 +45328,6 @@
     },
     {
         "en": "to chat",
-        "cy": "sgyrsiau",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "1422672489"
-    },
-    {
-        "en": "to chat",
         "cy": "sgwrs",
         "tags": [
             "verb",
@@ -45001,6 +45335,16 @@
         ],
         "notes": "(f)",
         "id": "3853353469"
+    },
+    {
+        "en": "to chat",
+        "cy": "sgyrsiau",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "1422672489"
     },
     {
         "en": "to chat to",
@@ -45116,6 +45460,16 @@
     },
     {
         "en": "to cry",
+        "cy": "llefain",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "2391671325"
+    },
+    {
+        "en": "to cry",
         "cy": "crio",
         "tags": [
             "emotion",
@@ -45133,16 +45487,6 @@
         ],
         "notes": "",
         "id": "199980848"
-    },
-    {
-        "en": "to cry",
-        "cy": "llefain",
-        "tags": [
-            "emotion",
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "2391671325"
     },
     {
         "en": "to cure",
@@ -45321,16 +45665,6 @@
     },
     {
         "en": "to fall",
-        "cy": "cwympo",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "(SW)",
-        "id": "2560424664"
-    },
-    {
-        "en": "to fall",
         "cy": "disgyn",
         "tags": [
             "verb",
@@ -45338,6 +45672,16 @@
         ],
         "notes": "(NW)",
         "id": "161283444"
+    },
+    {
+        "en": "to fall",
+        "cy": "cwympo",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(SW)",
+        "id": "2560424664"
     },
     {
         "en": "to feel",
@@ -45361,16 +45705,6 @@
     },
     {
         "en": "to follow",
-        "cy": "dilyn",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "1651772994"
-    },
-    {
-        "en": "to follow",
         "cy": "canlyn",
         "tags": [
             "verb",
@@ -45378,6 +45712,16 @@
         ],
         "notes": "",
         "id": "574145347"
+    },
+    {
+        "en": "to follow",
+        "cy": "dilyn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1651772994"
     },
     {
         "en": "to freeze",
@@ -45444,6 +45788,15 @@
     },
     {
         "en": "to gossip",
+        "cy": "hel clecs",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "622171277"
+    },
+    {
+        "en": "to gossip",
         "cy": "cloncian",
         "tags": [
             "speech",
@@ -45451,15 +45804,6 @@
         ],
         "notes": "(SW)",
         "id": "3726883609"
-    },
-    {
-        "en": "to gossip",
-        "cy": "hel clecs",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "622171277"
     },
     {
         "en": "to gossip",
@@ -45573,16 +45917,6 @@
     },
     {
         "en": "to hurry",
-        "cy": "brysio",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "3489004477"
-    },
-    {
-        "en": "to hurry",
         "cy": "hast",
         "tags": [
             "verb",
@@ -45592,15 +45926,14 @@
         "id": "3118586470"
     },
     {
-        "en": "to hurt",
-        "cy": "gwynegu",
+        "en": "to hurry",
+        "cy": "brysio",
         "tags": [
-            "health",
-            "medical",
-            "verb"
+            "verb",
+            "doing"
         ],
-        "notes": "(SW)",
-        "id": "640729659"
+        "notes": "",
+        "id": "3489004477"
     },
     {
         "en": "to hurt",
@@ -45612,6 +45945,17 @@
         ],
         "notes": "",
         "id": "4026640414"
+    },
+    {
+        "en": "to hurt",
+        "cy": "gwynegu",
+        "tags": [
+            "health",
+            "medical",
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "640729659"
     },
     {
         "en": "to hurt someone",
@@ -45688,21 +46032,21 @@
     },
     {
         "en": "to joke",
-        "cy": "jocan",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "3989387205"
-    },
-    {
-        "en": "to joke",
         "cy": "jocio",
         "tags": [
             "verb"
         ],
         "notes": "(NW)",
         "id": "1514151345"
+    },
+    {
+        "en": "to joke",
+        "cy": "jocan",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "3989387205"
     },
     {
         "en": "to jump",
@@ -45851,16 +46195,6 @@
     },
     {
         "en": "to look",
-        "cy": "disgwyl",
-        "tags": [
-            "verb",
-            "sense"
-        ],
-        "notes": "(SW)",
-        "id": "1059443513"
-    },
-    {
-        "en": "to look",
         "cy": "edrych",
         "tags": [
             "verb",
@@ -45868,6 +46202,16 @@
         ],
         "notes": "",
         "id": "2937669094"
+    },
+    {
+        "en": "to look",
+        "cy": "disgwyl",
+        "tags": [
+            "verb",
+            "sense"
+        ],
+        "notes": "(SW)",
+        "id": "1059443513"
     },
     {
         "en": "to look after",
@@ -45911,6 +46255,15 @@
         ],
         "notes": "",
         "id": "3237896169"
+    },
+    {
+        "en": "to mature",
+        "cy": "aeddfedu",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "373985358"
     },
     {
         "en": "to meet",
@@ -46024,16 +46377,6 @@
     },
     {
         "en": "to push",
-        "cy": "gwthio",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "(NW)",
-        "id": "4038274857"
-    },
-    {
-        "en": "to push",
         "cy": "hwpio",
         "tags": [
             "verb",
@@ -46041,6 +46384,16 @@
         ],
         "notes": "(SW)",
         "id": "99527095"
+    },
+    {
+        "en": "to push",
+        "cy": "gwthio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(NW)",
+        "id": "4038274857"
     },
     {
         "en": "to put on weight",
@@ -46191,21 +46544,21 @@
     },
     {
         "en": "to shout",
-        "cy": "llefain",
-        "tags": [
-            "verb"
-        ],
-        "notes": "",
-        "id": "3052081202"
-    },
-    {
-        "en": "to shout",
         "cy": "gweiddi",
         "tags": [
             "verb"
         ],
         "notes": "",
         "id": "3434219394"
+    },
+    {
+        "en": "to shout",
+        "cy": "llefain",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "3052081202"
     },
     {
         "en": "to shout",
@@ -46642,6 +46995,15 @@
         ],
         "notes": "",
         "id": "2003219714"
+    },
+    {
+        "en": "to take after",
+        "cy": "tynnu ar ôl",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "3413037979"
     },
     {
         "en": "to talk",
@@ -47251,21 +47613,21 @@
     },
     {
         "en": "trail",
-        "cy": "llwybro",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2687635077"
-    },
-    {
-        "en": "trail",
         "cy": "llwybr",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3511676970"
+    },
+    {
+        "en": "trail",
+        "cy": "llwybro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2687635077"
     },
     {
         "en": "transfer",
@@ -47332,21 +47694,21 @@
     },
     {
         "en": "translation",
-        "cy": "cyfieithiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3676069780"
-    },
-    {
-        "en": "translation",
         "cy": "trosiad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1540287051"
+    },
+    {
+        "en": "translation",
+        "cy": "cyfieithiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3676069780"
     },
     {
         "en": "translucency",
@@ -47910,21 +48272,21 @@
     },
     {
         "en": "twine",
-        "cy": "cortyn",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2236037706"
-    },
-    {
-        "en": "twine",
         "cy": "cordeddu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1809107965"
+    },
+    {
+        "en": "twine",
+        "cy": "cortyn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2236037706"
     },
     {
         "en": "twist",
@@ -48054,6 +48416,15 @@
     },
     {
         "en": "ugly",
+        "cy": "hyll",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "1688225787"
+    },
+    {
+        "en": "ugly",
         "cy": "hagr",
         "tags": [
             "appearance",
@@ -48071,15 +48442,6 @@
         ],
         "notes": "(SW)",
         "id": "1661889396"
-    },
-    {
-        "en": "ugly",
-        "cy": "hyll",
-        "tags": [
-            "state"
-        ],
-        "notes": "",
-        "id": "1688225787"
     },
     {
         "en": "ulcer",
@@ -48144,6 +48506,24 @@
         ],
         "notes": "",
         "id": "476191428"
+    },
+    {
+        "en": "uncle",
+        "cy": "yncl",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "734018181"
+    },
+    {
+        "en": "uncle",
+        "cy": "wncwl",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "88742940"
     },
     {
         "en": "uncle",
@@ -48212,21 +48592,21 @@
     },
     {
         "en": "underglaze",
-        "cy": "tanwydro",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "689194951"
-    },
-    {
-        "en": "underglaze",
         "cy": "tanwydredd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2904480973"
+    },
+    {
+        "en": "underglaze",
+        "cy": "tanwydro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "689194951"
     },
     {
         "en": "underglaze colour",
@@ -48808,21 +49188,21 @@
     },
     {
         "en": "veneer",
-        "cy": "argaen",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2151115847"
-    },
-    {
-        "en": "veneer",
         "cy": "argaenu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "546833490"
+    },
+    {
+        "en": "veneer",
+        "cy": "argaen",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2151115847"
     },
     {
         "en": "venetian red",
@@ -48835,21 +49215,21 @@
     },
     {
         "en": "vent",
-        "cy": "awyrell",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "569505863"
-    },
-    {
-        "en": "vent",
         "cy": "awyrellu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2600026482"
+    },
+    {
+        "en": "vent",
+        "cy": "awyrell",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "569505863"
     },
     {
         "en": "ventilation",
@@ -49321,21 +49701,21 @@
     },
     {
         "en": "voice",
-        "cy": "llef",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(f) -au",
-        "id": "2258732530"
-    },
-    {
-        "en": "voice",
         "cy": "llais",
         "tags": [
             "sound"
         ],
         "notes": "(m)",
         "id": "1826737304"
+    },
+    {
+        "en": "voice",
+        "cy": "llef",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) -au",
+        "id": "2258732530"
     },
     {
         "en": "voices",
@@ -49348,21 +49728,21 @@
     },
     {
         "en": "volatile",
-        "cy": "cyfnewidiol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1092431601"
-    },
-    {
-        "en": "volatile",
         "cy": "anweddol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2873783272"
+    },
+    {
+        "en": "volatile",
+        "cy": "cyfnewidiol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1092431601"
     },
     {
         "en": "volume",
@@ -49466,21 +49846,21 @@
     },
     {
         "en": "wall",
-        "cy": "wal",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "814358522"
-    },
-    {
-        "en": "wall",
         "cy": "mur",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3508885610"
+    },
+    {
+        "en": "wall",
+        "cy": "wal",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "814358522"
     },
     {
         "en": "wall panel",
@@ -49801,21 +50181,21 @@
     },
     {
         "en": "water colour painting",
-        "cy": "paentiad dyfrlliw",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "697375804"
-    },
-    {
-        "en": "water colour painting",
         "cy": "peintio dyfrlliw",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2668735998"
+    },
+    {
+        "en": "water colour painting",
+        "cy": "paentiad dyfrlliw",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "697375804"
     },
     {
         "en": "water colour paper",
@@ -49990,21 +50370,21 @@
     },
     {
         "en": "wax polish",
-        "cy": "llathrydd cwyr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "697822928"
-    },
-    {
-        "en": "wax polish",
         "cy": "llathredd cwyr",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3841677388"
+    },
+    {
+        "en": "wax polish",
+        "cy": "llathrydd cwyr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "697822928"
     },
     {
         "en": "wax resistant",
@@ -50107,21 +50487,21 @@
     },
     {
         "en": "weave",
-        "cy": "gwehyddu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1771361927"
-    },
-    {
-        "en": "weave",
         "cy": "gwehyddiad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2881567262"
+    },
+    {
+        "en": "weave",
+        "cy": "gwehyddu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1771361927"
     },
     {
         "en": "weaver",
@@ -50161,6 +50541,15 @@
     },
     {
         "en": "weight",
+        "cy": "pwysau",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "411451727"
+    },
+    {
+        "en": "weight",
         "cy": "pwys",
         "tags": [
             "state",
@@ -50170,13 +50559,13 @@
         "id": "696315815"
     },
     {
-        "en": "weight",
-        "cy": "pwysau",
+        "en": "weld",
+        "cy": "weldio",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "411451727"
+        "id": "2980725808"
     },
     {
         "en": "weld",
@@ -50186,15 +50575,6 @@
         ],
         "notes": "",
         "id": "3394125722"
-    },
-    {
-        "en": "weld",
-        "cy": "weldio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2980725808"
     },
     {
         "en": "well-balanced",
@@ -50318,21 +50698,21 @@
     },
     {
         "en": "wheel",
-        "cy": "olwyn",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2327648230"
-    },
-    {
-        "en": "wheel",
         "cy": "olwyno",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "89712489"
+    },
+    {
+        "en": "wheel",
+        "cy": "olwyn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2327648230"
     },
     {
         "en": "wheel of fortune pattern",
@@ -50354,21 +50734,21 @@
     },
     {
         "en": "whirl",
-        "cy": "chwyrlïad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "919405391"
-    },
-    {
-        "en": "whirl",
         "cy": "chwyrlïo",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "335878629"
+    },
+    {
+        "en": "whirl",
+        "cy": "chwyrlïad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "919405391"
     },
     {
         "en": "whirler",
@@ -50516,15 +50896,6 @@
     },
     {
         "en": "wide",
-        "cy": "llydan",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "15881339"
-    },
-    {
-        "en": "wide",
         "cy": "eang",
         "tags": [
             "appearance",
@@ -50532,6 +50903,15 @@
         ],
         "notes": "",
         "id": "1680498893"
+    },
+    {
+        "en": "wide",
+        "cy": "llydan",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "15881339"
     },
     {
         "en": "wide stroke",
@@ -50756,21 +51136,21 @@
     },
     {
         "en": "wood",
-        "cy": "pren",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "202988588"
-    },
-    {
-        "en": "wood",
         "cy": "coed",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2586100296"
+    },
+    {
+        "en": "wood",
+        "cy": "pren",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "202988588"
     },
     {
         "en": "wood ash",
@@ -50801,21 +51181,21 @@
     },
     {
         "en": "wood carving",
-        "cy": "cerfiad pren",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1514457364"
-    },
-    {
-        "en": "wood carving",
         "cy": "cerfio pren",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "4192845726"
+    },
+    {
+        "en": "wood carving",
+        "cy": "cerfiad pren",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1514457364"
     },
     {
         "en": "wood dye",
@@ -51044,16 +51424,6 @@
     },
     {
         "en": "wound",
-        "cy": "anaf",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m) -au -iadau",
-        "id": "1411951886"
-    },
-    {
-        "en": "wound",
         "cy": "clwyf",
         "tags": [
             "health",
@@ -51061,6 +51431,16 @@
         ],
         "notes": "(m) -au",
         "id": "1516812820"
+    },
+    {
+        "en": "wound",
+        "cy": "anaf",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) -au -iadau",
+        "id": "1411951886"
     },
     {
         "en": "wrap",
@@ -51120,19 +51500,19 @@
         "en": "wrist",
         "cy": "arddwrn",
         "tags": [
-            "celf"
+            "body"
         ],
-        "notes": "",
-        "id": "568879941"
+        "notes": "(m)",
+        "id": "4206574901"
     },
     {
         "en": "wrist",
         "cy": "arddwrn",
         "tags": [
-            "body"
+            "celf"
         ],
-        "notes": "(m)",
-        "id": "4206574901"
+        "notes": "",
+        "id": "568879941"
     },
     {
         "en": "wrists",
@@ -51217,21 +51597,21 @@
     },
     {
         "en": "young",
-        "cy": "ieuanc",
-        "tags": [
-            "state"
-        ],
-        "notes": "",
-        "id": "2695478610"
-    },
-    {
-        "en": "young",
         "cy": "ifanc",
         "tags": [
             "state"
         ],
         "notes": "",
         "id": "438986020"
+    },
+    {
+        "en": "young",
+        "cy": "ieuanc",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "2695478610"
     },
     {
         "en": "youngest child",
