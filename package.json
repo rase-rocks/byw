@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "deploy": "sh ./build-settings/deploy.sh",
-    "serve-build": "node node_modules/http-serve/bin/http-serve --cors ./s3-build",
+    "serve-build": "node ./development-server.js",
+    "default-server": "node node_modules/http-serve/bin/http-serve --cors ./s3-build",
     "make-geirfa": "sh ./build-settings/make-geirfa.sh",
     "build": "sh ./build-settings/build.sh",
     "convert-csv": "babel-node --presets es2015 ./existing-data/index.js",
