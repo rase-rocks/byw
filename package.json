@@ -10,7 +10,7 @@
     "build": "sh ./build-settings/build.sh",
     "convert-csv": "babel-node --presets es2015 ./existing-data/index.js",
     "make-pdf": "node ./node_modules/chrome-headless-render-pdf/dist/cli/chrome-headless-render-pdf.js --include-background --landscape --url=http://localhost:8080 --pdf ~/Downloads/site.pdf",
-    "test": "./node_modules/.bin/mocha --require babel-core/register"
+    "test": "mocha --require babel-register"
   },
   "repository": {
     "type": "git",
@@ -45,6 +45,7 @@
     "chai": "^4.2.0",
     "chrome-headless-render-pdf": "^1.8.0",
     "csvtojson": "^1.1.12",
+    "esm": "^3.2.25",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
