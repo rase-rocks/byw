@@ -59,6 +59,22 @@ Root
 |
 +---- existing-data // dev means to use data from existing website datasource
 |
++---- text
+|     |
+|     +---- languages
+|     |     |
+|     |     +---- english // Example folder for english text content. One folder per translation. Folder name is language identifier.
+|     |           |
+|     |           +---- translation.csv // Raw translation data as key/value pairs
+|     |           +---- index.js // A transform function per language. If no special transformation is required, default can be used.
+|     |
+|     +---- build-scripts // Build phase scripts to produce text content datasource for app
+|
++---- seo-hacks
+|     |
+|     +---- pages // Locally rendered pages to allow App routes to be visible to search engines
+|
++---- test // Unit tests
 ```
 
 ### Contributing
@@ -69,6 +85,7 @@ Community contributions are welcome. In order to contribute check out the projec
 
 Currently we are actively seeking contributions from the community for the following areas:
 
++ User facing text language translations
 + SVG Graphics for things such as icons and some page elements
 + Informational content
 
@@ -121,7 +138,7 @@ The build script first of all runs browserify over the client app so that it can
 
 The build script also browserifies the client app and bundles it as well as copying over all the static assets.
 
-There is an eslintrc file included to enforce style guidlines.
+There is an eslintrc file included to enforce style guidelines.
 
 ### Vocabulary Page
 
@@ -141,6 +158,36 @@ npm run make-geirfa
 
 If there is a problem with the csv file the script will complain. Remember its comma separated, so no commas in notes and if there are no notes a trailing comma is still required. Again, VS Code is recommended with a syntax highlighting extension as it makes this really easy to spot.
 
+### UI Text Content Translations
+
+The `text` folder contains all the data and scripts required to build the various translations for the user facing text content of the site.
+
+Adding a translation for the entire website is very simple, just create a new folder for the translation, and name it how you would like the language to be represented to the user. An example is `english` for the English text content of the site. If your language needs to be named with multiple words open an issue so that hyphenated names can be supported. Currently there is none, but an example could be `english-uk` and `english-us`.
+
+The add the translated text to a `translation.csv` file your language folder. For most cases that is all that is needed for the new translation to be picked up and included. If extra processing is required to transform the data from its CSV representation into its final JSON format include an `index.js` file in the folder. If this file is omitted the `default-transform` will be used. This should be sufficient for most cases. Take a look at `default-transform.js` implementation. Its layout is quite simple, it takes an identifier (such as 'english') and and folder path and returns a `Promise` that resolves to an object with the properties `identifier` and `text`. The `text` property should be an object containing all the required keys and values for the translation.
+
+The `cymraeg` language folder includes an `index.js` which simply imports and then exports the default transformer. This is purely to provide an example implementation using a custom transformer in combination with the default-transformer, as a starting point.
+
+A `translation-template.csv` file is included that can be copied and used as a starting point for translations as it will contain all the required keys to be translated. Again this file is created automatically so should not be edited as changes will be lost.
+
+After adding a translation, be sure to run `npm test` as this will check that the translation is suitable for inclusion and report any errors found.
+
+The new translation can be made available for use in the App code by running the package scripts individually or running a normal build.
+
+```
+npm run build
+```
+This will build the entire site and put the contents in the `s3-build` folder ready for serving or uploading.
+
+You can also run the package scripts without having to do a full build by running:
+
+```
+npm run make-text-supported-languages
+npm run make-text-supported-keys
+npm run make-text-translations
+npm run make-text-translation-template
+```
+The newly added language will then be available for code completion in text rendering app components. These scripts add JavaScript (js) files to the `./client/app/core/text/` folder. These files can then be imported as normal using `import` in JS. As these files are overwritten every build, they should not be edited manually, as these changes will be lost. Instead, if changes are required, alter the raw translations and re-run the build script.
 
 ### Dependencies
 

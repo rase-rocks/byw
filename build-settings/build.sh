@@ -13,6 +13,12 @@ rm -r ./s3-build
 echo "\n[${GREEN}Making Geirfa${NC}]\n"
 sh ./build-settings/make-geirfa.sh
 
+echo "\n[${GREEN}Making User Facing Text content${NC}]\n"
+npm run make-text-translation-template
+npm run make-text-supported-keys
+npm run make-text-supported-languages
+npm run make-text-translations
+
 echo "\n[${GREEN}Rendering index.html for server in production mode${NC}]\n"
 NODE_ENV='production' gulp static-build
 NODE_ENV='production' node ./s3-build/static-index-build.js > ./s3-build/index.html
