@@ -61,7 +61,11 @@ const pages = pagesToBuild.map(function (pageName) {
 
     return {
         pageName: pageName,
-        html: template(keywordsTag(path), descriptionTag(path), titleTag(path), pageName, htmlString)
+        html: template(keywordsTag(path), 
+            descriptionTag(path), 
+            titleTag(path, store.getState().settings.language), 
+            pageName, 
+            htmlString)
     };
 
 });

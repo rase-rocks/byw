@@ -21,7 +21,10 @@ const li = function (props) {
 
         return (
             <li key={route.url} onClick={linkClick}>
-                <Link to={route.url} title={route.title}>{route.title}</Link>
+                <Link to={route.url}
+                    title={route.title}>
+                    {props.text[route.pageTitleTextKey]}
+                </Link>
             </li>
         );
     });
@@ -81,6 +84,7 @@ class OverlayMenu extends React.Component {
 }
 
 OverlayMenu.propTypes = {
+    text: PropTypes.object.isRequired,
     show: PropTypes.bool,
     onCloseRequest: PropTypes.func,
     onClick: PropTypes.func,

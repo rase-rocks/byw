@@ -10,11 +10,33 @@
 
 export default {
     "cymraeg": {
-        "homePageTitle": "Cartref yma, efo comma",
-        "homePageTitleDesc": ""
+        "pageTitleKeyHome": "Hafan",
+        "pageTitleKeyMap": "Map",
+        "pageTitleKeyVocabulary": "Geirfa",
+        "pageTitleKeyAbout": "Amdanom",
+        "pageTitleKeySubmit": "Cyflwyno",
+        "pageTitleKeyPrivacy": "Preifatrwydd",
+        "pageTitleTagKeyHome": "BYW | Hafan",
+        "pageTitleTagKeyMap": "BYW | Map",
+        "pageTitleTagKeyVocabulary": "BYW | Geirfa",
+        "pageTitleTagKeyAbout": "BYW | Amdanom",
+        "pageTitleTagKeySubmit": "BYW | Cyflwyno",
+        "pageTitleTagKeyPrivacy": "BYW | Preifatrwydd",
+        "pageTitleTagKey404": "BYW | Heb ei Ddarganfod"
     },
     "english": {
-        "homePageTitle": "Home Page in here, with comma",
-        "homePageTitleDesc": "Home is important"
+        "pageTitleKeyHome": "Home",
+        "pageTitleKeyMap": "Map",
+        "pageTitleKeyVocabulary": "Vocab",
+        "pageTitleKeyAbout": "About",
+        "pageTitleKeySubmit": "Submit",
+        "pageTitleKeyPrivacy": "Privacy",
+        "pageTitleTagKeyHome": "BYW | Home",
+        "pageTitleTagKeyMap": "BYW | Map",
+        "pageTitleTagKeyVocabulary": "BYW | Vocab",
+        "pageTitleTagKeyAbout": "BYW | About",
+        "pageTitleTagKeySubmit": "BYW | Submit",
+        "pageTitleTagKeyPrivacy": "BYW | Privacy",
+        "pageTitleTagKey404": "BYW | Page Not Found"
     }
 };

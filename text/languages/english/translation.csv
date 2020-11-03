@@ -1,3 +1,14 @@
 key,value
-homePageTitle, "Home Page in here, with comma"
-homePageTitleDesc, "Home is important"
+pageTitleKeyHome, Home
+pageTitleKeyMap, Map
+pageTitleKeyVocabulary, Vocab
+pageTitleKeyAbout, About
+pageTitleKeySubmit, Submit
+pageTitleKeyPrivacy, Privacy
+pageTitleTagKeyHome, BYW | Home
+pageTitleTagKeyMap, BYW | Map
+pageTitleTagKeyVocabulary, BYW | Vocab
+pageTitleTagKeyAbout, BYW | About
+pageTitleTagKeySubmit, BYW | Submit
+pageTitleTagKeyPrivacy, BYW | Privacy
+pageTitleTagKey404, BYW | Page Not Found

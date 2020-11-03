@@ -1,9 +1,5 @@
 import { types } from "../actions";
-
-const languages = {
-    english: "english",
-    cymraeg: "cymraeg"
-};
+import languages from "../../text/supported-languages";
 
 const defaultState = {
     language: languages.english,
@@ -25,4 +21,3 @@ const settingsReducer = function (state = defaultState, action) {
 };
 
 export default settingsReducer;
-export { languages };

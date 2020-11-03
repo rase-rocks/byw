@@ -1,18 +1,24 @@
-import { withRouter } from "react-router";
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
+
+import { withRouter } from "react-router";
 
 import { strHash } from "../core/hash";
 import NavLink from "./nav-link";
 import OverlayMenu from "./overlay-menu";
+import text from "../core/text/data";
 
 import routes, { route } from "./routes";
 
-const li = function (route) {
-    return (<NavLink key={strHash(route.url)} to={route.url}>{route.title}</NavLink>);
+const li = function (translatedText) {
+    return function link (route) {
+        return (
+            <NavLink key={strHash(route.url)}
+                to={route.url}>
+                {translatedText[route.pageTitleTextKey]}
+            </NavLink>);
+    };
 };
-
-const links = routes.map(li);
 
 const buttonBaseClass = "navbar-toggler";
 
@@ -45,6 +51,12 @@ class Nav extends React.Component {
 
     render() {
 
+        const { language } = this.props;
+
+        const translatedText = text[language];
+
+        const links = routes.map(li(translatedText));
+
         const buttonClass = (this.state.showMenu)
             ? buttonBaseClass + " active"
             : buttonBaseClass;
@@ -52,7 +64,8 @@ class Nav extends React.Component {
         return (
             <header>
 
-                <OverlayMenu show={this.state.showMenu}
+                <OverlayMenu text={translatedText}
+                    show={this.state.showMenu}
                     onCloseRequest={this.makeToggler()} />
 
                 <nav id="mainNav" className="nav navbar navbar-expand-lg">
@@ -87,6 +100,7 @@ Nav.contextTypes = {
 };
 
 Nav.propTypes = {
+    language: PropTypes.string.isRequired,
     match: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired

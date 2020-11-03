@@ -1,11 +1,13 @@
-import { withRouter } from "react-router";
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
+
+import { withRouter } from "react-router";
+import { connect } from "react-redux";
 
 import children from "./core/props-children";
 import Footer from "./footer";
 import isBrowser from "./core/is-browser";
-import Nav  from "./nav";
+import Nav from "./nav";
 import { canonicalPath, titleTag, keywordsTag, descriptionTag } from "./nav/routes";
 
 const setCanonical = function (url) {
@@ -14,8 +16,8 @@ const setCanonical = function (url) {
         .setAttribute("href", "https://www.byw.cymru" + canonicalPath(url));
 };
 
-const setTitle = function (url) {
-    document.title = titleTag(url);
+const setTitle = function (url, language) {
+    document.title = titleTag(url, language);
 };
 
 const setKeywords = function (url) {
@@ -30,10 +32,10 @@ const setDesc = function (url) {
         .setAttribute("content", descriptionTag(url));
 };
 
-const setHeadAttributes = function (url) {
+const setHeadAttributes = function (url, language) {
     if (!url || !isBrowser()) { return; }
     setCanonical(url);
-    setTitle(url);
+    setTitle(url, language);
     setKeywords(url);
     setDesc(url);
 };
@@ -53,13 +55,13 @@ class App extends React.Component {
 
     render() {
 
-        const { location } = this.props;
+        const { language, location } = this.props;
 
-        setHeadAttributes(location.pathname);
+        setHeadAttributes(location.pathname, language);
 
         return (
             <div>
-                <Nav />
+                <Nav language={language}/>
                 <div>
                     {this.props.children}
                 </div>
@@ -70,10 +72,17 @@ class App extends React.Component {
 
 }
 
+const mapStateToProps = function (state) {
+    return {
+        language: state.settings.language
+    };
+};
+
 App.propTypes = {
+    language: PropTypes.string.isRequired,
     children: children,
     history: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired
 };
 
-export default withRouter(App);
+export default withRouter(connect(mapStateToProps)(App));

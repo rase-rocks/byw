@@ -1,8 +1,14 @@
 /* global describe it */
 
 const expect = require("chai").expect;
+const fs = require("fs");
+const path = require("path");
+
 const supportedKeys = require("../text/build-scripts/supported-keys").default;
 const translations = require("../text/build-scripts/translations").default;
+
+const requiredTextKeysTitle = require("../client/app/nav/routes").requiredTextKeysTitle;
+const requiredTextKeysTitleTag = require("../client/app/nav/routes").requiredTextKeysTitleTag;
 
 const makeTest = function (testFn, done) {
     supportedKeys()
@@ -68,6 +74,42 @@ describe("Text", function () {
             makeTest(function (keys, test) {
 
                 keys.forEach(key => expect(test.translation[key], `${key} is empty in ${test.language}`).to.not.equal(""));
+
+            }, done);
+
+        });
+
+        it("has suitable folder names", function (done) {
+
+            const languagesFolder = path.join(__dirname, "../", "text", "languages");
+            
+            fs.readdir(languagesFolder, "utf-8", function (err, folders) {
+                if (err) { done(err); }
+
+                folders.forEach(languageName => {
+                    expect(languageName.toLowerCase()).to.be.equal(languageName);
+
+                    languageName
+                        .split("")
+                        .forEach(char => expect(char).to.be.not.equal(" "));
+
+                });
+
+                done();
+
+            });
+
+        });
+
+        it("has all nav routes", function (done) {
+
+            makeTest(function (keys) {
+
+                const test = titleKey => 
+                    expect(keys.indexOf(titleKey), `${titleKey} missing`).to.be.not.equal(-1);
+
+                requiredTextKeysTitle.forEach(test);
+                requiredTextKeysTitleTag.forEach(test);
 
             }, done);
 

@@ -7,6 +7,17 @@
 // existing keys will be found at build time, rather than runtime.
 
 export default {
-    homePageTitle: "homePageTitle", 
-    homePageTitleDesc: "homePageTitleDesc"
+    pageTitleKeyHome: "pageTitleKeyHome", 
+    pageTitleKeyMap: "pageTitleKeyMap", 
+    pageTitleKeyVocabulary: "pageTitleKeyVocabulary", 
+    pageTitleKeyAbout: "pageTitleKeyAbout", 
+    pageTitleKeySubmit: "pageTitleKeySubmit", 
+    pageTitleKeyPrivacy: "pageTitleKeyPrivacy", 
+    pageTitleTagKeyHome: "pageTitleTagKeyHome", 
+    pageTitleTagKeyMap: "pageTitleTagKeyMap", 
+    pageTitleTagKeyVocabulary: "pageTitleTagKeyVocabulary", 
+    pageTitleTagKeyAbout: "pageTitleTagKeyAbout", 
+    pageTitleTagKeySubmit: "pageTitleTagKeySubmit", 
+    pageTitleTagKeyPrivacy: "pageTitleTagKeyPrivacy", 
+    pageTitleTagKey404: "pageTitleTagKey404"
 };

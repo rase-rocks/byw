@@ -166,6 +166,14 @@ Adding a translation for the entire website is very simple, just create a new fo
 
 The add the translated text to a `translation.csv` file your language folder. For most cases that is all that is needed for the new translation to be picked up and included. If extra processing is required to transform the data from its CSV representation into its final JSON format include an `index.js` file in the folder. If this file is omitted the `default-transform` will be used. This should be sufficient for most cases. Take a look at `default-transform.js` implementation. Its layout is quite simple, it takes an identifier (such as 'english') and and folder path and returns a `Promise` that resolves to an object with the properties `identifier` and `text`. The `text` property should be an object containing all the required keys and values for the translation.
 
+*Note* as with the `geirfa` it is recommended to use a plain text editor (or maybe a plain text editor with a CSV highlighting plugin) to create translations, which should all be UTF8 encoded. Again, any extra formatting characters that are added by a word processor will cause your CSV to fail to import. As the `,` is used to delimit fields, it cannot be used within text content paragraphs itself as doing so would signify the end of that field. To work around this, if the paragraph to be translated contains a `,` simply wrap the whole entry in `"` (html entity `&quot;`) not a `“` or others. 
+
+For example:
+
+```
+phrase, "hello, world"
+```
+
 The `cymraeg` language folder includes an `index.js` which simply imports and then exports the default transformer. This is purely to provide an example implementation using a custom transformer in combination with the default-transformer, as a starting point.
 
 A `translation-template.csv` file is included that can be copied and used as a starting point for translations as it will contain all the required keys to be translated. Again this file is created automatically so should not be edited as changes will be lost.
@@ -174,19 +182,26 @@ After adding a translation, be sure to run `npm test` as this will check that th
 
 The new translation can be made available for use in the App code by running the package scripts individually or running a normal build.
 
-```
+```sh
 npm run build
 ```
 This will build the entire site and put the contents in the `s3-build` folder ready for serving or uploading.
 
 You can also run the package scripts without having to do a full build by running:
 
-```
+```sh
 npm run make-text-supported-languages
 npm run make-text-supported-keys
 npm run make-text-translations
 npm run make-text-translation-template
 ```
+
+Alternatively you can run all the scripts to build the entire text system in one command by running:
+
+```sh
+npm run make-text
+```
+
 The newly added language will then be available for code completion in text rendering app components. These scripts add JavaScript (js) files to the `./client/app/core/text/` folder. These files can then be imported as normal using `import` in JS. As these files are overwritten every build, they should not be edited manually, as these changes will be lost. Instead, if changes are required, alter the raw translations and re-run the build script.
 
 ### Dependencies

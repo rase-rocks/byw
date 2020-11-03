@@ -68,20 +68,20 @@ var pages = pagesToBuild.map(function (pageName) {
 
     return {
         pageName: pageName,
-        html: (0, _template2.default)((0, _routes.keywordsTag)(path), (0, _routes.descriptionTag)(path), (0, _routes.titleTag)(path), pageName, htmlString)
+        html: (0, _template2.default)((0, _routes.keywordsTag)(path), (0, _routes.descriptionTag)(path), (0, _routes.titleTag)(path, store.getState().settings.language), pageName, htmlString)
     };
 });
 
 console.log(JSON.stringify(pages));
 
-},{"../client/app/app":4,"../client/app/core/redux/reducers":48,"../client/app/nav/routes":57,"../client/app/pages/about":59,"../client/app/pages/home":65,"../client/app/pages/map":68,"../client/app/pages/nomatch":84,"../client/app/pages/privacy":85,"../client/app/pages/submit":93,"../client/app/pages/vocabulary":99,"./template":3,"react":189,"react-dom/server":138,"react-redux":151,"react-router":182,"react-router-dom":170,"redux":190}],2:[function(require,module,exports){
+},{"../client/app/app":4,"../client/app/core/redux/reducers":49,"../client/app/nav/routes":60,"../client/app/pages/about":62,"../client/app/pages/home":68,"../client/app/pages/map":71,"../client/app/pages/nomatch":87,"../client/app/pages/privacy":88,"../client/app/pages/submit":96,"../client/app/pages/vocabulary":102,"./template":3,"react":192,"react-dom/server":141,"react-redux":154,"react-router":185,"react-router-dom":173,"redux":193}],2:[function(require,module,exports){
 "use strict";
 
 var cssFilename = "byw.style.min.css";
 var cssLinkString = "<link href=\"css/" + cssFilename + "\" type=\"text/css\" rel=\"stylesheet\">";
 var keywords = "wales,cymru,welsh,cymraeg,language,geirfa,find,locate,speak,rate,review";
 var description = "Find and visit Welsh speaking places";
-var title = "Breathe Your Welsh";
+var title = "BYW | Home";
 
 module.exports = {
     keywords: keywords,
@@ -122,15 +122,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = require("react-router");
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require("prop-types");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _react = require("react");
+var _reactRouter = require("react-router");
 
-var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require("react-redux");
 
 var _propsChildren = require("./core/props-children");
 
@@ -162,8 +164,8 @@ var setCanonical = function setCanonical(url) {
     document.querySelector("link[rel='canonical']").setAttribute("href", "https://www.byw.cymru" + (0, _routes.canonicalPath)(url));
 };
 
-var setTitle = function setTitle(url) {
-    document.title = (0, _routes.titleTag)(url);
+var setTitle = function setTitle(url, language) {
+    document.title = (0, _routes.titleTag)(url, language);
 };
 
 var setKeywords = function setKeywords(url) {
@@ -174,12 +176,12 @@ var setDesc = function setDesc(url) {
     document.querySelector("meta[name='description']").setAttribute("content", (0, _routes.descriptionTag)(url));
 };
 
-var setHeadAttributes = function setHeadAttributes(url) {
+var setHeadAttributes = function setHeadAttributes(url, language) {
     if (!url || !(0, _isBrowser2.default)()) {
         return;
     }
     setCanonical(url);
-    setTitle(url);
+    setTitle(url, language);
     setKeywords(url);
     setDesc(url);
 };
@@ -205,15 +207,17 @@ var App = function (_React$Component) {
     _createClass(App, [{
         key: "render",
         value: function render() {
-            var location = this.props.location;
+            var _props = this.props,
+                language = _props.language,
+                location = _props.location;
 
 
-            setHeadAttributes(location.pathname);
+            setHeadAttributes(location.pathname, language);
 
             return _react2.default.createElement(
                 "div",
                 null,
-                _react2.default.createElement(_nav2.default, null),
+                _react2.default.createElement(_nav2.default, { language: language }),
                 _react2.default.createElement(
                     "div",
                     null,
@@ -227,15 +231,22 @@ var App = function (_React$Component) {
     return App;
 }(_react2.default.Component);
 
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        language: state.settings.language
+    };
+};
+
 App.propTypes = {
+    language: _propTypes2.default.string.isRequired,
     children: _propsChildren2.default,
     history: _propTypes2.default.object.isRequired,
     location: _propTypes2.default.object.isRequired
 };
 
-exports.default = (0, _reactRouter.withRouter)(App);
+exports.default = (0, _reactRouter.withRouter)((0, _reactRedux.connect)(mapStateToProps)(App));
 
-},{"./core/is-browser":9,"./core/props-children":44,"./footer":53,"./nav":54,"./nav/routes":57,"prop-types":134,"react":189,"react-router":182}],5:[function(require,module,exports){
+},{"./core/is-browser":9,"./core/props-children":45,"./footer":56,"./nav":57,"./nav/routes":60,"prop-types":137,"react":192,"react-redux":154,"react-router":185}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1518,6 +1529,25 @@ module.exports = safeParseFloat;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var capitalizeWord = function capitalizeWord(word) {
+    if (!word) {
+        return "";
+    }
+    word = word + "";
+    if (word === "") {
+        return "";
+    }
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+};
+
+exports.default = capitalizeWord;
+
+},{}],44:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 var submissionStates = {
     sending: "sending",
     success: "success",
@@ -1554,7 +1584,7 @@ exports.hasPending = hasPending;
 exports.submissionsFromState = submissionsFromState;
 exports.matchesPreviousSubmission = matchesPreviousSubmission;
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1569,7 +1599,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]);
 
-},{"prop-types":134}],45:[function(require,module,exports){
+},{"prop-types":137}],46:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1680,7 +1710,7 @@ exports.setLocatorCoordinateAction = setLocatorCoordinateAction;
 exports.addSubmissionAction = addSubmissionAction;
 exports.updateSubmissionStatusAction = updateSubmissionStatusAction;
 
-},{}],46:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1780,7 +1810,7 @@ var dataReducer = function dataReducer() {
 
 exports.default = dataReducer;
 
-},{"../../model/location-update-category":37,"../../model/locations-contains-location":38,"../actions":45}],47:[function(require,module,exports){
+},{"../../model/location-update-category":37,"../../model/locations-contains-location":38,"../actions":46}],48:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1845,7 +1875,7 @@ var formReducer = function formReducer() {
 
 exports.default = formReducer;
 
-},{"../../model/form":17,"../../model/form/keys":19,"../../model/geo-hash":33,"../actions":45}],48:[function(require,module,exports){
+},{"../../model/form":17,"../../model/form/keys":19,"../../model/geo-hash":33,"../actions":46}],49:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1886,7 +1916,7 @@ var reducers = (0, _redux.combineReducers)({
 
 exports.default = reducers;
 
-},{"./data-reducer":46,"./form-reducer":47,"./locator-reducer":49,"./settings-reducer":50,"./submission-reducer":51,"redux":190}],49:[function(require,module,exports){
+},{"./data-reducer":47,"./form-reducer":48,"./locator-reducer":50,"./settings-reducer":51,"./submission-reducer":52,"redux":193}],50:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1943,23 +1973,23 @@ var locatorReducer = function locatorReducer() {
 
 exports.default = locatorReducer;
 
-},{"../actions":45}],50:[function(require,module,exports){
+},{"../actions":46}],51:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.languages = undefined;
 
 var _actions = require("../actions");
 
-var languages = {
-    english: "english",
-    cymraeg: "cymraeg"
-};
+var _supportedLanguages = require("../../text/supported-languages");
+
+var _supportedLanguages2 = _interopRequireDefault(_supportedLanguages);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var defaultState = {
-    language: languages.english
+    language: _supportedLanguages2.default.english
 };
 
 var settingsReducer = function settingsReducer() {
@@ -1982,9 +2012,8 @@ var settingsReducer = function settingsReducer() {
 };
 
 exports.default = settingsReducer;
-exports.languages = languages;
 
-},{"../actions":45}],51:[function(require,module,exports){
+},{"../../text/supported-languages":54,"../actions":46}],52:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2036,7 +2065,72 @@ var submissionReducer = function submissionReducer() {
 exports.default = submissionReducer;
 exports.submissionStates = _submission2.submissionStates;
 
-},{"../../model/submission":43,"../actions":45}],52:[function(require,module,exports){
+},{"../../model/submission":44,"../actions":46}],53:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+// This file is created by the build system and should not be manually edited or changes
+// will be lost.
+
+// It contains all the user facing text content translated into all the supported languages.
+// Therefore App components only need to be passed a language and this text data object 
+// via props to be able to render themselves in the user selected language. Components should only use
+// supported keys (which are automatically generated for code completion) and therefore do not
+// need to have knowledge of any part of the text content and any typos or missing keys will
+// be found at build time.
+
+exports.default = {
+    "cymraeg": {
+        "pageTitleKeyHome": "Hafan",
+        "pageTitleKeyMap": "Map",
+        "pageTitleKeyVocabulary": "Geirfa",
+        "pageTitleKeyAbout": "Amdanom",
+        "pageTitleKeySubmit": "Cyflwyno",
+        "pageTitleKeyPrivacy": "Preifatrwydd",
+        "pageTitleTagKeyHome": "BYW | Hafan",
+        "pageTitleTagKeyMap": "BYW | Map",
+        "pageTitleTagKeyVocabulary": "BYW | Geirfa",
+        "pageTitleTagKeyAbout": "BYW | Amdanom",
+        "pageTitleTagKeySubmit": "BYW | Cyflwyno",
+        "pageTitleTagKeyPrivacy": "BYW | Preifatrwydd",
+        "pageTitleTagKey404": "BYW | Heb ei Ddarganfod"
+    },
+    "english": {
+        "pageTitleKeyHome": "Home",
+        "pageTitleKeyMap": "Map",
+        "pageTitleKeyVocabulary": "Vocab",
+        "pageTitleKeyAbout": "About",
+        "pageTitleKeySubmit": "Submit",
+        "pageTitleKeyPrivacy": "Privacy",
+        "pageTitleTagKeyHome": "BYW | Home",
+        "pageTitleTagKeyMap": "BYW | Map",
+        "pageTitleTagKeyVocabulary": "BYW | Vocab",
+        "pageTitleTagKeyAbout": "BYW | About",
+        "pageTitleTagKeySubmit": "BYW | Submit",
+        "pageTitleTagKeyPrivacy": "BYW | Privacy",
+        "pageTitleTagKey404": "BYW | Page Not Found"
+    }
+};
+
+},{}],54:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+// This file is created by the build system and should not be manually edited or changes
+// will be lost.
+
+// It is used to allow code completion for supported languages.
+
+exports.default = {
+    cymraeg: "cymraeg",
+    english: "english"
+};
+
+},{}],55:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2106,7 +2200,7 @@ FooterLink.propTypes = {
 
 exports.default = FooterLink;
 
-},{"prop-types":134,"react":189,"react-router-dom":170}],53:[function(require,module,exports){
+},{"prop-types":137,"react":192,"react-router-dom":173}],56:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2273,7 +2367,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Footer);
 
-},{"../core/hash":8,"../nav/routes":57,"../pages/privacy":85,"../resusable-components/github-icon":106,"./footer-link":52,"prop-types":134,"react":189,"react-redux":151,"react-router-dom":170}],54:[function(require,module,exports){
+},{"../core/hash":8,"../nav/routes":60,"../pages/privacy":88,"../resusable-components/github-icon":109,"./footer-link":55,"prop-types":137,"react":192,"react-redux":154,"react-router-dom":173}],57:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2283,15 +2377,15 @@ exports.route = exports.routes = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = require("react-router");
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require("prop-types");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
+var _reactRouter = require("react-router");
 
 var _hash = require("../core/hash");
 
@@ -2302,6 +2396,10 @@ var _navLink2 = _interopRequireDefault(_navLink);
 var _overlayMenu = require("./overlay-menu");
 
 var _overlayMenu2 = _interopRequireDefault(_overlayMenu);
+
+var _data = require("../core/text/data");
+
+var _data2 = _interopRequireDefault(_data);
 
 var _routes = require("./routes");
 
@@ -2315,15 +2413,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var li = function li(route) {
-    return _react2.default.createElement(
-        _navLink2.default,
-        { key: (0, _hash.strHash)(route.url), to: route.url },
-        route.title
-    );
+var li = function li(translatedText) {
+    return function link(route) {
+        return _react2.default.createElement(
+            _navLink2.default,
+            { key: (0, _hash.strHash)(route.url),
+                to: route.url },
+            translatedText[route.pageTitleTextKey]
+        );
+    };
 };
-
-var links = _routes2.default.map(li);
 
 var buttonBaseClass = "navbar-toggler";
 
@@ -2363,13 +2462,20 @@ var Nav = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
+            var language = this.props.language;
+
+
+            var translatedText = _data2.default[language];
+
+            var links = _routes2.default.map(li(translatedText));
 
             var buttonClass = this.state.showMenu ? buttonBaseClass + " active" : buttonBaseClass;
 
             return _react2.default.createElement(
                 "header",
                 null,
-                _react2.default.createElement(_overlayMenu2.default, { show: this.state.showMenu,
+                _react2.default.createElement(_overlayMenu2.default, { text: translatedText,
+                    show: this.state.showMenu,
                     onCloseRequest: this.makeToggler() }),
                 _react2.default.createElement(
                     "nav",
@@ -2418,6 +2524,7 @@ Nav.contextTypes = {
 };
 
 Nav.propTypes = {
+    language: _propTypes2.default.string.isRequired,
     match: _propTypes2.default.object.isRequired,
     location: _propTypes2.default.object.isRequired,
     history: _propTypes2.default.object.isRequired
@@ -2427,7 +2534,7 @@ exports.routes = _routes2.default;
 exports.route = _routes.route;
 exports.default = (0, _reactRouter.withRouter)(Nav);
 
-},{"../core/hash":8,"./nav-link":55,"./overlay-menu":56,"./routes":57,"prop-types":134,"react":189,"react-router":182}],55:[function(require,module,exports){
+},{"../core/hash":8,"../core/text/data":53,"./nav-link":58,"./overlay-menu":59,"./routes":60,"prop-types":137,"react":192,"react-router":185}],58:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2507,7 +2614,7 @@ NavLink.contextTypes = {
 
 exports.default = NavLink;
 
-},{"../core/props-children":44,"prop-types":134,"react":189,"react-router-dom":170}],56:[function(require,module,exports){
+},{"../core/props-children":45,"prop-types":137,"react":192,"react-router-dom":173}],59:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2556,8 +2663,9 @@ var li = function li(props) {
             { key: route.url, onClick: linkClick },
             _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: route.url, title: route.title },
-                route.title
+                { to: route.url,
+                    title: route.title },
+                props.text[route.pageTitleTextKey]
             )
         );
     });
@@ -2641,6 +2749,7 @@ var OverlayMenu = function (_React$Component) {
 }(_react2.default.Component);
 
 OverlayMenu.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     show: _propTypes2.default.bool,
     onCloseRequest: _propTypes2.default.func,
     onClick: _propTypes2.default.func
@@ -2648,15 +2757,29 @@ OverlayMenu.propTypes = {
 
 exports.default = OverlayMenu;
 
-},{"./index":54,"prop-types":134,"react":189,"react-router-dom":170}],57:[function(require,module,exports){
+},{"./index":57,"prop-types":137,"react":192,"react-router-dom":173}],60:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.route = exports.noneNavRoutes = exports.notFound = exports.descriptionTag = exports.keywordsTag = exports.titleTag = exports.canonicalPath = undefined;
+exports.requiredTextKeysTitleTag = exports.requiredTextKeysTitle = exports.route = exports.noneNavRoutes = exports.notFound = exports.descriptionTag = exports.keywordsTag = exports.titleTag = exports.canonicalPath = undefined;
 
 var _buildSettings = require("../../../build-settings/build-settings");
+
+var _stringCapitalizeFirstLetter = require("../core/model/string-capitalize-first-letter");
+
+var _stringCapitalizeFirstLetter2 = _interopRequireDefault(_stringCapitalizeFirstLetter);
+
+var _data = require("../core/text/data");
+
+var _data2 = _interopRequireDefault(_data);
+
+var _supportedLanguages = require("../core/text/supported-languages");
+
+var _supportedLanguages2 = _interopRequireDefault(_supportedLanguages);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var route = {
     home: "/",
@@ -2666,51 +2789,94 @@ var route = {
     submit: "/submit"
 };
 
+var privacyUrl = "/privacy";
+
+// Include titleTag for default English language page title for `seo-hacks`
+
+function removeSlashPrefix(url) {
+    return url.slice(1);
+}
+
+function nameFrom(url) {
+    var namePart = removeSlashPrefix(url);
+    return namePart === "" ? "Home" : (0, _stringCapitalizeFirstLetter2.default)(namePart);
+}
+
+function pageTitleKey(url) {
+    var name = nameFrom(url);
+    return "pageTitleKey" + name;
+}
+
+function pageTitleTagKey(url) {
+    var name = nameFrom(url);
+    return "pageTitleTagKey" + name;
+}
+
 var routes = [{
     url: route.home,
     title: "Home",
+    pageTitleTextKey: pageTitleKey(route.home),
     titleTag: _buildSettings.title,
+    pageTitleTagTextKey: pageTitleTagKey(route.home),
     descriptionTag: _buildSettings.description,
     keywordsTag: _buildSettings.keywords
 }, {
     url: route.map,
     title: "Map",
+    pageTitleTextKey: pageTitleKey(route.map),
     titleTag: "BYW | Map",
+    pageTitleTagTextKey: pageTitleTagKey(route.map),
     descriptionTag: "Show places on a map where it is likely you can use the Welsh language",
     keywordsTag: "show,places,welsh,cymraeg,map,language,likely,where,can,i,use"
 }, {
     url: route.vocabulary,
     title: "Vocab",
+    pageTitleTextKey: pageTitleKey(route.vocabulary),
     titleTag: "BYW | Vocabulary",
+    pageTitleTagTextKey: pageTitleTagKey(route.vocabulary),
     descriptionTag: "A searchable dictionary of commonly used terms and phrases in English and Welsh",
     keywordsTag: "search,vocabulary,dictionary,welsh,cymraeg,phrase,term"
 }, {
     url: route.about,
     title: "About",
+    pageTitleTextKey: pageTitleKey(route.about),
     titleTag: "BYW | About",
+    pageTitleTagTextKey: pageTitleTagKey(route.about),
     descriptionTag: "A short description of this project and its aims along with some other information",
     keywordsTag: "welsh,cymraeg,language,map,vocabulary,about,open,source"
 }, {
     url: route.submit,
     title: "Submit",
+    pageTitleTextKey: pageTitleKey(route.submit),
     titleTag: "BYW | Submit",
+    pageTitleTagTextKey: pageTitleTagKey(route.submit),
     descriptionTag: "Submit your findings about places that use the Welsh language to help others find them",
     keywordsTag: "submit,review,welsh,cymraeg,cymru,shop,public,places,restaurant,cafe"
 }];
 
 var noneNavRoutes = [{
-    url: "/privacy",
+    url: privacyUrl,
     title: "Privacy",
+    pageTitleTextKey: pageTitleKey(privacyUrl),
     titleTag: "BYW | Privacy",
+    pageTitleTagTextKey: pageTitleTagKey(privacyUrl),
     descriptionTag: "How your privacy is maintained during your visit to this website",
     keywordsTag: "privacy,policy,welsh,cymraeg,website,front,end,client,api"
 }];
 
 var notFound = {
     titleTag: "BYW | Not Found",
+    pageTitleTagTextKey: pageTitleTagKey("/404"),
     descriptionTag: "Oops, the page you are looking for has not been found",
     keywordsTag: "not,found,404,welsh,cymraeg,learn,translate,find"
 };
+
+var requiredTextKeysTitle = [].concat(routes, noneNavRoutes).map(function (route) {
+    return route.pageTitleTextKey;
+});
+var requiredTextKeysTitleTag = [].concat(routes, noneNavRoutes, [notFound]).map(function (route) {
+    return route.pageTitleTagTextKey;
+});
 
 var pathnameIs404 = function pathnameIs404(pathname) {
     return pathname === "/404.html" || pathname === "/404";
@@ -2752,6 +2918,8 @@ var canonicalPath = function canonicalPath(pathname) {
 };
 
 var titleTag = function titleTag(pathname) {
+    var language = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _supportedLanguages2.default.english;
+
 
     var path = findRoute(pathname);
 
@@ -2759,7 +2927,9 @@ var titleTag = function titleTag(pathname) {
         return defaultTitle(pathname, notFound.titleTag);
     }
 
-    return path.titleTag === undefined ? defaultTitle(pathname, _buildSettings.title) : path.titleTag;
+    var translatedText = _data2.default[language];
+
+    return translatedText[path.pageTitleTagTextKey] === undefined ? defaultTitle(pathname, _buildSettings.title) : translatedText[path.pageTitleTagTextKey];
 };
 
 var keywordsTag = function keywordsTag(pathname) {
@@ -2780,8 +2950,10 @@ exports.descriptionTag = descriptionTag;
 exports.notFound = notFound;
 exports.noneNavRoutes = noneNavRoutes;
 exports.route = route;
+exports.requiredTextKeysTitle = requiredTextKeysTitle;
+exports.requiredTextKeysTitleTag = requiredTextKeysTitleTag;
 
-},{"../../../build-settings/build-settings":2}],58:[function(require,module,exports){
+},{"../../../build-settings/build-settings":2,"../core/model/string-capitalize-first-letter":43,"../core/text/data":53,"../core/text/supported-languages":54}],61:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2835,7 +3007,7 @@ PageContainer.propTypes = {
 
 exports.default = PageContainer;
 
-},{"../core/props-children":44,"react":189}],59:[function(require,module,exports){
+},{"../core/props-children":45,"react":192}],62:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3017,7 +3189,7 @@ var About = function (_React$Component) {
 
 exports.default = About;
 
-},{"react":189}],60:[function(require,module,exports){
+},{"react":192}],63:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3143,7 +3315,7 @@ var FeaturesSection = function (_React$Component2) {
 
 exports.default = FeaturesSection;
 
-},{"../../core/hash":8,"prop-types":134,"react":189}],61:[function(require,module,exports){
+},{"../../core/hash":8,"prop-types":137,"react":192}],64:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3252,7 +3424,7 @@ HeroSearchBar.propTypes = {
 
 exports.default = HeroSearchBar;
 
-},{"prop-types":134,"react":189}],62:[function(require,module,exports){
+},{"prop-types":137,"react":192}],65:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3364,7 +3536,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouter.withRouter)(HeroSearchBarController));
 
-},{"../../../core/event-target-value":7,"../../../core/redux/actions":45,"../../../nav":54,"./hero-search-bar":61,"prop-types":134,"react":189,"react-redux":151,"react-router":182}],63:[function(require,module,exports){
+},{"../../../core/event-target-value":7,"../../../core/redux/actions":46,"../../../nav":57,"./hero-search-bar":64,"prop-types":137,"react":192,"react-redux":154,"react-router":185}],66:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3456,7 +3628,7 @@ var HomeHero = function (_React$Component) {
 
 exports.default = HomeHero;
 
-},{"../../core/colors":6,"../../resusable-components/FetchableSectionBackground":105,"./hero-search-bar":62,"react":189}],64:[function(require,module,exports){
+},{"../../core/colors":6,"../../resusable-components/FetchableSectionBackground":108,"./hero-search-bar":65,"react":192}],67:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3530,7 +3702,7 @@ Home.propTypes = {
 
 exports.default = Home;
 
-},{"./features":60,"./hero":63,"./promotion-divider":66,"./services":67,"prop-types":134,"react":189}],65:[function(require,module,exports){
+},{"./features":63,"./hero":66,"./promotion-divider":69,"./services":70,"prop-types":137,"react":192}],68:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3616,7 +3788,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(HomeController);
 
-},{"../../core/model/array-sample":11,"../../core/redux/actions":45,"./home-page":64,"prop-types":134,"react":189,"react-redux":151}],66:[function(require,module,exports){
+},{"../../core/model/array-sample":11,"../../core/redux/actions":46,"./home-page":67,"prop-types":137,"react":192,"react-redux":154}],69:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3701,7 +3873,7 @@ var PromotionDivider = function (_React$Component) {
 
 exports.default = PromotionDivider;
 
-},{"../../core/colors":6,"../../resusable-components/FetchableSectionBackground":105,"../../resusable-components/quote/quotes":108,"react":189}],67:[function(require,module,exports){
+},{"../../core/colors":6,"../../resusable-components/FetchableSectionBackground":108,"../../resusable-components/quote/quotes":111,"react":192}],70:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3805,7 +3977,7 @@ var ServicesSection = function (_React$Component) {
 
 exports.default = ServicesSection;
 
-},{"../../core/hash":8,"../../resusable-components/services-col":109,"react":189}],68:[function(require,module,exports){
+},{"../../core/hash":8,"../../resusable-components/services-col":112,"react":192}],71:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3994,7 +4166,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouter.withRouter)(MapPageController));
 
-},{"../../core/bind-methods":5,"../../core/event-target-value":7,"../../core/model/pagination":40,"../../core/redux/actions":45,"../../nav":54,"./map-page":70,"prop-types":134,"react":189,"react-redux":151,"react-router":182}],69:[function(require,module,exports){
+},{"../../core/bind-methods":5,"../../core/event-target-value":7,"../../core/model/pagination":40,"../../core/redux/actions":46,"../../nav":57,"./map-page":73,"prop-types":137,"react":192,"react-redux":154,"react-router":185}],72:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4120,7 +4292,7 @@ LocationFolderController.propTypes = {
 
 exports.default = LocationFolderController;
 
-},{"../../../core/hash":8,"../../../core/model/form/category":14,"prop-types":134,"react":189}],70:[function(require,module,exports){
+},{"../../../core/hash":8,"../../../core/model/form/category":14,"prop-types":137,"react":192}],73:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4231,7 +4403,7 @@ MapPage.propTypes = {
 
 exports.default = MapPage;
 
-},{"../../../core/bind-methods":5,"../../../core/model/float-value":13,"../map":80,"./legend":71,"./map-search-box":74,"prop-types":134,"react":189}],71:[function(require,module,exports){
+},{"../../../core/bind-methods":5,"../../../core/model/float-value":13,"../map":83,"./legend":74,"./map-search-box":77,"prop-types":137,"react":192}],74:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4323,7 +4495,7 @@ var Legend = function (_React$Component) {
 
 exports.default = Legend;
 
-},{"../../../../core/hash":8,"../../../../core/model/form/category":14,"./legend-item":73,"react":189}],72:[function(require,module,exports){
+},{"../../../../core/hash":8,"../../../../core/model/form/category":14,"./legend-item":76,"react":192}],75:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4393,7 +4565,7 @@ LegendIcon.propTypes = {
 
 exports.default = LegendIcon;
 
-},{"prop-types":134,"react":189}],73:[function(require,module,exports){
+},{"prop-types":137,"react":192}],76:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4461,7 +4633,7 @@ LegendItem.propTypes = {
 
 exports.default = LegendItem;
 
-},{"./legend-icon":72,"prop-types":134,"react":189}],74:[function(require,module,exports){
+},{"./legend-icon":75,"prop-types":137,"react":192}],77:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4583,7 +4755,7 @@ MapSearchBox.propTypes = {
 
 exports.default = MapSearchBox;
 
-},{"../location-folder":69,"../pagination/search-results-paginator":83,"prop-types":134,"react":189}],75:[function(require,module,exports){
+},{"../location-folder":72,"../pagination/search-results-paginator":86,"prop-types":137,"react":192}],78:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4609,7 +4781,7 @@ exports.MAP_ID = MAP_ID;
 exports.SHOW_ZOOM = SHOW_ZOOM;
 exports.NORMAL_ZOOM = NORMAL_ZOOM;
 
-},{}],76:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4635,7 +4807,7 @@ var addEventHandlers = exports.addEventHandlers = function addEventHandlers(map,
     });
 };
 
-},{"../constants":75,"./leaflet-events":78}],77:[function(require,module,exports){
+},{"../constants":78,"./leaflet-events":81}],80:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4754,7 +4926,7 @@ var makeController = function makeController(doc, leaflet, mapId, initialProps) 
 
 exports.default = makeController;
 
-},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../constants":75,"./add-layers":76,"./leaflet-events":78,"./update":79}],78:[function(require,module,exports){
+},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../constants":78,"./add-layers":79,"./leaflet-events":81,"./update":82}],81:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4766,7 +4938,7 @@ exports.default = {
     move: "move"
 };
 
-},{}],79:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4866,7 +5038,7 @@ var makeUpdateMap = exports.makeUpdateMap = function makeUpdateMap(leaflet, map,
     };
 };
 
-},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../../../../core/model/marker-opts":39,"../popup":81}],80:[function(require,module,exports){
+},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../../../../core/model/marker-opts":39,"../popup":84}],83:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4990,7 +5162,7 @@ MapController.propTypes = {
 
 exports.default = (0, _reactRedux.connect)()(MapController);
 
-},{"../../../core/is-browser":9,"./constants":75,"./controller":77,"Leaflet":116,"prop-types":134,"react":189,"react-redux":151}],81:[function(require,module,exports){
+},{"../../../core/is-browser":9,"./constants":78,"./controller":80,"Leaflet":119,"prop-types":137,"react":192,"react-redux":154}],84:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5094,7 +5266,7 @@ var popup = function popup(location, onShowLocation, onReview) {
 
 exports.default = popup;
 
-},{"../../../core/is-browser":9,"../../../core/model/form/category":14}],82:[function(require,module,exports){
+},{"../../../core/is-browser":9,"../../../core/model/form/category":14}],85:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5178,7 +5350,7 @@ PageItem.propTypes = {
 exports.makePageItem = makePageItem;
 exports.default = PageItem;
 
-},{"prop-types":134,"react":189}],83:[function(require,module,exports){
+},{"prop-types":137,"react":192}],86:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5250,7 +5422,7 @@ SearchResultPaginator.propTypes = {
 
 exports.default = SearchResultPaginator;
 
-},{"../../../core/model/pagination":40,"./page-item":82,"prop-types":134,"react":189}],84:[function(require,module,exports){
+},{"../../../core/model/pagination":40,"./page-item":85,"prop-types":137,"react":192}],87:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5330,7 +5502,7 @@ var NoMatch = function (_React$Component) {
 
 exports.default = NoMatch;
 
-},{"../../core/colors":6,"../../resusable-components/FetchableContainer":102,"react":189}],85:[function(require,module,exports){
+},{"../../core/colors":6,"../../resusable-components/FetchableContainer":105,"react":192}],88:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5512,7 +5684,7 @@ var privacyRoute = {
 exports.default = Privacy;
 exports.privacyRoute = privacyRoute;
 
-},{"../../page-content":58,"./thead":86,"./tr":87,"react":189}],86:[function(require,module,exports){
+},{"../../page-content":61,"./thead":89,"./tr":90,"react":192}],89:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5576,7 +5748,7 @@ var THead = function (_React$Component) {
 
 exports.default = THead;
 
-},{"react":189}],87:[function(require,module,exports){
+},{"react":192}],90:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5664,7 +5836,7 @@ Tr.propTypes = {
 
 exports.default = Tr;
 
-},{"prop-types":134,"react":189}],88:[function(require,module,exports){
+},{"prop-types":137,"react":192}],91:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5777,7 +5949,7 @@ CategorySlider.propTypes = {
 
 exports.default = CategorySlider;
 
-},{"../../../../core/event-target-value":7,"../../../../core/model/form":17,"../../../../core/model/form/category":14,"../../../../core/model/safe-parse-float":42,"prop-types":134,"react":189}],89:[function(require,module,exports){
+},{"../../../../core/event-target-value":7,"../../../../core/model/form":17,"../../../../core/model/form/category":14,"../../../../core/model/safe-parse-float":42,"prop-types":137,"react":192}],92:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5839,7 +6011,7 @@ Error.propTypes = {
 
 exports.default = Error;
 
-},{"prop-types":134,"react":189}],90:[function(require,module,exports){
+},{"prop-types":137,"react":192}],93:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6065,7 +6237,7 @@ Form.propTypes = {
 
 exports.default = Form;
 
-},{"../../../core/event-target-value":7,"../../../core/model/form":17,"./category-slider":88,"./error":89,"prop-types":134,"react":189}],91:[function(require,module,exports){
+},{"../../../core/event-target-value":7,"../../../core/model/form":17,"./category-slider":91,"./error":92,"prop-types":137,"react":192}],94:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6184,7 +6356,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(FormController);
 
-},{"../../../core/bind-methods":5,"../../../core/model/form":17,"../../../core/model/submission":43,"../../../core/redux/actions":45,"./form":90,"prop-types":134,"react":189,"react-redux":151}],92:[function(require,module,exports){
+},{"../../../core/bind-methods":5,"../../../core/model/form":17,"../../../core/model/submission":44,"../../../core/redux/actions":46,"./form":93,"prop-types":137,"react":192,"react-redux":154}],95:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6338,7 +6510,7 @@ var HowTo = function (_React$Component2) {
 
 exports.default = HowTo;
 
-},{"./submit-heading":97,"react":189}],93:[function(require,module,exports){
+},{"./submit-heading":100,"react":192}],96:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6451,7 +6623,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Submit);
 
-},{"../../core/model/submission":43,"../../resusable-components/page-header":107,"./form":91,"./how-to":92,"./locator-map":94,"./submissions":95,"prop-types":134,"react":189,"react-redux":151}],94:[function(require,module,exports){
+},{"../../core/model/submission":44,"../../resusable-components/page-header":110,"./form":94,"./how-to":95,"./locator-map":97,"./submissions":98,"prop-types":137,"react":192,"react-redux":154}],97:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6605,7 +6777,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(LocatorMap);
 
-},{"../../../core/is-browser":9,"../../../core/model/geojson-from-marker":35,"../../../core/redux/actions":45,"../../map/map/constants":75,"../../map/map/controller":77,"Leaflet":116,"prop-types":134,"react":189,"react-redux":151}],95:[function(require,module,exports){
+},{"../../../core/is-browser":9,"../../../core/model/geojson-from-marker":35,"../../../core/redux/actions":46,"../../map/map/constants":78,"../../map/map/controller":80,"Leaflet":119,"prop-types":137,"react":192,"react-redux":154}],98:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6704,7 +6876,7 @@ Submissions.propTypes = {
 
 exports.default = Submissions;
 
-},{"./submission":96,"prop-types":134,"react":189}],96:[function(require,module,exports){
+},{"./submission":99,"prop-types":137,"react":192}],99:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6790,7 +6962,7 @@ Submission.propTypes = {
 
 exports.default = Submission;
 
-},{"../../../core/model/form/category":14,"prop-types":134,"react":189}],97:[function(require,module,exports){
+},{"../../../core/model/form/category":14,"prop-types":137,"react":192}],100:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6876,7 +7048,7 @@ SubmitHeading.propTypes = {
 
 exports.default = SubmitHeading;
 
-},{"prop-types":134,"react":189}],98:[function(require,module,exports){
+},{"prop-types":137,"react":192}],101:[function(require,module,exports){
 module.exports=[
     {
         "en": "I am frightened",
@@ -6891,18 +7063,6 @@ module.exports=[
     },
     {
         "en": "I don't feel like going",
-        "cy": "does dim chwant mynd arnaf i",
-        "tags": [
-            "emotion",
-            "sense",
-            "saying",
-            "phrase"
-        ],
-        "notes": "",
-        "id": "4089329684"
-    },
-    {
-        "en": "I don't feel like going",
         "cy": "does dim awydd mynd arnaf i",
         "tags": [
             "emotion",
@@ -6912,6 +7072,18 @@ module.exports=[
         ],
         "notes": "",
         "id": "2785000764"
+    },
+    {
+        "en": "I don't feel like going",
+        "cy": "does dim chwant mynd arnaf i",
+        "tags": [
+            "emotion",
+            "sense",
+            "saying",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "4089329684"
     },
     {
         "en": "NHS",
@@ -6980,6 +7152,16 @@ module.exports=[
         ],
         "notes": "",
         "id": "748127090"
+    },
+    {
+        "en": "abortion",
+        "cy": "aborsiwn",
+        "tags": [
+            "family",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "2358225400"
     },
     {
         "en": "about to",
@@ -7136,21 +7318,21 @@ module.exports=[
     },
     {
         "en": "abstract design",
-        "cy": "dyluniad haniaethol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2835412951"
-    },
-    {
-        "en": "abstract design",
         "cy": "cynllun haniaethol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1837104958"
+    },
+    {
+        "en": "abstract design",
+        "cy": "dyluniad haniaethol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2835412951"
     },
     {
         "en": "abstract expressionism",
@@ -7271,21 +7453,21 @@ module.exports=[
     },
     {
         "en": "accessory",
-        "cy": "ategol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3093902946"
-    },
-    {
-        "en": "accessory",
         "cy": "ategolyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1280868341"
+    },
+    {
+        "en": "accessory",
+        "cy": "ategol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3093902946"
     },
     {
         "en": "accumulate",
@@ -7325,21 +7507,21 @@ module.exports=[
     },
     {
         "en": "accurate",
-        "cy": "cywir",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "613089270"
-    },
-    {
-        "en": "accurate",
         "cy": "manwl gywir",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "23240843"
+    },
+    {
+        "en": "accurate",
+        "cy": "cywir",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "613089270"
     },
     {
         "en": "acetal",
@@ -7550,21 +7732,21 @@ module.exports=[
     },
     {
         "en": "action painting",
-        "cy": "peintio gweithredol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3158749242"
-    },
-    {
-        "en": "action painting",
         "cy": "paentiad gweithredol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "247872664"
+    },
+    {
+        "en": "action painting",
+        "cy": "peintio gweithredol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3158749242"
     },
     {
         "en": "activator",
@@ -7577,21 +7759,21 @@ module.exports=[
     },
     {
         "en": "active",
-        "cy": "bywiog",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "293166263"
-    },
-    {
-        "en": "active",
         "cy": "gweithredol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "23662410"
+    },
+    {
+        "en": "active",
+        "cy": "bywiog",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "293166263"
     },
     {
         "en": "activity",
@@ -7613,21 +7795,21 @@ module.exports=[
     },
     {
         "en": "acute",
-        "cy": "llym",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3011401956"
-    },
-    {
-        "en": "acute",
         "cy": "llem",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "66341112"
+    },
+    {
+        "en": "acute",
+        "cy": "llym",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3011401956"
     },
     {
         "en": "acute angle",
@@ -7886,10 +8068,10 @@ module.exports=[
         "en": "adopted",
         "cy": "mabwysiedig",
         "tags": [
-            "familyplywood"
+            "family"
         ],
-        "notes": "pren tair haen",
-        "id": "1395067621"
+        "notes": "",
+        "id": "2092990454"
     },
     {
         "en": "adornment",
@@ -7947,21 +8129,21 @@ module.exports=[
     },
     {
         "en": "aerial",
-        "cy": "awyrol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3636748154"
-    },
-    {
-        "en": "aerial",
         "cy": "erial",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "990172855"
+    },
+    {
+        "en": "aerial",
+        "cy": "awyrol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3636748154"
     },
     {
         "en": "aerography",
@@ -8110,12 +8292,12 @@ module.exports=[
     },
     {
         "en": "aid",
-        "cy": "cymorth",
+        "cy": "cynorthwyo",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3803616428"
+        "id": "754289038"
     },
     {
         "en": "aid",
@@ -8129,12 +8311,12 @@ module.exports=[
     },
     {
         "en": "aid",
-        "cy": "cynorthwyo",
+        "cy": "cymorth",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "754289038"
+        "id": "3803616428"
     },
     {
         "en": "air brush",
@@ -8329,6 +8511,15 @@ module.exports=[
         "id": "826511828"
     },
     {
+        "en": "all on my own",
+        "cy": "ar fy mhen fy hunan bach",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "254037990"
+    },
+    {
         "en": "all-over pattern",
         "cy": "patrwm trosodd",
         "tags": [
@@ -8510,21 +8701,21 @@ module.exports=[
     },
     {
         "en": "amber",
-        "cy": "melyngoch",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2858132287"
-    },
-    {
-        "en": "amber",
         "cy": "ambr",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2788329715"
+    },
+    {
+        "en": "amber",
+        "cy": "melyngoch",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2858132287"
     },
     {
         "en": "ambulance",
@@ -8640,21 +8831,21 @@ module.exports=[
     },
     {
         "en": "anatomy",
-        "cy": "anatomeg",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3856298157"
-    },
-    {
-        "en": "anatomy",
         "cy": "anatomi",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2226279078"
+    },
+    {
+        "en": "anatomy",
+        "cy": "anatomeg",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3856298157"
     },
     {
         "en": "anchor",
@@ -8784,21 +8975,21 @@ module.exports=[
     },
     {
         "en": "animation",
-        "cy": "animeiddiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3424348395"
-    },
-    {
-        "en": "animation",
         "cy": "animeiddio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1640995585"
+    },
+    {
+        "en": "animation",
+        "cy": "animeiddiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3424348395"
     },
     {
         "en": "animator",
@@ -8820,16 +9011,6 @@ module.exports=[
     },
     {
         "en": "ankle",
-        "cy": "migwrn",
-        "tags": [
-            "body",
-            "foot"
-        ],
-        "notes": "(m)",
-        "id": "3169134781"
-    },
-    {
-        "en": "ankle",
         "cy": "ffêr",
         "tags": [
             "body",
@@ -8837,6 +9018,16 @@ module.exports=[
         ],
         "notes": "(f)",
         "id": "2978949402"
+    },
+    {
+        "en": "ankle",
+        "cy": "migwrn",
+        "tags": [
+            "body",
+            "foot"
+        ],
+        "notes": "(m)",
+        "id": "3169134781"
     },
     {
         "en": "ankles",
@@ -9088,21 +9279,21 @@ module.exports=[
     },
     {
         "en": "approximate",
-        "cy": "bras",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3598953636"
-    },
-    {
-        "en": "approximate",
         "cy": "brasamcanu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "126367889"
+    },
+    {
+        "en": "approximate",
+        "cy": "bras",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3598953636"
     },
     {
         "en": "approximately",
@@ -9232,21 +9423,21 @@ module.exports=[
     },
     {
         "en": "arch",
-        "cy": "pontio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2529385005"
-    },
-    {
-        "en": "arch",
         "cy": "bwa",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2072061722"
+    },
+    {
+        "en": "arch",
+        "cy": "pontio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2529385005"
     },
     {
         "en": "archaic",
@@ -9539,21 +9730,21 @@ module.exports=[
     },
     {
         "en": "articulate",
-        "cy": "huawdl",
-        "tags": [
-            "adjective"
-        ],
-        "notes": "",
-        "id": "2620806426"
-    },
-    {
-        "en": "articulate",
         "cy": "croyw",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "586293698"
+    },
+    {
+        "en": "articulate",
+        "cy": "huawdl",
+        "tags": [
+            "adjective"
+        ],
+        "notes": "",
+        "id": "2620806426"
     },
     {
         "en": "artificial",
@@ -9629,21 +9820,21 @@ module.exports=[
     },
     {
         "en": "artistic",
-        "cy": "celfydd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3275128000"
-    },
-    {
-        "en": "artistic",
         "cy": "artistig",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "450483474"
+    },
+    {
+        "en": "artistic",
+        "cy": "celfydd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3275128000"
     },
     {
         "en": "artistic intention",
@@ -9987,6 +10178,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "646526946"
+    },
+    {
+        "en": "aunt",
+        "cy": "modryb",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) -edd",
+        "id": "698995906"
     },
     {
         "en": "aunty",
@@ -10333,12 +10533,12 @@ module.exports=[
     },
     {
         "en": "balance",
-        "cy": "cydbwysedd",
+        "cy": "cadw cydbwysedd",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "2713983028"
+        "id": "382925445"
     },
     {
         "en": "balance",
@@ -10351,12 +10551,12 @@ module.exports=[
     },
     {
         "en": "balance",
-        "cy": "cadw cydbwysedd",
+        "cy": "cydbwysedd",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "382925445"
+        "id": "2713983028"
     },
     {
         "en": "balanced shape",
@@ -10379,21 +10579,21 @@ module.exports=[
     },
     {
         "en": "ball",
-        "cy": "pêl",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3941876579"
-    },
-    {
-        "en": "ball",
         "cy": "pellen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1419260139"
+    },
+    {
+        "en": "ball",
+        "cy": "pêl",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3941876579"
     },
     {
         "en": "ball clay",
@@ -10668,21 +10868,21 @@ module.exports=[
     },
     {
         "en": "base",
-        "cy": "sail",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3168706804"
-    },
-    {
-        "en": "base",
         "cy": "sylfaen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "413952777"
+    },
+    {
+        "en": "base",
+        "cy": "sail",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3168706804"
     },
     {
         "en": "base coat",
@@ -10886,16 +11086,6 @@ module.exports=[
         "en": "beard",
         "cy": "barf",
         "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "4226244055"
-    },
-    {
-        "en": "beard",
-        "cy": "barf",
-        "tags": [
             "celf"
         ],
         "notes": "",
@@ -10912,6 +11102,16 @@ module.exports=[
         "id": "3517150318"
     },
     {
+        "en": "beard",
+        "cy": "barf",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) -au",
+        "id": "4226244055"
+    },
+    {
         "en": "beautiful",
         "cy": "hardd",
         "tags": [
@@ -10920,6 +11120,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "19538645"
+    },
+    {
+        "en": "beautiful",
+        "cy": "glân",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "605830834"
     },
     {
         "en": "beautiful",
@@ -10932,13 +11141,14 @@ module.exports=[
         "id": "1420976060"
     },
     {
-        "en": "beautiful",
-        "cy": "glân",
+        "en": "beauty",
+        "cy": "harddwch",
         "tags": [
-            "appearance"
+            "appearance",
+            "state"
         ],
-        "notes": "",
-        "id": "605830834"
+        "notes": "(m)",
+        "id": "54821258"
     },
     {
         "en": "beauty",
@@ -10948,16 +11158,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "1181813583"
-    },
-    {
-        "en": "beauty",
-        "cy": "harddwch",
-        "tags": [
-            "appearance",
-            "state"
-        ],
-        "notes": "(m)",
-        "id": "54821258"
     },
     {
         "en": "beauty",
@@ -11143,21 +11343,21 @@ module.exports=[
     },
     {
         "en": "bevel",
-        "cy": "befelu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3091892115"
-    },
-    {
-        "en": "bevel",
         "cy": "befel",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1034633606"
+    },
+    {
+        "en": "bevel",
+        "cy": "befelu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3091892115"
     },
     {
         "en": "bevelled edge",
@@ -11244,21 +11444,21 @@ module.exports=[
     },
     {
         "en": "binding",
-        "cy": "rhwymiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "528578978"
-    },
-    {
-        "en": "binding",
         "cy": "rhwymyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "339574169"
+    },
+    {
+        "en": "binding",
+        "cy": "rhwymiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "528578978"
     },
     {
         "en": "binding margin",
@@ -11524,12 +11724,13 @@ module.exports=[
     },
     {
         "en": "blister",
-        "cy": "pothell",
+        "cy": "chwysigen",
         "tags": [
-            "celf"
+            "health",
+            "medical"
         ],
-        "notes": "",
-        "id": "3955996999"
+        "notes": "(f)",
+        "id": "3376350498"
     },
     {
         "en": "blister",
@@ -11543,13 +11744,12 @@ module.exports=[
     },
     {
         "en": "blister",
-        "cy": "chwysigen",
+        "cy": "pothell",
         "tags": [
-            "health",
-            "medical"
+            "celf"
         ],
-        "notes": "(f)",
-        "id": "3376350498"
+        "notes": "",
+        "id": "3955996999"
     },
     {
         "en": "blistered",
@@ -11782,21 +11982,21 @@ module.exports=[
     },
     {
         "en": "blur",
-        "cy": "pylu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3210013935"
-    },
-    {
-        "en": "blur",
         "cy": "brycheuyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "398116570"
+    },
+    {
+        "en": "blur",
+        "cy": "pylu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3210013935"
     },
     {
         "en": "board",
@@ -12226,15 +12426,6 @@ module.exports=[
     },
     {
         "en": "bottom",
-        "cy": "gwaelod",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1290964042"
-    },
-    {
-        "en": "bottom",
         "cy": "tin",
         "tags": [
             "body"
@@ -12243,13 +12434,13 @@ module.exports=[
         "id": "444081969"
     },
     {
-        "en": "boundary",
-        "cy": "ffin",
+        "en": "bottom",
+        "cy": "gwaelod",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "4143571017"
+        "id": "1290964042"
     },
     {
         "en": "boundary",
@@ -12259,6 +12450,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "1360492636"
+    },
+    {
+        "en": "boundary",
+        "cy": "ffin",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4143571017"
     },
     {
         "en": "bow knot pattern",
@@ -12518,21 +12718,21 @@ module.exports=[
     },
     {
         "en": "brief",
-        "cy": "byr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2365239045"
-    },
-    {
-        "en": "brief",
         "cy": "cryno",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2123995173"
+    },
+    {
+        "en": "brief",
+        "cy": "byr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2365239045"
     },
     {
         "en": "brief outline",
@@ -12770,21 +12970,21 @@ module.exports=[
     },
     {
         "en": "brother",
-        "cy": "brawd",
-        "tags": [
-            "family"
-        ],
-        "notes": "(m)",
-        "id": "3168520534"
-    },
-    {
-        "en": "brother",
         "cy": "brodyr",
         "tags": [
             "family"
         ],
         "notes": "",
         "id": "1568991880"
+    },
+    {
+        "en": "brother",
+        "cy": "brawd",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "3168520534"
     },
     {
         "en": "brother in law",
@@ -13038,21 +13238,21 @@ module.exports=[
     },
     {
         "en": "burnish",
-        "cy": "bwrneisio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4062269215"
-    },
-    {
-        "en": "burnish",
         "cy": "bwrnais",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "325464701"
+    },
+    {
+        "en": "burnish",
+        "cy": "bwrneisio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4062269215"
     },
     {
         "en": "burnisher",
@@ -13083,21 +13283,21 @@ module.exports=[
     },
     {
         "en": "burr",
-        "cy": "ymyl arw",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2339930820"
-    },
-    {
-        "en": "burr",
         "cy": "bwr",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "933338982"
+    },
+    {
+        "en": "burr",
+        "cy": "ymyl arw",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2339930820"
     },
     {
         "en": "bust",
@@ -13309,16 +13509,6 @@ module.exports=[
     },
     {
         "en": "calf",
-        "cy": "croth",
-        "tags": [
-            "body",
-            "leg"
-        ],
-        "notes": "(f) -au",
-        "id": "3885739740"
-    },
-    {
-        "en": "calf",
         "cy": "bola'r goes",
         "tags": [
             "body",
@@ -13326,6 +13516,16 @@ module.exports=[
         ],
         "notes": "(m) (SW)",
         "id": "2624827938"
+    },
+    {
+        "en": "calf",
+        "cy": "croth",
+        "tags": [
+            "body",
+            "leg"
+        ],
+        "notes": "(f) -au",
+        "id": "3885739740"
     },
     {
         "en": "calico",
@@ -13683,20 +13883,20 @@ module.exports=[
         "en": "care",
         "cy": "gofal",
         "tags": [
-            "medical",
-            "hospital"
+            "celf"
         ],
-        "notes": "(m)",
-        "id": "3775772339"
+        "notes": "",
+        "id": "2541752416"
     },
     {
         "en": "care",
         "cy": "gofal",
         "tags": [
-            "celf"
+            "medical",
+            "hospital"
         ],
-        "notes": "",
-        "id": "2541752416"
+        "notes": "(m)",
+        "id": "3775772339"
     },
     {
         "en": "careful",
@@ -13917,21 +14117,21 @@ module.exports=[
     },
     {
         "en": "casting",
-        "cy": "castio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4128241648"
-    },
-    {
-        "en": "casting",
         "cy": "castin",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1897369745"
+    },
+    {
+        "en": "casting",
+        "cy": "castio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4128241648"
     },
     {
         "en": "casting plaster",
@@ -14250,21 +14450,21 @@ module.exports=[
     },
     {
         "en": "chalk",
-        "cy": "sialc",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4047678287"
-    },
-    {
-        "en": "chalk",
         "cy": "sialcio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1188934889"
+    },
+    {
+        "en": "chalk",
+        "cy": "sialc",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4047678287"
     },
     {
         "en": "chalk drawing",
@@ -14430,16 +14630,6 @@ module.exports=[
     },
     {
         "en": "cheek",
-        "cy": "grudd",
-        "tags": [
-            "head",
-            "body"
-        ],
-        "notes": "(f) -iau",
-        "id": "3302474489"
-    },
-    {
-        "en": "cheek",
         "cy": "boch",
         "tags": [
             "head",
@@ -14447,6 +14637,16 @@ module.exports=[
         ],
         "notes": "",
         "id": "804462856"
+    },
+    {
+        "en": "cheek",
+        "cy": "grudd",
+        "tags": [
+            "head",
+            "body"
+        ],
+        "notes": "(f) -iau",
+        "id": "3302474489"
     },
     {
         "en": "chef-d'oeuvre",
@@ -14586,21 +14786,21 @@ module.exports=[
     },
     {
         "en": "chisel",
-        "cy": "cŷn",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "961454324"
-    },
-    {
-        "en": "chisel",
         "cy": "naddu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "843461748"
+    },
+    {
+        "en": "chisel",
+        "cy": "cŷn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "961454324"
     },
     {
         "en": "chisel blade",
@@ -14847,21 +15047,21 @@ module.exports=[
     },
     {
         "en": "cleaner",
-        "cy": "glanhawr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1825669964"
-    },
-    {
-        "en": "cleaner",
         "cy": "defnydd glanhau",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "945392844"
+    },
+    {
+        "en": "cleaner",
+        "cy": "glanhawr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1825669964"
     },
     {
         "en": "cleaning fluid",
@@ -15180,21 +15380,21 @@ module.exports=[
     },
     {
         "en": "coil",
-        "cy": "torch",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3856926205"
-    },
-    {
-        "en": "coil",
         "cy": "coil",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "447832214"
+    },
+    {
+        "en": "coil",
+        "cy": "torch",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3856926205"
     },
     {
         "en": "coiling",
@@ -15343,21 +15543,21 @@ module.exports=[
     },
     {
         "en": "colour",
-        "cy": "lliw",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2975093792"
-    },
-    {
-        "en": "colour",
         "cy": "lliwio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "812663366"
+    },
+    {
+        "en": "colour",
+        "cy": "lliw",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2975093792"
     },
     {
         "en": "colour additive",
@@ -16210,21 +16410,21 @@ module.exports=[
     },
     {
         "en": "constructivist",
-        "cy": "adeileddwr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2645661143"
-    },
-    {
-        "en": "constructivist",
         "cy": "adeileddol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1862740945"
+    },
+    {
+        "en": "constructivist",
+        "cy": "adeileddwr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2645661143"
     },
     {
         "en": "contain",
@@ -16318,6 +16518,15 @@ module.exports=[
     },
     {
         "en": "contour",
+        "cy": "amlinell",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1916357130"
+    },
+    {
+        "en": "contour",
         "cy": "cyfuchlinedd",
         "tags": [
             "celf"
@@ -16326,13 +16535,13 @@ module.exports=[
         "id": "2168061348"
     },
     {
-        "en": "contour",
-        "cy": "amlinell",
+        "en": "contraception",
+        "cy": "atal cenhedlu",
         "tags": [
-            "celf"
+            "medical"
         ],
-        "notes": "",
-        "id": "1916357130"
+        "notes": "plywood",
+        "id": "4136752488"
     },
     {
         "en": "contraction",
@@ -16597,21 +16806,21 @@ module.exports=[
     },
     {
         "en": "cork",
-        "cy": "corc",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3238252062"
-    },
-    {
-        "en": "cork",
         "cy": "corcyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1867988393"
+    },
+    {
+        "en": "cork",
+        "cy": "corc",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3238252062"
     },
     {
         "en": "cork block",
@@ -17728,21 +17937,21 @@ module.exports=[
     },
     {
         "en": "cut",
-        "cy": "torri",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2419500678"
-    },
-    {
-        "en": "cut",
         "cy": "torlun",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2409138154"
+    },
+    {
+        "en": "cut",
+        "cy": "torri",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2419500678"
     },
     {
         "en": "cut out",
@@ -17889,6 +18098,15 @@ module.exports=[
         "id": "2917009712"
     },
     {
+        "en": "daddy",
+        "cy": "tada",
+        "tags": [
+            "family"
+        ],
+        "notes": "(NW)",
+        "id": "2201231992"
+    },
+    {
         "en": "dado",
         "cy": "dado",
         "tags": [
@@ -18033,6 +18251,24 @@ module.exports=[
         ],
         "notes": "",
         "id": "3374191460"
+    },
+    {
+        "en": "daughter",
+        "cy": "merch",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) -ed",
+        "id": "1259055594"
+    },
+    {
+        "en": "daughter in law",
+        "cy": "merch yng nghfraith",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "3988715821"
     },
     {
         "en": "de-airing",
@@ -18370,21 +18606,21 @@ module.exports=[
     },
     {
         "en": "dense",
-        "cy": "dwys",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2838817238"
-    },
-    {
-        "en": "dense",
         "cy": "trwchus",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2537784627"
+    },
+    {
+        "en": "dense",
+        "cy": "dwys",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2838817238"
     },
     {
         "en": "density",
@@ -18497,21 +18733,21 @@ module.exports=[
     },
     {
         "en": "design",
-        "cy": "cynllun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3749409099"
-    },
-    {
-        "en": "design",
         "cy": "dylunio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1550041160"
+    },
+    {
+        "en": "design",
+        "cy": "cynllun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3749409099"
     },
     {
         "en": "design of a batik",
@@ -18551,16 +18787,6 @@ module.exports=[
     },
     {
         "en": "desire",
-        "cy": "chwant",
-        "tags": [
-            "verb",
-            "sense"
-        ],
-        "notes": "(m) -au (SW)",
-        "id": "3071198944"
-    },
-    {
-        "en": "desire",
         "cy": "awydd",
         "tags": [
             "emotion",
@@ -18568,6 +18794,16 @@ module.exports=[
         ],
         "notes": "(m) -au",
         "id": "644980757"
+    },
+    {
+        "en": "desire",
+        "cy": "chwant",
+        "tags": [
+            "verb",
+            "sense"
+        ],
+        "notes": "(m) -au (SW)",
+        "id": "3071198944"
     },
     {
         "en": "detach",
@@ -18607,21 +18843,21 @@ module.exports=[
     },
     {
         "en": "detail",
-        "cy": "manylu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1175711621"
-    },
-    {
-        "en": "detail",
         "cy": "manylyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "429033895"
+    },
+    {
+        "en": "detail",
+        "cy": "manylu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1175711621"
     },
     {
         "en": "detail drawing",
@@ -18751,16 +18987,6 @@ module.exports=[
     },
     {
         "en": "diabetes",
-        "cy": "clefyd siwgwr",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "2715296086"
-    },
-    {
-        "en": "diabetes",
         "cy": "clefyd melys",
         "tags": [
             "health",
@@ -18770,13 +18996,14 @@ module.exports=[
         "id": "986006359"
     },
     {
-        "en": "diagonal",
-        "cy": "croeslin",
+        "en": "diabetes",
+        "cy": "clefyd siwgwr",
         "tags": [
-            "celf"
+            "health",
+            "medical"
         ],
         "notes": "",
-        "id": "1969537138"
+        "id": "2715296086"
     },
     {
         "en": "diagonal",
@@ -18786,6 +19013,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "179123089"
+    },
+    {
+        "en": "diagonal",
+        "cy": "croeslin",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1969537138"
     },
     {
         "en": "diagonal stroke",
@@ -19316,21 +19552,21 @@ module.exports=[
     },
     {
         "en": "distort",
-        "cy": "aflunio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2851306051"
-    },
-    {
-        "en": "distort",
         "cy": "ystumio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "142261493"
+    },
+    {
+        "en": "distort",
+        "cy": "aflunio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2851306051"
     },
     {
         "en": "distortion",
@@ -19733,21 +19969,21 @@ module.exports=[
     },
     {
         "en": "drawing",
-        "cy": "llun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2245758605"
-    },
-    {
-        "en": "drawing",
         "cy": "lluniad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1660090881"
+    },
+    {
+        "en": "drawing",
+        "cy": "llun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2245758605"
     },
     {
         "en": "drawing ink",
@@ -19850,21 +20086,21 @@ module.exports=[
     },
     {
         "en": "dress",
-        "cy": "gwisgo",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3342639943"
-    },
-    {
-        "en": "dress",
         "cy": "gwisg",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2726538888"
+    },
+    {
+        "en": "dress",
+        "cy": "gwisgo",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3342639943"
     },
     {
         "en": "dress rehearsal",
@@ -20150,21 +20386,21 @@ module.exports=[
     },
     {
         "en": "duplicate",
-        "cy": "dyblygeb",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2651217867"
-    },
-    {
-        "en": "duplicate",
         "cy": "dyblygu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "740434489"
+    },
+    {
+        "en": "duplicate",
+        "cy": "dyblygeb",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2651217867"
     },
     {
         "en": "durability",
@@ -20204,15 +20440,6 @@ module.exports=[
     },
     {
         "en": "dwarf",
-        "cy": "corrach",
-        "tags": [
-            "appearance"
-        ],
-        "notes": "(m)",
-        "id": "1951605512"
-    },
-    {
-        "en": "dwarf",
         "cy": "corachod",
         "tags": [
             "appearance"
@@ -20221,13 +20448,13 @@ module.exports=[
         "id": "203770173"
     },
     {
-        "en": "dye",
-        "cy": "llifo",
+        "en": "dwarf",
+        "cy": "corrach",
         "tags": [
-            "celf"
+            "appearance"
         ],
-        "notes": "",
-        "id": "3539345326"
+        "notes": "(m)",
+        "id": "1951605512"
     },
     {
         "en": "dye",
@@ -20237,6 +20464,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "1749215446"
+    },
+    {
+        "en": "dye",
+        "cy": "llifo",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3539345326"
     },
     {
         "en": "dye fix",
@@ -20637,21 +20873,21 @@ module.exports=[
     },
     {
         "en": "elaborate",
-        "cy": "coethi",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1859833101"
-    },
-    {
-        "en": "elaborate",
         "cy": "manwl",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1235825896"
+    },
+    {
+        "en": "elaborate",
+        "cy": "coethi",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1859833101"
     },
     {
         "en": "elaborate",
@@ -20691,21 +20927,21 @@ module.exports=[
     },
     {
         "en": "elbow",
-        "cy": "elin",
-        "tags": [
-            "body"
-        ],
-        "notes": "(f) -au",
-        "id": "2490744201"
-    },
-    {
-        "en": "elbow",
         "cy": "penelin",
         "tags": [
             "body"
         ],
         "notes": "(f/m)",
         "id": "237088713"
+    },
+    {
+        "en": "elbow",
+        "cy": "elin",
+        "tags": [
+            "body"
+        ],
+        "notes": "(f) -au",
+        "id": "2490744201"
     },
     {
         "en": "elbow joint",
@@ -20727,21 +20963,21 @@ module.exports=[
     },
     {
         "en": "electric",
-        "cy": "trydanol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4105664898"
-    },
-    {
-        "en": "electric",
         "cy": "trydan",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1381244641"
+    },
+    {
+        "en": "electric",
+        "cy": "trydanol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4105664898"
     },
     {
         "en": "electric arc furnace",
@@ -21107,19 +21343,19 @@ module.exports=[
         "en": "emphasis",
         "cy": "pwyslais",
         "tags": [
-            "celf"
+            ""
         ],
-        "notes": "",
-        "id": "1910409268"
+        "notes": "(m)",
+        "id": "687016276"
     },
     {
         "en": "emphasis",
         "cy": "pwyslais",
         "tags": [
-            ""
+            "celf"
         ],
-        "notes": "(m)",
-        "id": "687016276"
+        "notes": "",
+        "id": "1910409268"
     },
     {
         "en": "emphasis",
@@ -21468,15 +21704,6 @@ module.exports=[
     },
     {
         "en": "equal",
-        "cy": "hafal",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2540034008"
-    },
-    {
-        "en": "equal",
         "cy": "cyfartal",
         "tags": [
             "celf"
@@ -21485,13 +21712,13 @@ module.exports=[
         "id": "1515386412"
     },
     {
-        "en": "equality",
-        "cy": "cydraddoldeb",
+        "en": "equal",
+        "cy": "hafal",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "4008106419"
+        "id": "2540034008"
     },
     {
         "en": "equality",
@@ -21501,6 +21728,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "1973646617"
+    },
+    {
+        "en": "equality",
+        "cy": "cydraddoldeb",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4008106419"
     },
     {
         "en": "equidistant",
@@ -21726,6 +21962,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "3329370926"
+    },
+    {
+        "en": "exactly like",
+        "cy": "yr un ffunud â",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "4235907681"
     },
     {
         "en": "exactness",
@@ -21999,21 +22244,21 @@ module.exports=[
     },
     {
         "en": "expressionist",
-        "cy": "mynegiadwr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2455898619"
-    },
-    {
-        "en": "expressionist",
         "cy": "mynegiadol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2240118973"
+    },
+    {
+        "en": "expressionist",
+        "cy": "mynegiadwr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2455898619"
     },
     {
         "en": "expressive",
@@ -22044,21 +22289,21 @@ module.exports=[
     },
     {
         "en": "extension",
-        "cy": "estyniad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4140505238"
-    },
-    {
-        "en": "extension",
         "cy": "ymestyniad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "850381730"
+    },
+    {
+        "en": "extension",
+        "cy": "estyniad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4140505238"
     },
     {
         "en": "extent",
@@ -22137,20 +22382,20 @@ module.exports=[
         "en": "eyebrow",
         "cy": "ael",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3187330831"
-    },
-    {
-        "en": "eyebrow",
-        "cy": "ael",
-        "tags": [
             "head",
             "body"
         ],
         "notes": "(f) -iau",
         "id": "1864915840"
+    },
+    {
+        "en": "eyebrow",
+        "cy": "ael",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3187330831"
     },
     {
         "en": "eyelet",
@@ -22309,13 +22554,22 @@ module.exports=[
     },
     {
         "en": "face",
+        "cy": "wynebu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1209361093"
+    },
+    {
+        "en": "face",
         "cy": "wyneb",
         "tags": [
             "head",
             "body"
         ],
-        "notes": "(m) -au",
-        "id": "3984129021"
+        "notes": "",
+        "id": "1385153992"
     },
     {
         "en": "face",
@@ -22333,17 +22587,8 @@ module.exports=[
             "head",
             "body"
         ],
-        "notes": "",
-        "id": "1385153992"
-    },
-    {
-        "en": "face",
-        "cy": "wynebu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1209361093"
+        "notes": "(m) -au",
+        "id": "3984129021"
     },
     {
         "en": "face to face",
@@ -22473,6 +22718,16 @@ module.exports=[
     },
     {
         "en": "false teeth",
+        "cy": "danedd dodi",
+        "tags": [
+            "head",
+            "dental"
+        ],
+        "notes": "(SW)",
+        "id": "1513609520"
+    },
+    {
+        "en": "false teeth",
         "cy": "dannedd gorsod",
         "tags": [
             "head",
@@ -22482,14 +22737,31 @@ module.exports=[
         "id": "3640342503"
     },
     {
-        "en": "false teeth",
-        "cy": "danedd dodi",
+        "en": "families",
+        "cy": "teuloedd",
         "tags": [
-            "head",
-            "dental"
+            "family"
         ],
-        "notes": "(SW)",
-        "id": "1513609520"
+        "notes": "(m) plural",
+        "id": "358681060"
+    },
+    {
+        "en": "family",
+        "cy": "teulu",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "1493518731"
+    },
+    {
+        "en": "family",
+        "cy": "tylwyth",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) (SW) -au",
+        "id": "2085184921"
     },
     {
         "en": "fantasia",
@@ -22538,21 +22810,21 @@ module.exports=[
     },
     {
         "en": "fast",
-        "cy": "cloi",
-        "tags": [
-            ""
-        ],
-        "notes": "(SW)",
-        "id": "4218457430"
-    },
-    {
-        "en": "fast",
         "cy": "cyflym",
         "tags": [
             ""
         ],
         "notes": "",
         "id": "3289871518"
+    },
+    {
+        "en": "fast",
+        "cy": "cloi",
+        "tags": [
+            ""
+        ],
+        "notes": "(SW)",
+        "id": "4218457430"
     },
     {
         "en": "fast colour",
@@ -22628,6 +22900,15 @@ module.exports=[
         "id": "1453906951"
     },
     {
+        "en": "father",
+        "cy": "tad",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) -au",
+        "id": "2599210564"
+    },
+    {
         "en": "fear",
         "cy": "ofn",
         "tags": [
@@ -22692,16 +22973,6 @@ module.exports=[
     },
     {
         "en": "feeble",
-        "cy": "di-asgwrn-cefn",
-        "tags": [
-            "saying",
-            "body"
-        ],
-        "notes": "",
-        "id": "1298651229"
-    },
-    {
-        "en": "feeble",
         "cy": "llesg",
         "tags": [
             "health",
@@ -22711,13 +22982,14 @@ module.exports=[
         "id": "1153141245"
     },
     {
-        "en": "feel",
-        "cy": "naws",
+        "en": "feeble",
+        "cy": "di-asgwrn-cefn",
         "tags": [
-            "celf"
+            "saying",
+            "body"
         ],
         "notes": "",
-        "id": "3025971479"
+        "id": "1298651229"
     },
     {
         "en": "feel",
@@ -22736,6 +23008,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "193506464"
+    },
+    {
+        "en": "feel",
+        "cy": "naws",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3025971479"
     },
     {
         "en": "feeling",
@@ -22939,21 +23220,21 @@ module.exports=[
     },
     {
         "en": "figurative painting",
-        "cy": "paentiad ffigurol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4014258620"
-    },
-    {
-        "en": "figurative painting",
         "cy": "peintio ffigurol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1901953438"
+    },
+    {
+        "en": "figurative painting",
+        "cy": "paentiad ffigurol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4014258620"
     },
     {
         "en": "figure",
@@ -22993,21 +23274,21 @@ module.exports=[
     },
     {
         "en": "file",
-        "cy": "ffeilio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "647477622"
-    },
-    {
-        "en": "file",
         "cy": "ffeil",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "620079952"
+    },
+    {
+        "en": "file",
+        "cy": "ffeilio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "647477622"
     },
     {
         "en": "filigree",
@@ -23166,21 +23447,21 @@ module.exports=[
     },
     {
         "en": "finger painting",
-        "cy": "peintio bys",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2385417389"
-    },
-    {
-        "en": "finger painting",
         "cy": "paentiad bys",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1939980495"
+    },
+    {
+        "en": "finger painting",
+        "cy": "peintio bys",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2385417389"
     },
     {
         "en": "finger puppet",
@@ -23545,21 +23826,21 @@ module.exports=[
     },
     {
         "en": "flat",
-        "cy": "fflat",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4043678992"
-    },
-    {
-        "en": "flat",
         "cy": "gwastad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3951671642"
+    },
+    {
+        "en": "flat",
+        "cy": "fflat",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4043678992"
     },
     {
         "en": "flaw",
@@ -23925,15 +24206,6 @@ module.exports=[
     },
     {
         "en": "focus",
-        "cy": "canolbwyntio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4215877285"
-    },
-    {
-        "en": "focus",
         "cy": "ffocws",
         "tags": [
             "celf"
@@ -23960,6 +24232,15 @@ module.exports=[
         "id": "2555892169"
     },
     {
+        "en": "focus",
+        "cy": "canolbwyntio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4215877285"
+    },
+    {
         "en": "foil",
         "cy": "ffoil",
         "tags": [
@@ -23970,21 +24251,21 @@ module.exports=[
     },
     {
         "en": "fold",
-        "cy": "plyg",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2654700981"
-    },
-    {
-        "en": "fold",
         "cy": "plygu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1323749344"
+    },
+    {
+        "en": "fold",
+        "cy": "plyg",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2654700981"
     },
     {
         "en": "fold line",
@@ -24205,21 +24486,21 @@ module.exports=[
     },
     {
         "en": "form",
-        "cy": "ffurfio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2411119847"
-    },
-    {
-        "en": "form",
         "cy": "ffurf",
         "tags": [
             "appearance"
         ],
         "notes": "(f) -iau",
         "id": "437150788"
+    },
+    {
+        "en": "form",
+        "cy": "llun",
+        "tags": [
+            "state"
+        ],
+        "notes": "(m) -iau",
+        "id": "1376359644"
     },
     {
         "en": "form",
@@ -24232,12 +24513,12 @@ module.exports=[
     },
     {
         "en": "form",
-        "cy": "llun",
+        "cy": "ffurfio",
         "tags": [
-            "state"
+            "celf"
         ],
-        "notes": "(m) -iau",
-        "id": "1376359644"
+        "notes": "",
+        "id": "2411119847"
     },
     {
         "en": "formal",
@@ -24386,21 +24667,21 @@ module.exports=[
     },
     {
         "en": "frame",
-        "cy": "ffrâm",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4169803862"
-    },
-    {
-        "en": "frame",
         "cy": "fframio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1129230611"
+    },
+    {
+        "en": "frame",
+        "cy": "ffrâm",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4169803862"
     },
     {
         "en": "frame of reference",
@@ -24422,21 +24703,21 @@ module.exports=[
     },
     {
         "en": "fray",
-        "cy": "rhaflad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1257669614"
-    },
-    {
-        "en": "fray",
         "cy": "rhaflo",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "411404676"
+    },
+    {
+        "en": "fray",
+        "cy": "rhaflad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1257669614"
     },
     {
         "en": "freckels",
@@ -24486,21 +24767,21 @@ module.exports=[
     },
     {
         "en": "free painting",
-        "cy": "peintio rhydd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2007964867"
-    },
-    {
-        "en": "free painting",
         "cy": "paentiad rhydd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1264994497"
+    },
+    {
+        "en": "free painting",
+        "cy": "peintio rhydd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2007964867"
     },
     {
         "en": "freehand",
@@ -25261,6 +25542,15 @@ module.exports=[
     },
     {
         "en": "giant",
+        "cy": "cewri",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "",
+        "id": "571351067"
+    },
+    {
+        "en": "giant",
         "cy": "cawr",
         "tags": [
             "appearance"
@@ -25276,15 +25566,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "4001074564"
-    },
-    {
-        "en": "giant",
-        "cy": "cewri",
-        "tags": [
-            "appearance"
-        ],
-        "notes": "",
-        "id": "571351067"
     },
     {
         "en": "gigantic",
@@ -25540,21 +25821,21 @@ module.exports=[
     },
     {
         "en": "glue",
-        "cy": "glud",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3200465367"
-    },
-    {
-        "en": "glue",
         "cy": "gludio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1629913457"
+    },
+    {
+        "en": "glue",
+        "cy": "glud",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3200465367"
     },
     {
         "en": "glue brush",
@@ -25618,6 +25899,24 @@ module.exports=[
         ],
         "notes": "",
         "id": "2925729368"
+    },
+    {
+        "en": "god mother",
+        "cy": "mam fedydd",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "1105311926"
+    },
+    {
+        "en": "godfather",
+        "cy": "tad bedydd",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "2816958023"
     },
     {
         "en": "gold",
@@ -25739,21 +26038,21 @@ module.exports=[
     },
     {
         "en": "gouge",
-        "cy": "cafnu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3016910422"
-    },
-    {
-        "en": "gouge",
         "cy": "gaing gau",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "323161660"
+    },
+    {
+        "en": "gouge",
+        "cy": "cafnu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3016910422"
     },
     {
         "en": "gradation",
@@ -25837,6 +26136,78 @@ module.exports=[
         "id": "1593610890"
     },
     {
+        "en": "granddaughter",
+        "cy": "wyres",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) -au",
+        "id": "4073739098"
+    },
+    {
+        "en": "grandfather",
+        "cy": "taid",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) (NW)",
+        "id": "3716360562"
+    },
+    {
+        "en": "grandfathers",
+        "cy": "teidiau",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) (NW) plural",
+        "id": "3261351886"
+    },
+    {
+        "en": "grandmother",
+        "cy": "mam gu",
+        "tags": [
+            "family"
+        ],
+        "notes": "(SW)",
+        "id": "375605741"
+    },
+    {
+        "en": "grandmother",
+        "cy": "nain",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) (NW)",
+        "id": "1179886956"
+    },
+    {
+        "en": "grandmothers",
+        "cy": "neiniau",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f)",
+        "id": "3286641470"
+    },
+    {
+        "en": "grandson",
+        "cy": "wyrion",
+        "tags": [
+            "family"
+        ],
+        "notes": "plural",
+        "id": "2172957346"
+    },
+    {
+        "en": "grandson",
+        "cy": "ŵyr",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "3136534578"
+    },
+    {
         "en": "granite",
         "cy": "gwenithfaen",
         "tags": [
@@ -25883,21 +26254,21 @@ module.exports=[
     },
     {
         "en": "graphics",
-        "cy": "graffeg",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1154893557"
-    },
-    {
-        "en": "graphics",
         "cy": "graffigwaith",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "417433722"
+    },
+    {
+        "en": "graphics",
+        "cy": "graffeg",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1154893557"
     },
     {
         "en": "graphite",
@@ -25982,21 +26353,21 @@ module.exports=[
     },
     {
         "en": "great grandmother",
-        "cy": "hen nain",
-        "tags": [
-            "family"
-        ],
-        "notes": "(NW)",
-        "id": "3969481709"
-    },
-    {
-        "en": "great grandmother",
         "cy": "hen fam gu",
         "tags": [
             "family"
         ],
         "notes": "(SW)",
         "id": "3805494976"
+    },
+    {
+        "en": "great grandmother",
+        "cy": "hen nain",
+        "tags": [
+            "family"
+        ],
+        "notes": "(NW)",
+        "id": "3969481709"
     },
     {
         "en": "great grandson",
@@ -26218,15 +26589,6 @@ module.exports=[
     },
     {
         "en": "grout",
-        "cy": "growt",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3303299764"
-    },
-    {
-        "en": "grout",
         "cy": "growtio",
         "tags": [
             "celf"
@@ -26235,13 +26597,13 @@ module.exports=[
         "id": "1054640594"
     },
     {
-        "en": "guide",
-        "cy": "tywys",
+        "en": "grout",
+        "cy": "growt",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3691146300"
+        "id": "3303299764"
     },
     {
         "en": "guide",
@@ -26251,6 +26613,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "371252325"
+    },
+    {
+        "en": "guide",
+        "cy": "tywys",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3691146300"
     },
     {
         "en": "guide line",
@@ -26462,6 +26833,15 @@ module.exports=[
     },
     {
         "en": "halo",
+        "cy": "eurgylch",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3901173479"
+    },
+    {
+        "en": "halo",
         "cy": "lleugylch",
         "tags": [
             "celf"
@@ -26470,13 +26850,13 @@ module.exports=[
         "id": "4087284085"
     },
     {
-        "en": "halo",
-        "cy": "eurgylch",
+        "en": "hammer",
+        "cy": "morthwyl",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3901173479"
+        "id": "1689518534"
     },
     {
         "en": "hammer",
@@ -26488,13 +26868,13 @@ module.exports=[
         "id": "2888710880"
     },
     {
-        "en": "hammer",
-        "cy": "morthwyl",
+        "en": "hand",
+        "cy": "dwylo",
         "tags": [
-            "celf"
+            "body"
         ],
         "notes": "",
-        "id": "1689518534"
+        "id": "372622976"
     },
     {
         "en": "hand",
@@ -26513,15 +26893,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "2916409763"
-    },
-    {
-        "en": "hand",
-        "cy": "dwylo",
-        "tags": [
-            "body"
-        ],
-        "notes": "",
-        "id": "372622976"
     },
     {
         "en": "hand drawn lettering",
@@ -26616,6 +26987,15 @@ module.exports=[
     },
     {
         "en": "handle",
+        "cy": "carn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "844966818"
+    },
+    {
+        "en": "handle",
         "cy": "dolen",
         "tags": [
             "celf"
@@ -26631,15 +27011,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "1445331590"
-    },
-    {
-        "en": "handle",
-        "cy": "carn",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "844966818"
     },
     {
         "en": "handle cane",
@@ -26698,21 +27069,21 @@ module.exports=[
     },
     {
         "en": "hang",
-        "cy": "hongian",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3987476766"
-    },
-    {
-        "en": "hang",
         "cy": "crogi",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "718477126"
+    },
+    {
+        "en": "hang",
+        "cy": "hongian",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3987476766"
     },
     {
         "en": "hanging",
@@ -26873,21 +27244,21 @@ module.exports=[
     },
     {
         "en": "harmony",
-        "cy": "harmoni",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3349181766"
-    },
-    {
-        "en": "harmony",
         "cy": "cytgord",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1735816328"
+    },
+    {
+        "en": "harmony",
+        "cy": "harmoni",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3349181766"
     },
     {
         "en": "hatch",
@@ -27009,16 +27380,6 @@ module.exports=[
     },
     {
         "en": "healthy",
-        "cy": "iach",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "3826473383"
-    },
-    {
-        "en": "healthy",
         "cy": "iachus",
         "tags": [
             "health",
@@ -27026,6 +27387,16 @@ module.exports=[
         ],
         "notes": "",
         "id": "1113985793"
+    },
+    {
+        "en": "healthy",
+        "cy": "iach",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "3826473383"
     },
     {
         "en": "hearing",
@@ -27333,20 +27704,20 @@ module.exports=[
         "en": "high",
         "cy": "uchel",
         "tags": [
-            "state",
-            "appearance"
+            "celf"
         ],
         "notes": "",
-        "id": "2643846438"
+        "id": "1870031919"
     },
     {
         "en": "high",
         "cy": "uchel",
         "tags": [
-            "celf"
+            "state",
+            "appearance"
         ],
         "notes": "",
-        "id": "1870031919"
+        "id": "2643846438"
     },
     {
         "en": "high blood pressure",
@@ -27387,21 +27758,21 @@ module.exports=[
     },
     {
         "en": "hinge",
-        "cy": "colfachu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2573027426"
-    },
-    {
-        "en": "hinge",
         "cy": "colfach",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1184013239"
+    },
+    {
+        "en": "hinge",
+        "cy": "colfachu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2573027426"
     },
     {
         "en": "hinged",
@@ -27451,15 +27822,6 @@ module.exports=[
     },
     {
         "en": "hollow",
-        "cy": "pant",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3151379554"
-    },
-    {
-        "en": "hollow",
         "cy": "pantio",
         "tags": [
             "celf"
@@ -27475,6 +27837,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "2774493782"
+    },
+    {
+        "en": "hollow",
+        "cy": "pant",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3151379554"
     },
     {
         "en": "hollow",
@@ -27523,21 +27894,21 @@ module.exports=[
     },
     {
         "en": "hone",
-        "cy": "carreg hogi",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3329208883"
-    },
-    {
-        "en": "hone",
         "cy": "hogi",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "114046259"
+    },
+    {
+        "en": "hone",
+        "cy": "carreg hogi",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3329208883"
     },
     {
         "en": "honeycomb",
@@ -27568,21 +27939,21 @@ module.exports=[
     },
     {
         "en": "hood",
-        "cy": "lwfer",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3113459024"
-    },
-    {
-        "en": "hood",
         "cy": "cwfl",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2580660740"
+    },
+    {
+        "en": "hood",
+        "cy": "lwfer",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3113459024"
     },
     {
         "en": "hook",
@@ -27882,16 +28253,6 @@ module.exports=[
     },
     {
         "en": "i've got indigestion",
-        "cy": "mae dŵr poeth arnaf i",
-        "tags": [
-            "body",
-            "saying"
-        ],
-        "notes": "",
-        "id": "2215359764"
-    },
-    {
-        "en": "i've got indigestion",
         "cy": "mae llosg cylia arnaf i",
         "tags": [
             "body",
@@ -27899,6 +28260,16 @@ module.exports=[
         ],
         "notes": "(SW)",
         "id": "307232369"
+    },
+    {
+        "en": "i've got indigestion",
+        "cy": "mae dŵr poeth arnaf i",
+        "tags": [
+            "body",
+            "saying"
+        ],
+        "notes": "",
+        "id": "2215359764"
     },
     {
         "en": "i've got indigestion",
@@ -28041,21 +28412,21 @@ module.exports=[
     },
     {
         "en": "identification",
-        "cy": "adnabyddiaeth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3034749020"
-    },
-    {
-        "en": "identification",
         "cy": "uniaethu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1618795363"
+    },
+    {
+        "en": "identification",
+        "cy": "adnabyddiaeth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3034749020"
     },
     {
         "en": "identify",
@@ -28097,16 +28468,6 @@ module.exports=[
     },
     {
         "en": "illness",
-        "cy": "tostrwydd",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(SW) (m)",
-        "id": "2257633418"
-    },
-    {
-        "en": "illness",
         "cy": "gwaeledd",
         "tags": [
             "health",
@@ -28114,6 +28475,16 @@ module.exports=[
         ],
         "notes": "(m)",
         "id": "1961349010"
+    },
+    {
+        "en": "illness",
+        "cy": "tostrwydd",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(SW) (m)",
+        "id": "2257633418"
     },
     {
         "en": "illness",
@@ -28199,21 +28570,21 @@ module.exports=[
     },
     {
         "en": "illustrate",
-        "cy": "egluro",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2781683433"
-    },
-    {
-        "en": "illustrate",
         "cy": "darlunio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "894378569"
+    },
+    {
+        "en": "illustrate",
+        "cy": "egluro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2781683433"
     },
     {
         "en": "illustrated",
@@ -28226,12 +28597,12 @@ module.exports=[
     },
     {
         "en": "illustration",
-        "cy": "darlun",
+        "cy": "darlun eglurhaol",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3189167170"
+        "id": "1025114017"
     },
     {
         "en": "illustration",
@@ -28244,21 +28615,12 @@ module.exports=[
     },
     {
         "en": "illustration",
-        "cy": "darlun eglurhaol",
+        "cy": "darlun",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "1025114017"
-    },
-    {
-        "en": "illustrative",
-        "cy": "darluniadol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4123194687"
+        "id": "3189167170"
     },
     {
         "en": "illustrative",
@@ -28268,6 +28630,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "4083253108"
+    },
+    {
+        "en": "illustrative",
+        "cy": "darluniadol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4123194687"
     },
     {
         "en": "image",
@@ -28331,6 +28702,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "3567234904"
+    },
+    {
+        "en": "immature",
+        "cy": "anaeddfed",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "2497920287"
     },
     {
         "en": "immediacy",
@@ -28562,17 +28942,6 @@ module.exports=[
     },
     {
         "en": "in a hurry",
-        "cy": "ar frys",
-        "tags": [
-            "verb",
-            "doing",
-            "phrase"
-        ],
-        "notes": "",
-        "id": "3636776128"
-    },
-    {
-        "en": "in a hurry",
         "cy": "mewn brys",
         "tags": [
             "verb",
@@ -28581,6 +28950,17 @@ module.exports=[
         ],
         "notes": "",
         "id": "2333923238"
+    },
+    {
+        "en": "in a hurry",
+        "cy": "ar frys",
+        "tags": [
+            "verb",
+            "doing",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "3636776128"
     },
     {
         "en": "in proportion",
@@ -28704,21 +29084,21 @@ module.exports=[
     },
     {
         "en": "incline",
-        "cy": "goleddu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2057180680"
-    },
-    {
-        "en": "incline",
         "cy": "goledd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "388968765"
+    },
+    {
+        "en": "incline",
+        "cy": "goleddu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2057180680"
     },
     {
         "en": "inclined",
@@ -29133,15 +29513,6 @@ module.exports=[
     },
     {
         "en": "inlay",
-        "cy": "mewnosod",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "568954659"
-    },
-    {
-        "en": "inlay",
         "cy": "mewnosodiad",
         "tags": [
             "celf"
@@ -29150,13 +29521,13 @@ module.exports=[
         "id": "181609391"
     },
     {
-        "en": "innovation",
-        "cy": "newyddbeth",
+        "en": "inlay",
+        "cy": "mewnosod",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3381551077"
+        "id": "568954659"
     },
     {
         "en": "innovation",
@@ -29166,6 +29537,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "617215896"
+    },
+    {
+        "en": "innovation",
+        "cy": "newyddbeth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3381551077"
     },
     {
         "en": "inscription",
@@ -29322,21 +29702,21 @@ module.exports=[
     },
     {
         "en": "intense",
-        "cy": "angerddol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3437307204"
-    },
-    {
-        "en": "intense",
         "cy": "dwys",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2112294561"
+    },
+    {
+        "en": "intense",
+        "cy": "angerddol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3437307204"
     },
     {
         "en": "intensity",
@@ -29691,21 +30071,21 @@ module.exports=[
     },
     {
         "en": "italian painting",
-        "cy": "paentiad eidalaidd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2727463533"
-    },
-    {
-        "en": "italian painting",
         "cy": "peintio eidalaidd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "175877551"
+    },
+    {
+        "en": "italian painting",
+        "cy": "paentiad eidalaidd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2727463533"
     },
     {
         "en": "italic",
@@ -29955,21 +30335,21 @@ module.exports=[
     },
     {
         "en": "joint",
-        "cy": "cymalu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2416184239"
-    },
-    {
-        "en": "joint",
         "cy": "cymal",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1554847226"
+    },
+    {
+        "en": "joint",
+        "cy": "cymalu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2416184239"
     },
     {
         "en": "joint",
@@ -30234,6 +30614,16 @@ module.exports=[
     },
     {
         "en": "kiss",
+        "cy": "cusan",
+        "tags": [
+            "head",
+            "love"
+        ],
+        "notes": "(f/m) -au",
+        "id": "476224186"
+    },
+    {
+        "en": "kiss",
         "cy": "sws",
         "tags": [
             "head",
@@ -30242,16 +30632,6 @@ module.exports=[
         ],
         "notes": "(f) -ys (dom)",
         "id": "1330600395"
-    },
-    {
-        "en": "kiss",
-        "cy": "cusan",
-        "tags": [
-            "head",
-            "love"
-        ],
-        "notes": "(f/m) -au",
-        "id": "476224186"
     },
     {
         "en": "kit",
@@ -30284,20 +30664,20 @@ module.exports=[
         "en": "knee",
         "cy": "pen-glin",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1498477129"
-    },
-    {
-        "en": "knee",
-        "cy": "pen-glin",
-        "tags": [
             "body",
             "leg"
         ],
         "notes": "(f)",
         "id": "1292330096"
+    },
+    {
+        "en": "knee",
+        "cy": "pen-glin",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1498477129"
     },
     {
         "en": "kneel",
@@ -30393,21 +30773,21 @@ module.exports=[
     },
     {
         "en": "knot",
-        "cy": "cwlwm",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3843652714"
-    },
-    {
-        "en": "knot",
         "cy": "clymu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2078907334"
+    },
+    {
+        "en": "knot",
+        "cy": "cwlwm",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3843652714"
     },
     {
         "en": "knotted stitch",
@@ -30477,21 +30857,21 @@ module.exports=[
     },
     {
         "en": "lace",
-        "cy": "carrai",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2053602039"
-    },
-    {
-        "en": "lace",
         "cy": "les",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "205131687"
+    },
+    {
+        "en": "lace",
+        "cy": "carrai",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2053602039"
     },
     {
         "en": "lacemaking",
@@ -30856,21 +31236,21 @@ module.exports=[
     },
     {
         "en": "layout",
-        "cy": "cynllun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "771621443"
-    },
-    {
-        "en": "layout",
         "cy": "dyluniad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "555364650"
+    },
+    {
+        "en": "layout",
+        "cy": "cynllun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "771621443"
     },
     {
         "en": "lazy daisy stitch",
@@ -30928,21 +31308,21 @@ module.exports=[
     },
     {
         "en": "leaf",
-        "cy": "deilen",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3179628855"
-    },
-    {
-        "en": "leaf",
         "cy": "dalen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "56847322"
+    },
+    {
+        "en": "leaf",
+        "cy": "deilen",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3179628855"
     },
     {
         "en": "leaf green",
@@ -31127,21 +31507,21 @@ module.exports=[
     },
     {
         "en": "length",
-        "cy": "hyd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3901030591"
-    },
-    {
-        "en": "length",
         "cy": "pwythyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "43357343"
+    },
+    {
+        "en": "length",
+        "cy": "hyd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3901030591"
     },
     {
         "en": "lengthen",
@@ -31172,21 +31552,21 @@ module.exports=[
     },
     {
         "en": "lettering",
-        "cy": "llythrennu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1727424623"
-    },
-    {
-        "en": "lettering",
         "cy": "llythreniad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1022128408"
+    },
+    {
+        "en": "lettering",
+        "cy": "llythrennu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1727424623"
     },
     {
         "en": "lettering brush",
@@ -31271,21 +31651,21 @@ module.exports=[
     },
     {
         "en": "leverage",
-        "cy": "trosoliad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3962001256"
-    },
-    {
-        "en": "leverage",
         "cy": "trosoledd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3911173921"
+    },
+    {
+        "en": "leverage",
+        "cy": "trosoliad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3962001256"
     },
     {
         "en": "lid",
@@ -31803,21 +32183,21 @@ module.exports=[
     },
     {
         "en": "load",
-        "cy": "llwyth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3973118338"
-    },
-    {
-        "en": "load",
         "cy": "llwytho",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "70523725"
+    },
+    {
+        "en": "load",
+        "cy": "llwyth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3973118338"
     },
     {
         "en": "loam",
@@ -32428,12 +32808,12 @@ module.exports=[
     },
     {
         "en": "make-believe",
-        "cy": "dychymyg",
+        "cy": "smalio",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3599124497"
+        "id": "117180504"
     },
     {
         "en": "make-believe",
@@ -32446,21 +32826,12 @@ module.exports=[
     },
     {
         "en": "make-believe",
-        "cy": "smalio",
+        "cy": "dychymyg",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "117180504"
-    },
-    {
-        "en": "make-up",
-        "cy": "colur",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3340256059"
+        "id": "3599124497"
     },
     {
         "en": "make-up",
@@ -32470,6 +32841,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "1355637044"
+    },
+    {
+        "en": "make-up",
+        "cy": "colur",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3340256059"
     },
     {
         "en": "make-up box",
@@ -32492,21 +32872,21 @@ module.exports=[
     },
     {
         "en": "male cousin",
-        "cy": "cefndyr",
-        "tags": [
-            "family"
-        ],
-        "notes": "",
-        "id": "2908813221"
-    },
-    {
-        "en": "male cousin",
         "cy": "cefnder",
         "tags": [
             "family"
         ],
         "notes": "(m) -oedd",
         "id": "1542368402"
+    },
+    {
+        "en": "male cousin",
+        "cy": "cefndyr",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "2908813221"
     },
     {
         "en": "male cousins",
@@ -32645,21 +33025,21 @@ module.exports=[
     },
     {
         "en": "mannerist",
-        "cy": "darddullwr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2875519940"
-    },
-    {
-        "en": "mannerist",
         "cy": "darddullaidd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2024704489"
+    },
+    {
+        "en": "mannerist",
+        "cy": "darddullwr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2875519940"
     },
     {
         "en": "mannerist style",
@@ -32843,21 +33223,21 @@ module.exports=[
     },
     {
         "en": "marine painting",
-        "cy": "môr-baentiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3705913630"
-    },
-    {
-        "en": "marine painting",
         "cy": "môr-beintio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "665751100"
+    },
+    {
+        "en": "marine painting",
+        "cy": "môr-baentiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3705913630"
     },
     {
         "en": "marionette",
@@ -32870,21 +33250,21 @@ module.exports=[
     },
     {
         "en": "mark",
-        "cy": "marcio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3728945336"
-    },
-    {
-        "en": "mark",
         "cy": "marc",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2408049822"
+    },
+    {
+        "en": "mark",
+        "cy": "marcio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3728945336"
     },
     {
         "en": "mark out",
@@ -32960,6 +33340,15 @@ module.exports=[
     },
     {
         "en": "mask",
+        "cy": "masgio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2903784316"
+    },
+    {
+        "en": "mask",
         "cy": "mwgwd",
         "tags": [
             "celf"
@@ -32975,15 +33364,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "3616226514"
-    },
-    {
-        "en": "mask",
-        "cy": "masgio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2903784316"
     },
     {
         "en": "masking tape",
@@ -33142,6 +33522,15 @@ module.exports=[
         "en": "mature",
         "cy": "aeddfed",
         "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "757326292"
+    },
+    {
+        "en": "mature",
+        "cy": "aeddfed",
+        "tags": [
             "celf"
         ],
         "notes": "",
@@ -33268,26 +33657,6 @@ module.exports=[
     },
     {
         "en": "medicine",
-        "cy": "meddyginiaeth",
-        "tags": [
-            "medical",
-            "hospital"
-        ],
-        "notes": "(f) (cure)",
-        "id": "1799558442"
-    },
-    {
-        "en": "medicine",
-        "cy": "ffisig",
-        "tags": [
-            "medical",
-            "hospital"
-        ],
-        "notes": "(NW) (m)",
-        "id": "2834113005"
-    },
-    {
-        "en": "medicine",
         "cy": "moddion",
         "tags": [
             "medical",
@@ -33305,6 +33674,26 @@ module.exports=[
         ],
         "notes": "(f) (subject)",
         "id": "1742615289"
+    },
+    {
+        "en": "medicine",
+        "cy": "meddyginiaeth",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(f) (cure)",
+        "id": "1799558442"
+    },
+    {
+        "en": "medicine",
+        "cy": "ffisig",
+        "tags": [
+            "medical",
+            "hospital"
+        ],
+        "notes": "(NW) (m)",
+        "id": "2834113005"
     },
     {
         "en": "medieval",
@@ -33796,21 +34185,21 @@ module.exports=[
     },
     {
         "en": "mill",
-        "cy": "melino",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "751983838"
-    },
-    {
-        "en": "mill",
         "cy": "melin",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "73318385"
+    },
+    {
+        "en": "mill",
+        "cy": "melino",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "751983838"
     },
     {
         "en": "millboard",
@@ -34003,21 +34392,21 @@ module.exports=[
     },
     {
         "en": "mobile",
-        "cy": "symudol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3122676099"
-    },
-    {
-        "en": "mobile",
         "cy": "symudyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "541175511"
+    },
+    {
+        "en": "mobile",
+        "cy": "symudol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3122676099"
     },
     {
         "en": "model",
@@ -34336,6 +34725,15 @@ module.exports=[
     },
     {
         "en": "mood",
+        "cy": "awyrgylch",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "409040923"
+    },
+    {
+        "en": "mood",
         "cy": "naws",
         "tags": [
             "celf"
@@ -34351,15 +34749,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "3440983989"
-    },
-    {
-        "en": "mood",
-        "cy": "awyrgylch",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "409040923"
     },
     {
         "en": "mordant",
@@ -34405,6 +34794,24 @@ module.exports=[
         ],
         "notes": "",
         "id": "2346904271"
+    },
+    {
+        "en": "mother",
+        "cy": "mam",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) -au",
+        "id": "446384570"
+    },
+    {
+        "en": "mother in law",
+        "cy": "mam yng nghyfraith",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "2592381713"
     },
     {
         "en": "motif",
@@ -34498,21 +34905,21 @@ module.exports=[
     },
     {
         "en": "mount",
-        "cy": "mowntio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3632216402"
-    },
-    {
-        "en": "mount",
         "cy": "mownt",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1300598836"
+    },
+    {
+        "en": "mount",
+        "cy": "mowntio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3632216402"
     },
     {
         "en": "mounted",
@@ -34573,20 +34980,20 @@ module.exports=[
         "en": "mouth",
         "cy": "ceg",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3595883452"
-    },
-    {
-        "en": "mouth",
-        "cy": "ceg",
-        "tags": [
             "head",
             "body"
         ],
         "notes": "",
         "id": "1330522564"
+    },
+    {
+        "en": "mouth",
+        "cy": "ceg",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3595883452"
     },
     {
         "en": "movable",
@@ -34698,16 +35105,6 @@ module.exports=[
     },
     {
         "en": "mumps",
-        "cy": "clwyf pennau",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m) (NW)",
-        "id": "2809995589"
-    },
-    {
-        "en": "mumps",
         "cy": "twymyn doben",
         "tags": [
             "health",
@@ -34715,6 +35112,16 @@ module.exports=[
         ],
         "notes": "(SW)",
         "id": "2045428624"
+    },
+    {
+        "en": "mumps",
+        "cy": "clwyf pennau",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) (NW)",
+        "id": "2809995589"
     },
     {
         "en": "mural",
@@ -34772,6 +35179,15 @@ module.exports=[
     },
     {
         "en": "muscle",
+        "cy": "cyhyr",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) -au",
+        "id": "709187431"
+    },
+    {
+        "en": "muscle",
         "cy": "cyhyrol",
         "tags": [
             "celf"
@@ -34787,15 +35203,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "3419228494"
-    },
-    {
-        "en": "muscle",
-        "cy": "cyhyr",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) -au",
-        "id": "709187431"
     },
     {
         "en": "muscular",
@@ -34881,21 +35288,21 @@ module.exports=[
     },
     {
         "en": "nail",
-        "cy": "hoelio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4203758836"
-    },
-    {
-        "en": "nail",
         "cy": "hoelen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3038070009"
+    },
+    {
+        "en": "nail",
+        "cy": "hoelio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4203758836"
     },
     {
         "en": "nail punch",
@@ -35278,6 +35685,24 @@ module.exports=[
         "id": "3875252682"
     },
     {
+        "en": "nephew",
+        "cy": "nai",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "1543385575"
+    },
+    {
+        "en": "nephews",
+        "cy": "neiaint",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m) plural",
+        "id": "2431919604"
+    },
+    {
         "en": "nerve",
         "cy": "nerf",
         "tags": [
@@ -35366,6 +35791,24 @@ module.exports=[
         ],
         "notes": "",
         "id": "1728214815"
+    },
+    {
+        "en": "niece",
+        "cy": "nith",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f)",
+        "id": "773075092"
+    },
+    {
+        "en": "nieces",
+        "cy": "nithoedd",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f) plural",
+        "id": "3572480699"
     },
     {
         "en": "nihilism",
@@ -35472,21 +35915,21 @@ module.exports=[
     },
     {
         "en": "noisy",
-        "cy": "swnllyd",
-        "tags": [
-            ""
-        ],
-        "notes": "",
-        "id": "3861180847"
-    },
-    {
-        "en": "noisy",
         "cy": "stwrllyd",
         "tags": [
             "sound"
         ],
         "notes": "",
         "id": "1995903524"
+    },
+    {
+        "en": "noisy",
+        "cy": "swnllyd",
+        "tags": [
+            ""
+        ],
+        "notes": "",
+        "id": "3861180847"
     },
     {
         "en": "non-figurative work",
@@ -35645,21 +36088,21 @@ module.exports=[
     },
     {
         "en": "nude",
-        "cy": "noethlun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3657399171"
-    },
-    {
-        "en": "nude",
         "cy": "noethlymun",
         "tags": [
             "body"
         ],
         "notes": "",
         "id": "1897284683"
+    },
+    {
+        "en": "nude",
+        "cy": "noethlun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3657399171"
     },
     {
         "en": "numeral",
@@ -36123,21 +36566,21 @@ module.exports=[
     },
     {
         "en": "oil painting",
-        "cy": "paentiad olew",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2304743885"
-    },
-    {
-        "en": "oil painting",
         "cy": "peintio olew",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1940126543"
+    },
+    {
+        "en": "oil painting",
+        "cy": "paentiad olew",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2304743885"
     },
     {
         "en": "oil paper",
@@ -36249,6 +36692,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "4259911932"
+    },
+    {
+        "en": "on my own",
+        "cy": "ar fy mhen fy hun(an)",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "360748750"
     },
     {
         "en": "on tip toes",
@@ -36695,6 +37147,15 @@ module.exports=[
     },
     {
         "en": "outline",
+        "cy": "amlinellu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "369296257"
+    },
+    {
+        "en": "outline",
         "cy": "amlinell",
         "tags": [
             "celf"
@@ -36710,15 +37171,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "1369302519"
-    },
-    {
-        "en": "outline",
-        "cy": "amlinellu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "369296257"
     },
     {
         "en": "outline stitch",
@@ -36751,19 +37203,19 @@ module.exports=[
         "en": "oval",
         "cy": "hirgrwn",
         "tags": [
-            "state"
+            "celf"
         ],
         "notes": "",
-        "id": "4002449670"
+        "id": "3976779901"
     },
     {
         "en": "oval",
         "cy": "hirgrwn",
         "tags": [
-            "celf"
+            "state"
         ],
         "notes": "",
-        "id": "3976779901"
+        "id": "4002449670"
     },
     {
         "en": "oval base",
@@ -37055,16 +37507,6 @@ module.exports=[
     },
     {
         "en": "pain",
-        "cy": "loes",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(SW)",
-        "id": "2945861191"
-    },
-    {
-        "en": "pain",
         "cy": "poen",
         "tags": [
             "health",
@@ -37072,6 +37514,16 @@ module.exports=[
         ],
         "notes": "(f/m) -au",
         "id": "347589887"
+    },
+    {
+        "en": "pain",
+        "cy": "loes",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(SW)",
+        "id": "2945861191"
     },
     {
         "en": "painful",
@@ -37095,21 +37547,21 @@ module.exports=[
     },
     {
         "en": "paint",
-        "cy": "paent",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3630992474"
-    },
-    {
-        "en": "paint",
         "cy": "peintio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1164168948"
+    },
+    {
+        "en": "paint",
+        "cy": "paent",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3630992474"
     },
     {
         "en": "paint brush",
@@ -37293,15 +37745,6 @@ module.exports=[
     },
     {
         "en": "palm",
-        "cy": "cledr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1634427194"
-    },
-    {
-        "en": "palm",
         "cy": "palmwydden",
         "tags": [
             "celf"
@@ -37310,16 +37753,13 @@ module.exports=[
         "id": "239360787"
     },
     {
-        "en": "palm of the hand",
-        "cy": "pant y llaw",
+        "en": "palm",
+        "cy": "cledr",
         "tags": [
-            "body",
-            "hand",
-            "saying",
-            "phrase"
+            "celf"
         ],
-        "notes": "(m)",
-        "id": "3604962008"
+        "notes": "",
+        "id": "1634427194"
     },
     {
         "en": "palm of the hand",
@@ -37339,6 +37779,18 @@ module.exports=[
         ],
         "notes": "(f)",
         "id": "1032817256"
+    },
+    {
+        "en": "palm of the hand",
+        "cy": "pant y llaw",
+        "tags": [
+            "body",
+            "hand",
+            "saying",
+            "phrase"
+        ],
+        "notes": "(m)",
+        "id": "3604962008"
     },
     {
         "en": "palms of the hands",
@@ -37637,6 +38089,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "2069078370"
+    },
+    {
+        "en": "parent",
+        "cy": "rhiant",
+        "tags": [
+            "family"
+        ],
+        "notes": "(m)",
+        "id": "3941551860"
     },
     {
         "en": "paring knife",
@@ -37965,6 +38426,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "1449905878"
+    },
+    {
+        "en": "pedigree",
+        "cy": "ach",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f)",
+        "id": "867331596"
     },
     {
         "en": "pediment",
@@ -38483,6 +38953,15 @@ module.exports=[
         "en": "physical",
         "cy": "corfforol",
         "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1554251107"
+    },
+    {
+        "en": "physical",
+        "cy": "corfforol",
+        "tags": [
             ""
         ],
         "notes": "",
@@ -38496,15 +38975,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "3417571736"
-    },
-    {
-        "en": "physical",
-        "cy": "corfforol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1554251107"
     },
     {
         "en": "physical force",
@@ -38698,16 +39168,6 @@ module.exports=[
     },
     {
         "en": "pimple",
-        "cy": "tosyn",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m) (SW)",
-        "id": "2700920858"
-    },
-    {
-        "en": "pimple",
         "cy": "ploryn",
         "tags": [
             "health",
@@ -38715,6 +39175,16 @@ module.exports=[
         ],
         "notes": "(m) (NW) -nod",
         "id": "1735097734"
+    },
+    {
+        "en": "pimple",
+        "cy": "tosyn",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2700920858"
     },
     {
         "en": "pimples",
@@ -38755,21 +39225,21 @@ module.exports=[
     },
     {
         "en": "pinch",
-        "cy": "pinsio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3822918024"
-    },
-    {
-        "en": "pinch",
         "cy": "pinsiad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3133616098"
+    },
+    {
+        "en": "pinch",
+        "cy": "pinsio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3822918024"
     },
     {
         "en": "pinch pottery",
@@ -38881,21 +39351,21 @@ module.exports=[
     },
     {
         "en": "plait",
-        "cy": "pleth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2711044531"
-    },
-    {
-        "en": "plait",
         "cy": "plethu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "202802022"
+    },
+    {
+        "en": "plait",
+        "cy": "pleth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2711044531"
     },
     {
         "en": "plan",
@@ -38953,6 +39423,15 @@ module.exports=[
     },
     {
         "en": "plaster",
+        "cy": "plastro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "792170076"
+    },
+    {
+        "en": "plaster",
         "cy": "plastr",
         "tags": [
             "celf"
@@ -38969,15 +39448,6 @@ module.exports=[
         ],
         "notes": "(m) -au",
         "id": "2606409401"
-    },
-    {
-        "en": "plaster",
-        "cy": "plastro",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "792170076"
     },
     {
         "en": "plaster and bandage",
@@ -39386,16 +39856,6 @@ module.exports=[
     },
     {
         "en": "pneumonia",
-        "cy": "niwmonia",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m)",
-        "id": "2982870995"
-    },
-    {
-        "en": "pneumonia",
         "cy": "llid yr ysgyfaint",
         "tags": [
             "health",
@@ -39405,13 +39865,14 @@ module.exports=[
         "id": "1159041901"
     },
     {
-        "en": "pocket",
-        "cy": "poced",
+        "en": "pneumonia",
+        "cy": "niwmonia",
         "tags": [
-            "celf"
+            "health",
+            "medical"
         ],
-        "notes": "",
-        "id": "1418762573"
+        "notes": "(m)",
+        "id": "2982870995"
     },
     {
         "en": "pocket",
@@ -39421,6 +39882,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "1400697848"
+    },
+    {
+        "en": "pocket",
+        "cy": "poced",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1418762573"
     },
     {
         "en": "point",
@@ -39525,12 +39995,12 @@ module.exports=[
     },
     {
         "en": "polish",
-        "cy": "llathru",
+        "cy": "llathredd",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "1976264781"
+        "id": "907260893"
     },
     {
         "en": "polish",
@@ -39543,12 +40013,12 @@ module.exports=[
     },
     {
         "en": "polish",
-        "cy": "llathredd",
+        "cy": "llathru",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "907260893"
+        "id": "1976264781"
     },
     {
         "en": "polish",
@@ -39957,21 +40427,21 @@ module.exports=[
     },
     {
         "en": "positive",
-        "cy": "positif",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3921620899"
-    },
-    {
-        "en": "positive",
         "cy": "cadarnhaol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3283775212"
+    },
+    {
+        "en": "positive",
+        "cy": "positif",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3921620899"
     },
     {
         "en": "positive image",
@@ -40146,21 +40616,21 @@ module.exports=[
     },
     {
         "en": "pottery",
-        "cy": "crochenwaith",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2292330042"
-    },
-    {
-        "en": "pottery",
         "cy": "crochendy",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1498311620"
+    },
+    {
+        "en": "pottery",
+        "cy": "crochenwaith",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2292330042"
     },
     {
         "en": "pottery glaze",
@@ -40617,6 +41087,25 @@ module.exports=[
     },
     {
         "en": "pretty",
+        "cy": "del",
+        "tags": [
+            "appearance"
+        ],
+        "notes": "(NW)",
+        "id": "1154928399"
+    },
+    {
+        "en": "pretty",
+        "cy": "pert",
+        "tags": [
+            "state",
+            "appearance"
+        ],
+        "notes": "(SW)",
+        "id": "1180637783"
+    },
+    {
+        "en": "pretty",
         "cy": "tlws",
         "tags": [
             "state",
@@ -40636,25 +41125,6 @@ module.exports=[
         "id": "3977697143"
     },
     {
-        "en": "pretty",
-        "cy": "pert",
-        "tags": [
-            "state",
-            "appearance"
-        ],
-        "notes": "(SW)",
-        "id": "1180637783"
-    },
-    {
-        "en": "pretty",
-        "cy": "del",
-        "tags": [
-            "appearance"
-        ],
-        "notes": "(NW)",
-        "id": "1154928399"
-    },
-    {
         "en": "prevent",
         "cy": "atal",
         "tags": [
@@ -40665,21 +41135,21 @@ module.exports=[
     },
     {
         "en": "prevention",
-        "cy": "rhwystro",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2133305662"
-    },
-    {
-        "en": "prevention",
         "cy": "ataliad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1737446244"
+    },
+    {
+        "en": "prevention",
+        "cy": "rhwystro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2133305662"
     },
     {
         "en": "primary",
@@ -40782,21 +41252,21 @@ module.exports=[
     },
     {
         "en": "print",
-        "cy": "argraffu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3432515445"
-    },
-    {
-        "en": "print",
         "cy": "print",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3305008758"
+    },
+    {
+        "en": "print",
+        "cy": "argraffu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3432515445"
     },
     {
         "en": "printed",
@@ -41133,21 +41603,21 @@ module.exports=[
     },
     {
         "en": "proportion",
-        "cy": "cyfran",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2932715179"
-    },
-    {
-        "en": "proportion",
         "cy": "cyfrannedd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "173216224"
+    },
+    {
+        "en": "proportion",
+        "cy": "cyfran",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2932715179"
     },
     {
         "en": "proportional",
@@ -42170,21 +42640,21 @@ module.exports=[
     },
     {
         "en": "recommendation",
-        "cy": "cymeradwyaeth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "952419308"
-    },
-    {
-        "en": "recommendation",
         "cy": "argymhelliad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "219321022"
+    },
+    {
+        "en": "recommendation",
+        "cy": "cymeradwyaeth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "952419308"
     },
     {
         "en": "record",
@@ -42377,21 +42847,21 @@ module.exports=[
     },
     {
         "en": "refine",
-        "cy": "puro",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3824541789"
-    },
-    {
-        "en": "refine",
         "cy": "coethi",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1809086745"
+    },
+    {
+        "en": "refine",
+        "cy": "puro",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3824541789"
     },
     {
         "en": "refined",
@@ -42601,6 +43071,15 @@ module.exports=[
         "id": "3473709142"
     },
     {
+        "en": "relative",
+        "cy": "perthynas",
+        "tags": [
+            "family"
+        ],
+        "notes": "(f)",
+        "id": "2821537217"
+    },
+    {
         "en": "relax",
         "cy": "ymlacio",
         "tags": [
@@ -42647,21 +43126,21 @@ module.exports=[
     },
     {
         "en": "relief",
-        "cy": "cerfweddol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2777152772"
-    },
-    {
-        "en": "relief",
         "cy": "cerfwedd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1008174439"
+    },
+    {
+        "en": "relief",
+        "cy": "cerfweddol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2777152772"
     },
     {
         "en": "relief carving",
@@ -42854,21 +43333,21 @@ module.exports=[
     },
     {
         "en": "represent",
-        "cy": "cynrychioli",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2371566205"
-    },
-    {
-        "en": "represent",
         "cy": "portreadu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "254366676"
+    },
+    {
+        "en": "represent",
+        "cy": "cynrychioli",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2371566205"
     },
     {
         "en": "represent a landscape",
@@ -43441,15 +43920,6 @@ module.exports=[
     },
     {
         "en": "rinse",
-        "cy": "rinsio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "197901109"
-    },
-    {
-        "en": "rinse",
         "cy": "rins",
         "tags": [
             "celf"
@@ -43458,13 +43928,22 @@ module.exports=[
         "id": "59277459"
     },
     {
-        "en": "ripple",
-        "cy": "crych",
+        "en": "rinse",
+        "cy": "rinsio",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3959526759"
+        "id": "197901109"
+    },
+    {
+        "en": "ripple",
+        "cy": "crychdon",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "995917410"
     },
     {
         "en": "ripple",
@@ -43477,12 +43956,12 @@ module.exports=[
     },
     {
         "en": "ripple",
-        "cy": "crychdon",
+        "cy": "crych",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "995917410"
+        "id": "3959526759"
     },
     {
         "en": "riser",
@@ -43495,21 +43974,21 @@ module.exports=[
     },
     {
         "en": "rivet",
-        "cy": "rhybed",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4177940650"
-    },
-    {
-        "en": "rivet",
         "cy": "rhybedu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "123849631"
+    },
+    {
+        "en": "rivet",
+        "cy": "rhybed",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4177940650"
     },
     {
         "en": "robe",
@@ -43576,21 +44055,21 @@ module.exports=[
     },
     {
         "en": "roll",
-        "cy": "rholio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4023171540"
-    },
-    {
-        "en": "roll",
         "cy": "rholyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "770065541"
+    },
+    {
+        "en": "roll",
+        "cy": "rholio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4023171540"
     },
     {
         "en": "roller",
@@ -43973,21 +44452,21 @@ module.exports=[
     },
     {
         "en": "rubbing",
-        "cy": "ffrotais",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3079564483"
-    },
-    {
-        "en": "rubbing",
         "cy": "rhwbiad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1125324466"
+    },
+    {
+        "en": "rubbing",
+        "cy": "ffrotais",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3079564483"
     },
     {
         "en": "rubbing stick",
@@ -44072,21 +44551,21 @@ module.exports=[
     },
     {
         "en": "rust",
-        "cy": "rhydu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4175140804"
-    },
-    {
-        "en": "rust",
         "cy": "rhwd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1472141471"
+    },
+    {
+        "en": "rust",
+        "cy": "rhydu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4175140804"
     },
     {
         "en": "rustification",
@@ -44398,21 +44877,21 @@ module.exports=[
     },
     {
         "en": "saw",
-        "cy": "llif",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3341143612"
-    },
-    {
-        "en": "saw",
         "cy": "llifio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3029699418"
+    },
+    {
+        "en": "saw",
+        "cy": "llif",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3341143612"
     },
     {
         "en": "sawdust",
@@ -44854,21 +45333,21 @@ module.exports=[
     },
     {
         "en": "screw",
-        "cy": "sgriwio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3932867384"
-    },
-    {
-        "en": "screw",
         "cy": "sgriw",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2330533534"
+    },
+    {
+        "en": "screw",
+        "cy": "sgriwio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3932867384"
     },
     {
         "en": "screw eye",
@@ -45034,21 +45513,21 @@ module.exports=[
     },
     {
         "en": "scumble",
-        "cy": "sgwmblo",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4204492218"
-    },
-    {
-        "en": "scumble",
         "cy": "sgwmbl",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1471009429"
+    },
+    {
+        "en": "scumble",
+        "cy": "sgwmblo",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4204492218"
     },
     {
         "en": "sea green",
@@ -45187,15 +45666,6 @@ module.exports=[
     },
     {
         "en": "section",
-        "cy": "trychiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4178817415"
-    },
-    {
-        "en": "section",
         "cy": "toriad",
         "tags": [
             "celf"
@@ -45204,13 +45674,13 @@ module.exports=[
         "id": "3612379098"
     },
     {
-        "en": "sectional",
-        "cy": "adrannol",
+        "en": "section",
+        "cy": "trychiad",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3848608807"
+        "id": "4178817415"
     },
     {
         "en": "sectional",
@@ -45220,6 +45690,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "2910155849"
+    },
+    {
+        "en": "sectional",
+        "cy": "adrannol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3848608807"
     },
     {
         "en": "sectional paper",
@@ -45304,21 +45783,21 @@ module.exports=[
     },
     {
         "en": "select",
-        "cy": "dewis",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3601421682"
-    },
-    {
-        "en": "select",
         "cy": "dethol",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "3007986784"
+    },
+    {
+        "en": "select",
+        "cy": "dewis",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3601421682"
     },
     {
         "en": "selection",
@@ -45394,12 +45873,12 @@ module.exports=[
     },
     {
         "en": "sense",
-        "cy": "synhwyrau",
+        "cy": "synnwyr",
         "tags": [
-            "sense"
+            "celf"
         ],
-        "notes": "(m)",
-        "id": "2735159538"
+        "notes": "",
+        "id": "613343758"
     },
     {
         "en": "sense",
@@ -45412,12 +45891,12 @@ module.exports=[
     },
     {
         "en": "sense",
-        "cy": "synnwyr",
+        "cy": "synhwyrau",
         "tags": [
-            "celf"
+            "sense"
         ],
-        "notes": "",
-        "id": "613343758"
+        "notes": "(m)",
+        "id": "2735159538"
     },
     {
         "en": "sense of touch",
@@ -45439,6 +45918,15 @@ module.exports=[
     },
     {
         "en": "sensitive",
+        "cy": "sensitif",
+        "tags": [
+            "sense"
+        ],
+        "notes": "",
+        "id": "1160942049"
+    },
+    {
+        "en": "sensitive",
         "cy": "teimladwy",
         "tags": [
             "sense",
@@ -45446,15 +45934,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "2144487005"
-    },
-    {
-        "en": "sensitive",
-        "cy": "sensitif",
-        "tags": [
-            "sense"
-        ],
-        "notes": "",
-        "id": "1160942049"
     },
     {
         "en": "sensitivity",
@@ -45683,21 +46162,21 @@ module.exports=[
     },
     {
         "en": "shade",
-        "cy": "tywyllu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3028909819"
-    },
-    {
-        "en": "shade",
         "cy": "cysgod",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "256677000"
+    },
+    {
+        "en": "shade",
+        "cy": "tywyllu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3028909819"
     },
     {
         "en": "shading",
@@ -45737,21 +46216,21 @@ module.exports=[
     },
     {
         "en": "shape",
-        "cy": "siâp",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1890988273"
-    },
-    {
-        "en": "shape",
         "cy": "siapio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1373495380"
+    },
+    {
+        "en": "shape",
+        "cy": "siâp",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1890988273"
     },
     {
         "en": "shaping clay",
@@ -45766,10 +46245,10 @@ module.exports=[
         "en": "sharp",
         "cy": "llym",
         "tags": [
-            "celf"
+            "state"
         ],
         "notes": "",
-        "id": "1116843418"
+        "id": "598247521"
     },
     {
         "en": "sharp",
@@ -45784,10 +46263,10 @@ module.exports=[
         "en": "sharp",
         "cy": "llym",
         "tags": [
-            "state"
+            "celf"
         ],
         "notes": "",
-        "id": "598247521"
+        "id": "1116843418"
     },
     {
         "en": "sharp blade",
@@ -45944,21 +46423,21 @@ module.exports=[
     },
     {
         "en": "shine",
-        "cy": "sgleinio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3303499955"
-    },
-    {
-        "en": "shine",
         "cy": "sglein",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "560313365"
+    },
+    {
+        "en": "shine",
+        "cy": "sgleinio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3303499955"
     },
     {
         "en": "shiny paper",
@@ -46043,21 +46522,21 @@ module.exports=[
     },
     {
         "en": "shrink",
-        "cy": "pannu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4087665271"
-    },
-    {
-        "en": "shrink",
         "cy": "culhau",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2501259125"
+    },
+    {
+        "en": "shrink",
+        "cy": "pannu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4087665271"
     },
     {
         "en": "shrinkage",
@@ -46410,21 +46889,21 @@ module.exports=[
     },
     {
         "en": "similarity",
-        "cy": "cyflunedd",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1986774557"
-    },
-    {
-        "en": "similarity",
         "cy": "tebygrwydd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1482685186"
+    },
+    {
+        "en": "similarity",
+        "cy": "cyflunedd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1986774557"
     },
     {
         "en": "similarity of colour",
@@ -46452,6 +46931,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "4205718906"
+    },
+    {
+        "en": "single parent family",
+        "cy": "teulu un rhiant",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "736544498"
     },
     {
         "en": "single section book",
@@ -46545,21 +47033,21 @@ module.exports=[
     },
     {
         "en": "size",
-        "cy": "seis",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "571831359"
-    },
-    {
-        "en": "size",
         "cy": "maint",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "378634700"
+    },
+    {
+        "en": "size",
+        "cy": "seis",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "571831359"
     },
     {
         "en": "size",
@@ -46590,21 +47078,21 @@ module.exports=[
     },
     {
         "en": "skeleton",
-        "cy": "ysgerbwd",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m)",
-        "id": "2696691852"
-    },
-    {
-        "en": "skeleton",
         "cy": "sgerbwd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "765740709"
+    },
+    {
+        "en": "skeleton",
+        "cy": "ysgerbwd",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m)",
+        "id": "2696691852"
     },
     {
         "en": "skeletons",
@@ -46618,21 +47106,21 @@ module.exports=[
     },
     {
         "en": "sketch",
-        "cy": "darlun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2574155924"
-    },
-    {
-        "en": "sketch",
         "cy": "braslunio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2359145159"
+    },
+    {
+        "en": "sketch",
+        "cy": "darlun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2574155924"
     },
     {
         "en": "sketch",
@@ -46854,21 +47342,21 @@ module.exports=[
     },
     {
         "en": "slide",
-        "cy": "llithr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1996463046"
-    },
-    {
-        "en": "slide",
         "cy": "llithro",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "553290985"
+    },
+    {
+        "en": "slide",
+        "cy": "llithr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1996463046"
     },
     {
         "en": "slide sequence",
@@ -47635,6 +48123,15 @@ module.exports=[
     },
     {
         "en": "speaker",
+        "cy": "siaradwyr",
+        "tags": [
+            "noun"
+        ],
+        "notes": "(f)",
+        "id": "176082124"
+    },
+    {
+        "en": "speaker",
         "cy": "siaradwr",
         "tags": [
             "noun"
@@ -47650,15 +48147,6 @@ module.exports=[
         ],
         "notes": "(m) -ion",
         "id": "2771521147"
-    },
-    {
-        "en": "speaker",
-        "cy": "siaradwyr",
-        "tags": [
-            "noun"
-        ],
-        "notes": "(f)",
-        "id": "176082124"
     },
     {
         "en": "specialist",
@@ -47690,21 +48178,21 @@ module.exports=[
     },
     {
         "en": "speckle",
-        "cy": "brychu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3615529894"
-    },
-    {
-        "en": "speckle",
         "cy": "brychni",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2069506868"
+    },
+    {
+        "en": "speckle",
+        "cy": "brychu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3615529894"
     },
     {
         "en": "spectrum",
@@ -47762,21 +48250,21 @@ module.exports=[
     },
     {
         "en": "spine",
-        "cy": "asgwrn cefn",
-        "tags": [
-            "body"
-        ],
-        "notes": "",
-        "id": "2619088251"
-    },
-    {
-        "en": "spine",
         "cy": "meingefn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "121180562"
+    },
+    {
+        "en": "spine",
+        "cy": "asgwrn cefn",
+        "tags": [
+            "body"
+        ],
+        "notes": "",
+        "id": "2619088251"
     },
     {
         "en": "spinning wheel",
@@ -48269,21 +48757,21 @@ module.exports=[
     },
     {
         "en": "stake",
-        "cy": "polyn",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3967672442"
-    },
-    {
-        "en": "stake",
         "cy": "bonyn",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2880483562"
+    },
+    {
+        "en": "stake",
+        "cy": "polyn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3967672442"
     },
     {
         "en": "staking cane",
@@ -48323,21 +48811,21 @@ module.exports=[
     },
     {
         "en": "staple",
-        "cy": "stwffwl",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3186803298"
-    },
-    {
-        "en": "staple",
         "cy": "styffylu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1788298135"
+    },
+    {
+        "en": "staple",
+        "cy": "stwffwl",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3186803298"
     },
     {
         "en": "staple gun",
@@ -48583,6 +49071,15 @@ module.exports=[
         "id": "1659801052"
     },
     {
+        "en": "step father",
+        "cy": "tad gwyn",
+        "tags": [
+            "family"
+        ],
+        "notes": "(NW)",
+        "id": "2130480252"
+    },
+    {
         "en": "step mother",
         "cy": "llysfam",
         "tags": [
@@ -48590,6 +49087,15 @@ module.exports=[
         ],
         "notes": "(f) -au",
         "id": "240255017"
+    },
+    {
+        "en": "step mother",
+        "cy": "mam wen",
+        "tags": [
+            "family"
+        ],
+        "notes": "(NW)",
+        "id": "938444306"
     },
     {
         "en": "step sister",
@@ -48782,21 +49288,21 @@ module.exports=[
     },
     {
         "en": "stipple",
-        "cy": "dotwaith",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1996579437"
-    },
-    {
-        "en": "stipple",
         "cy": "dotweithio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "578772751"
+    },
+    {
+        "en": "stipple",
+        "cy": "dotwaith",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1996579437"
     },
     {
         "en": "stipple drawing",
@@ -48935,21 +49441,21 @@ module.exports=[
     },
     {
         "en": "stomach",
-        "cy": "bola",
-        "tags": [
-            "body"
-        ],
-        "notes": "(m) (SW)",
-        "id": "2978728492"
-    },
-    {
-        "en": "stomach",
         "cy": "cylla",
         "tags": [
             "body"
         ],
         "notes": "(m) (SW)",
         "id": "2501072279"
+    },
+    {
+        "en": "stomach",
+        "cy": "bola",
+        "tags": [
+            "body"
+        ],
+        "notes": "(m) (SW)",
+        "id": "2978728492"
     },
     {
         "en": "stomach",
@@ -49234,21 +49740,21 @@ module.exports=[
     },
     {
         "en": "strength",
-        "cy": "cryfder",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2558135246"
-    },
-    {
-        "en": "strength",
         "cy": "nerth",
         "tags": [
             "body"
         ],
         "notes": "(f) -au",
         "id": "2199069556"
+    },
+    {
+        "en": "strength",
+        "cy": "cryfder",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2558135246"
     },
     {
         "en": "strength",
@@ -49414,6 +49920,15 @@ module.exports=[
     },
     {
         "en": "structure",
+        "cy": "adeiladwaith",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "774389152"
+    },
+    {
+        "en": "structure",
         "cy": "strwythur",
         "tags": [
             "celf"
@@ -49429,15 +49944,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "4121584222"
-    },
-    {
-        "en": "structure",
-        "cy": "adeiladwaith",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "774389152"
     },
     {
         "en": "stud",
@@ -49468,21 +49974,21 @@ module.exports=[
     },
     {
         "en": "study",
-        "cy": "astudio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3152384648"
-    },
-    {
-        "en": "study",
         "cy": "astudiaeth",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2973264543"
+    },
+    {
+        "en": "study",
+        "cy": "astudio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3152384648"
     },
     {
         "en": "stuff",
@@ -49558,21 +50064,21 @@ module.exports=[
     },
     {
         "en": "subject",
-        "cy": "testun",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2400892807"
-    },
-    {
-        "en": "subject",
         "cy": "pwnc",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2370008736"
+    },
+    {
+        "en": "subject",
+        "cy": "testun",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2400892807"
     },
     {
         "en": "subjectivation",
@@ -49666,16 +50172,6 @@ module.exports=[
     },
     {
         "en": "sufferer",
-        "cy": "dioddefwyr",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "(m)",
-        "id": "2711029046"
-    },
-    {
-        "en": "sufferer",
         "cy": "dioddefwr",
         "tags": [
             "health",
@@ -49683,6 +50179,16 @@ module.exports=[
         ],
         "notes": "(m)",
         "id": "579311247"
+    },
+    {
+        "en": "sufferer",
+        "cy": "dioddefwyr",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "(m)",
+        "id": "2711029046"
     },
     {
         "en": "suffering",
@@ -50405,21 +50911,21 @@ module.exports=[
     },
     {
         "en": "tack",
-        "cy": "tacio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2555965915"
-    },
-    {
-        "en": "tack",
         "cy": "tac",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "828756669"
+    },
+    {
+        "en": "tack",
+        "cy": "tacio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2555965915"
     },
     {
         "en": "tacker",
@@ -50568,21 +51074,21 @@ module.exports=[
     },
     {
         "en": "taper",
-        "cy": "tapr",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3390653843"
-    },
-    {
-        "en": "taper",
         "cy": "tapro",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1281476284"
+    },
+    {
+        "en": "taper",
+        "cy": "tapr",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3390653843"
     },
     {
         "en": "tapestry",
@@ -50667,21 +51173,21 @@ module.exports=[
     },
     {
         "en": "tear",
-        "cy": "rhwyg",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "220055815"
-    },
-    {
-        "en": "tear",
         "cy": "rhwygo",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "104322600"
+    },
+    {
+        "en": "tear",
+        "cy": "rhwyg",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "220055815"
     },
     {
         "en": "tear",
@@ -50776,21 +51282,21 @@ module.exports=[
     },
     {
         "en": "tempera painting",
-        "cy": "peintio tempera",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4029354388"
-    },
-    {
-        "en": "tempera painting",
         "cy": "paentiad tempera",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2465825398"
+    },
+    {
+        "en": "tempera painting",
+        "cy": "peintio tempera",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4029354388"
     },
     {
         "en": "temperarture",
@@ -51056,21 +51562,21 @@ module.exports=[
     },
     {
         "en": "theory",
-        "cy": "damcaniaeth",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3073569118"
-    },
-    {
-        "en": "theory",
         "cy": "theori",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "608345222"
+    },
+    {
+        "en": "theory",
+        "cy": "damcaniaeth",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3073569118"
     },
     {
         "en": "thermal",
@@ -51139,20 +51645,20 @@ module.exports=[
         "en": "thick",
         "cy": "trwchus",
         "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3469686807"
-    },
-    {
-        "en": "thick",
-        "cy": "trwchus",
-        "tags": [
             "state",
             "appearance"
         ],
         "notes": "",
         "id": "2730380542"
+    },
+    {
+        "en": "thick",
+        "cy": "trwchus",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3469686807"
     },
     {
         "en": "thick",
@@ -51213,16 +51719,6 @@ module.exports=[
         "en": "thin",
         "cy": "tenau",
         "tags": [
-            "state",
-            "appearance"
-        ],
-        "notes": "",
-        "id": "801478703"
-    },
-    {
-        "en": "thin",
-        "cy": "tenau",
-        "tags": [
             "celf"
         ],
         "notes": "",
@@ -51236,6 +51732,16 @@ module.exports=[
         ],
         "notes": "",
         "id": "408457357"
+    },
+    {
+        "en": "thin",
+        "cy": "tenau",
+        "tags": [
+            "state",
+            "appearance"
+        ],
+        "notes": "",
+        "id": "801478703"
     },
     {
         "en": "thinner",
@@ -51376,20 +51882,20 @@ module.exports=[
         "en": "thumb",
         "cy": "bawd",
         "tags": [
-            "body",
-            "hand"
+            "celf"
         ],
-        "notes": "(f)",
-        "id": "3718979380"
+        "notes": "",
+        "id": "1915871200"
     },
     {
         "en": "thumb",
         "cy": "bawd",
         "tags": [
-            "celf"
+            "body",
+            "hand"
         ],
-        "notes": "",
-        "id": "1915871200"
+        "notes": "(f)",
+        "id": "3718979380"
     },
     {
         "en": "thumbnail sketch",
@@ -51484,21 +51990,21 @@ module.exports=[
     },
     {
         "en": "tile",
-        "cy": "teilsio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4180521539"
-    },
-    {
-        "en": "tile",
         "cy": "teilsen",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "752803630"
+    },
+    {
+        "en": "tile",
+        "cy": "teilsio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "4180521539"
     },
     {
         "en": "tile cement",
@@ -51574,21 +52080,21 @@ module.exports=[
     },
     {
         "en": "tint",
-        "cy": "arlliwio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3683030010"
-    },
-    {
-        "en": "tint",
         "cy": "arlliw",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "487705180"
+    },
+    {
+        "en": "tint",
+        "cy": "arlliwio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3683030010"
     },
     {
         "en": "tinted",
@@ -51674,16 +52180,6 @@ module.exports=[
     },
     {
         "en": "to answer",
-        "cy": "ymateb",
-        "tags": [
-            "verb",
-            "speech"
-        ],
-        "notes": "",
-        "id": "3116154140"
-    },
-    {
-        "en": "to answer",
         "cy": "ateb",
         "tags": [
             "sound",
@@ -51692,6 +52188,16 @@ module.exports=[
         ],
         "notes": "(m) -ion",
         "id": "2997135054"
+    },
+    {
+        "en": "to answer",
+        "cy": "ymateb",
+        "tags": [
+            "verb",
+            "speech"
+        ],
+        "notes": "",
+        "id": "3116154140"
     },
     {
         "en": "to argue or fall out",
@@ -51746,6 +52252,16 @@ module.exports=[
         ],
         "notes": "",
         "id": "3015694807"
+    },
+    {
+        "en": "to be related to",
+        "cy": "perthyn i",
+        "tags": [
+            "family",
+            "phrase"
+        ],
+        "notes": "",
+        "id": "3729757200"
     },
     {
         "en": "to be silent",
@@ -51986,6 +52502,16 @@ module.exports=[
     },
     {
         "en": "to cry",
+        "cy": "wylo",
+        "tags": [
+            "emotion",
+            "verb"
+        ],
+        "notes": "",
+        "id": "199980848"
+    },
+    {
+        "en": "to cry",
         "cy": "llefain",
         "tags": [
             "verb"
@@ -52002,16 +52528,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "1624618954"
-    },
-    {
-        "en": "to cry",
-        "cy": "wylo",
-        "tags": [
-            "emotion",
-            "verb"
-        ],
-        "notes": "",
-        "id": "199980848"
     },
     {
         "en": "to cry",
@@ -52090,17 +52606,6 @@ module.exports=[
     },
     {
         "en": "to dribble",
-        "cy": "driblo",
-        "tags": [
-            "head",
-            "medical",
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "3086829548"
-    },
-    {
-        "en": "to dribble",
         "cy": "glafoerio",
         "tags": [
             "head",
@@ -52111,14 +52616,15 @@ module.exports=[
         "id": "2482410173"
     },
     {
-        "en": "to echo",
-        "cy": "adleisio",
+        "en": "to dribble",
+        "cy": "driblo",
         "tags": [
-            "sound",
+            "head",
+            "medical",
             "verb"
         ],
-        "notes": "(m)",
-        "id": "2226184432"
+        "notes": "(SW)",
+        "id": "3086829548"
     },
     {
         "en": "to echo",
@@ -52129,6 +52635,16 @@ module.exports=[
         ],
         "notes": "(f)",
         "id": "1504306317"
+    },
+    {
+        "en": "to echo",
+        "cy": "adleisio",
+        "tags": [
+            "sound",
+            "verb"
+        ],
+        "notes": "(m)",
+        "id": "2226184432"
     },
     {
         "en": "to embrace",
@@ -52200,16 +52716,6 @@ module.exports=[
     },
     {
         "en": "to fall",
-        "cy": "cwympo",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "(SW)",
-        "id": "2560424664"
-    },
-    {
-        "en": "to fall",
         "cy": "disgyn",
         "tags": [
             "verb",
@@ -52217,6 +52723,16 @@ module.exports=[
         ],
         "notes": "(NW)",
         "id": "161283444"
+    },
+    {
+        "en": "to fall",
+        "cy": "cwympo",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(SW)",
+        "id": "2560424664"
     },
     {
         "en": "to feel",
@@ -52240,16 +52756,6 @@ module.exports=[
     },
     {
         "en": "to follow",
-        "cy": "dilyn",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "1651772994"
-    },
-    {
-        "en": "to follow",
         "cy": "canlyn",
         "tags": [
             "verb",
@@ -52257,6 +52763,16 @@ module.exports=[
         ],
         "notes": "",
         "id": "574145347"
+    },
+    {
+        "en": "to follow",
+        "cy": "dilyn",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "1651772994"
     },
     {
         "en": "to freeze",
@@ -52323,6 +52839,24 @@ module.exports=[
     },
     {
         "en": "to gossip",
+        "cy": "hel clecs",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "622171277"
+    },
+    {
+        "en": "to gossip",
+        "cy": "hel straeon",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(NW)",
+        "id": "1413799194"
+    },
+    {
+        "en": "to gossip",
         "cy": "cloncian",
         "tags": [
             "speech",
@@ -52333,15 +52867,6 @@ module.exports=[
     },
     {
         "en": "to gossip",
-        "cy": "hel clecs",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "622171277"
-    },
-    {
-        "en": "to gossip",
         "cy": "clecian",
         "tags": [
             "speech",
@@ -52349,15 +52874,6 @@ module.exports=[
         ],
         "notes": "(SW)",
         "id": "3854085341"
-    },
-    {
-        "en": "to gossip",
-        "cy": "hel straeon",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(NW)",
-        "id": "1413799194"
     },
     {
         "en": "to grab",
@@ -52452,16 +52968,6 @@ module.exports=[
     },
     {
         "en": "to hurry",
-        "cy": "brysio",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "",
-        "id": "3489004477"
-    },
-    {
-        "en": "to hurry",
         "cy": "hast",
         "tags": [
             "verb",
@@ -52469,6 +52975,16 @@ module.exports=[
         ],
         "notes": "(SW) (m)",
         "id": "3118586470"
+    },
+    {
+        "en": "to hurry",
+        "cy": "brysio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "",
+        "id": "3489004477"
     },
     {
         "en": "to hurt",
@@ -52567,21 +53083,21 @@ module.exports=[
     },
     {
         "en": "to joke",
-        "cy": "jocan",
-        "tags": [
-            "verb"
-        ],
-        "notes": "(SW)",
-        "id": "3989387205"
-    },
-    {
-        "en": "to joke",
         "cy": "jocio",
         "tags": [
             "verb"
         ],
         "notes": "(NW)",
         "id": "1514151345"
+    },
+    {
+        "en": "to joke",
+        "cy": "jocan",
+        "tags": [
+            "verb"
+        ],
+        "notes": "(SW)",
+        "id": "3989387205"
     },
     {
         "en": "to jump",
@@ -52792,6 +53308,15 @@ module.exports=[
         "id": "3237896169"
     },
     {
+        "en": "to mature",
+        "cy": "aeddfedu",
+        "tags": [
+            "verb"
+        ],
+        "notes": "",
+        "id": "373985358"
+    },
+    {
         "en": "to meet",
         "cy": "cyfarch",
         "tags": [
@@ -52903,16 +53428,6 @@ module.exports=[
     },
     {
         "en": "to push",
-        "cy": "gwthio",
-        "tags": [
-            "verb",
-            "doing"
-        ],
-        "notes": "(NW)",
-        "id": "4038274857"
-    },
-    {
-        "en": "to push",
         "cy": "hwpio",
         "tags": [
             "verb",
@@ -52920,6 +53435,16 @@ module.exports=[
         ],
         "notes": "(SW)",
         "id": "99527095"
+    },
+    {
+        "en": "to push",
+        "cy": "gwthio",
+        "tags": [
+            "verb",
+            "doing"
+        ],
+        "notes": "(NW)",
+        "id": "4038274857"
     },
     {
         "en": "to put on weight",
@@ -53052,6 +53577,15 @@ module.exports=[
     },
     {
         "en": "to shake hands with someone",
+        "cy": "ysgwyd llaw â rhywun",
+        "tags": [
+            "body"
+        ],
+        "notes": "(NW)",
+        "id": "813485827"
+    },
+    {
+        "en": "to shake hands with someone",
         "cy": "siglo llaw â rhywun",
         "tags": [
             "body"
@@ -53060,13 +53594,14 @@ module.exports=[
         "id": "942839943"
     },
     {
-        "en": "to shake hands with someone",
-        "cy": "ysgwyd llaw â rhywun",
+        "en": "to shout",
+        "cy": "bloeddio",
         "tags": [
-            "body"
+            "sound",
+            "verb"
         ],
-        "notes": "(NW)",
-        "id": "813485827"
+        "notes": "-ian",
+        "id": "2050660273"
     },
     {
         "en": "to shout",
@@ -53085,16 +53620,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "3434219394"
-    },
-    {
-        "en": "to shout",
-        "cy": "bloeddio",
-        "tags": [
-            "sound",
-            "verb"
-        ],
-        "notes": "-ian",
-        "id": "2050660273"
     },
     {
         "en": "to shout as loud as possible",
@@ -53230,6 +53755,16 @@ module.exports=[
     },
     {
         "en": "to smoke",
+        "cy": "smocio",
+        "tags": [
+            "health",
+            "medical"
+        ],
+        "notes": "",
+        "id": "3065131953"
+    },
+    {
+        "en": "to smoke",
         "cy": "ysmygu",
         "tags": [
             "health",
@@ -53238,16 +53773,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "3977076486"
-    },
-    {
-        "en": "to smoke",
-        "cy": "smocio",
-        "tags": [
-            "health",
-            "medical"
-        ],
-        "notes": "",
-        "id": "3065131953"
     },
     {
         "en": "to sneeze",
@@ -53373,6 +53898,15 @@ module.exports=[
     },
     {
         "en": "to stare at",
+        "cy": "syllu ar",
+        "tags": [
+            "sense"
+        ],
+        "notes": "",
+        "id": "863782215"
+    },
+    {
+        "en": "to stare at",
         "cy": "craffu ar",
         "tags": [
             "verb",
@@ -53381,15 +53915,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "2752099078"
-    },
-    {
-        "en": "to stare at",
-        "cy": "syllu ar",
-        "tags": [
-            "sense"
-        ],
-        "notes": "",
-        "id": "863782215"
     },
     {
         "en": "to stay",
@@ -53521,6 +54046,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "2003219714"
+    },
+    {
+        "en": "to take after",
+        "cy": "tynnu ar ôl",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "3413037979"
     },
     {
         "en": "to talk",
@@ -53785,17 +54319,6 @@ module.exports=[
     },
     {
         "en": "to wound",
-        "cy": "anafu",
-        "tags": [
-            "health",
-            "medical",
-            "verb"
-        ],
-        "notes": "",
-        "id": "3293704335"
-    },
-    {
-        "en": "to wound",
         "cy": "clwyfo",
         "tags": [
             "health",
@@ -53804,6 +54327,17 @@ module.exports=[
         ],
         "notes": "",
         "id": "1739993434"
+    },
+    {
+        "en": "to wound",
+        "cy": "anafu",
+        "tags": [
+            "health",
+            "medical",
+            "verb"
+        ],
+        "notes": "",
+        "id": "3293704335"
     },
     {
         "en": "to yawn",
@@ -53995,21 +54529,21 @@ module.exports=[
     },
     {
         "en": "touch",
-        "cy": "cyffyrddiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1725099310"
-    },
-    {
-        "en": "touch",
         "cy": "cyffwrdd",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "613102508"
+    },
+    {
+        "en": "touch",
+        "cy": "cyffyrddiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1725099310"
     },
     {
         "en": "tough",
@@ -54211,21 +54745,21 @@ module.exports=[
     },
     {
         "en": "translation",
-        "cy": "cyfieithiad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3676069780"
-    },
-    {
-        "en": "translation",
         "cy": "trosiad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1540287051"
+    },
+    {
+        "en": "translation",
+        "cy": "cyfieithiad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3676069780"
     },
     {
         "en": "translucency",
@@ -54411,20 +54945,20 @@ module.exports=[
         "en": "treatment",
         "cy": "triniaeth",
         "tags": [
-            "medical",
-            "hospital"
+            "celf"
         ],
-        "notes": "(f)",
-        "id": "2928459770"
+        "notes": "",
+        "id": "2708338722"
     },
     {
         "en": "treatment",
         "cy": "triniaeth",
         "tags": [
-            "celf"
+            "medical",
+            "hospital"
         ],
-        "notes": "",
-        "id": "2708338722"
+        "notes": "(f)",
+        "id": "2928459770"
     },
     {
         "en": "tree branch",
@@ -54446,21 +54980,21 @@ module.exports=[
     },
     {
         "en": "trial",
-        "cy": "arbrofol",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2349507549"
-    },
-    {
-        "en": "trial",
         "cy": "arbrawf",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1731103815"
+    },
+    {
+        "en": "trial",
+        "cy": "arbrofol",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2349507549"
     },
     {
         "en": "trial print",
@@ -54771,15 +55305,6 @@ module.exports=[
     },
     {
         "en": "twin",
-        "cy": "gefeilles",
-        "tags": [
-            "family"
-        ],
-        "notes": "(f) -au",
-        "id": "2095604840"
-    },
-    {
-        "en": "twin",
         "cy": "gefell",
         "tags": [
             "family"
@@ -54788,13 +55313,13 @@ module.exports=[
         "id": "1551901445"
     },
     {
-        "en": "twine",
-        "cy": "cortyn",
+        "en": "twin",
+        "cy": "gefeilles",
         "tags": [
-            "celf"
+            "family"
         ],
-        "notes": "",
-        "id": "2236037706"
+        "notes": "(f) -au",
+        "id": "2095604840"
     },
     {
         "en": "twine",
@@ -54804,6 +55329,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "1809107965"
+    },
+    {
+        "en": "twine",
+        "cy": "cortyn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2236037706"
     },
     {
         "en": "twist",
@@ -54933,16 +55467,6 @@ module.exports=[
     },
     {
         "en": "ugly",
-        "cy": "hagr",
-        "tags": [
-            "appearance",
-            "state"
-        ],
-        "notes": "",
-        "id": "3412188676"
-    },
-    {
-        "en": "ugly",
         "cy": "salw",
         "tags": [
             "state",
@@ -54959,6 +55483,16 @@ module.exports=[
         ],
         "notes": "",
         "id": "1688225787"
+    },
+    {
+        "en": "ugly",
+        "cy": "hagr",
+        "tags": [
+            "appearance",
+            "state"
+        ],
+        "notes": "",
+        "id": "3412188676"
     },
     {
         "en": "ulcer",
@@ -55026,6 +55560,24 @@ module.exports=[
     },
     {
         "en": "uncle",
+        "cy": "wncwl",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "88742940"
+    },
+    {
+        "en": "uncle",
+        "cy": "yncl",
+        "tags": [
+            "family"
+        ],
+        "notes": "",
+        "id": "734018181"
+    },
+    {
+        "en": "uncle",
         "cy": "ewythr",
         "tags": [
             "family"
@@ -55055,21 +55607,21 @@ module.exports=[
     },
     {
         "en": "undercoat",
-        "cy": "tanbeintio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3653428942"
-    },
-    {
-        "en": "undercoat",
         "cy": "tanbaent",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "2244877344"
+    },
+    {
+        "en": "undercoat",
+        "cy": "tanbeintio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3653428942"
     },
     {
         "en": "undercolour",
@@ -55543,21 +56095,21 @@ module.exports=[
     },
     {
         "en": "varnish",
-        "cy": "farnais",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2868132143"
-    },
-    {
-        "en": "varnish",
         "cy": "farneisio",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "643025229"
+    },
+    {
+        "en": "varnish",
+        "cy": "farnais",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2868132143"
     },
     {
         "en": "varnished",
@@ -55644,19 +56196,19 @@ module.exports=[
         "en": "vein",
         "cy": "gwythïen",
         "tags": [
-            "body"
+            "celf"
         ],
-        "notes": "(f) -nau",
-        "id": "1362156447"
+        "notes": "",
+        "id": "832596051"
     },
     {
         "en": "vein",
         "cy": "gwythïen",
         "tags": [
-            "celf"
+            "body"
         ],
-        "notes": "",
-        "id": "832596051"
+        "notes": "(f) -nau",
+        "id": "1362156447"
     },
     {
         "en": "vellum glaze",
@@ -55687,21 +56239,21 @@ module.exports=[
     },
     {
         "en": "veneer",
-        "cy": "argaen",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2151115847"
-    },
-    {
-        "en": "veneer",
         "cy": "argaenu",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "546833490"
+    },
+    {
+        "en": "veneer",
+        "cy": "argaen",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2151115847"
     },
     {
         "en": "venetian red",
@@ -55903,21 +56455,21 @@ module.exports=[
     },
     {
         "en": "view",
-        "cy": "golygfa",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2273066598"
-    },
-    {
-        "en": "view",
         "cy": "golwg",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "531656975"
+    },
+    {
+        "en": "view",
+        "cy": "golygfa",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2273066598"
     },
     {
         "en": "vine charcoal",
@@ -56011,15 +56563,6 @@ module.exports=[
     },
     {
         "en": "vision",
-        "cy": "golwg",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "4099592742"
-    },
-    {
-        "en": "vision",
         "cy": "gweledigaeth",
         "tags": [
             "celf"
@@ -56028,13 +56571,13 @@ module.exports=[
         "id": "2232671228"
     },
     {
-        "en": "visionary",
-        "cy": "gweledydd",
+        "en": "vision",
+        "cy": "golwg",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "3145309113"
+        "id": "4099592742"
     },
     {
         "en": "visionary",
@@ -56044,6 +56587,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "351731480"
+    },
+    {
+        "en": "visionary",
+        "cy": "gweledydd",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3145309113"
     },
     {
         "en": "vista",
@@ -56200,21 +56752,21 @@ module.exports=[
     },
     {
         "en": "voice",
-        "cy": "llef",
-        "tags": [
-            "sound"
-        ],
-        "notes": "(f) -au",
-        "id": "2258732530"
-    },
-    {
-        "en": "voice",
         "cy": "llais",
         "tags": [
             "sound"
         ],
         "notes": "(m)",
         "id": "1826737304"
+    },
+    {
+        "en": "voice",
+        "cy": "llef",
+        "tags": [
+            "sound"
+        ],
+        "notes": "(f) -au",
+        "id": "2258732530"
     },
     {
         "en": "voices",
@@ -56320,19 +56872,19 @@ module.exports=[
         "en": "waist",
         "cy": "gwasg",
         "tags": [
-            "celf"
+            "body"
         ],
-        "notes": "",
-        "id": "1116712971"
+        "notes": "(m) -au -oedd",
+        "id": "228239013"
     },
     {
         "en": "waist",
         "cy": "gwasg",
         "tags": [
-            "body"
+            "celf"
         ],
-        "notes": "(m) -au -oedd",
-        "id": "228239013"
+        "notes": "",
+        "id": "1116712971"
     },
     {
         "en": "waistline",
@@ -56617,21 +57169,21 @@ module.exports=[
     },
     {
         "en": "waste",
-        "cy": "gwastraffu",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "1504916146"
-    },
-    {
-        "en": "waste",
         "cy": "gwastraff",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "425497703"
+    },
+    {
+        "en": "waste",
+        "cy": "gwastraffu",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "1504916146"
     },
     {
         "en": "waste material",
@@ -56968,21 +57520,21 @@ module.exports=[
     },
     {
         "en": "weathering",
-        "cy": "hindreulio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2131057805"
-    },
-    {
-        "en": "weathering",
         "cy": "hindreuliad",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "918246887"
+    },
+    {
+        "en": "weathering",
+        "cy": "hindreulio",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2131057805"
     },
     {
         "en": "weave",
@@ -57040,6 +57592,15 @@ module.exports=[
     },
     {
         "en": "weight",
+        "cy": "pwysau",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "411451727"
+    },
+    {
+        "en": "weight",
         "cy": "pwys",
         "tags": [
             "state",
@@ -57049,13 +57610,13 @@ module.exports=[
         "id": "696315815"
     },
     {
-        "en": "weight",
-        "cy": "pwysau",
+        "en": "weld",
+        "cy": "weldio",
         "tags": [
             "celf"
         ],
         "notes": "",
-        "id": "411451727"
+        "id": "2980725808"
     },
     {
         "en": "weld",
@@ -57065,15 +57626,6 @@ module.exports=[
         ],
         "notes": "",
         "id": "3394125722"
-    },
-    {
-        "en": "weld",
-        "cy": "weldio",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2980725808"
     },
     {
         "en": "well-balanced",
@@ -57197,21 +57749,21 @@ module.exports=[
     },
     {
         "en": "wheel",
-        "cy": "olwyn",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "2327648230"
-    },
-    {
-        "en": "wheel",
         "cy": "olwyno",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "89712489"
+    },
+    {
+        "en": "wheel",
+        "cy": "olwyn",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "2327648230"
     },
     {
         "en": "wheel of fortune pattern",
@@ -57233,21 +57785,21 @@ module.exports=[
     },
     {
         "en": "whirl",
-        "cy": "chwyrlïad",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "919405391"
-    },
-    {
-        "en": "whirl",
         "cy": "chwyrlïo",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "335878629"
+    },
+    {
+        "en": "whirl",
+        "cy": "chwyrlïad",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "919405391"
     },
     {
         "en": "whirler",
@@ -57388,15 +57940,6 @@ module.exports=[
         "en": "wide",
         "cy": "llydan",
         "tags": [
-            "state"
-        ],
-        "notes": "",
-        "id": "2265759520"
-    },
-    {
-        "en": "wide",
-        "cy": "llydan",
-        "tags": [
             "celf"
         ],
         "notes": "",
@@ -57411,6 +57954,15 @@ module.exports=[
         ],
         "notes": "",
         "id": "1680498893"
+    },
+    {
+        "en": "wide",
+        "cy": "llydan",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "2265759520"
     },
     {
         "en": "wide stroke",
@@ -57505,21 +58057,21 @@ module.exports=[
     },
     {
         "en": "wire",
-        "cy": "gwifren",
-        "tags": [
-            "celf"
-        ],
-        "notes": "",
-        "id": "3976134425"
-    },
-    {
-        "en": "wire",
         "cy": "gwifro",
         "tags": [
             "celf"
         ],
         "notes": "",
         "id": "1581862909"
+    },
+    {
+        "en": "wire",
+        "cy": "gwifren",
+        "tags": [
+            "celf"
+        ],
+        "notes": "",
+        "id": "3976134425"
     },
     {
         "en": "wire foundation",
@@ -58096,21 +58648,21 @@ module.exports=[
     },
     {
         "en": "young",
-        "cy": "ieuanc",
-        "tags": [
-            "state"
-        ],
-        "notes": "",
-        "id": "2695478610"
-    },
-    {
-        "en": "young",
         "cy": "ifanc",
         "tags": [
             "state"
         ],
         "notes": "",
         "id": "438986020"
+    },
+    {
+        "en": "young",
+        "cy": "ieuanc",
+        "tags": [
+            "state"
+        ],
+        "notes": "",
+        "id": "2695478610"
     },
     {
         "en": "youngest child",
@@ -58186,7 +58738,7 @@ module.exports=[
     }
 ]
 
-},{}],99:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58286,7 +58838,7 @@ var VocabularyController = function (_React$Component) {
 
 exports.default = VocabularyController;
 
-},{"../../core/event-target-value":7,"../../core/model/geirfa":23,"./geirfa.json":98,"./vocabulary-view":101,"react":189}],100:[function(require,module,exports){
+},{"../../core/event-target-value":7,"../../core/model/geirfa":23,"./geirfa.json":101,"./vocabulary-view":104,"react":192}],103:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58349,7 +58901,7 @@ VocabSearch.propTypes = {
 
 exports.default = VocabSearch;
 
-},{"prop-types":134,"react":189}],101:[function(require,module,exports){
+},{"prop-types":137,"react":192}],104:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58534,7 +59086,7 @@ VocabularyView.propTypes = {
 
 exports.default = VocabularyView;
 
-},{"../../page-content":58,"../../resusable-components/page-header":107,"./vocab-search":100,"prop-types":134,"react":189}],102:[function(require,module,exports){
+},{"../../page-content":61,"../../resusable-components/page-header":110,"./vocab-search":103,"prop-types":137,"react":192}],105:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58671,7 +59223,7 @@ FetchableContainer.propTypes = {
 
 exports.default = FetchableContainer;
 
-},{"../../core/is-browser":9,"../../core/model/geirfa/trim":27,"../../core/props-children":44,"../FetchableImage":103,"../FetchableImage/to-url":104,"prop-types":134,"react":189}],103:[function(require,module,exports){
+},{"../../core/is-browser":9,"../../core/model/geirfa/trim":27,"../../core/props-children":45,"../FetchableImage":106,"../FetchableImage/to-url":107,"prop-types":137,"react":192}],106:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58798,7 +59350,7 @@ FetchableImage.propTypes = {
 
 exports.default = FetchableImage;
 
-},{"../../core/colors":6,"../../core/is-browser":9,"./to-url":104,"prop-types":134,"react":189}],104:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/is-browser":9,"./to-url":107,"prop-types":137,"react":192}],107:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58883,7 +59435,7 @@ var makeUrl = function makeUrl() {
 
 exports.default = makeUrl();
 
-},{}],105:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58992,7 +59544,7 @@ FetchableSectionBackground.propTypes = {
 
 exports.default = FetchableSectionBackground;
 
-},{"../../core/colors":6,"../../core/is-browser":9,"../../core/props-children":44,"../FetchableImage":103,"../FetchableImage/to-url":104,"prop-types":134,"react":189}],106:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/is-browser":9,"../../core/props-children":45,"../FetchableImage":106,"../FetchableImage/to-url":107,"prop-types":137,"react":192}],109:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59055,7 +59607,7 @@ GitHubIcon.propTypes = {
 
 exports.default = GitHubIcon;
 
-},{"prop-types":134,"react":189}],107:[function(require,module,exports){
+},{"prop-types":137,"react":192}],110:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59117,7 +59669,7 @@ PageHeader.propTypes = {
 
 exports.default = PageHeader;
 
-},{"../../core/props-children":44,"react":189}],108:[function(require,module,exports){
+},{"../../core/props-children":45,"react":192}],111:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59176,7 +59728,7 @@ function random() {
     return (0, _arraySample2.default)(quotes);
 }
 
-},{"../../core/model/array-sample":11}],109:[function(require,module,exports){
+},{"../../core/model/array-sample":11}],112:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59258,7 +59810,7 @@ Col.propTypes = {
 
 exports.default = Col;
 
-},{"prop-types":134,"react":189}],110:[function(require,module,exports){
+},{"prop-types":137,"react":192}],113:[function(require,module,exports){
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -59268,7 +59820,7 @@ function _assertThisInitialized(self) {
 }
 
 module.exports = _assertThisInitialized;
-},{}],111:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 function _extends() {
   module.exports = _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -59288,7 +59840,7 @@ function _extends() {
 }
 
 module.exports = _extends;
-},{}],112:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
@@ -59296,7 +59848,7 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 module.exports = _inheritsLoose;
-},{}],113:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     default: obj
@@ -59304,7 +59856,7 @@ function _interopRequireDefault(obj) {
 }
 
 module.exports = _interopRequireDefault;
-},{}],114:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 function _interopRequireWildcard(obj) {
   if (obj && obj.__esModule) {
     return obj;
@@ -59331,7 +59883,7 @@ function _interopRequireWildcard(obj) {
 }
 
 module.exports = _interopRequireWildcard;
-},{}],115:[function(require,module,exports){
+},{}],118:[function(require,module,exports){
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -59348,7 +59900,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 }
 
 module.exports = _objectWithoutPropertiesLoose;
-},{}],116:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 /* @preserve
  * Leaflet 1.3.4, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2018 Vladimir Agafonkin, (c) 2010-2011 CloudMade
@@ -73220,7 +73772,7 @@ window.L = exports;
 })));
 
 
-},{}],117:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -73276,7 +73828,7 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
 var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
   return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
 };
-},{}],118:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -73355,7 +73907,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"./PathUtils":119,"resolve-pathname":191,"value-equal":194}],119:[function(require,module,exports){
+},{"./PathUtils":122,"resolve-pathname":194,"value-equal":197}],122:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -73417,7 +73969,7 @@ var createPath = exports.createPath = function createPath(location) {
 
   return path;
 };
-},{}],120:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -73725,7 +74277,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./DOMUtils":117,"./LocationUtils":118,"./PathUtils":119,"./createTransitionManager":123,"invariant":126,"warning":195}],121:[function(require,module,exports){
+},{"./DOMUtils":120,"./LocationUtils":121,"./PathUtils":122,"./createTransitionManager":126,"invariant":129,"warning":198}],124:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74050,7 +74602,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":117,"./LocationUtils":118,"./PathUtils":119,"./createTransitionManager":123,"invariant":126,"warning":195}],122:[function(require,module,exports){
+},{"./DOMUtils":120,"./LocationUtils":121,"./PathUtils":122,"./createTransitionManager":126,"invariant":129,"warning":198}],125:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74221,7 +74773,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./LocationUtils":118,"./PathUtils":119,"./createTransitionManager":123,"warning":195}],123:[function(require,module,exports){
+},{"./LocationUtils":121,"./PathUtils":122,"./createTransitionManager":126,"warning":198}],126:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74307,7 +74859,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":195}],124:[function(require,module,exports){
+},{"warning":198}],127:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74360,7 +74912,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.createBrowserHistory = _createBrowserHistory3.default;
 exports.createHashHistory = _createHashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./LocationUtils":118,"./PathUtils":119,"./createBrowserHistory":120,"./createHashHistory":121,"./createMemoryHistory":122}],125:[function(require,module,exports){
+},{"./LocationUtils":121,"./PathUtils":122,"./createBrowserHistory":123,"./createHashHistory":124,"./createMemoryHistory":125}],128:[function(require,module,exports){
 'use strict';
 
 /**
@@ -74446,7 +74998,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{"react":189,"react-is":141}],126:[function(require,module,exports){
+},{"react":192,"react-is":144}],129:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -74499,7 +75051,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":130}],127:[function(require,module,exports){
+},{"_process":133}],130:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -74591,7 +75143,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],128:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 var isarray = require('isarray')
 
 /**
@@ -75019,12 +75571,12 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":129}],129:[function(require,module,exports){
+},{"isarray":132}],132:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],130:[function(require,module,exports){
+},{}],133:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -75210,7 +75762,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],131:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -75305,7 +75857,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
-},{"./lib/ReactPropTypesSecret":135,"_process":130}],132:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":138,"_process":133}],135:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -75366,7 +75918,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"./lib/ReactPropTypesSecret":135}],133:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":138}],136:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -75925,7 +76477,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 };
 
 }).call(this,require('_process'))
-},{"./checkPropTypes":131,"./lib/ReactPropTypesSecret":135,"_process":130,"object-assign":127}],134:[function(require,module,exports){
+},{"./checkPropTypes":134,"./lib/ReactPropTypesSecret":138,"_process":133,"object-assign":130}],137:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -75957,7 +76509,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./factoryWithThrowingShims":132,"./factoryWithTypeCheckers":133,"_process":130}],135:[function(require,module,exports){
+},{"./factoryWithThrowingShims":135,"./factoryWithTypeCheckers":136,"_process":133}],138:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -75971,7 +76523,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],136:[function(require,module,exports){
+},{}],139:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react-dom-server.browser.development.js
@@ -79387,7 +79939,7 @@ module.exports = server_browser;
 }
 
 }).call(this,require('_process'))
-},{"_process":130,"object-assign":127,"prop-types/checkPropTypes":131,"react":189}],137:[function(require,module,exports){
+},{"_process":133,"object-assign":130,"prop-types/checkPropTypes":134,"react":192}],140:[function(require,module,exports){
 /** @license React v16.6.1
  * react-dom-server.browser.production.min.js
  *
@@ -79434,7 +79986,7 @@ f.type:!(2<m.length)||"o"!==m[0]&&"O"!==m[0]||"n"!==m[1]&&"N"!==m[1]?!1:!0;n||ea
 l?(e=[],qa[b]&&"\n"===l.charAt(0)&&(u+="\n"),u+=l):e=X(e.children);a=a.type;c=null==c||"http://www.w3.org/1999/xhtml"===c?ka(a):"http://www.w3.org/2000/svg"===c&&"foreignObject"===a?"http://www.w3.org/1999/xhtml":c;this.stack.push({domNamespace:c,type:b,children:e,childIndex:0,context:d,footer:k});this.previousWasTextNode=!1;return u};return a}(),Ba={renderToString:function(a){return(new Aa(a,!1)).read(Infinity)},renderToStaticMarkup:function(a){return(new Aa(a,!0)).read(Infinity)},renderToNodeStream:function(){r("207")},
 renderToStaticNodeStream:function(){r("208")},version:"16.6.1"},Ca={default:Ba},Da=Ca&&Ba||Ca;module.exports=Da.default||Da;
 
-},{"object-assign":127,"react":189}],138:[function(require,module,exports){
+},{"object-assign":130,"react":192}],141:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -79445,7 +79997,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-dom-server.browser.development.js":136,"./cjs/react-dom-server.browser.production.min.js":137,"_process":130}],139:[function(require,module,exports){
+},{"./cjs/react-dom-server.browser.development.js":139,"./cjs/react-dom-server.browser.production.min.js":140,"_process":133}],142:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react-is.development.js
@@ -79656,7 +80208,7 @@ exports.isStrictMode = isStrictMode;
 }
 
 }).call(this,require('_process'))
-},{"_process":130}],140:[function(require,module,exports){
+},{"_process":133}],143:[function(require,module,exports){
 /** @license React v16.6.1
  * react-is.production.min.js
  *
@@ -79672,7 +80224,7 @@ var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):601
 exports.Profiler=g;exports.Portal=d;exports.StrictMode=f;exports.isValidElementType=function(a){return"string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n)};exports.isAsyncMode=function(a){return v(a)||u(a)===l};exports.isConcurrentMode=v;exports.isContextConsumer=function(a){return u(a)===k};exports.isContextProvider=function(a){return u(a)===h};
 exports.isElement=function(a){return"object"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return u(a)===n};exports.isFragment=function(a){return u(a)===e};exports.isProfiler=function(a){return u(a)===g};exports.isPortal=function(a){return u(a)===d};exports.isStrictMode=function(a){return u(a)===f};
 
-},{}],141:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -79683,7 +80235,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-is.development.js":139,"./cjs/react-is.production.min.js":140,"_process":130}],142:[function(require,module,exports){
+},{"./cjs/react-is.development.js":142,"./cjs/react-is.production.min.js":143,"_process":133}],145:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -79770,7 +80322,7 @@ var _default = createProvider();
 
 exports.default = _default;
 }).call(this,require('_process'))
-},{"../utils/PropTypes":152,"../utils/warning":157,"@babel/runtime/helpers/inheritsLoose":112,"@babel/runtime/helpers/interopRequireDefault":113,"_process":130,"prop-types":134,"react":189}],143:[function(require,module,exports){
+},{"../utils/PropTypes":155,"../utils/warning":160,"@babel/runtime/helpers/inheritsLoose":115,"@babel/runtime/helpers/interopRequireDefault":116,"_process":133,"prop-types":137,"react":192}],146:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -80080,7 +80632,7 @@ _ref) {
   };
 }
 }).call(this,require('_process'))
-},{"../utils/PropTypes":152,"../utils/Subscription":153,"@babel/runtime/helpers/assertThisInitialized":110,"@babel/runtime/helpers/extends":111,"@babel/runtime/helpers/inheritsLoose":112,"@babel/runtime/helpers/interopRequireDefault":113,"@babel/runtime/helpers/objectWithoutPropertiesLoose":115,"_process":130,"hoist-non-react-statics":125,"invariant":126,"react":189,"react-is":141}],144:[function(require,module,exports){
+},{"../utils/PropTypes":155,"../utils/Subscription":156,"@babel/runtime/helpers/assertThisInitialized":113,"@babel/runtime/helpers/extends":114,"@babel/runtime/helpers/inheritsLoose":115,"@babel/runtime/helpers/interopRequireDefault":116,"@babel/runtime/helpers/objectWithoutPropertiesLoose":118,"_process":133,"hoist-non-react-statics":128,"invariant":129,"react":192,"react-is":144}],147:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -80196,7 +80748,7 @@ function createConnect(_temp) {
 var _default = createConnect();
 
 exports.default = _default;
-},{"../components/connectAdvanced":143,"../utils/shallowEqual":155,"./mapDispatchToProps":145,"./mapStateToProps":146,"./mergeProps":147,"./selectorFactory":148,"@babel/runtime/helpers/extends":111,"@babel/runtime/helpers/interopRequireDefault":113,"@babel/runtime/helpers/objectWithoutPropertiesLoose":115}],145:[function(require,module,exports){
+},{"../components/connectAdvanced":146,"../utils/shallowEqual":158,"./mapDispatchToProps":148,"./mapStateToProps":149,"./mergeProps":150,"./selectorFactory":151,"@babel/runtime/helpers/extends":114,"@babel/runtime/helpers/interopRequireDefault":116,"@babel/runtime/helpers/objectWithoutPropertiesLoose":118}],148:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80229,7 +80781,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 
 var _default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
 exports.default = _default;
-},{"./wrapMapToProps":150,"redux":190}],146:[function(require,module,exports){
+},{"./wrapMapToProps":153,"redux":193}],149:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80251,7 +80803,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 
 var _default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
 exports.default = _default;
-},{"./wrapMapToProps":150}],147:[function(require,module,exports){
+},{"./wrapMapToProps":153}],150:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -80308,7 +80860,7 @@ function whenMergePropsIsOmitted(mergeProps) {
 var _default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
 exports.default = _default;
 }).call(this,require('_process'))
-},{"../utils/verifyPlainObject":156,"@babel/runtime/helpers/extends":111,"@babel/runtime/helpers/interopRequireDefault":113,"_process":130}],148:[function(require,module,exports){
+},{"../utils/verifyPlainObject":159,"@babel/runtime/helpers/extends":114,"@babel/runtime/helpers/interopRequireDefault":116,"_process":133}],151:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -80410,7 +80962,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
   return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
 }
 }).call(this,require('_process'))
-},{"./verifySubselectors":149,"@babel/runtime/helpers/interopRequireDefault":113,"@babel/runtime/helpers/objectWithoutPropertiesLoose":115,"_process":130}],149:[function(require,module,exports){
+},{"./verifySubselectors":152,"@babel/runtime/helpers/interopRequireDefault":116,"@babel/runtime/helpers/objectWithoutPropertiesLoose":118,"_process":133}],152:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -80435,7 +80987,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
   verify(mapDispatchToProps, 'mapDispatchToProps', displayName);
   verify(mergeProps, 'mergeProps', displayName);
 }
-},{"../utils/warning":157,"@babel/runtime/helpers/interopRequireDefault":113}],150:[function(require,module,exports){
+},{"../utils/warning":160,"@babel/runtime/helpers/interopRequireDefault":116}],153:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -80514,7 +81066,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
   };
 }
 }).call(this,require('_process'))
-},{"../utils/verifyPlainObject":156,"@babel/runtime/helpers/interopRequireDefault":113,"_process":130}],151:[function(require,module,exports){
+},{"../utils/verifyPlainObject":159,"@babel/runtime/helpers/interopRequireDefault":116,"_process":133}],154:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -80535,7 +81087,7 @@ exports.connectAdvanced = _connectAdvanced.default;
 var _connect = _interopRequireDefault(require("./connect/connect"));
 
 exports.connect = _connect.default;
-},{"./components/Provider":142,"./components/connectAdvanced":143,"./connect/connect":144,"@babel/runtime/helpers/interopRequireDefault":113,"@babel/runtime/helpers/interopRequireWildcard":114}],152:[function(require,module,exports){
+},{"./components/Provider":145,"./components/connectAdvanced":146,"./connect/connect":147,"@babel/runtime/helpers/interopRequireDefault":116,"@babel/runtime/helpers/interopRequireWildcard":117}],155:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -80561,7 +81113,7 @@ var storeShape = _propTypes.default.shape({
 });
 
 exports.storeShape = storeShape;
-},{"@babel/runtime/helpers/interopRequireDefault":113,"prop-types":134}],153:[function(require,module,exports){
+},{"@babel/runtime/helpers/interopRequireDefault":116,"prop-types":137}],156:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80654,7 +81206,7 @@ function () {
 }();
 
 exports.default = Subscription;
-},{}],154:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80674,7 +81226,7 @@ function isPlainObject(obj) {
 
   return Object.getPrototypeOf(obj) === proto;
 }
-},{}],155:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80708,7 +81260,7 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
-},{}],156:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -80725,7 +81277,7 @@ function verifyPlainObject(value, displayName, methodName) {
     (0, _warning.default)(methodName + "() in " + displayName + " must return a plain object. Instead received " + value + ".");
   }
 }
-},{"./isPlainObject":154,"./warning":157,"@babel/runtime/helpers/interopRequireDefault":113}],157:[function(require,module,exports){
+},{"./isPlainObject":157,"./warning":160,"@babel/runtime/helpers/interopRequireDefault":116}],160:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80755,7 +81307,7 @@ function warning(message) {
   /* eslint-enable no-empty */
 
 }
-},{}],158:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80823,7 +81375,7 @@ BrowserRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = BrowserRouter;
-},{"./Router":166,"history":124,"prop-types":134,"react":189,"warning":172}],159:[function(require,module,exports){
+},{"./Router":169,"history":127,"prop-types":137,"react":192,"warning":175}],162:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80890,7 +81442,7 @@ HashRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = HashRouter;
-},{"./Router":166,"history":124,"prop-types":134,"react":189,"warning":172}],160:[function(require,module,exports){
+},{"./Router":169,"history":127,"prop-types":137,"react":192,"warning":175}],163:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81008,7 +81560,7 @@ Link.contextTypes = {
   }).isRequired
 };
 exports.default = Link;
-},{"history":124,"invariant":126,"prop-types":134,"react":189}],161:[function(require,module,exports){
+},{"history":127,"invariant":129,"prop-types":137,"react":192}],164:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81020,7 +81572,7 @@ var _MemoryRouter2 = _interopRequireDefault(_MemoryRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _MemoryRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/MemoryRouter":174}],162:[function(require,module,exports){
+},{"react-router/MemoryRouter":177}],165:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81112,7 +81664,7 @@ NavLink.defaultProps = {
 };
 
 exports.default = NavLink;
-},{"./Link":160,"./Route":165,"prop-types":134,"react":189}],163:[function(require,module,exports){
+},{"./Link":163,"./Route":168,"prop-types":137,"react":192}],166:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81124,7 +81676,7 @@ var _Prompt2 = _interopRequireDefault(_Prompt);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Prompt2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Prompt":175}],164:[function(require,module,exports){
+},{"react-router/Prompt":178}],167:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81136,7 +81688,7 @@ var _Redirect2 = _interopRequireDefault(_Redirect);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Redirect2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Redirect":176}],165:[function(require,module,exports){
+},{"react-router/Redirect":179}],168:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81148,7 +81700,7 @@ var _Route2 = _interopRequireDefault(_Route);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Route2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Route":177}],166:[function(require,module,exports){
+},{"react-router/Route":180}],169:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81160,7 +81712,7 @@ var _Router2 = _interopRequireDefault(_Router);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Router2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Router":178}],167:[function(require,module,exports){
+},{"react-router/Router":181}],170:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81172,7 +81724,7 @@ var _StaticRouter2 = _interopRequireDefault(_StaticRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _StaticRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/StaticRouter":179}],168:[function(require,module,exports){
+},{"react-router/StaticRouter":182}],171:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81184,7 +81736,7 @@ var _Switch2 = _interopRequireDefault(_Switch);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Switch2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Switch":180}],169:[function(require,module,exports){
+},{"react-router/Switch":183}],172:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81196,7 +81748,7 @@ var _generatePath2 = _interopRequireDefault(_generatePath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _generatePath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/generatePath":181}],170:[function(require,module,exports){
+},{"react-router/generatePath":184}],173:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81274,7 +81826,7 @@ exports.Switch = _Switch3.default;
 exports.generatePath = _generatePath3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./BrowserRouter":158,"./HashRouter":159,"./Link":160,"./MemoryRouter":161,"./NavLink":162,"./Prompt":163,"./Redirect":164,"./Route":165,"./Router":166,"./StaticRouter":167,"./Switch":168,"./generatePath":169,"./matchPath":171,"./withRouter":173}],171:[function(require,module,exports){
+},{"./BrowserRouter":161,"./HashRouter":162,"./Link":163,"./MemoryRouter":164,"./NavLink":165,"./Prompt":166,"./Redirect":167,"./Route":168,"./Router":169,"./StaticRouter":170,"./Switch":171,"./generatePath":172,"./matchPath":174,"./withRouter":176}],174:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81286,7 +81838,7 @@ var _matchPath2 = _interopRequireDefault(_matchPath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _matchPath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/matchPath":183}],172:[function(require,module,exports){
+},{"react-router/matchPath":186}],175:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -81352,7 +81904,7 @@ if (__DEV__) {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":130}],173:[function(require,module,exports){
+},{"_process":133}],176:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81364,7 +81916,7 @@ var _withRouter2 = _interopRequireDefault(_withRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _withRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/withRouter":186}],174:[function(require,module,exports){
+},{"react-router/withRouter":189}],177:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81432,7 +81984,7 @@ MemoryRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = MemoryRouter;
-},{"./Router":178,"history":124,"prop-types":134,"react":189,"warning":185}],175:[function(require,module,exports){
+},{"./Router":181,"history":127,"prop-types":137,"react":192,"warning":188}],178:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81523,7 +82075,7 @@ Prompt.contextTypes = {
   }).isRequired
 };
 exports.default = Prompt;
-},{"invariant":126,"prop-types":134,"react":189}],176:[function(require,module,exports){
+},{"invariant":129,"prop-types":137,"react":192}],179:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81655,7 +82207,7 @@ Redirect.contextTypes = {
   }).isRequired
 };
 exports.default = Redirect;
-},{"./generatePath":181,"history":124,"invariant":126,"prop-types":134,"react":189,"warning":185}],177:[function(require,module,exports){
+},{"./generatePath":184,"history":127,"invariant":129,"prop-types":137,"react":192,"warning":188}],180:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81813,7 +82365,7 @@ Route.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Route;
-},{"./matchPath":183,"invariant":126,"prop-types":134,"react":189,"warning":185}],178:[function(require,module,exports){
+},{"./matchPath":186,"invariant":129,"prop-types":137,"react":192,"warning":188}],181:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81933,7 +82485,7 @@ Router.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Router;
-},{"invariant":126,"prop-types":134,"react":189,"warning":185}],179:[function(require,module,exports){
+},{"invariant":129,"prop-types":137,"react":192,"warning":188}],182:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82103,7 +82655,7 @@ StaticRouter.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = StaticRouter;
-},{"./Router":178,"history":124,"invariant":126,"prop-types":134,"react":189,"warning":185}],180:[function(require,module,exports){
+},{"./Router":181,"history":127,"invariant":129,"prop-types":137,"react":192,"warning":188}],183:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82198,7 +82750,7 @@ Switch.propTypes = {
   location: _propTypes2.default.object
 };
 exports.default = Switch;
-},{"./matchPath":183,"invariant":126,"prop-types":134,"react":189,"warning":185}],181:[function(require,module,exports){
+},{"./matchPath":186,"invariant":129,"prop-types":137,"react":192,"warning":188}],184:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82244,7 +82796,7 @@ var generatePath = function generatePath() {
 };
 
 exports.default = generatePath;
-},{"path-to-regexp":128}],182:[function(require,module,exports){
+},{"path-to-regexp":131}],185:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82302,7 +82854,7 @@ exports.Switch = _Switch3.default;
 exports.generatePath = _generatePath3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./MemoryRouter":174,"./Prompt":175,"./Redirect":176,"./Route":177,"./Router":178,"./StaticRouter":179,"./Switch":180,"./generatePath":181,"./matchPath":183,"./withRouter":186}],183:[function(require,module,exports){
+},{"./MemoryRouter":177,"./Prompt":178,"./Redirect":179,"./Route":180,"./Router":181,"./StaticRouter":182,"./Switch":183,"./generatePath":184,"./matchPath":186,"./withRouter":189}],186:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82383,7 +82935,7 @@ var matchPath = function matchPath(pathname) {
 };
 
 exports.default = matchPath;
-},{"path-to-regexp":128}],184:[function(require,module,exports){
+},{"path-to-regexp":131}],187:[function(require,module,exports){
 'use strict';
 
 /**
@@ -82453,9 +83005,9 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{}],185:[function(require,module,exports){
-arguments[4][172][0].apply(exports,arguments)
-},{"_process":130,"dup":172}],186:[function(require,module,exports){
+},{}],188:[function(require,module,exports){
+arguments[4][175][0].apply(exports,arguments)
+},{"_process":133,"dup":175}],189:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82509,7 +83061,7 @@ var withRouter = function withRouter(Component) {
 };
 
 exports.default = withRouter;
-},{"./Route":177,"hoist-non-react-statics":184,"prop-types":134,"react":189}],187:[function(require,module,exports){
+},{"./Route":180,"hoist-non-react-statics":187,"prop-types":137,"react":192}],190:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react.development.js
@@ -84342,7 +84894,7 @@ module.exports = react;
 }
 
 }).call(this,require('_process'))
-},{"_process":130,"object-assign":127,"prop-types/checkPropTypes":131}],188:[function(require,module,exports){
+},{"_process":133,"object-assign":130,"prop-types/checkPropTypes":134}],191:[function(require,module,exports){
 /** @license React v16.6.1
  * react.production.min.js
  *
@@ -84368,7 +84920,7 @@ _currentValue:a,_currentValue2:a,Provider:null,Consumer:null};a.Provider={$$type
 b.ref&&(h=b.ref,f=K.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)L.call(b,c)&&!M.hasOwnProperty(c)&&(d[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)d.children=e;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];d.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:d,_owner:f}},createFactory:function(a){var b=N.bind(null,a);b.type=a;return b},isValidElement:O,version:"16.6.1",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:K,
 assign:k}};X.unstable_ConcurrentMode=x;X.unstable_Profiler=u;var Y={default:X},Z=Y&&X||Y;module.exports=Z.default||Z;
 
-},{"object-assign":127}],189:[function(require,module,exports){
+},{"object-assign":130}],192:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -84379,7 +84931,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":187,"./cjs/react.production.min.js":188,"_process":130}],190:[function(require,module,exports){
+},{"./cjs/react.development.js":190,"./cjs/react.production.min.js":191,"_process":133}],193:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -85030,7 +85582,7 @@ exports.compose = compose;
 exports.__DO_NOT_USE__ActionTypes = ActionTypes;
 
 }).call(this,require('_process'))
-},{"_process":130,"symbol-observable":192}],191:[function(require,module,exports){
+},{"_process":133,"symbol-observable":195}],194:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -85105,7 +85657,7 @@ function resolvePathname(to) {
 
 exports.default = resolvePathname;
 module.exports = exports['default'];
-},{}],192:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -85137,7 +85689,7 @@ if (typeof self !== 'undefined') {
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./ponyfill.js":193}],193:[function(require,module,exports){
+},{"./ponyfill.js":196}],196:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -85161,7 +85713,7 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-},{}],194:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -85205,7 +85757,7 @@ function valueEqual(a, b) {
 
 exports.default = valueEqual;
 module.exports = exports['default'];
-},{}],195:[function(require,module,exports){
+},{}],198:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -85269,4 +85821,4 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":130}]},{},[1]);
+},{"_process":133}]},{},[1]);
