@@ -22,7 +22,8 @@ export default {
         "pageTitleTagKeyAbout": "BYW | Amdanom",
         "pageTitleTagKeySubmit": "BYW | Cyflwyno",
         "pageTitleTagKeyPrivacy": "BYW | Preifatrwydd",
-        "pageTitleTagKey404": "BYW | Heb ei Ddarganfod"
+        "pageTitleTagKey404": "BYW | Heb ei Ddarganfod",
+        "homeCrowdSourced": "Torfoli"
     },
     "english": {
         "pageTitleKeyHome": "Home",
@@ -37,6 +38,7 @@ export default {
         "pageTitleTagKeyAbout": "BYW | About",
         "pageTitleTagKeySubmit": "BYW | Submit",
         "pageTitleTagKeyPrivacy": "BYW | Privacy",
-        "pageTitleTagKey404": "BYW | Page Not Found"
+        "pageTitleTagKey404": "BYW | Page Not Found",
+        "homeCrowdSourced": "Crowd sourced"
     }
 };

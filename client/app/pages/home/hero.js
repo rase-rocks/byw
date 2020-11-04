@@ -1,10 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import FetchableSectionBackground from "../../resusable-components/FetchableSectionBackground";
 import colors from "../../core/colors";
 import HeroSearchBar from "./hero-search-bar";
+import supportedKeys from "../../core/text/supported-keys";
 
 class HomeHero extends React.Component {
     render() {
+
+        const { text } = this.props;
+
         return (
             <FetchableSectionBackground backgroundColor={colors.mountainGreen}
                 url="assets/images/leo-sammarco-37818-unsplash.jpg"
@@ -13,7 +19,7 @@ class HomeHero extends React.Component {
 
                     <p className="small-text-hero">
                         <i className="icon-localizer text-primary mr-1"></i>
-                        Crowd sourced
+                        {text[supportedKeys.homeCrowdSourced]}
                         <span className="text-primary">&nbsp;Welsh&nbsp;</span>
                         language resource
                     </p>
@@ -34,5 +40,9 @@ class HomeHero extends React.Component {
         );
     }
 }
+
+HomeHero.propTypes = {
+    text: PropTypes.object.isRequired
+};
 
 export default HomeHero;

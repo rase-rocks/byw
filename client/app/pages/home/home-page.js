@@ -9,10 +9,12 @@ import Services from "./services";
 class Home extends React.Component {
     render() {
 
+        const { text } = this.props;
+
         return (
             <div className="full-page-content">
 
-                <HomeHero />
+                <HomeHero text={text}/>
 
                 <Features />
 
@@ -26,6 +28,7 @@ class Home extends React.Component {
 }
 
 Home.propTypes = {
+    text: PropTypes.object.isRequired,
     featuredLocation: PropTypes.object
 };
 

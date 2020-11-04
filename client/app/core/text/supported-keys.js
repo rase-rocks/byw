@@ -19,5 +19,6 @@ export default {
     pageTitleTagKeyAbout: "pageTitleTagKeyAbout", 
     pageTitleTagKeySubmit: "pageTitleTagKeySubmit", 
     pageTitleTagKeyPrivacy: "pageTitleTagKeyPrivacy", 
-    pageTitleTagKey404: "pageTitleTagKey404"
+    pageTitleTagKey404: "pageTitleTagKey404", 
+    homeCrowdSourced: "homeCrowdSourced"
 };

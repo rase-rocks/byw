@@ -5,6 +5,7 @@ import React from "react";
 import { requestLocationsAction } from "../../core/redux/actions";
 import arraySample from "../../core/model/array-sample";
 import Home from "./home-page";
+import text from "../../core/text/data";
 
 class HomeController extends React.Component {
 
@@ -26,8 +27,11 @@ class HomeController extends React.Component {
 
     render() {
 
+        const { language } = this.props;
+
         return (
-            <Home featuredLocation={this.state.featuredLocation} />
+            <Home text={text[language]}
+                featuredLocation={this.state.featuredLocation} />
         );
 
     }
@@ -35,12 +39,14 @@ class HomeController extends React.Component {
 }
 
 HomeController.propTypes = {
+    language: PropTypes.string.isRequired,
     locations: PropTypes.array,
     dispatch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
+        language: state.settings.language,
         locations: state.data.locations
     };
 };

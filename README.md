@@ -176,7 +176,7 @@ phrase, "hello, world"
 
 The `cymraeg` language folder includes an `index.js` which simply imports and then exports the default transformer. This is purely to provide an example implementation using a custom transformer in combination with the default-transformer, as a starting point.
 
-A `translation-template.csv` file is included that can be copied and used as a starting point for translations as it will contain all the required keys to be translated. Again this file is created automatically so should not be edited as changes will be lost.
+A `translation-template.csv` file is included that can be copied and used as a starting point for translations as it will contain all the required keys to be translated. Again this file is created automatically so should not be edited as changes will be lost. It contains the key used by the app to find the relevant piece of text content and a hint to the translator in the form of the English version to be translated.
 
 After adding a translation, be sure to run `npm test` as this will check that the translation is suitable for inclusion and report any errors found.
 
@@ -203,6 +203,74 @@ npm run make-text
 ```
 
 The newly added language will then be available for code completion in text rendering app components. These scripts add JavaScript (js) files to the `./client/app/core/text/` folder. These files can then be imported as normal using `import` in JS. As these files are overwritten every build, they should not be edited manually, as these changes will be lost. Instead, if changes are required, alter the raw translations and re-run the build script.
+
+For React components that require access to some for of state, a smart / dumb pattern is preferred. That is the component should be split into two. The first (usually `index.js`) will be the 'smart' or controller component and will either handle its own state or use `connect` to access the app state. Any transformation of this state should be done in this component and then passed to the dumb (or view) component for rendering. The dumb component should have no knowledge outside of its `props` that it gets passed in.
+
+Therefore in the case of components that render user facing text content, the controller component should have a `mapStateToProps` and look something like the below: (A very simple contrived example).
+
+```js
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
+import text from "../text/data"; // Path to the auto generated script
+import View from "./view";
+
+class ViewController extends React.Component {
+
+    render() {
+
+        const { language } = this.props;
+        const textContent = text[language];
+
+        return (
+            <View text={textContent} />
+        );
+
+    }
+
+}
+
+ViewController.propTypes = {
+    language: PropTypes.string.isRequired
+};
+
+const mapStateToProps = function (state) {
+    return {
+        language: state.settings.language
+    };
+};
+
+export default connect(mapStateToProps)(ViewController);
+```
+
+The view component should then `import` from `supportedKeys` to allow for code completion and build time checks. An example view component may look like:
+
+```js
+import React from "react";
+import PropTypes from "prop-types";
+import supportedKeys from "../text/supported-keys"; // path to the auto generated supported keys script
+
+class View extends React.Component {
+    render() {
+        const { text } = this.props;
+        const crowdSourcedTextContent = text[supportedKeys.homeCrowdSourced];
+        return (
+            <span>
+                {crowdSourcedTextContent}
+            </span>
+        )
+    }
+}
+
+View.propTypes = {
+    text: PropTypes.object.isRequired
+}
+
+export default ViewComponent;
+```
+
+In this example the `View` component only has to 'know' about which keys it needs to render its content. A combination of unit tests and code completion ensures that all required keys are present in all translations and only those keys are used to access the `text` object.
 
 ### Dependencies
 

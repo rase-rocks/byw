@@ -1,14 +1,15 @@
-key, value
-pageTitleKeyHome, Hafan
-pageTitleKeyMap, Map
-pageTitleKeyVocabulary, Geirfa
-pageTitleKeyAbout, Amdanom
-pageTitleKeySubmit, Cyflwyno
-pageTitleKeyPrivacy, Preifatrwydd
-pageTitleTagKeyHome, BYW | Hafan
-pageTitleTagKeyMap, BYW | Map
-pageTitleTagKeyVocabulary, BYW | Geirfa
-pageTitleTagKeyAbout, BYW | Amdanom
-pageTitleTagKeySubmit, BYW | Cyflwyno
-pageTitleTagKeyPrivacy, BYW | Preifatrwydd
-pageTitleTagKey404, BYW | Heb ei Ddarganfod
+key,translatorHint,value
+pageTitleKeyHome, "Home", Hafan
+pageTitleKeyMap, "Map", Map
+pageTitleKeyVocabulary, "Vocab", Geirfa
+pageTitleKeyAbout, "About", Amdanom
+pageTitleKeySubmit, "Submit", Cyflwyno
+pageTitleKeyPrivacy, "Privacy", Preifatrwydd
+pageTitleTagKeyHome, "BYW | Home", BYW | Hafan
+pageTitleTagKeyMap, "BYW | Map", BYW | Map
+pageTitleTagKeyVocabulary, "BYW | Vocab", BYW | Geirfa
+pageTitleTagKeyAbout, "BYW | About", BYW | Amdanom
+pageTitleTagKeySubmit, "BYW | Submit", BYW | Cyflwyno
+pageTitleTagKeyPrivacy, "BYW | Privacy", BYW | Preifatrwydd
+pageTitleTagKey404, "BYW | Page Not Found", BYW | Heb ei Ddarganfod
+homeCrowdSourced, "Crowd sourced", Torfoli
