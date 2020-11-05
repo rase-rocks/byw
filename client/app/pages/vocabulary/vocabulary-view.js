@@ -5,6 +5,8 @@ import PageContainer from "../../page-content";
 import PageHeader from "../../resusable-components/page-header";
 import VocabSearch from "./vocab-search";
 
+import supportedKeys from "../../core/text/supported-keys";
+
 function lines(units) {
     return units.map(function (unit) {
         return (
@@ -18,9 +20,9 @@ function lines(units) {
 }
 
 function clickableTags(tags, onClickTag) {
-    return tags.map(function (tag) { 
+    return tags.map(function (tag) {
 
-        const clickHandler = function() {
+        const clickHandler = function () {
             onClickTag(tag);
         };
 
@@ -34,28 +36,57 @@ function clickableTags(tags, onClickTag) {
     });
 }
 
+function getText(text) {
+    return {
+        title: text[supportedKeys.vocabTitle],
+        beta: text[supportedKeys.vocabBeta],
+        p1: text[supportedKeys.vocabP1],
+        p2: text[supportedKeys.vocabP2],
+        p3: text[supportedKeys.vocabP3],
+        resultsFound: text[supportedKeys.vocabResultsFound],
+        english: text[supportedKeys.vocabEnglish],
+        cymraeg: text[supportedKeys.vocabCymraeg],
+        notes: text[supportedKeys.vocabNotes]
+    };
+}
+
 class VocabularyView extends React.Component {
 
     render() {
 
-        const { onChange,
+        const {
+            text,
+            onChange,
             onClickTag,
             units,
             tags,
             searchText,
             currentTranslationUnitsCount,
-            targetTranslationUnitsCount } = this.props;
+            targetTranslationUnitsCount
+        } = this.props;
+
+        const {
+            title,
+            beta,
+            p1,
+            p2,
+            p3,
+            resultsFound,
+            english,
+            cymraeg,
+            notes
+        } = getText(text);
 
         return (
             <PageContainer>
 
                 <PageHeader>
-                    Vocabulary <small>Beta</small>
+                    {title} <small>{beta}</small>
                 </PageHeader>
 
                 <p>
-                    This is a beta version of an attempt to provide a searchable resource for commonly heard sayings.
-                    Currently it has {currentTranslationUnitsCount} words and phrases out of a target of {targetTranslationUnitsCount}.
+                    {p1}.&nbsp;
+                    {p2} {currentTranslationUnitsCount} {p3} {targetTranslationUnitsCount}.
                 </p>
 
                 <div className="row tag-list">
@@ -66,19 +97,19 @@ class VocabularyView extends React.Component {
 
                 <VocabSearch onChange={onChange} value={searchText} />
 
-                <p>{units.length} phrases and words found</p>
+                <p>{units.length} {resultsFound}</p>
 
                 <table className="table">
                     <tbody>
                         <tr>
                             <th>
-                                English
+                                {english}
                             </th>
                             <th>
-                                Cymraeg
+                                {cymraeg}
                             </th>
                             <th>
-                                Notes
+                                {notes}
                             </th>
                         </tr>
                         {lines(units)}
@@ -94,6 +125,7 @@ class VocabularyView extends React.Component {
 }
 
 VocabularyView.propTypes = {
+    text: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
     onClickTag: PropTypes.func.isRequired,
     units: PropTypes.array.isRequired,

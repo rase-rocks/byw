@@ -83,6 +83,15 @@ export default {
         "mapPages": "Pages",
         "mapSearchPlaceholder": "Search for places, coordinates and postcodes",
         "mapLegendTitle": "Legend to the map",
-        "mapLegendSubheading": "A quick glympse of Welsh speaking likeliness"
+        "mapLegendSubheading": "A quick glympse of Welsh speaking likeliness",
+        "vocabTitle": "Vocabulary",
+        "vocabBeta": "Beta",
+        "vocabP1": "This is a beta version of an attempt to provide a searchable resource for commonly heard sayings",
+        "vocabP2": "Currently it has",
+        "vocabP3": "words and phrases out of a target of",
+        "vocabResultsFound": "phrases and words found",
+        "vocabEnglish": "English",
+        "vocabCymraeg": "Cymraeg",
+        "vocabNotes": "Notes"
     }
 };

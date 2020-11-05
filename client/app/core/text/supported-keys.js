@@ -64,5 +64,14 @@ export default {
     mapPages: "mapPages", 
     mapSearchPlaceholder: "mapSearchPlaceholder", 
     mapLegendTitle: "mapLegendTitle", 
-    mapLegendSubheading: "mapLegendSubheading"
+    mapLegendSubheading: "mapLegendSubheading", 
+    vocabTitle: "vocabTitle", 
+    vocabBeta: "vocabBeta", 
+    vocabP1: "vocabP1", 
+    vocabP2: "vocabP2", 
+    vocabP3: "vocabP3", 
+    vocabResultsFound: "vocabResultsFound", 
+    vocabEnglish: "vocabEnglish", 
+    vocabCymraeg: "vocabCymraeg", 
+    vocabNotes: "vocabNotes"
 };

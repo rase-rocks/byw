@@ -1,8 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import geirfaData from "./geirfa.json";
 import makeGeirfa from "../../core/model/geirfa";
 import eventTargetValue from "../../core/event-target-value";
+import text from "../../core/text/data";
 
 import VocabularyView from "./vocabulary-view";
 
@@ -46,8 +49,13 @@ class VocabularyController extends React.Component {
     }
 
     render() {
+
+        const { language } = this.props;
+        const content = text[language];
+
         return (
-            <VocabularyView onChange={this.makeOnChange()}
+            <VocabularyView text={content}
+                onChange={this.makeOnChange()}
                 onClickTag={this.makeOnClickTag()}
                 units={this.state.units}
                 tags={tags}
@@ -58,4 +66,14 @@ class VocabularyController extends React.Component {
     }
 }
 
-export default VocabularyController;
+const mapStateToProps = function (state) {
+    return {
+        language: state.settings.language
+    };
+};
+
+VocabularyController.propTypes = {
+    language: PropTypes.string.isRequired
+};
+
+export default connect(mapStateToProps)(VocabularyController);
