@@ -82,17 +82,17 @@ const routes = [
     }
 ];
 
-const noneNavRoutes = [
-    {
-        url: privacyUrl,
-        title: "Privacy",
-        pageTitleTextKey: pageTitleKey(privacyUrl),
-        titleTag: "BYW | Privacy",
-        pageTitleTagTextKey: pageTitleTagKey(privacyUrl),
-        descriptionTag: "How your privacy is maintained during your visit to this website",
-        keywordsTag: "privacy,policy,welsh,cymraeg,website,front,end,client,api"
-    }
-];
+const privacyRoute = {
+    url: privacyUrl,
+    title: "Privacy",
+    pageTitleTextKey: pageTitleKey(privacyUrl),
+    titleTag: "BYW | Privacy",
+    pageTitleTagTextKey: pageTitleTagKey(privacyUrl),
+    descriptionTag: "How your privacy is maintained during your visit to this website",
+    keywordsTag: "privacy,policy,welsh,cymraeg,website,front,end,client,api"
+};
+
+const noneNavRoutes = [privacyRoute];
 
 const notFound = {
     titleTag: "BYW | Not Found",
@@ -160,26 +160,27 @@ const titleTag = function (pathname, language = supportedLanguages.english) {
 
 const keywordsTag = function (pathname) {
     const path = findRoute(pathname);
-    return path == undefined 
-        ? defaultOrNotFound(pathname, "keywordsTag", notFound.keywordsTag) 
+    return path == undefined
+        ? defaultOrNotFound(pathname, "keywordsTag", notFound.keywordsTag)
         : path.keywordsTag;
 };
 
 const descriptionTag = function (pathname) {
     const path = findRoute(pathname);
-    return path === undefined 
-        ? defaultOrNotFound(pathname, "descriptionTag", notFound.descriptionTag) 
+    return path === undefined
+        ? defaultOrNotFound(pathname, "descriptionTag", notFound.descriptionTag)
         : path.descriptionTag;
 };
 
 export default routes;
-export { 
-    canonicalPath, 
-    titleTag, 
-    keywordsTag, 
-    descriptionTag, 
-    notFound, 
-    noneNavRoutes, 
+export {
+    canonicalPath,
+    titleTag,
+    keywordsTag,
+    descriptionTag,
+    notFound,
+    noneNavRoutes,
+    privacyRoute,
     route,
     requiredTextKeysTitle,
     requiredTextKeysTitleTag
