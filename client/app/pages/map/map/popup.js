@@ -52,38 +52,38 @@ const appendWrappedBtn = function (container, label, handler) {
     return col;
 };
 
-const buttons = function (location, onShow, onReview) {
+const buttons = function (location, onShow, onReview, showLabelText, categoriseLabelText) {
     const wrapper = element("div", "row");
 
     if (onShow) {
-        appendWrappedBtn(wrapper, "Show", onShow(location));
+        appendWrappedBtn(wrapper, showLabelText, onShow(location));
     }
 
     if (onReview) {
         const handler = () => onReview(location);
-        appendWrappedBtn(wrapper, "Review", handler);
+        appendWrappedBtn(wrapper, categoriseLabelText, handler);
     }
 
     return wrapper;
 };
 
-const popupContainer = function (location, onShow, onReview) {
+const popupContainer = function (location, onShow, onReview, showLabelText, categoriseLabelText) {
     const container = document.createElement("div");
     const table = makeTable(location.name, location.address, location.category);
     
     container.appendChild(table);
-    container.appendChild(buttons(location, onShow, onReview));
+    container.appendChild(buttons(location, onShow, onReview, showLabelText, categoriseLabelText));
     
     return container;
 };
 
-const popup = function (location, onShowLocation, onReview) {
+const popup = function (location, onShowLocation, onReview, showLabelText, categoriseLabelText) {
 
     if (!isBrowser()) {
         return `<p>${location.name}</p>`;
     }
     
-    const element = popupContainer(location, onShowLocation, onReview);
+    const element = popupContainer(location, onShowLocation, onReview, showLabelText, categoriseLabelText);
 
     return element;
 };

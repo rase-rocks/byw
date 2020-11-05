@@ -14,6 +14,7 @@ import bindMethods from "../../core/bind-methods";
 import eventTargetValue from "../../core/event-target-value";
 import MapPage from "./map-page";
 import { pageResults, pageCount } from "../../core/model/pagination";
+import text from "../../core/text/data";
 
 const value = eventTargetValue();
 
@@ -89,15 +90,28 @@ class MapPageController extends React.Component {
 
     render() {
 
-        const { filteredResults, searchText, selectedLocation, locations } = this.props;
-        const { currentPageNo, resultsPerPage } = this.state;
+        const { 
+            language,
+            filteredResults, 
+            searchText, 
+            selectedLocation, 
+            locations 
+        } = this.props;
+
+        const { 
+            currentPageNo, 
+            resultsPerPage 
+        } = this.state;
+
+        const content = text[language];
 
         const totalCount = filteredResults.length;
         const count = pageCount(totalCount, resultsPerPage);
         const results = pageResults(filteredResults, currentPageNo, resultsPerPage);
 
         return (
-            <MapPage locations={locations}
+            <MapPage text={content}
+                locations={locations}
                 totalCount={totalCount}
                 pageResults={results}
                 pageCount={count}
@@ -115,6 +129,7 @@ class MapPageController extends React.Component {
 }
 
 MapPageController.propTypes = {
+    language: PropTypes.string.isRequired,
     locations: PropTypes.array,
     filteredResults: PropTypes.array,
     selectedLocation: PropTypes.object,
@@ -126,6 +141,7 @@ MapPageController.propTypes = {
 
 const mapStateToProps = function (state) {
     return {
+        language: state.settings.language,
         locations: state.data.locations,
         filteredResults: state.data.filteredResults,
         selectedLocation: state.data.selectedLocation,

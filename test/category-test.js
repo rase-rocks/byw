@@ -7,6 +7,9 @@ const formattedDescription = require("../client/app/core/model/form/category").f
 const color = require("../client/app/core/model/form/category").color;
 const descriptions = require("../client/app/core/model/form/category").descriptions;
 
+const text = require("../client/app/core/text/data").default;
+const supportedLanguages = require("../client/app/core/text/supported-languages").default;
+
 describe("category", function () {
 
     describe("formattedPercentage", function () {
@@ -33,14 +36,14 @@ describe("category", function () {
         it("returns the expected result", function () {
 
             const tests = [
-                { value: - 1, output: descriptions[0].title },
-                { value: 0, output: descriptions[0].title },
-                { value: 1, output: descriptions[descriptions.length - 1].title },
-                { value: 2, output: descriptions[descriptions.length - 1].title }
+                { value: -1, output: text[supportedLanguages.english].category0 },
+                { value: 0, output: text[supportedLanguages.english].category0 },
+                { value: 1, output: text[supportedLanguages.english].category5 },
+                { value: 2, output: text[supportedLanguages.english].category5 }
             ];
 
             tests.forEach(test => {
-                expect(formattedDescription(test.value)).to.equal(test.output);
+                expect(formattedDescription(test.value), test.output).to.equal(test.output);
             });
 
         });

@@ -1,12 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 
+import supportedKeys from "../../../../core/text/supported-keys";
 import { descriptions } from "../../../../core/model/form/category";
 import { strHash } from "../../../../core/hash";
 import LegendItem from "./legend-item";
 
+const makeAddTitle = function(text) {
+    return function (description) {
+        return Object.assign({}, description, { title: text[description.titleKey]});
+    };
+};
+
 const toItem = function (description) {
     return (<LegendItem key={strHash(description.title)} category={description} />);
 };
+
+function getText(text) {
+    return {
+        title: text[supportedKeys.mapLegendTitle],
+        subheading: text[supportedKeys.mapLegendSubheading]
+    };
+}
 
 class Legend extends React.Component {
 
@@ -16,18 +31,27 @@ class Legend extends React.Component {
 
     render() {
 
-        const cols = descriptions.map(toItem);
+        const { text } = this.props;
+
+        const {
+            title,
+            subheading
+        } = getText(text);
+
+        const cols = descriptions
+            .map(makeAddTitle(text))
+            .map(toItem);
 
         return (
             <div className="container legend-container">
                 <div className="row">
                     <div className="col-md-12">
                         <p>
-                            Legend to the map
+                            {title}
                         </p>
                         <p>
                             <small>
-                                A quick glympse of Welsh speaking likeliness  
+                                {subheading} 
                             </small>
                         </p>
                     </div>
@@ -39,5 +63,9 @@ class Legend extends React.Component {
         );
     }
 }
+
+Legend.propTypes = {
+    text: PropTypes.object.isRequired
+};
 
 export default Legend;

@@ -82,7 +82,9 @@ export const makeUpdateMap = function (leaflet,
         selectedLocation,
         onShowLocation,
         onReview,
-        markerIconOverride) {
+        markerIconOverride,
+        showLabelText,
+        categoriseLabelText) {
 
         markerGroup.clearLayers();
 
@@ -113,7 +115,7 @@ export const makeUpdateMap = function (leaflet,
 
                 const marker = leaflet.marker(toMarkerCoords(loc.coordinates), m)
                     .addTo(map)
-                    .bindPopup(popup(loc, onShowLocation, onReview));
+                    .bindPopup(popup(loc, onShowLocation, onReview, showLabelText, categoriseLabelText));
 
                 markerCache[loc.coordinateHash] = marker;
             }

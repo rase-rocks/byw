@@ -26,6 +26,14 @@ export default {
     footerP2: "footerP2", 
     footerUsefulLinks: "footerUsefulLinks", 
     footerVisitOn: "footerVisitOn", 
+    category0: "category0", 
+    category1: "category1", 
+    category2: "category2", 
+    category3: "category3", 
+    category4: "category4", 
+    category5: "category5", 
+    show: "show", 
+    categorise: "categorise", 
     homeCrowdSourced: "homeCrowdSourced", 
     homeWelsh: "homeWelsh", 
     homeLanguageResource: "homeLanguageResource", 
@@ -50,5 +58,11 @@ export default {
     homeServices2Desc: "homeServices2Desc", 
     homeServices3Title: "homeServices3Title", 
     homeServices3Desc: "homeServices3Desc", 
-    homeThoughtOfTheDay: "homeThoughtOfTheDay"
+    homeThoughtOfTheDay: "homeThoughtOfTheDay", 
+    mapResult: "mapResult", 
+    mapResults: "mapResults", 
+    mapPages: "mapPages", 
+    mapSearchPlaceholder: "mapSearchPlaceholder", 
+    mapLegendTitle: "mapLegendTitle", 
+    mapLegendSubheading: "mapLegendSubheading"
 };

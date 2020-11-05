@@ -1,10 +1,11 @@
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import { MAP_ID } from "./constants";
 import isBrowser from "../../../core/is-browser";
 import makeController from "./controller";
+import addTextContent from "./add-text-content";
 
 /*
 * TODO: Find a fix for this
@@ -28,9 +29,11 @@ class MapController extends React.Component {
 
         if (!isBrowser()) { return; }
 
-        const controller = makeController(document, L, MAP_ID, this.props);
+        const props = addTextContent(this.props);
+
+        const controller = makeController(document, L, MAP_ID, props);
         
-        const { selectedLocation, filteredResults } = this.props;
+        const { selectedLocation, filteredResults } = props;
         if (selectedLocation) {
             controller.show(selectedLocation.coordinates);
         } else if (filteredResults) {
@@ -50,12 +53,13 @@ class MapController extends React.Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const controller = this.state.controller;
+        const props = addTextContent(nextProps);
         
-        controller.props(nextProps);
-        if (nextProps.filteredResults 
-            && nextProps.filteredResults.length > 0) controller.fitTo(nextProps.filteredResults);
+        controller.props(props);
+        if (props.filteredResults 
+            && props.filteredResults.length > 0) controller.fitTo(props.filteredResults);
     }
 
     render() {
@@ -65,7 +69,14 @@ class MapController extends React.Component {
     }
 }
 
+const mapStateToProps = function (state) {
+    return {
+        language: state.settings.language
+    };
+};
+
 MapController.propTypes = {
+    language: PropTypes.string.isRequired,
     filteredResults: PropTypes.array,
     locations: PropTypes.array,
     selectedLocation: PropTypes.object,
@@ -74,4 +85,4 @@ MapController.propTypes = {
     dispatch: PropTypes.func.isRequired
 };
 
-export default connect()(MapController);
+export default connect(mapStateToProps)(MapController);

@@ -25,6 +25,7 @@ class MapPage extends React.Component {
     render() {
 
         const {
+            text,
             locations,
             pageResults,
             selectedLocation,
@@ -40,13 +41,14 @@ class MapPage extends React.Component {
                     onShowLocation={onShowLocation}
                     onReview={onReview} />
                 <MapSearchBox {...this.props} />
-                <Legend/>
+                <Legend text={text}/>
             </div>
         );
     }
 }
 
 MapPage.propTypes = {
+    text: PropTypes.object.isRequired,
     locations: PropTypes.array.isRequired,
     totalCount: PropTypes.number.isRequired,
     pageResults: PropTypes.array.isRequired,

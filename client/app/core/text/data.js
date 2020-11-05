@@ -45,6 +45,14 @@ export default {
         "footerP2": "Submitting a review is quick and no account or login is required. If you are aware of a place that Welsh can be heard and used, but is not already in our index, submitting it to the index will let others know",
         "footerUsefulLinks": "Useful links",
         "footerVisitOn": "Visit us on",
+        "category0": "Highly unlikely",
+        "category1": "Not very likely",
+        "category2": "Likely",
+        "category3": "Very likely",
+        "category4": "Highly likely",
+        "category5": "Definitely",
+        "show": "Show",
+        "categorise": "Categorise",
         "homeCrowdSourced": "Crowd sourced",
         "homeWelsh": "Welsh",
         "homeLanguageResource": "language resource",
@@ -69,6 +77,12 @@ export default {
         "homeServices2Desc": "However, this is not just about learners. Those fluent need to also use their Welsh whenever they can. Welsh needs to be heard on the street, in the shops and wherever we get together",
         "homeServices3Title": "Days out",
         "homeServices3Desc": "So, before you shop, go on a day out, or whatever you like to do, see if there will be a Welsh language welcome and, above all, use your Welsh yourself!",
-        "homeThoughtOfTheDay": "Thought of the day"
+        "homeThoughtOfTheDay": "Thought of the day",
+        "mapResult": "Result",
+        "mapResults": "Results",
+        "mapPages": "Pages",
+        "mapSearchPlaceholder": "Search for places, coordinates and postcodes",
+        "mapLegendTitle": "Legend to the map",
+        "mapLegendSubheading": "A quick glympse of Welsh speaking likeliness"
     }
 };

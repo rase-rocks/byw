@@ -36,7 +36,9 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
         onLocatorDragend,
         showsLocatorMarker,
         coordinate,
-        markerIconOverride
+        markerIconOverride,
+        showLabelText,
+        categoriseLabelText
     } = initialProps;
 
     let map = leaflet.map(mapId);
@@ -66,7 +68,9 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
         selectedLocation,
         onShowLocation,
         onReview,
-        markerIconOverride);
+        markerIconOverride,
+        showLabelText,
+        categoriseLabelText);
 
     updateLocatorMarker(showsLocatorMarker, coordinate);
 
@@ -78,7 +82,9 @@ const makeController = function (doc, leaflet, mapId, initialProps) {
                     props.selectedLocation,
                     props.onShowLocation,
                     props.onReview,
-                    props.markerIconOverride);
+                    props.markerIconOverride,
+                    props.showLabelText,
+                    props.categoriseLabelText);
 
                 if (props.selectedLocation) {
                     setPoint(map, props.selectedLocation);

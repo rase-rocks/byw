@@ -4,11 +4,23 @@ import React from "react";
 import LocationFolder from "../location-folder";
 import SearchResultPaginator from "../pagination/search-results-paginator";
 
+import supportedKeys from "../../../core/text/supported-keys";
+
+function getText(text) {
+    return {
+        result: text[supportedKeys.mapResult],
+        results: text[supportedKeys.mapResults],
+        pages: text[supportedKeys.mapPages],
+        placeholder: text[supportedKeys.mapSearchPlaceholder]
+    };
+}
+
 class MapSearchBox extends React.Component {
 
     render() {
 
         const {
+            text,
             searchValueDidChange,
             searchText,
             totalCount,
@@ -20,9 +32,16 @@ class MapSearchBox extends React.Component {
             currentPageNo
         } = this.props;
 
-        const result = (totalCount == 1) ? "Result" : "Results";
+        const {
+            result,
+            results,
+            pages,
+            placeholder
+        } = getText(text);
+
+        const resultLabel = (totalCount == 1) ? result : results;
         const page = (pageCount > 1)
-            ? "Pages"
+            ? pages
             : "";
 
         return (
@@ -34,14 +53,15 @@ class MapSearchBox extends React.Component {
                             className="text-box unbordered"
                             onChange={searchValueDidChange}
                             value={searchText}
-                            placeholder="Search for places, coordinates and postcodes" />
+                            placeholder={placeholder} />
                     </div>
                     <div className="text-center" style={{ width: "100%" }}>
-                        {totalCount} {result}
+                        {totalCount} {resultLabel}
                     </div>
                 </div>
 
-                <LocationFolder locations={pageResults}
+                <LocationFolder text={text}
+                    locations={pageResults}
                     onShowLocation={onShowLocation}
                     onReview={onReview} />
 
@@ -61,6 +81,7 @@ class MapSearchBox extends React.Component {
 }
 
 MapSearchBox.propTypes = {
+    text: PropTypes.object.isRequired,
     totalCount: PropTypes.number.isRequired,
     pageResults: PropTypes.array.isRequired,
     pageCount: PropTypes.number.isRequired,

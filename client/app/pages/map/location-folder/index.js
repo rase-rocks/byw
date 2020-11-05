@@ -4,6 +4,14 @@ import React from "react";
 import { formattedDescription, formattedPercentage } from "../../../core/model/form/category";
 import hash from "../../../core/hash";
 
+import supportedKeys from "../../../core/text/supported-keys";
+
+function getText(text) {
+    return {
+        categorise: text[supportedKeys.categorise],
+        show: text[supportedKeys.show]
+    };
+}
 
 class LocationFolderController extends React.Component {
 
@@ -15,7 +23,17 @@ class LocationFolderController extends React.Component {
 
     render() {
 
-        const { locations, onShowLocation, onReview } = this.props;
+        const { 
+            text,
+            locations, 
+            onShowLocation, 
+            onReview 
+        } = this.props;
+
+        const {
+            categorise,
+            show
+        } = getText(text);
 
         const rows = locations.map(location => {
             return (
@@ -26,12 +44,12 @@ class LocationFolderController extends React.Component {
                             {formattedDescription(location.category)}, {formattedPercentage(location.category)}
                         </small>
                         <button className="search-result-submit-btn"
-                            onClick={this.makeOnReview(location, onReview)}>Review</button>
+                            onClick={this.makeOnReview(location, onReview)}>{categorise}</button>
                     </td>
                     <td><small>{location.address}</small></td>
                     <td>
                         <button className="btn btn-primary has-shadow"
-                            onClick={onShowLocation(location)}>Show</button>
+                            onClick={onShowLocation(location)}>{show}</button>
                     </td>
                 </tr>
             );
@@ -48,6 +66,7 @@ class LocationFolderController extends React.Component {
 }
 
 LocationFolderController.propTypes = {
+    text: PropTypes.object.isRequired,
     locations: PropTypes.array.isRequired,
     onShowLocation: PropTypes.func.isRequired,
     onReview: PropTypes.func.isRequired
