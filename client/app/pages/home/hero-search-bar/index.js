@@ -7,16 +7,22 @@ import { route } from "../../../nav";
 import { setSearchTextAction } from "../../../core/redux/actions";
 import eventTargetValue from "../../../core/event-target-value";
 import HeroSearchBar from "./hero-search-bar";
+import supportedKeys from "../../../core/text/supported-keys";
 
 const evt = eventTargetValue();
 
 const defaultSuggestion = "";
 
-const selectResult = function (results) {
+const selectResult = function (results, content) {
     if (!results || results.length === 0) { return defaultSuggestion;}
+
+    const and = content[supportedKeys.homeAnd];
+    const more = content[supportedKeys.homeMore];
+
     return (results.length > 1)
-        ? `${results[0].name} (and ${results.length - 1} more)`
+        ? `${results[0].name} (${and} ${results.length - 1} ${more})`
         : results[0].name;
+        
 };
 
 class HeroSearchBarController extends React.Component {
@@ -37,11 +43,17 @@ class HeroSearchBarController extends React.Component {
 
     render() {
 
-        const { searchText, filteredResults } = this.props;
-        const suggestion = selectResult(filteredResults);
+        const { 
+            text, 
+            searchText, 
+            filteredResults 
+        } = this.props;
+
+        const suggestion = selectResult(filteredResults, text);
 
         return (
-            <HeroSearchBar searchText={searchText}
+            <HeroSearchBar text={text}
+                searchText={searchText}
                 suggestion={suggestion}
                 onSubmit={this.makeOnSubmit()}
                 onChange={this.makeOnChange()} />
@@ -50,6 +62,7 @@ class HeroSearchBarController extends React.Component {
 }
 
 HeroSearchBarController.propTypes = {
+    text: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
     searchText: PropTypes.string.isRequired,

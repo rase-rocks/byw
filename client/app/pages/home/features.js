@@ -1,20 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { strHash } from "../../core/hash";
+import supportedKeys from "../../core/text/supported-keys";
 
-const features = [
+const featuresData = [
     {
-        title: "Search",
+        key: supportedKeys.homeSearch,
         icon: "SearchIcon.svg",
         divSize: "col-sm-4"
     },
     {
-        title: "Api",
+        key: supportedKeys.homeApi,
         icon: "CodeIcon.svg",
         divSize: "col-sm-4"
     },
     {
-        title: "Map",
+        key: supportedKeys.homeMap,
         icon: "MapIcon.svg",
         divSize: "col-sm-4"
     }
@@ -42,22 +43,31 @@ Feature.propTypes = {
     divSize: PropTypes.string.isRequired
 };
 
-const staticFeatures = features.map(feature => {
-    return (<Feature key={strHash(feature.title)} {...feature} />);
-});
+function features(text) {
+    return featuresData
+        .map(f => Object.assign({}, f, { title: text[f.key]}))
+        .map(f => (<Feature key={strHash(f.key)} {...f} />));
+}
 
 class FeaturesSection extends React.Component {
     render() {
+
+        const { text } = this.props;
+
         return (
             <section className="features bg-gray">
                 <div className="container text-center">
                     <div className="row">
-                        {staticFeatures}
+                        {features(text)}
                     </div>
                 </div>
             </section>
         );
     }
 }
+
+FeaturesSection.propTypes = {
+    text: PropTypes.object.isRequired
+};
 
 export default FeaturesSection;

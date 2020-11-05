@@ -202,9 +202,11 @@ Alternatively you can run all the scripts to build the entire text system in one
 npm run make-text
 ```
 
+### Using UI Text Content in React Components
+
 The newly added language will then be available for code completion in text rendering app components. These scripts add JavaScript (js) files to the `./client/app/core/text/` folder. These files can then be imported as normal using `import` in JS. As these files are overwritten every build, they should not be edited manually, as these changes will be lost. Instead, if changes are required, alter the raw translations and re-run the build script.
 
-For React components that require access to some for of state, a smart / dumb pattern is preferred. That is the component should be split into two. The first (usually `index.js`) will be the 'smart' or controller component and will either handle its own state or use `connect` to access the app state. Any transformation of this state should be done in this component and then passed to the dumb (or view) component for rendering. The dumb component should have no knowledge outside of its `props` that it gets passed in.
+For React components that require access to some of state, a smart / dumb pattern is preferred. That is the component should be split into two. The first (usually `index.js`) will be the 'smart' or controller component and will either handle its own state or use `connect` to access the app state. Any transformation of this state should be done in this component and then passed to the dumb (or view) component for rendering. The dumb component should have no knowledge outside of its `props` that it gets passed in.
 
 Therefore in the case of components that render user facing text content, the controller component should have a `mapStateToProps` and look something like the below: (A very simple contrived example).
 
@@ -252,15 +254,19 @@ import PropTypes from "prop-types";
 import supportedKeys from "../text/supported-keys"; // path to the auto generated supported keys script
 
 class View extends React.Component {
+
     render() {
+
         const { text } = this.props;
-        const crowdSourcedTextContent = text[supportedKeys.homeCrowdSourced];
+        const content = text[supportedKeys.homeCrowdSourced];
+
         return (
             <span>
-                {crowdSourcedTextContent}
+                {content}
             </span>
         )
     }
+
 }
 
 View.propTypes = {

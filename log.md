@@ -16,6 +16,8 @@ To build run:
 
 #### Issue-02 - 02/11/20 - Implement UI Content Language Translatable
 
+GitHub Issue #16 refers
+
 The current system assumes that the first language of a person seeking to use this service is English. This is not necessarily the case and therefore user facing text should be translatable into any language needed.
 
 To support this all UI facing text content will be taken out of the component rendering the UI and moved to a central JSON file for the chosen language. To make language translation contributions easier for none devs, the translations themselves will be in the form of a CSV file with `key` `value` pairs and a short set of scripts to check the translation is correctly formatted and contains all the necessary elements and then convert to JSON for import into the `Text` system. Components rendering user facing text will then be passed a language in the form of App State and can then render the correct language.

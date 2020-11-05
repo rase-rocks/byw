@@ -74,7 +74,7 @@ var pages = pagesToBuild.map(function (pageName) {
 
 console.log(JSON.stringify(pages));
 
-},{"../client/app/app":4,"../client/app/core/redux/reducers":49,"../client/app/nav/routes":60,"../client/app/pages/about":62,"../client/app/pages/home":68,"../client/app/pages/map":71,"../client/app/pages/nomatch":87,"../client/app/pages/privacy":88,"../client/app/pages/submit":96,"../client/app/pages/vocabulary":102,"./template":3,"react":192,"react-dom/server":141,"react-redux":154,"react-router":185,"react-router-dom":173,"redux":193}],2:[function(require,module,exports){
+},{"../client/app/app":4,"../client/app/core/redux/reducers":49,"../client/app/nav/routes":61,"../client/app/pages/about":63,"../client/app/pages/home":69,"../client/app/pages/map":72,"../client/app/pages/nomatch":88,"../client/app/pages/privacy":89,"../client/app/pages/submit":97,"../client/app/pages/vocabulary":103,"./template":3,"react":193,"react-dom/server":142,"react-redux":155,"react-router":186,"react-router-dom":174,"redux":194}],2:[function(require,module,exports){
 "use strict";
 
 var cssFilename = "byw.style.min.css";
@@ -246,7 +246,7 @@ App.propTypes = {
 
 exports.default = (0, _reactRouter.withRouter)((0, _reactRedux.connect)(mapStateToProps)(App));
 
-},{"./core/is-browser":9,"./core/props-children":45,"./footer":56,"./nav":57,"./nav/routes":60,"prop-types":137,"react":192,"react-redux":154,"react-router":185}],5:[function(require,module,exports){
+},{"./core/is-browser":9,"./core/props-children":45,"./footer":57,"./nav":58,"./nav/routes":61,"prop-types":138,"react":193,"react-redux":155,"react-router":186}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1599,7 +1599,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]);
 
-},{"prop-types":137}],46:[function(require,module,exports){
+},{"prop-types":138}],46:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1916,7 +1916,7 @@ var reducers = (0, _redux.combineReducers)({
 
 exports.default = reducers;
 
-},{"./data-reducer":47,"./form-reducer":48,"./locator-reducer":50,"./settings-reducer":51,"./submission-reducer":52,"redux":193}],50:[function(require,module,exports){
+},{"./data-reducer":47,"./form-reducer":48,"./locator-reducer":50,"./settings-reducer":51,"./submission-reducer":52,"redux":194}],50:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2013,7 +2013,7 @@ var settingsReducer = function settingsReducer() {
 
 exports.default = settingsReducer;
 
-},{"../../text/supported-languages":54,"../actions":46}],52:[function(require,module,exports){
+},{"../../text/supported-languages":55,"../actions":46}],52:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2095,7 +2095,8 @@ exports.default = {
         "pageTitleTagKeyAbout": "BYW | Amdanom",
         "pageTitleTagKeySubmit": "BYW | Cyflwyno",
         "pageTitleTagKeyPrivacy": "BYW | Preifatrwydd",
-        "pageTitleTagKey404": "BYW | Heb ei Ddarganfod"
+        "pageTitleTagKey404": "BYW | Heb ei Ddarganfod",
+        "homeCrowdSourced": "Torfoli"
     },
     "english": {
         "pageTitleKeyHome": "Home",
@@ -2110,11 +2111,91 @@ exports.default = {
         "pageTitleTagKeyAbout": "BYW | About",
         "pageTitleTagKeySubmit": "BYW | Submit",
         "pageTitleTagKeyPrivacy": "BYW | Privacy",
-        "pageTitleTagKey404": "BYW | Page Not Found"
+        "pageTitleTagKey404": "BYW | Page Not Found",
+        "homeCrowdSourced": "Crowd sourced",
+        "homeWelsh": "Welsh",
+        "homeLanguageResource": "language resource",
+        "homeLets": "Let's",
+        "homeFind": "find",
+        "homeSomewhere": "somewhere",
+        "homeHeroTitle": "Find out where to use and hear the language",
+        "homeSearch": "Search",
+        "homeSearchPlaceholder": "What are you searching for?",
+        "homeSearchResults": "Search Results",
+        "homeLocationPlaceholder": "Location",
+        "homeAnd": "and",
+        "homeMore": "more",
+        "homeApi": "API",
+        "homeMap": "Map",
+        "homeServicesSectionTitle": "Our Services",
+        "homeServicesSectionTitle1": "What does",
+        "homeServicesSectionTitle2": "do for me?",
+        "homeServices1Title": "Local Places",
+        "homeServices1Desc": "This site is simply about getting people to use their Welsh. It is available in a couple of languages to help learners from all parts of the globe to find places to use and improve their Welsh skills",
+        "homeServices2Title": "Native Speakers",
+        "homeServices2Desc": "However, this is not just about learners. Those fluent need to also use their Welsh whenever they can. Welsh needs to be heard on the street, in the shops and wherever we get together",
+        "homeServices3Title": "Days out",
+        "homeServices3Desc": "So, before you shop, go on a day out, or whatever you like to do, see if there will be a Welsh language welcome and, above all, use your Welsh yourself!",
+        "homeThoughtOfTheDay": "Thought of the day"
     }
 };
 
 },{}],54:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+// This file is created by the build system and should not be manually edited or changes
+// will be lost.
+
+// It is created to allow for code completion of the supported keys to access the page
+// text translations. Its prescence assists the page component author to locate the relevant
+// piece of user facing text. It also means that components that attempt to access none
+// existing keys will be found at build time, rather than runtime.
+
+exports.default = {
+    pageTitleKeyHome: "pageTitleKeyHome",
+    pageTitleKeyMap: "pageTitleKeyMap",
+    pageTitleKeyVocabulary: "pageTitleKeyVocabulary",
+    pageTitleKeyAbout: "pageTitleKeyAbout",
+    pageTitleKeySubmit: "pageTitleKeySubmit",
+    pageTitleKeyPrivacy: "pageTitleKeyPrivacy",
+    pageTitleTagKeyHome: "pageTitleTagKeyHome",
+    pageTitleTagKeyMap: "pageTitleTagKeyMap",
+    pageTitleTagKeyVocabulary: "pageTitleTagKeyVocabulary",
+    pageTitleTagKeyAbout: "pageTitleTagKeyAbout",
+    pageTitleTagKeySubmit: "pageTitleTagKeySubmit",
+    pageTitleTagKeyPrivacy: "pageTitleTagKeyPrivacy",
+    pageTitleTagKey404: "pageTitleTagKey404",
+    homeCrowdSourced: "homeCrowdSourced",
+    homeWelsh: "homeWelsh",
+    homeLanguageResource: "homeLanguageResource",
+    homeLets: "homeLets",
+    homeFind: "homeFind",
+    homeSomewhere: "homeSomewhere",
+    homeHeroTitle: "homeHeroTitle",
+    homeSearch: "homeSearch",
+    homeSearchPlaceholder: "homeSearchPlaceholder",
+    homeSearchResults: "homeSearchResults",
+    homeLocationPlaceholder: "homeLocationPlaceholder",
+    homeAnd: "homeAnd",
+    homeMore: "homeMore",
+    homeApi: "homeApi",
+    homeMap: "homeMap",
+    homeServicesSectionTitle: "homeServicesSectionTitle",
+    homeServicesSectionTitle1: "homeServicesSectionTitle1",
+    homeServicesSectionTitle2: "homeServicesSectionTitle2",
+    homeServices1Title: "homeServices1Title",
+    homeServices1Desc: "homeServices1Desc",
+    homeServices2Title: "homeServices2Title",
+    homeServices2Desc: "homeServices2Desc",
+    homeServices3Title: "homeServices3Title",
+    homeServices3Desc: "homeServices3Desc",
+    homeThoughtOfTheDay: "homeThoughtOfTheDay"
+};
+
+},{}],55:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2130,7 +2211,7 @@ exports.default = {
     english: "english"
 };
 
-},{}],55:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2200,7 +2281,7 @@ FooterLink.propTypes = {
 
 exports.default = FooterLink;
 
-},{"prop-types":137,"react":192,"react-router-dom":173}],56:[function(require,module,exports){
+},{"prop-types":138,"react":193,"react-router-dom":174}],57:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2367,7 +2448,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Footer);
 
-},{"../core/hash":8,"../nav/routes":60,"../pages/privacy":88,"../resusable-components/github-icon":109,"./footer-link":55,"prop-types":137,"react":192,"react-redux":154,"react-router-dom":173}],57:[function(require,module,exports){
+},{"../core/hash":8,"../nav/routes":61,"../pages/privacy":89,"../resusable-components/github-icon":110,"./footer-link":56,"prop-types":138,"react":193,"react-redux":155,"react-router-dom":174}],58:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2534,7 +2615,7 @@ exports.routes = _routes2.default;
 exports.route = _routes.route;
 exports.default = (0, _reactRouter.withRouter)(Nav);
 
-},{"../core/hash":8,"../core/text/data":53,"./nav-link":58,"./overlay-menu":59,"./routes":60,"prop-types":137,"react":192,"react-router":185}],58:[function(require,module,exports){
+},{"../core/hash":8,"../core/text/data":53,"./nav-link":59,"./overlay-menu":60,"./routes":61,"prop-types":138,"react":193,"react-router":186}],59:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2614,7 +2695,7 @@ NavLink.contextTypes = {
 
 exports.default = NavLink;
 
-},{"../core/props-children":45,"prop-types":137,"react":192,"react-router-dom":173}],59:[function(require,module,exports){
+},{"../core/props-children":45,"prop-types":138,"react":193,"react-router-dom":174}],60:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2757,7 +2838,7 @@ OverlayMenu.propTypes = {
 
 exports.default = OverlayMenu;
 
-},{"./index":57,"prop-types":137,"react":192,"react-router-dom":173}],60:[function(require,module,exports){
+},{"./index":58,"prop-types":138,"react":193,"react-router-dom":174}],61:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2953,7 +3034,7 @@ exports.route = route;
 exports.requiredTextKeysTitle = requiredTextKeysTitle;
 exports.requiredTextKeysTitleTag = requiredTextKeysTitleTag;
 
-},{"../../../build-settings/build-settings":2,"../core/model/string-capitalize-first-letter":43,"../core/text/data":53,"../core/text/supported-languages":54}],61:[function(require,module,exports){
+},{"../../../build-settings/build-settings":2,"../core/model/string-capitalize-first-letter":43,"../core/text/data":53,"../core/text/supported-languages":55}],62:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3007,7 +3088,7 @@ PageContainer.propTypes = {
 
 exports.default = PageContainer;
 
-},{"../core/props-children":45,"react":192}],62:[function(require,module,exports){
+},{"../core/props-children":45,"react":193}],63:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3189,7 +3270,7 @@ var About = function (_React$Component) {
 
 exports.default = About;
 
-},{"react":192}],63:[function(require,module,exports){
+},{"react":193}],64:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3210,6 +3291,10 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _hash = require("../../core/hash");
 
+var _supportedKeys = require("../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3218,16 +3303,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var features = [{
-    title: "Search",
+var featuresData = [{
+    key: _supportedKeys2.default.homeSearch,
     icon: "SearchIcon.svg",
     divSize: "col-sm-4"
 }, {
-    title: "Api",
+    key: _supportedKeys2.default.homeApi,
     icon: "CodeIcon.svg",
     divSize: "col-sm-4"
 }, {
-    title: "Map",
+    key: _supportedKeys2.default.homeMap,
     icon: "MapIcon.svg",
     divSize: "col-sm-4"
 }];
@@ -3278,9 +3363,13 @@ Feature.propTypes = {
     divSize: _propTypes2.default.string.isRequired
 };
 
-var staticFeatures = features.map(function (feature) {
-    return _react2.default.createElement(Feature, _extends({ key: (0, _hash.strHash)(feature.title) }, feature));
-});
+function features(text) {
+    return featuresData.map(function (f) {
+        return Object.assign({}, f, { title: text[f.key] });
+    }).map(function (f) {
+        return _react2.default.createElement(Feature, _extends({ key: (0, _hash.strHash)(f.key) }, f));
+    });
+}
 
 var FeaturesSection = function (_React$Component2) {
     _inherits(FeaturesSection, _React$Component2);
@@ -3294,6 +3383,9 @@ var FeaturesSection = function (_React$Component2) {
     _createClass(FeaturesSection, [{
         key: "render",
         value: function render() {
+            var text = this.props.text;
+
+
             return _react2.default.createElement(
                 "section",
                 { className: "features bg-gray" },
@@ -3303,7 +3395,7 @@ var FeaturesSection = function (_React$Component2) {
                     _react2.default.createElement(
                         "div",
                         { className: "row" },
-                        staticFeatures
+                        features(text)
                     )
                 )
             );
@@ -3313,9 +3405,13 @@ var FeaturesSection = function (_React$Component2) {
     return FeaturesSection;
 }(_react2.default.Component);
 
+FeaturesSection.propTypes = {
+    text: _propTypes2.default.object.isRequired
+};
+
 exports.default = FeaturesSection;
 
-},{"../../core/hash":8,"prop-types":137,"react":192}],64:[function(require,module,exports){
+},{"../../core/hash":8,"../../core/text/supported-keys":54,"prop-types":138,"react":193}],65:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3332,6 +3428,10 @@ var _propTypes = require("prop-types");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _supportedKeys = require("../../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3339,6 +3439,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getText(text) {
+    return {
+        search: text[_supportedKeys2.default.homeSearch],
+        placeholder: text[_supportedKeys2.default.homeSearchPlaceholder],
+        searchResults: text[_supportedKeys2.default.homeSearchResults],
+        locationPlaceholder: text[_supportedKeys2.default.homeLocationPlaceholder]
+    };
+}
 
 var HeroSearchBar = function (_React$Component) {
     _inherits(HeroSearchBar, _React$Component);
@@ -3361,11 +3470,17 @@ var HeroSearchBar = function (_React$Component) {
         key: "render",
         value: function render() {
             var _props = this.props,
+                text = _props.text,
                 onSubmit = _props.onSubmit,
                 onChange = _props.onChange,
                 searchText = _props.searchText,
                 suggestion = _props.suggestion;
 
+            var _getText = getText(text),
+                search = _getText.search,
+                placeholder = _getText.placeholder,
+                searchResults = _getText.searchResults,
+                locationPlaceholder = _getText.locationPlaceholder;
 
             var submit = this.makeSubmitHandler(onSubmit);
 
@@ -3383,11 +3498,11 @@ var HeroSearchBar = function (_React$Component) {
                             { className: "form-group col-lg-5" },
                             _react2.default.createElement("input", { value: searchText,
                                 onChange: onChange,
-                                "aria-label": "Search",
+                                "aria-label": search,
                                 type: "search",
                                 name: "search",
                                 autoComplete: "off",
-                                placeholder: "What are you searching for?" })
+                                placeholder: placeholder })
                         ),
                         _react2.default.createElement(
                             "div",
@@ -3395,8 +3510,8 @@ var HeroSearchBar = function (_React$Component) {
                             _react2.default.createElement("input", { className: "search-bar-selector",
                                 type: "text",
                                 name: "location",
-                                "aria-label": "Search Results",
-                                placeholder: "Location",
+                                "aria-label": searchResults,
+                                placeholder: locationPlaceholder,
                                 id: "location",
                                 readOnly: true,
                                 value: suggestion })
@@ -3404,7 +3519,7 @@ var HeroSearchBar = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "form-group col-lg-2 text-center" },
-                            _react2.default.createElement("input", { type: "submit", value: "Search", className: "submit" })
+                            _react2.default.createElement("input", { type: "submit", value: search, className: "submit" })
                         )
                     )
                 )
@@ -3416,6 +3531,7 @@ var HeroSearchBar = function (_React$Component) {
 }(_react2.default.Component);
 
 HeroSearchBar.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     onSubmit: _propTypes2.default.func.isRequired,
     onChange: _propTypes2.default.func.isRequired,
     searchText: _propTypes2.default.string.isRequired,
@@ -3424,7 +3540,7 @@ HeroSearchBar.propTypes = {
 
 exports.default = HeroSearchBar;
 
-},{"prop-types":137,"react":192}],65:[function(require,module,exports){
+},{"../../../core/text/supported-keys":54,"prop-types":138,"react":193}],66:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3457,6 +3573,10 @@ var _heroSearchBar = require("./hero-search-bar");
 
 var _heroSearchBar2 = _interopRequireDefault(_heroSearchBar);
 
+var _supportedKeys = require("../../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3469,11 +3589,15 @@ var evt = (0, _eventTargetValue2.default)();
 
 var defaultSuggestion = "";
 
-var selectResult = function selectResult(results) {
+var selectResult = function selectResult(results, content) {
     if (!results || results.length === 0) {
         return defaultSuggestion;
     }
-    return results.length > 1 ? results[0].name + " (and " + (results.length - 1) + " more)" : results[0].name;
+
+    var and = content[_supportedKeys2.default.homeAnd];
+    var more = content[_supportedKeys2.default.homeMore];
+
+    return results.length > 1 ? results[0].name + " (" + and + " " + (results.length - 1) + " " + more + ")" : results[0].name;
 };
 
 var HeroSearchBarController = function (_React$Component) {
@@ -3505,12 +3629,15 @@ var HeroSearchBarController = function (_React$Component) {
         key: "render",
         value: function render() {
             var _props = this.props,
+                text = _props.text,
                 searchText = _props.searchText,
                 filteredResults = _props.filteredResults;
 
-            var suggestion = selectResult(filteredResults);
 
-            return _react2.default.createElement(_heroSearchBar2.default, { searchText: searchText,
+            var suggestion = selectResult(filteredResults, text);
+
+            return _react2.default.createElement(_heroSearchBar2.default, { text: text,
+                searchText: searchText,
                 suggestion: suggestion,
                 onSubmit: this.makeOnSubmit(),
                 onChange: this.makeOnChange() });
@@ -3521,6 +3648,7 @@ var HeroSearchBarController = function (_React$Component) {
 }(_react2.default.Component);
 
 HeroSearchBarController.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     history: _propTypes2.default.object.isRequired,
     dispatch: _propTypes2.default.func.isRequired,
     searchText: _propTypes2.default.string.isRequired,
@@ -3536,7 +3664,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouter.withRouter)(HeroSearchBarController));
 
-},{"../../../core/event-target-value":7,"../../../core/redux/actions":46,"../../../nav":57,"./hero-search-bar":64,"prop-types":137,"react":192,"react-redux":154,"react-router":185}],66:[function(require,module,exports){
+},{"../../../core/event-target-value":7,"../../../core/redux/actions":46,"../../../core/text/supported-keys":54,"../../../nav":58,"./hero-search-bar":65,"prop-types":138,"react":193,"react-redux":155,"react-router":186}],67:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3548,6 +3676,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _FetchableSectionBackground = require("../../resusable-components/FetchableSectionBackground");
 
@@ -3561,6 +3693,10 @@ var _heroSearchBar = require("./hero-search-bar");
 
 var _heroSearchBar2 = _interopRequireDefault(_heroSearchBar);
 
+var _supportedKeys = require("../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3568,6 +3704,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getText(text) {
+    return {
+        crowdSourced: text[_supportedKeys2.default.homeCrowdSourced],
+        welsh: text[_supportedKeys2.default.homeWelsh],
+        languageResource: text[_supportedKeys2.default.homeLanguageResource],
+        lets: text[_supportedKeys2.default.homeLets],
+        find: text[_supportedKeys2.default.homeFind],
+        somewhere: text[_supportedKeys2.default.homeSomewhere],
+        title: text[_supportedKeys2.default.homeHeroTitle]
+    };
+}
 
 var HomeHero = function (_React$Component) {
     _inherits(HomeHero, _React$Component);
@@ -3581,6 +3729,17 @@ var HomeHero = function (_React$Component) {
     _createClass(HomeHero, [{
         key: "render",
         value: function render() {
+            var text = this.props.text;
+
+            var _getText = getText(text),
+                crowdSourced = _getText.crowdSourced,
+                welsh = _getText.welsh,
+                languageResource = _getText.languageResource,
+                lets = _getText.lets,
+                find = _getText.find,
+                somewhere = _getText.somewhere,
+                title = _getText.title;
+
             return _react2.default.createElement(
                 _FetchableSectionBackground2.default,
                 { backgroundColor: _colors2.default.mountainGreen,
@@ -3593,31 +3752,35 @@ var HomeHero = function (_React$Component) {
                         "p",
                         { className: "small-text-hero" },
                         _react2.default.createElement("i", { className: "icon-localizer text-primary mr-1" }),
-                        "Crowd sourced",
+                        crowdSourced,
                         _react2.default.createElement(
                             "span",
                             { className: "text-primary" },
-                            "\xA0Welsh\xA0"
+                            "\xA0",
+                            welsh,
+                            "\xA0"
                         ),
-                        "language resource"
+                        languageResource
                     ),
                     _react2.default.createElement(
                         "h1",
                         null,
-                        "Let's",
+                        lets,
                         _react2.default.createElement(
                             "span",
                             { className: "text-primary" },
-                            "\xA0find\xA0"
+                            "\xA0",
+                            find,
+                            "\xA0"
                         ),
-                        "somewhere"
+                        somewhere
                     ),
                     _react2.default.createElement(
                         "p",
                         { className: "text-hero" },
-                        "Find out where to use and hear the language"
+                        title
                     ),
-                    _react2.default.createElement(_heroSearchBar2.default, null)
+                    _react2.default.createElement(_heroSearchBar2.default, { text: text })
                 )
             );
         }
@@ -3626,9 +3789,13 @@ var HomeHero = function (_React$Component) {
     return HomeHero;
 }(_react2.default.Component);
 
+HomeHero.propTypes = {
+    text: _propTypes2.default.object.isRequired
+};
+
 exports.default = HomeHero;
 
-},{"../../core/colors":6,"../../resusable-components/FetchableSectionBackground":108,"./hero-search-bar":65,"react":192}],67:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/text/supported-keys":54,"../../resusable-components/FetchableSectionBackground":109,"./hero-search-bar":66,"prop-types":138,"react":193}],68:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3681,14 +3848,16 @@ var Home = function (_React$Component) {
     _createClass(Home, [{
         key: "render",
         value: function render() {
+            var text = this.props.text;
+
 
             return _react2.default.createElement(
                 "div",
                 { className: "full-page-content" },
-                _react2.default.createElement(_hero2.default, null),
-                _react2.default.createElement(_features2.default, null),
-                _react2.default.createElement(_services2.default, null),
-                _react2.default.createElement(_promotionDivider2.default, null)
+                _react2.default.createElement(_hero2.default, { text: text }),
+                _react2.default.createElement(_features2.default, { text: text }),
+                _react2.default.createElement(_services2.default, { text: text }),
+                _react2.default.createElement(_promotionDivider2.default, { text: text })
             );
         }
     }]);
@@ -3697,12 +3866,13 @@ var Home = function (_React$Component) {
 }(_react2.default.Component);
 
 Home.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     featuredLocation: _propTypes2.default.object
 };
 
 exports.default = Home;
 
-},{"./features":63,"./hero":66,"./promotion-divider":69,"./services":70,"prop-types":137,"react":192}],68:[function(require,module,exports){
+},{"./features":64,"./hero":67,"./promotion-divider":70,"./services":71,"prop-types":138,"react":193}],69:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3730,6 +3900,10 @@ var _arraySample2 = _interopRequireDefault(_arraySample);
 var _homePage = require("./home-page");
 
 var _homePage2 = _interopRequireDefault(_homePage);
+
+var _data = require("../../core/text/data");
+
+var _data2 = _interopRequireDefault(_data);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3767,8 +3941,11 @@ var HomeController = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
+            var language = this.props.language;
 
-            return _react2.default.createElement(_homePage2.default, { featuredLocation: this.state.featuredLocation });
+
+            return _react2.default.createElement(_homePage2.default, { text: _data2.default[language],
+                featuredLocation: this.state.featuredLocation });
         }
     }]);
 
@@ -3776,19 +3953,21 @@ var HomeController = function (_React$Component) {
 }(_react2.default.Component);
 
 HomeController.propTypes = {
+    language: _propTypes2.default.string.isRequired,
     locations: _propTypes2.default.array,
     dispatch: _propTypes2.default.func.isRequired
 };
 
 var mapStateToProps = function mapStateToProps(state) {
     return {
+        language: state.settings.language,
         locations: state.data.locations
     };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(HomeController);
 
-},{"../../core/model/array-sample":11,"../../core/redux/actions":46,"./home-page":67,"prop-types":137,"react":192,"react-redux":154}],69:[function(require,module,exports){
+},{"../../core/model/array-sample":11,"../../core/redux/actions":46,"../../core/text/data":53,"./home-page":68,"prop-types":138,"react":193,"react-redux":155}],70:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3801,6 +3980,10 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _quotes = require("../../resusable-components/quote/quotes");
 
 var _colors = require("../../core/colors");
@@ -3810,6 +3993,10 @@ var _colors2 = _interopRequireDefault(_colors);
 var _FetchableSectionBackground = require("../../resusable-components/FetchableSectionBackground");
 
 var _FetchableSectionBackground2 = _interopRequireDefault(_FetchableSectionBackground);
+
+var _supportedKeys = require("../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3837,7 +4024,10 @@ var PromotionDivider = function (_React$Component) {
         key: "render",
         value: function render() {
             var quote = this.state.quote;
+            var text = this.props.text;
 
+
+            var title = text[_supportedKeys2.default.homeThoughtOfTheDay];
 
             return _react2.default.createElement(
                 _FetchableSectionBackground2.default,
@@ -3854,7 +4044,7 @@ var PromotionDivider = function (_React$Component) {
                         _react2.default.createElement(
                             "small",
                             { className: "text-primary" },
-                            "Thought of the day"
+                            title
                         ),
                         quote.CY
                     ),
@@ -3871,9 +4061,13 @@ var PromotionDivider = function (_React$Component) {
     return PromotionDivider;
 }(_react2.default.Component);
 
+PromotionDivider.propTypes = {
+    text: _propTypes2.default.object.isRequired
+};
+
 exports.default = PromotionDivider;
 
-},{"../../core/colors":6,"../../resusable-components/FetchableSectionBackground":108,"../../resusable-components/quote/quotes":111,"react":192}],70:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/text/supported-keys":54,"../../resusable-components/FetchableSectionBackground":109,"../../resusable-components/quote/quotes":112,"prop-types":138,"react":193}],71:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3888,11 +4082,19 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _servicesCol = require("../../resusable-components/services-col");
 
 var _servicesCol2 = _interopRequireDefault(_servicesCol);
 
 var _hash = require("../../core/hash");
+
+var _supportedKeys = require("../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3903,25 +4105,37 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var data = [{
-    title: "Local Places",
-    description: "This site is simply about getting people to use their Welsh. \n        It is all in English because it has been learners who have raised \n        the issue about where can they comfortably try out their Welsh \n        when out and about",
+    titleKey: _supportedKeys2.default.homeServices1Title,
+    descriptionKey: _supportedKeys2.default.homeServices1Desc,
     url: "assets/images/LocateIcon.svg",
     alt: "Locate Places Icon"
 }, {
-    title: "Native Speakers",
-    description: "However, this is not just about learners.\n        Those fluent need to also use their Welsh whenever they can.\n        Welsh needs to be heard on the street, in the shops and wherever\n        we get together",
+    titleKey: _supportedKeys2.default.homeServices2Title,
+    descriptionKey: _supportedKeys2.default.homeServices2Desc,
     url: "assets/images/CommentIcon.svg",
     alt: "Speaking Icon"
 }, {
-    title: "Days out",
-    description: "So, before you shop, go on a day out, or whatever you like to do,\n        see if there will be a Welsh language welcome and, above all,\n        use your Welsh yourself!",
+    titleKey: _supportedKeys2.default.homeServices3Title,
+    descriptionKey: _supportedKeys2.default.homeServices3Desc,
     url: "assets/images/SuitcaseIcon.svg",
     alt: "Days out Icon"
 }];
 
-var services = data.map(function (service) {
-    return _react2.default.createElement(_servicesCol2.default, _extends({ key: (0, _hash.strHash)(service.title) }, service));
-});
+function services(text) {
+    return data.map(function (d) {
+        return Object.assign({}, d, { title: text[d.titleKey], description: text[d.descriptionKey] });
+    }).map(function (d) {
+        return _react2.default.createElement(_servicesCol2.default, _extends({ key: (0, _hash.strHash)(d.titleKey) }, d));
+    });
+}
+
+function getText(text) {
+    return {
+        title: text[_supportedKeys2.default.homeServicesSectionTitle],
+        title1: text[_supportedKeys2.default.homeServicesSectionTitle1],
+        title2: text[_supportedKeys2.default.homeServicesSectionTitle2]
+    };
+}
 
 var ServicesSection = function (_React$Component) {
     _inherits(ServicesSection, _React$Component);
@@ -3935,6 +4149,13 @@ var ServicesSection = function (_React$Component) {
     _createClass(ServicesSection, [{
         key: "render",
         value: function render() {
+            var text = this.props.text;
+
+            var _getText = getText(text),
+                title = _getText.title,
+                title1 = _getText.title1,
+                title2 = _getText.title2;
+
             return _react2.default.createElement(
                 "section",
                 { className: "services" },
@@ -3950,22 +4171,24 @@ var ServicesSection = function (_React$Component) {
                             _react2.default.createElement(
                                 "small",
                                 null,
-                                "Our Services"
+                                title
                             ),
-                            "What does ",
+                            title1,
+                            " ",
                             _react2.default.createElement(
                                 "span",
                                 { className: "text-primary" },
-                                "BreatheYourWelsh"
+                                "BYW"
                             ),
-                            " do for me?"
+                            " ",
+                            title2
                         ),
                         _react2.default.createElement("p", { className: "lead col-md-10 mx-auto" })
                     ),
                     _react2.default.createElement(
                         "div",
                         { className: "row" },
-                        services
+                        services(text)
                     )
                 )
             );
@@ -3975,9 +4198,13 @@ var ServicesSection = function (_React$Component) {
     return ServicesSection;
 }(_react2.default.Component);
 
+ServicesSection.propTypes = {
+    text: _propTypes2.default.object.isRequired
+};
+
 exports.default = ServicesSection;
 
-},{"../../core/hash":8,"../../resusable-components/services-col":112,"react":192}],71:[function(require,module,exports){
+},{"../../core/hash":8,"../../core/text/supported-keys":54,"../../resusable-components/services-col":113,"prop-types":138,"react":193}],72:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4166,7 +4393,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouter.withRouter)(MapPageController));
 
-},{"../../core/bind-methods":5,"../../core/event-target-value":7,"../../core/model/pagination":40,"../../core/redux/actions":46,"../../nav":57,"./map-page":73,"prop-types":137,"react":192,"react-redux":154,"react-router":185}],72:[function(require,module,exports){
+},{"../../core/bind-methods":5,"../../core/event-target-value":7,"../../core/model/pagination":40,"../../core/redux/actions":46,"../../nav":58,"./map-page":74,"prop-types":138,"react":193,"react-redux":155,"react-router":186}],73:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4292,7 +4519,7 @@ LocationFolderController.propTypes = {
 
 exports.default = LocationFolderController;
 
-},{"../../../core/hash":8,"../../../core/model/form/category":14,"prop-types":137,"react":192}],73:[function(require,module,exports){
+},{"../../../core/hash":8,"../../../core/model/form/category":14,"prop-types":138,"react":193}],74:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4403,7 +4630,7 @@ MapPage.propTypes = {
 
 exports.default = MapPage;
 
-},{"../../../core/bind-methods":5,"../../../core/model/float-value":13,"../map":83,"./legend":74,"./map-search-box":77,"prop-types":137,"react":192}],74:[function(require,module,exports){
+},{"../../../core/bind-methods":5,"../../../core/model/float-value":13,"../map":84,"./legend":75,"./map-search-box":78,"prop-types":138,"react":193}],75:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4495,7 +4722,7 @@ var Legend = function (_React$Component) {
 
 exports.default = Legend;
 
-},{"../../../../core/hash":8,"../../../../core/model/form/category":14,"./legend-item":76,"react":192}],75:[function(require,module,exports){
+},{"../../../../core/hash":8,"../../../../core/model/form/category":14,"./legend-item":77,"react":193}],76:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4565,7 +4792,7 @@ LegendIcon.propTypes = {
 
 exports.default = LegendIcon;
 
-},{"prop-types":137,"react":192}],76:[function(require,module,exports){
+},{"prop-types":138,"react":193}],77:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4633,7 +4860,7 @@ LegendItem.propTypes = {
 
 exports.default = LegendItem;
 
-},{"./legend-icon":75,"prop-types":137,"react":192}],77:[function(require,module,exports){
+},{"./legend-icon":76,"prop-types":138,"react":193}],78:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4755,7 +4982,7 @@ MapSearchBox.propTypes = {
 
 exports.default = MapSearchBox;
 
-},{"../location-folder":72,"../pagination/search-results-paginator":86,"prop-types":137,"react":192}],78:[function(require,module,exports){
+},{"../location-folder":73,"../pagination/search-results-paginator":87,"prop-types":138,"react":193}],79:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4781,7 +5008,7 @@ exports.MAP_ID = MAP_ID;
 exports.SHOW_ZOOM = SHOW_ZOOM;
 exports.NORMAL_ZOOM = NORMAL_ZOOM;
 
-},{}],79:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4807,7 +5034,7 @@ var addEventHandlers = exports.addEventHandlers = function addEventHandlers(map,
     });
 };
 
-},{"../constants":78,"./leaflet-events":81}],80:[function(require,module,exports){
+},{"../constants":79,"./leaflet-events":82}],81:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4926,7 +5153,7 @@ var makeController = function makeController(doc, leaflet, mapId, initialProps) 
 
 exports.default = makeController;
 
-},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../constants":78,"./add-layers":79,"./leaflet-events":81,"./update":82}],81:[function(require,module,exports){
+},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../constants":79,"./add-layers":80,"./leaflet-events":82,"./update":83}],82:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4938,7 +5165,7 @@ exports.default = {
     move: "move"
 };
 
-},{}],82:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5038,7 +5265,7 @@ var makeUpdateMap = exports.makeUpdateMap = function makeUpdateMap(leaflet, map,
     };
 };
 
-},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../../../../core/model/marker-opts":39,"../popup":84}],83:[function(require,module,exports){
+},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../../../../core/model/marker-opts":39,"../popup":85}],84:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5162,7 +5389,7 @@ MapController.propTypes = {
 
 exports.default = (0, _reactRedux.connect)()(MapController);
 
-},{"../../../core/is-browser":9,"./constants":78,"./controller":80,"Leaflet":119,"prop-types":137,"react":192,"react-redux":154}],84:[function(require,module,exports){
+},{"../../../core/is-browser":9,"./constants":79,"./controller":81,"Leaflet":120,"prop-types":138,"react":193,"react-redux":155}],85:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5266,7 +5493,7 @@ var popup = function popup(location, onShowLocation, onReview) {
 
 exports.default = popup;
 
-},{"../../../core/is-browser":9,"../../../core/model/form/category":14}],85:[function(require,module,exports){
+},{"../../../core/is-browser":9,"../../../core/model/form/category":14}],86:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5350,7 +5577,7 @@ PageItem.propTypes = {
 exports.makePageItem = makePageItem;
 exports.default = PageItem;
 
-},{"prop-types":137,"react":192}],86:[function(require,module,exports){
+},{"prop-types":138,"react":193}],87:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5422,7 +5649,7 @@ SearchResultPaginator.propTypes = {
 
 exports.default = SearchResultPaginator;
 
-},{"../../../core/model/pagination":40,"./page-item":85,"prop-types":137,"react":192}],87:[function(require,module,exports){
+},{"../../../core/model/pagination":40,"./page-item":86,"prop-types":138,"react":193}],88:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5502,7 +5729,7 @@ var NoMatch = function (_React$Component) {
 
 exports.default = NoMatch;
 
-},{"../../core/colors":6,"../../resusable-components/FetchableContainer":105,"react":192}],88:[function(require,module,exports){
+},{"../../core/colors":6,"../../resusable-components/FetchableContainer":106,"react":193}],89:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5684,7 +5911,7 @@ var privacyRoute = {
 exports.default = Privacy;
 exports.privacyRoute = privacyRoute;
 
-},{"../../page-content":61,"./thead":89,"./tr":90,"react":192}],89:[function(require,module,exports){
+},{"../../page-content":62,"./thead":90,"./tr":91,"react":193}],90:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5748,7 +5975,7 @@ var THead = function (_React$Component) {
 
 exports.default = THead;
 
-},{"react":192}],90:[function(require,module,exports){
+},{"react":193}],91:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5836,7 +6063,7 @@ Tr.propTypes = {
 
 exports.default = Tr;
 
-},{"prop-types":137,"react":192}],91:[function(require,module,exports){
+},{"prop-types":138,"react":193}],92:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5949,7 +6176,7 @@ CategorySlider.propTypes = {
 
 exports.default = CategorySlider;
 
-},{"../../../../core/event-target-value":7,"../../../../core/model/form":17,"../../../../core/model/form/category":14,"../../../../core/model/safe-parse-float":42,"prop-types":137,"react":192}],92:[function(require,module,exports){
+},{"../../../../core/event-target-value":7,"../../../../core/model/form":17,"../../../../core/model/form/category":14,"../../../../core/model/safe-parse-float":42,"prop-types":138,"react":193}],93:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6011,7 +6238,7 @@ Error.propTypes = {
 
 exports.default = Error;
 
-},{"prop-types":137,"react":192}],93:[function(require,module,exports){
+},{"prop-types":138,"react":193}],94:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6237,7 +6464,7 @@ Form.propTypes = {
 
 exports.default = Form;
 
-},{"../../../core/event-target-value":7,"../../../core/model/form":17,"./category-slider":91,"./error":92,"prop-types":137,"react":192}],94:[function(require,module,exports){
+},{"../../../core/event-target-value":7,"../../../core/model/form":17,"./category-slider":92,"./error":93,"prop-types":138,"react":193}],95:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6356,7 +6583,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(FormController);
 
-},{"../../../core/bind-methods":5,"../../../core/model/form":17,"../../../core/model/submission":44,"../../../core/redux/actions":46,"./form":93,"prop-types":137,"react":192,"react-redux":154}],95:[function(require,module,exports){
+},{"../../../core/bind-methods":5,"../../../core/model/form":17,"../../../core/model/submission":44,"../../../core/redux/actions":46,"./form":94,"prop-types":138,"react":193,"react-redux":155}],96:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6510,7 +6737,7 @@ var HowTo = function (_React$Component2) {
 
 exports.default = HowTo;
 
-},{"./submit-heading":100,"react":192}],96:[function(require,module,exports){
+},{"./submit-heading":101,"react":193}],97:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6623,7 +6850,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Submit);
 
-},{"../../core/model/submission":44,"../../resusable-components/page-header":110,"./form":94,"./how-to":95,"./locator-map":97,"./submissions":98,"prop-types":137,"react":192,"react-redux":154}],97:[function(require,module,exports){
+},{"../../core/model/submission":44,"../../resusable-components/page-header":111,"./form":95,"./how-to":96,"./locator-map":98,"./submissions":99,"prop-types":138,"react":193,"react-redux":155}],98:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6777,7 +7004,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(LocatorMap);
 
-},{"../../../core/is-browser":9,"../../../core/model/geojson-from-marker":35,"../../../core/redux/actions":46,"../../map/map/constants":78,"../../map/map/controller":80,"Leaflet":119,"prop-types":137,"react":192,"react-redux":154}],98:[function(require,module,exports){
+},{"../../../core/is-browser":9,"../../../core/model/geojson-from-marker":35,"../../../core/redux/actions":46,"../../map/map/constants":79,"../../map/map/controller":81,"Leaflet":120,"prop-types":138,"react":193,"react-redux":155}],99:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6876,7 +7103,7 @@ Submissions.propTypes = {
 
 exports.default = Submissions;
 
-},{"./submission":99,"prop-types":137,"react":192}],99:[function(require,module,exports){
+},{"./submission":100,"prop-types":138,"react":193}],100:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6962,7 +7189,7 @@ Submission.propTypes = {
 
 exports.default = Submission;
 
-},{"../../../core/model/form/category":14,"prop-types":137,"react":192}],100:[function(require,module,exports){
+},{"../../../core/model/form/category":14,"prop-types":138,"react":193}],101:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7048,7 +7275,7 @@ SubmitHeading.propTypes = {
 
 exports.default = SubmitHeading;
 
-},{"prop-types":137,"react":192}],101:[function(require,module,exports){
+},{"prop-types":138,"react":193}],102:[function(require,module,exports){
 module.exports=[
     {
         "en": "I am frightened",
@@ -58738,7 +58965,7 @@ module.exports=[
     }
 ]
 
-},{}],102:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58838,7 +59065,7 @@ var VocabularyController = function (_React$Component) {
 
 exports.default = VocabularyController;
 
-},{"../../core/event-target-value":7,"../../core/model/geirfa":23,"./geirfa.json":101,"./vocabulary-view":104,"react":192}],103:[function(require,module,exports){
+},{"../../core/event-target-value":7,"../../core/model/geirfa":23,"./geirfa.json":102,"./vocabulary-view":105,"react":193}],104:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58901,7 +59128,7 @@ VocabSearch.propTypes = {
 
 exports.default = VocabSearch;
 
-},{"prop-types":137,"react":192}],104:[function(require,module,exports){
+},{"prop-types":138,"react":193}],105:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59086,7 +59313,7 @@ VocabularyView.propTypes = {
 
 exports.default = VocabularyView;
 
-},{"../../page-content":61,"../../resusable-components/page-header":110,"./vocab-search":103,"prop-types":137,"react":192}],105:[function(require,module,exports){
+},{"../../page-content":62,"../../resusable-components/page-header":111,"./vocab-search":104,"prop-types":138,"react":193}],106:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59223,7 +59450,7 @@ FetchableContainer.propTypes = {
 
 exports.default = FetchableContainer;
 
-},{"../../core/is-browser":9,"../../core/model/geirfa/trim":27,"../../core/props-children":45,"../FetchableImage":106,"../FetchableImage/to-url":107,"prop-types":137,"react":192}],106:[function(require,module,exports){
+},{"../../core/is-browser":9,"../../core/model/geirfa/trim":27,"../../core/props-children":45,"../FetchableImage":107,"../FetchableImage/to-url":108,"prop-types":138,"react":193}],107:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59350,7 +59577,7 @@ FetchableImage.propTypes = {
 
 exports.default = FetchableImage;
 
-},{"../../core/colors":6,"../../core/is-browser":9,"./to-url":107,"prop-types":137,"react":192}],107:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/is-browser":9,"./to-url":108,"prop-types":138,"react":193}],108:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59435,7 +59662,7 @@ var makeUrl = function makeUrl() {
 
 exports.default = makeUrl();
 
-},{}],108:[function(require,module,exports){
+},{}],109:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59544,7 +59771,7 @@ FetchableSectionBackground.propTypes = {
 
 exports.default = FetchableSectionBackground;
 
-},{"../../core/colors":6,"../../core/is-browser":9,"../../core/props-children":45,"../FetchableImage":106,"../FetchableImage/to-url":107,"prop-types":137,"react":192}],109:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/is-browser":9,"../../core/props-children":45,"../FetchableImage":107,"../FetchableImage/to-url":108,"prop-types":138,"react":193}],110:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59607,7 +59834,7 @@ GitHubIcon.propTypes = {
 
 exports.default = GitHubIcon;
 
-},{"prop-types":137,"react":192}],110:[function(require,module,exports){
+},{"prop-types":138,"react":193}],111:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59669,7 +59896,7 @@ PageHeader.propTypes = {
 
 exports.default = PageHeader;
 
-},{"../../core/props-children":45,"react":192}],111:[function(require,module,exports){
+},{"../../core/props-children":45,"react":193}],112:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59728,7 +59955,7 @@ function random() {
     return (0, _arraySample2.default)(quotes);
 }
 
-},{"../../core/model/array-sample":11}],112:[function(require,module,exports){
+},{"../../core/model/array-sample":11}],113:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59810,7 +60037,7 @@ Col.propTypes = {
 
 exports.default = Col;
 
-},{"prop-types":137,"react":192}],113:[function(require,module,exports){
+},{"prop-types":138,"react":193}],114:[function(require,module,exports){
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -59820,7 +60047,7 @@ function _assertThisInitialized(self) {
 }
 
 module.exports = _assertThisInitialized;
-},{}],114:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 function _extends() {
   module.exports = _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -59840,7 +60067,7 @@ function _extends() {
 }
 
 module.exports = _extends;
-},{}],115:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
@@ -59848,7 +60075,7 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 module.exports = _inheritsLoose;
-},{}],116:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     default: obj
@@ -59856,7 +60083,7 @@ function _interopRequireDefault(obj) {
 }
 
 module.exports = _interopRequireDefault;
-},{}],117:[function(require,module,exports){
+},{}],118:[function(require,module,exports){
 function _interopRequireWildcard(obj) {
   if (obj && obj.__esModule) {
     return obj;
@@ -59883,7 +60110,7 @@ function _interopRequireWildcard(obj) {
 }
 
 module.exports = _interopRequireWildcard;
-},{}],118:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -59900,7 +60127,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 }
 
 module.exports = _objectWithoutPropertiesLoose;
-},{}],119:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 /* @preserve
  * Leaflet 1.3.4, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2018 Vladimir Agafonkin, (c) 2010-2011 CloudMade
@@ -73772,7 +73999,7 @@ window.L = exports;
 })));
 
 
-},{}],120:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -73828,7 +74055,7 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
 var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
   return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
 };
-},{}],121:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -73907,7 +74134,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"./PathUtils":122,"resolve-pathname":194,"value-equal":197}],122:[function(require,module,exports){
+},{"./PathUtils":123,"resolve-pathname":195,"value-equal":198}],123:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -73969,7 +74196,7 @@ var createPath = exports.createPath = function createPath(location) {
 
   return path;
 };
-},{}],123:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74277,7 +74504,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./DOMUtils":120,"./LocationUtils":121,"./PathUtils":122,"./createTransitionManager":126,"invariant":129,"warning":198}],124:[function(require,module,exports){
+},{"./DOMUtils":121,"./LocationUtils":122,"./PathUtils":123,"./createTransitionManager":127,"invariant":130,"warning":199}],125:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74602,7 +74829,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":120,"./LocationUtils":121,"./PathUtils":122,"./createTransitionManager":126,"invariant":129,"warning":198}],125:[function(require,module,exports){
+},{"./DOMUtils":121,"./LocationUtils":122,"./PathUtils":123,"./createTransitionManager":127,"invariant":130,"warning":199}],126:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74773,7 +75000,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./LocationUtils":121,"./PathUtils":122,"./createTransitionManager":126,"warning":198}],126:[function(require,module,exports){
+},{"./LocationUtils":122,"./PathUtils":123,"./createTransitionManager":127,"warning":199}],127:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74859,7 +75086,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":198}],127:[function(require,module,exports){
+},{"warning":199}],128:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -74912,7 +75139,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.createBrowserHistory = _createBrowserHistory3.default;
 exports.createHashHistory = _createHashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./LocationUtils":121,"./PathUtils":122,"./createBrowserHistory":123,"./createHashHistory":124,"./createMemoryHistory":125}],128:[function(require,module,exports){
+},{"./LocationUtils":122,"./PathUtils":123,"./createBrowserHistory":124,"./createHashHistory":125,"./createMemoryHistory":126}],129:[function(require,module,exports){
 'use strict';
 
 /**
@@ -74998,7 +75225,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{"react":192,"react-is":144}],129:[function(require,module,exports){
+},{"react":193,"react-is":145}],130:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -75051,7 +75278,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":133}],130:[function(require,module,exports){
+},{"_process":134}],131:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -75143,7 +75370,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],131:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 var isarray = require('isarray')
 
 /**
@@ -75571,12 +75798,12 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":132}],132:[function(require,module,exports){
+},{"isarray":133}],133:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],133:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -75762,7 +75989,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],134:[function(require,module,exports){
+},{}],135:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -75857,7 +76084,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
-},{"./lib/ReactPropTypesSecret":138,"_process":133}],135:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":139,"_process":134}],136:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -75918,7 +76145,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"./lib/ReactPropTypesSecret":138}],136:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":139}],137:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -76477,7 +76704,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 };
 
 }).call(this,require('_process'))
-},{"./checkPropTypes":134,"./lib/ReactPropTypesSecret":138,"_process":133,"object-assign":130}],137:[function(require,module,exports){
+},{"./checkPropTypes":135,"./lib/ReactPropTypesSecret":139,"_process":134,"object-assign":131}],138:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -76509,7 +76736,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./factoryWithThrowingShims":135,"./factoryWithTypeCheckers":136,"_process":133}],138:[function(require,module,exports){
+},{"./factoryWithThrowingShims":136,"./factoryWithTypeCheckers":137,"_process":134}],139:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -76523,7 +76750,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],139:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react-dom-server.browser.development.js
@@ -79939,7 +80166,7 @@ module.exports = server_browser;
 }
 
 }).call(this,require('_process'))
-},{"_process":133,"object-assign":130,"prop-types/checkPropTypes":134,"react":192}],140:[function(require,module,exports){
+},{"_process":134,"object-assign":131,"prop-types/checkPropTypes":135,"react":193}],141:[function(require,module,exports){
 /** @license React v16.6.1
  * react-dom-server.browser.production.min.js
  *
@@ -79986,7 +80213,7 @@ f.type:!(2<m.length)||"o"!==m[0]&&"O"!==m[0]||"n"!==m[1]&&"N"!==m[1]?!1:!0;n||ea
 l?(e=[],qa[b]&&"\n"===l.charAt(0)&&(u+="\n"),u+=l):e=X(e.children);a=a.type;c=null==c||"http://www.w3.org/1999/xhtml"===c?ka(a):"http://www.w3.org/2000/svg"===c&&"foreignObject"===a?"http://www.w3.org/1999/xhtml":c;this.stack.push({domNamespace:c,type:b,children:e,childIndex:0,context:d,footer:k});this.previousWasTextNode=!1;return u};return a}(),Ba={renderToString:function(a){return(new Aa(a,!1)).read(Infinity)},renderToStaticMarkup:function(a){return(new Aa(a,!0)).read(Infinity)},renderToNodeStream:function(){r("207")},
 renderToStaticNodeStream:function(){r("208")},version:"16.6.1"},Ca={default:Ba},Da=Ca&&Ba||Ca;module.exports=Da.default||Da;
 
-},{"object-assign":130,"react":192}],141:[function(require,module,exports){
+},{"object-assign":131,"react":193}],142:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -79997,7 +80224,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-dom-server.browser.development.js":139,"./cjs/react-dom-server.browser.production.min.js":140,"_process":133}],142:[function(require,module,exports){
+},{"./cjs/react-dom-server.browser.development.js":140,"./cjs/react-dom-server.browser.production.min.js":141,"_process":134}],143:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react-is.development.js
@@ -80208,7 +80435,7 @@ exports.isStrictMode = isStrictMode;
 }
 
 }).call(this,require('_process'))
-},{"_process":133}],143:[function(require,module,exports){
+},{"_process":134}],144:[function(require,module,exports){
 /** @license React v16.6.1
  * react-is.production.min.js
  *
@@ -80224,7 +80451,7 @@ var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):601
 exports.Profiler=g;exports.Portal=d;exports.StrictMode=f;exports.isValidElementType=function(a){return"string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n)};exports.isAsyncMode=function(a){return v(a)||u(a)===l};exports.isConcurrentMode=v;exports.isContextConsumer=function(a){return u(a)===k};exports.isContextProvider=function(a){return u(a)===h};
 exports.isElement=function(a){return"object"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return u(a)===n};exports.isFragment=function(a){return u(a)===e};exports.isProfiler=function(a){return u(a)===g};exports.isPortal=function(a){return u(a)===d};exports.isStrictMode=function(a){return u(a)===f};
 
-},{}],144:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -80235,7 +80462,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-is.development.js":142,"./cjs/react-is.production.min.js":143,"_process":133}],145:[function(require,module,exports){
+},{"./cjs/react-is.development.js":143,"./cjs/react-is.production.min.js":144,"_process":134}],146:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -80322,7 +80549,7 @@ var _default = createProvider();
 
 exports.default = _default;
 }).call(this,require('_process'))
-},{"../utils/PropTypes":155,"../utils/warning":160,"@babel/runtime/helpers/inheritsLoose":115,"@babel/runtime/helpers/interopRequireDefault":116,"_process":133,"prop-types":137,"react":192}],146:[function(require,module,exports){
+},{"../utils/PropTypes":156,"../utils/warning":161,"@babel/runtime/helpers/inheritsLoose":116,"@babel/runtime/helpers/interopRequireDefault":117,"_process":134,"prop-types":138,"react":193}],147:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -80632,7 +80859,7 @@ _ref) {
   };
 }
 }).call(this,require('_process'))
-},{"../utils/PropTypes":155,"../utils/Subscription":156,"@babel/runtime/helpers/assertThisInitialized":113,"@babel/runtime/helpers/extends":114,"@babel/runtime/helpers/inheritsLoose":115,"@babel/runtime/helpers/interopRequireDefault":116,"@babel/runtime/helpers/objectWithoutPropertiesLoose":118,"_process":133,"hoist-non-react-statics":128,"invariant":129,"react":192,"react-is":144}],147:[function(require,module,exports){
+},{"../utils/PropTypes":156,"../utils/Subscription":157,"@babel/runtime/helpers/assertThisInitialized":114,"@babel/runtime/helpers/extends":115,"@babel/runtime/helpers/inheritsLoose":116,"@babel/runtime/helpers/interopRequireDefault":117,"@babel/runtime/helpers/objectWithoutPropertiesLoose":119,"_process":134,"hoist-non-react-statics":129,"invariant":130,"react":193,"react-is":145}],148:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -80748,7 +80975,7 @@ function createConnect(_temp) {
 var _default = createConnect();
 
 exports.default = _default;
-},{"../components/connectAdvanced":146,"../utils/shallowEqual":158,"./mapDispatchToProps":148,"./mapStateToProps":149,"./mergeProps":150,"./selectorFactory":151,"@babel/runtime/helpers/extends":114,"@babel/runtime/helpers/interopRequireDefault":116,"@babel/runtime/helpers/objectWithoutPropertiesLoose":118}],148:[function(require,module,exports){
+},{"../components/connectAdvanced":147,"../utils/shallowEqual":159,"./mapDispatchToProps":149,"./mapStateToProps":150,"./mergeProps":151,"./selectorFactory":152,"@babel/runtime/helpers/extends":115,"@babel/runtime/helpers/interopRequireDefault":117,"@babel/runtime/helpers/objectWithoutPropertiesLoose":119}],149:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80781,7 +81008,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 
 var _default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
 exports.default = _default;
-},{"./wrapMapToProps":153,"redux":193}],149:[function(require,module,exports){
+},{"./wrapMapToProps":154,"redux":194}],150:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -80803,7 +81030,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 
 var _default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
 exports.default = _default;
-},{"./wrapMapToProps":153}],150:[function(require,module,exports){
+},{"./wrapMapToProps":154}],151:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -80860,7 +81087,7 @@ function whenMergePropsIsOmitted(mergeProps) {
 var _default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
 exports.default = _default;
 }).call(this,require('_process'))
-},{"../utils/verifyPlainObject":159,"@babel/runtime/helpers/extends":114,"@babel/runtime/helpers/interopRequireDefault":116,"_process":133}],151:[function(require,module,exports){
+},{"../utils/verifyPlainObject":160,"@babel/runtime/helpers/extends":115,"@babel/runtime/helpers/interopRequireDefault":117,"_process":134}],152:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -80962,7 +81189,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
   return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
 }
 }).call(this,require('_process'))
-},{"./verifySubselectors":152,"@babel/runtime/helpers/interopRequireDefault":116,"@babel/runtime/helpers/objectWithoutPropertiesLoose":118,"_process":133}],152:[function(require,module,exports){
+},{"./verifySubselectors":153,"@babel/runtime/helpers/interopRequireDefault":117,"@babel/runtime/helpers/objectWithoutPropertiesLoose":119,"_process":134}],153:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -80987,7 +81214,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
   verify(mapDispatchToProps, 'mapDispatchToProps', displayName);
   verify(mergeProps, 'mergeProps', displayName);
 }
-},{"../utils/warning":160,"@babel/runtime/helpers/interopRequireDefault":116}],153:[function(require,module,exports){
+},{"../utils/warning":161,"@babel/runtime/helpers/interopRequireDefault":117}],154:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -81066,7 +81293,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
   };
 }
 }).call(this,require('_process'))
-},{"../utils/verifyPlainObject":159,"@babel/runtime/helpers/interopRequireDefault":116,"_process":133}],154:[function(require,module,exports){
+},{"../utils/verifyPlainObject":160,"@babel/runtime/helpers/interopRequireDefault":117,"_process":134}],155:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -81087,7 +81314,7 @@ exports.connectAdvanced = _connectAdvanced.default;
 var _connect = _interopRequireDefault(require("./connect/connect"));
 
 exports.connect = _connect.default;
-},{"./components/Provider":145,"./components/connectAdvanced":146,"./connect/connect":147,"@babel/runtime/helpers/interopRequireDefault":116,"@babel/runtime/helpers/interopRequireWildcard":117}],155:[function(require,module,exports){
+},{"./components/Provider":146,"./components/connectAdvanced":147,"./connect/connect":148,"@babel/runtime/helpers/interopRequireDefault":117,"@babel/runtime/helpers/interopRequireWildcard":118}],156:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -81113,7 +81340,7 @@ var storeShape = _propTypes.default.shape({
 });
 
 exports.storeShape = storeShape;
-},{"@babel/runtime/helpers/interopRequireDefault":116,"prop-types":137}],156:[function(require,module,exports){
+},{"@babel/runtime/helpers/interopRequireDefault":117,"prop-types":138}],157:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81206,7 +81433,7 @@ function () {
 }();
 
 exports.default = Subscription;
-},{}],157:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81226,7 +81453,7 @@ function isPlainObject(obj) {
 
   return Object.getPrototypeOf(obj) === proto;
 }
-},{}],158:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81260,7 +81487,7 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
-},{}],159:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -81277,7 +81504,7 @@ function verifyPlainObject(value, displayName, methodName) {
     (0, _warning.default)(methodName + "() in " + displayName + " must return a plain object. Instead received " + value + ".");
   }
 }
-},{"./isPlainObject":157,"./warning":160,"@babel/runtime/helpers/interopRequireDefault":116}],160:[function(require,module,exports){
+},{"./isPlainObject":158,"./warning":161,"@babel/runtime/helpers/interopRequireDefault":117}],161:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81307,7 +81534,7 @@ function warning(message) {
   /* eslint-enable no-empty */
 
 }
-},{}],161:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81375,7 +81602,7 @@ BrowserRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = BrowserRouter;
-},{"./Router":169,"history":127,"prop-types":137,"react":192,"warning":175}],162:[function(require,module,exports){
+},{"./Router":170,"history":128,"prop-types":138,"react":193,"warning":176}],163:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81442,7 +81669,7 @@ HashRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = HashRouter;
-},{"./Router":169,"history":127,"prop-types":137,"react":192,"warning":175}],163:[function(require,module,exports){
+},{"./Router":170,"history":128,"prop-types":138,"react":193,"warning":176}],164:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81560,7 +81787,7 @@ Link.contextTypes = {
   }).isRequired
 };
 exports.default = Link;
-},{"history":127,"invariant":129,"prop-types":137,"react":192}],164:[function(require,module,exports){
+},{"history":128,"invariant":130,"prop-types":138,"react":193}],165:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81572,7 +81799,7 @@ var _MemoryRouter2 = _interopRequireDefault(_MemoryRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _MemoryRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/MemoryRouter":177}],165:[function(require,module,exports){
+},{"react-router/MemoryRouter":178}],166:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81664,7 +81891,7 @@ NavLink.defaultProps = {
 };
 
 exports.default = NavLink;
-},{"./Link":163,"./Route":168,"prop-types":137,"react":192}],166:[function(require,module,exports){
+},{"./Link":164,"./Route":169,"prop-types":138,"react":193}],167:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81676,7 +81903,7 @@ var _Prompt2 = _interopRequireDefault(_Prompt);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Prompt2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Prompt":178}],167:[function(require,module,exports){
+},{"react-router/Prompt":179}],168:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81688,7 +81915,7 @@ var _Redirect2 = _interopRequireDefault(_Redirect);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Redirect2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Redirect":179}],168:[function(require,module,exports){
+},{"react-router/Redirect":180}],169:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81700,7 +81927,7 @@ var _Route2 = _interopRequireDefault(_Route);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Route2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Route":180}],169:[function(require,module,exports){
+},{"react-router/Route":181}],170:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81712,7 +81939,7 @@ var _Router2 = _interopRequireDefault(_Router);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Router2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Router":181}],170:[function(require,module,exports){
+},{"react-router/Router":182}],171:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81724,7 +81951,7 @@ var _StaticRouter2 = _interopRequireDefault(_StaticRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _StaticRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/StaticRouter":182}],171:[function(require,module,exports){
+},{"react-router/StaticRouter":183}],172:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81736,7 +81963,7 @@ var _Switch2 = _interopRequireDefault(_Switch);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Switch2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Switch":183}],172:[function(require,module,exports){
+},{"react-router/Switch":184}],173:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81748,7 +81975,7 @@ var _generatePath2 = _interopRequireDefault(_generatePath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _generatePath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/generatePath":184}],173:[function(require,module,exports){
+},{"react-router/generatePath":185}],174:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81826,7 +82053,7 @@ exports.Switch = _Switch3.default;
 exports.generatePath = _generatePath3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./BrowserRouter":161,"./HashRouter":162,"./Link":163,"./MemoryRouter":164,"./NavLink":165,"./Prompt":166,"./Redirect":167,"./Route":168,"./Router":169,"./StaticRouter":170,"./Switch":171,"./generatePath":172,"./matchPath":174,"./withRouter":176}],174:[function(require,module,exports){
+},{"./BrowserRouter":162,"./HashRouter":163,"./Link":164,"./MemoryRouter":165,"./NavLink":166,"./Prompt":167,"./Redirect":168,"./Route":169,"./Router":170,"./StaticRouter":171,"./Switch":172,"./generatePath":173,"./matchPath":175,"./withRouter":177}],175:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81838,7 +82065,7 @@ var _matchPath2 = _interopRequireDefault(_matchPath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _matchPath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/matchPath":186}],175:[function(require,module,exports){
+},{"react-router/matchPath":187}],176:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -81904,7 +82131,7 @@ if (__DEV__) {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":133}],176:[function(require,module,exports){
+},{"_process":134}],177:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81916,7 +82143,7 @@ var _withRouter2 = _interopRequireDefault(_withRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _withRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/withRouter":189}],177:[function(require,module,exports){
+},{"react-router/withRouter":190}],178:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -81984,7 +82211,7 @@ MemoryRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = MemoryRouter;
-},{"./Router":181,"history":127,"prop-types":137,"react":192,"warning":188}],178:[function(require,module,exports){
+},{"./Router":182,"history":128,"prop-types":138,"react":193,"warning":189}],179:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82075,7 +82302,7 @@ Prompt.contextTypes = {
   }).isRequired
 };
 exports.default = Prompt;
-},{"invariant":129,"prop-types":137,"react":192}],179:[function(require,module,exports){
+},{"invariant":130,"prop-types":138,"react":193}],180:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82207,7 +82434,7 @@ Redirect.contextTypes = {
   }).isRequired
 };
 exports.default = Redirect;
-},{"./generatePath":184,"history":127,"invariant":129,"prop-types":137,"react":192,"warning":188}],180:[function(require,module,exports){
+},{"./generatePath":185,"history":128,"invariant":130,"prop-types":138,"react":193,"warning":189}],181:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82365,7 +82592,7 @@ Route.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Route;
-},{"./matchPath":186,"invariant":129,"prop-types":137,"react":192,"warning":188}],181:[function(require,module,exports){
+},{"./matchPath":187,"invariant":130,"prop-types":138,"react":193,"warning":189}],182:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82485,7 +82712,7 @@ Router.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Router;
-},{"invariant":129,"prop-types":137,"react":192,"warning":188}],182:[function(require,module,exports){
+},{"invariant":130,"prop-types":138,"react":193,"warning":189}],183:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82655,7 +82882,7 @@ StaticRouter.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = StaticRouter;
-},{"./Router":181,"history":127,"invariant":129,"prop-types":137,"react":192,"warning":188}],183:[function(require,module,exports){
+},{"./Router":182,"history":128,"invariant":130,"prop-types":138,"react":193,"warning":189}],184:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82750,7 +82977,7 @@ Switch.propTypes = {
   location: _propTypes2.default.object
 };
 exports.default = Switch;
-},{"./matchPath":186,"invariant":129,"prop-types":137,"react":192,"warning":188}],184:[function(require,module,exports){
+},{"./matchPath":187,"invariant":130,"prop-types":138,"react":193,"warning":189}],185:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82796,7 +83023,7 @@ var generatePath = function generatePath() {
 };
 
 exports.default = generatePath;
-},{"path-to-regexp":131}],185:[function(require,module,exports){
+},{"path-to-regexp":132}],186:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82854,7 +83081,7 @@ exports.Switch = _Switch3.default;
 exports.generatePath = _generatePath3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./MemoryRouter":177,"./Prompt":178,"./Redirect":179,"./Route":180,"./Router":181,"./StaticRouter":182,"./Switch":183,"./generatePath":184,"./matchPath":186,"./withRouter":189}],186:[function(require,module,exports){
+},{"./MemoryRouter":178,"./Prompt":179,"./Redirect":180,"./Route":181,"./Router":182,"./StaticRouter":183,"./Switch":184,"./generatePath":185,"./matchPath":187,"./withRouter":190}],187:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -82935,7 +83162,7 @@ var matchPath = function matchPath(pathname) {
 };
 
 exports.default = matchPath;
-},{"path-to-regexp":131}],187:[function(require,module,exports){
+},{"path-to-regexp":132}],188:[function(require,module,exports){
 'use strict';
 
 /**
@@ -83005,9 +83232,9 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{}],188:[function(require,module,exports){
-arguments[4][175][0].apply(exports,arguments)
-},{"_process":133,"dup":175}],189:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
+arguments[4][176][0].apply(exports,arguments)
+},{"_process":134,"dup":176}],190:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83061,7 +83288,7 @@ var withRouter = function withRouter(Component) {
 };
 
 exports.default = withRouter;
-},{"./Route":180,"hoist-non-react-statics":187,"prop-types":137,"react":192}],190:[function(require,module,exports){
+},{"./Route":181,"hoist-non-react-statics":188,"prop-types":138,"react":193}],191:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react.development.js
@@ -84894,7 +85121,7 @@ module.exports = react;
 }
 
 }).call(this,require('_process'))
-},{"_process":133,"object-assign":130,"prop-types/checkPropTypes":134}],191:[function(require,module,exports){
+},{"_process":134,"object-assign":131,"prop-types/checkPropTypes":135}],192:[function(require,module,exports){
 /** @license React v16.6.1
  * react.production.min.js
  *
@@ -84920,7 +85147,7 @@ _currentValue:a,_currentValue2:a,Provider:null,Consumer:null};a.Provider={$$type
 b.ref&&(h=b.ref,f=K.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)L.call(b,c)&&!M.hasOwnProperty(c)&&(d[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)d.children=e;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];d.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:d,_owner:f}},createFactory:function(a){var b=N.bind(null,a);b.type=a;return b},isValidElement:O,version:"16.6.1",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:K,
 assign:k}};X.unstable_ConcurrentMode=x;X.unstable_Profiler=u;var Y={default:X},Z=Y&&X||Y;module.exports=Z.default||Z;
 
-},{"object-assign":130}],192:[function(require,module,exports){
+},{"object-assign":131}],193:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -84931,7 +85158,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":190,"./cjs/react.production.min.js":191,"_process":133}],193:[function(require,module,exports){
+},{"./cjs/react.development.js":191,"./cjs/react.production.min.js":192,"_process":134}],194:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -85582,7 +85809,7 @@ exports.compose = compose;
 exports.__DO_NOT_USE__ActionTypes = ActionTypes;
 
 }).call(this,require('_process'))
-},{"_process":133,"symbol-observable":195}],194:[function(require,module,exports){
+},{"_process":134,"symbol-observable":196}],195:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -85657,7 +85884,7 @@ function resolvePathname(to) {
 
 exports.default = resolvePathname;
 module.exports = exports['default'];
-},{}],195:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -85689,7 +85916,7 @@ if (typeof self !== 'undefined') {
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./ponyfill.js":196}],196:[function(require,module,exports){
+},{"./ponyfill.js":197}],197:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -85713,7 +85940,7 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-},{}],197:[function(require,module,exports){
+},{}],198:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -85757,7 +85984,7 @@ function valueEqual(a, b) {
 
 exports.default = valueEqual;
 module.exports = exports['default'];
-},{}],198:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -85821,4 +86048,4 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":133}]},{},[1]);
+},{"_process":134}]},{},[1]);

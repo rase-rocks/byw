@@ -6,10 +6,32 @@ import colors from "../../core/colors";
 import HeroSearchBar from "./hero-search-bar";
 import supportedKeys from "../../core/text/supported-keys";
 
+function getText(text) {
+    return {
+        crowdSourced: text[supportedKeys.homeCrowdSourced],
+        welsh: text[supportedKeys.homeWelsh],
+        languageResource: text[supportedKeys.homeLanguageResource],
+        lets: text[supportedKeys.homeLets],
+        find: text[supportedKeys.homeFind],
+        somewhere: text[supportedKeys.homeSomewhere],
+        title: text[supportedKeys.homeHeroTitle]
+    };
+}
+
 class HomeHero extends React.Component {
     render() {
 
         const { text } = this.props;
+
+        const {
+            crowdSourced,
+            welsh,
+            languageResource,
+            lets,
+            find,
+            somewhere,
+            title
+        } = getText(text);
 
         return (
             <FetchableSectionBackground backgroundColor={colors.mountainGreen}
@@ -19,22 +41,23 @@ class HomeHero extends React.Component {
 
                     <p className="small-text-hero">
                         <i className="icon-localizer text-primary mr-1"></i>
-                        {text[supportedKeys.homeCrowdSourced]}
-                        <span className="text-primary">&nbsp;Welsh&nbsp;</span>
-                        language resource
+                        {crowdSourced}
+                        <span className="text-primary">&nbsp;{welsh}&nbsp;</span>
+                        {languageResource}
                     </p>
 
                     <h1>
-                        Let&apos;s
+                        {lets}
                         <span className="text-primary">
-                            &nbsp;find&nbsp;
+                            &nbsp;{find}&nbsp;
                         </span>
-                        somewhere
+                        {somewhere}
                     </h1>
 
-                    <p className="text-hero">Find out where to use and hear the language</p>
+                    <p className="text-hero">{title}</p>
                     
-                    <HeroSearchBar/>
+                    <HeroSearchBar text={text}/>
+                    
                 </div>
             </FetchableSectionBackground>
         );

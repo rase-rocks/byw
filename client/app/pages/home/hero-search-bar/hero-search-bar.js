@@ -1,6 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import supportedKeys from "../../../core/text/supported-keys";
+
+function getText(text) {
+    return {
+        search: text[supportedKeys.homeSearch],
+        placeholder: text[supportedKeys.homeSearchPlaceholder],
+        searchResults: text[supportedKeys.homeSearchResults],
+        locationPlaceholder: text[supportedKeys.homeLocationPlaceholder]
+    };
+}
+
 class HeroSearchBar extends React.Component {
 
     makeSubmitHandler(onSubmit) {
@@ -13,11 +24,19 @@ class HeroSearchBar extends React.Component {
     render() {
 
         const {
+            text,
             onSubmit,
             onChange,
             searchText,
             suggestion
         } = this.props;
+
+        const {
+            search,
+            placeholder,
+            searchResults,
+            locationPlaceholder
+        } = getText(text);
 
         const submit = this.makeSubmitHandler(onSubmit);
 
@@ -29,11 +48,11 @@ class HeroSearchBar extends React.Component {
 
                             <input value={searchText}
                                 onChange={onChange}
-                                aria-label="Search"
+                                aria-label={search}
                                 type="search"
                                 name="search"
                                 autoComplete="off"
-                                placeholder="What are you searching for?" />
+                                placeholder={placeholder} />
 
                         </div>
 
@@ -42,8 +61,8 @@ class HeroSearchBar extends React.Component {
                             <input className="search-bar-selector"
                                 type="text"
                                 name="location"
-                                aria-label="Search Results"
-                                placeholder="Location"
+                                aria-label={searchResults}
+                                placeholder={locationPlaceholder}
                                 id="location"
                                 readOnly
                                 value={suggestion} />
@@ -51,7 +70,7 @@ class HeroSearchBar extends React.Component {
                         </div>
 
                         <div className="form-group col-lg-2 text-center">
-                            <input type="submit" value="Search" className="submit" />
+                            <input type="submit" value={search} className="submit" />
                         </div>
                     </div>
                 </form>
@@ -61,6 +80,7 @@ class HeroSearchBar extends React.Component {
 }
 
 HeroSearchBar.propTypes = {
+    text: PropTypes.object.isRequired,
     onSubmit: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
     searchText: PropTypes.string.isRequired,

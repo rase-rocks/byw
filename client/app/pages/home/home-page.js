@@ -16,11 +16,11 @@ class Home extends React.Component {
 
                 <HomeHero text={text}/>
 
-                <Features />
+                <Features text={text}/>
 
-                <Services />
+                <Services text={text}/>
 
-                <PromotionDivider />
+                <PromotionDivider text={text} />
 
             </div>
         );
