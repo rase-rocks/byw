@@ -4,6 +4,8 @@ const expect = require("chai").expect;
 const fs = require("fs");
 const path = require("path");
 
+const getFiles = require("./get-files").default;
+
 const supportedKeys = require("../text/build-scripts/supported-keys").default;
 const translations = require("../text/build-scripts/translations").default;
 
@@ -112,6 +114,45 @@ describe("Text", function () {
                 requiredTextKeysTitleTag.forEach(test);
 
             }, done);
+
+        });
+
+    });
+
+    describe("Auto Checking for Text Rendering Components", function () {
+
+        it("has no undefined text properties", function (done) {
+
+            const clientPath = path.join("./client/app/pages/");
+            const files = getFiles(clientPath);
+
+            makeTest(function (keys, test) {
+
+                const text = test.translation;
+                
+                files.forEach(scriptPath => {
+    
+                    const getText = require(`../${scriptPath}`).getText;
+    
+                    if (getText) {
+                        
+                        const content = getText(text);
+
+                        Object
+                            .keys(content)
+                            .forEach(key => {
+                                const translationItem = content[key];
+                                const errMsg = `${scriptPath} getText property '${key}' is empty in '${test.language}'`;
+                                expect(translationItem, errMsg).to.not.equal(undefined);
+                                expect(translationItem.length).to.be.greaterThan(1);
+                            });
+
+                    }
+    
+                });
+
+            }, done);
+
 
         });
 
