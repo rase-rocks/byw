@@ -6,7 +6,7 @@ import SearchResultPaginator from "../pagination/search-results-paginator";
 
 import supportedKeys from "../../../core/text/supported-keys";
 
-function getText(text) {
+export function getText(text) {
     return {
         result: text[supportedKeys.mapResult],
         results: text[supportedKeys.mapResults],

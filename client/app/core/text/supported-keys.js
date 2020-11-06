@@ -73,5 +73,22 @@ export default {
     vocabResultsFound: "vocabResultsFound", 
     vocabEnglish: "vocabEnglish", 
     vocabCymraeg: "vocabCymraeg", 
-    vocabNotes: "vocabNotes"
+    vocabNotes: "vocabNotes", 
+    aboutTitle: "aboutTitle", 
+    aboutSub1: "aboutSub1", 
+    aboutSub2: "aboutSub2", 
+    aboutP1: "aboutP1", 
+    aboutP2a: "aboutP2a", 
+    aboutOpenSource: "aboutOpenSource", 
+    aboutP2b: "aboutP2b", 
+    aboutP3: "aboutP3", 
+    aboutP4: "aboutP4", 
+    aboutContributing: "aboutContributing", 
+    aboutP5: "aboutP5", 
+    aboutP6: "aboutP6", 
+    aboutP7a: "aboutP7a", 
+    aboutP7b: "aboutP7b", 
+    aboutP7c: "aboutP7c", 
+    aboutP8: "aboutP8", 
+    aboutP9: "aboutP9"
 };

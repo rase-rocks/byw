@@ -253,16 +253,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import supportedKeys from "../text/supported-keys"; // path to the auto generated supported keys script
 
+export function getText(text) {
+    return {
+        category0: text[supportedKeys.category0]
+    }
+}
+
 class View extends React.Component {
 
     render() {
 
         const { text } = this.props;
-        const content = text[supportedKeys.homeCrowdSourced];
+        const { category0 } = getText(text);
 
         return (
             <span>
-                {content}
+                {category0}
             </span>
         )
     }
@@ -277,6 +283,10 @@ export default ViewComponent;
 ```
 
 In this example the `View` component only has to 'know' about which keys it needs to render its content. A combination of unit tests and code completion ensures that all required keys are present in all translations and only those keys are used to access the `text` object.
+
+#### Auto checking of rendered text
+
+Any view component that exports a `getText` function will be automatically checked in unit tests that it has a valid value for every language. The `getText` function should take the passed in `text` and return an object that can be used in the `render` method to obtain the translated text for the required key.
 
 ### Dependencies
 

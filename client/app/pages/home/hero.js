@@ -6,7 +6,7 @@ import colors from "../../core/colors";
 import HeroSearchBar from "./hero-search-bar";
 import supportedKeys from "../../core/text/supported-keys";
 
-function getText(text) {
+export function getText(text) {
     return {
         crowdSourced: text[supportedKeys.homeCrowdSourced],
         welsh: text[supportedKeys.homeWelsh],

@@ -16,7 +16,7 @@ const toItem = function (description) {
     return (<LegendItem key={strHash(description.title)} category={description} />);
 };
 
-function getText(text) {
+export function getText(text) {
     return {
         title: text[supportedKeys.mapLegendTitle],
         subheading: text[supportedKeys.mapLegendSubheading]

@@ -13,7 +13,7 @@ function links(routes) {
         title={route.translatedTitle} />));
 }
 
-function getText(text) {
+export function getText(text) {
     return {
         test404: text[supportedKeys.footerTest404],
         contributing: text[supportedKeys.footerContributing],

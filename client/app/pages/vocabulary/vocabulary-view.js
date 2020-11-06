@@ -36,7 +36,7 @@ function clickableTags(tags, onClickTag) {
     });
 }
 
-function getText(text) {
+export function getText(text) {
     return {
         title: text[supportedKeys.vocabTitle],
         beta: text[supportedKeys.vocabBeta],

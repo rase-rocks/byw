@@ -66,3 +66,20 @@ vocabResultsFound, phrases and words found
 vocabEnglish, English
 vocabCymraeg, Cymraeg
 vocabNotes, Notes
+aboutTitle, About
+aboutSub1, What can
+aboutSub2, do?
+aboutP1, "Byw.cymru is a community driven, crowd sourced, Welsh language resource. Its primary aim is to help learners and others who are interested in the language find places where they can hear and use the language"
+aboutP2a, The whole project is
+aboutOpenSource, open source
+aboutP2b, "and all decisions are made in the open on the projects repo, hosted on"
+aboutP3, "The aim of the project is to make finding out this information as easy as possible, with the maximum of community involvement. Therefore the design of the website is to be as easy and quick to use as possible. It is focused around the map page which is the primary resource for searching the index"
+aboutP4, "All the code that makes up the website is available in the projects repo and is viewable by anybody. The website and data is hosted using community donated resources. The Api provides access to the data to anybody who wants it. Over time it is expected that the number of Api endpoints will be increased to make it more useful to developers and researchers"
+aboutContributing, Contributing
+aboutP5, "The quickest and easiest way to contribute to the project is to submit a review. This just means adding a new place to the index or updating an existing one if necessary"
+aboutP6, "Anybody can do this and no login or account is necessary"
+aboutP7a, "If there are any issues discovered, bugs found or suggestions to be made then check out the"
+aboutP7b, issues page
+aboutP7c, on
+aboutP8, "Those who wish to be more involved should check out the project repo, which is hosted on"
+aboutP9, There is plenty of work to do to make this project a useful tool for Welsh learners
