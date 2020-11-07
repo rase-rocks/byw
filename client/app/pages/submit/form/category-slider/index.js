@@ -6,7 +6,6 @@ import makeEventTargetValue from "../../../../core/event-target-value";
 import safeParseFloat from "../../../../core/model/safe-parse-float";
 import { formattedPercentage, formattedDescription } from "../../../../core/model/form/category";
 
-
 const eventTargetValue = makeEventTargetValue();
 
 const makeChangeHandler = function (propsOnChange, isDisabled) {

@@ -11,19 +11,32 @@ import PageHeader from "../../resusable-components/page-header";
 import HowTo from "./how-to";
 import Submissions from "./submissions";
 
+import text from "../../core/text/data";
+import supportedKeys from "../../core/text/supported-keys";
+
+export function getText(t) {
+    return {
+        title: t[supportedKeys.submitTitle]
+    };
+}
+
 class Submit extends React.Component {
 
     render() {
 
-        const { submissions } = this.props;
+        const { language, submissions } = this.props;
+        const content = text[language];
+
+        const { title } = getText(content);
 
         return (
 
             <div className="submit-container">
 
                 <div className="container">
+
                     <PageHeader>
-                        Submit a review
+                        {title}
                     </PageHeader>
 
                     <div className="row submit-main-content">
@@ -37,15 +50,15 @@ class Submit extends React.Component {
 
                         <div className="col-md-6">
 
-                            <Form />
+                            <Form text={content}/>
 
                         </div>
                     </div>
 
                     {
                         (hasSubmissions(submissions))
-                            ? (<Submissions submissions={submissionsFromState(submissions)} />)
-                            : (<HowTo />)
+                            ? (<Submissions text={content} submissions={submissionsFromState(submissions)} />)
+                            : (<HowTo text={content}/>)
                     }
 
                 </div>
@@ -56,11 +69,13 @@ class Submit extends React.Component {
 }
 
 Submit.propTypes = {
+    language: PropTypes.string.isRequired,
     submissions: PropTypes.object.isRequired
 };
 
 const mapStateToProps = function (state) {
     return {
+        language: state.settings.language,
         submissions: state.submissions
     };
 };

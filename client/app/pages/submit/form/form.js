@@ -5,6 +5,10 @@ import { keys, valueForKey } from "../../../core/model/form";
 import CategorySlider from "./category-slider";
 import Error from "./error";
 import eventTargetValue from "../../../core/event-target-value";
+import capitalizeFirstLetter from "../../../core/model/string-capitalize-first-letter";
+
+import supportedKeys from "../../../core/text/supported-keys";
+const k = supportedKeys;
 
 const SUBMIT_BUTTON_CLASSNAME = "btn btn-primary mb-2 submit-form-button";
 const CLEAR_BUTTON_CLASSNAME = "btn mb-2 submit-clear-button";
@@ -22,6 +26,7 @@ const labels = {
         id: "byw-form-label-name",
         type: "text",
         placeholder: "Name of premises",
+        placeholderKey: k.formName,
         key: "name",
         disabledForExisting: true
     },
@@ -29,6 +34,7 @@ const labels = {
         id: "byw-form-label-address",
         type: "text",
         placeholder: "Address of premises",
+        placeholderKey: k.formAddress,
         key: "address",
         disabledForExisting: true
     },
@@ -36,6 +42,7 @@ const labels = {
         id: "byw-form-label-postcode",
         type: "text",
         placeholder: "Postcode of premises",
+        placeholderKey: k.formPostcode,
         key: "postcode",
         disabledForExisting: true
     },
@@ -43,6 +50,7 @@ const labels = {
         id: "byw-form-label-coordinates",
         type: "text",
         placeholder: "Coordinates",
+        placeholderKey: k.formCoordinates,
         key: "coordinates",
         disabledForExisting: true,
         disabled: true
@@ -51,33 +59,37 @@ const labels = {
         id: "byw-form-label-category",
         type: "text",
         placeholder: "Category",
+        placeholderKey: k.formCategory,
         key: "category",
         disabledForExisting: false
     }
 };
 
-const inputMetaDataForLabel = function (key, formData) {
+const inputMetaDataForLabel = function (key, formData, text) {
+    const descriptor = labels[key];
     return Object.assign(
         {},
-        labels[key],
+        descriptor,
         {
             value: valueForKey(formData, key),
-            meta: formData[key]
+            meta: formData[key],
+            placeholder: text[descriptor.placeholderKey]
         });
 };
 
-const labelsArray = function (data, isDisabled, isExistingLocation) {
+const labelsArray = function (data, isDisabled, isExistingLocation, text) {
     return Object.keys(data)
         .filter(key => (key !== keys.category && key !== keys.coordinateHash && key !== keys.timestamp))
         .reduce(function (inputMetaDatas, key) {
 
-            const metaData = inputMetaDataForLabel(key, data);
+            const metaData = inputMetaDataForLabel(key, data, text);
             metaData.disabled = (isDisabled || (metaData.disabledForExisting && isExistingLocation)) 
                 ? true 
                 : !!metaData.disabled;
 
             inputMetaDatas.push(metaData);
             return inputMetaDatas;
+            
         }, []);
 };
 
@@ -89,7 +101,6 @@ const makeChangeHandler = function (handler, data) {
 
 const toInput = function (handler, formatter) {
     return function makeLabel(labelData) {
-
         return (
             <span key={labelData.id} className="field">
                 <Error text={labelData.meta.error} />
@@ -107,12 +118,10 @@ const toInput = function (handler, formatter) {
     };
 };
 
-export const coordinateInputPlaceholder = "Drag the pin...";
-
-export const formatCoordinate = function (geoJsonCoordinate) {
+export const formatCoordinate = function (geoJsonCoordinate, placeholder) {
     if (!geoJsonCoordinate
         || geoJsonCoordinate === null
-        || geoJsonCoordinate.length === 0) { return coordinateInputPlaceholder; }
+        || geoJsonCoordinate.length === 0) { return placeholder; }
 
     return [
         geoJsonCoordinate[1],
@@ -120,21 +129,43 @@ export const formatCoordinate = function (geoJsonCoordinate) {
     ].join(", ");
 };
 
-const formatValue = function (value, key) {
+function makeFormatValue(placeholder) {
+    return function formatValue (value, key) {
 
-    let v = value;
+        let v = value;
+    
+        if (key === keys.coordinates) {
+            v = formatCoordinate(value, placeholder);
+        }
+    
+        return v;
+    };
+}
 
-    if (key === keys.coordinates) {
-        v = formatCoordinate(value);
-    }
+export function getText(t) {
 
-    return v;
-};
+    const text = {
+        submitted: t[k.formSubmitted],
+        submit: t[k.formSubmit],
+        clear: t[k.formClear],
+        clearForm: t[k.formClearToDrop],
+        dragPin: t[k.formDragPin]
+    };
+
+    return Object
+        .keys(text)
+        .reduce((acc, key) => {
+            acc[key] = capitalizeFirstLetter(text[key]);
+            return acc;
+        }, {});
+
+}
 
 class Form extends React.Component {
     render() {
 
         const { 
+            text,
             data, 
             onChange, 
             onSubmit, 
@@ -143,8 +174,16 @@ class Form extends React.Component {
             isExistingLocation
         } = this.props;
 
-        const elements = labelsArray(data, isDisabled, isExistingLocation)
-            .map(toInput(onChange, formatValue));
+        const {
+            submitted,  submit,
+            clear,      clearForm,
+            dragPin
+        } = getText(text);
+
+        const valueFormatter = makeFormatValue(dragPin);
+
+        const elements = labelsArray(data, isDisabled, isExistingLocation, text)
+            .map(toInput(onChange, valueFormatter));
 
         return (
             <form className="form" onSubmit={onSubmit}>
@@ -154,17 +193,21 @@ class Form extends React.Component {
                 <CategorySlider onChange={onChange} form={data} isDisabled={isDisabled} />
 
                 <div className="submit-button-wrapper">
+
                     <button className={SUBMIT_BUTTON_CLASSNAME} disabled={isDisabled}>
-                        {(isDisabled) ? "Submitted" : "Submit"}
+                        {(isDisabled) ? submitted : submit}
                     </button>
+
                     <button className={CLEAR_BUTTON_CLASSNAME} 
                         style={clearButtonStyle}
                         onClick={onClear}>
-                        Clear
+                        {clear}
                     </button>
+
                     <div>
-                        <small>Clear the form to drop a pin</small>
+                        <small>{clearForm}</small>
                     </div>
+
                 </div>
 
 
@@ -174,6 +217,7 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
+    text: PropTypes.object.isRequired,
     isDisabled: PropTypes.bool,
     isExistingLocation: PropTypes.bool.isRequired,
     data: PropTypes.object,

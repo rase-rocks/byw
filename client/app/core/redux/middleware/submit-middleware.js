@@ -12,12 +12,25 @@ import { validatedForm,
 } from "../../model/form";
 import { submissionStates } from "../reducers/submission-reducer";
 
+import allText from "../../text/data";
+
+function validationValues(store) {
+    const { form, settings } = store.getState();
+    const text = allText[settings.language];
+    return {
+        form,
+        text
+    };
+}
+
 const validate = function (store) {
     return new Promise(function (resolve) {
         setTimeout(function () {
-            const form = store.getState().form;
-            const vForm = validatedForm(form);
+            
+            const { form, text } = validationValues(store);
+            const vForm = validatedForm(form, text);
             resolve(vForm);
+
         }, 10);
 
     });
@@ -62,6 +75,8 @@ const handleReverseGeocode = function (dispatch) {
         dispatch(setFormDataAction(keys.postcode, value));
     };
 };
+
+export { validate };
 
 export default function makeSubmitMiddleware(api) {
     return store => next => action => {

@@ -5,15 +5,18 @@ import form from "../../model/form";
 import { encodeGeoJsonCoordinates } from "../../model/geo-hash";
 
 const updater = function (state, key, value) {
+
     const form = formUpdatingDataKey(state, key, value);
     if (key !== keys.coordinates) { return form; }
 
     const coordinateHash = encodeGeoJsonCoordinates(value);
 
     return formUpdatingDataKey(form, keys.coordinateHash, coordinateHash);
+
 };
 
 const formReducer = function (state = form, action) {
+
     let reducedState = Object.assign({}, state);
 
     switch (action.type) {
@@ -42,6 +45,7 @@ const formReducer = function (state = form, action) {
     }
 
     return reducedState;
+    
 };
 
 export default formReducer;

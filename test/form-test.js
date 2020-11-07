@@ -2,7 +2,9 @@
 
 const expect = require("chai").expect;
 
-const errors = require("../client/app/core/model/form/error-messages").default;
+const text = require("../client/app/core/text/data").default;
+const supportedLanguages = require("../client/app/core/text/supported-languages").default;
+const supportedKeys = require("../client/app/core/text/supported-keys").default;
 
 const form = require("../client/app/core/model/form").default;
 const exp = require("../client/app/core/model/form");
@@ -22,6 +24,8 @@ const {
     timestampString,
     coordinateHashFromForm
 } = exp;
+
+const englishText = text[supportedLanguages.english];
 
 const sampleLatitude = 52.4159479;
 const sampleLongitude = -4.062818;
@@ -52,7 +56,7 @@ describe("form", function () {
     describe("init", function () {
 
         it("has all keys are initialised", function () {
-            expect(Object.keys(form).length).to.equal(Object.keys(keys).length);
+            expect(Object.keys(form).length).to.be.equal(Object.keys(keys).length);
         });
 
     });
@@ -73,12 +77,12 @@ describe("form", function () {
             const newForm = formUpdatingDataKey(oldForm, alteredKey, "Robert");
 
             expect(newForm !== oldForm);
-            expect(valueForKey(newForm, keys.name)).to.equal("Robert");
+            expect(valueForKey(newForm, keys.name)).to.be.equal("Robert");
 
             const noneUpdatedKeys = Object.keys(keys).filter(key => key !== alteredKey);
 
             noneUpdatedKeys.forEach(key => {
-                expect(valueForKey(newForm, key)).to.equal(valueForKey(oldForm, key));
+                expect(valueForKey(newForm, key)).to.be.equal(valueForKey(oldForm, key));
             });
 
         });
@@ -109,10 +113,10 @@ describe("form", function () {
             const noneUpdatedKeys = Object.keys(keys).filter(key => key !== alteredKey);
 
             noneUpdatedKeys.forEach(key => {
-                expect(valueForKey(newForm, key)).to.equal(valueForKey(oldForm, key));
+                expect(valueForKey(newForm, key)).to.be.equal(valueForKey(oldForm, key));
             });
 
-            expect(newForm[alteredKey].error).to.equal(errorString);
+            expect(newForm[alteredKey].error).to.be.equal(errorString);
 
         });
 
@@ -136,7 +140,7 @@ describe("form", function () {
 
             Object.keys(newForm).forEach(function (key) {
 
-                expect(valueForKey(newForm, key)).to.equal(location[key]);
+                expect(valueForKey(newForm, key)).to.be.equal(location[key]);
 
             });
 
@@ -156,9 +160,9 @@ describe("form", function () {
             Object.keys(valid)
                 .filter(key => key !== keys.timestamp)
                 .forEach(function (key) {
-                    expect(valueForKey(valid, key)).to.equal(valueForKey(stamped, key));
+                    expect(valueForKey(valid, key)).to.be.equal(valueForKey(stamped, key));
                 });
-            expect(valueForKey(stamped, keys.timestamp)).to.equal(timestamp);
+            expect(valueForKey(stamped, keys.timestamp)).to.be.equal(timestamp);
 
         });
     });
@@ -168,7 +172,7 @@ describe("form", function () {
         it("returns correct hash", function () {
             const valid = validForm();
 
-            expect(coordinateHashFromForm(valid)).to.equal(sampleGeohash);
+            expect(coordinateHashFromForm(valid)).to.be.equal(sampleGeohash);
         });
 
     });
@@ -182,12 +186,12 @@ describe("form", function () {
 
             const allPostKeys = Object.keys(postKeys);
 
-            expect(Object.keys(postData).length).to.equal(allPostKeys.length);
-            expect(postData.timestamp).to.equal(timestamp);
+            expect(Object.keys(postData).length).to.be.equal(allPostKeys.length);
+            expect(postData.timestamp).to.be.equal(timestamp);
 
             allPostKeys.filter(key => key !== keys.timestamp)
                 .forEach((key) => {
-                    expect(postData[key]).to.equal(valueForKey(valid, key));
+                    expect(postData[key]).to.be.equal(valueForKey(valid, key));
                 });
 
         });
@@ -202,36 +206,36 @@ describe("form", function () {
                 {
                     testKey: keys.name,
                     form: makeForm(keys.name, ""),
-                    error: errors.missingName
+                    error: englishText[supportedKeys.errorMissingName]
                 },
                 {
                     testKey: keys.address,
                     form: makeForm(keys.address, ""),
-                    error: errors.missingAddress
+                    error: englishText[supportedKeys.errorMissingAddress]
                 },
                 {
                     testKey: keys.coordinates,
                     form: makeForm(keys.coordinates, []),
-                    error: errors.invalidCoordinates
+                    error: englishText[supportedKeys.errorInvalidCoordinates]
                 },
                 {
                     testKey: keys.coordinateHash,
                     form: makeForm(keys.coordinateHash, ""),
-                    error: errors.invalidCoordinates
+                    error: englishText[supportedKeys.errorInvalidCoordinates]
                 },
                 {
                     testKey: keys.coordinateHash,
                     form: makeForm(keys.coordinateHash, "gcm3"),
-                    error: errors.invalidCoordinates
+                    error: englishText[supportedKeys.errorInvalidCoordinates]
                 }
-            ].map(test => Object.assign({}, test, { form: validatedForm(test.form) }))
-                .forEach(test => expect(hasErrors(test.form)).to.equal(true));
+            ].map(test => Object.assign({}, test, { form: validatedForm(test.form, englishText) }))
+                .forEach(test => expect(hasErrors(test.form)).to.be.equal(true));
 
         });
 
         it("does not false positive", function () {
             const frm = validForm();
-            expect(hasErrors(frm)).to.equal(false);
+            expect(hasErrors(frm)).to.be.equal(false);
         });
 
     });
@@ -251,11 +255,11 @@ describe("form", function () {
             const vForm = validatedForm(valid);
 
             Object.keys(keys).forEach(key => {
-                expect(vForm[key].error).to.equal("");
+                expect(vForm[key].error).to.be.equal("");
             });
 
             Object.keys(keys).forEach(key => {
-                expect(valueForKey(vForm, key)).to.equal(valueForKey(valid, key));
+                expect(valueForKey(vForm, key)).to.be.equal(valueForKey(valid, key));
             });
         });
 
@@ -266,9 +270,9 @@ describe("form", function () {
             invalidPostcode.coordinates = item(keys.coordinates, sampleCoords);
             invalidPostcode.coordinateHash = item(keys.coordinateHash, sampleGeohash);
 
-            const vForm = validatedForm(invalidPostcode);
+            const vForm = validatedForm(invalidPostcode, englishText);
 
-            expect(vForm[keys.postcode].error).to.equal(errors.invalidPostcode);
+            expect(vForm[keys.postcode].error).to.be.equal(englishText[supportedKeys.errorInvalidPostcode]);
 
         });
 
@@ -278,9 +282,31 @@ describe("form", function () {
             invalidCoordinates.postcode = item(keys.postcode, "WA10 7BJ");
             invalidCoordinates.coordinates = item(keys.coordinates, []);
 
-            const vForm = validatedForm(invalidCoordinates);
+            const vForm = validatedForm(invalidCoordinates, englishText);
 
-            expect(vForm[keys.coordinates].error).to.equal(errors.invalidCoordinates);
+            expect(vForm[keys.coordinates].error).to.be.equal(englishText[supportedKeys.errorInvalidCoordinates]);
+
+        });
+
+        it("handles empty postcode", function () {
+
+            const emptyPostcode = validForm();
+            emptyPostcode.postcode = item(keys.postcode, undefined);
+
+            const vForm = validatedForm(emptyPostcode, englishText);
+
+            expect(vForm[keys.postcode].error).to.be.equal("");
+
+        });
+
+        it("handles empty string postcode", function () {
+
+            const emptyPostcode = validForm();
+            emptyPostcode.postcode = item(keys.postcode, "");
+
+            const vForm = validatedForm(emptyPostcode, englishText);
+
+            expect(vForm[keys.postcode].error).to.be.equal("");
 
         });
 
@@ -288,15 +314,15 @@ describe("form", function () {
             const missingName = validForm();
             missingName.name = item(keys.name, "");
 
-            const vForm1 = validatedForm(missingName);
+            const vForm1 = validatedForm(missingName, englishText);
 
             const undefName = validForm();
             undefName.name = item(keys.name, undefined);
 
-            const vForm2 = validatedForm(undefName);
+            const vForm2 = validatedForm(undefName, englishText);
 
             [vForm1, vForm2].forEach(frm => {
-                expect(frm.name.error).to.equal(errors.missingName);
+                expect(frm.name.error).to.be.equal(englishText[supportedKeys.errorMissingName]);
             });
         });
 
@@ -304,15 +330,15 @@ describe("form", function () {
             const missingAddress = validForm();
             missingAddress.address = item(keys.address, "");
 
-            const vForm1 = validatedForm(missingAddress);
+            const vForm1 = validatedForm(missingAddress, englishText);
 
             const undefAddress = validForm();
             undefAddress.address = item(keys.address, undefined);
 
-            const vForm2 = validatedForm(undefAddress);
+            const vForm2 = validatedForm(undefAddress, englishText);
 
             [vForm1, vForm2].forEach(frm => {
-                expect(frm.address.error).to.equal(errors.missingAddress);
+                expect(frm.address.error).to.be.equal(englishText[supportedKeys.errorMissingAddress]);
             });
         });
 
@@ -320,15 +346,15 @@ describe("form", function () {
             const missingCategory = validForm();
             missingCategory.category = item(keys.category, "");
 
-            const vForm1 = validatedForm(missingCategory);
+            const vForm1 = validatedForm(missingCategory, englishText);
 
             const undefCategory = validForm();
             undefCategory.category = item(keys.category, undefined);
 
-            const vForm2 = validatedForm(undefCategory);
+            const vForm2 = validatedForm(undefCategory, englishText);
 
             [vForm1, vForm2].forEach(frm => {
-                expect(frm.category.error).to.equal(errors.missingCategory);
+                expect(frm.category.error).to.be.equal(englishText[supportedKeys.errorMissingCategory]);
             });
         });
 
@@ -337,9 +363,9 @@ describe("form", function () {
             const mismatch = validForm();
             mismatch.coordinateHash = "gcbms2";
 
-            const validated = validatedForm(mismatch);
+            const validated = validatedForm(mismatch, englishText);
 
-            expect(validated.coordinates.error).to.equal(errors.coordinatesMismatch);
+            expect(validated.coordinates.error).to.be.equal(englishText[supportedKeys.errorCoordinatesMismatch]);
 
         });
 

@@ -10,7 +10,7 @@ const statusClassName = function (status) {
 class Submission extends React.Component {
     render() {
 
-        const { submission } = this.props;
+        const { text, submission } = this.props;
 
         return (
             <tr>
@@ -21,7 +21,7 @@ class Submission extends React.Component {
                     {formattedPercentage(submission.category)}
                 </td>
                 <td>
-                    {formattedDescription(submission.category)}
+                    {formattedDescription(submission.category, text)}
                 </td>
                 <td>
                     <span className={statusClassName(submission.status)}>
@@ -34,6 +34,7 @@ class Submission extends React.Component {
 }
 
 Submission.propTypes = {
+    text: PropTypes.object.isRequired,
     submission: PropTypes.object.isRequired
 };
 

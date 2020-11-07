@@ -74,7 +74,7 @@ var pages = pagesToBuild.map(function (pageName) {
 
 console.log(JSON.stringify(pages));
 
-},{"../client/app/app":4,"../client/app/core/redux/reducers":49,"../client/app/nav/routes":62,"../client/app/pages/about":64,"../client/app/pages/home":70,"../client/app/pages/map":73,"../client/app/pages/nomatch":90,"../client/app/pages/privacy":91,"../client/app/pages/submit":99,"../client/app/pages/vocabulary":105,"./template":3,"react":198,"react-dom/server":147,"react-redux":160,"react-router":191,"react-router-dom":179,"redux":199}],2:[function(require,module,exports){
+},{"../client/app/app":4,"../client/app/core/redux/reducers":49,"../client/app/nav/routes":62,"../client/app/pages/about":65,"../client/app/pages/home":71,"../client/app/pages/map":74,"../client/app/pages/nomatch":91,"../client/app/pages/privacy":92,"../client/app/pages/submit":100,"../client/app/pages/vocabulary":106,"./template":3,"react":199,"react-dom/server":148,"react-redux":161,"react-router":192,"react-router-dom":180,"redux":200}],2:[function(require,module,exports){
 "use strict";
 
 var cssFilename = "byw.style.min.css";
@@ -246,7 +246,7 @@ App.propTypes = {
 
 exports.default = (0, _reactRouter.withRouter)((0, _reactRedux.connect)(mapStateToProps)(App));
 
-},{"./core/is-browser":9,"./core/props-children":45,"./footer":58,"./nav":59,"./nav/routes":62,"prop-types":143,"react":198,"react-redux":160,"react-router":191}],5:[function(require,module,exports){
+},{"./core/is-browser":9,"./core/props-children":45,"./footer":58,"./nav":59,"./nav/routes":62,"prop-types":144,"react":199,"react-redux":161,"react-router":192}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -491,11 +491,10 @@ function formattedPercentage(value) {
 }
 
 function formattedDescription(value) {
-    var language = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _supportedLanguages2.default.english;
-    var content = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _data2.default;
+    var content = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _data2.default[_supportedLanguages2.default.english];
 
     var category = output(value, "titleKey");
-    return content[language][category];
+    return content[category];
 }
 
 function color(value) {
@@ -1619,7 +1618,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]);
 
-},{"prop-types":143}],46:[function(require,module,exports){
+},{"prop-types":144}],46:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1936,7 +1935,7 @@ var reducers = (0, _redux.combineReducers)({
 
 exports.default = reducers;
 
-},{"./data-reducer":47,"./form-reducer":48,"./locator-reducer":50,"./settings-reducer":51,"./submission-reducer":52,"redux":199}],50:[function(require,module,exports){
+},{"./data-reducer":47,"./form-reducer":48,"./locator-reducer":50,"./settings-reducer":51,"./submission-reducer":52,"redux":200}],50:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2176,7 +2175,56 @@ exports.default = {
         "mapPages": "Pages",
         "mapSearchPlaceholder": "Search for places, coordinates and postcodes",
         "mapLegendTitle": "Legend to the map",
-        "mapLegendSubheading": "A quick glympse of Welsh speaking likeliness"
+        "mapLegendSubheading": "A quick glympse of Welsh speaking likeliness",
+        "vocabTitle": "Vocabulary",
+        "vocabBeta": "Beta",
+        "vocabP1": "This is a beta version of an attempt to provide a searchable resource for commonly heard sayings",
+        "vocabP2": "Currently it has",
+        "vocabP3": "words and phrases out of a target of",
+        "vocabResultsFound": "phrases and words found",
+        "vocabEnglish": "English",
+        "vocabCymraeg": "Cymraeg",
+        "vocabNotes": "Notes",
+        "aboutTitle": "About",
+        "aboutSub1": "What can",
+        "aboutSub2": "do?",
+        "aboutP1": "Byw.cymru is a community driven, crowd sourced, Welsh language resource. Its primary aim is to help learners and others who are interested in the language find places where they can hear and use the language",
+        "aboutP2a": "The whole project is",
+        "aboutOpenSource": "open source",
+        "aboutP2b": "and all decisions are made in the open on the projects repo, hosted on",
+        "aboutP3": "The aim of the project is to make finding out this information as easy as possible, with the maximum of community involvement. Therefore the design of the website is to be as easy and quick to use as possible. It is focused around the map page which is the primary resource for searching the index",
+        "aboutP4": "All the code that makes up the website is available in the projects repo and is viewable by anybody. The website and data is hosted using community donated resources. The Api provides access to the data to anybody who wants it. Over time it is expected that the number of Api endpoints will be increased to make it more useful to developers and researchers",
+        "aboutContributing": "Contributing",
+        "aboutP5": "The quickest and easiest way to contribute to the project is to submit a review. This just means adding a new place to the index or updating an existing one if necessary",
+        "aboutP6": "Anybody can do this and no login or account is necessary",
+        "aboutP7a": "If there are any issues discovered, bugs found or suggestions to be made then check out the",
+        "aboutP7b": "issues page",
+        "aboutP7c": "on",
+        "aboutP8": "Those who wish to be more involved should check out the project repo, which is hosted on",
+        "aboutP9": "There is plenty of work to do to make this project a useful tool for Welsh learners",
+        "submitTitle": "Submit a categorisation",
+        "howToTitle": "How to",
+        "howToFind": "find somewhere already listed",
+        "howToOL1a": "The premises you selected in the map page will appear in the submit box ready for your review of Welsh speaking likelyhood",
+        "howToOL1b": "Choose what you feel is best and hit submit",
+        "howToOL1c": "If the premises you selected is not where you want to submit a review for then just drag the map pin, the form will be cleared, and you can locate the premises you want to submit",
+        "howToSubmit": "submit a new premises",
+        "howToOL2a": "Drag the map pin to locate the place",
+        "howToOL2b": "The coordinates and postcode will be filled out. Just add the name of the premises and the address as you would like it to appear in the index",
+        "howToOL2c": "Select how likely you feel a person is to hear and be able to use Welsh in the premises. This isn't scientific, just what you think is likely",
+        "howToInaccurate": "If the index appears inaccurate",
+        "howToP1": "The category (how likely it is to use Welsh) of a premises is calculated by aggregating all the reviews received. So your submission will be taken into account straight away, but it may or may not affect the current rating",
+        "howToP2": "If you feel the rating of a premises is way off and remains way off after you have submitted your rating, then please get in touch. If you are the business owner we can help by pointing you in the direction of resources to help increase the use of Welsh in your business. If the data in the index is just plain wrong then we can correct it",
+        "formSubmitted": "Submitted",
+        "formSubmit": "Submit",
+        "formClear": "Clear",
+        "formClearToDrop": "Clear the form to drop a pin",
+        "formDragPin": "Drag the pin...",
+        "formName": "Name of premises",
+        "formAddress": "Address of premises",
+        "formPostcode": "Postcode of premises",
+        "formCoordinates": "Coordinates",
+        "formCategory": "Category"
     }
 };
 
@@ -2252,7 +2300,56 @@ exports.default = {
     mapPages: "mapPages",
     mapSearchPlaceholder: "mapSearchPlaceholder",
     mapLegendTitle: "mapLegendTitle",
-    mapLegendSubheading: "mapLegendSubheading"
+    mapLegendSubheading: "mapLegendSubheading",
+    vocabTitle: "vocabTitle",
+    vocabBeta: "vocabBeta",
+    vocabP1: "vocabP1",
+    vocabP2: "vocabP2",
+    vocabP3: "vocabP3",
+    vocabResultsFound: "vocabResultsFound",
+    vocabEnglish: "vocabEnglish",
+    vocabCymraeg: "vocabCymraeg",
+    vocabNotes: "vocabNotes",
+    aboutTitle: "aboutTitle",
+    aboutSub1: "aboutSub1",
+    aboutSub2: "aboutSub2",
+    aboutP1: "aboutP1",
+    aboutP2a: "aboutP2a",
+    aboutOpenSource: "aboutOpenSource",
+    aboutP2b: "aboutP2b",
+    aboutP3: "aboutP3",
+    aboutP4: "aboutP4",
+    aboutContributing: "aboutContributing",
+    aboutP5: "aboutP5",
+    aboutP6: "aboutP6",
+    aboutP7a: "aboutP7a",
+    aboutP7b: "aboutP7b",
+    aboutP7c: "aboutP7c",
+    aboutP8: "aboutP8",
+    aboutP9: "aboutP9",
+    submitTitle: "submitTitle",
+    howToTitle: "howToTitle",
+    howToFind: "howToFind",
+    howToOL1a: "howToOL1a",
+    howToOL1b: "howToOL1b",
+    howToOL1c: "howToOL1c",
+    howToSubmit: "howToSubmit",
+    howToOL2a: "howToOL2a",
+    howToOL2b: "howToOL2b",
+    howToOL2c: "howToOL2c",
+    howToInaccurate: "howToInaccurate",
+    howToP1: "howToP1",
+    howToP2: "howToP2",
+    formSubmitted: "formSubmitted",
+    formSubmit: "formSubmit",
+    formClear: "formClear",
+    formClearToDrop: "formClearToDrop",
+    formDragPin: "formDragPin",
+    formName: "formName",
+    formAddress: "formAddress",
+    formPostcode: "formPostcode",
+    formCoordinates: "formCoordinates",
+    formCategory: "formCategory"
 };
 
 },{}],55:[function(require,module,exports){
@@ -2341,7 +2438,7 @@ FooterLink.propTypes = {
 
 exports.default = FooterLink;
 
-},{"prop-types":143,"react":198,"react-router-dom":179}],57:[function(require,module,exports){
+},{"prop-types":144,"react":199,"react-router-dom":180}],57:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2349,6 +2446,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.getText = getText;
 
 var _React = require("React");
 
@@ -2522,7 +2621,7 @@ Footer.propTypes = {
 
 exports.default = Footer;
 
-},{"../core/hash":8,"../core/text/supported-keys":54,"../resusable-components/github-icon":112,"./footer-link":56,"React":125,"prop-types":143,"react-router-dom":179}],58:[function(require,module,exports){
+},{"../core/hash":8,"../core/text/supported-keys":54,"../resusable-components/github-icon":113,"./footer-link":56,"React":126,"prop-types":144,"react-router-dom":180}],58:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2608,7 +2707,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(FooterController);
 
-},{"../core/text/data":53,"../nav/routes":62,"./footer":57,"prop-types":143,"react":198,"react-redux":160}],59:[function(require,module,exports){
+},{"../core/text/data":53,"../nav/routes":62,"./footer":57,"prop-types":144,"react":199,"react-redux":161}],59:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2775,7 +2874,7 @@ exports.routes = _routes2.default;
 exports.route = _routes.route;
 exports.default = (0, _reactRouter.withRouter)(Nav);
 
-},{"../core/hash":8,"../core/text/data":53,"./nav-link":60,"./overlay-menu":61,"./routes":62,"prop-types":143,"react":198,"react-router":191}],60:[function(require,module,exports){
+},{"../core/hash":8,"../core/text/data":53,"./nav-link":60,"./overlay-menu":61,"./routes":62,"prop-types":144,"react":199,"react-router":192}],60:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2855,7 +2954,7 @@ NavLink.contextTypes = {
 
 exports.default = NavLink;
 
-},{"../core/props-children":45,"prop-types":143,"react":198,"react-router-dom":179}],61:[function(require,module,exports){
+},{"../core/props-children":45,"prop-types":144,"react":199,"react-router-dom":180}],61:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2998,7 +3097,7 @@ OverlayMenu.propTypes = {
 
 exports.default = OverlayMenu;
 
-},{"./index":59,"prop-types":143,"react":198,"react-router-dom":179}],62:[function(require,module,exports){
+},{"./index":59,"prop-types":144,"react":199,"react-router-dom":180}],62:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3251,7 +3350,7 @@ PageContainer.propTypes = {
 
 exports.default = PageContainer;
 
-},{"../core/props-children":45,"react":198}],64:[function(require,module,exports){
+},{"../core/props-children":45,"react":199}],64:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3260,9 +3359,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+exports.getText = getText;
+
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _supportedKeys = require("../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3271,6 +3380,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var k = _supportedKeys2.default;
+
+function getText(t) {
+    return {
+        title: t[k.aboutTitle], sub1: t[k.aboutSub1], sub2: t[k.aboutSub2],
+        p1: t[k.aboutP1], p2a: t[k.aboutP2a], openSource: t[k.aboutOpenSource],
+        p2b: t[k.aboutP2b], p3: t[k.aboutP3], p4: t[k.aboutP4],
+        contributing: t[k.contributing], p5: t[k.aboutP5], p6: t[k.aboutP6],
+        p7a: t[k.aboutP7a], p7b: t[k.aboutP7b], p7c: t[k.aboutP7c],
+        p8: t[k.aboutP8], p9: t[k.aboutP9]
+    };
+}
 
 var About = function (_React$Component) {
     _inherits(About, _React$Component);
@@ -3284,6 +3406,27 @@ var About = function (_React$Component) {
     _createClass(About, [{
         key: "render",
         value: function render() {
+            var text = this.props.text;
+
+            var _getText = getText(text),
+                title = _getText.title,
+                sub1 = _getText.sub1,
+                sub2 = _getText.sub2,
+                p1 = _getText.p1,
+                p2a = _getText.p2a,
+                openSource = _getText.openSource,
+                p2b = _getText.p2b,
+                p3 = _getText.p3,
+                p4 = _getText.p4,
+                contributing = _getText.contributing,
+                p5 = _getText.p5,
+                p6 = _getText.p6,
+                p7a = _getText.p7a,
+                p7b = _getText.p7b,
+                p7c = _getText.p7c,
+                p8 = _getText.p8,
+                p9 = _getText.p9;
+
             return _react2.default.createElement(
                 "section",
                 { className: "about" },
@@ -3299,15 +3442,17 @@ var About = function (_React$Component) {
                             _react2.default.createElement(
                                 "small",
                                 null,
-                                "About"
+                                title
                             ),
-                            "What can ",
+                            sub1,
+                            " ",
                             _react2.default.createElement(
                                 "span",
                                 { className: "text-primary" },
                                 "byw.cymru"
                             ),
-                            " do?"
+                            " ",
+                            sub2
                         )
                     ),
                     _react2.default.createElement("div", { style: { height: "40px" } }),
@@ -3320,20 +3465,24 @@ var About = function (_React$Component) {
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "Byw.cymru is a community driven, crowd sourced, Welsh language resource. Its primary aim is to help learners and others who are interested in the language find places where they can hear and use the language."
+                                p1,
+                                "."
                             ),
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "The whole project is",
+                                p2a,
                                 _react2.default.createElement(
                                     "a",
                                     { href: "https://en.wikipedia.org/wiki/Open-source_model",
                                         target: "_blank",
                                         rel: "noopener noreferrer" },
-                                    "\xA0open source\xA0"
+                                    "\xA0",
+                                    openSource,
+                                    "\xA0"
                                 ),
-                                "and all decisions are made in the open on the projects repo, hosted on\xA0",
+                                p2b,
+                                "\xA0",
                                 _react2.default.createElement(
                                     "a",
                                     { href: "https://github.com/rase-rocks/byw",
@@ -3349,12 +3498,14 @@ var About = function (_React$Component) {
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "The aim of the project is to make finding out this information as easy as possible, with the maximum of community involvement. Therefore the design of the website is to be as easy and quick to use as possible. It is focused around the map page which is the primary resource for searching the index."
+                                p3,
+                                "."
                             ),
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "All the code that makes up the website is available in the projects repo and is viewable by anybody. The website and data is hosted using community donated resources. The Api provides access to the data to anybody who wants it. Over time it is expected that the number of Api endpoints will be increased to make it more useful to developers and researchers."
+                                p4,
+                                "."
                             )
                         )
                     ),
@@ -3367,7 +3518,7 @@ var About = function (_React$Component) {
                             _react2.default.createElement(
                                 "h2",
                                 null,
-                                "Contributing"
+                                contributing
                             )
                         )
                     ),
@@ -3380,25 +3531,30 @@ var About = function (_React$Component) {
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "The quickest and easiest way to contribute to the project is to submit a review. This just means adding a new place to the index or updating an existing one if necessary."
+                                p5,
+                                "."
                             ),
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "Anybody can do this and no login or account is necessary."
+                                p6,
+                                "."
                             ),
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "If there are any issues discovered, bugs found or suggestions to be made then check out the ",
+                                p7a,
+                                " ",
                                 _react2.default.createElement(
                                     "a",
                                     { href: "https://github.com/rase-rocks/byw/issues",
                                         target: "_blank",
                                         rel: "noopener noreferrer" },
-                                    "issues page"
+                                    p7b
                                 ),
-                                " on GitHub."
+                                " ",
+                                p7c,
+                                " GitHub."
                             )
                         ),
                         _react2.default.createElement(
@@ -3407,7 +3563,7 @@ var About = function (_React$Component) {
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "Those who wish to be more involved should check out the project repo, which is hosted on",
+                                p8,
                                 _react2.default.createElement(
                                     "a",
                                     { href: "https://github.com/rase-rocks/byw",
@@ -3419,7 +3575,8 @@ var About = function (_React$Component) {
                             _react2.default.createElement(
                                 "p",
                                 null,
-                                "There is plenty of work to do to make this project a useful tool for Welsh learners."
+                                p9,
+                                "."
                             )
                         )
                     )
@@ -3431,9 +3588,83 @@ var About = function (_React$Component) {
     return About;
 }(_react2.default.Component);
 
+About.propTypes = {
+    text: _propTypes2.default.object.isRequired
+};
+
 exports.default = About;
 
-},{"react":198}],65:[function(require,module,exports){
+},{"../../core/text/supported-keys":54,"prop-types":144,"react":199}],65:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = require("react-redux");
+
+var _about = require("./about");
+
+var _about2 = _interopRequireDefault(_about);
+
+var _data = require("../../core/text/data");
+
+var _data2 = _interopRequireDefault(_data);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AboutController = function (_React$Component) {
+    _inherits(AboutController, _React$Component);
+
+    function AboutController() {
+        _classCallCheck(this, AboutController);
+
+        return _possibleConstructorReturn(this, (AboutController.__proto__ || Object.getPrototypeOf(AboutController)).apply(this, arguments));
+    }
+
+    _createClass(AboutController, [{
+        key: "render",
+        value: function render() {
+            var language = this.props.language;
+
+            var content = _data2.default[language];
+
+            return _react2.default.createElement(_about2.default, { text: content });
+        }
+    }]);
+
+    return AboutController;
+}(_react2.default.Component);
+
+AboutController.propTypes = {
+    language: _propTypes2.default.string.isRequired
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        language: state.settings.language
+    };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(AboutController);
+
+},{"../../core/text/data":53,"./about":64,"prop-types":144,"react":199,"react-redux":161}],66:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3574,7 +3805,7 @@ FeaturesSection.propTypes = {
 
 exports.default = FeaturesSection;
 
-},{"../../core/hash":8,"../../core/text/supported-keys":54,"prop-types":143,"react":198}],66:[function(require,module,exports){
+},{"../../core/hash":8,"../../core/text/supported-keys":54,"prop-types":144,"react":199}],67:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3703,7 +3934,7 @@ HeroSearchBar.propTypes = {
 
 exports.default = HeroSearchBar;
 
-},{"../../../core/text/supported-keys":54,"prop-types":143,"react":198}],67:[function(require,module,exports){
+},{"../../../core/text/supported-keys":54,"prop-types":144,"react":199}],68:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3827,7 +4058,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouter.withRouter)(HeroSearchBarController));
 
-},{"../../../core/event-target-value":7,"../../../core/redux/actions":46,"../../../core/text/supported-keys":54,"../../../nav":59,"./hero-search-bar":66,"prop-types":143,"react":198,"react-redux":160,"react-router":191}],68:[function(require,module,exports){
+},{"../../../core/event-target-value":7,"../../../core/redux/actions":46,"../../../core/text/supported-keys":54,"../../../nav":59,"./hero-search-bar":67,"prop-types":144,"react":199,"react-redux":161,"react-router":192}],69:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3835,6 +4066,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.getText = getText;
 
 var _react = require("react");
 
@@ -3958,7 +4191,7 @@ HomeHero.propTypes = {
 
 exports.default = HomeHero;
 
-},{"../../core/colors":6,"../../core/text/supported-keys":54,"../../resusable-components/FetchableSectionBackground":111,"./hero-search-bar":67,"prop-types":143,"react":198}],69:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/text/supported-keys":54,"../../resusable-components/FetchableSectionBackground":112,"./hero-search-bar":68,"prop-types":144,"react":199}],70:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4035,7 +4268,7 @@ Home.propTypes = {
 
 exports.default = Home;
 
-},{"./features":65,"./hero":68,"./promotion-divider":71,"./services":72,"prop-types":143,"react":198}],70:[function(require,module,exports){
+},{"./features":66,"./hero":69,"./promotion-divider":72,"./services":73,"prop-types":144,"react":199}],71:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4130,7 +4363,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(HomeController);
 
-},{"../../core/model/array-sample":11,"../../core/redux/actions":46,"../../core/text/data":53,"./home-page":69,"prop-types":143,"react":198,"react-redux":160}],71:[function(require,module,exports){
+},{"../../core/model/array-sample":11,"../../core/redux/actions":46,"../../core/text/data":53,"./home-page":70,"prop-types":144,"react":199,"react-redux":161}],72:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4230,7 +4463,7 @@ PromotionDivider.propTypes = {
 
 exports.default = PromotionDivider;
 
-},{"../../core/colors":6,"../../core/text/supported-keys":54,"../../resusable-components/FetchableSectionBackground":111,"../../resusable-components/quote/quotes":114,"prop-types":143,"react":198}],72:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/text/supported-keys":54,"../../resusable-components/FetchableSectionBackground":112,"../../resusable-components/quote/quotes":115,"prop-types":144,"react":199}],73:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4367,7 +4600,7 @@ ServicesSection.propTypes = {
 
 exports.default = ServicesSection;
 
-},{"../../core/hash":8,"../../core/text/supported-keys":54,"../../resusable-components/services-col":115,"prop-types":143,"react":198}],73:[function(require,module,exports){
+},{"../../core/hash":8,"../../core/text/supported-keys":54,"../../resusable-components/services-col":116,"prop-types":144,"react":199}],74:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4566,7 +4799,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)((0, _reactRouter.withRouter)(MapPageController));
 
-},{"../../core/bind-methods":5,"../../core/event-target-value":7,"../../core/model/pagination":40,"../../core/redux/actions":46,"../../core/text/data":53,"../../nav":59,"./map-page":75,"prop-types":143,"react":198,"react-redux":160,"react-router":191}],74:[function(require,module,exports){
+},{"../../core/bind-methods":5,"../../core/event-target-value":7,"../../core/model/pagination":40,"../../core/redux/actions":46,"../../core/text/data":53,"../../nav":59,"./map-page":76,"prop-types":144,"react":199,"react-redux":161,"react-router":192}],75:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4708,7 +4941,7 @@ LocationFolderController.propTypes = {
 
 exports.default = LocationFolderController;
 
-},{"../../../core/hash":8,"../../../core/model/form/category":14,"../../../core/text/supported-keys":54,"prop-types":143,"react":198}],75:[function(require,module,exports){
+},{"../../../core/hash":8,"../../../core/model/form/category":14,"../../../core/text/supported-keys":54,"prop-types":144,"react":199}],76:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4821,7 +5054,7 @@ MapPage.propTypes = {
 
 exports.default = MapPage;
 
-},{"../../../core/bind-methods":5,"../../../core/model/float-value":13,"../map":86,"./legend":76,"./map-search-box":79,"prop-types":143,"react":198}],76:[function(require,module,exports){
+},{"../../../core/bind-methods":5,"../../../core/model/float-value":13,"../map":87,"./legend":77,"./map-search-box":80,"prop-types":144,"react":199}],77:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4829,6 +5062,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.getText = getText;
 
 var _react = require("react");
 
@@ -4943,7 +5178,7 @@ Legend.propTypes = {
 
 exports.default = Legend;
 
-},{"../../../../core/hash":8,"../../../../core/model/form/category":14,"../../../../core/text/supported-keys":54,"./legend-item":78,"prop-types":143,"react":198}],77:[function(require,module,exports){
+},{"../../../../core/hash":8,"../../../../core/model/form/category":14,"../../../../core/text/supported-keys":54,"./legend-item":79,"prop-types":144,"react":199}],78:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5013,7 +5248,7 @@ LegendIcon.propTypes = {
 
 exports.default = LegendIcon;
 
-},{"prop-types":143,"react":198}],78:[function(require,module,exports){
+},{"prop-types":144,"react":199}],79:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5081,7 +5316,7 @@ LegendItem.propTypes = {
 
 exports.default = LegendItem;
 
-},{"./legend-icon":77,"prop-types":143,"react":198}],79:[function(require,module,exports){
+},{"./legend-icon":78,"prop-types":144,"react":199}],80:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5089,6 +5324,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.getText = getText;
 
 var _propTypes = require("prop-types");
 
@@ -5224,7 +5461,7 @@ MapSearchBox.propTypes = {
 
 exports.default = MapSearchBox;
 
-},{"../../../core/text/supported-keys":54,"../location-folder":74,"../pagination/search-results-paginator":89,"prop-types":143,"react":198}],80:[function(require,module,exports){
+},{"../../../core/text/supported-keys":54,"../location-folder":75,"../pagination/search-results-paginator":90,"prop-types":144,"react":199}],81:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5253,7 +5490,7 @@ var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../../../core/text/data":53,"../../../core/text/supported-keys":54}],81:[function(require,module,exports){
+},{"../../../core/text/data":53,"../../../core/text/supported-keys":54}],82:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5279,7 +5516,7 @@ exports.MAP_ID = MAP_ID;
 exports.SHOW_ZOOM = SHOW_ZOOM;
 exports.NORMAL_ZOOM = NORMAL_ZOOM;
 
-},{}],82:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5305,7 +5542,7 @@ var addEventHandlers = exports.addEventHandlers = function addEventHandlers(map,
     });
 };
 
-},{"../constants":81,"./leaflet-events":84}],83:[function(require,module,exports){
+},{"../constants":82,"./leaflet-events":85}],84:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5426,7 +5663,7 @@ var makeController = function makeController(doc, leaflet, mapId, initialProps) 
 
 exports.default = makeController;
 
-},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../constants":81,"./add-layers":82,"./leaflet-events":84,"./update":85}],84:[function(require,module,exports){
+},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../constants":82,"./add-layers":83,"./leaflet-events":85,"./update":86}],85:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5438,7 +5675,7 @@ exports.default = {
     move: "move"
 };
 
-},{}],85:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5538,7 +5775,7 @@ var makeUpdateMap = exports.makeUpdateMap = function makeUpdateMap(leaflet, map,
     };
 };
 
-},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../../../../core/model/marker-opts":39,"../popup":87}],86:[function(require,module,exports){
+},{"../../../../core/model/geojson-coordinates-to-marker-coordinates":34,"../../../../core/model/marker-opts":39,"../popup":88}],87:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5675,7 +5912,7 @@ MapController.propTypes = {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(MapController);
 
-},{"../../../core/is-browser":9,"./add-text-content":80,"./constants":81,"./controller":83,"Leaflet":122,"prop-types":143,"react":198,"react-redux":160}],87:[function(require,module,exports){
+},{"../../../core/is-browser":9,"./add-text-content":81,"./constants":82,"./controller":84,"Leaflet":123,"prop-types":144,"react":199,"react-redux":161}],88:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5779,7 +6016,7 @@ var popup = function popup(location, onShowLocation, onReview, showLabelText, ca
 
 exports.default = popup;
 
-},{"../../../core/is-browser":9,"../../../core/model/form/category":14}],88:[function(require,module,exports){
+},{"../../../core/is-browser":9,"../../../core/model/form/category":14}],89:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5863,7 +6100,7 @@ PageItem.propTypes = {
 exports.makePageItem = makePageItem;
 exports.default = PageItem;
 
-},{"prop-types":143,"react":198}],89:[function(require,module,exports){
+},{"prop-types":144,"react":199}],90:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5935,7 +6172,7 @@ SearchResultPaginator.propTypes = {
 
 exports.default = SearchResultPaginator;
 
-},{"../../../core/model/pagination":40,"./page-item":88,"prop-types":143,"react":198}],90:[function(require,module,exports){
+},{"../../../core/model/pagination":40,"./page-item":89,"prop-types":144,"react":199}],91:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6015,7 +6252,7 @@ var NoMatch = function (_React$Component) {
 
 exports.default = NoMatch;
 
-},{"../../core/colors":6,"../../resusable-components/FetchableContainer":108,"react":198}],91:[function(require,module,exports){
+},{"../../core/colors":6,"../../resusable-components/FetchableContainer":109,"react":199}],92:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6197,7 +6434,7 @@ var privacyRoute = {
 exports.default = Privacy;
 exports.privacyRoute = privacyRoute;
 
-},{"../../page-content":63,"./thead":92,"./tr":93,"react":198}],92:[function(require,module,exports){
+},{"../../page-content":63,"./thead":93,"./tr":94,"react":199}],93:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6261,7 +6498,7 @@ var THead = function (_React$Component) {
 
 exports.default = THead;
 
-},{"react":198}],93:[function(require,module,exports){
+},{"react":199}],94:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6349,7 +6586,7 @@ Tr.propTypes = {
 
 exports.default = Tr;
 
-},{"prop-types":143,"react":198}],94:[function(require,module,exports){
+},{"prop-types":144,"react":199}],95:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6462,7 +6699,7 @@ CategorySlider.propTypes = {
 
 exports.default = CategorySlider;
 
-},{"../../../../core/event-target-value":7,"../../../../core/model/form":17,"../../../../core/model/form/category":14,"../../../../core/model/safe-parse-float":42,"prop-types":143,"react":198}],95:[function(require,module,exports){
+},{"../../../../core/event-target-value":7,"../../../../core/model/form":17,"../../../../core/model/form/category":14,"../../../../core/model/safe-parse-float":42,"prop-types":144,"react":199}],96:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6524,17 +6761,19 @@ Error.propTypes = {
 
 exports.default = Error;
 
-},{"prop-types":143,"react":198}],96:[function(require,module,exports){
+},{"prop-types":144,"react":199}],97:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.formatCoordinate = exports.coordinateInputPlaceholder = undefined;
+exports.formatCoordinate = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _labels;
+
+exports.getText = getText;
 
 var _propTypes = require("prop-types");
 
@@ -6558,6 +6797,14 @@ var _eventTargetValue = require("../../../core/event-target-value");
 
 var _eventTargetValue2 = _interopRequireDefault(_eventTargetValue);
 
+var _stringCapitalizeFirstLetter = require("../../../core/model/string-capitalize-first-letter");
+
+var _stringCapitalizeFirstLetter2 = _interopRequireDefault(_stringCapitalizeFirstLetter);
+
+var _supportedKeys = require("../../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -6567,6 +6814,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var k = _supportedKeys2.default;
 
 var SUBMIT_BUTTON_CLASSNAME = "btn btn-primary mb-2 submit-form-button";
 var CLEAR_BUTTON_CLASSNAME = "btn mb-2 submit-clear-button";
@@ -6583,37 +6832,43 @@ var labels = (_labels = {}, _defineProperty(_labels, _form.keys.name, {
     id: "byw-form-label-name",
     type: "text",
     placeholder: "Name of premises",
+    placeholderKey: k.formName,
     key: "name",
     disabledForExisting: true
 }), _defineProperty(_labels, _form.keys.address, {
     id: "byw-form-label-address",
     type: "text",
     placeholder: "Address of premises",
+    placeholderKey: k.formAddress,
     key: "address",
     disabledForExisting: true
 }), _defineProperty(_labels, _form.keys.postcode, {
     id: "byw-form-label-postcode",
     type: "text",
     placeholder: "Postcode of premises",
+    placeholderKey: k.formPostcode,
     key: "postcode",
     disabledForExisting: true
 }), _defineProperty(_labels, _form.keys.coordinates, {
     id: "byw-form-label-coordinates",
     type: "text",
-    placeholder: "Coordinates",
+    placeholder: "Coords",
+    placeholderKey: k.formCoordinates,
     key: "coordinates",
     disabledForExisting: true,
     disabled: true
 }), _defineProperty(_labels, _form.keys.category, {
     id: "byw-form-label-category",
     type: "text",
-    placeholder: "Category",
+    placeholder: "Cat",
+    placeholderKey: k.formCategory,
     key: "category",
     disabledForExisting: false
 }), _labels);
 
 var inputMetaDataForLabel = function inputMetaDataForLabel(key, formData) {
-    return Object.assign({}, labels[key], {
+    var descriptor = labels[key];
+    return Object.assign({}, descriptor, {
         value: (0, _form.valueForKey)(formData, key),
         meta: formData[key]
     });
@@ -6640,7 +6895,6 @@ var makeChangeHandler = function makeChangeHandler(handler, data) {
 
 var toInput = function toInput(handler, formatter) {
     return function makeLabel(labelData) {
-
         return _react2.default.createElement(
             "span",
             { key: labelData.id, className: "field" },
@@ -6658,26 +6912,40 @@ var toInput = function toInput(handler, formatter) {
     };
 };
 
-var coordinateInputPlaceholder = exports.coordinateInputPlaceholder = "Drag the pin...";
-
-var formatCoordinate = exports.formatCoordinate = function formatCoordinate(geoJsonCoordinate) {
+var formatCoordinate = exports.formatCoordinate = function formatCoordinate(geoJsonCoordinate, placeholder) {
     if (!geoJsonCoordinate || geoJsonCoordinate === null || geoJsonCoordinate.length === 0) {
-        return coordinateInputPlaceholder;
+        return placeholder;
     }
 
     return [geoJsonCoordinate[1], geoJsonCoordinate[0]].join(", ");
 };
 
-var formatValue = function formatValue(value, key) {
+function makeFormatValue(placeholder) {
+    return function formatValue(value, key) {
 
-    var v = value;
+        var v = value;
 
-    if (key === _form.keys.coordinates) {
-        v = formatCoordinate(value);
-    }
+        if (key === _form.keys.coordinates) {
+            v = formatCoordinate(value, placeholder);
+        }
 
-    return v;
-};
+        return v;
+    };
+}
+
+function getText(t) {
+    var text = {
+        submitted: t[k.formSubmitted],
+        submit: t[k.formSubmit],
+        clear: t[k.formClear],
+        clearForm: t[k.formClearToDrop],
+        dragPin: t[k.formDragPin]
+    };
+    return Object.keys(text).reduce(function (acc, key) {
+        acc[key] = (0, _stringCapitalizeFirstLetter2.default)(text[key]);
+        return acc;
+    }, {});
+}
 
 var Form = function (_React$Component) {
     _inherits(Form, _React$Component);
@@ -6692,6 +6960,7 @@ var Form = function (_React$Component) {
         key: "render",
         value: function render() {
             var _props = this.props,
+                text = _props.text,
                 data = _props.data,
                 onChange = _props.onChange,
                 onSubmit = _props.onSubmit,
@@ -6699,8 +6968,14 @@ var Form = function (_React$Component) {
                 isDisabled = _props.isDisabled,
                 isExistingLocation = _props.isExistingLocation;
 
+            var _getText = getText(text),
+                submitted = _getText.submitted,
+                submit = _getText.submit,
+                clear = _getText.clear,
+                clearForm = _getText.clearForm,
+                dragPin = _getText.dragPin;
 
-            var elements = labelsArray(data, isDisabled, isExistingLocation).map(toInput(onChange, formatValue));
+            var elements = labelsArray(data, isDisabled, isExistingLocation).map(toInput(onChange, makeFormatValue(dragPin)));
 
             return _react2.default.createElement(
                 "form",
@@ -6713,14 +6988,14 @@ var Form = function (_React$Component) {
                     _react2.default.createElement(
                         "button",
                         { className: SUBMIT_BUTTON_CLASSNAME, disabled: isDisabled },
-                        isDisabled ? "Submitted" : "Submit"
+                        isDisabled ? submitted : submit
                     ),
                     _react2.default.createElement(
                         "button",
                         { className: CLEAR_BUTTON_CLASSNAME,
                             style: clearButtonStyle,
                             onClick: onClear },
-                        "Clear"
+                        clear
                     ),
                     _react2.default.createElement(
                         "div",
@@ -6728,7 +7003,7 @@ var Form = function (_React$Component) {
                         _react2.default.createElement(
                             "small",
                             null,
-                            "Clear the form to drop a pin"
+                            clearForm
                         )
                     )
                 )
@@ -6740,6 +7015,7 @@ var Form = function (_React$Component) {
 }(_react2.default.Component);
 
 Form.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     isDisabled: _propTypes2.default.bool,
     isExistingLocation: _propTypes2.default.bool.isRequired,
     data: _propTypes2.default.object,
@@ -6750,7 +7026,7 @@ Form.propTypes = {
 
 exports.default = Form;
 
-},{"../../../core/event-target-value":7,"../../../core/model/form":17,"./category-slider":94,"./error":95,"prop-types":143,"react":198}],97:[function(require,module,exports){
+},{"../../../core/event-target-value":7,"../../../core/model/form":17,"../../../core/model/string-capitalize-first-letter":43,"../../../core/text/supported-keys":54,"./category-slider":95,"./error":96,"prop-types":144,"react":199}],98:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6833,6 +7109,7 @@ var FormController = function (_React$Component) {
         key: "render",
         value: function render() {
             var _props = this.props,
+                text = _props.text,
                 data = _props.data,
                 submissions = _props.submissions,
                 showsLocatorMarker = _props.showsLocatorMarker;
@@ -6841,7 +7118,8 @@ var FormController = function (_React$Component) {
             var isDisabled = (0, _submission.matchesPreviousSubmission)(coordinateHash, submissions);
             var isExistingLocation = !showsLocatorMarker;
 
-            return _react2.default.createElement(_form3.default, { isDisabled: isDisabled,
+            return _react2.default.createElement(_form3.default, { text: text,
+                isDisabled: isDisabled,
                 isExistingLocation: isExistingLocation,
                 data: data,
                 onChange: this.makeChangeHandler(),
@@ -6854,6 +7132,7 @@ var FormController = function (_React$Component) {
 }(_react2.default.Component);
 
 FormController.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     data: _propTypes2.default.object.isRequired,
     submissions: _propTypes2.default.object.isRequired,
     showsLocatorMarker: _propTypes2.default.bool.isRequired
@@ -6869,7 +7148,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(FormController);
 
-},{"../../../core/bind-methods":5,"../../../core/model/form":17,"../../../core/model/submission":44,"../../../core/redux/actions":46,"./form":96,"prop-types":143,"react":198,"react-redux":160}],98:[function(require,module,exports){
+},{"../../../core/bind-methods":5,"../../../core/model/form":17,"../../../core/model/submission":44,"../../../core/redux/actions":46,"./form":97,"prop-types":144,"react":199,"react-redux":161}],99:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6878,13 +7157,25 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+exports.getText = getText;
+
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _hash = require("../../core/hash");
+
 var _submitHeading = require("./submit-heading");
 
 var _submitHeading2 = _interopRequireDefault(_submitHeading);
+
+var _supportedKeys = require("../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6893,6 +7184,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var k = _supportedKeys2.default;
 
 var Space = function (_React$Component) {
     _inherits(Space, _React$Component);
@@ -6913,6 +7206,26 @@ var Space = function (_React$Component) {
     return Space;
 }(_react2.default.Component);
 
+function li(value) {
+    return _react2.default.createElement(
+        "li",
+        { key: (0, _hash.strHash)(value) },
+        value,
+        "."
+    );
+}
+
+function getText(t) {
+    return {
+        title: t[k.howToTitle], find: t[k.howToFind],
+        ol1a: t[k.howToOL1a], ol1b: t[k.howToOL1b],
+        ol1c: t[k.howToOL1c], submit: t[k.howToSubmit],
+        ol2a: t[k.howToOL2a], ol2b: t[k.howToOL2b],
+        ol2c: t[k.howToOL2c], inaccurate: t[k.howToInaccurate],
+        p1: t[k.howToP1], p2: t[k.howToP2]
+    };
+}
+
 var HowTo = function (_React$Component2) {
     _inherits(HowTo, _React$Component2);
 
@@ -6925,12 +7238,31 @@ var HowTo = function (_React$Component2) {
     _createClass(HowTo, [{
         key: "render",
         value: function render() {
+            var text = this.props.text;
+
+            var _getText = getText(text),
+                title = _getText.title,
+                find = _getText.find,
+                ol1a = _getText.ol1a,
+                ol1b = _getText.ol1b,
+                ol1c = _getText.ol1c,
+                submit = _getText.submit,
+                ol2a = _getText.ol2a,
+                ol2b = _getText.ol2b,
+                ol2c = _getText.ol2c,
+                inaccurate = _getText.inaccurate,
+                p1 = _getText.p1,
+                p2 = _getText.p2;
+
+            var ol1 = [ol1a, ol1b, ol1c].map(li);
+            var ol2 = [ol2a, ol2b, ol2c].map(li);
+
             return _react2.default.createElement(
                 "div",
                 null,
                 _react2.default.createElement("hr", null),
                 _react2.default.createElement(Space, null),
-                _react2.default.createElement(_submitHeading2.default, { title: "How to" }),
+                _react2.default.createElement(_submitHeading2.default, { title: title }),
                 _react2.default.createElement(
                     "div",
                     { className: "row" },
@@ -6940,26 +7272,13 @@ var HowTo = function (_React$Component2) {
                         _react2.default.createElement(
                             "p",
                             null,
-                            "find somewhere already listed:"
+                            find,
+                            ":"
                         ),
                         _react2.default.createElement(
                             "ol",
                             null,
-                            _react2.default.createElement(
-                                "li",
-                                null,
-                                "The premises you selected in the map page will appear in the submit box ready for your review of Welsh speaking likelyhood."
-                            ),
-                            _react2.default.createElement(
-                                "li",
-                                null,
-                                "Choose what you feel is best and hit submit."
-                            ),
-                            _react2.default.createElement(
-                                "li",
-                                null,
-                                "If the premises you selected is not where you want to submit a review for then just drag the map pin, the form will be cleared, and you can locate the premises you want to submit."
-                            )
+                            ol1
                         )
                     ),
                     _react2.default.createElement(
@@ -6968,30 +7287,17 @@ var HowTo = function (_React$Component2) {
                         _react2.default.createElement(
                             "p",
                             null,
-                            "submit a new premises:"
+                            submit,
+                            ":"
                         ),
                         _react2.default.createElement(
                             "ol",
                             null,
-                            _react2.default.createElement(
-                                "li",
-                                null,
-                                "Drag the map pin to locate the place"
-                            ),
-                            _react2.default.createElement(
-                                "li",
-                                null,
-                                "The coordinates and postcode will be filled out. Just add the name of the premises and the address as you would like it to appear in the index."
-                            ),
-                            _react2.default.createElement(
-                                "li",
-                                null,
-                                "Select how likely you feel a person is to hear and be able to use Welsh in the premises. This isn't scientific, just what you think is likely."
-                            )
+                            ol2
                         )
                     )
                 ),
-                _react2.default.createElement(_submitHeading2.default, { title: "If the index appears inaccurate" }),
+                _react2.default.createElement(_submitHeading2.default, { title: inaccurate }),
                 _react2.default.createElement(
                     "div",
                     { className: "row" },
@@ -7001,7 +7307,8 @@ var HowTo = function (_React$Component2) {
                         _react2.default.createElement(
                             "p",
                             null,
-                            "The category (how likely it is to use Welsh) of a premises is calculated by aggregating all the reviews received. So your submission will be taken into account straight away, but it may or may not affect the current rating."
+                            p1,
+                            "."
                         )
                     ),
                     _react2.default.createElement(
@@ -7010,7 +7317,8 @@ var HowTo = function (_React$Component2) {
                         _react2.default.createElement(
                             "p",
                             null,
-                            "If you feel the rating of a premises is way off and remains way off after you have submitted your rating, then please get in touch. If you are the business owner we can help by pointing you in the direction of resources to help increase the use of Welsh in your business. If the data in the index is just plain wrong then we can correct it."
+                            p2,
+                            "."
                         )
                     )
                 )
@@ -7021,9 +7329,13 @@ var HowTo = function (_React$Component2) {
     return HowTo;
 }(_react2.default.Component);
 
+HowTo.propTypes = {
+    text: _propTypes2.default.object.isRequired
+};
+
 exports.default = HowTo;
 
-},{"./submit-heading":103,"react":198}],99:[function(require,module,exports){
+},{"../../core/hash":8,"../../core/text/supported-keys":54,"./submit-heading":104,"prop-types":144,"react":199}],100:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7031,6 +7343,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.getText = getText;
 
 var _reactRedux = require("react-redux");
 
@@ -7064,6 +7378,14 @@ var _submissions = require("./submissions");
 
 var _submissions2 = _interopRequireDefault(_submissions);
 
+var _data = require("../../core/text/data");
+
+var _data2 = _interopRequireDefault(_data);
+
+var _supportedKeys = require("../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7074,6 +7396,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // import LocatorSearchBar from "./locator-search-bar";
 
+
+function getText(t) {
+    return {
+        title: t[_supportedKeys2.default.submitTitle]
+    };
+}
 
 var Submit = function (_React$Component) {
     _inherits(Submit, _React$Component);
@@ -7087,8 +7415,14 @@ var Submit = function (_React$Component) {
     _createClass(Submit, [{
         key: "render",
         value: function render() {
-            var submissions = this.props.submissions;
+            var _props = this.props,
+                language = _props.language,
+                submissions = _props.submissions;
 
+            var content = _data2.default[language];
+
+            var _getText = getText(content),
+                title = _getText.title;
 
             return _react2.default.createElement(
                 "div",
@@ -7099,7 +7433,7 @@ var Submit = function (_React$Component) {
                     _react2.default.createElement(
                         _pageHeader2.default,
                         null,
-                        "Submit a review"
+                        title
                     ),
                     _react2.default.createElement(
                         "div",
@@ -7112,10 +7446,10 @@ var Submit = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-md-6" },
-                            _react2.default.createElement(_form2.default, null)
+                            _react2.default.createElement(_form2.default, { text: content })
                         )
                     ),
-                    (0, _submission.hasSubmissions)(submissions) ? _react2.default.createElement(_submissions2.default, { submissions: (0, _submission.submissionsFromState)(submissions) }) : _react2.default.createElement(_howTo2.default, null)
+                    (0, _submission.hasSubmissions)(submissions) ? _react2.default.createElement(_submissions2.default, { text: content, submissions: (0, _submission.submissionsFromState)(submissions) }) : _react2.default.createElement(_howTo2.default, { text: content })
                 )
             );
         }
@@ -7125,18 +7459,20 @@ var Submit = function (_React$Component) {
 }(_react2.default.Component);
 
 Submit.propTypes = {
+    language: _propTypes2.default.string.isRequired,
     submissions: _propTypes2.default.object.isRequired
 };
 
 var mapStateToProps = function mapStateToProps(state) {
     return {
+        language: state.settings.language,
         submissions: state.submissions
     };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Submit);
 
-},{"../../core/model/submission":44,"../../resusable-components/page-header":113,"./form":97,"./how-to":98,"./locator-map":100,"./submissions":101,"prop-types":143,"react":198,"react-redux":160}],100:[function(require,module,exports){
+},{"../../core/model/submission":44,"../../core/text/data":53,"../../core/text/supported-keys":54,"../../resusable-components/page-header":114,"./form":98,"./how-to":99,"./locator-map":101,"./submissions":102,"prop-types":144,"react":199,"react-redux":161}],101:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7290,7 +7626,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(LocatorMap);
 
-},{"../../../core/is-browser":9,"../../../core/model/geojson-from-marker":35,"../../../core/redux/actions":46,"../../map/map/constants":81,"../../map/map/controller":83,"Leaflet":122,"prop-types":143,"react":198,"react-redux":160}],101:[function(require,module,exports){
+},{"../../../core/is-browser":9,"../../../core/model/geojson-from-marker":35,"../../../core/redux/actions":46,"../../map/map/constants":82,"../../map/map/controller":84,"Leaflet":123,"prop-types":144,"react":199,"react-redux":161}],102:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7298,6 +7634,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.getText = getText;
 
 var _propTypes = require("prop-types");
 
@@ -7311,6 +7649,10 @@ var _submission = require("./submission");
 
 var _submission2 = _interopRequireDefault(_submission);
 
+var _supportedKeys = require("../../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7319,9 +7661,19 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var k = _supportedKeys2.default;
+
 var key = function key(submission) {
     return "submission-display-" + submission.coordinateHash;
 };
+
+function getText(t) {
+    return {
+        name: t[k.submitName],
+        category: t[k.submitCategory],
+        status: t[k.submitStatus]
+    };
+}
 
 var Submissions = function (_React$Component) {
     _inherits(Submissions, _React$Component);
@@ -7335,9 +7687,19 @@ var Submissions = function (_React$Component) {
     _createClass(Submissions, [{
         key: "render",
         value: function render() {
+            var _props = this.props,
+                text = _props.text,
+                submissions = _props.submissions;
 
-            var rows = this.props.submissions.map(function (submission) {
-                return _react2.default.createElement(_submission2.default, { key: key(submission), submission: submission });
+            var _getText = getText(text),
+                name = _getText.name,
+                category = _getText.category,
+                status = _getText.status;
+
+            var rows = submissions.map(function (submission) {
+                return _react2.default.createElement(_submission2.default, { key: key(submission),
+                    text: text,
+                    submission: submission });
             });
 
             return _react2.default.createElement(
@@ -7358,18 +7720,18 @@ var Submissions = function (_React$Component) {
                                 _react2.default.createElement(
                                     "th",
                                     null,
-                                    "Name"
+                                    name
                                 ),
                                 _react2.default.createElement(
                                     "th",
                                     null,
-                                    "Category"
+                                    category
                                 ),
                                 _react2.default.createElement("th", null),
                                 _react2.default.createElement(
                                     "th",
                                     null,
-                                    "Status"
+                                    status
                                 )
                             ),
                             rows
@@ -7384,12 +7746,13 @@ var Submissions = function (_React$Component) {
 }(_react2.default.Component);
 
 Submissions.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     submissions: _propTypes2.default.array.isRequired
 };
 
 exports.default = Submissions;
 
-},{"./submission":102,"prop-types":143,"react":198}],102:[function(require,module,exports){
+},{"../../../core/text/supported-keys":54,"./submission":103,"prop-types":144,"react":199}],103:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7432,7 +7795,9 @@ var Submission = function (_React$Component) {
     _createClass(Submission, [{
         key: "render",
         value: function render() {
-            var submission = this.props.submission;
+            var _props = this.props,
+                text = _props.text,
+                submission = _props.submission;
 
 
             return _react2.default.createElement(
@@ -7451,7 +7816,7 @@ var Submission = function (_React$Component) {
                 _react2.default.createElement(
                     "td",
                     null,
-                    (0, _category.formattedDescription)(submission.category)
+                    (0, _category.formattedDescription)(submission.category, text)
                 ),
                 _react2.default.createElement(
                     "td",
@@ -7470,12 +7835,13 @@ var Submission = function (_React$Component) {
 }(_react2.default.Component);
 
 Submission.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     submission: _propTypes2.default.object.isRequired
 };
 
 exports.default = Submission;
 
-},{"../../../core/model/form/category":14,"prop-types":143,"react":198}],103:[function(require,module,exports){
+},{"../../../core/model/form/category":14,"prop-types":144,"react":199}],104:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7561,7 +7927,7 @@ SubmitHeading.propTypes = {
 
 exports.default = SubmitHeading;
 
-},{"prop-types":143,"react":198}],104:[function(require,module,exports){
+},{"prop-types":144,"react":199}],105:[function(require,module,exports){
 module.exports=[
     {
         "en": "I am frightened",
@@ -59251,7 +59617,7 @@ module.exports=[
     }
 ]
 
-},{}],105:[function(require,module,exports){
+},{}],106:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59264,6 +59630,12 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = require("react-redux");
+
 var _geirfa = require("./geirfa.json");
 
 var _geirfa2 = _interopRequireDefault(_geirfa);
@@ -59275,6 +59647,10 @@ var _geirfa4 = _interopRequireDefault(_geirfa3);
 var _eventTargetValue = require("../../core/event-target-value");
 
 var _eventTargetValue2 = _interopRequireDefault(_eventTargetValue);
+
+var _data = require("../../core/text/data");
+
+var _data2 = _interopRequireDefault(_data);
 
 var _vocabularyView = require("./vocabulary-view");
 
@@ -59336,7 +59712,12 @@ var VocabularyController = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
-            return _react2.default.createElement(_vocabularyView2.default, { onChange: this.makeOnChange(),
+            var language = this.props.language;
+
+            var content = _data2.default[language];
+
+            return _react2.default.createElement(_vocabularyView2.default, { text: content,
+                onChange: this.makeOnChange(),
                 onClickTag: this.makeOnClickTag(),
                 units: this.state.units,
                 tags: tags,
@@ -59349,9 +59730,19 @@ var VocabularyController = function (_React$Component) {
     return VocabularyController;
 }(_react2.default.Component);
 
-exports.default = VocabularyController;
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        language: state.settings.language
+    };
+};
 
-},{"../../core/event-target-value":7,"../../core/model/geirfa":23,"./geirfa.json":104,"./vocabulary-view":107,"react":198}],106:[function(require,module,exports){
+VocabularyController.propTypes = {
+    language: _propTypes2.default.string.isRequired
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(VocabularyController);
+
+},{"../../core/event-target-value":7,"../../core/model/geirfa":23,"../../core/text/data":53,"./geirfa.json":105,"./vocabulary-view":108,"prop-types":144,"react":199,"react-redux":161}],107:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59414,7 +59805,7 @@ VocabSearch.propTypes = {
 
 exports.default = VocabSearch;
 
-},{"prop-types":143,"react":198}],107:[function(require,module,exports){
+},{"prop-types":144,"react":199}],108:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59422,6 +59813,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.getText = getText;
 
 var _react = require("react");
 
@@ -59442,6 +59835,10 @@ var _pageHeader2 = _interopRequireDefault(_pageHeader);
 var _vocabSearch = require("./vocab-search");
 
 var _vocabSearch2 = _interopRequireDefault(_vocabSearch);
+
+var _supportedKeys = require("../../core/text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59492,6 +59889,20 @@ function clickableTags(tags, onClickTag) {
     });
 }
 
+function getText(text) {
+    return {
+        title: text[_supportedKeys2.default.vocabTitle],
+        beta: text[_supportedKeys2.default.vocabBeta],
+        p1: text[_supportedKeys2.default.vocabP1],
+        p2: text[_supportedKeys2.default.vocabP2],
+        p3: text[_supportedKeys2.default.vocabP3],
+        resultsFound: text[_supportedKeys2.default.vocabResultsFound],
+        english: text[_supportedKeys2.default.vocabEnglish],
+        cymraeg: text[_supportedKeys2.default.vocabCymraeg],
+        notes: text[_supportedKeys2.default.vocabNotes]
+    };
+}
+
 var VocabularyView = function (_React$Component) {
     _inherits(VocabularyView, _React$Component);
 
@@ -59505,6 +59916,7 @@ var VocabularyView = function (_React$Component) {
         key: "render",
         value: function render() {
             var _props = this.props,
+                text = _props.text,
                 onChange = _props.onChange,
                 onClickTag = _props.onClickTag,
                 units = _props.units,
@@ -59513,6 +59925,16 @@ var VocabularyView = function (_React$Component) {
                 currentTranslationUnitsCount = _props.currentTranslationUnitsCount,
                 targetTranslationUnitsCount = _props.targetTranslationUnitsCount;
 
+            var _getText = getText(text),
+                title = _getText.title,
+                beta = _getText.beta,
+                p1 = _getText.p1,
+                p2 = _getText.p2,
+                p3 = _getText.p3,
+                resultsFound = _getText.resultsFound,
+                english = _getText.english,
+                cymraeg = _getText.cymraeg,
+                notes = _getText.notes;
 
             return _react2.default.createElement(
                 _pageContent2.default,
@@ -59520,19 +59942,25 @@ var VocabularyView = function (_React$Component) {
                 _react2.default.createElement(
                     _pageHeader2.default,
                     null,
-                    "Vocabulary ",
+                    title,
+                    " ",
                     _react2.default.createElement(
                         "small",
                         null,
-                        "Beta"
+                        beta
                     )
                 ),
                 _react2.default.createElement(
                     "p",
                     null,
-                    "This is a beta version of an attempt to provide a searchable resource for commonly heard sayings. Currently it has ",
+                    p1,
+                    ".\xA0",
+                    p2,
+                    " ",
                     currentTranslationUnitsCount,
-                    " words and phrases out of a target of ",
+                    " ",
+                    p3,
+                    " ",
                     targetTranslationUnitsCount,
                     "."
                 ),
@@ -59550,7 +59978,8 @@ var VocabularyView = function (_React$Component) {
                     "p",
                     null,
                     units.length,
-                    " phrases and words found"
+                    " ",
+                    resultsFound
                 ),
                 _react2.default.createElement(
                     "table",
@@ -59564,17 +59993,17 @@ var VocabularyView = function (_React$Component) {
                             _react2.default.createElement(
                                 "th",
                                 null,
-                                "English"
+                                english
                             ),
                             _react2.default.createElement(
                                 "th",
                                 null,
-                                "Cymraeg"
+                                cymraeg
                             ),
                             _react2.default.createElement(
                                 "th",
                                 null,
-                                "Notes"
+                                notes
                             )
                         ),
                         lines(units)
@@ -59588,6 +60017,7 @@ var VocabularyView = function (_React$Component) {
 }(_react2.default.Component);
 
 VocabularyView.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     onChange: _propTypes2.default.func.isRequired,
     onClickTag: _propTypes2.default.func.isRequired,
     units: _propTypes2.default.array.isRequired,
@@ -59599,7 +60029,7 @@ VocabularyView.propTypes = {
 
 exports.default = VocabularyView;
 
-},{"../../page-content":63,"../../resusable-components/page-header":113,"./vocab-search":106,"prop-types":143,"react":198}],108:[function(require,module,exports){
+},{"../../core/text/supported-keys":54,"../../page-content":63,"../../resusable-components/page-header":114,"./vocab-search":107,"prop-types":144,"react":199}],109:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59736,7 +60166,7 @@ FetchableContainer.propTypes = {
 
 exports.default = FetchableContainer;
 
-},{"../../core/is-browser":9,"../../core/model/geirfa/trim":27,"../../core/props-children":45,"../FetchableImage":109,"../FetchableImage/to-url":110,"prop-types":143,"react":198}],109:[function(require,module,exports){
+},{"../../core/is-browser":9,"../../core/model/geirfa/trim":27,"../../core/props-children":45,"../FetchableImage":110,"../FetchableImage/to-url":111,"prop-types":144,"react":199}],110:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59863,7 +60293,7 @@ FetchableImage.propTypes = {
 
 exports.default = FetchableImage;
 
-},{"../../core/colors":6,"../../core/is-browser":9,"./to-url":110,"prop-types":143,"react":198}],110:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/is-browser":9,"./to-url":111,"prop-types":144,"react":199}],111:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59948,7 +60378,7 @@ var makeUrl = function makeUrl() {
 
 exports.default = makeUrl();
 
-},{}],111:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -60057,7 +60487,7 @@ FetchableSectionBackground.propTypes = {
 
 exports.default = FetchableSectionBackground;
 
-},{"../../core/colors":6,"../../core/is-browser":9,"../../core/props-children":45,"../FetchableImage":109,"../FetchableImage/to-url":110,"prop-types":143,"react":198}],112:[function(require,module,exports){
+},{"../../core/colors":6,"../../core/is-browser":9,"../../core/props-children":45,"../FetchableImage":110,"../FetchableImage/to-url":111,"prop-types":144,"react":199}],113:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -60120,7 +60550,7 @@ GitHubIcon.propTypes = {
 
 exports.default = GitHubIcon;
 
-},{"prop-types":143,"react":198}],113:[function(require,module,exports){
+},{"prop-types":144,"react":199}],114:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -60182,7 +60612,7 @@ PageHeader.propTypes = {
 
 exports.default = PageHeader;
 
-},{"../../core/props-children":45,"react":198}],114:[function(require,module,exports){
+},{"../../core/props-children":45,"react":199}],115:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -60241,7 +60671,7 @@ function random() {
     return (0, _arraySample2.default)(quotes);
 }
 
-},{"../../core/model/array-sample":11}],115:[function(require,module,exports){
+},{"../../core/model/array-sample":11}],116:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -60323,7 +60753,7 @@ Col.propTypes = {
 
 exports.default = Col;
 
-},{"prop-types":143,"react":198}],116:[function(require,module,exports){
+},{"prop-types":144,"react":199}],117:[function(require,module,exports){
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -60333,7 +60763,7 @@ function _assertThisInitialized(self) {
 }
 
 module.exports = _assertThisInitialized;
-},{}],117:[function(require,module,exports){
+},{}],118:[function(require,module,exports){
 function _extends() {
   module.exports = _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -60353,7 +60783,7 @@ function _extends() {
 }
 
 module.exports = _extends;
-},{}],118:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
@@ -60361,7 +60791,7 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 module.exports = _inheritsLoose;
-},{}],119:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     default: obj
@@ -60369,7 +60799,7 @@ function _interopRequireDefault(obj) {
 }
 
 module.exports = _interopRequireDefault;
-},{}],120:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 function _interopRequireWildcard(obj) {
   if (obj && obj.__esModule) {
     return obj;
@@ -60396,7 +60826,7 @@ function _interopRequireWildcard(obj) {
 }
 
 module.exports = _interopRequireWildcard;
-},{}],121:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -60413,7 +60843,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 }
 
 module.exports = _objectWithoutPropertiesLoose;
-},{}],122:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 /* @preserve
  * Leaflet 1.3.4, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2018 Vladimir Agafonkin, (c) 2010-2011 CloudMade
@@ -74285,7 +74715,7 @@ window.L = exports;
 })));
 
 
-},{}],123:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react.development.js
@@ -76118,7 +76548,7 @@ module.exports = react;
 }
 
 }).call(this,require('_process'))
-},{"_process":139,"object-assign":136,"prop-types/checkPropTypes":140}],124:[function(require,module,exports){
+},{"_process":140,"object-assign":137,"prop-types/checkPropTypes":141}],125:[function(require,module,exports){
 /** @license React v16.6.1
  * react.production.min.js
  *
@@ -76144,7 +76574,7 @@ _currentValue:a,_currentValue2:a,Provider:null,Consumer:null};a.Provider={$$type
 b.ref&&(h=b.ref,f=K.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)L.call(b,c)&&!M.hasOwnProperty(c)&&(d[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)d.children=e;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];d.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:d,_owner:f}},createFactory:function(a){var b=N.bind(null,a);b.type=a;return b},isValidElement:O,version:"16.6.1",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:K,
 assign:k}};X.unstable_ConcurrentMode=x;X.unstable_Profiler=u;var Y={default:X},Z=Y&&X||Y;module.exports=Z.default||Z;
 
-},{"object-assign":136}],125:[function(require,module,exports){
+},{"object-assign":137}],126:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -76155,7 +76585,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":123,"./cjs/react.production.min.js":124,"_process":139}],126:[function(require,module,exports){
+},{"./cjs/react.development.js":124,"./cjs/react.production.min.js":125,"_process":140}],127:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -76211,7 +76641,7 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
 var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
   return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
 };
-},{}],127:[function(require,module,exports){
+},{}],128:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -76290,7 +76720,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"./PathUtils":128,"resolve-pathname":200,"value-equal":203}],128:[function(require,module,exports){
+},{"./PathUtils":129,"resolve-pathname":201,"value-equal":204}],129:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -76352,7 +76782,7 @@ var createPath = exports.createPath = function createPath(location) {
 
   return path;
 };
-},{}],129:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -76660,7 +77090,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./DOMUtils":126,"./LocationUtils":127,"./PathUtils":128,"./createTransitionManager":132,"invariant":135,"warning":204}],130:[function(require,module,exports){
+},{"./DOMUtils":127,"./LocationUtils":128,"./PathUtils":129,"./createTransitionManager":133,"invariant":136,"warning":205}],131:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -76985,7 +77415,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":126,"./LocationUtils":127,"./PathUtils":128,"./createTransitionManager":132,"invariant":135,"warning":204}],131:[function(require,module,exports){
+},{"./DOMUtils":127,"./LocationUtils":128,"./PathUtils":129,"./createTransitionManager":133,"invariant":136,"warning":205}],132:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -77156,7 +77586,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./LocationUtils":127,"./PathUtils":128,"./createTransitionManager":132,"warning":204}],132:[function(require,module,exports){
+},{"./LocationUtils":128,"./PathUtils":129,"./createTransitionManager":133,"warning":205}],133:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -77242,7 +77672,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":204}],133:[function(require,module,exports){
+},{"warning":205}],134:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -77295,7 +77725,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.createBrowserHistory = _createBrowserHistory3.default;
 exports.createHashHistory = _createHashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./LocationUtils":127,"./PathUtils":128,"./createBrowserHistory":129,"./createHashHistory":130,"./createMemoryHistory":131}],134:[function(require,module,exports){
+},{"./LocationUtils":128,"./PathUtils":129,"./createBrowserHistory":130,"./createHashHistory":131,"./createMemoryHistory":132}],135:[function(require,module,exports){
 'use strict';
 
 /**
@@ -77381,7 +77811,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{"react":198,"react-is":150}],135:[function(require,module,exports){
+},{"react":199,"react-is":151}],136:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -77434,7 +77864,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":139}],136:[function(require,module,exports){
+},{"_process":140}],137:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -77526,7 +77956,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],137:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 var isarray = require('isarray')
 
 /**
@@ -77954,12 +78384,12 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":138}],138:[function(require,module,exports){
+},{"isarray":139}],139:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],139:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -78145,7 +78575,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],140:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -78240,7 +78670,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
-},{"./lib/ReactPropTypesSecret":144,"_process":139}],141:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":145,"_process":140}],142:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -78301,7 +78731,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"./lib/ReactPropTypesSecret":144}],142:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":145}],143:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -78860,7 +79290,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 };
 
 }).call(this,require('_process'))
-},{"./checkPropTypes":140,"./lib/ReactPropTypesSecret":144,"_process":139,"object-assign":136}],143:[function(require,module,exports){
+},{"./checkPropTypes":141,"./lib/ReactPropTypesSecret":145,"_process":140,"object-assign":137}],144:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -78892,7 +79322,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./factoryWithThrowingShims":141,"./factoryWithTypeCheckers":142,"_process":139}],144:[function(require,module,exports){
+},{"./factoryWithThrowingShims":142,"./factoryWithTypeCheckers":143,"_process":140}],145:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -78906,7 +79336,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],145:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react-dom-server.browser.development.js
@@ -82322,7 +82752,7 @@ module.exports = server_browser;
 }
 
 }).call(this,require('_process'))
-},{"_process":139,"object-assign":136,"prop-types/checkPropTypes":140,"react":198}],146:[function(require,module,exports){
+},{"_process":140,"object-assign":137,"prop-types/checkPropTypes":141,"react":199}],147:[function(require,module,exports){
 /** @license React v16.6.1
  * react-dom-server.browser.production.min.js
  *
@@ -82369,7 +82799,7 @@ f.type:!(2<m.length)||"o"!==m[0]&&"O"!==m[0]||"n"!==m[1]&&"N"!==m[1]?!1:!0;n||ea
 l?(e=[],qa[b]&&"\n"===l.charAt(0)&&(u+="\n"),u+=l):e=X(e.children);a=a.type;c=null==c||"http://www.w3.org/1999/xhtml"===c?ka(a):"http://www.w3.org/2000/svg"===c&&"foreignObject"===a?"http://www.w3.org/1999/xhtml":c;this.stack.push({domNamespace:c,type:b,children:e,childIndex:0,context:d,footer:k});this.previousWasTextNode=!1;return u};return a}(),Ba={renderToString:function(a){return(new Aa(a,!1)).read(Infinity)},renderToStaticMarkup:function(a){return(new Aa(a,!0)).read(Infinity)},renderToNodeStream:function(){r("207")},
 renderToStaticNodeStream:function(){r("208")},version:"16.6.1"},Ca={default:Ba},Da=Ca&&Ba||Ca;module.exports=Da.default||Da;
 
-},{"object-assign":136,"react":198}],147:[function(require,module,exports){
+},{"object-assign":137,"react":199}],148:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -82380,7 +82810,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-dom-server.browser.development.js":145,"./cjs/react-dom-server.browser.production.min.js":146,"_process":139}],148:[function(require,module,exports){
+},{"./cjs/react-dom-server.browser.development.js":146,"./cjs/react-dom-server.browser.production.min.js":147,"_process":140}],149:[function(require,module,exports){
 (function (process){
 /** @license React v16.6.1
  * react-is.development.js
@@ -82591,7 +83021,7 @@ exports.isStrictMode = isStrictMode;
 }
 
 }).call(this,require('_process'))
-},{"_process":139}],149:[function(require,module,exports){
+},{"_process":140}],150:[function(require,module,exports){
 /** @license React v16.6.1
  * react-is.production.min.js
  *
@@ -82607,7 +83037,7 @@ var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):601
 exports.Profiler=g;exports.Portal=d;exports.StrictMode=f;exports.isValidElementType=function(a){return"string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n)};exports.isAsyncMode=function(a){return v(a)||u(a)===l};exports.isConcurrentMode=v;exports.isContextConsumer=function(a){return u(a)===k};exports.isContextProvider=function(a){return u(a)===h};
 exports.isElement=function(a){return"object"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return u(a)===n};exports.isFragment=function(a){return u(a)===e};exports.isProfiler=function(a){return u(a)===g};exports.isPortal=function(a){return u(a)===d};exports.isStrictMode=function(a){return u(a)===f};
 
-},{}],150:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -82618,7 +83048,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-is.development.js":148,"./cjs/react-is.production.min.js":149,"_process":139}],151:[function(require,module,exports){
+},{"./cjs/react-is.development.js":149,"./cjs/react-is.production.min.js":150,"_process":140}],152:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -82705,7 +83135,7 @@ var _default = createProvider();
 
 exports.default = _default;
 }).call(this,require('_process'))
-},{"../utils/PropTypes":161,"../utils/warning":166,"@babel/runtime/helpers/inheritsLoose":118,"@babel/runtime/helpers/interopRequireDefault":119,"_process":139,"prop-types":143,"react":198}],152:[function(require,module,exports){
+},{"../utils/PropTypes":162,"../utils/warning":167,"@babel/runtime/helpers/inheritsLoose":119,"@babel/runtime/helpers/interopRequireDefault":120,"_process":140,"prop-types":144,"react":199}],153:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -83015,7 +83445,7 @@ _ref) {
   };
 }
 }).call(this,require('_process'))
-},{"../utils/PropTypes":161,"../utils/Subscription":162,"@babel/runtime/helpers/assertThisInitialized":116,"@babel/runtime/helpers/extends":117,"@babel/runtime/helpers/inheritsLoose":118,"@babel/runtime/helpers/interopRequireDefault":119,"@babel/runtime/helpers/objectWithoutPropertiesLoose":121,"_process":139,"hoist-non-react-statics":134,"invariant":135,"react":198,"react-is":150}],153:[function(require,module,exports){
+},{"../utils/PropTypes":162,"../utils/Subscription":163,"@babel/runtime/helpers/assertThisInitialized":117,"@babel/runtime/helpers/extends":118,"@babel/runtime/helpers/inheritsLoose":119,"@babel/runtime/helpers/interopRequireDefault":120,"@babel/runtime/helpers/objectWithoutPropertiesLoose":122,"_process":140,"hoist-non-react-statics":135,"invariant":136,"react":199,"react-is":151}],154:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -83131,7 +83561,7 @@ function createConnect(_temp) {
 var _default = createConnect();
 
 exports.default = _default;
-},{"../components/connectAdvanced":152,"../utils/shallowEqual":164,"./mapDispatchToProps":154,"./mapStateToProps":155,"./mergeProps":156,"./selectorFactory":157,"@babel/runtime/helpers/extends":117,"@babel/runtime/helpers/interopRequireDefault":119,"@babel/runtime/helpers/objectWithoutPropertiesLoose":121}],154:[function(require,module,exports){
+},{"../components/connectAdvanced":153,"../utils/shallowEqual":165,"./mapDispatchToProps":155,"./mapStateToProps":156,"./mergeProps":157,"./selectorFactory":158,"@babel/runtime/helpers/extends":118,"@babel/runtime/helpers/interopRequireDefault":120,"@babel/runtime/helpers/objectWithoutPropertiesLoose":122}],155:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83164,7 +83594,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 
 var _default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
 exports.default = _default;
-},{"./wrapMapToProps":159,"redux":199}],155:[function(require,module,exports){
+},{"./wrapMapToProps":160,"redux":200}],156:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83186,7 +83616,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 
 var _default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
 exports.default = _default;
-},{"./wrapMapToProps":159}],156:[function(require,module,exports){
+},{"./wrapMapToProps":160}],157:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -83243,7 +83673,7 @@ function whenMergePropsIsOmitted(mergeProps) {
 var _default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
 exports.default = _default;
 }).call(this,require('_process'))
-},{"../utils/verifyPlainObject":165,"@babel/runtime/helpers/extends":117,"@babel/runtime/helpers/interopRequireDefault":119,"_process":139}],157:[function(require,module,exports){
+},{"../utils/verifyPlainObject":166,"@babel/runtime/helpers/extends":118,"@babel/runtime/helpers/interopRequireDefault":120,"_process":140}],158:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -83345,7 +83775,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
   return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
 }
 }).call(this,require('_process'))
-},{"./verifySubselectors":158,"@babel/runtime/helpers/interopRequireDefault":119,"@babel/runtime/helpers/objectWithoutPropertiesLoose":121,"_process":139}],158:[function(require,module,exports){
+},{"./verifySubselectors":159,"@babel/runtime/helpers/interopRequireDefault":120,"@babel/runtime/helpers/objectWithoutPropertiesLoose":122,"_process":140}],159:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -83370,7 +83800,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
   verify(mapDispatchToProps, 'mapDispatchToProps', displayName);
   verify(mergeProps, 'mergeProps', displayName);
 }
-},{"../utils/warning":166,"@babel/runtime/helpers/interopRequireDefault":119}],159:[function(require,module,exports){
+},{"../utils/warning":167,"@babel/runtime/helpers/interopRequireDefault":120}],160:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -83449,7 +83879,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
   };
 }
 }).call(this,require('_process'))
-},{"../utils/verifyPlainObject":165,"@babel/runtime/helpers/interopRequireDefault":119,"_process":139}],160:[function(require,module,exports){
+},{"../utils/verifyPlainObject":166,"@babel/runtime/helpers/interopRequireDefault":120,"_process":140}],161:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -83470,7 +83900,7 @@ exports.connectAdvanced = _connectAdvanced.default;
 var _connect = _interopRequireDefault(require("./connect/connect"));
 
 exports.connect = _connect.default;
-},{"./components/Provider":151,"./components/connectAdvanced":152,"./connect/connect":153,"@babel/runtime/helpers/interopRequireDefault":119,"@babel/runtime/helpers/interopRequireWildcard":120}],161:[function(require,module,exports){
+},{"./components/Provider":152,"./components/connectAdvanced":153,"./connect/connect":154,"@babel/runtime/helpers/interopRequireDefault":120,"@babel/runtime/helpers/interopRequireWildcard":121}],162:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -83496,7 +83926,7 @@ var storeShape = _propTypes.default.shape({
 });
 
 exports.storeShape = storeShape;
-},{"@babel/runtime/helpers/interopRequireDefault":119,"prop-types":143}],162:[function(require,module,exports){
+},{"@babel/runtime/helpers/interopRequireDefault":120,"prop-types":144}],163:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83589,7 +84019,7 @@ function () {
 }();
 
 exports.default = Subscription;
-},{}],163:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83609,7 +84039,7 @@ function isPlainObject(obj) {
 
   return Object.getPrototypeOf(obj) === proto;
 }
-},{}],164:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83643,7 +84073,7 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
-},{}],165:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -83660,7 +84090,7 @@ function verifyPlainObject(value, displayName, methodName) {
     (0, _warning.default)(methodName + "() in " + displayName + " must return a plain object. Instead received " + value + ".");
   }
 }
-},{"./isPlainObject":163,"./warning":166,"@babel/runtime/helpers/interopRequireDefault":119}],166:[function(require,module,exports){
+},{"./isPlainObject":164,"./warning":167,"@babel/runtime/helpers/interopRequireDefault":120}],167:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83690,7 +84120,7 @@ function warning(message) {
   /* eslint-enable no-empty */
 
 }
-},{}],167:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83758,7 +84188,7 @@ BrowserRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = BrowserRouter;
-},{"./Router":175,"history":133,"prop-types":143,"react":198,"warning":181}],168:[function(require,module,exports){
+},{"./Router":176,"history":134,"prop-types":144,"react":199,"warning":182}],169:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83825,7 +84255,7 @@ HashRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = HashRouter;
-},{"./Router":175,"history":133,"prop-types":143,"react":198,"warning":181}],169:[function(require,module,exports){
+},{"./Router":176,"history":134,"prop-types":144,"react":199,"warning":182}],170:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83943,7 +84373,7 @@ Link.contextTypes = {
   }).isRequired
 };
 exports.default = Link;
-},{"history":133,"invariant":135,"prop-types":143,"react":198}],170:[function(require,module,exports){
+},{"history":134,"invariant":136,"prop-types":144,"react":199}],171:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -83955,7 +84385,7 @@ var _MemoryRouter2 = _interopRequireDefault(_MemoryRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _MemoryRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/MemoryRouter":183}],171:[function(require,module,exports){
+},{"react-router/MemoryRouter":184}],172:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84047,7 +84477,7 @@ NavLink.defaultProps = {
 };
 
 exports.default = NavLink;
-},{"./Link":169,"./Route":174,"prop-types":143,"react":198}],172:[function(require,module,exports){
+},{"./Link":170,"./Route":175,"prop-types":144,"react":199}],173:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84059,7 +84489,7 @@ var _Prompt2 = _interopRequireDefault(_Prompt);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Prompt2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Prompt":184}],173:[function(require,module,exports){
+},{"react-router/Prompt":185}],174:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84071,7 +84501,7 @@ var _Redirect2 = _interopRequireDefault(_Redirect);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Redirect2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Redirect":185}],174:[function(require,module,exports){
+},{"react-router/Redirect":186}],175:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84083,7 +84513,7 @@ var _Route2 = _interopRequireDefault(_Route);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Route2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Route":186}],175:[function(require,module,exports){
+},{"react-router/Route":187}],176:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84095,7 +84525,7 @@ var _Router2 = _interopRequireDefault(_Router);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Router2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Router":187}],176:[function(require,module,exports){
+},{"react-router/Router":188}],177:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84107,7 +84537,7 @@ var _StaticRouter2 = _interopRequireDefault(_StaticRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _StaticRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/StaticRouter":188}],177:[function(require,module,exports){
+},{"react-router/StaticRouter":189}],178:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84119,7 +84549,7 @@ var _Switch2 = _interopRequireDefault(_Switch);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Switch2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Switch":189}],178:[function(require,module,exports){
+},{"react-router/Switch":190}],179:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84131,7 +84561,7 @@ var _generatePath2 = _interopRequireDefault(_generatePath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _generatePath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/generatePath":190}],179:[function(require,module,exports){
+},{"react-router/generatePath":191}],180:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84209,7 +84639,7 @@ exports.Switch = _Switch3.default;
 exports.generatePath = _generatePath3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./BrowserRouter":167,"./HashRouter":168,"./Link":169,"./MemoryRouter":170,"./NavLink":171,"./Prompt":172,"./Redirect":173,"./Route":174,"./Router":175,"./StaticRouter":176,"./Switch":177,"./generatePath":178,"./matchPath":180,"./withRouter":182}],180:[function(require,module,exports){
+},{"./BrowserRouter":168,"./HashRouter":169,"./Link":170,"./MemoryRouter":171,"./NavLink":172,"./Prompt":173,"./Redirect":174,"./Route":175,"./Router":176,"./StaticRouter":177,"./Switch":178,"./generatePath":179,"./matchPath":181,"./withRouter":183}],181:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84221,7 +84651,7 @@ var _matchPath2 = _interopRequireDefault(_matchPath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _matchPath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/matchPath":192}],181:[function(require,module,exports){
+},{"react-router/matchPath":193}],182:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -84287,7 +84717,7 @@ if (__DEV__) {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":139}],182:[function(require,module,exports){
+},{"_process":140}],183:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84299,7 +84729,7 @@ var _withRouter2 = _interopRequireDefault(_withRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _withRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/withRouter":195}],183:[function(require,module,exports){
+},{"react-router/withRouter":196}],184:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84367,7 +84797,7 @@ MemoryRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = MemoryRouter;
-},{"./Router":187,"history":133,"prop-types":143,"react":198,"warning":194}],184:[function(require,module,exports){
+},{"./Router":188,"history":134,"prop-types":144,"react":199,"warning":195}],185:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84458,7 +84888,7 @@ Prompt.contextTypes = {
   }).isRequired
 };
 exports.default = Prompt;
-},{"invariant":135,"prop-types":143,"react":198}],185:[function(require,module,exports){
+},{"invariant":136,"prop-types":144,"react":199}],186:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84590,7 +85020,7 @@ Redirect.contextTypes = {
   }).isRequired
 };
 exports.default = Redirect;
-},{"./generatePath":190,"history":133,"invariant":135,"prop-types":143,"react":198,"warning":194}],186:[function(require,module,exports){
+},{"./generatePath":191,"history":134,"invariant":136,"prop-types":144,"react":199,"warning":195}],187:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84748,7 +85178,7 @@ Route.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Route;
-},{"./matchPath":192,"invariant":135,"prop-types":143,"react":198,"warning":194}],187:[function(require,module,exports){
+},{"./matchPath":193,"invariant":136,"prop-types":144,"react":199,"warning":195}],188:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -84868,7 +85298,7 @@ Router.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Router;
-},{"invariant":135,"prop-types":143,"react":198,"warning":194}],188:[function(require,module,exports){
+},{"invariant":136,"prop-types":144,"react":199,"warning":195}],189:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -85038,7 +85468,7 @@ StaticRouter.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = StaticRouter;
-},{"./Router":187,"history":133,"invariant":135,"prop-types":143,"react":198,"warning":194}],189:[function(require,module,exports){
+},{"./Router":188,"history":134,"invariant":136,"prop-types":144,"react":199,"warning":195}],190:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -85133,7 +85563,7 @@ Switch.propTypes = {
   location: _propTypes2.default.object
 };
 exports.default = Switch;
-},{"./matchPath":192,"invariant":135,"prop-types":143,"react":198,"warning":194}],190:[function(require,module,exports){
+},{"./matchPath":193,"invariant":136,"prop-types":144,"react":199,"warning":195}],191:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -85179,7 +85609,7 @@ var generatePath = function generatePath() {
 };
 
 exports.default = generatePath;
-},{"path-to-regexp":137}],191:[function(require,module,exports){
+},{"path-to-regexp":138}],192:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -85237,7 +85667,7 @@ exports.Switch = _Switch3.default;
 exports.generatePath = _generatePath3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./MemoryRouter":183,"./Prompt":184,"./Redirect":185,"./Route":186,"./Router":187,"./StaticRouter":188,"./Switch":189,"./generatePath":190,"./matchPath":192,"./withRouter":195}],192:[function(require,module,exports){
+},{"./MemoryRouter":184,"./Prompt":185,"./Redirect":186,"./Route":187,"./Router":188,"./StaticRouter":189,"./Switch":190,"./generatePath":191,"./matchPath":193,"./withRouter":196}],193:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -85318,7 +85748,7 @@ var matchPath = function matchPath(pathname) {
 };
 
 exports.default = matchPath;
-},{"path-to-regexp":137}],193:[function(require,module,exports){
+},{"path-to-regexp":138}],194:[function(require,module,exports){
 'use strict';
 
 /**
@@ -85388,9 +85818,9 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{}],194:[function(require,module,exports){
-arguments[4][181][0].apply(exports,arguments)
-},{"_process":139,"dup":181}],195:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
+arguments[4][182][0].apply(exports,arguments)
+},{"_process":140,"dup":182}],196:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -85444,13 +85874,13 @@ var withRouter = function withRouter(Component) {
 };
 
 exports.default = withRouter;
-},{"./Route":186,"hoist-non-react-statics":193,"prop-types":143,"react":198}],196:[function(require,module,exports){
-arguments[4][123][0].apply(exports,arguments)
-},{"_process":139,"dup":123,"object-assign":136,"prop-types/checkPropTypes":140}],197:[function(require,module,exports){
+},{"./Route":187,"hoist-non-react-statics":194,"prop-types":144,"react":199}],197:[function(require,module,exports){
 arguments[4][124][0].apply(exports,arguments)
-},{"dup":124,"object-assign":136}],198:[function(require,module,exports){
+},{"_process":140,"dup":124,"object-assign":137,"prop-types/checkPropTypes":141}],198:[function(require,module,exports){
 arguments[4][125][0].apply(exports,arguments)
-},{"./cjs/react.development.js":196,"./cjs/react.production.min.js":197,"_process":139,"dup":125}],199:[function(require,module,exports){
+},{"dup":125,"object-assign":137}],199:[function(require,module,exports){
+arguments[4][126][0].apply(exports,arguments)
+},{"./cjs/react.development.js":197,"./cjs/react.production.min.js":198,"_process":140,"dup":126}],200:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -86101,7 +86531,7 @@ exports.compose = compose;
 exports.__DO_NOT_USE__ActionTypes = ActionTypes;
 
 }).call(this,require('_process'))
-},{"_process":139,"symbol-observable":201}],200:[function(require,module,exports){
+},{"_process":140,"symbol-observable":202}],201:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -86176,7 +86606,7 @@ function resolvePathname(to) {
 
 exports.default = resolvePathname;
 module.exports = exports['default'];
-},{}],201:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -86208,7 +86638,7 @@ if (typeof self !== 'undefined') {
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./ponyfill.js":202}],202:[function(require,module,exports){
+},{"./ponyfill.js":203}],203:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -86232,7 +86662,7 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-},{}],203:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -86276,7 +86706,7 @@ function valueEqual(a, b) {
 
 exports.default = valueEqual;
 module.exports = exports['default'];
-},{}],204:[function(require,module,exports){
+},{}],205:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -86340,4 +86770,4 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":139}]},{},[1]);
+},{"_process":140}]},{},[1]);

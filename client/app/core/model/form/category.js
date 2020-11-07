@@ -5,12 +5,9 @@ import supportedKeys from "../../text/supported-keys";
 import text from "../../text/data";
 
 const {
-    category0,
-    category1,
-    category2,
-    category3,
-    category4,
-    category5
+    category0,  category1,
+    category2,  category3,
+    category4,  category5
 } = supportedKeys;
 
 export const descriptions = [
@@ -44,9 +41,9 @@ export function formattedPercentage(value) {
     return `${percentage}%`;
 }
 
-export function formattedDescription(value, language = supportedLanguages.english, content = text) {
+export function formattedDescription(value, content = text[supportedLanguages.english]) {
     const category = output(value, "titleKey");
-    return content[language][category];
+    return content[category];
 }
 
 export function color(value) {

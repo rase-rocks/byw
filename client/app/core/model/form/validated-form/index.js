@@ -1,35 +1,31 @@
 import { encodeGeoJsonCoordinates } from "../../geo-hash";
 import { keys } from "../keys";
 import { postcodeRe, coordinateDecimalPart } from "../../regular-expressions";
-import errors from "../error-messages";
+import errorKeys from "../error-message-keys";
 import formUpdatingErrorKey from "../form-updating-error-key";
 import valueForKey from "../value-for-key";
 
-const coordinateHashValidator = function (form) {
-    const coordinates = valueForKey(form, keys.coordinates);
-    const expectedHash = encodeGeoJsonCoordinates(coordinates);
-    const currentHash = valueForKey(form, keys.coordinateHash);
+import text from "../../../text/data";
+import supportedLanguages from "../../../text/supported-languages";
 
-    return (expectedHash === currentHash)
-        ? form
-        : formUpdatingErrorKey(form, keys.coordinates, errors.coordinatesMismatch);
-};
+const defaultText = text[supportedLanguages.english];
 
-const postcodeValidator = function (form) {
-
-    const postcode = valueForKey(form, keys.postcode);
-
-    return (postcode === "")
-        ? form
-        : (postcode.match(postcodeRe))
+const makeCoordinateHashValidator = function(errorMessageKey) {
+    return function (form, text) {
+        const coordinates = valueForKey(form, keys.coordinates);
+        const expectedHash = encodeGeoJsonCoordinates(coordinates);
+        const currentHash = valueForKey(form, keys.coordinateHash);
+    
+        return (expectedHash === currentHash)
             ? form
-            : formUpdatingErrorKey(form, keys.postcode, errors.invalidPostcode);
+            : formUpdatingErrorKey(form, keys.coordinates, text[errorMessageKey]);
+    };
 };
 
-const makeValidator = function (test, key, errorMessage) {
-    return function (form) {
+const makeValidator = function (test, key, errorMessageKey) {
+    return function (form, text) {
         const value = valueForKey(form, key);
-        return (test(value)) ? form : formUpdatingErrorKey(form, key, errorMessage);
+        return (test(value)) ? form : formUpdatingErrorKey(form, key, text[errorMessageKey]);
     };
 };
 
@@ -39,6 +35,10 @@ const nameTest = function (name) {
 
 const addressTest = function (address) {
     return address && address.length > 1;
+};
+
+const postcodeTest = function(postcode) {
+    return postcode === "" || postcode.match(postcodeRe);
 };
 
 const categoryTest = function (category) {
@@ -67,17 +67,17 @@ const coordinateTest = function (coordinates) {
 };
 
 const validators = [
-    coordinateHashValidator,
-    makeValidator(nameTest, keys.name, errors.missingName),
-    makeValidator(addressTest, keys.address, errors.missingAddress),
-    postcodeValidator,
-    makeValidator(coordinateTest, keys.coordinates, errors.invalidCoordinates),
-    makeValidator(categoryTest, keys.category, errors.missingCategory)
+    makeCoordinateHashValidator(errorKeys.coordinatesMismatch),
+    makeValidator(nameTest, keys.name, errorKeys.missingName),
+    makeValidator(addressTest, keys.address, errorKeys.missingAddress),
+    makeValidator(postcodeTest, keys.postcode, errorKeys.invalidPostcode),
+    makeValidator(coordinateTest, keys.coordinates, errorKeys.invalidCoordinates),
+    makeValidator(categoryTest, keys.category, errorKeys.missingCategory)
 ];
 
-const validatedForm = function (form) {
+const validatedForm = function (form, text = defaultText) {
     return validators.reduce(function (result, validator) {
-        return validator(result);
+        return validator(result, text);
     }, Object.assign({}, form));
 };
 
