@@ -10,12 +10,12 @@
 
 #### Base language
 
-+ Implement a simple to use CSV based UI language content raw data system
-+ Implement within build system a means to take the raw CSV translations and convert to json for inclusion in the app
++ ~~Implement a simple to use CSV based UI language content raw data system~~ ✓
++ ~~Implement within build system a means to take the raw CSV translations and convert to json for inclusion in the app~~ ✓
 + Implement Base Language switching component to choose from available UI languages
-+ Implement tests to ensure that raw CSV files conform to standard ready for JSON conversion
-+ Implement tests to ensure JSON conversion was successful and all page elements have translated version
-+ Implement tests to ensure no unused translations in either raw CSV for JSON
++ ~~Implement tests to ensure that raw CSV files conform to standard ready for JSON conversion~~ ✓
++ ~~Implement tests to ensure JSON conversion was successful and all page elements have translated version~~ ✓
++ ~~Implement tests to ensure no unused translations in either raw CSV for JSON~~ ✓
 
 #### Heat map
 
