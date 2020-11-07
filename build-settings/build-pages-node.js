@@ -507,19 +507,26 @@ function color(value) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var messages = {
-    missingName: "A name is required",
-    missingAddress: "An address is required to identify the premises",
-    missingCategory: "A category is required to help others know what to expect",
-    invalidPostcode: "If a postcode is supplied it must be valid, or just use the coordinates",
-    invalidCoordinates: "Coordinates can be set by moving the pin on the map and are required",
-    invalidCategory: "The category has to be set",
-    coordinatesMismatch: "It has not been possible to verify the supplied coordinates, please try again"
+
+var _supportedKeys = require("../../text/supported-keys");
+
+var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var keys = {
+    missingName: _supportedKeys2.default.errorMissingName,
+    missingAddress: _supportedKeys2.default.errorMissingAddress,
+    missingCategory: _supportedKeys2.default.errorMissingCategory,
+    invalidPostcode: _supportedKeys2.default.errorInvalidPostcode,
+    invalidCoordinates: _supportedKeys2.default.errorInvalidCoordinates,
+    invalidCategory: _supportedKeys2.default.errorInvalidCategory,
+    coordinatesMismatch: _supportedKeys2.default.errorCoordinatesMismatch
 };
 
-exports.default = messages;
+exports.default = keys;
 
-},{}],16:[function(require,module,exports){
+},{"../../text/supported-keys":54}],16:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -753,9 +760,9 @@ var _keys = require("../keys");
 
 var _regularExpressions = require("../../regular-expressions");
 
-var _errorMessages = require("../error-messages");
+var _errorMessageKeys = require("../error-message-keys");
 
-var _errorMessages2 = _interopRequireDefault(_errorMessages);
+var _errorMessageKeys2 = _interopRequireDefault(_errorMessageKeys);
 
 var _formUpdatingErrorKey = require("../form-updating-error-key");
 
@@ -765,27 +772,32 @@ var _valueForKey = require("../value-for-key");
 
 var _valueForKey2 = _interopRequireDefault(_valueForKey);
 
+var _data = require("../../../text/data");
+
+var _data2 = _interopRequireDefault(_data);
+
+var _supportedLanguages = require("../../../text/supported-languages");
+
+var _supportedLanguages2 = _interopRequireDefault(_supportedLanguages);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var coordinateHashValidator = function coordinateHashValidator(form) {
-    var coordinates = (0, _valueForKey2.default)(form, _keys.keys.coordinates);
-    var expectedHash = (0, _geoHash.encodeGeoJsonCoordinates)(coordinates);
-    var currentHash = (0, _valueForKey2.default)(form, _keys.keys.coordinateHash);
+var defaultText = _data2.default[_supportedLanguages2.default.english];
 
-    return expectedHash === currentHash ? form : (0, _formUpdatingErrorKey2.default)(form, _keys.keys.coordinates, _errorMessages2.default.coordinatesMismatch);
+var makeCoordinateHashValidator = function makeCoordinateHashValidator(errorMessageKey) {
+    return function (form, text) {
+        var coordinates = (0, _valueForKey2.default)(form, _keys.keys.coordinates);
+        var expectedHash = (0, _geoHash.encodeGeoJsonCoordinates)(coordinates);
+        var currentHash = (0, _valueForKey2.default)(form, _keys.keys.coordinateHash);
+
+        return expectedHash === currentHash ? form : (0, _formUpdatingErrorKey2.default)(form, _keys.keys.coordinates, text[errorMessageKey]);
+    };
 };
 
-var postcodeValidator = function postcodeValidator(form) {
-
-    var postcode = (0, _valueForKey2.default)(form, _keys.keys.postcode);
-
-    return postcode === "" ? form : postcode.match(_regularExpressions.postcodeRe) ? form : (0, _formUpdatingErrorKey2.default)(form, _keys.keys.postcode, _errorMessages2.default.invalidPostcode);
-};
-
-var makeValidator = function makeValidator(test, key, errorMessage) {
-    return function (form) {
+var makeValidator = function makeValidator(test, key, errorMessageKey) {
+    return function (form, text) {
         var value = (0, _valueForKey2.default)(form, key);
-        return test(value) ? form : (0, _formUpdatingErrorKey2.default)(form, key, errorMessage);
+        return test(value) ? form : (0, _formUpdatingErrorKey2.default)(form, key, text[errorMessageKey]);
     };
 };
 
@@ -795,6 +807,10 @@ var nameTest = function nameTest(name) {
 
 var addressTest = function addressTest(address) {
     return address && address.length > 1;
+};
+
+var postcodeTest = function postcodeTest(postcode) {
+    return postcode === "" || postcode.match(_regularExpressions.postcodeRe);
 };
 
 var categoryTest = function categoryTest(category) {
@@ -817,17 +833,19 @@ var coordinateTest = function coordinateTest(coordinates) {
     return coordinates && Array.isArray(coordinates) && coordinates.length === 2 && coordinates.reduce(coordinateSuitableValueReducer, true);
 };
 
-var validators = [coordinateHashValidator, makeValidator(nameTest, _keys.keys.name, _errorMessages2.default.missingName), makeValidator(addressTest, _keys.keys.address, _errorMessages2.default.missingAddress), postcodeValidator, makeValidator(coordinateTest, _keys.keys.coordinates, _errorMessages2.default.invalidCoordinates), makeValidator(categoryTest, _keys.keys.category, _errorMessages2.default.missingCategory)];
+var validators = [makeCoordinateHashValidator(_errorMessageKeys2.default.coordinatesMismatch), makeValidator(nameTest, _keys.keys.name, _errorMessageKeys2.default.missingName), makeValidator(addressTest, _keys.keys.address, _errorMessageKeys2.default.missingAddress), makeValidator(postcodeTest, _keys.keys.postcode, _errorMessageKeys2.default.invalidPostcode), makeValidator(coordinateTest, _keys.keys.coordinates, _errorMessageKeys2.default.invalidCoordinates), makeValidator(categoryTest, _keys.keys.category, _errorMessageKeys2.default.missingCategory)];
 
 var validatedForm = function validatedForm(form) {
+    var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultText;
+
     return validators.reduce(function (result, validator) {
-        return validator(result);
+        return validator(result, text);
     }, Object.assign({}, form));
 };
 
 exports.default = validatedForm;
 
-},{"../../geo-hash":33,"../../regular-expressions":41,"../error-messages":15,"../form-updating-error-key":16,"../keys":19,"../value-for-key":22}],22:[function(require,module,exports){
+},{"../../../text/data":53,"../../../text/supported-languages":55,"../../geo-hash":33,"../../regular-expressions":41,"../error-message-keys":15,"../form-updating-error-key":16,"../keys":19,"../value-for-key":22}],22:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1849,6 +1867,7 @@ var _geoHash = require("../../model/geo-hash");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var updater = function updater(state, key, value) {
+
     var form = (0, _form.formUpdatingDataKey)(state, key, value);
     if (key !== _keys.keys.coordinates) {
         return form;
@@ -1862,6 +1881,7 @@ var updater = function updater(state, key, value) {
 var formReducer = function formReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _form2.default;
     var action = arguments[1];
+
 
     var reducedState = Object.assign({}, state);
 
@@ -2115,7 +2135,110 @@ exports.default = {
         "pageTitleTagKeySubmit": "BYW | Cyflwyno",
         "pageTitleTagKeyPrivacy": "BYW | Preifatrwydd",
         "pageTitleTagKey404": "BYW | Heb ei Ddarganfod",
-        "homeCrowdSourced": "Torfoli"
+        "footerTest404": "Profwch y dudalen 404",
+        "footerContributing": "Cyfrannu",
+        "footerP1": "Gall pawb helpu dysgwyr i ddod o hyd i leoedd i fynd a defnyddio eu Cymraeg. Mae eich cyflwyniadau hefyd yn ein helpu i fonitro faint mae'r iaith yn cael ei defnyddio, nid yn unig yng Nghymru, ond ledled y byd",
+        "footerP2": "Mae cyflwyno adolygiad yn gyflym ac nid oes angen cyfrif na mewngofnodi. Os ydych chi'n ymwybodol o le y gellir clywed a defnyddio Cymraeg, ond nad yw eisoes yn ein mynegai, bydd ei gyflwyno i'r mynegai yn rhoi gwybod i eraill",
+        "footerUsefulLinks": "Dolenni defnyddiol",
+        "footerVisitOn": "Ymwelwch â ni ar",
+        "category0": "Hynod annhebygol",
+        "category1": "Ddim yn debygol iawn",
+        "category2": "Tebygol",
+        "category3": "Tebygol iawn",
+        "category4": "Hynod debygol",
+        "category5": "Yn bendant",
+        "show": "Gweld",
+        "categorise": "Categoreiddio",
+        "homeCrowdSourced": "Torf o ffynonellau",
+        "homeWelsh": "Cymraeg",
+        "homeLanguageResource": "adnodd iaith",
+        "homeLets": "gadewch i ni",
+        "homeFind": "ffeindio",
+        "homeSomewhere": "rhywle",
+        "homeHeroTitle": "Darganfyddwch ble i ddefnyddio a chlywed yr iaith",
+        "homeSearch": "Chwilio",
+        "homeSearchPlaceholder": "Beth ydych chi'n chwilio amdano",
+        "homeSearchResults": "Canlyniadau Chwilio",
+        "homeLocationPlaceholder": "Lleoliad",
+        "homeAnd": "a",
+        "homeMore": "mwy",
+        "homeApi": "API",
+        "homeMap": "Map",
+        "homeServicesSectionTitle": "Ein Gwasanaethau",
+        "homeServicesSectionTitle1": "Beth mae'n",
+        "homeServicesSectionTitle2": "wneud i mi",
+        "homeServices1Title": "Lleoedd Lleol",
+        "homeServices1Desc": "Mae'r wefan hon yn ymwneud yn syml â chael pobl i ddefnyddio eu Cymraeg. Mae ar gael mewn cwpl o ieithoedd i helpu dysgwyr o bob rhan o'r byd i ddod o hyd i leoedd i ddefnyddio a gwella eu sgiliau Cymraeg",
+        "homeServices2Title": "Siaradwyr Brodorol",
+        "homeServices2Desc": "Fodd bynnag, nid yw hyn yn ymwneud â dysgwyr yn unig. Mae angen i'r rheini sy'n rhugl hefyd ddefnyddio eu Cymraeg pryd bynnag y gallant. Mae angen clywed Cymraeg ar y stryd, yn y siopau a ble bynnag rydyn ni'n dod at ein gilydd",
+        "homeServices3Title": "Diwrnodau allan",
+        "homeServices3Desc": "Felly, cyn i chi siopa, ewch ar ddiwrnod allan, neu beth bynnag yr ydych chi'n hoffi ei wneud, gweld a fydd croeso i'r Gymraeg ac, yn anad dim, defnyddiwch eich Cymraeg eich hun!",
+        "homeThoughtOfTheDay": "Meddwl y dydd",
+        "mapResult": "Canlyniad",
+        "mapResults": "Canlyniadau",
+        "mapPages": "Tudalennau",
+        "mapSearchPlaceholder": "Chwilio am leoedd, cyfesurynnau a chodau post",
+        "mapLegendTitle": "Chwedl i'r map",
+        "mapLegendSubheading": "Cipolwg cyflym ar debygrwydd siarad Cymraeg",
+        "vocabTitle": "Geirfa",
+        "vocabBeta": "Beta",
+        "vocabP1": "Mae hwn yn fersiwn beta o ymgais i ddarparu adnodd chwiliadwy ar gyfer dywediadau a glywir yn gyffredin",
+        "vocabP2": "Ar hyn o bryd mae ganddo",
+        "vocabP3": "gair ac ymadrodd allan o darged o",
+        "vocabResultsFound": "ymadroddion a geiriau a ddarganfuwyd",
+        "vocabEnglish": "Saesneg",
+        "vocabCymraeg": "Cymraeg",
+        "vocabNotes": "Nodiadau",
+        "aboutTitle": "Amdanom",
+        "aboutSub1": "Beth all",
+        "aboutSub2": "wneud?",
+        "aboutP1": "Mae Byw.cymru yn adnodd Cymraeg sy'n cael ei yrru gan y gymuned, o ffynonellau torf. Ei brif nod yw helpu dysgwyr ac eraill sydd â diddordeb yn yr iaith i ddod o hyd i leoedd lle gallant glywed a defnyddio'r iaith",
+        "aboutP2a": "Mae'r prosiect cyfan yn",
+        "aboutOpenSource": "ffynhonnell agor",
+        "aboutP2b": "a gwneir pob penderfyniad yn yr awyr agored ar y prosiect repo, a gynhelir arno",
+        "aboutP3": "Nod y prosiect yw ei gwneud hi'n hawdd darganfod y wybodaeth hon, gyda'r mwyaf o gyfranogiad cymunedol. Felly mae dyluniad y wefan i fod mor hawdd a chyflym â phosibl. Mae'n canolbwyntio ar dudalen y map, sef y prif adnodd ar gyfer chwilio'r mynegai",
+        "aboutP4": "Mae'r holl god sy'n ffurfio'r wefan ar gael yn repo'r prosiect ac mae unrhyw un yn gallu ei weld. Mae'r wefan a'r data yn cael eu cynnal gan ddefnyddio adnoddau a roddir yn y gymuned. Mae'r Api yn darparu mynediad i'r data i unrhyw un sydd ei eisiau. Dros amser, disgwylir y bydd nifer y pwyntiau terfyn Api yn cynyddu i'w gwneud yn fwy defnyddiol i ddatblygwyr ac ymchwilwyr",
+        "aboutContributing": "Cyfrannu",
+        "aboutP5": "Y ffordd gyflymaf a hawsaf i gyfrannu at y prosiect yw cyflwyno adolygiad. Mae hyn yn golygu ychwanegu lle newydd i'r mynegai neu ddiweddaru un sy'n bodoli eisoes os oes angen",
+        "aboutP6": "Gall unrhyw un wneud hyn ac nid oes angen mewngofnodi na chyfrif",
+        "aboutP7a": "Os darganfyddir unrhyw broblemau, dod o hyd i chwilod neu awgrymiadau i'w gwneud, edrychwch ar y",
+        "aboutP7b": "tudalen materion",
+        "aboutP7c": "ar",
+        "aboutP8": "Dylai'r rhai sy'n dymuno cymryd mwy o ran edrych ar repo'r prosiect, sy'n cael ei gynnal arno",
+        "aboutP9": "Mae digon o waith i'w wneud i wneud y prosiect hwn yn offeryn defnyddiol i ddysgwyr Cymru",
+        "submitTitle": "Cyflwyno categori",
+        "submitName": "Enw",
+        "submitCategory": "Categori",
+        "submitStatus": "Statws",
+        "howToTitle": "Sut i",
+        "howToFind": "dewch o hyd i rywle sydd eisoes wedi'i restru",
+        "howToOL1a": "Bydd yr adeilad a ddewisoch ar dudalen y map yn ymddangos yn y blwch cyflwyno yn barod ar gyfer eich adolygiad o debygolrwydd siarad Cymraeg",
+        "howToOL1b": "Dewiswch yr hyn rydych chi'n teimlo sydd orau a tharo cyflwyno",
+        "howToOL1c": "Os nad yw'r adeilad a ddewisoch lle rydych chi am gyflwyno adolygiad ar ei gyfer, yna llusgwch y pin map, bydd y ffurflen yn cael ei chlirio, a gallwch chi ddod o hyd i'r adeilad rydych chi am ei gyflwyno",
+        "howToSubmit": "cyflwyno adeilad newydd",
+        "howToOL2a": "Llusgwch y pin map i ddod o hyd i'r lle",
+        "howToOL2b": "Bydd y cyfesurynnau a'r cod post yn cael eu llenwi. Ychwanegwch enw'r adeilad a'r cyfeiriad fel yr hoffech iddo ymddangos yn y mynegai",
+        "howToOL2c": "Dewiswch pa mor debygol ydych chi'n teimlo bod rhywun o glywed a gallu defnyddio'r Gymraeg yn yr adeilad. Nid yw hyn yn wyddonol, dim ond yr hyn sy'n debygol yn eich barn chi",
+        "howToInaccurate": "Os yw'r mynegai yn ymddangos yn anghywir",
+        "howToP1": "Mae categori (pa mor debygol yw hi o ddefnyddio Cymraeg) adeilad yn cael ei gyfrif trwy gydgrynhoi'r holl adolygiadau a dderbyniwyd. Felly bydd eich cyflwyniad yn cael ei ystyried ar unwaith, ond gall effeithio ar y sgôr gyfredol neu beidio",
+        "howToP2": "Os ydych chi'n teimlo bod sgôr adeilad yn bell i ffwrdd ac yn aros yn bell i ffwrdd ar ôl i chi gyflwyno'ch sgôr, yna cysylltwch â ni. Os mai chi yw perchennog y busnes gallwn ni helpu trwy eich cyfeirio chi i gyfeiriad adnoddau i helpu i gynyddu'r defnydd o'r Gymraeg yn eich busnes. Os yw'r data yn y mynegai yn hollol anghywir, yna gallwn ei gywiro",
+        "formSubmitted": "Cyflwynwyd",
+        "formSubmit": "Cyflwyno",
+        "formClear": "Clirio",
+        "formClearToDrop": "Cliriwch y ffurflen i ollwng pin",
+        "formDragPin": "Llusgwch y pin ...",
+        "formName": "Enw'r adeilad",
+        "formAddress": "Cyfeiriad yr adeilad",
+        "formPostcode": "Cod post yr adeilad",
+        "formCoordinates": "Cyfesurynnau",
+        "formCategory": "Categori",
+        "errorMissingName": "Mae angen enw",
+        "errorMissingAddress": "Mae angen cyfeiriad i adnabod yr adeilad",
+        "errorMissingCategory": "Mae angen categori i helpu eraill i wybod beth i'w ddisgwyl",
+        "errorInvalidPostcode": "Os cyflenwir cod post rhaid iddo fod yn ddilys, neu ddefnyddio'r cyfesurynnau yn unig",
+        "errorInvalidCoordinates": "Gellir gosod cyfesurynnau trwy symud y pin ar y map ac mae eu hangen",
+        "errorInvalidCategory": "Rhaid gosod y categori",
+        "errorCoordinatesMismatch": "Ni fu'n bosibl gwirio'r cyfesurynnau a gyflenwir, ceisiwch eto"
     },
     "english": {
         "pageTitleKeyHome": "Home",
@@ -2203,6 +2326,9 @@ exports.default = {
         "aboutP8": "Those who wish to be more involved should check out the project repo, which is hosted on",
         "aboutP9": "There is plenty of work to do to make this project a useful tool for Welsh learners",
         "submitTitle": "Submit a categorisation",
+        "submitName": "Name",
+        "submitCategory": "Category",
+        "submitStatus": "Status",
         "howToTitle": "How to",
         "howToFind": "find somewhere already listed",
         "howToOL1a": "The premises you selected in the map page will appear in the submit box ready for your review of Welsh speaking likelyhood",
@@ -2224,7 +2350,14 @@ exports.default = {
         "formAddress": "Address of premises",
         "formPostcode": "Postcode of premises",
         "formCoordinates": "Coordinates",
-        "formCategory": "Category"
+        "formCategory": "Category",
+        "errorMissingName": "A name is required",
+        "errorMissingAddress": "An address is required to identify the premises",
+        "errorMissingCategory": "A category is required to help others know what to expect",
+        "errorInvalidPostcode": "If a postcode is supplied it must be valid, or just use the coordinates",
+        "errorInvalidCoordinates": "Coordinates can be set by moving the pin on the map and are required",
+        "errorInvalidCategory": "The category has to be set",
+        "errorCoordinatesMismatch": "It has not been possible to verify the supplied coordinates, please try again"
     }
 };
 
@@ -2328,6 +2461,9 @@ exports.default = {
     aboutP8: "aboutP8",
     aboutP9: "aboutP9",
     submitTitle: "submitTitle",
+    submitName: "submitName",
+    submitCategory: "submitCategory",
+    submitStatus: "submitStatus",
     howToTitle: "howToTitle",
     howToFind: "howToFind",
     howToOL1a: "howToOL1a",
@@ -2349,7 +2485,14 @@ exports.default = {
     formAddress: "formAddress",
     formPostcode: "formPostcode",
     formCoordinates: "formCoordinates",
-    formCategory: "formCategory"
+    formCategory: "formCategory",
+    errorMissingName: "errorMissingName",
+    errorMissingAddress: "errorMissingAddress",
+    errorMissingCategory: "errorMissingCategory",
+    errorInvalidPostcode: "errorInvalidPostcode",
+    errorInvalidCoordinates: "errorInvalidCoordinates",
+    errorInvalidCategory: "errorInvalidCategory",
+    errorCoordinatesMismatch: "errorCoordinatesMismatch"
 };
 
 },{}],55:[function(require,module,exports){
@@ -3388,7 +3531,7 @@ function getText(t) {
         title: t[k.aboutTitle], sub1: t[k.aboutSub1], sub2: t[k.aboutSub2],
         p1: t[k.aboutP1], p2a: t[k.aboutP2a], openSource: t[k.aboutOpenSource],
         p2b: t[k.aboutP2b], p3: t[k.aboutP3], p4: t[k.aboutP4],
-        contributing: t[k.contributing], p5: t[k.aboutP5], p6: t[k.aboutP6],
+        contributing: t[k.aboutContributing], p5: t[k.aboutP5], p6: t[k.aboutP6],
         p7a: t[k.aboutP7a], p7b: t[k.aboutP7b], p7c: t[k.aboutP7c],
         p8: t[k.aboutP8], p9: t[k.aboutP9]
     };
@@ -5467,12 +5610,15 @@ exports.default = MapSearchBox;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.getText = getText;
 
 exports.default = function (props) {
 
     var content = _data2.default[props.language];
-    var show = content[_supportedKeys2.default.show];
-    var categorise = content[_supportedKeys2.default.categorise];
+
+    var _getText = getText(content),
+        show = _getText.show,
+        categorise = _getText.categorise;
 
     return Object.assign({}, props, {
         showLabelText: show,
@@ -5489,6 +5635,13 @@ var _supportedKeys = require("../../../core/text/supported-keys");
 var _supportedKeys2 = _interopRequireDefault(_supportedKeys);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getText(t) {
+    return {
+        show: t[_supportedKeys2.default.show],
+        categorise: t[_supportedKeys2.default.categorise]
+    };
+}
 
 },{"../../../core/text/data":53,"../../../core/text/supported-keys":54}],82:[function(require,module,exports){
 "use strict";
@@ -6852,7 +7005,7 @@ var labels = (_labels = {}, _defineProperty(_labels, _form.keys.name, {
 }), _defineProperty(_labels, _form.keys.coordinates, {
     id: "byw-form-label-coordinates",
     type: "text",
-    placeholder: "Coords",
+    placeholder: "Coordinates",
     placeholderKey: k.formCoordinates,
     key: "coordinates",
     disabledForExisting: true,
@@ -6860,26 +7013,27 @@ var labels = (_labels = {}, _defineProperty(_labels, _form.keys.name, {
 }), _defineProperty(_labels, _form.keys.category, {
     id: "byw-form-label-category",
     type: "text",
-    placeholder: "Cat",
+    placeholder: "Category",
     placeholderKey: k.formCategory,
     key: "category",
     disabledForExisting: false
 }), _labels);
 
-var inputMetaDataForLabel = function inputMetaDataForLabel(key, formData) {
+var inputMetaDataForLabel = function inputMetaDataForLabel(key, formData, text) {
     var descriptor = labels[key];
     return Object.assign({}, descriptor, {
         value: (0, _form.valueForKey)(formData, key),
-        meta: formData[key]
+        meta: formData[key],
+        placeholder: text[descriptor.placeholderKey]
     });
 };
 
-var labelsArray = function labelsArray(data, isDisabled, isExistingLocation) {
+var labelsArray = function labelsArray(data, isDisabled, isExistingLocation, text) {
     return Object.keys(data).filter(function (key) {
         return key !== _form.keys.category && key !== _form.keys.coordinateHash && key !== _form.keys.timestamp;
     }).reduce(function (inputMetaDatas, key) {
 
-        var metaData = inputMetaDataForLabel(key, data);
+        var metaData = inputMetaDataForLabel(key, data, text);
         metaData.disabled = isDisabled || metaData.disabledForExisting && isExistingLocation ? true : !!metaData.disabled;
 
         inputMetaDatas.push(metaData);
@@ -6934,6 +7088,7 @@ function makeFormatValue(placeholder) {
 }
 
 function getText(t) {
+
     var text = {
         submitted: t[k.formSubmitted],
         submit: t[k.formSubmit],
@@ -6941,6 +7096,7 @@ function getText(t) {
         clearForm: t[k.formClearToDrop],
         dragPin: t[k.formDragPin]
     };
+
     return Object.keys(text).reduce(function (acc, key) {
         acc[key] = (0, _stringCapitalizeFirstLetter2.default)(text[key]);
         return acc;
@@ -6975,7 +7131,9 @@ var Form = function (_React$Component) {
                 clearForm = _getText.clearForm,
                 dragPin = _getText.dragPin;
 
-            var elements = labelsArray(data, isDisabled, isExistingLocation).map(toInput(onChange, makeFormatValue(dragPin)));
+            var valueFormatter = makeFormatValue(dragPin);
+
+            var elements = labelsArray(data, isDisabled, isExistingLocation, text).map(toInput(onChange, valueFormatter));
 
             return _react2.default.createElement(
                 "form",
@@ -7441,7 +7599,7 @@ var Submit = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-md-6" },
-                            _react2.default.createElement(_locatorMap2.default, null)
+                            _react2.default.createElement(_locatorMap2.default, { text: content })
                         ),
                         _react2.default.createElement(
                             "div",
@@ -7507,6 +7665,10 @@ var _controller = require("../../map/map/controller");
 
 var _controller2 = _interopRequireDefault(_controller);
 
+var _addTextContent = require("../../map/map/add-text-content");
+
+var _addTextContent2 = _interopRequireDefault(_addTextContent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7539,7 +7701,7 @@ var makeOnLocatorDragend = function makeOnLocatorDragend(props) {
 var augmentedProps = function augmentedProps(props) {
     var onReview = makeReviewHandler(props);
     var onLocatorDragend = makeOnLocatorDragend(props);
-    return Object.assign({}, props, { onReview: onReview, onLocatorDragend: onLocatorDragend });
+    return Object.assign({}, (0, _addTextContent2.default)(props), { onReview: onReview, onLocatorDragend: onLocatorDragend });
 };
 
 var LocatorMap = function (_React$Component) {
@@ -7581,8 +7743,8 @@ var LocatorMap = function (_React$Component) {
             }
         }
     }, {
-        key: "componentWillReceiveProps",
-        value: function componentWillReceiveProps(nextProps) {
+        key: "UNSAFE_componentWillReceiveProps",
+        value: function UNSAFE_componentWillReceiveProps(nextProps) {
             var props = augmentedProps(nextProps);
             var controller = this.state.controller;
 
@@ -7606,6 +7768,7 @@ var LocatorMap = function (_React$Component) {
 }(_react2.default.Component);
 
 LocatorMap.propTypes = {
+    text: _propTypes2.default.object.isRequired,
     locations: _propTypes2.default.array.isRequired,
     searchText: _propTypes2.default.string.isRequired,
     coordinate: _propTypes2.default.array.isRequired,
@@ -7616,6 +7779,7 @@ LocatorMap.propTypes = {
 
 var mapStateToProps = function mapStateToProps(state) {
     return {
+        language: state.settings.language,
         locations: state.data.locations,
         searchText: state.locator.searchText,
         coordinate: state.locator.coordinate,
@@ -7626,7 +7790,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(LocatorMap);
 
-},{"../../../core/is-browser":9,"../../../core/model/geojson-from-marker":35,"../../../core/redux/actions":46,"../../map/map/constants":82,"../../map/map/controller":84,"Leaflet":123,"prop-types":144,"react":199,"react-redux":161}],102:[function(require,module,exports){
+},{"../../../core/is-browser":9,"../../../core/model/geojson-from-marker":35,"../../../core/redux/actions":46,"../../map/map/add-text-content":81,"../../map/map/constants":82,"../../map/map/controller":84,"Leaflet":123,"prop-types":144,"react":199,"react-redux":161}],102:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

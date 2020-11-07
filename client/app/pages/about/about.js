@@ -6,12 +6,12 @@ const k = supportedKeys;
 
 export function getText(t) {
     return {
-        title:          t[k.aboutTitle],    sub1:   t[k.aboutSub1], sub2:       t[k.aboutSub2], 
-        p1:             t[k.aboutP1],       p2a:    t[k.aboutP2a],  openSource: t[k.aboutOpenSource],
-        p2b:            t[k.aboutP2b],      p3:     t[k.aboutP3],   p4:         t[k.aboutP4], 
-        contributing:   t[k.contributing],  p5:     t[k.aboutP5],   p6:         t[k.aboutP6],
-        p7a:            t[k.aboutP7a],      p7b:    t[k.aboutP7b],  p7c:        t[k.aboutP7c], 
-        p8:             t[k.aboutP8],       p9:     t[k.aboutP9]
+        title: t[k.aboutTitle], sub1: t[k.aboutSub1], sub2: t[k.aboutSub2],
+        p1: t[k.aboutP1], p2a: t[k.aboutP2a], openSource: t[k.aboutOpenSource],
+        p2b: t[k.aboutP2b], p3: t[k.aboutP3], p4: t[k.aboutP4],
+        contributing: t[k.aboutContributing], p5: t[k.aboutP5], p6: t[k.aboutP6],
+        p7a: t[k.aboutP7a], p7b: t[k.aboutP7b], p7c: t[k.aboutP7c],
+        p8: t[k.aboutP8], p9: t[k.aboutP9]
     };
 }
 
@@ -22,12 +22,12 @@ class About extends React.Component {
         const { text } = this.props;
 
         const {
-            title,          sub1,   sub2,
-            p1,             p2a,    openSource,
-            p2b,            p3,     p4,
-            contributing,   p5,     p6,
-            p7a,            p7b,    p7c,
-            p8,             p9
+            title, sub1, sub2,
+            p1, p2a, openSource,
+            p2b, p3, p4,
+            contributing, p5, p6,
+            p7a, p7b, p7c,
+            p8, p9
         } = getText(text);
 
         return (
@@ -45,14 +45,18 @@ class About extends React.Component {
                         <div className="col-md-6">
                             <p>{p1}.</p>
                             <p>
-                                {p2a}<a href="https://en.wikipedia.org/wiki/Open-source_model"
+                                {p2a}
+                                &nbsp;
+                                <a href="https://en.wikipedia.org/wiki/Open-source_model"
                                     target="_blank"
-                                    rel="noopener noreferrer">&nbsp;{openSource}&nbsp;
-                                </a>{p2b}&nbsp;
+                                    rel="noopener noreferrer">{openSource}</a>
+                                &nbsp;
+                                {p2b}
+                                &nbsp;
                                 <a href="https://github.com/rase-rocks/byw"
                                     target="_blank"
-                                    rel="noopener noreferrer">&nbsp;GitHub&nbsp;
-                                </a>
+                                    rel="noopener noreferrer">GitHub</a>
+                                &nbsp;
                             </p>
                         </div>
 
@@ -65,7 +69,10 @@ class About extends React.Component {
 
                     <div className="row">
                         <div className="col-md-12">
-                            <h2>{contributing}</h2>
+                            <h2>
+                                <small>{title}</small>
+                                {contributing}
+                            </h2>
                         </div>
                     </div>
 
@@ -74,17 +81,25 @@ class About extends React.Component {
                             <p>{p5}.</p>
                             <p>{p6}.</p>
                             <p>
-                                {p7a} <a href="https://github.com/rase-rocks/byw/issues"
+                                {p7a}
+                                &nbsp;
+                                <a href="https://github.com/rase-rocks/byw/issues"
                                     target="_blank"
-                                    rel="noopener noreferrer">{p7b}</a> {p7c} GitHub.
+                                    rel="noopener noreferrer">{p7b}</a>
+                                &nbsp;
+                                {p7c}
+                                &nbsp;
+                                GitHub.
                             </p>
                         </div>
                         <div className="col-md-6">
                             <p>
-                                {p8}<a href="https://github.com/rase-rocks/byw"
+                                {p8}
+                                &nbsp;
+                                <a href="https://github.com/rase-rocks/byw"
                                     target="_blank"
-                                    rel="noopener noreferrer">&nbsp;GitHub.&nbsp;
-                                </a>
+                                    rel="noopener noreferrer">GitHub.</a>
+                                &nbsp;
                             </p>
                             <p>{p9}.</p>
                         </div>

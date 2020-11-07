@@ -8,6 +8,7 @@ import { SHOW_ZOOM, NORMAL_ZOOM } from "../../map/map/constants";
 import geoJsonFromMarker from "../../../core/model/geojson-from-marker";
 import isBrowser from "../../../core/is-browser";
 import makeController from "../../map/map/controller";
+import addTextContent from "../../map/map/add-text-content";
 
 let L;
 if (isBrowser()) {
@@ -33,7 +34,7 @@ const makeOnLocatorDragend = function (props) {
 const augmentedProps = function (props) {
     const onReview = makeReviewHandler(props);
     const onLocatorDragend = makeOnLocatorDragend(props);
-    return Object.assign({}, props, { onReview, onLocatorDragend });
+    return Object.assign({}, addTextContent(props), { onReview, onLocatorDragend });
 };
 
 class LocatorMap extends React.Component {
@@ -65,7 +66,7 @@ class LocatorMap extends React.Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const props = augmentedProps(nextProps);
         const { controller } = this.state;
 
@@ -85,6 +86,7 @@ class LocatorMap extends React.Component {
 }
 
 LocatorMap.propTypes = {
+    text: PropTypes.object.isRequired,
     locations: PropTypes.array.isRequired,
     searchText: PropTypes.string.isRequired,
     coordinate: PropTypes.array.isRequired,
@@ -95,6 +97,7 @@ LocatorMap.propTypes = {
 
 const mapStateToProps = function (state) {
     return {
+        language: state.settings.language,
         locations: state.data.locations,
         searchText: state.locator.searchText,
         coordinate: state.locator.coordinate,

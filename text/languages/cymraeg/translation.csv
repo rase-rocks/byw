@@ -12,104 +12,107 @@ pageTitleTagKeyAbout, "BYW | About", BYW | Amdanom
 pageTitleTagKeySubmit, "BYW | Submit", BYW | Cyflwyno
 pageTitleTagKeyPrivacy, "BYW | Privacy", BYW | Preifatrwydd
 pageTitleTagKey404, "BYW | Page Not Found", BYW | Heb ei Ddarganfod
-footerTest404, "Test the 404 page",
-footerContributing, "Contributing",
-footerP1, "Everyone can help learners find places to go and use their Welsh. Your submissions also help us to monitor how much the langauge is used, not just in Wales, but across the world",
-footerP2, "Submitting a review is quick and no account or login is required. If you are aware of a place that Welsh can be heard and used, but is not already in our index, submitting it to the index will let others know",
-footerUsefulLinks, "Useful links",
-footerVisitOn, "Visit us on",
-category0, "Highly unlikely",
-category1, "Not very likely",
-category2, "Likely",
-category3, "Very likely",
-category4, "Highly likely",
-category5, "Definitely",
-show, "Show",
-categorise, "Categorise",
-homeCrowdSourced, "Crowd sourced", Torfoli
-homeWelsh, "Welsh",
-homeLanguageResource, "language resource",
-homeLets, "Let's",
-homeFind, "find",
-homeSomewhere, "somewhere",
-homeHeroTitle, "Find out where to use and hear the language",
-homeSearch, "Search",
-homeSearchPlaceholder, "What are you searching for?",
-homeSearchResults, "Search Results",
-homeLocationPlaceholder, "Location",
-homeAnd, "and",
-homeMore, "more",
-homeApi, "API",
-homeMap, "Map",
-homeServicesSectionTitle, "Our Services",
-homeServicesSectionTitle1, "What does",
-homeServicesSectionTitle2, "do for me?",
-homeServices1Title, "Local Places",
-homeServices1Desc, "This site is simply about getting people to use their Welsh. It is available in a couple of languages to help learners from all parts of the globe to find places to use and improve their Welsh skills",
-homeServices2Title, "Native Speakers",
-homeServices2Desc, "However, this is not just about learners. Those fluent need to also use their Welsh whenever they can. Welsh needs to be heard on the street, in the shops and wherever we get together",
-homeServices3Title, "Days out",
-homeServices3Desc, "So, before you shop, go on a day out, or whatever you like to do, see if there will be a Welsh language welcome and, above all, use your Welsh yourself!",
-homeThoughtOfTheDay, "Thought of the day",
-mapResult, "Result",
-mapResults, "Results",
-mapPages, "Pages",
-mapSearchPlaceholder, "Search for places, coordinates and postcodes",
-mapLegendTitle, "Legend to the map",
-mapLegendSubheading, "A quick glympse of Welsh speaking likeliness",
-vocabTitle, "Vocabulary",
-vocabBeta, "Beta",
-vocabP1, "This is a beta version of an attempt to provide a searchable resource for commonly heard sayings",
-vocabP2, "Currently it has",
-vocabP3, "words and phrases out of a target of",
-vocabResultsFound, "phrases and words found",
-vocabEnglish, "English",
-vocabCymraeg, "Cymraeg",
-vocabNotes, "Notes",
-aboutTitle, "About",
-aboutSub1, "What can",
-aboutSub2, "do?",
-aboutP1, "Byw.cymru is a community driven, crowd sourced, Welsh language resource. Its primary aim is to help learners and others who are interested in the language find places where they can hear and use the language",
-aboutP2a, "The whole project is",
-aboutOpenSource, "open source",
-aboutP2b, "and all decisions are made in the open on the projects repo, hosted on",
-aboutP3, "The aim of the project is to make finding out this information as easy as possible, with the maximum of community involvement. Therefore the design of the website is to be as easy and quick to use as possible. It is focused around the map page which is the primary resource for searching the index",
-aboutP4, "All the code that makes up the website is available in the projects repo and is viewable by anybody. The website and data is hosted using community donated resources. The Api provides access to the data to anybody who wants it. Over time it is expected that the number of Api endpoints will be increased to make it more useful to developers and researchers",
-aboutContributing, "Contributing",
-aboutP5, "The quickest and easiest way to contribute to the project is to submit a review. This just means adding a new place to the index or updating an existing one if necessary",
-aboutP6, "Anybody can do this and no login or account is necessary",
-aboutP7a, "If there are any issues discovered, bugs found or suggestions to be made then check out the",
-aboutP7b, "issues page",
-aboutP7c, "on",
-aboutP8, "Those who wish to be more involved should check out the project repo, which is hosted on",
-aboutP9, "There is plenty of work to do to make this project a useful tool for Welsh learners",
-submitTitle, "Submit a categorisation",
-howToTitle, "How to",
-howToFind, "find somewhere already listed",
-howToOL1a, "The premises you selected in the map page will appear in the submit box ready for your review of Welsh speaking likelyhood",
-howToOL1b, "Choose what you feel is best and hit submit",
-howToOL1c, "If the premises you selected is not where you want to submit a review for then just drag the map pin, the form will be cleared, and you can locate the premises you want to submit",
-howToSubmit, "submit a new premises",
-howToOL2a, "Drag the map pin to locate the place",
-howToOL2b, "The coordinates and postcode will be filled out. Just add the name of the premises and the address as you would like it to appear in the index",
-howToOL2c, "Select how likely you feel a person is to hear and be able to use Welsh in the premises. This isn't scientific, just what you think is likely",
-howToInaccurate, "If the index appears inaccurate",
-howToP1, "The category (how likely it is to use Welsh) of a premises is calculated by aggregating all the reviews received. So your submission will be taken into account straight away, but it may or may not affect the current rating",
-howToP2, "If you feel the rating of a premises is way off and remains way off after you have submitted your rating, then please get in touch. If you are the business owner we can help by pointing you in the direction of resources to help increase the use of Welsh in your business. If the data in the index is just plain wrong then we can correct it",
-formSubmitted, "Submitted",
-formSubmit, "Submit",
-formClear, "Clear",
-formClearToDrop, "Clear the form to drop a pin",
-formDragPin, "Drag the pin...",
-formName, "Name of premises",
-formAddress, "Address of premises",
-formPostcode, "Postcode of premises",
-formCoordinates, "Coordinates",
-formCategory, "Category",
-errorMissingName, "A name is required",
-errorMissingAddress, "An address is required to identify the premises",
-errorMissingCategory, "A category is required to help others know what to expect",
-errorInvalidPostcode, "If a postcode is supplied it must be valid, or just use the coordinates",
-errorInvalidCoordinates, "Coordinates can be set by moving the pin on the map and are required",
-errorInvalidCategory, "The category has to be set",
-errorCoordinatesMismatch, "It has not been possible to verify the supplied coordinates, please try again",
+footerTest404, "Test the 404 page", Profwch y dudalen 404
+footerContributing, "Contributing", Cyfrannu
+footerP1, "Everyone can help learners find places to go and use their Welsh. Your submissions also help us to monitor how much the language is used, not just in Wales, but across the world", "Gall pawb helpu dysgwyr i ddod o hyd i leoedd i fynd a defnyddio eu Cymraeg. Mae eich cyflwyniadau hefyd yn ein helpu i fonitro faint mae'r iaith yn cael ei defnyddio, nid yn unig yng Nghymru, ond ledled y byd"
+footerP2, "Submitting a review is quick and no account or login is required. If you are aware of a place that Welsh can be heard and used, but is not already in our index, submitting it to the index will let others know", "Mae cyflwyno adolygiad yn gyflym ac nid oes angen cyfrif na mewngofnodi. Os ydych chi'n ymwybodol o le y gellir clywed a defnyddio Cymraeg, ond nad yw eisoes yn ein mynegai, bydd ei gyflwyno i'r mynegai yn rhoi gwybod i eraill"
+footerUsefulLinks, "Useful links", Dolenni defnyddiol
+footerVisitOn, "Visit us on", Ymwelwch â ni ar
+category0, "Highly unlikely", Hynod annhebygol
+category1, "Not very likely", Ddim yn debygol iawn
+category2, "Likely", Tebygol
+category3, "Very likely", Tebygol iawn
+category4, "Highly likely", Hynod debygol
+category5, "Definitely", Yn bendant
+show, "Show", Gweld
+categorise, "Categorise", Categoreiddio
+homeCrowdSourced, "Crowd sourced", Torf o ffynonellau
+homeWelsh, "Welsh", Cymraeg
+homeLanguageResource, "language resource", adnodd iaith
+homeLets, "Let's", gadewch i ni
+homeFind, "find", ffeindio
+homeSomewhere, "somewhere", rhywle
+homeHeroTitle, "Find out where to use and hear the language", Darganfyddwch ble i ddefnyddio a chlywed yr iaith
+homeSearch, "Search", Chwilio
+homeSearchPlaceholder, "What are you searching for?", Beth ydych chi'n chwilio amdano
+homeSearchResults, "Search Results", Canlyniadau Chwilio
+homeLocationPlaceholder, "Location", Lleoliad
+homeAnd, "and", a
+homeMore, "more", mwy
+homeApi, "API", API
+homeMap, "Map", Map
+homeServicesSectionTitle, "Our Services", Ein Gwasanaethau
+homeServicesSectionTitle1, "What does", Beth mae'n
+homeServicesSectionTitle2, "do for me?", wneud i mi
+homeServices1Title, "Local Places", Lleoedd Lleol
+homeServices1Desc, "This site is simply about getting people to use their Welsh. It is available in a couple of languages to help learners from all parts of the globe to find places to use and improve their Welsh skills", Mae'r wefan hon yn ymwneud yn syml â chael pobl i ddefnyddio eu Cymraeg. Mae ar gael mewn cwpl o ieithoedd i helpu dysgwyr o bob rhan o'r byd i ddod o hyd i leoedd i ddefnyddio a gwella eu sgiliau Cymraeg
+homeServices2Title, "Native Speakers", Siaradwyr Brodorol
+homeServices2Desc, "However, this is not just about learners. Those fluent need to also use their Welsh whenever they can. Welsh needs to be heard on the street, in the shops and wherever we get together", "Fodd bynnag, nid yw hyn yn ymwneud â dysgwyr yn unig. Mae angen i'r rheini sy'n rhugl hefyd ddefnyddio eu Cymraeg pryd bynnag y gallant. Mae angen clywed Cymraeg ar y stryd, yn y siopau a ble bynnag rydyn ni'n dod at ein gilydd"
+homeServices3Title, "Days out", Diwrnodau allan
+homeServices3Desc, "So, before you shop, go on a day out, or whatever you like to do, see if there will be a Welsh language welcome and, above all, use your Welsh yourself!", "Felly, cyn i chi siopa, ewch ar ddiwrnod allan, neu beth bynnag yr ydych chi'n hoffi ei wneud, gweld a fydd croeso i'r Gymraeg ac, yn anad dim, defnyddiwch eich Cymraeg eich hun!"
+homeThoughtOfTheDay, "Thought of the day", Meddwl y dydd
+mapResult, "Result", Canlyniad
+mapResults, "Results", Canlyniadau
+mapPages, "Pages", Tudalennau
+mapSearchPlaceholder, "Search for places, coordinates and postcodes", "Chwilio am leoedd, cyfesurynnau a chodau post"
+mapLegendTitle, "Legend to the map", Chwedl i'r map
+mapLegendSubheading, "A quick glympse of Welsh speaking likeliness", Cipolwg cyflym ar debygrwydd siarad Cymraeg
+vocabTitle, "Vocabulary", Geirfa
+vocabBeta, "Beta", Beta
+vocabP1, "This is a beta version of an attempt to provide a searchable resource for commonly heard sayings", Mae hwn yn fersiwn beta o ymgais i ddarparu adnodd chwiliadwy ar gyfer dywediadau a glywir yn gyffredin
+vocabP2, "Currently it has", Ar hyn o bryd mae ganddo
+vocabP3, "words and phrases out of a target of", gair ac ymadrodd allan o darged o
+vocabResultsFound, "phrases and words found", ymadroddion a geiriau a ddarganfuwyd
+vocabEnglish, "English", Saesneg
+vocabCymraeg, "Cymraeg", Cymraeg
+vocabNotes, "Notes", Nodiadau
+aboutTitle, "About", Amdanom
+aboutSub1, "What can", Beth all
+aboutSub2, "do?", wneud?
+aboutP1, "Byw.cymru is a community driven, crowd sourced, Welsh language resource. Its primary aim is to help learners and others who are interested in the language find places where they can hear and use the language", "Mae Byw.cymru yn adnodd Cymraeg sy'n cael ei yrru gan y gymuned, o ffynonellau torf. Ei brif nod yw helpu dysgwyr ac eraill sydd â diddordeb yn yr iaith i ddod o hyd i leoedd lle gallant glywed a defnyddio'r iaith"
+aboutP2a, "The whole project is", Mae'r prosiect cyfan yn
+aboutOpenSource, "open source", ffynhonnell agor
+aboutP2b, "and all decisions are made in the open on the projects repo, hosted on", "a gwneir pob penderfyniad yn yr awyr agored ar y prosiect repo, a gynhelir arno"
+aboutP3, "The aim of the project is to make finding out this information as easy as possible, with the maximum of community involvement. Therefore the design of the website is to be as easy and quick to use as possible. It is focused around the map page which is the primary resource for searching the index", "Nod y prosiect yw ei gwneud hi'n hawdd darganfod y wybodaeth hon, gyda'r mwyaf o gyfranogiad cymunedol. Felly mae dyluniad y wefan i fod mor hawdd a chyflym â phosibl. Mae'n canolbwyntio ar dudalen y map, sef y prif adnodd ar gyfer chwilio'r mynegai"
+aboutP4, "All the code that makes up the website is available in the projects repo and is viewable by anybody. The website and data is hosted using community donated resources. The Api provides access to the data to anybody who wants it. Over time it is expected that the number of Api endpoints will be increased to make it more useful to developers and researchers", "Mae'r holl god sy'n ffurfio'r wefan ar gael yn repo'r prosiect ac mae unrhyw un yn gallu ei weld. Mae'r wefan a'r data yn cael eu cynnal gan ddefnyddio adnoddau a roddir yn y gymuned. Mae'r Api yn darparu mynediad i'r data i unrhyw un sydd ei eisiau. Dros amser, disgwylir y bydd nifer y pwyntiau terfyn Api yn cynyddu i'w gwneud yn fwy defnyddiol i ddatblygwyr ac ymchwilwyr"
+aboutContributing, "Contributing", Cyfrannu
+aboutP5, "The quickest and easiest way to contribute to the project is to submit a review. This just means adding a new place to the index or updating an existing one if necessary", "Y ffordd gyflymaf a hawsaf i gyfrannu at y prosiect yw cyflwyno adolygiad. Mae hyn yn golygu ychwanegu lle newydd i'r mynegai neu ddiweddaru un sy'n bodoli eisoes os oes angen"
+aboutP6, "Anybody can do this and no login or account is necessary", Gall unrhyw un wneud hyn ac nid oes angen mewngofnodi na chyfrif
+aboutP7a, "If there are any issues discovered, bugs found or suggestions to be made then check out the", "Os darganfyddir unrhyw broblemau, dod o hyd i chwilod neu awgrymiadau i'w gwneud, edrychwch ar y"
+aboutP7b, "issues page", tudalen materion
+aboutP7c, "on", ar
+aboutP8, "Those who wish to be more involved should check out the project repo, which is hosted on", "Dylai'r rhai sy'n dymuno cymryd mwy o ran edrych ar repo'r prosiect, sy'n cael ei gynnal arno"
+aboutP9, "There is plenty of work to do to make this project a useful tool for Welsh learners", Mae digon o waith i'w wneud i wneud y prosiect hwn yn offeryn defnyddiol i ddysgwyr Cymru
+submitTitle, "Submit a categorisation", Cyflwyno categori
+submitName, "Name", Enw
+submitCategory, "Category", Categori
+submitStatus, "Status", Statws
+howToTitle, "How to", Sut i
+howToFind, "find somewhere already listed", dewch o hyd i rywle sydd eisoes wedi'i restru
+howToOL1a, "The premises you selected in the map page will appear in the submit box ready for your review of Welsh speaking likelyhood", Bydd yr adeilad a ddewisoch ar dudalen y map yn ymddangos yn y blwch cyflwyno yn barod ar gyfer eich adolygiad o debygolrwydd siarad Cymraeg
+howToOL1b, "Choose what you feel is best and hit submit", Dewiswch yr hyn rydych chi'n teimlo sydd orau a tharo cyflwyno
+howToOL1c, "If the premises you selected is not where you want to submit a review for then just drag the map pin, the form will be cleared, and you can locate the premises you want to submit", "Os nad yw'r adeilad a ddewisoch lle rydych chi am gyflwyno adolygiad ar ei gyfer, yna llusgwch y pin map, bydd y ffurflen yn cael ei chlirio, a gallwch chi ddod o hyd i'r adeilad rydych chi am ei gyflwyno"
+howToSubmit, "submit a new premises", cyflwyno adeilad newydd
+howToOL2a, "Drag the map pin to locate the place", Llusgwch y pin map i ddod o hyd i'r lle
+howToOL2b, "The coordinates and postcode will be filled out. Just add the name of the premises and the address as you would like it to appear in the index", "Bydd y cyfesurynnau a'r cod post yn cael eu llenwi. Ychwanegwch enw'r adeilad a'r cyfeiriad fel yr hoffech iddo ymddangos yn y mynegai"
+howToOL2c, "Select how likely you feel a person is to hear and be able to use Welsh in the premises. This isn't scientific, just what you think is likely", "Dewiswch pa mor debygol ydych chi'n teimlo bod rhywun o glywed a gallu defnyddio'r Gymraeg yn yr adeilad. Nid yw hyn yn wyddonol, dim ond yr hyn sy'n debygol yn eich barn chi"
+howToInaccurate, "If the index appears inaccurate", Os yw'r mynegai yn ymddangos yn anghywir
+howToP1, "The category (how likely it is to use Welsh) of a premises is calculated by aggregating all the reviews received. So your submission will be taken into account straight away, but it may or may not affect the current rating", "Mae categori (pa mor debygol yw hi o ddefnyddio Cymraeg) adeilad yn cael ei gyfrif trwy gydgrynhoi'r holl adolygiadau a dderbyniwyd. Felly bydd eich cyflwyniad yn cael ei ystyried ar unwaith, ond gall effeithio ar y sgôr gyfredol neu beidio"
+howToP2, "If you feel the rating of a premises is way off and remains way off after you have submitted your rating, then please get in touch. If you are the business owner we can help by pointing you in the direction of resources to help increase the use of Welsh in your business. If the data in the index is just plain wrong then we can correct it", "Os ydych chi'n teimlo bod sgôr adeilad yn bell i ffwrdd ac yn aros yn bell i ffwrdd ar ôl i chi gyflwyno'ch sgôr, yna cysylltwch â ni. Os mai chi yw perchennog y busnes gallwn ni helpu trwy eich cyfeirio chi i gyfeiriad adnoddau i helpu i gynyddu'r defnydd o'r Gymraeg yn eich busnes. Os yw'r data yn y mynegai yn hollol anghywir, yna gallwn ei gywiro"
+formSubmitted, "Submitted", Cyflwynwyd
+formSubmit, "Submit", Cyflwyno
+formClear, "Clear", Clirio
+formClearToDrop, "Clear the form to drop a pin", Cliriwch y ffurflen i ollwng pin
+formDragPin, "Drag the pin...", Llusgwch y pin ...
+formName, "Name of premises", Enw'r adeilad
+formAddress, "Address of premises", Cyfeiriad yr adeilad
+formPostcode, "Postcode of premises", Cod post yr adeilad
+formCoordinates, "Coordinates", Cyfesurynnau
+formCategory, "Category", Categori
+errorMissingName, "A name is required", Mae angen enw
+errorMissingAddress, "An address is required to identify the premises", Mae angen cyfeiriad i adnabod yr adeilad
+errorMissingCategory, "A category is required to help others know what to expect", Mae angen categori i helpu eraill i wybod beth i'w ddisgwyl
+errorInvalidPostcode, "If a postcode is supplied it must be valid, or just use the coordinates", "Os cyflenwir cod post rhaid iddo fod yn ddilys, neu ddefnyddio'r cyfesurynnau yn unig"
+errorInvalidCoordinates, "Coordinates can be set by moving the pin on the map and are required", Gellir gosod cyfesurynnau trwy symud y pin ar y map ac mae eu hangen
+errorInvalidCategory, "The category has to be set", Rhaid gosod y categori
+errorCoordinatesMismatch, "It has not been possible to verify the supplied coordinates, please try again", "Ni fu'n bosibl gwirio'r cyfesurynnau a gyflenwir, ceisiwch eto"

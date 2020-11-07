@@ -43,8 +43,7 @@ class Submit extends React.Component {
 
                         <div className="col-md-6">
 
-                            <LocatorMap />
-                            {/* <LocatorSearchBar /> */}
+                            <LocatorMap text={content}/>
 
                         </div>
 
