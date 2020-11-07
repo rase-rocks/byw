@@ -41,7 +41,7 @@ class LocationFolderController extends React.Component {
                     <td>
                         {location.name}<br />
                         <small>
-                            {formattedDescription(location.category)}, {formattedPercentage(location.category)}
+                            {formattedDescription(location.category, text)}, {formattedPercentage(location.category)}
                         </small>
                         <button className="search-result-submit-btn"
                             onClick={this.makeOnReview(location, onReview)}>{categorise}</button>

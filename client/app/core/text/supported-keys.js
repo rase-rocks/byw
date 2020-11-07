@@ -124,5 +124,8 @@ export default {
     errorInvalidPostcode: "errorInvalidPostcode", 
     errorInvalidCoordinates: "errorInvalidCoordinates", 
     errorInvalidCategory: "errorInvalidCategory", 
-    errorCoordinatesMismatch: "errorCoordinatesMismatch"
+    errorCoordinatesMismatch: "errorCoordinatesMismatch", 
+    privacyType: "privacyType", 
+    privacyLink: "privacyLink", 
+    privacySHA256: "privacySHA256"
 };

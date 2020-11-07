@@ -87,8 +87,7 @@ class About extends React.Component {
                                     rel="noopener noreferrer">{p7b}</a>
                                 &nbsp;
                                 {p7c}
-                                &nbsp;
-                                GitHub.
+                                &nbsp;GitHub.
                             </p>
                         </div>
                         <div className="col-md-6">

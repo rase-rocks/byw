@@ -117,3 +117,6 @@ errorInvalidPostcode, "If a postcode is supplied it must be valid, or just use t
 errorInvalidCoordinates, "Coordinates can be set by moving the pin on the map and are required",
 errorInvalidCategory, "The category has to be set",
 errorCoordinatesMismatch, "It has not been possible to verify the supplied coordinates, please try again",
+privacyType, "Type",
+privacyLink, "Download link",
+privacySHA256, "SHA256 Hash",

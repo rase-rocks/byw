@@ -78,7 +78,7 @@ export default {
         "vocabEnglish": "Saesneg",
         "vocabCymraeg": "Cymraeg",
         "vocabNotes": "Nodiadau",
-        "aboutTitle": "Amdanom",
+        "aboutTitle": "Amdanom ni",
         "aboutSub1": "Beth all",
         "aboutSub2": "wneud?",
         "aboutP1": "Mae Byw.cymru yn adnodd Cymraeg sy'n cael ei yrru gan y gymuned, o ffynonellau torf. Ei brif nod yw helpu dysgwyr ac eraill sydd â diddordeb yn yr iaith i ddod o hyd i leoedd lle gallant glywed a defnyddio'r iaith",
@@ -127,7 +127,10 @@ export default {
         "errorInvalidPostcode": "Os cyflenwir cod post rhaid iddo fod yn ddilys, neu ddefnyddio'r cyfesurynnau yn unig",
         "errorInvalidCoordinates": "Gellir gosod cyfesurynnau trwy symud y pin ar y map ac mae eu hangen",
         "errorInvalidCategory": "Rhaid gosod y categori",
-        "errorCoordinatesMismatch": "Ni fu'n bosibl gwirio'r cyfesurynnau a gyflenwir, ceisiwch eto"
+        "errorCoordinatesMismatch": "Ni fu'n bosibl gwirio'r cyfesurynnau a gyflenwir, ceisiwch eto",
+        "privacyType": "Math",
+        "privacyLink": "Dolen lawrlwytho",
+        "privacySHA256": "Stwnsh SHA256"
     },
     "english": {
         "pageTitleKeyHome": "Home",
@@ -247,6 +250,9 @@ export default {
         "errorInvalidPostcode": "If a postcode is supplied it must be valid, or just use the coordinates",
         "errorInvalidCoordinates": "Coordinates can be set by moving the pin on the map and are required",
         "errorInvalidCategory": "The category has to be set",
-        "errorCoordinatesMismatch": "It has not been possible to verify the supplied coordinates, please try again"
+        "errorCoordinatesMismatch": "It has not been possible to verify the supplied coordinates, please try again",
+        "privacyType": "Type",
+        "privacyLink": "Download link",
+        "privacySHA256": "SHA256 Hash"
     }
 };

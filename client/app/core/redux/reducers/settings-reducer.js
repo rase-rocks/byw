@@ -2,7 +2,7 @@ import { types } from "../actions";
 import languages from "../../text/supported-languages";
 
 const defaultState = {
-    language: languages.cymraeg,
+    language: languages.english,
 };
 
 const settingsReducer = function (state = defaultState, action) {

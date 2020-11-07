@@ -67,7 +67,7 @@ vocabResultsFound, "phrases and words found", ymadroddion a geiriau a ddarganfuw
 vocabEnglish, "English", Saesneg
 vocabCymraeg, "Cymraeg", Cymraeg
 vocabNotes, "Notes", Nodiadau
-aboutTitle, "About", Amdanom
+aboutTitle, "About", Amdanom ni
 aboutSub1, "What can", Beth all
 aboutSub2, "do?", wneud?
 aboutP1, "Byw.cymru is a community driven, crowd sourced, Welsh language resource. Its primary aim is to help learners and others who are interested in the language find places where they can hear and use the language", "Mae Byw.cymru yn adnodd Cymraeg sy'n cael ei yrru gan y gymuned, o ffynonellau torf. Ei brif nod yw helpu dysgwyr ac eraill sydd â diddordeb yn yr iaith i ddod o hyd i leoedd lle gallant glywed a defnyddio'r iaith"
@@ -117,3 +117,6 @@ errorInvalidPostcode, "If a postcode is supplied it must be valid, or just use t
 errorInvalidCoordinates, "Coordinates can be set by moving the pin on the map and are required", Gellir gosod cyfesurynnau trwy symud y pin ar y map ac mae eu hangen
 errorInvalidCategory, "The category has to be set", Rhaid gosod y categori
 errorCoordinatesMismatch, "It has not been possible to verify the supplied coordinates, please try again", "Ni fu'n bosibl gwirio'r cyfesurynnau a gyflenwir, ceisiwch eto"
+privacyType, "Type", Math
+privacyLink, "Download link", Dolen lawrlwytho
+privacySHA256, "SHA256 Hash", Stwnsh SHA256
