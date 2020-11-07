@@ -12,11 +12,11 @@ import HowTo from "./how-to";
 import Submissions from "./submissions";
 
 import text from "../../core/text/data";
-import supportedKeys from "../../core/text/supported-keys";
+import k from "../../core/text/supported-keys";
 
 export function getText(t) {
     return {
-        title: t[supportedKeys.submitTitle]
+        title: t[k.submitTitle]
     };
 }
 
@@ -35,9 +35,7 @@ class Submit extends React.Component {
 
                 <div className="container">
 
-                    <PageHeader>
-                        {title}
-                    </PageHeader>
+                    <PageHeader>{title}</PageHeader>
 
                     <div className="row submit-main-content">
 

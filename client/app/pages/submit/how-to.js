@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import { strHash } from "../../core/hash";
 
 import SubmitHeading from "./submit-heading";
-import supportedKeys from "../../core/text/supported-keys";
-
-const k = supportedKeys;
+import k from "../../core/text/supported-keys";
 
 class Space extends React.Component {
     render() {
@@ -19,13 +17,13 @@ function li(value) {
 
 export function getText(t) {
     return {
-        title:      t[k.howToTitle],    find:   t[k.howToFind],
-        ol1a:       t[k.howToOL1a],     ol1b:   t[k.howToOL1b],
-        ol1c:       t[k.howToOL1c],     submit: t[k.howToSubmit],
-        ol2a:       t[k.howToOL2a],     ol2b:   t[k.howToOL2b],
+        title:      t[k.howToTitle],    find:       t[k.howToFind],
+        ol1a:       t[k.howToOL1a],     ol1b:       t[k.howToOL1b],
+        ol1c:       t[k.howToOL1c],     submit:     t[k.howToSubmit],
+        ol2a:       t[k.howToOL2a],     ol2b:       t[k.howToOL2b],
         ol2c:       t[k.howToOL2c],     inaccurate: t[k.howToInaccurate],
-        p1:         t[k.howToP1],       p2: t[k.howToP2]
-    }
+        p1:         t[k.howToP1],       p2:         t[k.howToP2]
+    };
 }
 
 class HowTo extends React.Component {
@@ -71,6 +69,6 @@ class HowTo extends React.Component {
 
 HowTo.propTypes = {
     text: PropTypes.object.isRequired
-}
+};
 
 export default HowTo;

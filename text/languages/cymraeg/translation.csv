@@ -26,10 +26,11 @@ category4, "Highly likely", Hynod debygol
 category5, "Definitely", Yn bendant
 show, "Show", Gweld
 categorise, "Categorise", Categoreiddio
+notFoundTitle, "404 Not Found", Heb ei Ddarganfod
 homeCrowdSourced, "Crowd sourced", Torf o ffynonellau
 homeWelsh, "Welsh", Cymraeg
 homeLanguageResource, "language resource", adnodd iaith
-homeLets, "Let's", gadewch i ni
+homeLets, "Let's", Gadewch i ni
 homeFind, "find", ffeindio
 homeSomewhere, "somewhere", rhywle
 homeHeroTitle, "Find out where to use and hear the language", Darganfyddwch ble i ddefnyddio a chlywed yr iaith

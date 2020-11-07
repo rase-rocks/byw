@@ -1,17 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import supportedKeys from "../../core/text/supported-keys";
-const k = supportedKeys;
+import k from "../../core/text/supported-keys";
 
 export function getText(t) {
     return {
-        title: t[k.aboutTitle], sub1: t[k.aboutSub1], sub2: t[k.aboutSub2],
-        p1: t[k.aboutP1], p2a: t[k.aboutP2a], openSource: t[k.aboutOpenSource],
-        p2b: t[k.aboutP2b], p3: t[k.aboutP3], p4: t[k.aboutP4],
-        contributing: t[k.aboutContributing], p5: t[k.aboutP5], p6: t[k.aboutP6],
-        p7a: t[k.aboutP7a], p7b: t[k.aboutP7b], p7c: t[k.aboutP7c],
-        p8: t[k.aboutP8], p9: t[k.aboutP9]
+        title:          t[k.aboutTitle],        sub1: t[k.aboutSub1],   sub2: t[k.aboutSub2],
+        p1:             t[k.aboutP1],           p2a: t[k.aboutP2a],     openSource: t[k.aboutOpenSource],
+        p2b:            t[k.aboutP2b],          p3: t[k.aboutP3],       p4: t[k.aboutP4],
+        contributing:   t[k.aboutContributing], p5: t[k.aboutP5],       p6: t[k.aboutP6],
+        p7a:            t[k.aboutP7a],          p7b: t[k.aboutP7b],     p7c: t[k.aboutP7c],
+        p8:             t[k.aboutP8],           p9: t[k.aboutP9]
     };
 }
 
@@ -22,12 +21,12 @@ class About extends React.Component {
         const { text } = this.props;
 
         const {
-            title, sub1, sub2,
-            p1, p2a, openSource,
-            p2b, p3, p4,
-            contributing, p5, p6,
-            p7a, p7b, p7c,
-            p8, p9
+            title,          sub1,   sub2,
+            p1,             p2a,    openSource,
+            p2b,            p3,     p4,
+            contributing,   p5,     p6,
+            p7a,            p7b,    p7c,
+            p8,             p9
         } = getText(text);
 
         return (

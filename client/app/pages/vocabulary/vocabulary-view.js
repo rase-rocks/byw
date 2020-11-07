@@ -5,7 +5,7 @@ import PageContainer from "../../page-content";
 import PageHeader from "../../resusable-components/page-header";
 import VocabSearch from "./vocab-search";
 
-import supportedKeys from "../../core/text/supported-keys";
+import k from "../../core/text/supported-keys";
 
 function lines(units) {
     return units.map(function (unit) {
@@ -36,17 +36,17 @@ function clickableTags(tags, onClickTag) {
     });
 }
 
-export function getText(text) {
+export function getText(t) {
     return {
-        title: text[supportedKeys.vocabTitle],
-        beta: text[supportedKeys.vocabBeta],
-        p1: text[supportedKeys.vocabP1],
-        p2: text[supportedKeys.vocabP2],
-        p3: text[supportedKeys.vocabP3],
-        resultsFound: text[supportedKeys.vocabResultsFound],
-        english: text[supportedKeys.vocabEnglish],
-        cymraeg: text[supportedKeys.vocabCymraeg],
-        notes: text[supportedKeys.vocabNotes]
+        title:          t[k.vocabTitle],
+        beta:           t[k.vocabBeta],
+        p1:             t[k.vocabP1],
+        p2:             t[k.vocabP2],
+        p3:             t[k.vocabP3],
+        resultsFound:   t[k.vocabResultsFound],
+        english:        t[k.vocabEnglish],
+        cymraeg:        t[k.vocabCymraeg],
+        notes:          t[k.vocabNotes]
     };
 }
 
@@ -55,25 +55,18 @@ class VocabularyView extends React.Component {
     render() {
 
         const {
-            text,
-            onChange,
-            onClickTag,
-            units,
-            tags,
-            searchText,
+            text,       onChange,
+            onClickTag, units,
+            tags,       searchText,
             currentTranslationUnitsCount,
             targetTranslationUnitsCount
         } = this.props;
 
         const {
-            title,
-            beta,
-            p1,
-            p2,
-            p3,
-            resultsFound,
-            english,
-            cymraeg,
+            title,      beta,
+            p1,         p2,
+            p3,         resultsFound,
+            english,    cymraeg,
             notes
         } = getText(text);
 

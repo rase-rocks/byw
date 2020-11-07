@@ -1,10 +1,10 @@
 import text from "../../../core/text/data";
-import supportedKeys from "../../../core/text/supported-keys";
+import k from "../../../core/text/supported-keys";
 
 export function getText(t) {
     return {
-        show: t[supportedKeys.show],
-        categorise: t[supportedKeys.categorise]
+        show:       t[k.show],
+        categorise: t[k.categorise]
     };
 }
 

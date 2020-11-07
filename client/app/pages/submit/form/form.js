@@ -7,8 +7,7 @@ import Error from "./error";
 import eventTargetValue from "../../../core/event-target-value";
 import capitalizeFirstLetter from "../../../core/model/string-capitalize-first-letter";
 
-import supportedKeys from "../../../core/text/supported-keys";
-const k = supportedKeys;
+import k from "../../../core/text/supported-keys";
 
 const SUBMIT_BUTTON_CLASSNAME = "btn btn-primary mb-2 submit-form-button";
 const CLEAR_BUTTON_CLASSNAME = "btn mb-2 submit-clear-button";

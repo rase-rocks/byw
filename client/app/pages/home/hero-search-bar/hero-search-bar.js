@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import supportedKeys from "../../../core/text/supported-keys";
+import k from "../../../core/text/supported-keys";
 
-function getText(text) {
+export function getText(t) {
     return {
-        search: text[supportedKeys.homeSearch],
-        placeholder: text[supportedKeys.homeSearchPlaceholder],
-        searchResults: text[supportedKeys.homeSearchResults],
-        locationPlaceholder: text[supportedKeys.homeLocationPlaceholder]
+        search:                 t[k.homeSearch],
+        placeholder:            t[k.homeSearchPlaceholder],
+        searchResults:          t[k.homeSearchResults],
+        locationPlaceholder:    t[k.homeLocationPlaceholder]
     };
 }
 

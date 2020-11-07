@@ -4,7 +4,13 @@ import PropTypes from "prop-types";
 import { random } from "../../resusable-components/quote/quotes";
 import colors from "../../core/colors";
 import FetchableSectionBackground from "../../resusable-components/FetchableSectionBackground";
-import supportedKeys from "../../core/text/supported-keys";
+import k from "../../core/text/supported-keys";
+
+export function getText(t) {
+    return {
+        title: t[k.homeThoughtOfTheDay]
+    };
+}
 
 class PromotionDivider extends React.Component {
 
@@ -20,7 +26,7 @@ class PromotionDivider extends React.Component {
         const { quote } = this.state;
         const { text } = this.props;
 
-        const title = text[supportedKeys.homeThoughtOfTheDay];
+        const { title } = getText(text);
 
         return (
             <FetchableSectionBackground

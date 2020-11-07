@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import supportedKeys from "../../../../core/text/supported-keys";
+import k from "../../../../core/text/supported-keys";
 import { descriptions } from "../../../../core/model/form/category";
 import { strHash } from "../../../../core/hash";
 import LegendItem from "./legend-item";
@@ -16,10 +16,10 @@ const toItem = function (description) {
     return (<LegendItem key={strHash(description.title)} category={description} />);
 };
 
-export function getText(text) {
+export function getText(t) {
     return {
-        title: text[supportedKeys.mapLegendTitle],
-        subheading: text[supportedKeys.mapLegendSubheading]
+        title:          t[k.mapLegendTitle],
+        subheading:     t[k.mapLegendSubheading]
     };
 }
 

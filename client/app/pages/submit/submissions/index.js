@@ -2,9 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import Submission from "./submission";
-import supportedKeys from "../../../core/text/supported-keys";
-
-const k = supportedKeys;
+import k from "../../../core/text/supported-keys";
 
 const key = function (submission) {
     return `submission-display-${submission.coordinateHash}`;
@@ -12,9 +10,9 @@ const key = function (submission) {
 
 export function getText(t) {
     return {
-        name: t[k.submitName],
-        category: t[k.submitCategory],
-        status: t[k.submitStatus]
+        name:       t[k.submitName],
+        category:   t[k.submitCategory],
+        status:     t[k.submitStatus]
     };
 }
 

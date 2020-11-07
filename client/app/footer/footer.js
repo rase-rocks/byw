@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import FooterLink from "./footer-link";
 import hash from "../core/hash";
 import GitHubIcon from "../resusable-components/github-icon";
-import supportedKeys from "../core/text/supported-keys";
+import k from "../core/text/supported-keys";
 
 function links(routes) {
     return routes.map(route => (<FooterLink key={hash(route)} 
@@ -13,14 +13,14 @@ function links(routes) {
         title={route.translatedTitle} />));
 }
 
-export function getText(text) {
+export function getText(t) {
     return {
-        test404: text[supportedKeys.footerTest404],
-        contributing: text[supportedKeys.footerContributing],
-        p1: text[supportedKeys.footerP1],
-        p2: text[supportedKeys.footerP2],
-        usefulLinks: text[supportedKeys.footerUsefulLinks],
-        visitOn: text[supportedKeys.footerVisitOn]
+        test404:        t[k.footerTest404],
+        contributing:   t[k.footerContributing],
+        p1:             t[k.footerP1],
+        p2:             t[k.footerP2],
+        usefulLinks:    t[k.footerUsefulLinks],
+        visitOn:        t[k.footerVisitOn]
     };
 }
 

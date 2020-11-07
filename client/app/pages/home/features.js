@@ -1,21 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { strHash } from "../../core/hash";
-import supportedKeys from "../../core/text/supported-keys";
+import k from "../../core/text/supported-keys";
 
 const featuresData = [
     {
-        key: supportedKeys.homeSearch,
+        key: k.homeSearch,
         icon: "SearchIcon.svg",
         divSize: "col-sm-4"
     },
     {
-        key: supportedKeys.homeApi,
+        key: k.homeApi,
         icon: "CodeIcon.svg",
         divSize: "col-sm-4"
     },
     {
-        key: supportedKeys.homeMap,
+        key: k.homeMap,
         icon: "MapIcon.svg",
         divSize: "col-sm-4"
     }

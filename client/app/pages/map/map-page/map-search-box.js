@@ -4,14 +4,14 @@ import React from "react";
 import LocationFolder from "../location-folder";
 import SearchResultPaginator from "../pagination/search-results-paginator";
 
-import supportedKeys from "../../../core/text/supported-keys";
+import k from "../../../core/text/supported-keys";
 
-export function getText(text) {
+export function getText(t) {
     return {
-        result: text[supportedKeys.mapResult],
-        results: text[supportedKeys.mapResults],
-        pages: text[supportedKeys.mapPages],
-        placeholder: text[supportedKeys.mapSearchPlaceholder]
+        result:         t[k.mapResult],
+        results:        t[k.mapResults],
+        pages:          t[k.mapPages],
+        placeholder:    t[k.mapSearchPlaceholder]
     };
 }
 

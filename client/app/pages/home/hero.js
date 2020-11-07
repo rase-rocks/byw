@@ -4,17 +4,17 @@ import PropTypes from "prop-types";
 import FetchableSectionBackground from "../../resusable-components/FetchableSectionBackground";
 import colors from "../../core/colors";
 import HeroSearchBar from "./hero-search-bar";
-import supportedKeys from "../../core/text/supported-keys";
+import k from "../../core/text/supported-keys";
 
-export function getText(text) {
+export function getText(t) {
     return {
-        crowdSourced: text[supportedKeys.homeCrowdSourced],
-        welsh: text[supportedKeys.homeWelsh],
-        languageResource: text[supportedKeys.homeLanguageResource],
-        lets: text[supportedKeys.homeLets],
-        find: text[supportedKeys.homeFind],
-        somewhere: text[supportedKeys.homeSomewhere],
-        title: text[supportedKeys.homeHeroTitle]
+        crowdSourced:       t[k.homeCrowdSourced],
+        welsh:              t[k.homeWelsh],
+        languageResource:   t[k.homeLanguageResource],
+        lets:               t[k.homeLets],
+        find:               t[k.homeFind],
+        somewhere:          t[k.homeSomewhere],
+        title:              t[k.homeHeroTitle]
     };
 }
 

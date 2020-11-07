@@ -4,12 +4,12 @@ import React from "react";
 import { formattedDescription, formattedPercentage } from "../../../core/model/form/category";
 import hash from "../../../core/hash";
 
-import supportedKeys from "../../../core/text/supported-keys";
+import k from "../../../core/text/supported-keys";
 
-function getText(text) {
+export function getText(t) {
     return {
-        categorise: text[supportedKeys.categorise],
-        show: text[supportedKeys.show]
+        categorise: t[k.categorise],
+        show:       t[k.show]
     };
 }
 

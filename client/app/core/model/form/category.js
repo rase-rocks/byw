@@ -1,6 +1,6 @@
 import clamp from "../clamp";
 import supportedLanguages from "../../text/supported-languages";
-import supportedKeys from "../../text/supported-keys";
+import k from "../../text/supported-keys";
 
 import text from "../../text/data";
 
@@ -8,7 +8,7 @@ const {
     category0,  category1,
     category2,  category3,
     category4,  category5
-} = supportedKeys;
+} = k;
 
 export const descriptions = [
     { color: "rgb(255,228,196)", titleKey: category0 },

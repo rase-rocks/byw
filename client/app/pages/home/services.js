@@ -3,24 +3,24 @@ import PropTypes from "prop-types";
 
 import Col from "../../resusable-components/services-col";
 import { strHash } from "../../core/hash";
-import supportedKeys from "../../core/text/supported-keys";
+import k from "../../core/text/supported-keys";
 
 const data = [
     {
-        titleKey: supportedKeys.homeServices1Title,
-        descriptionKey: supportedKeys.homeServices1Desc,
+        titleKey: k.homeServices1Title,
+        descriptionKey: k.homeServices1Desc,
         url: "assets/images/LocateIcon.svg",
         alt: "Locate Places Icon"
     },
     {
-        titleKey: supportedKeys.homeServices2Title,
-        descriptionKey: supportedKeys.homeServices2Desc,
+        titleKey: k.homeServices2Title,
+        descriptionKey: k.homeServices2Desc,
         url: "assets/images/CommentIcon.svg",
         alt: "Speaking Icon"
     },
     {
-        titleKey: supportedKeys.homeServices3Title,
-        descriptionKey: supportedKeys.homeServices3Desc,
+        titleKey: k.homeServices3Title,
+        descriptionKey: k.homeServices3Desc,
         url: "assets/images/SuitcaseIcon.svg",
         alt: "Days out Icon"
     }
@@ -32,11 +32,11 @@ function services(text) {
         .map(d => (<Col key={strHash(d.titleKey)} {...d} />));
 }
 
-function getText(text) {
+export function getText(t) {
     return {
-        title: text[supportedKeys.homeServicesSectionTitle],
-        title1: text[supportedKeys.homeServicesSectionTitle1],
-        title2: text[supportedKeys.homeServicesSectionTitle2]
+        title: t[k.homeServicesSectionTitle],
+        title1: t[k.homeServicesSectionTitle1],
+        title2: t[k.homeServicesSectionTitle2]
     };
 }
 
