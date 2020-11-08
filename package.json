@@ -17,7 +17,7 @@
     "build": "sh ./build-settings/build-complete.sh",
     "convert-csv": "babel-node --presets es2015 ./existing-data/index.js",
     "make-pdf": "node ./node_modules/chrome-headless-render-pdf/dist/cli/chrome-headless-render-pdf.js --include-background --landscape --url=http://localhost:8080 --pdf ~/Downloads/site.pdf",
-    "test": "npm run make-text && mocha --require babel-register"
+    "test": "mocha --require babel-register"
   },
   "repository": {
     "type": "git",
