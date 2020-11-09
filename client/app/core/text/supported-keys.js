@@ -50,6 +50,8 @@ export default {
     homeMore: "homeMore", 
     homeApi: "homeApi", 
     homeMap: "homeMap", 
+    homeLanguages: "homeLanguages", 
+    homeLanguageChoose: "homeLanguageChoose", 
     homeServicesSectionTitle: "homeServicesSectionTitle", 
     homeServicesSectionTitle1: "homeServicesSectionTitle1", 
     homeServicesSectionTitle2: "homeServicesSectionTitle2", 

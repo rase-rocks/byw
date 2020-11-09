@@ -1,0 +1,10 @@
+.language-button-row {
+    display: table;
+    margin: 0 auto;
+}
+
+.language-button-row button {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

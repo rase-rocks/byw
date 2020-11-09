@@ -180,7 +180,7 @@ The `cymraeg` language folder includes an `index.js` which simply imports and th
 
 A `translation-template.csv` file is included that can be copied and used as a starting point for translations as it will contain all the required keys to be translated. Again this file is created automatically so should not be edited as changes will be lost. It contains the key used by the app to find the relevant piece of text content and a hint to the translator in the form of the English version to be translated.
 
-After adding a translation, be sure to run `npm test` as this will check that the translation is suitable for inclusion and report any errors found.
+After adding a translation, be sure to run `npm run make-text` and then `npm test` as this will check that the translation is suitable for inclusion and report any errors found.
 
 The new translation can be made available for use in the App code by running the package scripts individually or running a normal build.
 
@@ -225,10 +225,10 @@ class ViewController extends React.Component {
     render() {
 
         const { language } = this.props;
-        const textContent = text[language];
+        const content = text[language];
 
         return (
-            <View text={textContent} />
+            <View text={content} />
         );
 
     }

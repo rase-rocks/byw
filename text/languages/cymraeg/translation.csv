@@ -42,6 +42,8 @@ homeAnd, "and", a
 homeMore, "more", mwy
 homeApi, "API", API
 homeMap, "Map", Map
+homeLanguages, "Languages", Ieithoedd
+homeLanguageChoose, "Choose your preferred language", Dewiswch eich dewis iaith
 homeServicesSectionTitle, "Our Services", Ein Gwasanaethau
 homeServicesSectionTitle1, "What does", Beth mae'n
 homeServicesSectionTitle2, "do for me?", wneud i mi

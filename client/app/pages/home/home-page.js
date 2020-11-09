@@ -5,6 +5,7 @@ import Features from "./features";
 import HomeHero from "./hero";
 import PromotionDivider from "./promotion-divider";
 import Services from "./services";
+import LanguageSelector from "./language-selector";
 
 class Home extends React.Component {
     render() {
@@ -17,6 +18,8 @@ class Home extends React.Component {
                 <HomeHero text={text}/>
 
                 <Features text={text}/>
+
+                <LanguageSelector />
 
                 <Services text={text}/>
 
