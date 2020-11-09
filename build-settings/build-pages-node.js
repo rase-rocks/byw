@@ -2291,7 +2291,7 @@ exports.default = {
         "homeApi": "API",
         "homeMap": "Map",
         "homeLanguages": "Languages",
-        "homeLanguageChoose": "Choose your preferred langauge",
+        "homeLanguageChoose": "Choose your preferred language",
         "homeServicesSectionTitle": "Our Services",
         "homeServicesSectionTitle1": "What does",
         "homeServicesSectionTitle2": "do for me?",
@@ -4426,6 +4426,7 @@ var Home = function (_React$Component) {
                 _react2.default.createElement(_hero2.default, { text: text }),
                 _react2.default.createElement(_features2.default, { text: text }),
                 _react2.default.createElement(_languageSelector2.default, null),
+                _react2.default.createElement("hr", null),
                 _react2.default.createElement(_services2.default, { text: text }),
                 _react2.default.createElement(_promotionDivider2.default, { text: text })
             );
@@ -6422,13 +6423,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var element = function element(type, className) {
     var el = document.createElement(type);
-    el.setAttribute("class", className);
+    if (className && className !== "") el.setAttribute("class", className);
     return el;
 };
 
 var row = function row(text) {
-    var r = document.createElement("tr");
-    var td = document.createElement("td");
+    var r = element("tr");
+    var td = element("td");
     var txt = document.createTextNode(text);
     r.appendChild(td);
     td.appendChild(txt);
@@ -6440,13 +6441,13 @@ var makeTableContainer = function makeTableContainer() {
     return tbl;
 };
 
-var makeTable = function makeTable(name, address, category) {
+var makeTable = function makeTable(name, address, category, buttonsRow) {
     var table = makeTableContainer();
-    var body = document.createElement("tbody");
+    var body = element("tbody");
 
     table.appendChild(body);
 
-    [row(name), row(address), row((0, _category.formattedDescription)(category))].forEach(function (rw) {
+    [row(name), row(address), row((0, _category.formattedDescription)(category)), buttonsRow].forEach(function (rw) {
         return body.appendChild(rw);
     });
 
@@ -6461,37 +6462,31 @@ var button = function button(label, handler) {
     return btn;
 };
 
-var appendWrappedBtn = function appendWrappedBtn(container, label, handler) {
-    var btn = button(label, handler);
-    var col = element("div", "col-md-6 text-center");
-    col.appendChild(btn);
-    container.appendChild(col);
-    return col;
-};
-
 var buttons = function buttons(location, onShow, onReview, showLabelText, categoriseLabelText) {
-    var wrapper = element("div", "row");
+    var row = element("tr");
+    var td = element("td", "popup-button-td");
+
+    row.appendChild(td);
 
     if (onShow) {
-        appendWrappedBtn(wrapper, showLabelText, onShow(location));
+        td.appendChild(button(showLabelText, onShow(location)));
     }
 
     if (onReview) {
         var handler = function handler() {
             return onReview(location);
         };
-        appendWrappedBtn(wrapper, categoriseLabelText, handler);
+        td.appendChild(button(categoriseLabelText, handler));
     }
 
-    return wrapper;
+    return row;
 };
 
 var popupContainer = function popupContainer(location, onShow, onReview, showLabelText, categoriseLabelText) {
-    var container = document.createElement("div");
-    var table = makeTable(location.name, location.address, location.category);
+    var container = element("div");
+    var table = makeTable(location.name, location.address, location.category, buttons(location, onShow, onReview, showLabelText, categoriseLabelText));
 
     container.appendChild(table);
-    container.appendChild(buttons(location, onShow, onReview, showLabelText, categoriseLabelText));
 
     return container;
 };

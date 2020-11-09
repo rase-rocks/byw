@@ -60,6 +60,7 @@ class LanguageSelector extends React.Component {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </section>
         );

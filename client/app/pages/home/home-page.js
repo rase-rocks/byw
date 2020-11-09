@@ -21,6 +21,8 @@ class Home extends React.Component {
 
                 <LanguageSelector />
 
+                <hr />
+
                 <Services text={text}/>
 
                 <PromotionDivider text={text} />
