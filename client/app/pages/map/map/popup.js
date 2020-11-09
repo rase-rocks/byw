@@ -3,13 +3,13 @@ import { formattedDescription } from "../../../core/model/form/category";
 
 const element = function (type, className) {
     const el = document.createElement(type);
-    el.setAttribute("class", className);
+    if (className && className !== "") el.setAttribute("class", className);
     return el;
 };
 
 const row = function (text) {
-    const r = document.createElement("tr");
-    const td = document.createElement("td");
+    const r = element("tr");
+    const td = element("td");
     const txt = document.createTextNode(text);
     r.appendChild(td);
     td.appendChild(txt);
@@ -21,16 +21,17 @@ const makeTableContainer = function () {
     return tbl;
 };
 
-const makeTable = function (name, address, category) {
+const makeTable = function (name, address, category, buttonsRow) {
     const table = makeTableContainer();
-    const body = document.createElement("tbody");
+    const body = element("tbody");
 
     table.appendChild(body);
 
     [
         row(name),
         row(address),
-        row(formattedDescription(category))
+        row(formattedDescription(category)),
+        buttonsRow
     ].forEach(rw => body.appendChild(rw));
 
     return table;
@@ -44,35 +45,36 @@ const button = function (label, handler) {
     return btn;
 };
 
-const appendWrappedBtn = function (container, label, handler) {
-    const btn = button(label, handler);
-    const col = element("div", "col-md-6 text-center");
-    col.appendChild(btn);
-    container.appendChild(col);
-    return col;
-};
-
 const buttons = function (location, onShow, onReview, showLabelText, categoriseLabelText) {
-    const wrapper = element("div", "row");
+    const row = element("tr");
+    const td = element("td", "popup-button-td");
+
+    row.appendChild(td);
 
     if (onShow) {
-        appendWrappedBtn(wrapper, showLabelText, onShow(location));
+        td.appendChild(button(showLabelText, onShow(location)));
     }
 
     if (onReview) {
         const handler = () => onReview(location);
-        appendWrappedBtn(wrapper, categoriseLabelText, handler);
+        td.appendChild(button(categoriseLabelText, handler));
     }
 
-    return wrapper;
+    return row;
 };
 
 const popupContainer = function (location, onShow, onReview, showLabelText, categoriseLabelText) {
-    const container = document.createElement("div");
-    const table = makeTable(location.name, location.address, location.category);
+    const container = element("div");
+    const table = makeTable(location.name, 
+        location.address, 
+        location.category,
+        buttons(location, 
+            onShow, 
+            onReview, 
+            showLabelText, 
+            categoriseLabelText));
     
     container.appendChild(table);
-    container.appendChild(buttons(location, onShow, onReview, showLabelText, categoriseLabelText));
     
     return container;
 };

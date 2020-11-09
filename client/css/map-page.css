@@ -36,6 +36,8 @@
     color: white;
     border-radius: 5px;
     border: none;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .search-result-submit-btn {
@@ -50,4 +52,9 @@
     border: 1px solid #4dcb44;
     border-radius: 5px;
     font-size: 0.7rem;
+}
+
+.popup-button-td {
+    display: flex;
+    justify-content: space-around;
 }
