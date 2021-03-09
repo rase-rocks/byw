@@ -14,6 +14,12 @@ To build run:
 
 ### Issues
 
+#### Issue-18 - 09/03/21 - Update Privacy Policy
+
+GitHub Issue #18 referes
+
+The current privacy policy requires a slight alteration to match current contact details.
+
 #### Issue-02 - 02/11/20 - Implement UI Content Language Translatable
 
 GitHub Issue #16 refers
