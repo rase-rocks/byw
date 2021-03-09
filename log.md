@@ -16,7 +16,7 @@ To build run:
 
 #### Issue-18 - 09/03/21 - Update Privacy Policy
 
-GitHub Issue #18 referes
+GitHub Issue #18 refers
 
 The current privacy policy requires a slight alteration to match current contact details.
 

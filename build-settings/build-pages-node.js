@@ -6949,12 +6949,12 @@ var files = [{
     fileType: "PDF",
     url: "assets/downloads/Privacy.pdf",
     filename: "Privacy.pdf",
-    hash: "e4601e98a76a93980fba7d94bb49554799df487066641fa98bcb1f7c1120a05f"
+    hash: "8fd3de2f919038ceab4cf51b1cc310eda9744e3dd2618454b4d10b58b3434226"
 }, {
     fileType: "Markdown",
     url: "assets/downloads/Privacy.md",
     filename: "Privacy.md",
-    hash: "7d02ef99fc379acfbb2b1849b6378f44509069eb34acc9e1616cca6b2463965f"
+    hash: "9ed5655625b7ca2e7e4b9a1f9e8bb14b45f7275c4066c17278eee05f02a8b1c4"
 }];
 
 var fileComponents = files.map(function (meta) {
@@ -6994,7 +6994,7 @@ var Privacy = function (_React$Component) {
                                 _react2.default.createElement(
                                     "h2",
                                     null,
-                                    "Privacy Notice for BYW (breatheyourwelsh.cymru)"
+                                    "Privacy Notice for BYW (byw.cymru)"
                                 ),
                                 _react2.default.createElement(
                                     "p",
@@ -7009,7 +7009,7 @@ var Privacy = function (_React$Component) {
                                 _react2.default.createElement(
                                     "p",
                                     null,
-                                    "When someone visits www.breatheyourwelsh.cymru we use a third party service, Google Visitor Analytics, to collect standard internet log information and details of visitor behaviour patterns. We do this to find out things such as the number of visitors to the various parts of the site. This information is only processed in a way which does not identify anyone. We do not make, and do not allow Google or any one else to make, any attempt to find out the identities of those visiting our website."
+                                    "This website does not use any third party user tracking system and does not use cookies. Cookies are small text files that can be stored on your system to record minor configuration settings such as language preference or last page visited etc."
                                 ),
                                 _react2.default.createElement(
                                     "h2",
@@ -7019,7 +7019,7 @@ var Privacy = function (_React$Component) {
                                 _react2.default.createElement(
                                     "p",
                                     null,
-                                    "The only personal data we are currently going to collect are the email addresses of those who have contacted us which may include your name. We will not collect any other personal information such as gender or address. We only use the information to tell you about things you\u2019ve asked us to tell you about; to contact you if we need to obtain or provide additional information or to check our records are right and to check every now and then that you\u2019re happy and satisfied. We don\u2019t rent or trade email lists with other organisations and businesses."
+                                    "The only data collected is that intentionally supplied by the user of byw.cymru. Currently this is in the form of a submission on the 'Submit' page. Only the information provided by the user is recorded. This claim can be verified by monitoring the web connections made by the browser whilst submitting a location to the index. Most modern web browsers allow for this sort of inspection of traffic."
                                 ),
                                 _react2.default.createElement(
                                     "h2",
@@ -7029,19 +7029,7 @@ var Privacy = function (_React$Component) {
                                 _react2.default.createElement(
                                     "p",
                                     null,
-                                    "We may share anonymised personal information with other organisations for the purposes of promoting the Welsh language. We will never give anyone else your details such as an email address unless you have expressly agreed to this.",
-                                    _react2.default.createElement("br", null),
-                                    "When sending a group email only your own email details will be visible, not those of others who have received the same information."
-                                ),
-                                _react2.default.createElement(
-                                    "h2",
-                                    null,
-                                    "Access to Your Personal Information"
-                                ),
-                                _react2.default.createElement(
-                                    "p",
-                                    null,
-                                    "If you want to view, amend or delete your personal data then contact Peter Allen at byw@breatheyourwelsh.cymru."
+                                    "This website does not collect any user information and therefore also does not share any information regarding to the users of this site."
                                 ),
                                 _react2.default.createElement(
                                     "h2",
@@ -7051,7 +7039,7 @@ var Privacy = function (_React$Component) {
                                 _react2.default.createElement(
                                     "p",
                                     null,
-                                    "There are no plans to increase the scope of what we do but, whenever we do, this policy will be reviewed. This version was written on the 30th June, 2018."
+                                    "There are no plans to increase the scope of what we do but, whenever we do, this policy will be reviewed. This version was written on the 9th March, 2021."
                                 )
                             )
                         ),

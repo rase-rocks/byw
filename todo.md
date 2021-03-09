@@ -65,3 +65,7 @@ just add to it~~ ✓
     give us an open source system to allow the map on the submit page to be searched via place name. Current
     thoughts are to put an api gateway in front of a rate limiting and caching system that calls out to Nominatim.
     Check the usage terms at https://operations.osmfoundation.org/policies/nominatim/
+
+### Build system
+
++ Implement build stage to keep Privacy.md policy in-sync with the `/privacy` route
