@@ -3,7 +3,11 @@ import path from "path";
 
 import translations from "./translations";
 
-function quotedHint(value) {
+export function template(csv) {
+    return `key,translatorHint,value\n${csv}`;
+}
+
+export function quotedHint(value) {
     return value.startsWith("\"") ? value : `"${value}"`;
 }
 
@@ -16,7 +20,7 @@ function makeWrite(toPath) {
             .map(key => `${key}, ${quotedHint(english[key])},`)
             .join("\n");
 
-        const fileData = `key,translatorHint,value\n${csv}`;
+        const fileData = template(csv);
 
         fs.writeFileSync(toPath, fileData, "utf8");
         

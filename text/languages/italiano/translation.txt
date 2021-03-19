@@ -1,0 +1,123 @@
+Casa
+Carta geografica
+Vocab
+Di
+Invia
+Privacy
+BYW | Casa
+BYW | Carta geografica
+BYW | Vocab
+BYW | Di
+BYW | Invia
+BYW | Privacy
+BYW | Pagina non trovata
+Prova la pagina 404
+Contribuire
+Tutti possono aiutare gli studenti a trovare posti dove andare e utilizzare il loro gallese. I tuoi contributi ci aiutano anche a monitorare quanto la lingua viene utilizzata, non solo in Galles, ma in tutto il mondo
+L'invio di una recensione è veloce e non è richiesto alcun account o accesso. Se sei a conoscenza di un luogo in cui il gallese può essere ascoltato e utilizzato, ma non è già nel nostro indice, inviarlo all'indice ne informerà gli altri
+Link utili
+Venite a trovarci su
+Altamente improbabile
+Non molto probabile
+Probabile
+Molto probabilmente
+Molto probabile
+Decisamente
+Spettacolo
+Classificare
+404 non trovato
+Folla di provenienza
+Gallese
+Risorsa linguistica
+Andiamo
+trova
+da qualche parte
+Scopri dove usare e ascolta la lingua
+Ricerca
+Che cosa stai cercando?
+risultati di ricerca
+Posizione
+e
+di più
+API
+Carta geografica
+Le lingue
+Scegli la tua lingua preferita
+I nostri servizi
+Cosa fa
+fare per me?
+Luoghi locali
+Questo sito serve semplicemente a convincere le persone a usare il loro gallese. È disponibile in un paio di lingue per aiutare gli studenti di tutte le parti del mondo a trovare luoghi da utilizzare e migliorare le loro abilità gallesi
+Madrelingua
+Tuttavia, non si tratta solo di studenti. Quelli fluenti devono anche usare il loro gallese ogni volta che possono. Il gallese ha bisogno di essere ascoltato per strada, nei negozi e ovunque ci incontriamo
+Giorni fuori
+Quindi, prima di fare acquisti, esci una giornata, o qualunque cosa ti piaccia fare, vedi se ci sarà un benvenuto in lingua gallese e, soprattutto, usa tu stesso il tuo gallese!
+Pensiero del giorno
+Risultato
+Risultati
+Pagine
+Cerca luoghi, coordinate e codici postali
+Legenda alla mappa
+Un rapido lampo di verosimiglianza di lingua gallese
+Vocabolario
+Beta
+Questa è una versione beta di un tentativo di fornire una risorsa ricercabile per detti comunemente ascoltati
+Attualmente lo ha
+parole e frasi fuori da un obiettivo di
+frasi e parole trovate
+Inglese
+Cymraeg
+Appunti
+Di
+Cosa può
+fare?
+Byw.cymru è una risorsa in lingua gallese guidata dalla comunità e raccolta in crowdsourcing. Il suo scopo principale è aiutare gli studenti e gli altri interessati alla lingua a trovare luoghi in cui possono ascoltare e usare la lingua
+L'intero progetto è
+open source
+e tutte le decisioni vengono prese all'aperto nel repository dei progetti, ospitato su
+Lo scopo del progetto è rendere la ricerca di queste informazioni il più semplice possibile, con il massimo coinvolgimento della comunità. Pertanto il design del sito web deve essere il più facile e veloce possibile da usare. Si concentra sulla pagina della mappa che è la risorsa principale per la ricerca nell'indice
+Tutto il codice che compone il sito web è disponibile nel repository dei progetti ed è visualizzabile da chiunque. Il sito Web e i dati sono ospitati utilizzando risorse donate dalla comunità. L'API fornisce l'accesso ai dati a chiunque lo desideri. Nel tempo si prevede che il numero di endpoint API aumenterà per renderlo più utile per sviluppatori e ricercatori
+Contribuire
+Il modo più rapido e semplice per contribuire al progetto è inviare una recensione. Ciò significa semplicemente aggiungere una nuova posizione all'indice o aggiornarne una esistente, se necessario
+Chiunque può farlo e non è necessario alcun login o account
+Se vengono rilevati problemi, bug rilevati o suggerimenti da fornire, controllare il file
+pagina dei problemi
+su
+Coloro che desiderano essere più coinvolti dovrebbero controllare il repository del progetto, che è ospitato su
+C'è molto lavoro da fare per rendere questo progetto uno strumento utile per gli studenti gallesi
+Invia una classificazione
+Nome
+Categoria
+Stato
+Come
+trova un posto già elencato
+I locali che hai selezionato nella pagina della mappa appariranno nella casella di invio pronti per la tua revisione della probabilità di parlare gallese
+Scegli ciò che ritieni sia migliore e premi Invia
+Se i locali che hai selezionato non sono quelli per i quali desideri inviare una recensione, trascina semplicemente il segnaposto della mappa, il modulo verrà cancellato e potrai individuare i locali che desideri inviare
+presentare una nuova sede
+Trascina il segnaposto della mappa per individuare il luogo
+Le coordinate e il codice postale verranno inseriti. Basta aggiungere il nome dei locali e l'indirizzo come vorresti che appaia nell'indice
+Seleziona la probabilità che una persona senta e sia in grado di usare il gallese nei locali. Questo non è scientifico, solo quello che pensi sia probabile
+Se l'indice appare impreciso
+La categoria (quanto è probabile che utilizzi il gallese) di un locale viene calcolata aggregando tutte le recensioni ricevute. Quindi la tua richiesta verrà presa in considerazione immediatamente, ma potrebbe o meno influenzare la valutazione attuale
+Se ritieni che la valutazione di un locale sia lontana e rimanga lontana dopo aver inviato la tua valutazione, contattaci. Se sei il titolare dell'attività, possiamo aiutarti indicandoti le risorse per aumentare l'uso del gallese nella tua attività. Se i dati nell'indice sono semplicemente sbagliati, possiamo correggerli
+Inviato
+Invia
+Chiaro
+Cancella il modulo per inserire un segnaposto
+Trascina il segnaposto...
+Nome dei locali
+Indirizzo dei locali
+Codice postale dei locali
+Coordinate
+Categoria
+È richiesto un nome
+È necessario un indirizzo per identificare i locali
+È necessaria una categoria per aiutare gli altri a sapere cosa aspettarsi
+Se viene fornito un codice postale, deve essere valido o utilizzare semplicemente le coordinate
+Le coordinate possono essere impostate spostando il segnaposto sulla mappa e sono obbligatorie
+La categoria deve essere impostata
+Non è stato possibile verificare le coordinate fornite, riprova
+Genere
+Link per scaricare
+SHA256 Hash

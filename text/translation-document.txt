@@ -1,0 +1,123 @@
+Home
+Map
+Vocab
+About
+Submit
+Privacy
+BYW | Home
+BYW | Map
+BYW | Vocab
+BYW | About
+BYW | Submit
+BYW | Privacy
+BYW | Page Not Found
+Test the 404 page
+Contributing
+Everyone can help learners find places to go and use their Welsh. Your submissions also help us to monitor how much the language is used, not just in Wales, but across the world
+Submitting a review is quick and no account or login is required. If you are aware of a place that Welsh can be heard and used, but is not already in our index, submitting it to the index will let others know
+Useful links
+Visit us on
+Highly unlikely
+Not very likely
+Likely
+Very likely
+Highly likely
+Definitely
+Show
+Categorise
+404 Not Found
+Crowd sourced
+Welsh
+language resource
+Let's
+find
+somewhere
+Find out where to use and hear the language
+Search
+What are you searching for?
+Search Results
+Location
+and
+more
+API
+Map
+Languages
+Choose your preferred language
+Our Services
+What does
+do for me?
+Local Places
+This site is simply about getting people to use their Welsh. It is available in a couple of languages to help learners from all parts of the globe to find places to use and improve their Welsh skills
+Native Speakers
+However, this is not just about learners. Those fluent need to also use their Welsh whenever they can. Welsh needs to be heard on the street, in the shops and wherever we get together
+Days out
+So, before you shop, go on a day out, or whatever you like to do, see if there will be a Welsh language welcome and, above all, use your Welsh yourself!
+Thought of the day
+Result
+Results
+Pages
+Search for places, coordinates and postcodes
+Legend to the map
+A quick glympse of Welsh speaking likeliness
+Vocabulary
+Beta
+This is a beta version of an attempt to provide a searchable resource for commonly heard sayings
+Currently it has
+words and phrases out of a target of
+phrases and words found
+English
+Cymraeg
+Notes
+About
+What can
+do?
+Byw.cymru is a community driven, crowd sourced, Welsh language resource. Its primary aim is to help learners and others who are interested in the language find places where they can hear and use the language
+The whole project is
+open source
+and all decisions are made in the open on the projects repo, hosted on
+The aim of the project is to make finding out this information as easy as possible, with the maximum of community involvement. Therefore the design of the website is to be as easy and quick to use as possible. It is focused around the map page which is the primary resource for searching the index
+All the code that makes up the website is available in the projects repo and is viewable by anybody. The website and data is hosted using community donated resources. The Api provides access to the data to anybody who wants it. Over time it is expected that the number of Api endpoints will be increased to make it more useful to developers and researchers
+Contributing
+The quickest and easiest way to contribute to the project is to submit a review. This just means adding a new place to the index or updating an existing one if necessary
+Anybody can do this and no login or account is necessary
+If there are any issues discovered, bugs found or suggestions to be made then check out the
+issues page
+on
+Those who wish to be more involved should check out the project repo, which is hosted on
+There is plenty of work to do to make this project a useful tool for Welsh learners
+Submit a categorisation
+Name
+Category
+Status
+How to
+find somewhere already listed
+The premises you selected in the map page will appear in the submit box ready for your review of Welsh speaking likelyhood
+Choose what you feel is best and hit submit
+If the premises you selected is not where you want to submit a review for then just drag the map pin, the form will be cleared, and you can locate the premises you want to submit
+submit a new premises
+Drag the map pin to locate the place
+The coordinates and postcode will be filled out. Just add the name of the premises and the address as you would like it to appear in the index
+Select how likely you feel a person is to hear and be able to use Welsh in the premises. This isn't scientific, just what you think is likely
+If the index appears inaccurate
+The category (how likely it is to use Welsh) of a premises is calculated by aggregating all the reviews received. So your submission will be taken into account straight away, but it may or may not affect the current rating
+If you feel the rating of a premises is way off and remains way off after you have submitted your rating, then please get in touch. If you are the business owner we can help by pointing you in the direction of resources to help increase the use of Welsh in your business. If the data in the index is just plain wrong then we can correct it
+Submitted
+Submit
+Clear
+Clear the form to drop a pin
+Drag the pin...
+Name of premises
+Address of premises
+Postcode of premises
+Coordinates
+Category
+A name is required
+An address is required to identify the premises
+A category is required to help others know what to expect
+If a postcode is supplied it must be valid, or just use the coordinates
+Coordinates can be set by moving the pin on the map and are required
+The category has to be set
+It has not been possible to verify the supplied coordinates, please try again
+Type
+Download link
+SHA256 Hash

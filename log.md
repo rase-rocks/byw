@@ -14,6 +14,10 @@ To build run:
 
 ### Issues
 
+#### Add Italiano
+
+Adds an auto generated Google translate version of the site for Italian.
+
 #### Issue-18 - 09/03/21 - Update Privacy Policy
 
 GitHub Issue #18 refers

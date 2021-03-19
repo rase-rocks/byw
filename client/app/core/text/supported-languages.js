@@ -5,5 +5,6 @@
 
 export default {
     cymraeg: "cymraeg", 
-    english: "english"
+    english: "english", 
+    italiano: "italiano"
 };
