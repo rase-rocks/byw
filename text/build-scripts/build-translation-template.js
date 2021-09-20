@@ -2,13 +2,10 @@ import fs from "fs";
 import path from "path";
 
 import translations from "./translations";
+import quotedHint from "./quoted-hint";
 
 export function template(csv) {
     return `key,translatorHint,value\n${csv}`;
-}
-
-export function quotedHint(value) {
-    return value.startsWith("\"") ? value : `"${value}"`;
 }
 
 function makeWrite(toPath) {
@@ -27,7 +24,7 @@ function makeWrite(toPath) {
     };
 }
 
-const filePath = path.join(__dirname, "../", "translation-template.csv"); 
+const filePath = path.join(__dirname, "../../", "translation-template.csv"); 
 
 translations()
     .then(makeWrite(filePath));

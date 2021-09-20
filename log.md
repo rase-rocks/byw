@@ -22,6 +22,10 @@ npm run serve-build
 
 ### Issues
 
+#### Issue-24 - 20/09/21 - Add Spanish language version
+
+GitHub Issue #24 refers
+
 #### Issue-19 - 20/09/21 - Fix styling issue on iOS Safari submit page
 
 GitHub Issue #19 refers

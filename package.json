@@ -15,6 +15,7 @@
     "make-text-supported-languages": "node -r esm ./text/build-scripts/build-supported-languages.js",
     "make-text-translation-template": "node -r esm ./text/build-scripts/build-translation-template.js",
     "make-italiano": "node -r esm ./text/build-scripts/build-italiano.js",
+    "make-espanol": "node -r esm ./text/build-scripts/build-español.js",
     "build-dev": "sh ./build-settings/build.sh",
     "build": "sh ./build-settings/build-complete.sh",
     "convert-csv": "babel-node --presets es2015 ./existing-data/index.js",

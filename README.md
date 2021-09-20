@@ -222,6 +222,8 @@ Alternatively you can run all the scripts to build the entire text system in one
 npm run make-text
 ```
 
+To speed up the process of creating a translation using the Google translate document system, a couple of scripts have been created. They export all the text used on the webpage into one text file that can be uploaded and translated. Then there is a script to combine those translations into the `csv` file. Check out `build-italiano.js` and `build-español.js` for examples. __Note__ to handle the relative paths of the files involved it is probably easier to create an `npm` task to handle the build. See `package.json` for examples. These scripts require an empty `.csv` to have been created in the target folder already, or they will fail with a missing csv file error.
+
 ### Using UI Text Content in React Components
 
 The newly added language will then be available for code completion in text rendering app components. These scripts add JavaScript (js) files to the `./client/app/core/text/` folder. These files can then be imported as normal using `import` in JS. As these files are overwritten every build, they should not be edited manually, as these changes will be lost. Instead, if changes are required, alter the raw translations and re-run the build script.

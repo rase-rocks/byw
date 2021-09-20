@@ -1,0 +1,123 @@
+Hogar
+Mapa
+Vocab
+Sobre
+Enviar
+Intimidad
+BYW | Hogar
+BYW | Mapa
+BYW | Vocab
+BYW | Sobre
+BYW | Enviar
+BYW | Intimidad
+BYW | Página no encontrada
+Prueba la página 404
+Contribuyendo
+Todos pueden ayudar a los alumnos a encontrar lugares adonde ir y usar su galés. Sus envíos también nos ayudan a monitorear cuánto se usa el idioma, no solo en Gales, sino en todo el mundo.
+Enviar una revisión es rápido y no se requiere una cuenta o inicio de sesión. Si tiene conocimiento de un lugar en el que se puede escuchar y usar el galés, pero aún no está en nuestro índice, enviarlo al índice se lo informará a otros.
+Enlaces útiles
+Visítanos en
+Altamente improbable
+No muy probable
+Probable
+Muy probable
+Muy probable
+Definitivamente
+Show
+Clasificar por categorías
+404 No encontrado
+Multitud de fuentes
+galés
+recurso de idioma
+Vamos
+encontrar
+algun lado
+Descubra dónde usar y escuchar el idioma
+Buscar
+¿Que estás buscando?
+Resultados de la búsqueda
+Localización
+y
+más
+API
+Mapa
+Idiomas
+Elija su idioma preferido
+Nuestros servicios
+Que hace
+¿hazlo por mi?
+Lugares locales
+Este sitio trata simplemente de hacer que la gente use su galés. Está disponible en un par de idiomas para ayudar a los estudiantes de todas partes del mundo a encontrar lugares para usar y mejorar sus habilidades en galés.
+Hablantes nativos
+Sin embargo, esto no se trata solo de estudiantes. Aquellos que lo dominan también deben usar su galés siempre que puedan. El galés necesita ser escuchado en la calle, en las tiendas y donde sea que nos reunamos
+Dias libre
+Entonces, antes de comprar, salga a pasear o lo que sea que le guste hacer, vea si habrá una bienvenida en galés y, sobre todo, ¡use su galés usted mismo!
+El pensamiento del día
+Resultado
+Resultados
+Paginas
+Búsqueda de lugares, coordenadas y códigos postales.
+Leyenda al mapa
+Un vistazo rápido a la probabilidad de hablar galés
+Vocabulario
+Beta
+Esta es una versión beta de un intento de proporcionar un recurso de búsqueda para los dichos que se escuchan comúnmente.
+Actualmente tiene
+palabras y frases de un objetivo de
+frases y palabras encontradas
+inglés
+Cymraeg
+Notas
+Sobre
+Qué puede
+¿hacer?
+Byw.cymru es un recurso en galés impulsado por la comunidad y de origen colectivo. Su objetivo principal es ayudar a los estudiantes y a otras personas interesadas en el idioma a encontrar lugares donde puedan escuchar y usar el idioma.
+Todo el proyecto es
+fuente abierta
+y todas las decisiones se toman abiertamente en el repositorio de proyectos, alojado en
+El objetivo del proyecto es hacer que la búsqueda de esta información sea lo más fácil posible, con la máxima participación de la comunidad. Por lo tanto, el diseño del sitio web debe ser lo más fácil y rápido de usar posible. Se centra en la página del mapa, que es el recurso principal para buscar en el índice.
+Todo el código que compone el sitio web está disponible en el repositorio de proyectos y cualquiera puede verlo. El sitio web y los datos se alojan utilizando recursos donados por la comunidad. La API proporciona acceso a los datos a cualquiera que lo desee. Con el tiempo, se espera que la cantidad de puntos finales Api aumente para que sea más útil para desarrolladores e investigadores.
+Contribuyendo
+La forma más rápida y sencilla de contribuir al proyecto es enviar una reseña. Esto solo significa agregar un nuevo lugar al índice o actualizar uno existente si es necesario
+Cualquiera puede hacer esto y no es necesario iniciar sesión o tener una cuenta
+Si se descubren problemas, errores o sugerencias, consulte el
+página de problemas
+sobre
+Aquellos que deseen participar más deben consultar el repositorio del proyecto, que se encuentra alojado en
+Hay mucho trabajo por hacer para que este proyecto sea una herramienta útil para los estudiantes de galés.
+Envíe una categorización
+Nombre
+Categoría
+Estado
+Cómo
+encontrar algún lugar que ya esté en la lista
+Las instalaciones que seleccionó en la página del mapa aparecerán en el cuadro de envío listo para su revisión de la probabilidad de hablar galés
+Elija lo que crea que es mejor y presione enviar
+Si las instalaciones que seleccionó no están donde desea enviar una revisión, simplemente arrastre el pin del mapa, el formulario se borrará y podrá ubicar las instalaciones que desea enviar.
+presentar una nueva premisa
+Arrastra la chincheta del mapa para ubicar el lugar
+Se completarán las coordenadas y el código postal. Simplemente agregue el nombre del local y la dirección como le gustaría que aparezca en el índice
+Seleccione la probabilidad de que sienta que una persona oiga y pueda utilizar el galés en las instalaciones. Esto no es científico, solo lo que crees que es probable
+Si el índice parece inexacto
+La categoría (la probabilidad de usar galés) de un local se calcula agregando todas las reseñas recibidas. Por lo tanto, su envío se tendrá en cuenta de inmediato, pero puede afectar o no a la calificación actual.
+Si cree que la calificación de un establecimiento está muy lejos y permanece muy lejos después de haber enviado su calificación, póngase en contacto. Si usted es el propietario de la empresa, podemos ayudarlo indicándole la dirección de los recursos que le ayudarán a aumentar el uso del galés en su empresa. Si los datos del índice son simplemente incorrectos, podemos corregirlos.
+Enviado
+Enviar
+Claro
+Borrar el formulario para soltar un pin
+Arrastra el pin ...
+Nombre del local
+Dirección del local
+Código postal del local
+Coordenadas
+Categoría
+Se requiere un nombre
+Se requiere una dirección para identificar las instalaciones.
+Se requiere una categoría para ayudar a otros a saber qué esperar
+Si se proporciona un código postal, debe ser válido, o simplemente use las coordenadas
+Las coordenadas se pueden establecer moviendo la chincheta en el mapa y son obligatorias
+La categoría tiene que estar configurada
+No ha sido posible verificar las coordenadas proporcionadas, inténtelo de nuevo.
+Escribe
+Enlace de descarga
+Hash SHA256
