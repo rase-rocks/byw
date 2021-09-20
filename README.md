@@ -100,12 +100,11 @@ A suggestion on how to go about proposing a change to this project:
 
 #### Prerequisites
 
-A familiarity with following concepts would be useful:
+A familiarity with following concepts would be useful (in no particular order):
 
 + Javascript
 + Git
-+ Nodejs
-+ npm
++ Nodejs / npm
 + React / Redux
 
 Clone the project to your local file system and run:
@@ -114,11 +113,13 @@ Clone the project to your local file system and run:
 npm install
 ```
 
-To get a build folder run. Once this has been created it can be served up during development:
+To get a build folder run:
 
 ```
 npm run build
 ```
+
+Once this has been created it can be served up during development:
 
 To create the TLS certificate that many browsers now require run:
 
@@ -148,7 +149,9 @@ The package has the http-serve as a dependency to allow for local development. T
 npm run serve-build
 ```
 
-Visit `https://localhost:8080` in your browser to view the current build.
+Visit `https://localhost:8080` in your browser to view the current build. (And add the exception for the certificate you have just created after checking it).
+
+__Side Note__ This is outside the scope of the project, but, having a self signed certificate does not impact the encryption 'strength' in any way. It only means that 'somebody' else is not certifying that `localhost` is `localhost`. So a self signed certificate would not be suitable in production for this reason, even though the level of security provided is the same.
 
 ### Build Process
 
