@@ -1,18 +1,32 @@
-## Worklog
+## Work log
 
 #### Deployment
 
 To deploy run 
-<pre>
+```
 npm run deploy
-</pre>
+```
 
 #### Building
 
 To build run:
-<pre>npm run build</pre>
+```
+npm run build
+```
+
+#### Running the development server
+
+```
+npm run serve-build
+```
 
 ### Issues
+
+#### Issue-19 - 20/09/21 - Fix styling issue on iOS Safari submit page
+
+GitHub Issue #19 refers
+
+The issue will also address the local TLS certificate issue that is now required by many modern browsers and updates the `README.md` to reflect the extra steps required to get a development server up and running.
 
 #### Add Italiano
 

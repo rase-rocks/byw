@@ -21,6 +21,10 @@ const options = {
                 date, req.method, req.url
             );
         }
+    },
+    https: {
+        cert: "cert.pem",
+        key: "key.pem"
     }
 };
 

@@ -63,3 +63,8 @@ typings/
 build
 s3-build
 
+# Development TLS Certs
+
+cert.pem
+key.pem
+

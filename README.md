@@ -120,6 +120,22 @@ To get a build folder run. Once this has been created it can be served up during
 npm run build
 ```
 
+To create the TLS certificate that many browsers now require run:
+
+```
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout key.pem -out cert.pem
+```
+
+To run the development server:
+
+```
+npm run serve-build
+```
+
+__Note__ Many modern browsers will not accept self signed TLS certificates with an exception being added. This varies across system to system, but in general when visiting `https://localhost:8080` (which is the default url for the local development server) the browser will present a security warning. Normally accepting the risk will add `localhost` to the exception list and allow access to the development site. Only do this if you are happy with what you are doing. If you are unsure then you should take the time to inspect the code in this repository carefully to convince yourself that it is safe to do so.
+
+The `cert.pem` and `key.pem` files are excluded by git in the `.gitignore` file, so they will not be included in pull requests etc.
+
 To run a full build ready for deployment:
 ```
 npm run deploy
@@ -131,6 +147,8 @@ The package has the http-serve as a dependency to allow for local development. T
 ```
 npm run serve-build
 ```
+
+Visit `https://localhost:8080` in your browser to view the current build.
 
 ### Build Process
 

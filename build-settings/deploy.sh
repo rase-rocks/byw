@@ -12,6 +12,9 @@ aws s3 sync ./s3-build/ s3://byw.cymru --delete --exclude '.DS_Store' --cache-co
 
 echo "\n[${GREEN}Updating page content type on S3${NC}]\n"
 
+# Update the content-type for these files as they don't have .html extensions to allow
+# for more usable urls
+
 files=("map" "vocabulary" "about" "submit" "privacy")
 for i in "${files[@]}"
 do
