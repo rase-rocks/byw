@@ -118,7 +118,7 @@ errorMissingCategory, "A category is required to help others know what to expect
 errorInvalidPostcode, "If a postcode is supplied it must be valid,  or just use the coordinates", "Si se proporciona un código postal, debe ser válido, o simplemente use las coordenadas del establecimiento"
 errorInvalidCoordinates, "Coordinates can be set by moving the pin on the map and are required", "Las coordenadas se pueden establecer por arrastrar la chincheta en el mapa y son obligatorias"
 errorInvalidCategory, "The category has to be set", "La categoría tiene que estar seleccionada"
-errorCoordinatesMismatch, "It has not been possible to verify the supplied coordinates", " please try again", "No nos ha resultado posible verificar las coordenadas proporcionadas", "Vuelva a intentarlo."
+errorCoordinatesMismatch, "It has not been possible to verify the supplied coordinates, please try again", "No nos ha resultado posible verificar las coordenadas proporcionadas. Vuelva a intentarlo."
 privacyType, "Type", "Escribir"
 privacyLink, "Download link", "Enlace de descarga"
 privacySHA256, "SHA256 Hash", "Hash SHA256"
