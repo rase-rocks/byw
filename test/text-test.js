@@ -144,7 +144,7 @@ describe("Text", function () {
                                 const translationItem = content[key];
                                 const errMsg = `${scriptPath} getText property '${key}' is empty in '${test.language}'`;
                                 expect(translationItem, errMsg).to.not.equal(undefined);
-                                expect(translationItem.length).to.be.greaterThan(1);
+                                expect(translationItem.length, translationItem).to.be.greaterThan(0);
                             });
 
                     }
